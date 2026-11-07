@@ -1,0 +1,51 @@
+---
+summary: "Build à l'arc de froid qui pulvérise les packs avec les éclats d'Ice Shot et élimine les boss gelés avec un Snipe parfaitement synchronisé."
+tags: [arc, froid, critique, gel, distance]
+damage: Froid
+playstyle: Attaque à distance
+pros:
+  - Nettoyage des cartes très rapide avec une excellente couverture
+  - Gros dégâts sur cible unique une fois Snipe maîtrisé
+  - L'évasion et la déviation évitent la plupart des coups
+cons:
+  - Snipe exige un timing précis pour infliger tous ses dégâts
+  - Les dégâts sur la durée et les effets au sol contournent les défenses basées sur l'évasion
+skillNotes:
+  Ice Shot: Compétence principale pour le nettoyage et la cible unique
+  Snipe: Burst sur les boss gelés ; relâchez au moment parfait
+  Tornado Shot: Placez des tornades, puis tirez à travers pour diviser les projectiles
+  Barrage: Renforce les attaques suivantes ; avant Snipe, et dès qu'il est disponible en carte
+  Ice-Tipped Arrows: Nettoyage supplémentaire et accumulation de gel
+  Freezing Salvo: Grosse accumulation de gel pour préparer Snipe
+  Herald of Ice: Explosions de bris de glace pour le nettoyage
+  Wind Dancer: Bonus d'évasion et repoussement au corps à corps
+  Called Shots: Ensemble de marques du Deadeye
+  Rhoa Mount: Vitesse de déplacement sur monture en carte
+gearNotes:
+  offhand: "Flèches spéciales aléatoires ; un carquois rare avec +niveau des compétences de projectile et dégâts critiques est une bonne alternative."
+---
+
+## Fonctionnement
+
+[[Ice Shot]] tire une flèche qui éclate en une gerbe d'éclats de glace lorsqu'elle touche un ennemi ou un objet, et tous ces éclats peuvent toucher la même cible. Tirer à travers une tornade de [[Tornado Shot]] divise à nouveau les projectiles et multiplie le nombre d'éclats qui atteignent le pack ou le boss. Le build combine dégâts physiques et de froid avec les coups critiques, gèle rapidement les ennemis grâce à ses gemmes de soutien de froid, puis profite des cibles gelées avec [[Snipe]].
+
+Ajoutez de la qualité à [[Ice Shot]] dès que possible : dans cette version du jeu, la qualité de la gemme augmente directement ses dégâts.
+
+## Gameplay
+
+**En carte.** Gardez [[Barrage]] en rotation et tirez [[Ice Shot]] dans les packs. [[Herald of Ice]] fait exploser les ennemis gelés et propage le nettoyage sur tout l'écran. Utilisez [[Ice-Tipped Arrows]] quand les packs sont denses ou résistants.
+
+**Contre les boss.**
+
+1. Posez un [[Tornado Shot]] juste avant que le boss ne devienne actif.
+2. Tirez [[Ice Shot]] à travers la tornade sur le boss, et utilisez [[Freezing Salvo]] pour accumuler le gel rapidement.
+3. Une fois le boss gelé, activez [[Barrage]] et relâchez [[Snipe]] au moment parfait (votre personnage brille quand c'est prêt).
+4. Recommencez. Entraînez-vous au timing de Snipe sur des monstres faibles : un Snipe mal synchronisé perd l'essentiel de ses dégâts.
+
+## Défenses
+
+Le build repose sur l'évasion et la déviation plutôt que sur la vie brute. [[Wind Dancer]] ajoute de l'évasion et repousse les attaquants au corps à corps, et [[Hyrri's Ire]] double votre évasion tant que vous n'avez pas été touché récemment. Privilégiez la déviation sur le casque, les gants et les bottes. Les dégâts sur la durée et les zones au sol ignorent complètement l'évasion : sortez-en et gardez vos résistances au maximum.
+
+## Priorités d'équipement
+
+L'arc est de loin l'objet le plus important : cherchez des dégâts physiques par seconde élevés, de la vitesse d'attaque et de la chance de coup critique, avec des dégâts de froid ajoutés et une flèche supplémentaire en bonus. Ensuite, une amulette avec de l'Esprit et +niveau des compétences de projectile, puis de la vie et des résistances sur le reste.

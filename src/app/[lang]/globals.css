@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0c0a08;
+  --color-surface: #15120e;
+  --color-surface-2: #1d1913;
+  --color-line: #2c261d;
+  --color-line-strong: #40372a;
+  --color-ink: #ece4d4;
+  --color-muted: #a39883;
+  --color-faint: #6f6656;
+  --color-gold: #d4a64f;
+  --color-gold-soft: #8a6a2e;
+  --color-unique: #c9844a;
+  --color-gem-r: #d0503f;
+  --color-gem-g: #5fae54;
+  --color-gem-b: #5b8ee0;
+  --color-gem-w: #c9c4b8;
+  --color-tier-s: #e8513f;
+  --color-tier-a: #ea8a3a;
+  --color-tier-b: #d9b649;
+  --color-tier-c: #79b85c;
+  --color-tier-d: #7b8794;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-cinzel), ui-serif, Georgia, serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 50% -200px, rgb(212 166 79 / 0.08), transparent 70%),
+    var(--color-bg);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: rgb(212 166 79 / 0.35);
+}
+
+/* Rendered markdown in build guides */
+.prose-guide {
+  line-height: 1.75;
+  color: var(--color-ink);
+}
+.prose-guide h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-line);
+  scroll-margin-top: 6rem;
+}
+.prose-guide h3 {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin: 1.75rem 0 0.5rem;
+  scroll-margin-top: 6rem;
+}
+.prose-guide p {
+  margin: 0.75rem 0;
+}
+.prose-guide ul,
+.prose-guide ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+.prose-guide ul {
+  list-style: disc;
+}
+.prose-guide ol {
+  list-style: decimal;
+}
+.prose-guide li {
+  margin: 0.25rem 0;
+}
+.prose-guide strong {
+  color: #fff;
+}
+.prose-guide a.ref {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+.prose-guide a.ref-gem {
+  color: #8fb6f0;
+}
+.prose-guide a.ref-unique {
+  color: var(--color-unique);
+}
+.prose-guide code {
+  background: var(--color-surface-2);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.prose-guide table {
+  margin: 1rem 0;
+  border-collapse: collapse;
+  font-size: 0.925rem;
+}
+.prose-guide th,
+.prose-guide td {
+  border: 1px solid var(--color-line);
+  padding: 0.4rem 0.9rem;
+  text-align: left;
+}
+.prose-guide th {
+  background: var(--color-surface-2);
+  color: var(--color-muted);
+  font-weight: 600;
+}
