@@ -248,12 +248,13 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
 // The cache lives on globalThis to survive dev module reloads.
 type Parsed = { build: Build; markdown: string };
 const store = globalThis as typeof globalThis & {
-  __buildCache?: {
+  __buildCacheV2?: {
     files: Map<string, { mtimeMs: number; parsed: Parsed }>;
     lists: Map<Locale, { key: string; list: Build[] }>;
   };
 };
-const cache = (store.__buildCache ??= { files: new Map(), lists: new Map() });
+// Versioned key: a dev server still holding a cache in an older shape (hot reload keeps globalThis) gets a fresh one.
+const cache = (store.__buildCacheV2 ??= { files: new Map(), lists: new Map() });
 
 const mtime = (p: string) => (fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0);
 
