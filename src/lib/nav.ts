@@ -4,8 +4,12 @@ import type { Dictionary } from "@/i18n/dictionaries/en";
 export const NAV: { href: string; key: keyof Dictionary["nav"] }[] = [
   { href: "/", key: "builds" },
   { href: "/tier-list", key: "tierList" },
+  { href: "/meta", key: "meta" },
+  { href: "/guides", key: "guides" },
   { href: "/planner", key: "planner" },
+  { href: "/craft", key: "craft" },
   { href: "/database", key: "database" },
+  { href: "/compare", key: "compare" },
   { href: "/character", key: "character" },
 ];
 

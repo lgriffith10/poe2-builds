@@ -18,6 +18,8 @@ difficulty: medium
 budget: low
 tiers:
   starter: A
+  endgame: B
+  bossing: B
 pros:
   - Very fast mapping with excellent coverage
   - Strong single target once Snipe is mastered
@@ -56,6 +58,108 @@ skills:
   - gem: Rhoa Mount
     supports: [Loyalty, Meat Shield II, Elemental Army]
     note: Mounted movement speed in maps
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Level 1-5"
+        skills:
+          - gem: "Escape Shot"
+            supports: [Cold Attunement]
+          - gem: "Lightning Arrow"
+            supports: [Rapid Attacks I]
+          - gem: "Frost Bomb"
+      - name: "Level 6-14"
+        skills:
+          - gem: "Lightning Arrow"
+            supports: [Rapid Attacks I, Elemental Armament I]
+          - gem: "Escape Shot"
+            supports: [Cold Attunement, Freeze]
+          - gem: "Freezing Salvo"
+            supports: [Cold Attunement, Ice Bite I]
+          - gem: "Herald of Ice"
+          - gem: "Snipe"
+            supports: [Window of Opportunity I, Burgeon I]
+          - gem: "Stormcaller Arrow"
+            supports: [Lightning Attunement]
+          - gem: "Ice-Tipped Arrows"
+            supports: [Magnified Area I]
+          - gem: "Frost Bomb"
+      - name: "Level 15-30"
+        skills:
+          - gem: "Lightning Arrow"
+            supports: [Rapid Attacks I, Elemental Armament I]
+          - gem: "Escape Shot"
+            supports: [Cold Attunement, Freeze]
+          - gem: "Freezing Salvo"
+            supports: [Cold Attunement, Ice Bite I]
+          - gem: "Herald of Ice"
+            supports: [Cold Attunement, Magnified Area I]
+          - gem: "Snipe"
+            supports: [Window of Opportunity I, Concentrated Area, Elemental Armament I]
+          - gem: "Barrage"
+            supports: [Perpetual Charge]
+          - gem: "Ice-Tipped Arrows"
+            supports: [Magnified Area I, Elemental Armament I]
+          - gem: "Freezing Mark"
+            supports: [Prolonged Duration I]
+      - name: "Level 31 to Maps"
+        skills:
+          - gem: "Ice Shot"
+            supports: [Elemental Armament I, Cold Attunement, Gambleshot, Rapid Attacks II]
+          - gem: "Freezing Salvo"
+            supports: [Cold Attunement, Ice Bite I, Elemental Armament II, Freeze]
+          - gem: "Herald of Ice"
+            supports: [Overreach, Cold Attunement]
+          - gem: "Tornado Shot"
+            supports: [Overabundance I]
+          - gem: "Snipe"
+            supports: [Window of Opportunity I, Concentrated Area, Elemental Armament II]
+          - gem: "Combat Frenzy"
+            supports: [Charge Profusion I]
+          - gem: "Ice-Tipped Arrows"
+            supports: [Cold Attunement, Magnified Area I, Elemental Armament II]
+          - gem: "Barrage"
+            supports: [Perpetual Charge, Cooldown Recovery II]
+          - gem: "Wind Dancer"
+            supports: [Blind I, Pin I]
+          - gem: "Called Shots"
+            supports: [Freezing Mark, Mark of Siphoning, Charged Mark]
+      - name: "Early Maps"
+        skills:
+          - gem: "Ice Shot"
+            supports: [Cold Attunement, Ricochet II, Elemental Armament II, Ice Bite II, Stoicism II]
+          - gem: "Snipe"
+            supports: [Window of Opportunity II, Concentrated Area, Elemental Armament II, Elemental Focus, Inexorable Critical I]
+          - gem: "Barrage"
+            supports: [Perpetual Charge, Cooldown Recovery II]
+          - gem: "Tornado Shot"
+            supports: [Prolonged Duration II, Durability, Overabundance II]
+          - gem: "Wind Dancer"
+            supports: [Blind II, Pin I, Knockback]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area II, Cold Attunement]
+          - gem: "Ice-Tipped Arrows"
+            supports: [Magnified Area II, Elemental Armament II, Short Fuse I, Longshot II]
+          - gem: "Rhoa Mount"
+            supports: [Loyalty, Meat Shield II, Elemental Army]
+          - gem: "Called Shots"
+            supports: [Sniper's Mark, Freezing Mark, Charged Mark, Mark of Siphoning, Charge Profusion II]
+          - gem: "Freezing Salvo"
+            supports: [Elemental Armament II, Cold Attunement, Freeze, Ice Bite II]
+rotations:
+  - name: "Bossing"
+    steps:
+      - gem: "Ice-Tipped Arrows"
+      - gem: "Tornado Shot"
+      - gem: "Ice Shot"
+      - gem: "Barrage"
+      - gem: "Snipe"
+  - name: "Mapping"
+    steps:
+      - gem: "Barrage"
+      - gem: "Ice-Tipped Arrows"
+      - gem: "Tornado Shot"
+      - gem: "Ice Shot"
 gear:
   weapon:
     base: Guardian Bow
@@ -86,6 +190,93 @@ gear:
   belt:
     base: Wide Belt
     mods: [+Maximum Life, Elemental Resistances]
+gearStages:
+  campaign:
+    weapon:
+      base: Snakewood Shortbow
+      mods: [Increased Physical Damage, Adds Cold Damage, +Level of all Projectile Skills]
+    helmet:
+      base: Viper Cap
+      mods: [Evasion Rating, +Maximum Life]
+    body:
+      base: Serpentscale Coat
+      mods: [Evasion Rating, +Maximum Life]
+    gloves:
+      base: Hunting Bracers
+      mods: [Adds Physical Damage to Attacks, +Maximum Life]
+    boots:
+      base: Lizardscale Boots
+      mods: [Movement Speed, +Maximum Life]
+    amulet:
+      base: Bloodstone Amulet
+      mods: [+Maximum Life, +Level of all Projectile Skills]
+    ring1:
+      base: Prismatic Ring
+      mods: [Adds Physical Damage to Attacks, +Maximum Life]
+    ring2:
+      base: Prismatic Ring
+      mods: [Adds Physical Damage to Attacks, +Maximum Life]
+    belt:
+      base: Rawhide Belt
+      mods: [+Maximum Life]
+  endgame:
+    weapon:
+      base: Guardian Bow
+      mods: [High Physical DPS, Increased Attack Speed, Critical Hit Chance, Additional Arrow]
+    offhand:
+      unique: "Cadiro's Gambit"
+    helmet:
+      base: Freebooter Cap
+      mods: [Evasion Rating, Deflection, +Maximum Life, Critical Hit Chance]
+    body:
+      unique: "Hyrri's Ire"
+    gloves:
+      base: Polished Bracers
+      mods: [Deflection, Evasion Rating, Adds Cold Damage to Attacks, +Maximum Life]
+    boots:
+      base: Drakeskin Boots
+      mods: [Movement Speed, Evasion Rating, Deflection, +Maximum Life]
+    amulet:
+      base: Solar Amulet
+      mods: [+Spirit, +Level of all Projectile Skills, +Maximum Life, Evasion Rating]
+    ring1:
+      base: Amethyst Ring
+      mods: [+Maximum Life, Adds Cold Damage to Attacks, Elemental Resistances]
+    ring2:
+      base: Amethyst Ring
+      mods: [+Maximum Life, Adds Cold Damage to Attacks, Elemental Resistances]
+    belt:
+      base: Wide Belt
+      mods: [+Maximum Life, Elemental Resistances]
+  minmax:
+    weapon:
+      base: Warmonger Bow
+      mods: [Increased Physical Damage, Adds Physical Damage, Adds Cold Damage, Critical Hit Chance, +Level of all Projectile Skills, Increased Attack Speed]
+    offhand:
+      unique: "Cadiro's Gambit"
+    helmet:
+      base: Freebooter Cap
+      mods: [+Maximum Life, Evasion Rating, Deflection, Critical Hit Chance]
+    body:
+      unique: "Hyrri's Ire"
+    gloves:
+      base: Polished Bracers
+      mods: [+Maximum Life, Evasion Rating, Deflection, Adds Physical Damage to Attacks, Critical Damage Bonus]
+    boots:
+      base: Drakeskin Boots
+      mods: [Movement Speed, +Maximum Life, Deflection, Evasion Rating]
+    amulet:
+      base: Solar Amulet
+      mods: [+Maximum Life, +Spirit, Evasion Rating, +Level of all Projectile Skills]
+    ring1:
+      base: Breach Ring
+      mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, +Maximum Life]
+    ring2:
+      base: Breach Ring
+      mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, +Maximum Life]
+    belt:
+      base: Heavy Belt
+      mods: [+Maximum Life, +Maximum Mana]
 passives:
   attribute: dex
   path:

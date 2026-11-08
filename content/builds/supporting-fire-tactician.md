@@ -50,6 +50,119 @@ skills:
     supports: [Last Gasp, Rapid Casting II, Minion Mastery, Meat Shield II]
   - gem: "Skeletal Sniper"
     supports: [Multishot II, Last Gasp, Culling Strike II, Soul Drain]
+leveling:
+  - name: "Crossbow Campaign"
+    steps:
+      - name: "Act 1"
+        skills:
+          - gem: "Fragmentation Rounds"
+            supports: [Concentrated Area, Elemental Armament I]
+          - gem: "Permafrost Bolts"
+            supports: [Ice Bite I, Elemental Armament I]
+          - gem: "Frost Bomb"
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Elemental Armament I]
+      - name: "Act 2"
+        skills:
+          - gem: "Fragmentation Rounds"
+            supports: [Concentrated Area, Elemental Armament II, Cold Attunement]
+          - gem: "Permafrost Bolts"
+            supports: [Ice Bite I, Elemental Armament II, Cold Attunement]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Elemental Armament II]
+          - gem: "Freezing Mark"
+          - gem: "Supporting Fire"
+            supports: [Bidding I, Cold Attunement]
+      - name: "Act 3"
+        skills:
+          - gem: "Fragmentation Rounds"
+            supports: [Concentrated Area, Elemental Armament II, Deliberation]
+          - gem: "Permafrost Bolts"
+            supports: [Ice Bite II, Elemental Armament II, Cold Attunement]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area II, Elemental Armament II]
+          - gem: "Freezing Mark"
+          - gem: "Supporting Fire"
+            supports: [Bidding I, Cold Attunement]
+  - name: "Supporting Fire Campaign"
+    steps:
+      - name: "Act 3"
+        skills:
+          - gem: "Supporting Fire"
+            supports: [Bidding I, Muster, Fire Attunement]
+          - gem: "Skeletal Sniper"
+            supports: [Multishot II, Bidding I, Muster]
+          - gem: "Wolf Pack"
+            supports: [Loyalty, Fire Attunement, Muster]
+          - gem: "Elemental Weakness"
+            supports: [Cursed Ground, Heightened Curse]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure, Prolonged Duration II]
+          - gem: "Skeletal Reaver"
+            supports: [Last Gasp]
+          - gem: "Purity of Fire"
+            supports: [Upwelling I, Vitality I, Clarity I]
+      - name: "Act 4 + Interlude"
+        skills:
+          - gem: "Supporting Fire"
+            supports: [Bidding III, Muster, Fire Attunement, Minion Mastery]
+          - gem: "Skeletal Sniper"
+            supports: [Multishot II, Bidding II, Muster, Fire Attunement]
+          - gem: "Wolf Pack"
+            supports: [Loyalty, Fire Attunement, Muster]
+          - gem: "Elemental Weakness"
+            supports: [Cursed Ground, Heightened Curse, Prolonged Duration II]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure, Prolonged Duration II]
+          - gem: "Skeletal Reaver"
+            supports: [Last Gasp]
+          - gem: "Skeletal Storm Mage"
+            supports: [Last Gasp, Shock, Overcharge]
+          - gem: "Skeletal Cleric"
+            supports: [Last Gasp, Rapid Casting II, Meat Shield II]
+          - gem: "Purity of Fire"
+            supports: [Upwelling II, Vitality II, Clarity II]
+      - name: "Early Maps"
+        skills:
+          - gem: "Supporting Fire"
+            supports: [Bidding III, Muster, Fire Attunement, Minion Mastery]
+          - gem: "Skeletal Sniper"
+            supports: [Multishot II, Bidding II, Muster, Fire Attunement]
+          - gem: "Wolf Pack"
+            supports: [Loyalty, Fire Attunement, Muster, Feeding Frenzy II]
+          - gem: "Elemental Weakness"
+            supports: [Cursed Ground, Heightened Curse, Prolonged Duration II]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure, Prolonged Duration II]
+          - gem: "Skeletal Arsonist"
+            supports: [Bidding III, Last Gasp, Efficiency II]
+          - gem: "Skeletal Brute"
+            supports: [Last Gasp, Armour Break III, Armour Demolisher II]
+          - gem: "Skeletal Reaver"
+            supports: [Last Gasp, Rage III, Muster]
+          - gem: "Skeletal Storm Mage"
+            supports: [Last Gasp, Shock, Overcharge]
+          - gem: "Skeletal Cleric"
+            supports: [Last Gasp, Rapid Casting II, Meat Shield II]
+          - gem: "Malice"
+            supports: [Upwelling II, Clarity II, Vitality II]
+rotations:
+  - name: "Clear"
+    steps:
+      - gem: "Supporting Fire"
+      - gem: "Skeletal Arsonist"
+  - name: "Single Target"
+    steps:
+      - gem: "Elemental Weakness"
+      - gem: "Frost Bomb"
+      - gem: "Pounce"
+      - gem: "Skeletal Arsonist"
+      - gem: "Skeletal Brute"
+      - gem: "Supporting Fire"
 gear:
   weapon:
     base: Omen Sceptre
@@ -79,6 +192,122 @@ gear:
     mods: [+Strength, +All Attributes, +Maximum Life, Elemental Resistances]
   belt:
     unique: "Meginord's Girdle"
+gearStages:
+  campaign:
+    weapon:
+      base: Shrine Sceptre
+      mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit]
+    offhand:
+      base: Rampart Tower Shield
+      mods: [Block Chance, +Maximum Life, Elemental Resistances]
+    helmet:
+      base: Elite Greathelm
+      mods: [+Level of all Minion Skills, +Maximum Life]
+    body:
+      base: Full Plate
+      mods: [+Spirit, Armour, +Maximum Life]
+    gloves:
+      base: Moulded Mitts
+      mods: [+Maximum Life, Elemental Resistances]
+    boots:
+      base: Stone Greaves
+      mods: [Movement Speed, Elemental Resistances]
+    amulet:
+      base: Stellar Amulet
+      mods: [+Level of all Minion Skills, +Spirit, +Maximum Life, +Strength]
+    ring1:
+      base: Prismatic Ring
+      mods: [+Maximum Life, Elemental Resistances]
+    ring2:
+      base: Prismatic Ring
+      mods: [+Maximum Life, Elemental Resistances]
+    belt:
+      base: Plate Belt
+      mods: [+Maximum Life, Elemental Resistances]
+  mapping:
+    weapon:
+      base: Omen Sceptre
+      mods: [Increased Allies in presence Damage, +Level of all Minion Skills, +Spirit]
+    offhand:
+      base: Royal Tower Shield
+      mods: [Fire Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, Block Chance]
+    helmet:
+      base: Masked Greathelm
+      mods: [Lightning Resistance, +Maximum Life, +Level of all Minion Skills]
+    body:
+      unique: "Enfolding Dawn"
+    gloves:
+      base: Ornate Mitts
+      mods: [Fire Resistance, Cold Resistance, +Maximum Life]
+    boots:
+      base: Ornate Greaves
+      mods: [Lightning Resistance, Chaos Resistance, +Maximum Life, Movement Speed]
+    amulet:
+      base: Solar Amulet
+      mods: [+All Attributes, +Maximum Life, +Level of all Minion Skills]
+    ring1:
+      base: Amethyst Ring
+      mods: [+Strength, +All Attributes, Cold Resistance, +Maximum Life]
+    ring2:
+      base: Amethyst Ring
+      mods: [+Strength, +All Attributes, Cold Resistance, +Maximum Life]
+    belt:
+      unique: "Meginord's Girdle"
+  endgame:
+    weapon:
+      unique: "Chober Chaber"
+    offhand:
+      base: Omen Sceptre
+      mods: [+Level of all Minion Skills, +Spirit]
+    helmet:
+      base: Ancestral Tiara
+      mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances]
+    body:
+      unique: "Morior Invictus"
+    gloves:
+      base: Sirenscale Gloves
+      mods: [Energy Shield, Elemental Resistances]
+    boots:
+      base: Sekhema Sandals
+      mods: [Movement Speed, Energy Shield, Elemental Resistances]
+    amulet:
+      base: Solar Amulet
+      mods: [+Level of all Minion Skills, +Spirit, +All Attributes, +Strength, Energy Shield]
+    ring1:
+      base: Gold Ring
+      mods: [+Strength, +Intelligence, Evasion Rating]
+    ring2:
+      unique: "Kalandra's Touch"
+    belt:
+      base: Heavy Belt
+      mods: [Minion Area of Effect, Increased Minion commanded skill Damage, +Strength, Elemental Resistances]
+  minmax:
+    weapon:
+      unique: "Chober Chaber"
+    offhand:
+      base: Omen Sceptre
+      mods: [+Level of all Minion Skills, +Spirit]
+    helmet:
+      base: Ancestral Tiara
+      mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+    body:
+      unique: "Morior Invictus"
+    gloves:
+      base: Sirenscale Gloves
+      mods: [Energy Shield, +Maximum Life, Elemental Resistances, +Intelligence]
+    boots:
+      base: Sekhema Sandals
+      mods: [Movement Speed, Energy Shield, Elemental Resistances, +Intelligence]
+    amulet:
+      base: Solar Amulet
+      mods: [+Level of all Minion Skills, +Spirit, +All Attributes, +Strength, Energy Shield]
+    ring1:
+      base: Breach Ring
+      mods: [Critical Damage Bonus, Increased Minion Damage, Evasion Rating]
+    ring2:
+      unique: "Kalandra's Touch"
+    belt:
+      unique: "Mageblood"
 passives:
   attribute: int
   path:

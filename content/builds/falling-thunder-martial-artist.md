@@ -49,6 +49,163 @@ skills:
     supports: [Prolonged Duration II, Rapid Attacks III]
   - gem: "Hollow Focus"
     supports: [Concentrated Area, Cooldown Recovery II]
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Beach"
+        skills:
+          - gem: "Quarterstaff Strike"
+          - gem: "Falling Thunder"
+      - name: "Clearfell"
+        skills:
+          - gem: "Quarterstaff Strike"
+          - gem: "Falling Thunder"
+          - gem: "Frozen Locus"
+          - gem: "Killing Palm"
+      - name: "Grelwood"
+        skills:
+          - gem: "Quarterstaff Strike"
+            supports: [Rage I]
+          - gem: "Falling Thunder"
+          - gem: "Frozen Locus"
+          - gem: "Killing Palm"
+          - gem: "Frost Bomb"
+      - name: "Grim Tangle"
+        skills:
+          - gem: "Wind Blast"
+            supports: [Rage I, Rapid Attacks I]
+          - gem: "Killing Palm"
+            supports: [Thrill of the Kill]
+          - gem: "Falling Thunder"
+          - gem: "Frozen Locus"
+          - gem: "Frost Bomb"
+          - gem: "Wing Blast"
+          - gem: "Rend"
+      - name: "Ogham"
+        skills:
+          - gem: "Wind Blast"
+            supports: [Rage I, Rapid Attacks I]
+          - gem: "Killing Palm"
+            supports: [Thrill of the Kill]
+          - gem: "Falling Thunder"
+            supports: [Elemental Armament I, Lightning Attunement]
+          - gem: "Frozen Locus"
+            supports: [Elemental Armament I]
+          - gem: "Frost Bomb"
+          - gem: "Wing Blast"
+          - gem: "Rend"
+      - name: "Freythorn"
+        skills:
+          - gem: "Wind Blast"
+            supports: [Rage I, Rapid Attacks I]
+          - gem: "Killing Palm"
+            supports: [Thrill of the Kill]
+          - gem: "Falling Thunder"
+            supports: [Elemental Armament I, Lightning Attunement]
+          - gem: "Frozen Locus"
+            supports: [Elemental Armament I]
+          - gem: "Frost Bomb"
+          - gem: "Wing Blast"
+          - gem: "Rend"
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I]
+      - name: "Ogham Manor"
+        skills:
+          - gem: "Wind Blast"
+            supports: [Rage I, Rapid Attacks I]
+          - gem: "Falling Thunder"
+            supports: [Elemental Armament I, Lightning Attunement]
+          - gem: "Devour"
+            supports: [Thrill of the Kill]
+          - gem: "Frozen Locus"
+            supports: [Elemental Armament I, Cold Attunement]
+          - gem: "Frost Bomb"
+          - gem: "Wing Blast"
+          - gem: "Rend"
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I]
+      - name: "Level 22"
+        skills:
+          - gem: "Storm Wave"
+            supports: [Rapid Attacks I, Rage I]
+          - gem: "Falling Thunder"
+            supports: [Elemental Armament I, Lightning Attunement, Concentrated Area]
+          - gem: "Siphoning Strike"
+            supports: [Charge Profusion I, Concentrated Area]
+          - gem: "Frozen Locus"
+            supports: [Elemental Armament I, Cold Attunement]
+          - gem: "Devour"
+            supports: [Thrill of the Kill]
+          - gem: "Rend"
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Cold Attunement]
+      - name: "Act 3 to Maps"
+        skills:
+          - gem: "Storm Wave"
+            supports: [Rapid Attacks I, Rage I, Elemental Armament I]
+          - gem: "Falling Thunder"
+            supports: [Elemental Armament I, Lightning Attunement, Concentrated Area]
+          - gem: "Siphoning Strike"
+            supports: [Charge Profusion I, Concentrated Area, Elemental Focus]
+          - gem: "Frozen Locus"
+            supports: [Elemental Armament I, Cold Attunement, Ice Bite I]
+          - gem: "Devour"
+            supports: [Thrill of the Kill, Rapid Attacks II]
+          - gem: "Rend"
+            supports: [Prolonged Duration I, Rapid Attacks II]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Cold Attunement]
+          - gem: "Herald of Thunder"
+            supports: [Elemental Armament II, Magnified Area II]
+          - gem: "Hollow Focus"
+            supports: [Cooldown Recovery II, Concentrated Area]
+      - name: "Early Maps"
+        skills:
+          - gem: "Whirling Assault"
+            supports: [Rage III, Magnified Area II, Efficiency II, Ancestral Call II]
+          - gem: "Falling Thunder"
+            supports: [Elemental Armament II, Pinpoint Critical, Rageforged II, Culmination II]
+          - gem: "Charged Staff"
+            supports: [Prolonged Duration II, "Oisín's Oath", Innervate, Blind II]
+          - gem: "Tempest Bell"
+            supports: [Ancestral Call II, Concentrated Area, Pinpoint Critical, Heavy Swing]
+          - gem: "Mantra of Destruction"
+            supports: [Chaos Mastery, Mobility]
+          - gem: "Herald of Thunder"
+            supports: [Magnified Area II, Elemental Armament II, Elemental Focus]
+          - gem: "Wind Dancer"
+            supports: [Maim, Magnified Area II, Pin I]
+          - gem: "Reaper's Invocation"
+            supports: [Profane Ritual, Overabundance II, Compressed Duration II, Charge Profusion II]
+          - gem: "Killing Palm"
+            supports: [Thrill of the Kill II, Charge Profusion II, Rapid Attacks III]
+rotations:
+  - name: "Clear"
+    steps:
+      - gem: "Whirling Assault"
+      - gem: "Profane Ritual"
+      - gem: "Charged Staff"
+      - gem: "Falling Thunder"
+  - name: "Bosses (No Ailiths)"
+    steps:
+      - gem: "Killing Palm"
+      - gem: "Hollow Focus"
+      - gem: "Rend"
+      - gem: "Charged Staff"
+      - gem: "Mantra of Destruction"
+      - gem: "Falling Thunder"
+      - gem: "Whirling Assault"
+      - gem: "Tempest Bell"
+  - name: "Bosses (Ailiths)"
+    steps:
+      - gem: "Killing Palm"
+      - gem: "Hollow Focus"
+      - gem: "Rend"
+      - gem: "Charged Staff"
+      - gem: "Falling Thunder"
+      - gem: "Whirling Assault"
+      - gem: "Mantra of Destruction"
+      - gem: "Falling Thunder"
 gear:
   weapon:
     base: Sinister Quarterstaff
@@ -76,6 +233,89 @@ gear:
     mods: [Elemental Resistances, +Maximum Life, Adds Fire Damage to Attacks, Fire Resistance]
   belt:
     unique: "Shavronne's Satchel"
+gearStages:
+  campaign:
+    weapon:
+      base: Waxing Quarterstaff
+      mods: [Increased Physical Damage, Adds Physical Damage, Increased Attack Speed, +Level of all Melee Skills]
+    helmet:
+      base: Pariah Mask
+      mods: [+Maximum Life, Elemental Resistances]
+    body:
+      base: Itinerant Jacket
+      mods: [Evasion and Energy Shield, +Maximum Life, Elemental Resistances]
+    gloves:
+      base: Furtive Wraps
+      mods: [Increased Attack Speed, Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, Evasion Rating, Energy Shield]
+    boots:
+      base: Velour Shoes
+      mods: [Movement Speed, +Maximum Life, Elemental Resistances]
+    amulet:
+      base: Stellar Amulet
+      mods: [+Level of all Melee Skills, +Maximum Life, Elemental Resistances]
+    ring1:
+      base: Prismatic Ring
+      mods: [Elemental Resistances, Adds Lightning Damage to Attacks, Adds Fire Damage to Attacks, Adds Physical Damage to Attacks, Adds Cold Damage to Attacks]
+    ring2:
+      base: Prismatic Ring
+      mods: [Elemental Resistances, Adds Fire Damage to Attacks]
+    belt:
+      base: Utility Belt
+      mods: [Lightning Resistance, Cold Resistance, Fire Resistance, +Maximum Life]
+  mapping:
+    weapon:
+      base: Sinister Quarterstaff
+      mods: [Adds Lightning Damage, Adds Cold Damage, Increased Physical Damage, Adds Physical Damage, Critical Hit Chance, +Level of all Melee Skills]
+    helmet:
+      base: Faridun Mask
+      mods: [Critical Hit Chance, Evasion and Energy Shield, +Maximum Life, Elemental Resistances]
+    body:
+      base: Sleek Jacket
+      mods: [Evasion and Energy Shield, Evasion Rating, Energy Shield, +Maximum Life, Elemental Resistances]
+    gloves:
+      base: Elegant Wraps
+      mods: [Increased Attack Speed, Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, Critical Damage Bonus, Evasion Rating, Energy Shield]
+    boots:
+      base: Quickslip Shoes
+      mods: [Movement Speed, Evasion and Energy Shield, Elemental Resistances, +Maximum Life, Deflection]
+    amulet:
+      base: Stellar Amulet
+      mods: [+Level of all Melee Skills, +All Attributes, Critical Hit Chance, Elemental Resistances]
+    ring1:
+      base: Prismatic Ring
+      mods: [Mana Leech, Elemental Resistances, Adds Physical Damage to Attacks, Adds Fire Damage to Attacks]
+    ring2:
+      base: Topaz Ring
+      mods: [Elemental Resistances, +Maximum Life, Adds Fire Damage to Attacks, Fire Resistance]
+    belt:
+      unique: "Shavronne's Satchel"
+  endgame:
+    weapon:
+      base: Sinister Quarterstaff
+      mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance, Increased Attack Speed, Critical Damage Bonus]
+    helmet:
+      base: Soaring Mask
+      mods: [Critical Hit Chance, Evasion Rating, Energy Shield, Evasion and Energy Shield, Fire Resistance, Cold Resistance]
+    body:
+      base: Sleek Jacket
+      mods: [Evasion Rating, Energy Shield, Evasion and Energy Shield, Deflection, Fire Resistance]
+    gloves:
+      base: Secured Wraps
+      mods: [Adds Lightning Damage to Attacks, Adds Cold Damage to Attacks, Evasion Rating, Energy Shield, +Level of all Melee Skills, Critical Damage Bonus]
+    boots:
+      base: Daggerfoot Shoes
+      mods: [Lightning Resistance, Cold Resistance, Movement Speed, Evasion and Energy Shield, Deflection]
+    amulet:
+      base: Gold Amulet
+      mods: [Evasion Rating, Energy Shield, +Level of all Melee Skills, +All Attributes, Grants a Passive Skill]
+    ring1:
+      base: Prismatic Ring
+      mods: [Mana Leech, Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, Lightning Resistance]
+    ring2:
+      base: Prismatic Ring
+      mods: [Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, Elemental Resistances]
+    belt:
+      unique: "Shavronne's Satchel"
 passives:
   attribute: str
   path:

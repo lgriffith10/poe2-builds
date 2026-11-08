@@ -23,6 +23,9 @@ npm run dev          # http://localhost:3000
 | `npm run builds:check` | Validates every guide in `content/builds` against the game data and point budgets |
 | `npm run test:planner` | Sanity checks for the passive tree logic and share codes |
 | `npm run draft:maxroll -- <guide-slug> [profile]` | Drafts a guide's front matter (skills, ascendancy order, key passives, gear) from a public Maxroll guide; prints to stdout, notes to stderr |
+| `npm run draft:maxroll -- <guide-slug> --stages [--map "campaign=Name,endgame=Name"]` | Prints a `gearStages` block from every equipment set of the guide's planner; without `--map`, stages are picked from the set names |
+| `npm run ladder:sync [-- leagueUrl]` | Snapshots ladder statistics from poe.ninja into `src/data/generated/ladder.json` (ascendancy, skill, unique and key passive popularity) |
+| `npm run draft:ninja -- "<Ascendancy>" "<Main skill>" [pick]` | Drafts a "ladder build" from a representative poe.ninja character (the `pick`-th in poe.ninja's list for that filter); ladder statistics for the write-up go to stderr |
 | `npm run research:maxroll -- <plannerId> [profile]` | Human-readable summary of a Maxroll planner |
 | `npm run lint` | ESLint |
 
@@ -65,6 +68,7 @@ source:                       # optional: credit the guide this build is based o
   url: https://maxroll.gg/poe2/build-guides/ice-shot-deadeye-build-guide
   updated: 2026-09-04
 tiers: { starter: A, endgame: S, bossing: B }   # S A B C D, any subset
+tierChanges: { starter: new }  # optional badge on the tier list: new | up | down (only when the source says so)
 pros: [...]
 cons: [...]
 skills:
@@ -74,6 +78,11 @@ skills:
 gear:                         # weapon offhand helmet body gloves boots amulet ring1 ring2 belt
   helmet: { unique: Ezomyte Peak }
   weapon: { base: Gemini Bow, mods: [Adds Lightning Damage, Increased Attack Speed] }
+gearStages:                   # optional progression tabs: campaign | mapping | endgame | minmax
+  campaign:
+    weapon: { base: Crude Bow, mods: [Adds Physical Damage] }
+  endgame:
+    helmet: { unique: Ezomyte Peak }
 passives:
   attribute: dex              # choice for attribute nodes on the path: str | dex | int
   path: [Eagle Eye, Clean Shot]           # notables/keystones, allocated in order by shortest path
@@ -90,9 +99,35 @@ with a clear message. Run `npm run builds:check` to see point usage per build.
 
 The guides shipped in `content/builds` are based on public Maxroll guides for patch 0.5.5 (credited on each page with
 a link). Skills, ascendancy order, key passives and gear follow the source; the text is original and the passive tree is
-re-pathed from the listed notables, so point totals can differ slightly from the source. Tiers come from Maxroll's
-League Starter Build Tier List (3 November 2026), which is why only the League Start category is filled in.
+re-pathed from the listed notables, so point totals can differ slightly from the source.
+
+Tiers: League Start follows Maxroll's League Starter Build Tier List (3 November 2026). Endgame and Bossing are derived
+from the source guide's own ratings out of 5 (on the guide page or in its planner): endgame = (2 x clear speed + defence) / 3,
+bossing = (2 x bossing + defence) / 3, rounded, 5 = S … 1 = D. Guides without ratings get no Endgame/Bossing tier.
+
+`gear` is the reference set (used by the planner and the character comparison); `gearStages` drives the inventory tabs
+on the build page. When a guide has no stages, the page shows `gear`.
 `sample: true` shows a "Sample" badge for placeholder guides.
+
+## Ladder data (poe.ninja)
+
+The site never calls poe.ninja at runtime: `npm run ladder:sync` writes a snapshot to `src/data/generated/ladder.json`,
+which feeds the `/meta` page and the "x% of players" line on build pages. `scripts/ninja-lib.mjs` decodes poe.ninja's
+protobuf search responses and its "NDIC" dictionaries, and throttles requests (one per second, long back-off on 429).
+
+Guides with `origin: ladder` are drawn from one ladder character instead of a written guide; the page says so and links
+the character as the source. Pick a character whose main damage really comes from the skill in the title (check its DPS
+breakdown), and prefer modest gear over the richest character.
+
+## Guides
+
+Beginner guides live in `content/guides/<slug>.md` (front matter: `title`, `summary`, `updated`, `sources`) with the
+French version in `content/guides/fr/<slug>.md` (`title`, `summary` and the body). They are served at `/guides`.
+
+## Compare
+
+`/compare?a=<slug>&b=<slug>` shows two builds side by side: tiers, profile, skills, shared supports, uniques across all
+gear stages, passive tree overlap, strengths and weaknesses.
 
 ## Planner
 

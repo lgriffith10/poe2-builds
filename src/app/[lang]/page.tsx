@@ -27,6 +27,16 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
               {t.home.openPlanner}
             </Link>
           </div>
+          <Link
+            href={path("/guides/leveling-and-gearing")}
+            className="mt-6 flex max-w-2xl items-center gap-3 rounded-xl border border-gold-soft/60 bg-gold/5 px-4 py-3 text-sm hover:bg-gold/10"
+          >
+            <span className="font-display text-lg text-gold">?</span>
+            <span>
+              <span className="font-semibold text-ink">{t.home.beginnerTitle}</span>{" "}
+              <span className="text-muted">{t.home.beginnerText}</span>
+            </span>
+          </Link>
         </div>
       </section>
       <div className="mx-auto max-w-7xl px-4 py-8">

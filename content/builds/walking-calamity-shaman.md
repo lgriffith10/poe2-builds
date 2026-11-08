@@ -18,6 +18,8 @@ difficulty: hard
 budget: low
 tiers:
   starter: B
+  endgame: S
+  bossing: A
 pros:
   - "Huge area damage from Walking Calamity"
   - "Armour-stacking bear form is tanky"
@@ -46,6 +48,108 @@ skills:
     supports: [Upheaval II, Pinpoint Critical, Inexorable Critical II, Rapid Casting II]
   - gem: "Scavenged Plating"
     supports: [Prolonged Duration II]
+leveling:
+  - steps:
+      - name: "Act 1"
+        skills:
+          - gem: "Maul"
+            supports: [Rapid Attacks I, Concentrated Area]
+          - gem: "Furious Slam"
+            supports: [Fist of War I, Magnified Area I]
+          - gem: "Shockwave Totem"
+            supports: [Urgent Totems I, Overabundance I]
+          - gem: "Pounce"
+          - gem: "Frost Bomb"
+          - gem: "Herald of Ash"
+          - gem: "Fury of the Mountain"
+            supports: [Upheaval I, Elemental Armament I]
+          - gem: "Volcano"
+      - name: "Act 2"
+        skills:
+          - gem: "Maul"
+            supports: [Rapid Attacks I, Armour Break I]
+          - gem: "Furious Slam"
+            supports: [Fist of War II, Magnified Area I, Aftershock I]
+          - gem: "Ferocious Roar"
+            supports: [Infernal Cry, Raging Cry]
+          - gem: "Shockwave Totem"
+            supports: [Urgent Totems I, Overabundance I]
+          - gem: "Pounce"
+          - gem: "Frost Bomb"
+          - gem: "Herald of Ash"
+            supports: [Magnified Area I]
+          - gem: "Fury of the Mountain"
+            supports: [Upheaval I, Elemental Armament I]
+      - name: "Act 3+"
+        skills:
+          - gem: "Rampage"
+            supports: [Momentum, Burgeon I, Stomping Ground]
+          - gem: "Walking Calamity"
+            supports: [Prolonged Duration II, Elemental Armament II, Close Combat I]
+          - gem: "Maul"
+            supports: [Rapid Attacks I, Armour Break I]
+          - gem: "Furious Slam"
+            supports: [Fist of War II, Magnified Area I, Aftershock I]
+          - gem: "Fury of the Mountain"
+            supports: [Upheaval I, Fire Penetration I]
+          - gem: "Ferocious Roar"
+            supports: [Echoing Cry, Raging Cry, Enraged Warcry II]
+          - gem: "Savage Fury"
+          - gem: "Charge Regulation"
+          - gem: "Herald of Ash"
+            supports: [Magnified Area I]
+      - name: "Endgame"
+        skills:
+          - gem: "Rampage"
+            supports: [Momentum, Burgeon II, Close Combat II, Stomping Ground]
+          - gem: "Walking Calamity"
+            supports: [Prolonged Duration II, Elemental Armament II, Close Combat II, Magnified Area II]
+          - gem: "Maul"
+            supports: [Rapid Attacks II, Armour Break III, Armour Demolisher II, Close Combat II]
+          - gem: "Ferocious Roar"
+            supports: [Echoing Cry, Raging Cry, Enraged Warcry II]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area II, Elemental Armament II, Cold Penetration]
+          - gem: "Savage Fury"
+            supports: [Prolonged Duration II]
+          - gem: "Charge Regulation"
+            supports: [Vitality II, Precision I]
+          - gem: "Lunar Assault"
+            supports: [Bhatair's Vengeance, Ancestral Call II, Freeze, Elemental Armament II]
+rotations:
+  - name: "Early Single Target"
+    steps:
+      - gem: "Maul"
+      - gem: "Furious Slam"
+      - gem: "Maul"
+      - gem: "Furious Slam"
+      - gem: "Shockwave Totem"
+      - gem: "Ferocious Roar"
+      - gem: "Volcano"
+      - gem: "Frost Bomb"
+      - gem: "Savage Fury"
+  - name: "Early Clear"
+    steps:
+      - gem: "Maul"
+      - gem: "Furious Slam"
+      - gem: "Maul"
+      - gem: "Furious Slam"
+      - gem: "Pounce"
+      - gem: "Savage Fury"
+  - name: "Later Single Target"
+    steps:
+      - gem: "Ferocious Roar"
+      - gem: "Walking Calamity"
+      - gem: "Entangle"
+      - gem: "Rampage"
+      - gem: "Savage Fury"
+  - name: "Late Clear"
+    steps:
+      - gem: "Ferocious Roar"
+      - gem: "Lunar Assault"
+      - gem: "Walking Calamity"
+      - gem: "Rampage"
+      - gem: "Savage Fury"
 gear:
   weapon:
     base: Maji Talisman
@@ -70,6 +174,85 @@ gear:
     unique: "Polcirkeln"
   belt:
     unique: "Goregirdle"
+gearStages:
+  campaign:
+    weapon:
+      base: Vicious Talisman
+      mods: [Increased Physical Damage, Adds Physical Damage, Adds Lightning Damage, Adds Cold Damage, Adds Fire Damage, Increased Attack Speed]
+    helmet:
+      base: Warrior Greathelm
+      mods: [+Maximum Life, Armour, Elemental Resistances, Armour applies to Elemental Damage]
+    body:
+      base: Vaal Cuirass
+      mods: [+Maximum Life, Elemental Resistances, Armour, Armour applies to Elemental Damage]
+    gloves:
+      base: Moulded Mitts
+      mods: [Increased Attack Speed, Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, Adds Fire Damage to Attacks, +Maximum Life, Elemental Resistances]
+    boots:
+      base: Stone Greaves
+      mods: [Movement Speed, +Maximum Life, Elemental Resistances, Armour applies to Elemental Damage, Armour]
+    amulet:
+      base: Jade Amulet
+      mods: [+Level of all Melee Skills, Elemental Resistances, +Maximum Life, Chaos Resistance]
+    ring1:
+      base: Topaz Ring
+      mods: [Adds Lightning Damage to Attacks, Adds Physical Damage to Attacks, +Maximum Life]
+    ring2:
+      base: Topaz Ring
+      mods: [Adds Lightning Damage to Attacks, Adds Physical Damage to Attacks, +Maximum Life, Adds Cold Damage to Attacks, Adds Fire Damage to Attacks]
+    belt:
+      base: Rawhide Belt
+      mods: [+Maximum Life, Elemental Resistances, Chaos Resistance]
+  mapping:
+    weapon:
+      base: Wildwood Talisman
+      mods: [Adds Fire Damage, Increased Physical Damage]
+    helmet:
+      base: Guardian Greathelm
+      mods: [Armour, +Maximum Life, +Strength, Fire Resistance]
+    body:
+      unique: "Cloak of Flame"
+    gloves:
+      base: Knightly Mitts
+      mods: [Increased Attack Speed, Adds Physical Damage to Attacks, Mana Leech, Life Leech]
+    boots:
+      base: Bulwark Greaves
+      mods: [Movement Speed, +Maximum Life, Armour]
+    amulet:
+      base: Amber Amulet
+      mods: [+Level of all Melee Skills, Elemental Resistances]
+    ring1:
+      base: Topaz Ring
+      mods: [Elemental Resistances, Adds Physical Damage to Attacks, Adds Lightning Damage to Attacks, +Maximum Life]
+    ring2:
+      base: Topaz Ring
+      mods: [Elemental Resistances, Adds Physical Damage to Attacks, Adds Lightning Damage to Attacks, +Maximum Life]
+    belt:
+      unique: "Goregirdle"
+  endgame:
+    weapon:
+      base: Maji Talisman
+      mods: [Increased Physical Damage, Adds Physical Damage, Adds Cold Damage, Adds Lightning Damage, Adds Fire Damage, Critical Hit Chance]
+    helmet:
+      base: Warmonger Greathelm
+      mods: [Elemental Resistances, Armour applies to Elemental Damage, Armour, +Maximum Life, Chaos Resistance]
+    body:
+      unique: "Cloak of Flame"
+    gloves:
+      base: Knightly Mitts
+      mods: [Armour applies to Elemental Damage, +Maximum Life, Armour, Elemental Resistances]
+    boots:
+      base: Ornate Greaves
+      mods: [Movement Speed, Armour applies to Elemental Damage, Elemental Resistances, +Maximum Life, Armour]
+    amulet:
+      unique: "Defiance of Destiny"
+    ring1:
+      base: Amethyst Ring
+      mods: [+Maximum Life, Elemental Resistances, Mana Regeneration, Adds Cold Damage to Attacks, Adds Physical Damage to Attacks, Adds Lightning Damage to Attacks]
+    ring2:
+      unique: "Polcirkeln"
+    belt:
+      unique: "Goregirdle"
 passives:
   attribute: str
   path:

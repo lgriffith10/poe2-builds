@@ -50,6 +50,112 @@ skills:
     supports: [Prolonged Duration II, Daresso's Passion, Refraction II]
   - gem: "Purity of Ice"
     supports: [Vitality II, Cannibalism II, Herbalism II, Cool Headed]
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Act 1"
+        skills:
+          - gem: "Whirling Slash"
+            supports: [Rapid Attacks I, Rage I]
+          - gem: "Twister"
+            supports: [Retreat I, Prolonged Duration I]
+          - gem: "Frost Bomb"
+          - gem: "Barrage"
+            supports: [Rapid Casting I]
+          - gem: "Parry"
+          - gem: "Fangs of Frost"
+          - gem: "War Banner"
+            supports: [Prolonged Duration I]
+      - name: "Act 2"
+        skills:
+          - gem: "Whirling Slash"
+            supports: [Rapid Attacks I, Rage I]
+          - gem: "Twister"
+            supports: [Retreat I, Frost Nexus, Elemental Armament I]
+          - gem: "Frost Bomb"
+          - gem: "Barrage"
+            supports: [Rapid Casting I]
+          - gem: "Parry"
+          - gem: "Fangs of Frost"
+          - gem: "War Banner"
+            supports: [Prolonged Duration I]
+          - gem: "Freezing Mark"
+            supports: [Prolonged Duration I]
+          - gem: "Ice-Tipped Arrows"
+            supports: [Elemental Armament I, Magnified Area I]
+      - name: "Glacial Lance Swap"
+        skills:
+          - gem: "Glacial Lance"
+            supports: [Cold Attunement, Elemental Armament II, Rapid Attacks I]
+          - gem: "Mirage Archer"
+            supports: [Glacial Lance, Elemental Armament II, Rapid Attacks I]
+          - gem: "Mirage Deadeye"
+            supports: [Glacial Lance, Elemental Armament II, Rapid Attacks I]
+          - gem: "Barrage"
+            supports: [Rapid Casting I]
+          - gem: "War Banner"
+            supports: [Prolonged Duration I]
+          - gem: "Ice-Tipped Arrows"
+            supports: [Elemental Armament I, Magnified Area I]
+          - gem: "Pounce"
+            supports: [Freezing Mark, Charged Mark]
+          - gem: "Arctic Howl"
+            supports: [Raging Cry, Echoing Cry, Ice Bite II]
+          - gem: "Herald of Ice"
+            supports: [Elemental Armament II, Magnified Area I]
+          - gem: "Wind Dancer"
+      - name: "Act 3+"
+        skills:
+          - gem: "Glacial Lance"
+            supports: [Cold Attunement, Elemental Armament II, Rapid Attacks II]
+          - gem: "Mirage Archer"
+            supports: [Glacial Lance, Elemental Armament II, Rapid Attacks I]
+          - gem: "Mirage Deadeye"
+            supports: [Glacial Lance, Elemental Armament II, Rapid Attacks II]
+          - gem: "Barrage"
+            supports: [Rapid Casting I, Heightened Charges, Perpetual Charge]
+          - gem: "War Banner"
+            supports: [Prolonged Duration I]
+          - gem: "Pounce"
+            supports: [Freezing Mark, Charged Mark]
+          - gem: "Arctic Howl"
+            supports: [Raging Cry, Echoing Cry, Ice Bite II]
+          - gem: "Herald of Ice"
+            supports: [Elemental Armament II, Magnified Area I]
+          - gem: "Wind Dancer"
+          - gem: "Combat Frenzy"
+            supports: [Charge Profusion II]
+      - name: "Early Maps"
+        skills:
+          - gem: "Glacial Lance"
+            supports: [Elemental Armament II, Ice Bite II, Ricochet II, Deliberation, Rapid Attacks II]
+          - gem: "Mirage Archer"
+            supports: [Glacial Lance, Elemental Armament II, Deliberation, Cooldown Recovery II, Ricochet II]
+          - gem: "Mirage Deadeye"
+            supports: [Glacial Lance, Elemental Armament II, Cooldown Recovery II, Deliberation, Ricochet II]
+          - gem: "Called Shots"
+            supports: [Sniper's Mark, Charged Mark, Charge Profusion II, Mark of Siphoning II, Eternal Mark]
+          - gem: "Mana Remnants"
+            supports: [Harmonic Remnants II, Remnant Potency I, Khatal's Rejuvenation]
+          - gem: "Combat Frenzy"
+            supports: [Charge Profusion II]
+          - gem: "Ghost Dance"
+            supports: [Cooldown Recovery II]
+          - gem: "Charge Regulation"
+          - gem: "Barrage"
+            supports: [Perpetual Charge, Heightened Charges, Efficiency II, Cooldown Recovery II, Olroth's Conviction]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area II, Cold Attunement, Elemental Focus, Elemental Armament II]
+          - gem: "War Banner"
+            supports: [Prolonged Duration II, Daresso's Passion, Refraction II]
+          - gem: "Purity of Ice"
+            supports: [Vitality II, Cannibalism II, Herbalism II, Cool Headed]
+rotations:
+  - name: "Glacial Lance"
+    steps:
+      - gem: "War Banner"
+      - gem: "Barrage"
+      - gem: "Glacial Lance"
 gear:
   weapon:
     base: Akoyan Spear

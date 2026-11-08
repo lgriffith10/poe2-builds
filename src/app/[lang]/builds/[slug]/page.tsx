@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { TipScope } from "@/components/ref-tooltips";
 import { BuildTreeViewer } from "@/components/build-tree-viewer";
-import { ClassEmblem, GemIcon, ItemIcon, Pill, SectionTitle, TierBadge } from "@/components/ui";
+import { GearInventory } from "@/components/gear-inventory";
+import { LevelingTimeline, type TimelinePath } from "@/components/leveling-timeline";
+import { ClassEmblem, GemIcon, Pill, SectionTitle, TierBadge } from "@/components/ui";
+import { gemTip } from "@/lib/tips";
 import { getBuild, getBuilds } from "@/lib/builds";
-import { getBase, getClass, getGem, getUnique, tree } from "@/lib/data";
+import { getClass, getGem, tree } from "@/lib/data";
+import { inventoryStages } from "@/lib/inventory";
+import { ladderPopularity } from "@/lib/ladder";
+
+const pctText = (share: number, lang: string) =>
+  new Intl.NumberFormat(lang === "fr" ? "fr-FR" : "en-US", { style: "percent", maximumFractionDigits: share >= 0.1 ? 0 : 1 }).format(share);
 import { findNodeByName } from "@/lib/tree";
 import { createGraph } from "@/lib/tree";
-import { GEAR_SLOTS, TIER_CATEGORIES } from "@/lib/types";
+import { TIER_CATEGORIES } from "@/lib/types";
 import { fmt, getDictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
 
@@ -40,9 +49,26 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
     return tree.nodes[id];
   });
 
+  const inventory = inventoryStages(build, tr);
+  const popularity = ladderPopularity(build);
+
+  // Resolve leveling gems for the client and flag those absent from the previous step of the same path.
+  const leveling: TimelinePath[] = build.leveling.map((p) => ({
+    name: p.name,
+    steps: p.steps.map((step, i) => {
+      const before = new Set(i ? p.steps[i - 1].skills.flatMap((s) => [s.gem, ...s.supports]) : []);
+      const info = (name: string) => {
+        const { id, icon, color } = getGem(name)!;
+        return { id, name, icon, color, tip: gemTip(name)!, isNew: i > 0 && !before.has(name) };
+      };
+      return { name: step.name, skills: step.skills.map((s) => ({ gem: info(s.gem), supports: s.supports.map(info) })) };
+    }),
+  }));
+
   const sections = [
     { id: "overview", text: tr.common.overview },
     { id: "skills", text: tr.common.skills },
+    ...(leveling.length ? [{ id: "leveling", text: tr.build.leveling }] : []),
     { id: "gear", text: tr.common.gear },
     { id: "passives", text: tr.common.passiveTree },
     ...build.toc.filter((t) => t.id !== "overview").map((t) => ({ ...t, id: `guide-${t.id}` })),
@@ -54,9 +80,17 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
     <article>
       <header className="border-b border-line">
         <div className="mx-auto max-w-7xl px-4 py-8">
-          <Link href={path("/")} className="text-sm text-muted hover:text-gold">
-            {tr.build.allBuilds}
-          </Link>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <Link href={path("/")} className="text-sm text-muted hover:text-gold">
+              {tr.build.allBuilds}
+            </Link>
+            <Link
+              href={path(`/compare?a=${build.slug}`)}
+              className="rounded-lg border border-gold-soft px-3 py-1 text-sm text-gold hover:bg-gold/10"
+            >
+              {tr.build.compareWith} →
+            </Link>
+          </div>
           <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-center">
             <ClassEmblem name={build.className} size={72} />
             <div className="flex-1">
@@ -90,15 +124,33 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               {tr.build.sampleNotice}
             </p>
           )}
+          {popularity && (
+            <p className="mt-4 text-sm text-muted">
+              <span className="mr-2 rounded border border-line px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-faint">
+                {tr.ladderMeta.title}
+              </span>
+              {popularity.skill
+                ? fmt(tr.ladderMeta.popularity, {
+                    p: pctText(popularity.skill.share, lang),
+                    asc: build.ascendancy,
+                    skill: popularity.skill.name,
+                  })
+                : fmt(tr.ladderMeta.popularityAsc, { p: pctText(popularity.ascendancyShare, lang), asc: build.ascendancy })}{" "}
+              ·{" "}
+              <Link href={path("/meta")} className="text-gold hover:underline">
+                {tr.nav.meta} →
+              </Link>
+            </p>
+          )}
           {build.source && (
             <p className="mt-6 rounded-lg border border-line bg-surface px-4 py-3 text-sm text-muted">
-              {tr.build.basedOn}{" "}
+              {build.origin === "ladder" ? tr.build.drawnFrom : tr.build.basedOn}{" "}
               <a href={build.source.url} className="font-semibold text-gold underline-offset-2 hover:underline" rel="noopener">
                 {build.source.title}
               </a>{" "}
               {tr.build.by} {build.source.author}
               {build.source.updated && ` ${fmt(tr.build.updatedParen, { date: build.source.updated })}`}.{" "}
-              {tr.build.sourceNote}
+              {build.origin === "ladder" ? tr.build.ladderNote : tr.build.sourceNote}
             </p>
           )}
         </div>
@@ -117,7 +169,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
           </ul>
         </nav>
 
-        <div className="min-w-0 space-y-14">
+        <TipScope className="min-w-0 space-y-14">
           <section id="overview" className="scroll-mt-24">
             <SectionTitle>{tr.common.overview}</SectionTitle>
             <p className="text-lg leading-relaxed">{build.summary}</p>
@@ -137,7 +189,11 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                     <div className="flex items-center gap-3">
                       <GemIcon gem={gem} size={48} />
                       <div>
-                        <Link href={path(`/database/gems#${gem.id}`)} className="font-semibold hover:text-gold">
+                        <Link
+                          href={path(`/database/gems#${gem.id}`)}
+                          data-tip={gemTip(gem.name)}
+                          className="font-semibold hover:text-gold"
+                        >
                           {gem.name}
                         </Link>
                         {s.note && <p className="text-sm text-muted">{s.note}</p>}
@@ -151,7 +207,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                             <Link
                               key={name}
                               href={path(`/database/gems#${sup.id}`)}
-                              title={sup.text ?? undefined}
+                              data-tip={gemTip(sup.name)}
                               className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 py-1 pl-1 pr-3 text-sm hover:border-line-strong"
                             >
                               <GemIcon gem={sup} size={28} />
@@ -165,46 +221,77 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                 );
               })}
             </div>
+            {build.rotations.length > 0 && (
+              <div className="mt-6">
+                <h3 className="font-semibold">{tr.build.rotation}</h3>
+                <p className="text-sm text-muted">{tr.build.rotationSub}</p>
+                <div className="mt-3 space-y-3">
+                  {build.rotations.map((r) => (
+                    <div key={r.name} className="rounded-xl border border-line bg-surface p-4">
+                      <p className="text-sm font-semibold text-gold">{r.name}</p>
+                      <ol className="mt-3 flex flex-wrap items-center gap-x-1.5 gap-y-3">
+                        {r.steps.map((step, i) => {
+                          const gem = getGem(step.gem)!;
+                          return (
+                            <li key={i} className="flex items-center gap-1.5">
+                              {i > 0 && (
+                                <span aria-hidden className="text-faint">
+                                  →
+                                </span>
+                              )}
+                              <Link
+                                href={path(`/database/gems#${gem.id}`)}
+                                data-tip={gemTip(gem.name)}
+                                className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 py-1 pl-1 pr-2.5 text-sm hover:border-line-strong"
+                              >
+                                <GemIcon gem={gem} size={28} />
+                                {gem.name}
+                                {step.count && <span className="text-xs text-gold">×{step.count}</span>}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ol>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </section>
+
+          {leveling.length > 0 && (
+            <section id="leveling" className="scroll-mt-24">
+              <SectionTitle
+                sub={
+                  <>
+                    {tr.build.levelingSub}
+                    {build.levelingSource && (
+                      <>
+                        {" "}
+                        {tr.build.levelingFrom}{" "}
+                        <a href={build.levelingSource.url} rel="noopener" className="text-gold hover:underline">
+                          {build.levelingSource.title}
+                        </a>
+                        .
+                      </>
+                    )}
+                  </>
+                }
+              >
+                {tr.build.leveling}
+              </SectionTitle>
+              <LevelingTimeline paths={leveling} />
+            </section>
+          )}
 
           <section id="gear" className="scroll-mt-24">
             <SectionTitle sub={tr.build.gearSub}>{tr.common.gear}</SectionTitle>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {GEAR_SLOTS.filter((slot) => build.gear[slot]).map((slot) => {
-                const piece = build.gear[slot]!;
-                const unique = piece.unique ? getUnique(piece.unique) : undefined;
-                const base = piece.base ? getBase(piece.base) : undefined;
-                return (
-                  <div key={slot} className="flex gap-3 rounded-xl border border-line bg-surface p-3">
-                    <ItemIcon src={unique?.icon ?? base?.icon ?? null} alt={unique?.name ?? base?.name ?? ""} size={64} />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-xs uppercase tracking-wider text-faint">{tr.slots[slot]}</p>
-                      {unique ? (
-                        <details>
-                          <summary className="cursor-pointer font-semibold text-unique">{unique.name}</summary>
-                          <p className="text-xs text-muted">{unique.base}</p>
-                          <ul className="mt-1 space-y-0.5 text-sm text-[#8fb6f0]">
-                            {[...unique.implicits, ...unique.mods].map((m, i) => (
-                              <li key={i}>{m}</li>
-                            ))}
-                          </ul>
-                        </details>
-                      ) : (
-                        <>
-                          <p className="font-semibold text-[#e8d77a]">{fmt(tr.common.rareItem, { base: base?.name ?? tr.slots[slot] })}</p>
-                          <ul className="mt-1 space-y-0.5 text-sm text-muted">
-                            {piece.mods?.map((m) => (
-                              <li key={m}>• {m}</li>
-                            ))}
-                          </ul>
-                        </>
-                      )}
-                      {piece.note && <p className="mt-1 text-xs text-faint">{piece.note}</p>}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            <GearInventory
+              stages={inventory.stages}
+              initialStage={inventory.initial}
+              slotLabels={tr.slots}
+              hint={tr.build.inventoryHint}
+            />
           </section>
 
           <section id="passives" className="scroll-mt-24">
@@ -241,7 +328,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
           </section>
 
           <section className="prose-guide" dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
+        </TipScope>
       </div>
     </article>
   );

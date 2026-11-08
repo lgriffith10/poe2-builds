@@ -115,3 +115,181 @@ body {
   color: var(--color-muted);
   font-weight: 600;
 }
+.prose-guide blockquote {
+  margin: 1.25rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--color-gold-soft);
+  background: var(--color-surface);
+  border-radius: 0 8px 8px 0;
+  color: var(--color-muted);
+}
+.prose-guide blockquote p {
+  margin: 0.25rem 0;
+}
+.prose-guide a:not(.ref) {
+  color: var(--color-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-guide table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Game-style hover cards for [[Name]] references (components/ref-tooltips.tsx) */
+.poe-tip {
+  background: #080706;
+  border: 1px solid #5a4a32;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.7);
+  text-align: center;
+  line-height: 1.35;
+}
+.poe-tip-head {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid currentColor;
+}
+.poe-tip-head-gem {
+  color: #1ba29b;
+  background: linear-gradient(to bottom, rgb(27 162 155 / 0.22), rgb(27 162 155 / 0.06));
+}
+.poe-tip-head-unique {
+  color: #af6025;
+  background: linear-gradient(to bottom, rgb(175 96 37 / 0.28), rgb(175 96 37 / 0.08));
+}
+.poe-tip-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.poe-tip-body {
+  padding: 0.6rem 0.85rem 0.75rem;
+  font-size: 0.85rem;
+}
+.poe-tip-tags,
+.poe-tip-prop {
+  color: #7f7f7f;
+}
+.poe-tip-tags {
+  color: #a8a8a8;
+}
+.poe-tip-sep {
+  margin: 0.5rem auto;
+  height: 1px;
+  width: 85%;
+  border: 0;
+}
+.poe-tip-sep-gem {
+  background: linear-gradient(to right, transparent, #1ba29b, transparent);
+}
+.poe-tip-sep-unique {
+  background: linear-gradient(to right, transparent, #af6025, transparent);
+}
+.poe-tip-desc {
+  color: #c8c8c8;
+}
+.poe-tip-mod {
+  color: #8888ff;
+}
+.poe-tip-set {
+  margin-bottom: 0.15rem;
+  color: #1ba29b;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+/* Item illustrations in guides (```items blocks, src/lib/item-cards.ts) */
+.prose-guide .item-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+.prose-guide .item-cards.item-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+}
+.prose-guide .item-flow .item-card {
+  max-width: none;
+}
+.prose-guide .item-card {
+  flex: 1 1 13rem;
+  max-width: 19rem;
+  margin: 0;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 10px;
+  background: var(--color-surface);
+  overflow: hidden;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.prose-guide .item-step {
+  padding: 0.35rem 0.75rem;
+  background: var(--color-surface-2);
+  color: var(--color-gold);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.prose-guide .item-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--color-line);
+}
+.prose-guide .item-head img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.prose-guide .item-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+.prose-guide .item-base {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+.prose-guide .item-normal .item-name { color: var(--color-ink); }
+.prose-guide .item-magic .item-name { color: #8888ff; }
+.prose-guide .item-rare .item-name { color: #e8d77a; }
+.prose-guide .item-unique .item-name { color: var(--color-unique); }
+.prose-guide .item-mods {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  color: #8fb6f0;
+}
+.prose-guide .item-mods li { margin: 0.1rem 0; }
+.prose-guide .item-mods li.item-new {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+.prose-guide .item-mods li.item-new::before { content: "+ "; }
+.prose-guide .item-note {
+  margin: 0;
+  padding: 0.4rem 0.75rem 0.6rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+.prose-guide .item-good { border-color: rgb(52 211 153 / 0.5); }
+.prose-guide .item-bad { border-color: rgb(248 113 113 / 0.45); }
+@media (max-width: 640px) {
+  .prose-guide .item-card { max-width: none; }
+}
+/* Crafting simulator: the item tooltip pulses after each craft */
+@keyframes craftflash {
+  0% { box-shadow: 0 0 0 0 rgb(212 166 79 / 0.55); transform: scale(0.985); }
+  100% { box-shadow: 0 0 0 14px rgb(212 166 79 / 0); transform: scale(1); }
+}
+.prose-guide .item-mods li.item-unwanted {
+  color: #f87171;
+  text-decoration: line-through;
+  text-decoration-color: rgb(248 113 113 / 0.6);
+}

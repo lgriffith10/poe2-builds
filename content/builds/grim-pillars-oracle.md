@@ -43,6 +43,82 @@ skills:
   - gem: Purity of Fire
     supports: [Mysticism II, Clarity II, Vitality II]
     note: Aura
+leveling:
+  - name: "Plants Leveling"
+    steps:
+      - name: "Act1"
+        skills:
+          - gem: "Contagion"
+            supports: [Unleash]
+          - gem: "Volcano"
+            supports: [Controlled Destruction]
+          - gem: "Essence Drain"
+            supports: [Swift Affliction I, Zenith I]
+          - gem: "Frost Bomb"
+          - gem: "Bone Cage"
+            supports: [Spell Cascade, Controlled Destruction]
+          - gem: "Bonestorm"
+            supports: [Rapid Casting I, Burgeon I]
+          - gem: "Ravenous Swarm"
+            supports: [Corrosion]
+      - name: "Act2"
+        skills:
+          - gem: "Bone Cage"
+            supports: [Spell Cascade, Controlled Destruction, Lightning Attunement]
+          - gem: "Bonestorm"
+            supports: [Rapid Casting I, Burgeon I, Lightning Attunement]
+          - gem: "Thunderstorm"
+            supports: [Living Lightning, Magnified Area I]
+          - gem: "Ravenous Swarm"
+            supports: [Corrosion, Clarity I]
+      - name: "Act3"
+        skills:
+          - gem: "Entangle"
+            supports: [Accelerated Growth, Branching Fissures I, Controlled Destruction]
+          - gem: "Bonestorm"
+            supports: [Rapid Casting I, Burgeon I, Lightning Attunement]
+          - gem: "Thunderstorm"
+            supports: [Living Lightning, Magnified Area I]
+          - gem: "Ravenous Swarm"
+            supports: [Corrosion, Clarity I]
+          - gem: "Thrashing Vines"
+            supports: [Concentrated Area, Accelerated Growth, Rapid Casting I]
+      - name: "Endgame"
+        skills:
+          - gem: "Spell Totem"
+            supports: [Grim Pillars, Urgent Totems III, Efficiency II, Magnified Area II, Cold Mastery]
+          - gem: "Entangle"
+            supports: [Biting Frost I, Living Lightning II, Branching Fissures I, Rapid Casting II, Magnified Area II]
+          - gem: "Mana Tempest"
+            supports: [Advancing Storm, Efficiency II, Lightning Mastery]
+          - gem: "Elemental Weakness"
+            supports: [Efficiency II, Cursed Ground, Heightened Curse, Ritualistic Curse]
+          - gem: "Frost Bomb"
+            supports: [Spell Echo, Overabundance I, Potent Exposure, Efficiency II]
+          - gem: "Purity of Fire"
+            supports: [Vitality II, Mysticism II, Clarity II]
+rotations:
+  - name: "Bossing (Lvl 1-13)"
+    steps:
+      - gem: "Frost Bomb"
+      - gem: "Volcano"
+  - name: "Pack Clear (Lvl 1-13)"
+    steps:
+      - gem: "Contagion"
+      - gem: "Essence Drain"
+  - name: "Bossing (lvl14+)"
+    steps:
+      - gem: "Bonestorm"
+      - gem: "Thrashing Vines"
+      - gem: "Bonestorm"
+      - gem: "Thunderstorm"
+      - gem: "Bonestorm"
+  - name: "Pack Clear (Lvl 14+)"
+    steps:
+      - gem: "Bone Cage"
+      - gem: "Entangle"
+      - gem: "Thrashing Vines"
+      - gem: "Thunderstorm"
 gear:
   weapon:
     base: Attuned Wand
@@ -74,6 +150,128 @@ gear:
   belt:
     base: Utility Belt
     mods: [+Maximum Life, +Maximum Mana, +Strength, Elemental Resistances]
+gearStages:
+  campaign:
+    weapon:
+      unique: "Lifesprig"
+    offhand:
+      mods: [+Spirit]
+    helmet:
+      base: Mailed Crown
+      mods: [Fire Resistance, Lightning Resistance, +Maximum Life, +Maximum Mana]
+    body:
+      base: Bearskin Mantle
+      mods: [+Maximum Life, +Spirit]
+    gloves:
+      base: Signet Cuffs
+      mods: [Cold Resistance, Lightning Resistance, +Maximum Life, +Maximum Mana]
+    boots:
+      base: Pelt Leggings
+      mods: [Movement Speed]
+    amulet:
+      base: Amber Amulet
+      mods: [+Level of all Spell Skills]
+    ring1:
+      base: Pearl Ring
+      mods: [+Maximum Life, +Maximum Mana, Increased Cast Speed]
+    ring2:
+      base: Pearl Ring
+      mods: [+Maximum Life, +Maximum Mana, Increased Cast Speed]
+    belt:
+      base: Fine Belt
+      mods: [Fire Resistance, Lightning Resistance, +Maximum Life, +Maximum Mana]
+  mapping:
+    weapon:
+      base: Attuned Wand
+      mods: [Increased Spell Damage, +Level of all Spell Skills, Increased Cast Speed, Spell Critical Hit Chance, Gain Damage as Extra Lightning]
+    offhand:
+      base: Shrine Sceptre
+      mods: [+Spirit, +Maximum Mana]
+    helmet:
+      base: Cryptic Crown
+      mods: [Cold Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Maximum Mana]
+    body:
+      base: Corvus Mantle
+      mods: [Cold Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Spirit]
+    gloves:
+      base: Adherent Cuffs
+      mods: [Fire Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Maximum Mana]
+    boots:
+      base: Cryptic Leggings
+      mods: [Cold Resistance, Lightning Resistance, +Maximum Life, +Maximum Mana, Movement Speed]
+    amulet:
+      base: Solar Amulet
+      mods: [+Level of all Spell Skills, +Spirit]
+    ring1:
+      base: Pearl Ring
+      mods: [+Maximum Life, +Maximum Mana, Increased Cast Speed]
+    ring2:
+      base: Pearl Ring
+      mods: [+Maximum Life, +Maximum Mana, Increased Cast Speed]
+    belt:
+      base: Utility Belt
+      mods: [+Strength, Fire Resistance, Cold Resistance, +Maximum Life, +Maximum Mana]
+  endgame:
+    weapon:
+      base: Attuned Wand
+      mods: [Increased Spell Damage, +Level of all Cold Spell Skills, Increased Cast Speed, Spell Critical Hit Chance, Gain Damage as Extra Lightning]
+    offhand:
+      base: Shrine Sceptre
+      mods: [+Spirit, +Maximum Mana]
+    helmet:
+      base: Cryptic Crown
+      mods: [Cold Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Maximum Mana]
+    body:
+      base: Corvus Mantle
+      mods: [Cold Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Spirit]
+    gloves:
+      base: Adherent Cuffs
+      mods: [Fire Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Maximum Mana]
+    boots:
+      base: Cryptic Leggings
+      mods: [Cold Resistance, Lightning Resistance, +Maximum Life, +Maximum Mana, Movement Speed]
+    amulet:
+      base: Solar Amulet
+      mods: [+Level of all Spell Skills, +Spirit]
+    ring1:
+      base: Pearl Ring
+      mods: [+Maximum Life, +Maximum Mana, Increased Cast Speed]
+    ring2:
+      base: Pearl Ring
+      mods: [+Maximum Life, +Maximum Mana, Increased Cast Speed]
+    belt:
+      base: Utility Belt
+      mods: [+Strength, Fire Resistance, Cold Resistance, +Maximum Life, +Maximum Mana]
+  minmax:
+    weapon:
+      base: Attuned Wand
+      mods: [+Level of all Cold Spell Skills, Gain Damage as Extra Cold, Increased Elemental Damage]
+    offhand:
+      base: Shrine Sceptre
+      mods: [+Spirit, +Maximum Mana]
+    helmet:
+      base: Ancestral Tiara
+      mods: [Cold Resistance, Lightning Resistance, Energy Shield, +Maximum Life]
+    body:
+      base: Vile Robe
+      mods: [Fire Resistance, Cold Resistance, Lightning Resistance, Energy Shield, +Spirit]
+    gloves:
+      base: Vaal Gloves
+      mods: [Cold Resistance, Energy Shield, Adds Physical Damage to Attacks, Critical Damage Bonus]
+    boots:
+      base: Sekhema Sandals
+      mods: [Cold Resistance, Lightning Resistance, Energy Shield, Movement Speed]
+    amulet:
+      base: Stellar Amulet
+      mods: [Energy Shield, +Level of all Spell Skills, +Spirit]
+    ring1:
+      base: Gold Ring
+      mods: [Fire Resistance, Cold Resistance, +Maximum Mana, Increased Cast Speed]
+    ring2:
+      base: Gold Ring
+      mods: [Fire Resistance, Cold Resistance, +Maximum Mana, Increased Cast Speed]
+    belt:
+      unique: "Mageblood"
 passives:
   attribute: str
   path:

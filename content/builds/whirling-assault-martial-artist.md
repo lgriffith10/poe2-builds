@@ -59,6 +59,184 @@ skills:
   - gem: Ghost Dance
     supports: [Cooldown Recovery II, Clarity I]
     note: Defensive buff
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Level 2: Clearfell"
+        skills:
+          - gem: "Quarterstaff Strike"
+          - gem: "Glacial Cascade"
+          - gem: "Frost Bomb"
+      - name: "Level 2: Defeat Areagne"
+        skills:
+          - gem: "Quarterstaff Strike"
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area]
+          - gem: "Frost Bomb"
+      - name: "Level 3 to 5"
+        skills:
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Rage I]
+          - gem: "Frozen Locus"
+          - gem: "Frost Bomb"
+      - name: "Level 6 to 13"
+        skills:
+          - gem: "Pounce"
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Rage I]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite I]
+          - gem: "Frost Bomb"
+          - gem: "Herald of Ice"
+      - name: "Act 1"
+        skills:
+          - gem: "Pounce"
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Rage I]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite I, Elemental Armament I]
+          - gem: "Frost Bomb"
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I]
+      - name: "Level 22 (Storm Wave)"
+        skills:
+          - gem: "Pounce"
+            supports: [Freezing Mark]
+          - gem: "Storm Wave"
+            supports: [Rage I, Elemental Armament II]
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite I, Elemental Armament II]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Elemental Armament I]
+          - gem: "Wave of Frost"
+            supports: [Deep Freeze, Ice Bite I]
+      - name: "Act 2"
+        skills:
+          - gem: "Pounce"
+          - gem: "Storm Wave"
+            supports: [Rage I, Elemental Armament II, Innervate]
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite I, Elemental Armament II]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Elemental Armament I]
+          - gem: "Hand of Chayula"
+            supports: [Freezing Mark, Elemental Weakness]
+          - gem: "Wave of Frost"
+            supports: [Deep Freeze, Ice Bite I]
+      - name: "Act 3"
+        skills:
+          - gem: "Pounce"
+          - gem: "Storm Wave"
+            supports: [Rage I, Elemental Armament II, Branching Fissures I]
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite II, Elemental Armament II, Innervate]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Elemental Armament II]
+          - gem: "Herald of Thunder"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Hand of Chayula"
+            supports: [Freezing Mark, Elemental Weakness]
+          - gem: "Wave of Frost"
+            supports: [Deep Freeze, Ice Bite II]
+          - gem: "Hollow Focus"
+            supports: [Cooldown Recovery I, Concentrated Area, Close Combat I]
+      - name: "Act 4"
+        skills:
+          - gem: "Pounce"
+            supports: [Cooldown Recovery II]
+          - gem: "Storm Wave"
+            supports: [Rage II, Elemental Armament II, Branching Fissures I]
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Elemental Armament II, Elemental Focus]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite II, Elemental Armament II, Innervate]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Elemental Armament II]
+          - gem: "Herald of Thunder"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Hand of Chayula"
+            supports: [Freezing Mark, Elemental Weakness]
+          - gem: "Wave of Frost"
+            supports: [Deep Freeze, Ice Bite II]
+          - gem: "Hollow Focus"
+            supports: [Cooldown Recovery II, Concentrated Area, Close Combat I]
+      - name: "Act 5 / End of Campaign"
+        skills:
+          - gem: "Pounce"
+            supports: [Cooldown Recovery II]
+          - gem: "Storm Wave"
+            supports: [Rage II, Elemental Armament II, Branching Fissures I]
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Elemental Armament II, Elemental Focus]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite II, Elemental Armament II, Innervate]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area II, Elemental Armament II, Elemental Focus]
+          - gem: "Herald of Thunder"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Hand of Chayula"
+            supports: [Freezing Mark, Elemental Weakness]
+          - gem: "Wave of Frost"
+            supports: [Deep Freeze, Ice Bite II]
+          - gem: "Hollow Focus"
+            supports: [Cooldown Recovery II, Concentrated Area, Heft]
+      - name: "Early Maps"
+        skills:
+          - gem: "Hollow Focus"
+            supports: [Cooldown Recovery II, Overabundance II, Prolonged Duration II]
+          - gem: "Rend"
+            supports: [Prolonged Duration II, Perpetual Charge, Rapid Attacks III]
+          - gem: "Whirling Assault"
+            supports: [Magnified Area II, Heavy Swing, Heft, Pinpoint Critical]
+          - gem: "Tempest Bell"
+            supports: [Ancestral Call II, Overabundance II, Heavy Swing]
+          - gem: "Mantra of Destruction"
+            supports: [Chaos Mastery, Prolonged Duration II]
+          - gem: "Charged Staff"
+            supports: [Prolonged Duration II, Ice Bite II, Embitter]
+          - gem: "Hand of Chayula"
+            supports: [Freezing Mark, Elemental Weakness, Mark of Siphoning II]
+          - gem: "Devour"
+            supports: [Charge Profusion II, Blazing Critical, Thrill of the Kill II]
+          - gem: "Herald of Ash"
+            supports: [Magnified Area II, Swift Affliction II, Compressed Duration II]
+          - gem: "Wind Dancer"
+            supports: [Magnified Area II, Stun II]
+          - gem: "Ghost Dance"
+            supports: [Cooldown Recovery II, Clarity I]
+rotations:
+  - name: "Clear"
+    steps:
+      - gem: "Whirling Assault"
+      - gem: "Mantra of Destruction"
+      - gem: "Devour"
+      - gem: "Charged Staff"
+  - name: "Single Target"
+    steps:
+      - gem: "Devour"
+      - gem: "Rend"
+      - gem: "Charged Staff"
+      - gem: "Hand of Chayula"
+      - gem: "Whirling Assault"
+      - gem: "Mantra of Destruction"
+      - gem: "Tempest Bell"
+      - gem: "Whirling Assault"
 gear:
   weapon:
     base: Sinister Quarterstaff
@@ -87,6 +265,112 @@ gear:
   belt:
     base: Ornate Belt
     mods: [+Maximum Life, +Strength, Elemental Resistances]
+gearStages:
+  campaign:
+    helmet:
+      base: Pariah Mask
+      mods: [Evasion and Energy Shield, +Maximum Life, Cold Resistance]
+    body:
+      base: Oiled Jacket
+      mods: [Evasion Rating, Energy Shield, Evasion and Energy Shield, Lightning Resistance]
+    gloves:
+      base: Buckled Wraps
+      mods: [Adds Cold Damage to Attacks, +Level of all Melee Skills]
+    boots:
+      base: Wayfarer Shoes
+      mods: [Movement Speed, Cold Resistance, Lightning Resistance]
+    amulet:
+      base: Amber Amulet
+      mods: [+Level of all Melee Skills]
+    ring1:
+      base: Prismatic Ring
+      mods: [Adds Lightning Damage to Attacks, Cold Resistance]
+    ring2:
+      base: Prismatic Ring
+      mods: [Adds Cold Damage to Attacks, Lightning Resistance]
+    belt:
+      base: Plate Belt
+      mods: [+Maximum Life, +Strength, Fire Resistance]
+  mapping:
+    weapon:
+      base: Sinister Quarterstaff
+      mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance]
+    helmet:
+      base: Twilight Tiara
+      mods: [Energy Shield, +Maximum Life, Critical Hit Chance, Fire Resistance]
+    body:
+      base: Sleek Jacket
+      mods: [Evasion Rating, Energy Shield, Evasion and Energy Shield, +Intelligence, Fire Resistance, Cold Resistance]
+    gloves:
+      base: Baroque Gloves
+      mods: [Energy Shield, Adds Physical Damage to Attacks, Critical Damage Bonus, Increased Attack Speed]
+    boots:
+      base: Silverbuckled Shoes
+      mods: [Movement Speed, Evasion and Energy Shield, +Dexterity, Cold Resistance]
+    amulet:
+      base: Stellar Amulet
+      mods: [Energy Shield, +Level of all Melee Skills, Critical Hit Chance, Grants a Passive Skill]
+    ring1:
+      base: Topaz Ring
+      mods: [Adds Physical Damage to Attacks, Elemental Resistances, Cold Resistance, Lightning Resistance]
+    ring2:
+      base: Sapphire Ring
+      mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, +All Attributes, Fire Resistance]
+    belt:
+      base: Ornate Belt
+      mods: [+Maximum Life, +Strength, Fire Resistance, Lightning Resistance]
+  endgame:
+    weapon:
+      base: Sinister Quarterstaff
+      mods: [Increased Physical Damage, Adds Physical Damage, Adds Cold Damage, Critical Hit Chance, +Level of all Melee Skills]
+    helmet:
+      base: Ancestral Tiara
+      mods: [Energy Shield, +Maximum Mana, Critical Hit Chance, Cold Resistance]
+    body:
+      unique: "Forgotten Warden"
+    gloves:
+      base: Ornate Mitts
+      mods: [Evasion and Energy Shield, Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, +Level of all Melee Skills, Critical Damage Bonus, Increased Attack Speed]
+    boots:
+      base: Drakeskin Boots
+      mods: [Movement Speed, Evasion Rating, Fire Resistance, Cold Resistance, Deflection]
+    amulet:
+      base: Gold Amulet
+      mods: [Energy Shield, +Level of all Melee Skills, Critical Hit Chance, Grants a Passive Skill]
+    ring1:
+      base: Gold Ring
+      mods: [Adds Physical Damage to Attacks, Adds Lightning Damage to Attacks, Elemental Resistances, Lightning Resistance]
+    ring2:
+      base: Gold Ring
+      mods: [Adds Physical Damage to Attacks, Adds Lightning Damage to Attacks, Elemental Resistances, Lightning Resistance]
+    belt:
+      unique: "Headhunter"
+  minmax:
+    weapon:
+      base: Razor Quarterstaff
+      mods: [Increased Physical Damage, Adds Physical Damage, Accuracy Rating, Critical Hit Chance, Increased Attack Speed, +Level of all Melee Skills]
+    helmet:
+      base: Ancestral Tiara
+      mods: [Energy Shield, +Maximum Mana, Critical Hit Chance]
+    body:
+      unique: "Forgotten Warden"
+    gloves:
+      base: Secured Wraps
+      mods: [Evasion and Energy Shield, Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, +Level of all Melee Skills, Critical Damage Bonus, Increased Attack Speed]
+    boots:
+      base: Drakeskin Boots
+      mods: [Movement Speed, Evasion Rating, Fire Resistance, Cold Resistance, Deflection]
+    amulet:
+      base: Gold Amulet
+      mods: [Energy Shield, +Level of all Melee Skills, Critical Hit Chance, Grants a Passive Skill]
+    ring1:
+      base: Gold Ring
+      mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, Elemental Resistances, Cold Resistance]
+    ring2:
+      base: Prismatic Ring
+      mods: [Adds Physical Damage to Attacks, Adds Fire Damage to Attacks, Elemental Resistances, Fire Resistance]
+    belt:
+      unique: "Headhunter"
 passives:
   attribute: dex
   path:

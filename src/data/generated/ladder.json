@@ -1,0 +1,3081 @@
+{
+ "source": "poe.ninja",
+ "league": "Forbidden Rites",
+ "snapshot": "2248-20261107-34366",
+ "fetchedAt": "2026-11-07",
+ "total": 124121,
+ "skills": [
+  {
+   "name": "Herald of Ice",
+   "count": 22209
+  },
+  {
+   "name": "Frost Bomb",
+   "count": 21121
+  },
+  {
+   "name": "Barrage",
+   "count": 19804
+  },
+  {
+   "name": "Spark",
+   "count": 19557
+  },
+  {
+   "name": "Comet",
+   "count": 18049
+  },
+  {
+   "name": "Elemental Weakness",
+   "count": 16549
+  },
+  {
+   "name": "Whirling Slash",
+   "count": 16089
+  },
+  {
+   "name": "Herald of Thunder",
+   "count": 15626
+  },
+  {
+   "name": "Arc",
+   "count": 13800
+  },
+  {
+   "name": "Wolf Pack",
+   "count": 13645
+  },
+  {
+   "name": "Twister",
+   "count": 13598
+  },
+  {
+   "name": "Frost Wall",
+   "count": 12992
+  },
+  {
+   "name": "Oil Grenade",
+   "count": 10368
+  },
+  {
+   "name": "Sigil of Power",
+   "count": 10121
+  },
+  {
+   "name": "Flameblast",
+   "count": 9980
+  },
+  {
+   "name": "Freezing Mark",
+   "count": 9722
+  },
+  {
+   "name": "Pounce",
+   "count": 9707
+  },
+  {
+   "name": "Powered by Verisium",
+   "count": 9614
+  },
+  {
+   "name": "Mana Tempest",
+   "count": 9449
+  },
+  {
+   "name": "Entangle",
+   "count": 9123
+  },
+  {
+   "name": "Ice Shot",
+   "count": 8822
+  },
+  {
+   "name": "Hollow Focus",
+   "count": 8726
+  },
+  {
+   "name": "Tornado Shot",
+   "count": 8276
+  },
+  {
+   "name": "Ice Nova",
+   "count": 8139
+  },
+  {
+   "name": "Wild Protector",
+   "count": 8048
+  }
+ ],
+ "uniques": [
+  {
+   "name": "Lavianga's Spirits",
+   "count": 66287
+  },
+  {
+   "name": "Heart of the Well",
+   "count": 65851
+  },
+  {
+   "name": "Nascent Hope",
+   "count": 64566
+  },
+  {
+   "name": "Rite of Passage",
+   "count": 64004
+  },
+  {
+   "name": "Mageblood",
+   "count": 48151
+  },
+  {
+   "name": "The Fall of the Axe",
+   "count": 37476
+  },
+  {
+   "name": "Kalandra's Touch",
+   "count": 36167
+  },
+  {
+   "name": "From Nothing",
+   "count": 35527
+  },
+  {
+   "name": "Beira's Anguish",
+   "count": 31024
+  },
+  {
+   "name": "Morior Invictus",
+   "count": 28816
+  },
+  {
+   "name": "Megalomaniac",
+   "count": 28667
+  },
+  {
+   "name": "Headhunter",
+   "count": 24848
+  },
+  {
+   "name": "Prism of Belief",
+   "count": 19820
+  },
+  {
+   "name": "Split Personality",
+   "count": 19359
+  },
+  {
+   "name": "Sacred Flame",
+   "count": 14319
+  },
+  {
+   "name": "For Utopia",
+   "count": 13827
+  },
+  {
+   "name": "The Taming",
+   "count": 12850
+  },
+  {
+   "name": "Alpha's Howl",
+   "count": 12056
+  },
+  {
+   "name": "Runeseeker's Call",
+   "count": 11236
+  },
+  {
+   "name": "Sanguis Heroum",
+   "count": 11034
+  },
+  {
+   "name": "Arakaali's Gift",
+   "count": 10328
+  },
+  {
+   "name": "Voices",
+   "count": 9491
+  },
+  {
+   "name": "Olroth's Resolve",
+   "count": 8752
+  },
+  {
+   "name": "The Ordained",
+   "count": 8179
+  },
+  {
+   "name": "Against the Darkness",
+   "count": 8169
+  }
+ ],
+ "keystones": [
+  {
+   "name": "Essence of Virtue",
+   "count": 40542
+  },
+  {
+   "name": "Advanced Thaumaturgy",
+   "count": 40266
+  },
+  {
+   "name": "Gem Studded",
+   "count": 36084
+  },
+  {
+   "name": "Implanted Gems",
+   "count": 31550
+  },
+  {
+   "name": "Chaos Inoculation",
+   "count": 27232
+  },
+  {
+   "name": "Mind Over Matter",
+   "count": 20487
+  },
+  {
+   "name": "Neurological Implants",
+   "count": 20043
+  },
+  {
+   "name": "Pain Attunement",
+   "count": 16926
+  },
+  {
+   "name": "Dance with Death",
+   "count": 16134
+  },
+  {
+   "name": "Eldritch Battery",
+   "count": 15020
+  },
+  {
+   "name": "Way of the Stonefist",
+   "count": 12858
+  },
+  {
+   "name": "Ancestral Bond",
+   "count": 12636
+  },
+  {
+   "name": "Runic Meridians",
+   "count": 11309
+  },
+  {
+   "name": "Whispers of Doom",
+   "count": 9696
+  },
+  {
+   "name": "The Unseen Path",
+   "count": 8980
+  }
+ ],
+ "ascendancies": [
+  {
+   "name": "Gemling Legionnaire",
+   "count": 40563,
+   "skills": [
+    {
+     "name": "Whirling Slash",
+     "count": 12031
+    },
+    {
+     "name": "Barrage",
+     "count": 10761
+    },
+    {
+     "name": "Oil Grenade",
+     "count": 9958
+    },
+    {
+     "name": "Twister",
+     "count": 9938
+    },
+    {
+     "name": "Flameblast",
+     "count": 9772
+    },
+    {
+     "name": "Frost Bomb",
+     "count": 9376
+    },
+    {
+     "name": "Elemental Weakness",
+     "count": 8530
+    },
+    {
+     "name": "Frost Wall",
+     "count": 8085
+    },
+    {
+     "name": "Arc",
+     "count": 7583
+    },
+    {
+     "name": "Tornado",
+     "count": 7579
+    },
+    {
+     "name": "Herald of Ice",
+     "count": 7445
+    },
+    {
+     "name": "Herald of Thunder",
+     "count": 6914
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Lavianga's Spirits",
+     "count": 27449
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 25435
+    },
+    {
+     "name": "Heart of the Well",
+     "count": 23609
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 22832
+    },
+    {
+     "name": "Mageblood",
+     "count": 19618
+    },
+    {
+     "name": "Split Personality",
+     "count": 16742
+    },
+    {
+     "name": "Morior Invictus",
+     "count": 16356
+    },
+    {
+     "name": "From Nothing",
+     "count": 13896
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 13196
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 12515
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Essence of Virtue",
+     "count": 40542
+    },
+    {
+     "name": "Advanced Thaumaturgy",
+     "count": 40266
+    },
+    {
+     "name": "Gem Studded",
+     "count": 36084
+    },
+    {
+     "name": "Implanted Gems",
+     "count": 31550
+    },
+    {
+     "name": "Neurological Implants",
+     "count": 20043
+    },
+    {
+     "name": "Dance with Death",
+     "count": 11416
+    }
+   ]
+  },
+  {
+   "name": "Martial Artist",
+   "count": 13038,
+   "skills": [
+    {
+     "name": "Hollow Focus",
+     "count": 8712
+    },
+    {
+     "name": "Hollow Form",
+     "count": 6751
+    },
+    {
+     "name": "Rend",
+     "count": 6057
+    },
+    {
+     "name": "Pounce",
+     "count": 4794
+    },
+    {
+     "name": "Charged Staff",
+     "count": 4768
+    },
+    {
+     "name": "Herald of Ice",
+     "count": 3840
+    },
+    {
+     "name": "Herald of Thunder",
+     "count": 3544
+    },
+    {
+     "name": "Devour",
+     "count": 3408
+    },
+    {
+     "name": "Tempest Bell",
+     "count": 3236
+    },
+    {
+     "name": "Whirling Assault",
+     "count": 3128
+    },
+    {
+     "name": "Shattering Palm",
+     "count": 3099
+    },
+    {
+     "name": "Falling Thunder",
+     "count": 2909
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 8618
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 7857
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 7189
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 6266
+    },
+    {
+     "name": "Lochtonial Caress",
+     "count": 6253
+    },
+    {
+     "name": "Amor Mandragora",
+     "count": 5534
+    },
+    {
+     "name": "Mageblood",
+     "count": 5016
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 3950
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 3371
+    },
+    {
+     "name": "Morior Invictus",
+     "count": 3326
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Way of the Stonefist",
+     "count": 12858
+    },
+    {
+     "name": "Runic Meridians",
+     "count": 11309
+    },
+    {
+     "name": "Hollow Focus Technique",
+     "count": 8844
+    },
+    {
+     "name": "Hollow Form Technique",
+     "count": 6814
+    },
+    {
+     "name": "Chaos Inoculation",
+     "count": 6520
+    },
+    {
+     "name": "Martial Adept",
+     "count": 3551
+    }
+   ]
+  },
+  {
+   "name": "Oracle",
+   "count": 9047,
+   "skills": [
+    {
+     "name": "Entangle",
+     "count": 5290
+    },
+    {
+     "name": "Grim Pillars",
+     "count": 4105
+    },
+    {
+     "name": "Mana Tempest",
+     "count": 2515
+    },
+    {
+     "name": "Spark",
+     "count": 2332
+    },
+    {
+     "name": "Frost Bomb",
+     "count": 2058
+    },
+    {
+     "name": "Elemental Weakness",
+     "count": 2049
+    },
+    {
+     "name": "Thunderstorm",
+     "count": 1769
+    },
+    {
+     "name": "Comet",
+     "count": 1758
+    },
+    {
+     "name": "Thrashing Vines",
+     "count": 1706
+    },
+    {
+     "name": "Sigil of Power",
+     "count": 1439
+    },
+    {
+     "name": "Bitter Dead",
+     "count": 782
+    },
+    {
+     "name": "Orb of Storms",
+     "count": 743
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Nascent Hope",
+     "count": 5240
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 4706
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 4440
+    },
+    {
+     "name": "Heart of the Well",
+     "count": 3790
+    },
+    {
+     "name": "Mageblood",
+     "count": 3415
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 3339
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 3279
+    },
+    {
+     "name": "Headhunter",
+     "count": 2024
+    },
+    {
+     "name": "Runeseeker's Call",
+     "count": 1725
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 1650
+    }
+   ],
+   "keystones": [
+    {
+     "name": "The Unseen Path",
+     "count": 8980
+    },
+    {
+     "name": "The Lesser Harm",
+     "count": 8770
+    },
+    {
+     "name": "Forced Outcome",
+     "count": 8055
+    },
+    {
+     "name": "Entwined Realities",
+     "count": 5535
+    },
+    {
+     "name": "Ancestral Bond",
+     "count": 5351
+    },
+    {
+     "name": "Unnamed Heartwood",
+     "count": 3480
+    }
+   ]
+  },
+  {
+   "name": "Disciple of Varashta",
+   "count": 8957,
+   "skills": [
+    {
+     "name": "Kelari's Brutality",
+     "count": 7701
+    },
+    {
+     "name": "Kelari, the Tainted Sands",
+     "count": 7701
+    },
+    {
+     "name": "Kelari's Deception",
+     "count": 7584
+    },
+    {
+     "name": "Navira's Embrace",
+     "count": 5603
+    },
+    {
+     "name": "Navira, the Last Mirage",
+     "count": 5603
+    },
+    {
+     "name": "Navira's Fracturing",
+     "count": 5122
+    },
+    {
+     "name": "Wolf Pack",
+     "count": 5104
+    },
+    {
+     "name": "Ice Nova",
+     "count": 3618
+    },
+    {
+     "name": "Powered by Verisium",
+     "count": 2973
+    },
+    {
+     "name": "Ruzhan's Brand",
+     "count": 2484
+    },
+    {
+     "name": "Ruzhan, the Blazing Sword",
+     "count": 2484
+    },
+    {
+     "name": "Pain Offering",
+     "count": 2109
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Nascent Hope",
+     "count": 4943
+    },
+    {
+     "name": "From Nothing",
+     "count": 3741
+    },
+    {
+     "name": "Evergrasping Ring",
+     "count": 3632
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 3622
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 3369
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 2959
+    },
+    {
+     "name": "Mageblood",
+     "count": 2792
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 2062
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 1681
+    },
+    {
+     "name": "Heart of the Well",
+     "count": 1392
+    }
+   ],
+   "keystones": [
+    {
+     "name": "The Fourth Teaching",
+     "count": 8351
+    },
+    {
+     "name": "Barya of Kelari",
+     "count": 7656
+    },
+    {
+     "name": "Kelari's Deception",
+     "count": 7619
+    },
+    {
+     "name": "Chaos Inoculation",
+     "count": 7303
+    },
+    {
+     "name": "Barya of Navira",
+     "count": 5545
+    },
+    {
+     "name": "Sacred Rituals",
+     "count": 5225
+    }
+   ]
+  },
+  {
+   "name": "Spirit Walker",
+   "count": 8477,
+   "skills": [
+    {
+     "name": "Wild Protector",
+     "count": 7979
+    },
+    {
+     "name": "Azmerian Wolf",
+     "count": 5096
+    },
+    {
+     "name": "Wolf Pack",
+     "count": 4923
+    },
+    {
+     "name": "Companion: Zekoa, the Headcrusher",
+     "count": 4440
+    },
+    {
+     "name": "Sniper's Mark",
+     "count": 2303
+    },
+    {
+     "name": "Twister",
+     "count": 2169
+    },
+    {
+     "name": "Whirling Slash",
+     "count": 2146
+    },
+    {
+     "name": "Barrage",
+     "count": 2076
+    },
+    {
+     "name": "Companion: Diretusk Boar",
+     "count": 2037
+    },
+    {
+     "name": "Vivid Stampede",
+     "count": 2034
+    },
+    {
+     "name": "Companion: Quadrilla",
+     "count": 1488
+    },
+    {
+     "name": "Pain Offering",
+     "count": 1332
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Sylvan's Effigy",
+     "count": 5351
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 3838
+    },
+    {
+     "name": "Forgotten Warden",
+     "count": 3824
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 3664
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 3417
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 3209
+    },
+    {
+     "name": "From Nothing",
+     "count": 3014
+    },
+    {
+     "name": "Mageblood",
+     "count": 2644
+    },
+    {
+     "name": "Chober Chaber",
+     "count": 2475
+    },
+    {
+     "name": "Heart of the Well",
+     "count": 2090
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Wild Protector",
+     "count": 8313
+    },
+    {
+     "name": "The Natural Order",
+     "count": 6126
+    },
+    {
+     "name": "Trusted Kinship",
+     "count": 6044
+    },
+    {
+     "name": "The Catha's Balance",
+     "count": 5941
+    },
+    {
+     "name": "Idolatry",
+     "count": 5163
+    },
+    {
+     "name": "Giant's Blood",
+     "count": 3040
+    }
+   ]
+  },
+  {
+   "name": "Deadeye",
+   "count": 7423,
+   "skills": [
+    {
+     "name": "Ice Shot",
+     "count": 6375
+    },
+    {
+     "name": "Herald of Ice",
+     "count": 6332
+    },
+    {
+     "name": "Tornado Shot",
+     "count": 5815
+    },
+    {
+     "name": "Freezing Mark",
+     "count": 5246
+    },
+    {
+     "name": "Barrage",
+     "count": 4847
+    },
+    {
+     "name": "Snipe",
+     "count": 4693
+    },
+    {
+     "name": "Ice-Tipped Arrows",
+     "count": 2483
+    },
+    {
+     "name": "Herald of Thunder",
+     "count": 1116
+    },
+    {
+     "name": "Called Shots",
+     "count": 956
+    },
+    {
+     "name": "Bow Shot",
+     "count": 928
+    },
+    {
+     "name": "Lightning Arrow",
+     "count": 394
+    },
+    {
+     "name": "Lightning Rod",
+     "count": 376
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 5258
+    },
+    {
+     "name": "Cadiro's Gambit",
+     "count": 4977
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 4499
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 4248
+    },
+    {
+     "name": "Headhunter",
+     "count": 3415
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 3354
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 3196
+    },
+    {
+     "name": "Against the Darkness",
+     "count": 2354
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 1869
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 1527
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Projectile Proximity Specialisation",
+     "count": 6896
+    },
+    {
+     "name": "Gathering Winds",
+     "count": 6785
+    },
+    {
+     "name": "Endless Munitions",
+     "count": 6675
+    },
+    {
+     "name": "Mirage Deadeye",
+     "count": 6378
+    },
+    {
+     "name": "Point Blank",
+     "count": 6326
+    },
+    {
+     "name": "Called Shots",
+     "count": 938
+    }
+   ]
+  },
+  {
+   "name": "Infernalist",
+   "count": 7018,
+   "skills": [
+    {
+     "name": "Comet",
+     "count": 5102
+    },
+    {
+     "name": "Spark",
+     "count": 4671
+    },
+    {
+     "name": "Powered by Verisium",
+     "count": 2912
+    },
+    {
+     "name": "Living Bomb",
+     "count": 2630
+    },
+    {
+     "name": "Frost Bomb",
+     "count": 2392
+    },
+    {
+     "name": "Arc",
+     "count": 2349
+    },
+    {
+     "name": "Ice Nova",
+     "count": 1903
+    },
+    {
+     "name": "Summon Infernal Hound",
+     "count": 1452
+    },
+    {
+     "name": "Elemental Weakness",
+     "count": 1191
+    },
+    {
+     "name": "Ball Lightning",
+     "count": 1130
+    },
+    {
+     "name": "Sigil of Power",
+     "count": 1130
+    },
+    {
+     "name": "Lightning Warp",
+     "count": 1121
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 4700
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 4593
+    },
+    {
+     "name": "The Brass Dome",
+     "count": 4235
+    },
+    {
+     "name": "Alpha's Howl",
+     "count": 4176
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 3674
+    },
+    {
+     "name": "From Nothing",
+     "count": 3387
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 3322
+    },
+    {
+     "name": "Runeseeker's Call",
+     "count": 3033
+    },
+    {
+     "name": "Svalinn",
+     "count": 3017
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 3001
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Grinning Immolation",
+     "count": 5736
+    },
+    {
+     "name": "Pyromantic Pact",
+     "count": 5445
+    },
+    {
+     "name": "Bringer of Flame",
+     "count": 5313
+    },
+    {
+     "name": "Altered Flesh",
+     "count": 3763
+    },
+    {
+     "name": "Chaos Inoculation",
+     "count": 3751
+    },
+    {
+     "name": "Loyal Hellhound",
+     "count": 3364
+    }
+   ]
+  },
+  {
+   "name": "Stormweaver",
+   "count": 4287,
+   "skills": [
+    {
+     "name": "Spark",
+     "count": 3813
+    },
+    {
+     "name": "Comet",
+     "count": 3713
+    },
+    {
+     "name": "Frost Bomb",
+     "count": 3594
+    },
+    {
+     "name": "Elemental Storm",
+     "count": 2306
+    },
+    {
+     "name": "Arc",
+     "count": 2224
+    },
+    {
+     "name": "Sigil of Power",
+     "count": 1725
+    },
+    {
+     "name": "Pinnacle of Power",
+     "count": 1692
+    },
+    {
+     "name": "Orb of Storms",
+     "count": 1648
+    },
+    {
+     "name": "Firestorm",
+     "count": 1389
+    },
+    {
+     "name": "Mana Tempest",
+     "count": 1381
+    },
+    {
+     "name": "Elemental Weakness",
+     "count": 1366
+    },
+    {
+     "name": "Living Bomb",
+     "count": 1131
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 2704
+    },
+    {
+     "name": "Maligaro's Virtuosity",
+     "count": 2635
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 2343
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 2216
+    },
+    {
+     "name": "Adonia's Ego",
+     "count": 2018
+    },
+    {
+     "name": "Mageblood",
+     "count": 1801
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 1768
+    },
+    {
+     "name": "From Nothing",
+     "count": 1763
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 1737
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 1652
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Storm's Recollection",
+     "count": 3663
+    },
+    {
+     "name": "Refracted Infusion",
+     "count": 3251
+    },
+    {
+     "name": "Constant Gale",
+     "count": 2407
+    },
+    {
+     "name": "Tempest Caller",
+     "count": 2262
+    },
+    {
+     "name": "Strike Twice",
+     "count": 2087
+    },
+    {
+     "name": "Chaos Inoculation",
+     "count": 1595
+    }
+   ]
+  },
+  {
+   "name": "Titan",
+   "count": 3374,
+   "skills": [
+    {
+     "name": "Infernal Cry",
+     "count": 979
+    },
+    {
+     "name": "Shield Wall",
+     "count": 765
+    },
+    {
+     "name": "Earthshatter",
+     "count": 754
+    },
+    {
+     "name": "Mace Strike",
+     "count": 659
+    },
+    {
+     "name": "Boneshatter",
+     "count": 562
+    },
+    {
+     "name": "His Scattering Calamity",
+     "count": 540
+    },
+    {
+     "name": "Resonating Shield",
+     "count": 531
+    },
+    {
+     "name": "Leap Slam",
+     "count": 492
+    },
+    {
+     "name": "Herald of Ice",
+     "count": 489
+    },
+    {
+     "name": "Herald of Blood",
+     "count": 462
+    },
+    {
+     "name": "Arc",
+     "count": 403
+    },
+    {
+     "name": "Forge Hammer",
+     "count": 385
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 2166
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 1420
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 1334
+    },
+    {
+     "name": "Constricting Command",
+     "count": 1277
+    },
+    {
+     "name": "Mageblood",
+     "count": 1139
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 1131
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 1100
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 1080
+    },
+    {
+     "name": "From Nothing",
+     "count": 951
+    },
+    {
+     "name": "Morior Invictus",
+     "count": 875
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Colossal Capacity",
+     "count": 3230
+    },
+    {
+     "name": "Hulking Form",
+     "count": 3187
+    },
+    {
+     "name": "Mysterious Lineage",
+     "count": 1948
+    },
+    {
+     "name": "Stone Skin",
+     "count": 1337
+    },
+    {
+     "name": "Earthbreaker",
+     "count": 1143
+    },
+    {
+     "name": "Crushing Impacts",
+     "count": 1002
+    }
+   ]
+  },
+  {
+   "name": "Blood Mage",
+   "count": 3290,
+   "skills": [
+    {
+     "name": "Sigil of Power",
+     "count": 1190
+    },
+    {
+     "name": "Spark",
+     "count": 1081
+    },
+    {
+     "name": "Elemental Weakness",
+     "count": 1016
+    },
+    {
+     "name": "Dark Consequences",
+     "count": 1013
+    },
+    {
+     "name": "Comet",
+     "count": 941
+    },
+    {
+     "name": "Doom Blast",
+     "count": 868
+    },
+    {
+     "name": "Orb of Storms",
+     "count": 675
+    },
+    {
+     "name": "Herald of Blood",
+     "count": 557
+    },
+    {
+     "name": "Despair",
+     "count": 529
+    },
+    {
+     "name": "Frost Bomb",
+     "count": 525
+    },
+    {
+     "name": "Herald of Thunder",
+     "count": 391
+    },
+    {
+     "name": "Lightning Bolt",
+     "count": 318
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 1949
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 1654
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 1554
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 1325
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 1289
+    },
+    {
+     "name": "Mageblood",
+     "count": 1199
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 1063
+    },
+    {
+     "name": "Prism of Belief",
+     "count": 896
+    },
+    {
+     "name": "Headhunter",
+     "count": 744
+    },
+    {
+     "name": "Alpha's Howl",
+     "count": 707
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Sanguimancy",
+     "count": 3284
+    },
+    {
+     "name": "Grasping Wounds",
+     "count": 3145
+    },
+    {
+     "name": "Sunder the Flesh",
+     "count": 2587
+    },
+    {
+     "name": "Crimson Power",
+     "count": 2498
+    },
+    {
+     "name": "Vitality Siphon",
+     "count": 2306
+    },
+    {
+     "name": "Blood Magic",
+     "count": 947
+    }
+   ]
+  },
+  {
+   "name": "Ritualist",
+   "count": 2106,
+   "skills": [
+    {
+     "name": "Spark",
+     "count": 486
+    },
+    {
+     "name": "Herald of Ice",
+     "count": 380
+    },
+    {
+     "name": "Barrage",
+     "count": 370
+    },
+    {
+     "name": "Herald of Thunder",
+     "count": 301
+    },
+    {
+     "name": "Frost Wall",
+     "count": 260
+    },
+    {
+     "name": "Frostbolt",
+     "count": 252
+    },
+    {
+     "name": "Twister",
+     "count": 235
+    },
+    {
+     "name": "Whirling Slash",
+     "count": 224
+    },
+    {
+     "name": "Comet",
+     "count": 216
+    },
+    {
+     "name": "Ice Shot",
+     "count": 194
+    },
+    {
+     "name": "Tornado Shot",
+     "count": 152
+    },
+    {
+     "name": "Freezing Mark",
+     "count": 140
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 1315
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 1122
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 1110
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 1080
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 1068
+    },
+    {
+     "name": "Mageblood",
+     "count": 868
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 806
+    },
+    {
+     "name": "From Nothing",
+     "count": 776
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 687
+    },
+    {
+     "name": "Morior Invictus",
+     "count": 677
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Unfurled Finger",
+     "count": 2103
+    },
+    {
+     "name": "Mystic Attunement",
+     "count": 2071
+    },
+    {
+     "name": "Intricate Sigils",
+     "count": 1163
+    },
+    {
+     "name": "Corrupted Lifeforce",
+     "count": 893
+    },
+    {
+     "name": "Mind Phylacteries",
+     "count": 728
+    },
+    {
+     "name": "Wildwood Persistence",
+     "count": 604
+    }
+   ]
+  },
+  {
+   "name": "Acolyte of Chayula",
+   "count": 2054,
+   "skills": [
+    {
+     "name": "Archon of Chayula",
+     "count": 1148
+    },
+    {
+     "name": "Herald of Blood",
+     "count": 830
+    },
+    {
+     "name": "Poisonburst Arrow",
+     "count": 678
+    },
+    {
+     "name": "Toxic Growth",
+     "count": 628
+    },
+    {
+     "name": "Vine Arrow",
+     "count": 458
+    },
+    {
+     "name": "Despair",
+     "count": 445
+    },
+    {
+     "name": "Wolf Pack",
+     "count": 267
+    },
+    {
+     "name": "Gas Arrow",
+     "count": 210
+    },
+    {
+     "name": "Dark Consequences",
+     "count": 180
+    },
+    {
+     "name": "Pounce",
+     "count": 158
+    },
+    {
+     "name": "Spearfield",
+     "count": 156
+    },
+    {
+     "name": "Entangle",
+     "count": 155
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Nascent Hope",
+     "count": 1007
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 996
+    },
+    {
+     "name": "Heart of the Well",
+     "count": 953
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 827
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 733
+    },
+    {
+     "name": "Mageblood",
+     "count": 657
+    },
+    {
+     "name": "From Nothing",
+     "count": 553
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 537
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 475
+    },
+    {
+     "name": "Morior Invictus",
+     "count": 425
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Waking Dream",
+     "count": 2006
+    },
+    {
+     "name": "Lucid Dreaming",
+     "count": 1937
+    },
+    {
+     "name": "Choice of Power",
+     "count": 1835
+    },
+    {
+     "name": "Chayula's Gift",
+     "count": 1608
+    },
+    {
+     "name": "Archon of Chayula",
+     "count": 1166
+    },
+    {
+     "name": "Inner Turmoil",
+     "count": 379
+    }
+   ]
+  },
+  {
+   "name": "Lich",
+   "count": 1881,
+   "skills": [
+    {
+     "name": "Contagion",
+     "count": 687
+    },
+    {
+     "name": "Despair",
+     "count": 655
+    },
+    {
+     "name": "Essence Drain",
+     "count": 644
+    },
+    {
+     "name": "Dark Effigy",
+     "count": 637
+    },
+    {
+     "name": "Sigil of Power",
+     "count": 421
+    },
+    {
+     "name": "Pain Offering",
+     "count": 369
+    },
+    {
+     "name": "Chaos Bolt",
+     "count": 344
+    },
+    {
+     "name": "Dark Consequences",
+     "count": 330
+    },
+    {
+     "name": "Wolf Pack",
+     "count": 325
+    },
+    {
+     "name": "Ravenous Swarm",
+     "count": 266
+    },
+    {
+     "name": "Elemental Weakness",
+     "count": 210
+    },
+    {
+     "name": "Doom Blast",
+     "count": 199
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Nascent Hope",
+     "count": 863
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 777
+    },
+    {
+     "name": "Atziri's Disdain",
+     "count": 600
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 505
+    },
+    {
+     "name": "Prism of Belief",
+     "count": 501
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 469
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 396
+    },
+    {
+     "name": "From Nothing",
+     "count": 396
+    },
+    {
+     "name": "Mageblood",
+     "count": 393
+    },
+    {
+     "name": "Heart of the Well",
+     "count": 358
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Crystalline Phylactery",
+     "count": 1402
+    },
+    {
+     "name": "Soulless Form",
+     "count": 1301
+    },
+    {
+     "name": "Eternal Life",
+     "count": 1131
+    },
+    {
+     "name": "Necromantic Conduit",
+     "count": 1005
+    },
+    {
+     "name": "Whispers of Doom",
+     "count": 941
+    },
+    {
+     "name": "Rupture the Soul",
+     "count": 897
+    }
+   ]
+  },
+  {
+   "name": "Shaman",
+   "count": 1798,
+   "skills": [
+    {
+     "name": "Spark",
+     "count": 560
+    },
+    {
+     "name": "Comet",
+     "count": 400
+    },
+    {
+     "name": "Walking Calamity",
+     "count": 385
+    },
+    {
+     "name": "Shockwave Totem",
+     "count": 348
+    },
+    {
+     "name": "Maul",
+     "count": 331
+    },
+    {
+     "name": "Rampage",
+     "count": 313
+    },
+    {
+     "name": "Furious Slam",
+     "count": 291
+    },
+    {
+     "name": "Entangle",
+     "count": 238
+    },
+    {
+     "name": "Pounce",
+     "count": 207
+    },
+    {
+     "name": "Molten Crash",
+     "count": 204
+    },
+    {
+     "name": "Grim Pillars",
+     "count": 201
+    },
+    {
+     "name": "Wolf Pack",
+     "count": 199
+    }
+   ],
+   "uniques": [
+    {
+     "name": "From Nothing",
+     "count": 860
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 858
+    },
+    {
+     "name": "Heart of the Well",
+     "count": 776
+    },
+    {
+     "name": "Mageblood",
+     "count": 771
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 747
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 725
+    },
+    {
+     "name": "Runeseeker's Call",
+     "count": 665
+    },
+    {
+     "name": "Rathpith Globe",
+     "count": 589
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 583
+    },
+    {
+     "name": "Prism of Belief",
+     "count": 464
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Wisdom of the Maji",
+     "count": 1362
+    },
+    {
+     "name": "Reactive Growth",
+     "count": 1343
+    },
+    {
+     "name": "Sacred Flow",
+     "count": 1104
+    },
+    {
+     "name": "Druidic Champion",
+     "count": 949
+    },
+    {
+     "name": "Avatar of Evolution",
+     "count": 848
+    },
+    {
+     "name": "Furious Wellspring",
+     "count": 834
+    }
+   ]
+  },
+  {
+   "name": "Witchhunter",
+   "count": 1794,
+   "skills": [
+    {
+     "name": "Freezing Mark",
+     "count": 721
+    },
+    {
+     "name": "Frostbolt",
+     "count": 649
+    },
+    {
+     "name": "Frost Wall",
+     "count": 642
+    },
+    {
+     "name": "Infernal Cry",
+     "count": 440
+    },
+    {
+     "name": "Herald of Thunder",
+     "count": 433
+    },
+    {
+     "name": "Galvanic Shards",
+     "count": 408
+    },
+    {
+     "name": "Seismic Cry",
+     "count": 392
+    },
+    {
+     "name": "Escape Shot",
+     "count": 384
+    },
+    {
+     "name": "Explosive Grenade",
+     "count": 354
+    },
+    {
+     "name": "Stormblast Bolts",
+     "count": 329
+    },
+    {
+     "name": "Shockwave Totem",
+     "count": 315
+    },
+    {
+     "name": "Emergency Reload",
+     "count": 290
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 1355
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 1221
+    },
+    {
+     "name": "Hyrri's Ire",
+     "count": 1085
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 767
+    },
+    {
+     "name": "Decree of Acuity",
+     "count": 734
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 709
+    },
+    {
+     "name": "From Nothing",
+     "count": 690
+    },
+    {
+     "name": "Widowhail",
+     "count": 653
+    },
+    {
+     "name": "Drillneck",
+     "count": 652
+    },
+    {
+     "name": "Atziri's Rule",
+     "count": 651
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Obsessive Rituals",
+     "count": 1678
+    },
+    {
+     "name": "Ceremonial Ablution",
+     "count": 1620
+    },
+    {
+     "name": "Witchbane",
+     "count": 884
+    },
+    {
+     "name": "Pitiless Killer",
+     "count": 826
+    },
+    {
+     "name": "Weapon Master",
+     "count": 741
+    },
+    {
+     "name": "Mind Over Matter",
+     "count": 559
+    }
+   ]
+  },
+  {
+   "name": "Pathfinder",
+   "count": 1666,
+   "skills": [
+    {
+     "name": "Ice Shot",
+     "count": 849
+    },
+    {
+     "name": "Tornado Shot",
+     "count": 792
+    },
+    {
+     "name": "Herald of Ice",
+     "count": 713
+    },
+    {
+     "name": "Barrage",
+     "count": 521
+    },
+    {
+     "name": "Freezing Mark",
+     "count": 421
+    },
+    {
+     "name": "Bow Shot",
+     "count": 333
+    },
+    {
+     "name": "Poisonburst Arrow",
+     "count": 261
+    },
+    {
+     "name": "Snipe",
+     "count": 258
+    },
+    {
+     "name": "Herald of Thunder",
+     "count": 253
+    },
+    {
+     "name": "Toxic Growth",
+     "count": 250
+    },
+    {
+     "name": "Pounce",
+     "count": 230
+    },
+    {
+     "name": "Gas Arrow",
+     "count": 223
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 1165
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 998
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 955
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 910
+    },
+    {
+     "name": "Cadiro's Gambit",
+     "count": 754
+    },
+    {
+     "name": "Mageblood",
+     "count": 644
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 580
+    },
+    {
+     "name": "Headhunter",
+     "count": 488
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 482
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 480
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Path Seeker",
+     "count": 1600
+    },
+    {
+     "name": "Relentless Pursuit",
+     "count": 1491
+    },
+    {
+     "name": "Path of the Sorceress",
+     "count": 1358
+    },
+    {
+     "name": "Traveller's Wisdom",
+     "count": 1207
+    },
+    {
+     "name": "Running Assault",
+     "count": 1058
+    },
+    {
+     "name": "Overwhelming Toxicity",
+     "count": 432
+    }
+   ]
+  },
+  {
+   "name": "Chronomancer",
+   "count": 1474,
+   "skills": [
+    {
+     "name": "Frost Bomb",
+     "count": 807
+    },
+    {
+     "name": "Comet",
+     "count": 781
+    },
+    {
+     "name": "Frost Wall",
+     "count": 720
+    },
+    {
+     "name": "Elemental Weakness",
+     "count": 643
+    },
+    {
+     "name": "Ice Nova",
+     "count": 619
+    },
+    {
+     "name": "Sigil of Power",
+     "count": 523
+    },
+    {
+     "name": "Powered by Verisium",
+     "count": 470
+    },
+    {
+     "name": "Time Freeze",
+     "count": 341
+    },
+    {
+     "name": "Frostbolt",
+     "count": 239
+    },
+    {
+     "name": "Inevitable Agony",
+     "count": 238
+    },
+    {
+     "name": "Time Snap",
+     "count": 229
+    },
+    {
+     "name": "Snap",
+     "count": 185
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 839
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 655
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 571
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 515
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 504
+    },
+    {
+     "name": "Mageblood",
+     "count": 409
+    },
+    {
+     "name": "Alpha's Howl",
+     "count": 405
+    },
+    {
+     "name": "Olroth's Resolve",
+     "count": 395
+    },
+    {
+     "name": "Kalandra's Touch",
+     "count": 292
+    },
+    {
+     "name": "Prism of Belief",
+     "count": 287
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Phased Form",
+     "count": 1290
+    },
+    {
+     "name": "Quicksand Hourglass",
+     "count": 1152
+    },
+    {
+     "name": "Apex of the Moment",
+     "count": 894
+    },
+    {
+     "name": "Now and Again",
+     "count": 888
+    },
+    {
+     "name": "Whispers of Doom",
+     "count": 682
+    },
+    {
+     "name": "Unbound Encore",
+     "count": 416
+    }
+   ]
+  },
+  {
+   "name": "Tactician",
+   "count": 1414,
+   "skills": [
+    {
+     "name": "Supporting Fire",
+     "count": 494
+    },
+    {
+     "name": "Wolf Pack",
+     "count": 349
+    },
+    {
+     "name": "Galvanic Shards",
+     "count": 346
+    },
+    {
+     "name": "Herald of Thunder",
+     "count": 329
+    },
+    {
+     "name": "Crossbow Shot",
+     "count": 310
+    },
+    {
+     "name": "Stormblast Bolts",
+     "count": 302
+    },
+    {
+     "name": "Pounce",
+     "count": 114
+    },
+    {
+     "name": "Mace Strike",
+     "count": 107
+    },
+    {
+     "name": "Explosive Grenade",
+     "count": 78
+    },
+    {
+     "name": "Gemini Surge",
+     "count": 74
+    },
+    {
+     "name": "Herald of Ice",
+     "count": 63
+    },
+    {
+     "name": "Cluster Grenade",
+     "count": 54
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Morior Invictus",
+     "count": 733
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 694
+    },
+    {
+     "name": "Alpha's Howl",
+     "count": 541
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 487
+    },
+    {
+     "name": "Heart of the Well",
+     "count": 420
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 356
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 345
+    },
+    {
+     "name": "Mageblood",
+     "count": 325
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 304
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 301
+    }
+   ],
+   "keystones": [
+    {
+     "name": "A Solid Plan",
+     "count": 1372
+    },
+    {
+     "name": "Polish That Gear",
+     "count": 1209
+    },
+    {
+     "name": "Suppressing Fire",
+     "count": 544
+    },
+    {
+     "name": "Right Where We Want Them",
+     "count": 524
+    },
+    {
+     "name": "Unleash Hell!",
+     "count": 476
+    },
+    {
+     "name": "Whoever Pays Best",
+     "count": 438
+    }
+   ]
+  },
+  {
+   "name": "Smith of Kitava",
+   "count": 1241,
+   "skills": [
+    {
+     "name": "Infernal Cry",
+     "count": 687
+    },
+    {
+     "name": "Shield Wall",
+     "count": 617
+    },
+    {
+     "name": "Detonate Dead",
+     "count": 432
+    },
+    {
+     "name": "Fortifying Cry",
+     "count": 380
+    },
+    {
+     "name": "Resonating Shield",
+     "count": 373
+    },
+    {
+     "name": "Mace Strike",
+     "count": 283
+    },
+    {
+     "name": "Shield Charge",
+     "count": 235
+    },
+    {
+     "name": "Raise Shield",
+     "count": 199
+    },
+    {
+     "name": "Walking Calamity",
+     "count": 180
+    },
+    {
+     "name": "Molten Crash",
+     "count": 172
+    },
+    {
+     "name": "Sunder",
+     "count": 160
+    },
+    {
+     "name": "Elemental Weakness",
+     "count": 158
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 702
+    },
+    {
+     "name": "Constricting Command",
+     "count": 590
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 457
+    },
+    {
+     "name": "Mageblood",
+     "count": 402
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 397
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 394
+    },
+    {
+     "name": "Against the Darkness",
+     "count": 346
+    },
+    {
+     "name": "For Utopia",
+     "count": 337
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 330
+    },
+    {
+     "name": "Sacred Flame",
+     "count": 297
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Coal Stoker",
+     "count": 973
+    },
+    {
+     "name": "Smith's Masterwork",
+     "count": 822
+    },
+    {
+     "name": "Kitavan Engraving",
+     "count": 650
+    },
+    {
+     "name": "Heat of the Forge",
+     "count": 625
+    },
+    {
+     "name": "Dedication to Kitava",
+     "count": 547
+    },
+    {
+     "name": "Molten Symbol",
+     "count": 538
+    }
+   ]
+  },
+  {
+   "name": "Abyssal Lich",
+   "count": 1160,
+   "skills": [
+    {
+     "name": "Entangle",
+     "count": 518
+    },
+    {
+     "name": "Thunderstorm",
+     "count": 462
+    },
+    {
+     "name": "Thrashing Vines",
+     "count": 457
+    },
+    {
+     "name": "Bonestorm",
+     "count": 422
+    },
+    {
+     "name": "Sigil of Power",
+     "count": 379
+    },
+    {
+     "name": "Twister",
+     "count": 302
+    },
+    {
+     "name": "Whirling Slash",
+     "count": 297
+    },
+    {
+     "name": "Barrage",
+     "count": 283
+    },
+    {
+     "name": "Bone Cage",
+     "count": 186
+    },
+    {
+     "name": "Herald of Thunder",
+     "count": 111
+    },
+    {
+     "name": "Contagion",
+     "count": 99
+    },
+    {
+     "name": "Dark Effigy",
+     "count": 92
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Nascent Hope",
+     "count": 744
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 658
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 620
+    },
+    {
+     "name": "Heart of the Well",
+     "count": 606
+    },
+    {
+     "name": "Atziri's Disdain",
+     "count": 515
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 486
+    },
+    {
+     "name": "Mageblood",
+     "count": 472
+    },
+    {
+     "name": "Nightscale",
+     "count": 429
+    },
+    {
+     "name": "The Taming",
+     "count": 308
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 288
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Crystalline Phylactery",
+     "count": 1109
+    },
+    {
+     "name": "Soulless Form",
+     "count": 942
+    },
+    {
+     "name": "Eternal Life",
+     "count": 886
+    },
+    {
+     "name": "Rupture the Soul",
+     "count": 694
+    },
+    {
+     "name": "Pain Attunement",
+     "count": 605
+    },
+    {
+     "name": "Necromantic Conduit",
+     "count": 586
+    }
+   ]
+  },
+  {
+   "name": "Warbringer",
+   "count": 888,
+   "skills": [
+    {
+     "name": "Ancestral Spirits",
+     "count": 358
+    },
+    {
+     "name": "Cluster Grenade",
+     "count": 298
+    },
+    {
+     "name": "Voltaic Grenade",
+     "count": 274
+    },
+    {
+     "name": "Infernal Cry",
+     "count": 254
+    },
+    {
+     "name": "Fortifying Cry",
+     "count": 234
+    },
+    {
+     "name": "Shield Wall",
+     "count": 203
+    },
+    {
+     "name": "Seismic Cry",
+     "count": 159
+    },
+    {
+     "name": "Forge Hammer",
+     "count": 150
+    },
+    {
+     "name": "Earthshatter",
+     "count": 149
+    },
+    {
+     "name": "Resonating Shield",
+     "count": 135
+    },
+    {
+     "name": "Mace Strike",
+     "count": 122
+    },
+    {
+     "name": "Oil Grenade",
+     "count": 115
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 442
+    },
+    {
+     "name": "Prism of Belief",
+     "count": 291
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 284
+    },
+    {
+     "name": "From Nothing",
+     "count": 267
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 243
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 242
+    },
+    {
+     "name": "Fireflower",
+     "count": 225
+    },
+    {
+     "name": "Mageblood",
+     "count": 217
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 190
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 171
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Anvil's Weight",
+     "count": 796
+    },
+    {
+     "name": "Blood Magic",
+     "count": 504
+    },
+    {
+     "name": "Jade Heritage",
+     "count": 474
+    },
+    {
+     "name": "Imploding Impacts",
+     "count": 418
+    },
+    {
+     "name": "Answered Call",
+     "count": 389
+    },
+    {
+     "name": "Renly's Training",
+     "count": 379
+    }
+   ]
+  },
+  {
+   "name": "Amazon",
+   "count": 713,
+   "skills": [
+    {
+     "name": "Herald of Thunder",
+     "count": 302
+    },
+    {
+     "name": "Herald of Ice",
+     "count": 241
+    },
+    {
+     "name": "Lightning Spear",
+     "count": 192
+    },
+    {
+     "name": "Barrage",
+     "count": 185
+    },
+    {
+     "name": "Ice Shot",
+     "count": 157
+    },
+    {
+     "name": "Sniper's Mark",
+     "count": 145
+    },
+    {
+     "name": "Storm Lance",
+     "count": 138
+    },
+    {
+     "name": "Freezing Mark",
+     "count": 133
+    },
+    {
+     "name": "Tornado Shot",
+     "count": 133
+    },
+    {
+     "name": "Explosive Spear",
+     "count": 113
+    },
+    {
+     "name": "Whirling Slash",
+     "count": 110
+    },
+    {
+     "name": "Elemental Surge",
+     "count": 96
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 411
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 352
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 265
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 251
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 228
+    },
+    {
+     "name": "Mageblood",
+     "count": 201
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 199
+    },
+    {
+     "name": "From Nothing",
+     "count": 174
+    },
+    {
+     "name": "Sacred Flame",
+     "count": 171
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 147
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Critical Strike",
+     "count": 610
+    },
+    {
+     "name": "Predatory Instinct",
+     "count": 603
+    },
+    {
+     "name": "Penetrate",
+     "count": 448
+    },
+    {
+     "name": "Stalking Panther",
+     "count": 336
+    },
+    {
+     "name": "In for the Kill",
+     "count": 244
+    },
+    {
+     "name": "Azmeri Brew",
+     "count": 157
+    }
+   ]
+  },
+  {
+   "name": "Invoker",
+   "count": 394,
+   "skills": [
+    {
+     "name": "Herald of Thunder",
+     "count": 185
+    },
+    {
+     "name": "Herald of Ice",
+     "count": 161
+    },
+    {
+     "name": "Charged Staff",
+     "count": 155
+    },
+    {
+     "name": "Whirling Assault",
+     "count": 121
+    },
+    {
+     "name": "Flicker Strike",
+     "count": 105
+    },
+    {
+     "name": "Profane Ritual",
+     "count": 96
+    },
+    {
+     "name": "Falling Thunder",
+     "count": 90
+    },
+    {
+     "name": "Tempest Bell",
+     "count": 90
+    },
+    {
+     "name": "Ice Strike",
+     "count": 73
+    },
+    {
+     "name": "Elemental Expression",
+     "count": 69
+    },
+    {
+     "name": "Shattering Palm",
+     "count": 68
+    },
+    {
+     "name": "Comet",
+     "count": 63
+    }
+   ],
+   "uniques": [
+    {
+     "name": "Heart of the Well",
+     "count": 219
+    },
+    {
+     "name": "Nascent Hope",
+     "count": 186
+    },
+    {
+     "name": "Lavianga's Spirits",
+     "count": 176
+    },
+    {
+     "name": "Rite of Passage",
+     "count": 134
+    },
+    {
+     "name": "Mageblood",
+     "count": 127
+    },
+    {
+     "name": "The Fall of the Axe",
+     "count": 107
+    },
+    {
+     "name": "Morior Invictus",
+     "count": 104
+    },
+    {
+     "name": "Beira's Anguish",
+     "count": 84
+    },
+    {
+     "name": "Headhunter",
+     "count": 79
+    },
+    {
+     "name": "Megalomaniac",
+     "count": 68
+    }
+   ],
+   "keystones": [
+    {
+     "name": "Sunder my Enemies...",
+     "count": 299
+    },
+    {
+     "name": "Lead me through Grace...",
+     "count": 292
+    },
+    {
+     "name": "I am the Thunder...",
+     "count": 254
+    },
+    {
+     "name": "I am the Blizzard...",
+     "count": 232
+    },
+    {
+     "name": "The Soul Springs Eternal",
+     "count": 134
+    },
+    {
+     "name": "Chaos Inoculation",
+     "count": 117
+    }
+   ]
+  }
+ ]
+}

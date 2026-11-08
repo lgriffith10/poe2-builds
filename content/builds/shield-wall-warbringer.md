@@ -54,6 +54,84 @@ skills:
     supports: [Prolonged Duration II, Physical Mastery]
   - gem: Raise Shield
     supports: []
+leveling:
+  - name: "Level 1-22"
+    steps:
+      - name: "Level 1-22"
+        skills:
+          - gem: "Mace Strike"
+            supports: [Rapid Attacks II, Concentrated Area]
+          - gem: "Rolling Slam"
+            supports: [Brink I]
+          - gem: "Boneshatter"
+            supports: [Impact Shockwave, Magnified Area I]
+          - gem: "Infernal Cry"
+            supports: [Tireless]
+          - gem: "Herald of Ash"
+          - gem: "Perfect Strike"
+            supports: [Window of Opportunity I, Rapid Attacks I]
+  - name: "Shield Wall Campaign"
+    steps:
+      - name: "Shield Wall Swap"
+        skills:
+          - gem: "Shield Wall"
+            supports: [Rapid Attacks I, Fire Attunement, Magnified Area I]
+          - gem: "Shockwave Totem"
+            supports: [Urgent Totems I]
+          - gem: "Leap Slam"
+            supports: [Rapid Attacks I]
+          - gem: "Shield Charge"
+            supports: [Rapid Attacks I]
+          - gem: "Infernal Cry"
+            supports: [Tireless, Raging Cry]
+          - gem: "Herald of Ash"
+          - gem: "Fortifying Cry"
+            supports: [Brutality II, Raging Cry]
+      - name: "Shield Wall Campaign"
+        skills:
+          - gem: "Shield Wall"
+            supports: [Rapid Attacks II, Fire Attunement, Magnified Area II, Impale]
+          - gem: "Shockwave Totem"
+            supports: [Urgent Totems I]
+          - gem: "Leap Slam"
+            supports: [Rapid Attacks I]
+          - gem: "Shield Charge"
+            supports: [Rapid Attacks I]
+          - gem: "Infernal Cry"
+            supports: [Tireless, Raging Cry, Echoing Cry]
+          - gem: "Herald of Ash"
+          - gem: "Fortifying Cry"
+            supports: [Brutality II, Raging Cry, Heavy Swing]
+      - name: "Endgame"
+        skills:
+          - gem: "Mace Strike"
+            supports: [Rapid Attacks II, Close Combat I]
+          - gem: "Raise Shield"
+          - gem: "Shield Wall"
+            supports: [Rapid Attacks II, Ahn's Citadel, Kaom's Madness, Heft, Rageforged II]
+          - gem: "Fortifying Cry"
+            supports: [Raging Cry, Heavy Swing, Brutality III, Atalui's Bloodletting, Heft]
+          - gem: "Infernal Cry"
+            supports: [Raging Cry, Tireless, Echoing Cry, Magnified Area II]
+          - gem: "Sunder"
+            supports: [Rapid Attacks III, Rigwald's Ferocity, Rage III, Prolonged Duration II]
+          - gem: "Leap Slam"
+            supports: [Holy Descent, Rage III, Rapid Attacks III, Magnified Area II]
+          - gem: "Shield Charge"
+            supports: [Rapid Attacks III, Rage III, Magnified Area I, Close Combat II]
+          - gem: "War Banner"
+            supports: [Daresso's Passion, Magnified Area II, Prolonged Duration II]
+          - gem: "Scavenged Plating"
+            supports: [Prolonged Duration II, Cannibalism I]
+          - gem: "Encase in Jade"
+            supports: [Prolonged Duration II, Physical Mastery]
+rotations:
+  - name: "Skill Rotation"
+    steps:
+      - gem: "Infernal Cry"
+      - gem: "Shield Wall"
+      - gem: "Fortifying Cry"
+      - gem: "Shield Wall"
 gear:
   weapon:
     base: Fortified Hammer
@@ -85,6 +163,68 @@ gear:
   belt:
     base: Plate Belt
     mods: [+Maximum Life, Armour, Elemental Resistances]
+gearStages:
+  campaign:
+    weapon:
+      base: Slim Mace
+      mods: [+Level of all Melee Skills]
+    offhand:
+      base: Rampart Tower Shield
+      mods: [Armour]
+    helmet:
+      base: Wrapped Greathelm
+      mods: [+Maximum Life]
+    body:
+      base: Maraketh Cuirass
+      mods: []
+    gloves:
+      base: Tempered Mitts
+      mods: [+Level of all Melee Skills, Increased Attack Speed]
+    boots:
+      base: Bronze Greaves
+      mods: [Movement Speed]
+    amulet:
+      base: Bloodstone Amulet
+      mods: [+Level of all Melee Skills]
+    ring1:
+      base: Ruby Ring
+      mods: [Mana Leech]
+    ring2:
+      base: Topaz Ring
+      mods: [Life Leech]
+    belt:
+      base: Rawhide Belt
+      mods: []
+  endgame:
+    weapon:
+      base: Fortified Hammer
+      mods: [Adds Fire Damage, Increased Attack Speed, Increased Physical Damage, Gain Damage as Extra Physical, +Level of all Attack Skills]
+    offhand:
+      base: Tawhoan Tower Shield
+      mods: [Armour, Stun Threshold, Armour applies to Elemental Damage, Chaos Resistance]
+    helmet:
+      unique: "Thrillsteel"
+    body:
+      base: Warlord Cuirass
+      mods: [Armour, Armour applies to Elemental Damage, +Maximum Life, Cold Resistance, Lightning Resistance]
+    gloves:
+      base: Massive Mitts
+      mods: [Increased Attack Speed, Armour, Armour applies to Elemental Damage, Adds Lightning Damage to Attacks, +Maximum Life, Chaos Resistance]
+    boots:
+      base: Tasalian Greaves
+      mods: [Movement Speed, +Maximum Life, Armour, Armour applies to Elemental Damage, Fire Resistance, Lightning Resistance]
+    amulet:
+      base: Solar Amulet
+      mods: [Elemental Resistances, +Maximum Life, +Strength, +Level of all Melee Skills, Armour, Grants a Passive Skill]
+    ring1:
+      base: Ruby Ring
+      mods: [Adds Physical Damage to Attacks, Cold Resistance, Evasion Rating, +Maximum Life, Mana Leech]
+    ring2:
+      base: Amethyst Ring
+      mods: [Adds Cold Damage to Attacks, Elemental Resistances, Chaos Resistance, +Maximum Life]
+    belt:
+      base: Plate Belt
+      mods: [Fire Resistance, +Maximum Life, Lightning Resistance, Cold Resistance]
 passives:
   attribute: str
   path:

@@ -35,6 +35,7 @@ const UNIQUE_FILES = [
 const RAW_FILES = {
   "tree.json": `${POB}TreeData/${TREE_VERSION}/tree.json`,
   "skill_gems.json": `${REPOE}skill_gems.min.json`,
+  "skills.json": `${REPOE}skills.min.json`,
   "base_items.json": `${REPOE}base_items.min.json`,
   "uniques.json": `${REPOE}uniques.min.json`,
   "ascendancies.json": `${REPOE}ascendancies.min.json`,
@@ -417,13 +418,70 @@ async function mirrorIcons(list, dir, maxSize) {
   console.log(`icons/${dir}: ${fetched} downloaded, ${failed} failed`);
 }
 
+// Gem details (tooltip stats)
+// ---------------------------------------------------------------------------
+
+// Gem level the tooltip numbers are taken at (the usual endgame level).
+const DETAIL_LEVEL = "20";
+const atLevel = (perLevel) => perLevel?.[DETAIL_LEVEL] ?? perLevel?.[Object.keys(perLevel ?? {}).pop()] ?? {};
+const spaced = (s) => s?.replace(/([a-z])([A-Z])/g, "$1 $2");
+
+/** Per-gem stats from RePoE skills.json at DETAIL_LEVEL, keyed by gem id: cost, timings, damage effectiveness, stat lines. */
+function buildGemDetails(skillGems, skills, gems) {
+  const ids = new Set(gems.map((g) => g.id));
+  const details = {};
+  for (const g of Object.values(skillGems)) {
+    const id = slugify(g.base_item?.display_name ?? "");
+    if (!ids.has(id) || details[id]) continue;
+    const granted = (g.grants_skills ?? []).map((s) => skills[s]).filter(Boolean);
+    const main = granted[0];
+    if (!main) continue;
+    const top = atLevel(main.per_level);
+    const st = main.static ?? {};
+    const d = {};
+    if (main.active_skill?.description) d.desc = cleanMarkup(main.active_skill.description);
+    const props = [];
+    const spirit = top.reservations?.spirit ?? st.reservations?.spirit;
+    if (spirit) props.push(["Reservation", `${spirit} Spirit`]);
+    if (top.costs) props.push(["Cost", Object.entries(top.costs).map(([k, v]) => `${v} ${k}`).join(", ")]);
+    if (st.cost_multiplier && st.cost_multiplier !== 100) props.push(["Cost Multiplier", `${st.cost_multiplier}%`]);
+    // Attacks use their weapon's speed; their cast_time is a placeholder.
+    if (main.cast_time && !main.active_skill?.types?.includes("Attack")) props.push(["Cast Time", `${main.cast_time / 1000} sec`]);
+    if (st.attack_speed_multiplier) props.push(["Attack Speed", `${100 + st.attack_speed_multiplier}% of base`]);
+    if (st.cooldown) props.push(["Cooldown Time", `${st.cooldown / 1000} sec`]);
+    if (st.stored_uses > 1) props.push(["Uses", `${st.stored_uses}`]);
+    if (props.length) d.props = props;
+    const sets = [];
+    for (const skill of granted) {
+      for (const set of skill.stat_sets ?? []) {
+        const pl = atLevel(set.per_level);
+        const text = { ...set.static?.stat_text, ...pl.stat_text };
+        const keys = [...new Set([...(set.static?.tooltip_order ?? []), ...Object.keys(text)])];
+        const lines = keys.flatMap((k) => (text[k] ? cleanMarkup(text[k]).split("\n") : [])).map((l) => l.trim()).filter(Boolean);
+        const props = [];
+        const dmg = pl.damage_multiplier ?? set.static?.damage_multiplier;
+        if (dmg != null) props.push(["Attack Damage", `${dmg}% of base`]);
+        const crit = pl.crit_chance ?? set.static?.crit_chance;
+        if (crit) props.push(["Critical Hit Chance", `${crit / 100}%`]);
+        if (!lines.length && !props.length) continue;
+        const label = skill === main ? spaced(set.label?.[0]) : skill.active_skill?.display_name ?? spaced(set.label?.[0]);
+        sets.push({ ...(label && { label }), ...(props.length && { props }), lines });
+      }
+    }
+    if (sets.length) d.sets = sets;
+    if (Object.keys(d).length) details[id] = d;
+  }
+  return details;
+}
+
 // ---------------------------------------------------------------------------
 
 async function main() {
   await download();
-  const [tree, skillGems, baseItems, repoeUniques, ascendancies] = await Promise.all([
+  const [tree, skillGems, skills, baseItems, repoeUniques, ascendancies] = await Promise.all([
     readJson("tree.json"),
     readJson("skill_gems.json"),
+    readJson("skills.json"),
     readJson("base_items.json"),
     readJson("uniques.json"),
     readJson("ascendancies.json"),
@@ -463,6 +521,8 @@ async function main() {
     }),
     fs.writeFile(path.join(OUT_PUBLIC, "tree-icons.webp"), icons.atlas),
     write(OUT_SRC, "gems.json", gems),
+    // Server-only: embedded in guide pages for reference tooltips.
+    write(OUT_SRC, "gem-details.json", buildGemDetails(skillGems, skills, gems)),
     write(OUT_SRC, "bases.json", bases),
     write(OUT_SRC, "uniques.json", uniques),
     write(OUT_SRC, "classes.json", classes),

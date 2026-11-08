@@ -59,6 +59,63 @@ skills:
     supports: []
   - gem: Charge Regulation
     supports: []
+leveling:
+  - name: "Leveling"
+    steps:
+      - name: "Twister Leveling"
+        skills:
+          - gem: "Whirling Slash"
+            supports: [Rage I, Rapid Attacks I]
+          - gem: "Twister"
+            supports: [Retreat I, Frost Nexus, Projectile Acceleration I, Salvo]
+          - gem: "Frost Bomb"
+          - gem: "Barrage"
+            supports: [Rapid Casting I]
+          - gem: "Ice-Tipped Arrows"
+            supports: [Rapid Casting I]
+          - gem: "War Banner"
+            supports: [Prolonged Duration I]
+          - gem: "Freezing Mark"
+            supports: [Mark of Siphoning, Charged Mark]
+          - gem: "Purity of Lightning"
+      - name: "Early Maps"
+        skills:
+          - gem: "Virtuous Barrier"
+          - gem: "Righteous Descent"
+            supports: [Concentrated Area, Fist of War III, Elemental Armament II]
+          - gem: "Purity of Ice"
+            supports: [Vitality II, Precision II, Cool Headed]
+          - gem: "Wind Dancer"
+            supports: [Blind II, Freeze, Magnified Area II, Ambush]
+          - gem: "Whirling Slash"
+            supports: [Rapid Attacks III, Rage III, Punch Through, Blind II, Maim]
+          - gem: "Combat Frenzy"
+            supports: [Charge Profusion II]
+          - gem: "Barrage"
+            supports: [Rapid Casting II, Cooldown Recovery II, Prolonged Duration II, Perpetual Charge, Olroth's Conviction]
+          - gem: "Twister"
+            supports: [Elemental Armament II, Projectile Acceleration III, Ice Bite II, Retreat II, Salvo]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area II, Armour Break III, Armour Explosion, Uruk's Smelting]
+          - gem: "Sniper's Mark"
+            supports: [Efficiency II, Eternal Mark, Charge Profusion II, Prolonged Duration II, Mark of Siphoning II]
+          - gem: "Berserk"
+            supports: [Vitality I]
+          - gem: "Charge Regulation"
+rotations:
+  - name: "Clear"
+    steps:
+      - gem: "Whirling Slash"
+        count: 3
+      - gem: "Barrage"
+      - gem: "Twister"
+  - name: "Single Target"
+    steps:
+      - gem: "Whirling Slash"
+        count: 3
+      - gem: "Barrage"
+      - gem: "Sniper's Mark"
+      - gem: "Twister"
 gear:
   weapon:
     unique: Skysliver

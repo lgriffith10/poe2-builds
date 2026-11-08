@@ -5,7 +5,7 @@ import { useI18n } from "@/i18n/client";
 import type { BuildSummary } from "@/lib/build-summary";
 import { classStyle } from "@/lib/classes";
 import { DEFAULT_CATEGORY, type TierCategory } from "@/lib/types";
-import { ClassEmblem, GemIcon, Pill, TierBadge } from "./ui";
+import { ClassEmblem, DifficultyBadge, GemIcon, Pill, TierBadge } from "./ui";
 
 export function BuildCard({ build, category = DEFAULT_CATEGORY }: { build: BuildSummary; category?: TierCategory }) {
   const { t, fmt, path } = useI18n();
@@ -34,11 +34,21 @@ export function BuildCard({ build, category = DEFAULT_CATEGORY }: { build: Build
         ))}
         {build.skills.length > 7 && <span className="text-xs text-faint">+{build.skills.length - 7}</span>}
       </div>
+      {build.source && (
+        <p className="px-4 pt-3 text-xs text-faint">
+          {fmt(t.home.sourceLine, { site: build.source.site, author: build.source.author })}
+        </p>
+      )}
       <div className="flex flex-wrap gap-1.5 p-4 pt-3">
+        <DifficultyBadge
+          difficulty={build.difficulty}
+          label={fmt(t.common.difficulty, { v: t.levels[build.difficulty] })}
+        />
         <Pill>{build.damage}</Pill>
         <Pill>{build.playstyle}</Pill>
         <Pill>{fmt(t.common.budget, { v: t.levels[build.budget] })}</Pill>
         {build.sample && <Pill tone="warn">{t.common.sample}</Pill>}
+        {build.origin === "ladder" && <Pill>{t.common.ladderBuild}</Pill>}
       </div>
     </Link>
   );

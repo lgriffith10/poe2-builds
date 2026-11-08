@@ -73,6 +73,18 @@ export interface Gem {
   recommended: string[];
 }
 
+/** Gem stats at level 20 (see buildGemDetails in scripts/sync-data.mjs). Props are [label, value] pairs. */
+export interface GemDetails {
+  desc?: string;
+  props?: [string, string][];
+  sets?: { label?: string; props?: [string, string][]; lines: string[] }[];
+}
+
+/** Data shown when hovering a [[Name]] reference in guide text. */
+export type RefTip =
+  | ({ kind: "gem" } & Pick<Gem, "name" | "icon" | "color" | "type" | "tier" | "tags" | "text"> & GemDetails)
+  | ({ kind: "unique" } & Pick<UniqueItem, "name" | "icon" | "base" | "category" | "level" | "implicits" | "mods">);
+
 export interface UniqueItem {
   id: string;
   name: string;
@@ -102,6 +114,9 @@ export interface BaseItem {
 // ---------------------------------------------------------------------------
 // Builds
 
+export type Difficulty = "easy" | "medium" | "hard";
+export const DIFFICULTIES: Difficulty[] = ["easy", "medium", "hard"];
+
 export type Tier = "S" | "A" | "B" | "C" | "D";
 export const TIERS: Tier[] = ["S", "A", "B", "C", "D"];
 
@@ -127,6 +142,15 @@ export const GEAR_SLOTS = [
   "belt",
 ] as const;
 export type GearSlot = (typeof GEAR_SLOTS)[number];
+export type GearSet = Partial<Record<GearSlot, GearPiece>>;
+
+/** Gear progression steps a guide can describe, in play order. */
+export const GEAR_STAGES = ["campaign", "mapping", "endgame", "minmax"] as const;
+export type GearStage = (typeof GEAR_STAGES)[number];
+
+/** How a build moved since the previous version of its source tier list. */
+export const TIER_CHANGES = ["new", "up", "down"] as const;
+export type TierChange = (typeof TIER_CHANGES)[number];
 
 export const SLOT_LABELS: Record<GearSlot, string> = {
   weapon: "Weapon",
@@ -155,6 +179,24 @@ export interface SkillGroup {
   gem: string;
   supports: string[];
   note?: string;
+}
+
+/** One stage of the campaign (e.g. "Act 2") and the skills used during it. */
+export interface LevelingStep {
+  name: string;
+  skills: SkillGroup[];
+}
+
+/** A leveling route; guides with several starts (e.g. crossbow or spear) have one path each. */
+export interface LevelingPath {
+  name?: string;
+  steps: LevelingStep[];
+}
+
+/** Order in which skills are used for a situation (e.g. "Single Target"). */
+export interface SkillRotation {
+  name: string;
+  steps: { gem: string; count?: number }[];
 }
 
 export interface PlannerState {

@@ -18,6 +18,8 @@ difficulty: medium
 budget: low
 tiers:
   starter: B
+  endgame: A
+  bossing: A
 pros:
   - "Very fast self-found campaign (about 4 hours in the source guide)"
   - "Strong area clear"
@@ -43,6 +45,170 @@ skills:
     supports: [Harmonic Remnants II, Remnant Potency III, Clarity I]
   - gem: "Mana Remnants"
     supports: [Harmonic Remnants II, Remnant Potency III]
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Level 2: Clearfell"
+        skills:
+          - gem: "Firebolt"
+          - gem: "Spark"
+          - gem: "Frost Bomb"
+          - gem: "Flame Wall"
+      - name: "Level 2: Defeat Areagne"
+        skills:
+          - gem: "Firebolt"
+          - gem: "Spark"
+            supports: [Unleash]
+          - gem: "Frost Bomb"
+          - gem: "Flame Wall"
+      - name: "Level 3 to 5"
+        skills:
+          - gem: "Firebolt"
+          - gem: "Spark"
+            supports: [Unleash, Zenith I]
+          - gem: "Frost Bomb"
+          - gem: "Flame Wall"
+      - name: "Level 6 to 13"
+        skills:
+          - gem: "Lightning Bolt"
+            supports: [Unleash, Concentrated Area]
+          - gem: "Spark"
+            supports: [Unleash, Zenith I]
+          - gem: "Orb of Storms"
+            supports: [Overabundance I, Zenith I]
+          - gem: "Frost Bomb"
+          - gem: "Flame Wall"
+          - gem: "Arctic Armour"
+      - name: "Act 1"
+        skills:
+          - gem: "Lightning Bolt"
+            supports: [Unleash, Concentrated Area]
+          - gem: "Arc"
+            supports: [Unleash, Zenith I]
+          - gem: "Orb of Storms"
+            supports: [Overabundance I, Zenith I]
+          - gem: "Frost Bomb"
+            supports: [Rapid Casting I]
+          - gem: "Arctic Armour"
+            supports: [Deep Freeze]
+      - name: "Act 2"
+        skills:
+          - gem: "Sigil of Power"
+            supports: [Magnified Area I, Prolonged Duration I]
+          - gem: "Lightning Bolt"
+            supports: [Unleash, Concentrated Area]
+          - gem: "Arc"
+            supports: [Unleash, Considered Casting, Zenith I]
+          - gem: "Orb of Storms"
+            supports: [Overabundance I, Zenith I]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure, Rapid Casting I]
+          - gem: "Elemental Weakness"
+            supports: [Prolonged Duration I, Heightened Curse]
+          - gem: "Mana Tempest"
+            supports: [Efficiency I]
+          - gem: "Arctic Armour"
+            supports: [Deep Freeze, Freeze]
+      - name: "Act 3"
+        skills:
+          - gem: "Sigil of Power"
+            supports: [Magnified Area I, Prolonged Duration I]
+          - gem: "Lightning Bolt"
+            supports: [Unleash, Concentrated Area]
+          - gem: "Arc"
+            supports: [Unleash, Considered Casting, Zenith II]
+          - gem: "Orb of Storms"
+            supports: [Overabundance I, Zenith II, Harmonic Remnants II]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure, Cooldown Recovery I]
+          - gem: "Elemental Weakness"
+            supports: [Prolonged Duration I, Cursed Ground]
+          - gem: "Mana Tempest"
+            supports: [Efficiency II, Rapid Casting II]
+          - gem: "Arctic Armour"
+            supports: [Deep Freeze, Freeze]
+          - gem: "Mana Remnants"
+            supports: [Harmonic Remnants II, Remnant Potency II]
+      - name: "Act 4"
+        skills:
+          - gem: "Sigil of Power"
+            supports: [Magnified Area I, Prolonged Duration I]
+          - gem: "Lightning Bolt"
+            supports: [Unleash, Concentrated Area, Considered Casting]
+          - gem: "Arc"
+            supports: [Unleash, Considered Casting, Zenith II]
+          - gem: "Orb of Storms"
+            supports: [Overabundance I, Zenith II, Harmonic Remnants II]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure, Cooldown Recovery II]
+          - gem: "Elemental Weakness"
+            supports: [Prolonged Duration II, Cursed Ground, Heightened Curse]
+          - gem: "Mana Tempest"
+            supports: [Efficiency II, Rapid Casting II]
+          - gem: "Arctic Armour"
+            supports: [Deep Freeze, Freeze]
+          - gem: "Mana Remnants"
+            supports: [Harmonic Remnants II, Remnant Potency III]
+      - name: "Act 5 / End of Campaign"
+        skills:
+          - gem: "Sigil of Power"
+            supports: [Magnified Area II, Prolonged Duration II, Rapid Casting II]
+          - gem: "Lightning Bolt"
+            supports: [Unleash, Concentrated Area, Considered Casting]
+          - gem: "Arc"
+            supports: [Unleash, Considered Casting, Zenith II, Lightning Mastery]
+          - gem: "Orb of Storms"
+            supports: [Overabundance I, Zenith II, Harmonic Remnants II]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure, Cooldown Recovery II, Long Fuse II]
+          - gem: "Elemental Weakness"
+            supports: [Prolonged Duration II, Cursed Ground, Heightened Curse]
+          - gem: "Mana Tempest"
+            supports: [Efficiency II, Rapid Casting II, Lightning Mastery]
+          - gem: "Arctic Armour"
+            supports: [Deep Freeze, Freeze]
+          - gem: "Mana Remnants"
+            supports: [Harmonic Remnants II, Remnant Potency III]
+          - gem: "Siphon Elements"
+            supports: [Harmonic Remnants II, Remnant Potency III, Clarity I]
+      - name: "Early Maps"
+        skills:
+          - gem: "Sigil of Power"
+            supports: [Magnified Area II, Prolonged Duration II, Cooldown Recovery II, Rapid Casting II]
+          - gem: "Arc"
+            supports: [Considered Casting, Zenith II, Unleash, Lightning Mastery]
+          - gem: "Orb of Storms"
+            supports: [Overabundance II, Considered Casting, Harmonic Remnants II]
+          - gem: "Elemental Weakness"
+            supports: [Heightened Curse, Cursed Ground, Prolonged Duration II]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure, Cooldown Recovery II, Long Fuse II]
+          - gem: "Mana Tempest"
+            supports: [Rapid Casting II, Efficiency II, Lightning Mastery]
+          - gem: "Archmage"
+            supports: [Lightning Mastery]
+          - gem: "Siphon Elements"
+            supports: [Harmonic Remnants II, Remnant Potency III, Clarity I]
+          - gem: "Mana Remnants"
+            supports: [Harmonic Remnants II, Remnant Potency III]
+rotations:
+  - name: "Clear"
+    steps:
+      - gem: "Orb of Storms"
+      - gem: "Arc"
+      - gem: "Mana Tempest"
+  - name: "Single Target"
+    steps:
+      - gem: "Sigil of Power"
+      - gem: "Orb of Storms"
+      - gem: "Elemental Weakness"
+      - gem: "Orb of Storms"
+      - gem: "Frost Bomb"
+      - gem: "Orb of Storms"
+      - gem: "Arc"
+      - gem: "Frost Bomb"
+      - gem: "Orb of Storms"
+      - gem: "Mana Tempest"
 gear:
   weapon:
     base: Attuned Wand
@@ -74,6 +240,126 @@ gear:
   belt:
     base: Utility Belt
     mods: [+Maximum Mana, Cold Resistance, Lightning Resistance]
+gearStages:
+  campaign:
+    weapon:
+      base: Voltaic Staff
+      mods: [+Level of all Lightning Spell Skills, Increased Spell Damage, Increased Lightning Damage, Gain Damage as Extra Lightning]
+    helmet:
+      base: Vermeil Circlet
+      mods: [Energy Shield]
+    body:
+      base: Altar Robe
+      mods: [+Spirit, Energy Shield]
+    gloves:
+      base: Pauascale Gloves
+      mods: [Energy Shield, Fire Resistance]
+    boots:
+      base: Flax Sandals
+      mods: [Movement Speed, Lightning Resistance, Cold Resistance]
+    amulet:
+      base: Solar Amulet
+      mods: [+Level of all Spell Skills, Grants a Passive Skill]
+    ring1:
+      base: Prismatic Ring
+      mods: [Elemental Resistances, Increased Cast Speed]
+    ring2:
+      base: Prismatic Ring
+      mods: [Elemental Resistances, Increased Cast Speed]
+    belt:
+      base: Utility Belt
+      mods: [+Maximum Mana, Cold Resistance, Lightning Resistance, Fire Resistance]
+  mapping:
+    weapon:
+      base: Attuned Wand
+      mods: [Increased Spell Damage, +Level of all Lightning Spell Skills, Gain Damage as Extra Lightning]
+    offhand:
+      base: Sacred Focus
+      mods: [Energy Shield, +Level of all Spell Skills, Lightning Resistance, +Maximum Mana]
+    helmet:
+      base: Kamasan Tiara
+      mods: [Energy Shield, Fire Resistance, Critical Hit Chance]
+    body:
+      base: Havoc Raiment
+      mods: [+Spirit, Energy Shield, Fire Resistance]
+    gloves:
+      base: Vaal Gloves
+      mods: [+Maximum Mana, Energy Shield, Fire Resistance]
+    boots:
+      base: Sandsworn Sandals
+      mods: [Movement Speed, +Maximum Mana, Cold Resistance, Lightning Resistance]
+    amulet:
+      base: Solar Amulet
+      mods: [+Level of all Spell Skills, Increased Cast Speed, Grants a Passive Skill]
+    ring1:
+      base: Pearl Ring
+      mods: [+Maximum Mana, Elemental Resistances, Cold Resistance]
+    ring2:
+      base: Pearl Ring
+      mods: [+Maximum Mana, Elemental Resistances, Cold Resistance]
+    belt:
+      base: Utility Belt
+      mods: [+Maximum Mana, Cold Resistance, Lightning Resistance]
+  endgame:
+    weapon:
+      base: Attuned Wand
+      mods: [Gain Damage as Extra Fire, Gain Damage as Extra Lightning, Increased Spell Damage, +Level of all Lightning Spell Skills, Spell Critical Hit Chance]
+    offhand:
+      base: Tasalian Focus
+      mods: [Lightning Resistance, +Maximum Mana, Energy Shield, Spell Critical Hit Chance, +Level of all Spell Skills]
+    helmet:
+      base: Ancestral Tiara
+      mods: [Energy Shield, Critical Hit Chance, Fire Resistance]
+    body:
+      base: Havoc Raiment
+      mods: [+Spirit, Energy Shield, +Intelligence, Fire Resistance]
+    gloves:
+      base: Sirenscale Gloves
+      mods: [+Maximum Mana, Energy Shield, +Intelligence, Fire Resistance, Cold Resistance]
+    boots:
+      base: Sekhema Sandals
+      mods: [Movement Speed, Energy Shield, +Intelligence, Cold Resistance]
+    amulet:
+      base: Lunar Amulet
+      mods: [+Maximum Mana, +Level of all Spell Skills, Critical Hit Chance, +All Attributes, Grants a Passive Skill]
+    ring1:
+      base: Pearl Ring
+      mods: [+Maximum Mana, Elemental Resistances, Cold Resistance]
+    ring2:
+      base: Pearl Ring
+      mods: [+Maximum Mana, Elemental Resistances, Cold Resistance]
+    belt:
+      base: Linen Belt
+      mods: [+Maximum Mana, +Strength, Cold Resistance, Lightning Resistance]
+  minmax:
+    weapon:
+      base: Attuned Wand
+      mods: [Gain Damage as Extra Fire, Gain Damage as Extra Lightning, Increased Spell Damage, +Level of all Lightning Spell Skills, Increased Cast Speed, Spell Critical Hit Chance]
+    offhand:
+      base: Tasalian Focus
+      mods: [Energy Shield, Increased Spell Damage, +Maximum Mana, Increased Cast Speed, Critical Damage Bonus, +Level of all Spell Skills]
+    helmet:
+      base: Ancestral Tiara
+      mods: [Energy Shield, +Maximum Mana, Critical Hit Chance, +Intelligence]
+    body:
+      unique: "Atziri's Splendour"
+    gloves:
+      base: Sirenscale Gloves
+      mods: [Energy Shield, +Maximum Mana, Critical Damage Bonus, Fire Resistance]
+    boots:
+      base: Sekhema Sandals
+      mods: [Movement Speed, Energy Shield, +Maximum Mana, +Intelligence, Cold Resistance, Lightning Resistance]
+    amulet:
+      base: Lunar Amulet
+      mods: [+Maximum Mana, +Spirit, +Level of all Spell Skills, Critical Hit Chance, Increased Cast Speed]
+    ring1:
+      base: Breach Ring
+      mods: [Increased Lightning Damage, +Maximum Mana, Increased Cast Speed, +All Attributes, Elemental Resistances]
+    ring2:
+      base: Breach Ring
+      mods: [+Maximum Mana, Increased Cast Speed, +All Attributes, Elemental Resistances]
+    belt:
+      unique: "Headhunter"
 passives:
   attribute: int
   path:

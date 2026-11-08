@@ -4,19 +4,30 @@ import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
 import { classes, getBase, getClass, getGem, getUnique, tree } from "./data";
+import { gemTip, tipAttr, uniqueTip } from "./tips";
+import { renderItemCards } from "./item-cards";
 import { allocateTargets, createGraph, findNodeByName } from "./tree";
 import { encodeBuild } from "./build-code";
 import { DEFAULT_LOCALE, localePath, type Locale } from "@/i18n/config";
 import {
+  DIFFICULTIES,
+  type Difficulty,
   GEAR_SLOTS,
+  GEAR_STAGES,
   TIER_CATEGORIES,
+  TIER_CHANGES,
   TIERS,
   type GearPiece,
+  type GearSet,
   type GearSlot,
+  type GearStage,
+  type LevelingPath,
+  type SkillRotation,
   type PlannerState,
   type SkillGroup,
   type Tier,
   type TierCategory,
+  type TierChange,
 } from "./types";
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "builds");
@@ -30,20 +41,37 @@ export interface Build {
   updated: string;
   summary: string;
   sample: boolean;
+  /** "guide": based on a written guide; "ladder": drawn from a ladder character and ladder statistics. */
+  origin: "guide" | "ladder";
   /** Game patch the guide was written for, e.g. "0.5.5". */
   patch: string;
   /** Guide this build is based on, credited on the page. */
-  source: { title: string; author: string; url: string; updated?: string } | null;
+  source: {
+    title: string;
+    author: string;
+    url: string;
+    updated?: string;
+  } | null;
   tags: string[];
   damage: string;
   playstyle: string;
-  difficulty: "easy" | "medium" | "hard";
+  difficulty: Difficulty;
   budget: "low" | "medium" | "high";
   tiers: Partial<Record<TierCategory, Tier>>;
+  /** Movement since the previous version of the source tier list, when the source says so. */
+  tierChanges: Partial<Record<TierCategory, TierChange>>;
   pros: string[];
   cons: string[];
   skills: SkillGroup[];
-  gear: Partial<Record<GearSlot, GearPiece>>;
+  /** Campaign skill progression, from the source guide's planner. */
+  leveling: LevelingPath[];
+  /** Set when the leveling comes from another guide than `source` (endgame-only guides). */
+  levelingSource: { title: string; url: string } | null;
+  rotations: SkillRotation[];
+  /** Reference gear (used by the planner and character comparison). */
+  gear: GearSet;
+  /** Optional gear progression; `gear` is shown when empty. */
+  gearStages: Partial<Record<GearStage, GearSet>>;
   ascendancyOrder: string[];
   keyPassives: string[];
   planner: PlannerState;
@@ -69,18 +97,21 @@ const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-/** Replaces [[Name]] references with links to the database (gems or uniques). */
+/** Replaces [[Name]] references with links to the database (gems or uniques), carrying hover-card data. */
 function linkReferences(markdown: string, file: string): string {
   return markdown.replace(/\[\[([^\]]+)\]\]/g, (_, name: string) => {
     const gem = getGem(name);
-    if (gem) return `<a class="ref ref-gem" href="/database/gems#${gem.id}">${gem.name}</a>`;
+    if (gem) return `<a class="ref ref-gem" href="/database/gems#${gem.id}" ${tipAttr(gemTip(name)!)}>${gem.name}</a>`;
     const unique = getUnique(name);
-    if (unique) return `<a class="ref ref-unique" href="/database/uniques#${unique.id}">${unique.name}</a>`;
+    if (unique) {
+      return `<a class="ref ref-unique" href="/database/uniques#${unique.id}" ${tipAttr(uniqueTip(name)!)}>${unique.name}</a>`;
+    }
     throw new BuildError(file, `Unknown reference [[${name}]] (not a gem or unique)`);
   });
 }
 
-function renderBody(markdown: string, file: string, lang: Locale = DEFAULT_LOCALE) {
+/** Renders guide Markdown: [[Name]] references, heading ids (h2 collected as a table of contents), localized links. */
+export function renderBody(markdown: string, file: string, lang: Locale = DEFAULT_LOCALE) {
   const toc: Build["toc"] = [];
   const renderer = new marked.Renderer();
   renderer.heading = ({ tokens, depth }) => {
@@ -89,6 +120,9 @@ function renderBody(markdown: string, file: string, lang: Locale = DEFAULT_LOCAL
     if (depth === 2) toc.push({ id, text });
     return `<h${depth} id="${id}">${marked.Parser.parseInline(tokens)}</h${depth}>`;
   };
+  // ```items blocks become item illustrations (see item-cards.ts).
+  const code = renderer.code.bind(renderer);
+  renderer.code = (token) => (token.lang === "items" ? renderItemCards(token.text, file) : code(token));
   const html = (marked.parse(linkReferences(markdown, file), { renderer, async: false }) as string)
     // Site-relative links follow the page language.
     .replace(/href="(\/[^"]*)"/g, (_, href: string) => `href="${localePath(lang, href)}"`);
@@ -107,6 +141,12 @@ function parseBuild(file: string): { build: Build; markdown: string } {
   if (ascIndex < 0) fail(`Unknown ascendancy "${fm.ascendancy}" for ${cls.name}`);
   const ascendancy = cls.ascendancies[ascIndex].name;
 
+  // An unquoted "Label: text" list item parses as an object in YAML and crashes the page.
+  for (const key of ["pros", "cons", "tags"]) {
+    const bad = (fm[key] ?? []).find((v: unknown) => typeof v !== "string");
+    if (bad !== undefined) fail(`${key} item ${JSON.stringify(bad)} is not text (quote items that contain ": ")`);
+  }
+
   const tiers: Build["tiers"] = {};
   for (const [cat, tier] of Object.entries(fm.tiers ?? {})) {
     if (!TIER_CATEGORIES.includes(cat as TierCategory)) fail(`Unknown tier category "${cat}"`);
@@ -119,15 +159,54 @@ function parseBuild(file: string): { build: Build; markdown: string } {
     return { gem: getGem(s.gem)!.name, supports: (s.supports ?? []).map((n) => getGem(n)!.name), note: s.note };
   });
 
-  const gear: Build["gear"] = {};
-  for (const [slot, piece] of Object.entries((fm.gear ?? {}) as Record<string, GearPiece>)) {
-    if (!(GEAR_SLOTS as readonly string[]).includes(slot)) fail(`Unknown gear slot "${slot}"`);
-    if (piece.unique && !getUnique(piece.unique)) fail(`Unknown unique "${piece.unique}"`);
-    if (piece.base && !getBase(piece.base)) fail(`Unknown base type "${piece.base}"`);
-    gear[slot as GearSlot] = {
-      ...piece,
-      unique: piece.unique ? getUnique(piece.unique)!.name : undefined,
-    };
+  const gemNamed = (name: string, where: string) => getGem(name)?.name ?? fail(`${where}: unknown gem "${name}"`);
+  const leveling: LevelingPath[] = (fm.leveling ?? []).map((p: LevelingPath, i: number) => ({
+    ...(p.name && { name: String(p.name) }),
+    steps: (p.steps ?? []).map((s) => {
+      const where = `leveling[${i}] "${s.name}"`;
+      if (!s.name) fail(`leveling[${i}]: step without a name`);
+      return {
+        name: String(s.name),
+        skills: (s.skills ?? []).map((g) => ({
+          gem: gemNamed(g.gem, where),
+          supports: (g.supports ?? []).map((n) => gemNamed(n, where)),
+        })),
+      };
+    }),
+  }));
+  const rotations: SkillRotation[] = (fm.rotations ?? []).map((r: SkillRotation) => ({
+    name: String(r.name),
+    steps: (r.steps ?? []).map((s) => ({
+      gem: gemNamed(s.gem, `rotations "${r.name}"`),
+      ...(s.count && s.count > 1 && { count: s.count }),
+    })),
+  }));
+
+  const parseGear = (raw: unknown, where: string): GearSet => {
+    const set: GearSet = {};
+    for (const [slot, piece] of Object.entries((raw ?? {}) as Record<string, GearPiece>)) {
+      if (!(GEAR_SLOTS as readonly string[]).includes(slot)) fail(`${where}: unknown gear slot "${slot}"`);
+      if (piece.unique && !getUnique(piece.unique)) fail(`${where}: unknown unique "${piece.unique}"`);
+      if (piece.base && !getBase(piece.base)) fail(`${where}: unknown base type "${piece.base}"`);
+      set[slot as GearSlot] = {
+        ...piece,
+        unique: piece.unique ? getUnique(piece.unique)!.name : undefined,
+      };
+    }
+    return set;
+  };
+  const gear = parseGear(fm.gear, "gear");
+  const gearStages: Build["gearStages"] = {};
+  for (const [stage, set] of Object.entries(fm.gearStages ?? {})) {
+    if (!(GEAR_STAGES as readonly string[]).includes(stage)) fail(`Unknown gear stage "${stage}"`);
+    gearStages[stage as GearStage] = parseGear(set, `gearStages.${stage}`);
+  }
+
+  const tierChanges: Build["tierChanges"] = {};
+  for (const [cat, change] of Object.entries(fm.tierChanges ?? {})) {
+    if (!tiers[cat as TierCategory]) fail(`tierChanges.${cat} without a tier in that category`);
+    if (!(TIER_CHANGES as readonly string[]).includes(change as string)) fail(`Invalid tier change "${change}"`);
+    tierChanges[cat as TierCategory] = change as TierChange;
   }
 
   // Passive tree: guides list the notables/keystones they path to, in order.
@@ -170,6 +249,7 @@ function parseBuild(file: string): { build: Build; markdown: string } {
     updated,
     summary: fm.summary ?? "",
     sample: Boolean(fm.sample),
+    origin: fm.origin === "ladder" ? "ladder" : fm.origin === undefined || fm.origin === "guide" ? "guide" : fail(`Invalid origin "${fm.origin}"`),
     patch: String(fm.patch ?? ""),
     source: fm.source
       ? {
@@ -183,13 +263,22 @@ function parseBuild(file: string): { build: Build; markdown: string } {
     tags: fm.tags ?? [],
     damage: fm.damage ?? "",
     playstyle: fm.playstyle ?? "",
-    difficulty: fm.difficulty ?? "medium",
+    difficulty: DIFFICULTIES.includes(fm.difficulty ?? "medium")
+      ? (fm.difficulty ?? "medium")
+      : fail(`Invalid difficulty "${fm.difficulty}" (expected ${DIFFICULTIES.join(", ")})`),
     budget: fm.budget ?? "medium",
     tiers,
+    tierChanges,
     pros: fm.pros ?? [],
     cons: fm.cons ?? [],
     skills,
+    leveling,
+    levelingSource: fm.levelingSource?.url
+      ? { title: String(fm.levelingSource.title ?? fm.levelingSource.url), url: String(fm.levelingSource.url) }
+      : null,
+    rotations,
     gear,
+    gearStages,
     ascendancyOrder,
     keyPassives,
     planner,
@@ -248,13 +337,13 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
 // The cache lives on globalThis to survive dev module reloads.
 type Parsed = { build: Build; markdown: string };
 const store = globalThis as typeof globalThis & {
-  __buildCacheV2?: {
+  __buildCacheV11?: {
     files: Map<string, { mtimeMs: number; parsed: Parsed }>;
     lists: Map<Locale, { key: string; list: Build[] }>;
   };
 };
 // Versioned key: a dev server still holding a cache in an older shape (hot reload keeps globalThis) gets a fresh one.
-const cache = (store.__buildCacheV2 ??= { files: new Map(), lists: new Map() });
+const cache = (store.__buildCacheV11 ??= { files: new Map(), lists: new Map() });
 
 const mtime = (p: string) => (fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0);
 

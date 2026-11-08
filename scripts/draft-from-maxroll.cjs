@@ -16,6 +16,10 @@ const bases = JSON.parse(fs.readFileSync(P + "src/data/generated/bases.json"));
 const gemsRaw = raw("skill_gems.json");
 const basesRaw = raw("base_items.json");
 const charactersRaw = raw("characters.json");
+// Maxroll items carry the unique's art id (e.g. "FourUniqueRing32"); RePoE has the same id under visual_identity.
+const uniqueByArt = new Map(
+  Object.values(raw("uniques.json")).map((u) => [u.visual_identity?.id?.replace(/_+$/, "").toLowerCase(), u.name]),
+);
 
 const gemName = (id) => {
   for (const k of [id, id.replace("/Gems/", "/Gem/"), id.replace("/Gem/", "/Gems/")]) {
@@ -101,8 +105,50 @@ const SLOTS = { Weapon: "weapon", Offhand: "offhand", Helm: "helmet", BodyArmour
 
 const yamlList = (items) => `[${items.map((s) => (/[:,[\]#]/.test(s) || /^[!&*'"]/.test(s) ? JSON.stringify(s) : s)).join(", ")}]`;
 
+// Gear progression: picks one equipment variant per stage, by name (or by an explicit --map).
+const STAGE_RULES = [
+  ["minmax", /min.?max|aspir|high budget|\+\+\+/i, "last"],
+  ["campaign", /campaign|\bact ?\d|leveling|level ?\d|interlude|hollow palm|respec|^set 1$|legion swap/i, "last"],
+  ["endgame", /end ?game|late|^maps$/i, "last"],
+  ["mapping", /early|map|mid|red/i, "first"],
+];
+function printStages(d, gearFor, mapArg) {
+  const variants = [];
+  for (const p of d.profiles)
+    for (const v of p.equipment.variants)
+      if (!variants.some((x) => x.name === v.name) && Object.values(v.items ?? {}).some((id) => d.items[id])) variants.push(v);
+  const explicit = Object.fromEntries((mapArg || "").split(",").filter(Boolean).map((kv) => kv.split("=").map((x) => x.trim())));
+  const picked = {};
+  if (Object.keys(explicit).length) {
+    for (const [stage, name] of Object.entries(explicit)) {
+      const v = variants.find((x) => x.name === name);
+      if (!v) throw new Error(`No equipment variant "${name}" (have: ${variants.map((x) => x.name).join(" | ")})`);
+      picked[stage] = v;
+    }
+  } else {
+    for (const v of variants) {
+      const rule = STAGE_RULES.find(([, re]) => re.test(v.name.replace(/\s*\{[^}]*\}\s*$/, "")));
+      if (!rule) continue;
+      if (rule[2] === "last" || !picked[rule[0]]) picked[rule[0]] = v;
+    }
+  }
+  console.error(`variants: ${variants.map((v) => v.name).join(" | ")}`);
+  console.error(`picked: ${Object.entries(picked).map(([k, v]) => `${k}=${v.name}`).join(", ")}`);
+  const order = ["campaign", "mapping", "endgame", "minmax"];
+  const out = ["gearStages:"];
+  for (const stage of order.filter((s) => picked[s])) {
+    out.push(`  ${stage}:`);
+    out.push(...gearFor(picked[stage], "    ").map((l) => l.replace(/, \?[\w+%.]+|\?[\w+%.]+, |\?[\w+%.]+/g, "")));
+  }
+  process.stdout.write(out.join("\n") + "\n");
+}
+
 (async () => {
-  const [slug, wanted] = process.argv.slice(2);
+  const args = process.argv.slice(2);
+  const stagesMode = args.includes("--stages");
+  const mapIdx = args.indexOf("--map");
+  const stageArgs = mapIdx >= 0 ? args[mapIdx + 1] : "";
+  const [slug, wanted] = args.filter((a, i) => !a.startsWith("--") && i !== mapIdx + 1 || (mapIdx < 0 && !a.startsWith("--")));
   const url = `https://maxroll.gg/poe2/build-guides/${slug}`;
   const html = await (await fetch(url)).text();
   const plannerId = html.match(/maxroll\.gg\/poe2\/planner\/([a-z0-9]+)/)?.[1];
@@ -161,37 +207,49 @@ const yamlList = (items) => `[${items.map((s) => (/[:,[\]#]/.test(s) || /^[!&*'"
     skills.push({ gem, supports });
   }
 
-  // Gear.
-  const variant = profile.equipment.variants.find((v) => v.name === pv.name) ?? profile.equipment.variants[0];
-  const gear = [];
+  // Gear: one YAML block per equipment variant.
   const notes = [];
-  for (const [slot, key2] of Object.entries(SLOTS)) {
-    const it = d.items[variant.items[slot]];
-    if (!it) continue;
-    const base = basesRaw[it.base]?.name;
-    if (it.rarity === "unique") {
-      let name = it.name && uniques.some((u) => u.name === it.name) ? it.name : null;
-      if (!name) {
-        const candidates = uniques.filter((u) => u.base === base || u.base === base?.replace(/^Runemastered |^Runeforged /, ""));
-        if (candidates.length === 1) name = candidates[0].name;
-        else if (candidates.length > 1) {
-          // Several uniques share this base: pick the one whose mod text best matches the item's stat ids.
-          const words = new Set(Object.keys(it.stats?.explicit ?? {}).join("_").toLowerCase().split(/[^a-z]+/).filter((w) => w.length > 3));
-          const score = (u) => [...u.implicits, ...u.mods].join(" ").toLowerCase().split(/[^a-z]+/).filter((w) => words.has(w)).length;
-          const ranked = candidates.map((u) => ({ u, s: score(u) })).sort((x, y) => y.s - x.s);
-          name = ranked[0].u.name;
-          notes.push(`${key2}: unique on ${base} guessed as ${name} (${ranked.map((r) => `${r.u.name}=${r.s}`).join(", ")})`);
-        } else notes.push(`${key2}: unique on ${base}, no candidate in our data`);
+  const gearFor = (variant, indent = "  ") => {
+    const gear = [];
+    for (const [slot, key2] of Object.entries(SLOTS)) {
+      const it = d.items[variant.items[slot]];
+      if (!it) continue;
+      const base = basesRaw[it.base]?.name;
+      if (it.rarity === "unique") {
+        let name = it.name && uniques.some((u) => u.name === it.name) ? it.name : null;
+        const byArt = it.unique && uniqueByArt.get(it.unique.replace(/_+$/, "").toLowerCase());
+        if (!name && byArt && uniques.some((u) => u.name === byArt)) name = byArt;
+        if (!name) {
+          const candidates = uniques.filter((u) => u.base === base || u.base === base?.replace(/^Runemastered |^Runeforged /, ""));
+          if (candidates.length === 1) name = candidates[0].name;
+          else if (candidates.length > 1) {
+            // Several uniques share this base: pick the one whose mod text best matches the item's stat ids.
+            const words = new Set(Object.keys(it.stats?.explicit ?? {}).join("_").toLowerCase().split(/[^a-z]+/).filter((w) => w.length > 3));
+            const score = (u) => [...u.implicits, ...u.mods].join(" ").toLowerCase().split(/[^a-z]+/).filter((w) => words.has(w)).length;
+            const ranked = candidates.map((u) => ({ u, s: score(u) })).sort((x, y) => y.s - x.s);
+            name = ranked[0].u.name;
+            notes.push(`${key2}: unique on ${base} guessed as ${name} (${ranked.map((r) => `${r.u.name}=${r.s}`).join(", ")})`);
+          } else notes.push(`${key2}: unique on ${base}, no candidate in our data`);
+        }
+        if (name) gear.push(`${indent}${key2}:\n${indent}  unique: ${JSON.stringify(name)}`);
+        continue;
       }
-      if (name) gear.push(`  ${key2}:\n    unique: ${JSON.stringify(name)}`);
-      continue;
+      const pr = variant.priority?.[slot];
+      const statIds = [...(pr?.required ?? []), ...(pr?.optional ?? [])].map((x) => x.id);
+      const ids = statIds.length ? statIds : Object.keys(it.stats?.explicit ?? {});
+      const mods = [...new Set(ids.map(statLabel).filter(Boolean))].slice(0, 6);
+      const baseLine = base && bases.some((b) => b.name === base) ? `\n${indent}  base: ${base}` : "";
+      gear.push(`${indent}${key2}:${baseLine}\n${indent}  mods: ${yamlList(mods)}`);
     }
-    const pr = variant.priority?.[slot];
-    const statIds = [...(pr?.required ?? []), ...(pr?.optional ?? [])].map((x) => x.id);
-    const ids = statIds.length ? statIds : Object.keys(it.stats?.explicit ?? {});
-    const mods = [...new Set(ids.map(statLabel).filter(Boolean))].slice(0, 6);
-    const baseLine = base && bases.some((b) => b.name === base) ? `\n    base: ${base}` : "";
-    gear.push(`  ${key2}:${baseLine}\n    mods: ${yamlList(mods)}`);
+    return gear;
+  };
+  const variant = profile.equipment.variants.find((v) => v.name === pv.name) ?? profile.equipment.variants[0];
+  const gear = gearFor(variant);
+
+  if (stagesMode) {
+    printStages(d, gearFor, stageArgs);
+    for (const n of notes) console.error("NOTE " + n);
+    return;
   }
 
   const out = `---

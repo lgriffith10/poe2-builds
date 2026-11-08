@@ -18,6 +18,8 @@ difficulty: easy
 budget: low
 tiers:
   starter: B
+  endgame: A
+  bossing: A
 pros:
   - Self-found friendly, works with almost no specific gear
   - Packs die in chain reactions thanks to Contagion
@@ -56,6 +58,153 @@ skills:
   - gem: Convalescence
     supports: [Cooldown Recovery II, Second Wind III, Prolonged Duration II]
     note: Defensive spell
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Level 2: Clearfell"
+        skills:
+          - gem: "Chaos Bolt"
+          - gem: "Skeletal Sniper"
+          - gem: "Flame Wall"
+          - gem: "Unearth"
+      - name: "Level 3: Defeat Devourer"
+        skills:
+          - gem: "Chaos Bolt"
+          - gem: "Contagion"
+          - gem: "Skeletal Sniper"
+            supports: [Fire Attunement]
+          - gem: "Flame Wall"
+          - gem: "Unearth"
+      - name: "Level 3 to 5"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Chain I]
+          - gem: "Contagion"
+            supports: [Zenith I]
+          - gem: "Skeletal Sniper"
+            supports: [Fire Attunement]
+          - gem: "Flame Wall"
+          - gem: "Unearth"
+      - name: "Level 6 to 14"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Unleash]
+          - gem: "Contagion"
+            supports: [Rapid Casting I]
+          - gem: "Essence Drain"
+            supports: [Chain I, Zenith I]
+          - gem: "Skeletal Sniper"
+            supports: [Fire Attunement]
+          - gem: "Flame Wall"
+      - name: "Act 1"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Unleash]
+          - gem: "Essence Drain"
+            supports: [Chain I, Zenith I]
+          - gem: "Contagion"
+            supports: [Rapid Casting I, Magnified Area I]
+          - gem: "Withering Presence"
+            supports: [Prolonged Duration I]
+      - name: "Act 2"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Considered Casting, Unleash]
+          - gem: "Essence Drain"
+            supports: [Chain II, Zenith I]
+          - gem: "Contagion"
+            supports: [Rapid Casting I, Magnified Area I]
+          - gem: "Withering Presence"
+            supports: [Prolonged Duration I]
+          - gem: "Temporal Chains"
+            supports: [Slow Potency]
+          - gem: "Sigil of Power"
+            supports: [Magnified Area I, Prolonged Duration I]
+      - name: "Act 3"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Considered Casting, Unleash]
+          - gem: "Essence Drain"
+            supports: [Chain II, Zenith II, Swift Affliction II]
+          - gem: "Contagion"
+            supports: [Rapid Casting I, Magnified Area I, Unleash]
+          - gem: "Despair"
+            supports: [Decaying Hex, Heightened Curse]
+          - gem: "Dark Effigy"
+            supports: [Withering Touch, Poison II]
+          - gem: "Blasphemy"
+            supports: [Temporal Chains, Slow Potency]
+          - gem: "Sigil of Power"
+            supports: [Magnified Area I, Prolonged Duration I]
+      - name: "Act 4"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Considered Casting, Unleash]
+          - gem: "Essence Drain"
+            supports: [Chain II, Zenith II, Swift Affliction II]
+          - gem: "Contagion"
+            supports: [Rapid Casting I, Magnified Area I, Unleash]
+          - gem: "Despair"
+            supports: [Decaying Hex, Heightened Curse, Prolonged Duration II]
+          - gem: "Dark Effigy"
+            supports: [Withering Touch, Poison II, Urgent Totems II]
+          - gem: "Blasphemy"
+            supports: [Temporal Chains, Slow Potency, Magnified Area II]
+          - gem: "Sigil of Power"
+            supports: [Magnified Area I, Prolonged Duration I]
+      - name: "Act 5 / End of Campaign"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Chaos Mastery, Unleash]
+          - gem: "Essence Drain"
+            supports: [Chain II, Zenith II, Swift Affliction II, Considered Casting]
+          - gem: "Contagion"
+            supports: [Rapid Casting II, Magnified Area II, Unleash]
+          - gem: "Despair"
+            supports: [Decaying Hex, Heightened Curse, Prolonged Duration II]
+          - gem: "Dark Effigy"
+            supports: [Withering Touch, Poison II, Urgent Totems III]
+          - gem: "Blasphemy"
+            supports: [Temporal Chains, Slow Potency, Magnified Area II]
+          - gem: "Withering Presence"
+            supports: [Prolonged Duration II, Chaos Mastery]
+          - gem: "Sigil of Power"
+            supports: [Magnified Area II, Prolonged Duration II, Rapid Casting II]
+      - name: "Early Maps"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Chaos Mastery, Unleash, Rapid Casting II]
+          - gem: "Essence Drain"
+            supports: [Chain III, Zenith II, Swift Affliction II, Considered Casting]
+          - gem: "Contagion"
+            supports: [Rapid Casting III, Magnified Area II, Unleash]
+          - gem: "Despair"
+            supports: [Decaying Hex, Heightened Curse, Prolonged Duration II]
+          - gem: "Dark Effigy"
+            supports: [Poison III, Urgent Totems III, Overabundance II, Controlled Destruction]
+          - gem: "Blasphemy"
+            supports: [Temporal Chains, Slow Potency, Magnified Area II]
+          - gem: "Withering Presence"
+            supports: [Prolonged Duration II, Chaos Mastery]
+          - gem: "Sigil of Power"
+            supports: [Magnified Area II, Prolonged Duration II, Rapid Casting II]
+          - gem: "Ravenous Swarm"
+            supports: [Poison III, Escalating Poison, Prolonged Duration II, Withering Touch]
+          - gem: "Convalescence"
+            supports: [Cooldown Recovery II, Second Wind III, Prolonged Duration II]
+rotations:
+  - name: "Clear"
+    steps:
+      - gem: "Contagion"
+      - gem: "Essence Drain"
+  - name: "Single Target"
+    steps:
+      - gem: "Sigil of Power"
+      - gem: "Despair"
+      - gem: "Dark Effigy"
+      - gem: "Essence Drain"
+      - gem: "Contagion"
+      - gem: "Chaos Bolt"
 gear:
   weapon:
     base: Withered Wand
@@ -86,6 +235,125 @@ gear:
   belt:
     base: Fine Belt
     mods: [Elemental Resistances]
+gearStages:
+  campaign:
+    weapon:
+      base: Withered Wand
+      mods: [Gain Damage as Extra Lightning, Increased Spell Damage, Increased Chaos Damage, +Level of all Chaos Spell Skills, +Intelligence, Mana Regeneration]
+    offhand:
+      base: Crystal Focus
+      mods: [Increased Spell Damage, +Maximum Mana, +Level of all Spell Skills, Increased Cast Speed, Fire Resistance]
+    helmet:
+      base: Sandsworn Tiara
+      mods: [Energy Shield, +Maximum Life, Cold Resistance, Chaos Resistance]
+    body:
+      base: Altar Robe
+      mods: [Energy Shield, +Spirit, +Intelligence, Fire Resistance]
+    gloves:
+      base: Stitched Gloves
+      mods: [Energy Shield, Adds Physical Damage to Attacks, +Intelligence, Fire Resistance, Cold Resistance]
+    boots:
+      base: Flax Sandals
+      mods: [Movement Speed, Energy Shield, Cold Resistance, Stun Threshold]
+    amulet:
+      base: Lunar Amulet
+      mods: [Increased Spell Damage, +Strength]
+    ring1:
+      base: Lazuli Ring
+      mods: [Adds Physical Damage to Attacks, Adds Fire Damage to Attacks, Increased Lightning Damage, Increased Cast Speed, +Strength, Lightning Resistance]
+    ring2:
+      base: Prismatic Ring
+      mods: [Increased Fire Damage, Increased Chaos Damage, Fire Resistance, Lightning Resistance]
+    belt:
+      base: Ornate Belt
+      mods: [+Maximum Life, +Strength]
+  mapping:
+    weapon:
+      base: Withered Wand
+      mods: [Increased Spell Damage, Increased Chaos Damage, +Level of all Chaos Spell Skills, Increased Cast Speed]
+    offhand:
+      base: Tasalian Focus
+      mods: [Increased Spell Damage, Increased Chaos Damage, +Level of all Spell Skills, Increased Cast Speed]
+    helmet:
+      unique: "Atziri's Disdain"
+    body:
+      base: Vile Robe
+      mods: [Energy Shield, +Spirit, Cold Resistance]
+    gloves:
+      base: Sirenscale Gloves
+      mods: [Energy Shield, Fire Resistance]
+    boots:
+      base: Sekhema Sandals
+      mods: [Movement Speed, Energy Shield, Lightning Resistance]
+    amulet:
+      base: Solar Amulet
+      mods: [+Level of all Spell Skills, Increased Cast Speed]
+    ring1:
+      base: Prismatic Ring
+      mods: [Increased Cast Speed, Elemental Resistances]
+    ring2:
+      base: Prismatic Ring
+      mods: [Increased Cast Speed, Elemental Resistances]
+    belt:
+      base: Fine Belt
+      mods: [Fire Resistance, Cold Resistance, Lightning Resistance]
+  endgame:
+    weapon:
+      base: Withered Wand
+      mods: [Increased Spell Damage, Increased Chaos Damage, +Level of all Chaos Spell Skills, Increased Cast Speed]
+    offhand:
+      base: Tasalian Focus
+      mods: [Increased Spell Damage, Increased Chaos Damage, +Level of all Spell Skills, Increased Cast Speed, Fire Resistance]
+    helmet:
+      unique: "Atziri's Disdain"
+    body:
+      base: Vile Robe
+      mods: [Energy Shield, Fire Resistance, Cold Resistance, Chaos Resistance]
+    gloves:
+      base: Sirenscale Gloves
+      mods: [Energy Shield, Lightning Resistance]
+    boots:
+      base: Sekhema Sandals
+      mods: [Movement Speed, Energy Shield, Cold Resistance]
+    amulet:
+      base: Gold Amulet
+      mods: [+Spirit, +Level of all Spell Skills, Increased Cast Speed, Grants a Passive Skill]
+    ring1:
+      base: Prismatic Ring
+      mods: [Increased Chaos Damage, Increased Cast Speed, Elemental Resistances, Chaos Resistance]
+    ring2:
+      base: Gold Ring
+      mods: [Increased Chaos Damage, Increased Cast Speed, Elemental Resistances]
+    belt:
+      unique: "Ingenuity"
+  minmax:
+    weapon:
+      base: Withered Wand
+      mods: [Increased Spell Damage, Increased Chaos Damage, +Maximum Mana, +Level of all Chaos Spell Skills, Increased Cast Speed]
+    offhand:
+      base: Tasalian Focus
+      mods: [Increased Spell Damage, Increased Chaos Damage, +Level of all Spell Skills, Increased Cast Speed, Fire Resistance]
+    helmet:
+      unique: "Atziri's Disdain"
+    body:
+      base: Vile Robe
+      mods: [Energy Shield, Fire Resistance, Cold Resistance, Chaos Resistance]
+    gloves:
+      base: Sirenscale Gloves
+      mods: [Energy Shield, +Maximum Life, Chaos Resistance]
+    boots:
+      base: Sekhema Sandals
+      mods: [Movement Speed, Energy Shield, Cold Resistance]
+    amulet:
+      base: Gold Amulet
+      mods: [Increased Spell Damage, Energy Shield, +Spirit, +Level of all Spell Skills, Increased Cast Speed, Grants a Passive Skill]
+    ring1:
+      base: Prismatic Ring
+      mods: [Increased Chaos Damage, +Maximum Life, Increased Cast Speed, Elemental Resistances, Chaos Resistance]
+    ring2:
+      unique: "Kalandra's Touch"
+    belt:
+      unique: "Headhunter"
 passives:
   attribute: int
   path:

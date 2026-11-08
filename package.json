@@ -9,9 +9,14 @@
     "lint": "eslint",
     "data:sync": "node scripts/sync-data.mjs",
     "builds:check": "tsx --conditions=react-server scripts/validate-builds.ts",
+    "builds:fit": "tsx --conditions=react-server scripts/fit-passives.ts",
     "test:planner": "tsx scripts/test-planner.ts",
     "research:maxroll": "node scripts/research-maxroll.cjs",
     "draft:maxroll": "node scripts/draft-from-maxroll.cjs",
+    "leveling:maxroll": "node scripts/leveling-from-maxroll.cjs",
+    "ladder:sync": "node scripts/sync-ninja.mjs",
+    "craft:data": "node scripts/craft-data.mjs",
+    "draft:ninja": "node scripts/draft-from-ninja.mjs",
     "preview": "next build && next start"
   },
   "dependencies": {

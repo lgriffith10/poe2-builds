@@ -62,6 +62,105 @@ skills:
   - gem: Malice
     supports: [Prolonged Duration II]
     note: Aura
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Act 1"
+        skills:
+          - gem: "Whirling Slash"
+            supports: [Rapid Attacks I, Rage I]
+          - gem: "Twister"
+            supports: [Retreat I, Prolonged Duration I]
+          - gem: "Frost Bomb"
+          - gem: "Fangs of Frost"
+          - gem: "Parry"
+          - gem: "Barrage"
+            supports: [Rapid Casting I]
+          - gem: "War Banner"
+      - name: "Act 2"
+        skills:
+          - gem: "Whirling Slash"
+            supports: [Rapid Attacks I, Rage I]
+          - gem: "Twister"
+            supports: [Retreat I, Frost Nexus, Elemental Armament II]
+          - gem: "Barrage"
+            supports: [Rapid Casting I]
+          - gem: "War Banner"
+            supports: [Prolonged Duration I]
+          - gem: "Freezing Mark"
+            supports: [Prolonged Duration I]
+          - gem: "Ice-Tipped Arrows"
+            supports: [Elemental Armament I, Magnified Area I]
+          - gem: "Herald of Ice"
+            supports: [Elemental Armament II, Overreach]
+      - name: "Act 3 to Maps"
+        skills:
+          - gem: "Whirling Slash"
+            supports: [Rage III, Rapid Attacks III, Knockback]
+          - gem: "Twister"
+            supports: [Retreat III, Frost Nexus, Elemental Armament II, Projectile Acceleration III]
+          - gem: "Ice-Tipped Arrows"
+            supports: [Magnified Area II, Elemental Focus, Cooldown Recovery II, Elemental Armament II]
+          - gem: "Barrage"
+            supports: [Rapid Casting II, Perpetual Charge, Heightened Charges]
+          - gem: "War Banner"
+            supports: [Prolonged Duration II, Magnified Area II]
+          - gem: "Freezing Mark"
+            supports: [Charged Mark, Mark of Siphoning II, Eternal Mark]
+          - gem: "Herald of Ice"
+            supports: [Elemental Armament II, Overreach, Frozen Spite]
+          - gem: "Combat Frenzy"
+            supports: [Charge Profusion I]
+          - gem: "Wind Dancer"
+            supports: [Knockback, Life Leech III]
+          - gem: "Primal Bounty"
+          - gem: "Malice"
+            supports: [Prolonged Duration I]
+          - gem: "Vivid Stampede"
+            supports: [Magnified Area II, Shock]
+          - gem: "Wild Protector"
+            supports: [Loyalty, Meat Shield II, Elemental Army]
+      - name: "Early Maps"
+        skills:
+          - gem: "Twister"
+            supports: [Elemental Armament II, Retreat III, Frost Nexus, Projectile Acceleration III, Deliberation]
+          - gem: "Whirling Slash"
+            supports: [Rage III, Rapid Attacks III, Knockback, Magnified Area II]
+          - gem: "Ice-Tipped Arrows"
+            supports: [Magnified Area II, Elemental Focus, Cooldown Recovery II, Elemental Armament II]
+          - gem: "Barrage"
+            supports: [Rapid Casting II, Cooldown Recovery II, Perpetual Charge, Heightened Charges]
+          - gem: "Freezing Mark"
+            supports: [Charged Mark, Mark of Siphoning II, Prolonged Duration II, Eternal Mark]
+          - gem: "War Banner"
+            supports: [Prolonged Duration II, Magnified Area II, Refraction II]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area II, Frozen Spite, Elemental Armament II, Elemental Focus]
+          - gem: "Combat Frenzy"
+            supports: [Charge Profusion II]
+          - gem: "Wind Dancer"
+            supports: [Knockback, Life Leech III]
+          - gem: "Vivid Stampede"
+            supports: [Magnified Area II, Commiserate, Overcharge, Shock]
+          - gem: "Wild Protector"
+            supports: [Elemental Army, Meat Shield II, Loyalty, Exposing Cry]
+          - gem: "Malice"
+            supports: [Prolonged Duration II]
+rotations:
+  - name: "Bossing"
+    steps:
+      - gem: "Ice-Tipped Arrows"
+      - gem: "Freezing Mark"
+      - gem: "Barrage"
+      - gem: "Whirling Slash"
+        count: 3
+      - gem: "Twister"
+  - name: "Map Clear"
+    steps:
+      - gem: "Ice-Tipped Arrows"
+      - gem: "Whirling Slash"
+        count: 3
+      - gem: "Twister"
 gear:
   weapon:
     base: Akoyan Spear

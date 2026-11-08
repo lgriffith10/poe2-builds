@@ -3,8 +3,9 @@ import gemsJson from "@/data/generated/gems.json";
 import uniquesJson from "@/data/generated/uniques.json";
 import basesJson from "@/data/generated/bases.json";
 import metaJson from "@/data/generated/meta.json";
+import gemDetailsJson from "@/data/generated/gem-details.json";
 import treeJson from "../../public/data/tree.json";
-import type { BaseItem, Gem, TreeData, UniqueItem } from "./types";
+import type { BaseItem, Gem, GemDetails, TreeData, UniqueItem } from "./types";
 
 export const gems = gemsJson as Gem[];
 export const uniques = uniquesJson as UniqueItem[];
@@ -19,6 +20,7 @@ const baseIndex = byName(bases);
 
 export const getGem = (name: string) => gemIndex.get(name.toLowerCase());
 export const getUnique = (name: string) => uniqueIndex.get(name.toLowerCase());
+export const getGemDetails = (id: string) => (gemDetailsJson as unknown as Record<string, GemDetails>)[id];
 export const getBase = (name: string) => baseIndex.get(name.toLowerCase());
 
 export const classes = tree.classes;

@@ -18,6 +18,8 @@ difficulty: easy
 budget: low
 tiers:
   starter: A
+  endgame: A
+  bossing: A
 pros:
   - "Very high damage"
   - "Few buttons once the army is up"
@@ -46,6 +48,224 @@ skills:
     supports: [Cooldown Recovery II, Upwelling I]
   - gem: "Refutation"
     supports: [Prolonged Duration II, Cooldown Recovery II, Rapid Casting II, Mobility]
+leveling:
+  - name: "Campaign Crossbow"
+    steps:
+      - name: "Act 1 Spear start"
+        skills:
+          - gem: "Whirling Slash"
+          - gem: "Twister"
+      - name: "Act 1 Crossbow step 1"
+        skills:
+          - gem: "Crossbow Shot"
+          - gem: "Explosive Grenade"
+            supports: [Multishot I, Elemental Armament I]
+          - gem: "Frost Bomb"
+          - gem: "Flash Grenade"
+            supports: [Multishot I, Lightning Attunement]
+      - name: "Act 1 Crossbow step 2"
+        skills:
+          - gem: "Crossbow Shot"
+            supports: [Multishot I, Rapid Attacks I]
+          - gem: "Explosive Grenade"
+            supports: [Multishot I, Elemental Armament I]
+          - gem: "Frost Bomb"
+          - gem: "Flash Grenade"
+            supports: [Multishot I, Lightning Attunement]
+          - gem: "War Banner"
+            supports: [Prolonged Duration I]
+      - name: "Act 2 & New Support"
+        skills:
+          - gem: "Crossbow Shot"
+            supports: [Multishot I, Rapid Attacks I]
+          - gem: "Explosive Grenade"
+            supports: [Multishot I, Short Fuse I]
+          - gem: "Frost Bomb"
+          - gem: "Flash Grenade"
+            supports: [Multishot I, Lightning Attunement]
+          - gem: "War Banner"
+            supports: [Prolonged Duration I]
+          - gem: "Freezing Mark"
+  - name: "Campaign Twister"
+    steps:
+      - name: "Act 1 Step 1"
+        skills:
+          - gem: "Whirling Slash"
+            supports: [Rage I, Rapid Attacks I]
+          - gem: "Twister"
+            supports: [Retreat I]
+          - gem: "Frost Bomb"
+          - gem: "Fangs of Frost"
+      - name: "Act 1 Step 2"
+        skills:
+          - gem: "Whirling Slash"
+            supports: [Rage I, Rapid Attacks I]
+          - gem: "Twister"
+            supports: [Retreat I, Prolonged Duration I]
+          - gem: "Frost Bomb"
+          - gem: "Fangs of Frost"
+            supports: [Elemental Armament I]
+          - gem: "Barrage"
+      - name: "Act 1 Step 3"
+        skills:
+          - gem: "Whirling Slash"
+            supports: [Rage I, Rapid Attacks I]
+          - gem: "Twister"
+            supports: [Retreat I, Prolonged Duration I]
+          - gem: "Frost Bomb"
+          - gem: "Fangs of Frost"
+            supports: [Elemental Armament I]
+          - gem: "Barrage"
+          - gem: "War Banner"
+            supports: [Prolonged Duration I]
+      - name: "Act 2 & New Supports"
+        skills:
+          - gem: "Whirling Slash"
+            supports: [Rage I, Rapid Attacks I]
+          - gem: "Twister"
+            supports: [Retreat I, Frost Nexus]
+          - gem: "Barrage"
+          - gem: "War Banner"
+            supports: [Prolonged Duration I]
+          - gem: "Freezing Mark"
+            supports: [Prolonged Duration I]
+          - gem: "Ice-Tipped Arrows"
+            supports: [Elemental Armament I]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp, Lightning Attunement]
+          - gem: "Herald of Ice"
+  - name: "Campaign Minions (level 22)"
+    steps:
+      - name: "Act 2 & Bear Asendancy"
+        skills:
+          - gem: "Wild Protector"
+            supports: [Minion Splash I, Lightning Attunement]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp]
+          - gem: "Pain Offering"
+            supports: [Meat Shield I, Danse Macabre]
+          - gem: "Freezing Mark"
+            supports: [Mark for Death]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp]
+          - gem: "Withering Presence"
+            supports: [Upwelling I, Prolonged Duration I]
+      - name: "Act 2 Chaos DMG Notable"
+        skills:
+          - gem: "Wild Protector"
+            supports: [Minion Splash I, Lightning Attunement]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp, Meat Shield I]
+          - gem: "Pain Offering"
+            supports: [Meat Shield I, Danse Macabre, Prolonged Duration I]
+          - gem: "Freezing Mark"
+            supports: [Mark for Death, Prolonged Duration I]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp, Maim]
+          - gem: "Withering Presence"
+            supports: [Upwelling I, Prolonged Duration I]
+          - gem: "Despair"
+      - name: "Act 3 & Before Monkey"
+        skills:
+          - gem: "Wild Protector"
+            supports: [Minion Splash I, Feeding Frenzy I, Lightning Attunement]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp, Meat Shield I]
+          - gem: "Pain Offering"
+            supports: [Meat Shield I, Danse Macabre, Prolonged Duration I]
+          - gem: "Sniper's Mark"
+            supports: [Mark for Death, Eternal Mark]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp, Maim]
+          - gem: "Withering Presence"
+            supports: [Upwelling I, Prolonged Duration I]
+          - gem: "Despair"
+      - name: "Act 3 & 2nd Ascendancy"
+        skills:
+          - gem: "Wild Protector"
+            supports: [Muster, Minion Splash I, Feeding Frenzy I]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp, Meat Shield I]
+          - gem: "Pain Offering"
+            supports: [Meat Shield I, Danse Macabre, Prolonged Duration I]
+          - gem: "Sniper's Mark"
+            supports: [Mark for Death, Eternal Mark, Second Wind I]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp, Maim]
+          - gem: "Withering Presence"
+            supports: [Upwelling I, Prolonged Duration I]
+          - gem: "Wolf Pack"
+            supports: [Loyalty, Deathmarch, Muster]
+          - gem: "Despair"
+      - name: "Act 4 New Supports"
+        skills:
+          - gem: "Wild Protector"
+            supports: [Muster, Feeding Frenzy II, Minion Splash I]
+          - gem: "Wolf Pack"
+            supports: [Loyalty, Muster, Pin II, Feeding Frenzy II]
+          - gem: "Pain Offering"
+            supports: [Meat Shield II, Danse Macabre, Prolonged Duration I]
+          - gem: "Sniper's Mark"
+            supports: [Mark for Death, Eternal Mark, Second Wind II]
+          - gem: "Withering Presence"
+            supports: [Upwelling I, Prolonged Duration II]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp, Meat Shield II, Deathmarch]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp, Maim, Chain II]
+          - gem: "Refutation"
+            supports: [Prolonged Duration II, Cooldown Recovery II]
+          - gem: "Despair"
+            supports: [Heightened Curse, Cursed Ground, Efficiency II]
+      - name: "Interludes"
+        skills:
+          - gem: "Wild Protector"
+            supports: [Muster, Feeding Frenzy II, Rage III, Minion Splash II]
+          - gem: "Wolf Pack"
+            supports: [Loyalty, Muster, Pin II, Feeding Frenzy II]
+          - gem: "Pain Offering"
+            supports: [Meat Shield II, Danse Macabre, Prolonged Duration II, Elemental Army]
+          - gem: "Sniper's Mark"
+            supports: [Mark for Death, Eternal Mark, Charged Mark, Second Wind II]
+          - gem: "Withering Presence"
+            supports: [Prolonged Duration II, Upwelling I]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp, Meat Shield II, Deathmarch]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp, Chain II, Maim]
+          - gem: "Despair"
+            supports: [Heightened Curse, Cursed Ground, Efficiency II]
+          - gem: "Skeletal Cleric"
+            supports: [Last Gasp, Meat Shield II, Rapid Casting II]
+          - gem: "Refutation"
+            supports: [Prolonged Duration II, Cooldown Recovery II, Rapid Casting II]
+      - name: "Early Maps"
+        skills:
+          - gem: "Wild Protector"
+            supports: [Muster, Feeding Frenzy II, Loyalty, Minion Splash II, Rage III]
+          - gem: "Pain Offering"
+            supports: [Elemental Army, Meat Shield II, Danse Macabre, Prolonged Duration II]
+          - gem: "Sniper's Mark"
+            supports: [Mark for Death II, Eternal Mark, Charged Mark, Cooldown Recovery II]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp, Deathmarch, Meat Shield II, Blind II]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp, Maim, Blind II, Chain III]
+          - gem: "Despair"
+            supports: [Heightened Curse, Cursed Ground, Efficiency II, Prolonged Duration II]
+          - gem: "Skeletal Cleric"
+            supports: [Last Gasp, Meat Shield II, Rapid Casting II, Prolonged Duration II]
+          - gem: "Ghost Dance"
+            supports: [Cooldown Recovery II, Upwelling I]
+          - gem: "Refutation"
+            supports: [Prolonged Duration II, Cooldown Recovery II, Rapid Casting II, Mobility]
+rotations:
+  - name: "Wild Protector & Minions"
+    steps:
+      - gem: "Pain Offering"
+      - gem: "Sniper's Mark"
+      - gem: "Despair"
+      - gem: "Refutation"
 gear:
   weapon:
     unique: "Tyranny's Grip"
@@ -76,6 +296,125 @@ gear:
   belt:
     base: Fine Belt
     mods: [Elemental Resistances, +Strength, +Maximum Life, Armour, Minion Melee Splash]
+gearStages:
+  campaign:
+    weapon:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Lightning Damage, Allies in Presence gain Added Physical Damage, Allies in Presence gain Added Cold Damage, Allies in Presence gain Added Fire Damage]
+    offhand:
+      base: Emblem Crest Shield
+      mods: [+Maximum Life, Block Chance, Elemental Resistances, Chaos Resistance]
+    helmet:
+      base: Runeforged Brimmed Helm
+      mods: [+Level of all Minion Skills, Elemental Resistances, +Maximum Life, Energy Shield, +Intelligence]
+    body:
+      unique: "Enfolding Dawn"
+    gloves:
+      base: Runeforged Rope Cuffs
+      mods: [Elemental Resistances, +Maximum Life, Energy Shield, +Attributes, Chaos Resistance]
+    boots:
+      base: Runeforged Steelpoint Shoes
+      mods: [Movement Speed, +Maximum Life, Elemental Resistances]
+    amulet:
+      base: Amber Amulet
+      mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, +Maximum Life, Chaos Resistance, +Attributes]
+    ring1:
+      base: Sapphire Ring
+      mods: [Elemental Resistances, +Maximum Life, Chaos Resistance, +Attributes]
+    ring2:
+      base: Ruby Ring
+      mods: [Elemental Resistances, +Maximum Life, Chaos Resistance, +Attributes]
+    belt:
+      base: Fine Belt
+      mods: [Elemental Resistances, +Maximum Life, Chaos Resistance, +Strength]
+  mapping:
+    weapon:
+      unique: "Tyranny's Grip"
+    offhand:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence Attack Speed, Allies in Presence gain Added Physical Damage, Critical Damage Bonus, +Spirit]
+    helmet:
+      base: Runeforged Kamasan Tiara
+      mods: [+Level of all Minion Skills, Elemental Resistances, Energy Shield, +Maximum Life, +Intelligence]
+    body:
+      base: Sleek Jacket
+      mods: [Evasion and Energy Shield, Energy Shield, Evasion Rating, +Spirit, Elemental Resistances, +Intelligence]
+    gloves:
+      base: Runeforged Vaal Gloves
+      mods: [Energy Shield, Elemental Resistances, +Maximum Life, +Attributes]
+    boots:
+      base: Luxurious Slippers
+      mods: [Movement Speed, Energy Shield, Elemental Resistances, +Intelligence]
+    amulet:
+      base: Amber Amulet
+      mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Maximum Life, +Attributes]
+    ring1:
+      base: Sapphire Ring
+      mods: [+Maximum Life, Elemental Resistances, +Attributes]
+    ring2:
+      base: Topaz Ring
+      mods: [+Maximum Life, Elemental Resistances, +Attributes]
+    belt:
+      base: Fine Belt
+      mods: [Elemental Resistances, +Strength, +Maximum Life, Armour, Minion Melee Splash]
+  endgame:
+    weapon:
+      unique: "Trenchtimbre"
+    offhand:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Physical Damage, Allies in Presence Attack Speed, Critical Damage Bonus]
+    helmet:
+      base: Runeforged Kamasan Tiara
+      mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+    body:
+      base: Sleek Jacket
+      mods: [Evasion and Energy Shield, Energy Shield, Evasion Rating, +Spirit, Deflection, Elemental Resistances]
+    gloves:
+      base: Runeforged Vaal Gloves
+      mods: [Energy Shield, Elemental Resistances, +Attributes]
+    boots:
+      base: Luxurious Slippers
+      mods: [Movement Speed, Energy Shield, Elemental Resistances]
+    amulet:
+      base: Amber Amulet
+      mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Attributes]
+    ring1:
+      base: Topaz Ring
+      mods: [Increased Minion Damage, Critical Damage Bonus, Elemental Resistances, +Attributes]
+    ring2:
+      unique: "Evergrasping Ring"
+    belt:
+      base: Heavy Belt
+      mods: [Minion Melee Splash, Elemental Resistances, +Strength, Armour, Minion Life]
+  minmax:
+    weapon:
+      unique: "Trenchtimbre"
+    offhand:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Physical Damage, Allies in Presence Attack Speed, +Spirit]
+    helmet:
+      base: Ancestral Tiara
+      mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+    body:
+      base: Falconer's Jacket
+      mods: [Evasion and Energy Shield, Energy Shield, Deflection, Elemental Resistances, +Spirit, +Intelligence]
+    gloves:
+      base: Runeforged Vaal Gloves
+      mods: [Energy Shield, Elemental Resistances, +Attributes]
+    boots:
+      base: Runeforged Sandsworn Sandals
+      mods: [Movement Speed, Energy Shield, +Attributes]
+    amulet:
+      base: Distorted Amulet
+      mods: [+Level of all Minion Skills, +Spirit, Energy Shield, +Attributes, Elemental Resistances]
+    ring1:
+      unique: "Kalandra's Touch"
+    ring2:
+      base: Ruby Ring
+      mods: [Increased Minion Damage, Critical Damage Bonus, Elemental Resistances]
+    belt:
+      base: Fine Belt
+      mods: [+Level of all Minion Skills, Minion Melee Splash, Elemental Resistances, Armour, Minion Life]
 passives:
   attribute: str
   path:

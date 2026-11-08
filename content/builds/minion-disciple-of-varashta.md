@@ -18,6 +18,8 @@ difficulty: medium
 budget: low
 tiers:
   starter: S
+  endgame: A
+  bossing: S
 pros:
   - Very tanky energy shield character
   - Very high damage from the djinn command skills
@@ -54,6 +56,185 @@ skills:
     supports: [Last Gasp, Maim, Chain III]
   - gem: Wolf Pack
     supports: [Muster, Last Gasp, Loyalty, Rage III, Feeding Frenzy II]
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Act 1 Step 1"
+        skills:
+          - gem: "Firebolt"
+          - gem: "Spark"
+          - gem: "Skeletal Sniper"
+            supports: [Multishot I, Fire Attunement]
+          - gem: "Volcano"
+            supports: [Ignite I]
+          - gem: "Skeletal Warrior"
+          - gem: "Unearth"
+      - name: "Act 1 Step 2"
+        skills:
+          - gem: "Unearth"
+          - gem: "Skeletal Sniper"
+            supports: [Multishot I, Fire Attunement]
+          - gem: "Volcano"
+            supports: [Ignite I, Arcane Surge]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp]
+          - gem: "Contagion"
+          - gem: "Frost Bomb"
+      - name: "Act 1 Step 3"
+        skills:
+          - gem: "Unearth"
+            supports: [Lightning Attunement, Rapid Casting I]
+          - gem: "Skeletal Sniper"
+            supports: [Multishot I, Last Gasp]
+          - gem: "Volcano"
+            supports: [Ignite I, Arcane Surge]
+          - gem: "Skeletal Warrior"
+          - gem: "Raging Spirits"
+            supports: [Fire Attunement, Last Gasp]
+          - gem: "Frost Bomb"
+      - name: "Act 2 & Snipers"
+        skills:
+          - gem: "Unearth"
+            supports: [Lightning Attunement, Rapid Casting I]
+          - gem: "Volcano"
+            supports: [Ignite I, Arcane Surge]
+          - gem: "Skeletal Warrior"
+          - gem: "Raging Spirits"
+            supports: [Fire Attunement, Last Gasp, Elemental Armament II]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp, Multishot II]
+          - gem: "Frost Bomb"
+      - name: "Act 2 & Djinns"
+        skills:
+          - gem: "Volcano"
+            supports: [Arcane Surge, Rapid Casting I]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp]
+          - gem: "Raging Spirits"
+            supports: [Fire Attunement, Last Gasp, Elemental Armament II]
+          - gem: "Skeletal Arsonist"
+            supports: [Multishot II, Last Gasp, Fire Attunement]
+          - gem: "Kelari, the Tainted Sands"
+            supports: [Bidding I, Lightning Attunement]
+          - gem: "Frost Bomb"
+          - gem: "Freezing Mark"
+            supports: [Mark for Death, Armour Demolisher I]
+      - name: "Act 3 & New Supports"
+        skills:
+          - gem: "Volcano"
+            supports: [Arcane Surge, Rapid Casting I]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp]
+          - gem: "Skeletal Arsonist"
+            supports: [Multishot II, Last Gasp, Muster]
+          - gem: "Ruzhan, the Blazing Sword"
+            supports: [Muster, Bidding I, Fire Attunement]
+          - gem: "Kelari, the Tainted Sands"
+            supports: [Bidding I, Lightning Attunement, Muster]
+          - gem: "Wolf Pack"
+            supports: [Last Gasp, Loyalty, Muster]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp]
+          - gem: "Skeletal Reaver"
+            supports: [Last Gasp]
+          - gem: "Freezing Mark"
+            supports: [Mark for Death, Armour Demolisher I]
+          - gem: "Skeletal Storm Mage"
+            supports: [Last Gasp]
+          - gem: "Pain Offering"
+            supports: [Meat Shield II]
+      - name: "Act 4 & Vaal Guards"
+        skills:
+          - gem: "Volcano"
+            supports: [Arcane Surge, Rapid Casting I]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp]
+          - gem: "Ruzhan, the Blazing Sword"
+            supports: [Muster, Bidding II, Long Fuse I]
+          - gem: "Kelari, the Tainted Sands"
+            supports: [Lightning Attunement, Bidding II, Muster]
+          - gem: "Wolf Pack"
+            supports: [Last Gasp, Loyalty, Muster]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp, Maim]
+          - gem: "Skeletal Reaver"
+            supports: [Last Gasp, Muster]
+          - gem: "Freezing Mark"
+            supports: [Mark for Death, Armour Demolisher I]
+          - gem: "Skeletal Storm Mage"
+            supports: [Last Gasp]
+          - gem: "Pain Offering"
+            supports: [Meat Shield II, Danse Macabre]
+          - gem: "Skeletal Cleric"
+            supports: [Last Gasp, Meat Shield II]
+      - name: "Interludes Powered Zealots"
+        skills:
+          - gem: "Volcano"
+            supports: [Arcane Surge, Rapid Casting I, Mobility]
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp, Meat Shield II]
+          - gem: "Ruzhan, the Blazing Sword"
+            supports: [Muster, Long Fuse II, Bidding II, Fire Attunement]
+          - gem: "Kelari, the Tainted Sands"
+            supports: [Muster, Bidding II, Brutality III, Heft]
+          - gem: "Wolf Pack"
+            supports: [Muster, Loyalty, Last Gasp, Feeding Frenzy II]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp, Maim, Chain III]
+          - gem: "Skeletal Reaver"
+            supports: [Last Gasp, Muster, Feeding Frenzy II]
+          - gem: "Freezing Mark"
+            supports: [Mark for Death, Armour Demolisher I]
+          - gem: "Pain Offering"
+            supports: [Elemental Army, Meat Shield II, Danse Macabre]
+          - gem: "Skeletal Cleric"
+            supports: [Last Gasp, Rapid Casting II, Meat Shield II]
+          - gem: "Elemental Weakness"
+            supports: [Cursed Ground, Efficiency II, Heightened Curse]
+      - name: "Early Maps"
+        skills:
+          - gem: "Skeletal Warrior"
+            supports: [Last Gasp, Meat Shield II, Deathmarch]
+          - gem: "Pain Offering"
+            supports: [Elemental Army, Meat Shield II, Danse Macabre, Prolonged Duration II]
+          - gem: "Elemental Weakness"
+            supports: [Efficiency II, Heightened Curse, Cursed Ground, Prolonged Duration II]
+          - gem: "Skeletal Cleric"
+            supports: [Last Gasp, Rapid Casting II, Meat Shield II]
+          - gem: "Frost Bomb"
+            supports: [Long Fuse II, Spell Echo, Overabundance II, Potent Exposure]
+          - gem: "Ruzhan, the Blazing Sword"
+            supports: [Muster, Long Fuse II, Bidding II, Magnified Area II, Fire Attunement]
+          - gem: "Kelari, the Tainted Sands"
+            supports: [Muster, Bidding II, Brutality III, Heft, Minion Mastery]
+          - gem: "Wolf Pack"
+            supports: [Muster, Last Gasp, Loyalty, Rage III, Feeding Frenzy II]
+          - gem: "Skeletal Sniper"
+            supports: [Last Gasp, Maim, Chain III]
+          - gem: "Skeletal Reaver"
+            supports: [Last Gasp, Muster, Rage III, Feeding Frenzy II]
+          - gem: "Skeletal Storm Mage"
+            supports: [Muster, Shock, Overcharge, Feeding Frenzy II]
+rotations:
+  - name: "Clearing"
+    steps:
+      - gem: "Ruzhan's Trap"
+      - gem: "Kelari's Deception"
+      - gem: "Frost Bomb"
+      - gem: "Kelari, the Tainted Sands"
+      - gem: "Pain Offering"
+        count: 3
+  - name: "Bossing"
+    steps:
+      - gem: "Elemental Weakness"
+      - gem: "Pain Offering"
+      - gem: "Ruzhan's Trap"
+      - gem: "Frost Bomb"
+      - gem: "Kelari, the Tainted Sands"
+      - gem: "Kelari's Deception"
+      - gem: "Kelari, the Tainted Sands"
+      - gem: "Frost Bomb"
+      - gem: "Ruzhan's Trap"
 gear:
   weapon:
     base: Rattling Sceptre
@@ -83,6 +264,124 @@ gear:
   belt:
     base: Double Belt
     mods: [Increased Damage with Command Skills, +Maximum Life, Fire Resistance]
+gearStages:
+  campaign:
+    weapon:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, +Spirit, Increased Allies in presence Damage, Allies in Presence gain Added Fire Damage, Allies in Presence gain Added Physical Damage, Allies in Presence gain Added Lightning Damage]
+    offhand:
+      base: Emblem Crest Shield
+      mods: [+Maximum Life, Block Chance, Elemental Resistances, Chaos Resistance]
+    helmet:
+      base: Twig Circlet
+      mods: [+Level of all Minion Skills, Elemental Resistances, +Maximum Life, Energy Shield, +Intelligence]
+    body:
+      unique: "Enfolding Dawn"
+    gloves:
+      base: Torn Gloves
+      mods: [Elemental Resistances, +Maximum Life, Energy Shield, +Attributes, Chaos Resistance]
+    boots:
+      unique: "Bones of Ullr"
+    amulet:
+      base: Amber Amulet
+      mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, +Maximum Life, Chaos Resistance, +Attributes]
+    ring1:
+      base: Sapphire Ring
+      mods: [Elemental Resistances, +Maximum Life, Chaos Resistance, +Attributes]
+    ring2:
+      base: Ruby Ring
+      mods: [Elemental Resistances, +Maximum Life, Chaos Resistance, +Attributes]
+    belt:
+      base: Fine Belt
+      mods: [Elemental Resistances, +Maximum Life, Chaos Resistance, +Strength, Armour, +Maximum Mana]
+  mapping:
+    weapon:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, +Spirit, Increased Allies in presence Damage, Critical Damage Bonus]
+    offhand:
+      base: Painted Crest Shield
+      mods: [Block Chance, +Maximum Life, Chaos Resistance, Elemental Resistances, +Attributes]
+    helmet:
+      base: Kamasan Tiara
+      mods: [+Level of all Minion Skills, Elemental Resistances, Energy Shield, +Maximum Life, +Intelligence]
+    body:
+      unique: "Enfolding Dawn"
+    gloves:
+      base: Vaal Gloves
+      mods: [Energy Shield, Elemental Resistances, +Maximum Life, +Attributes]
+    boots:
+      unique: "Bones of Ullr"
+    amulet:
+      base: Lapis Amulet
+      mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Attributes, +Maximum Life]
+    ring1:
+      base: Sapphire Ring
+      mods: [Elemental Resistances, Increased Minion Damage, +Attributes, +Maximum Life]
+    ring2:
+      base: Topaz Ring
+      mods: [Elemental Resistances, Increased Minion Damage, +Attributes, +Maximum Life]
+    belt:
+      base: Double Belt
+      mods: [Increased Minion commanded skill Damage, Elemental Resistances, +Maximum Life, +Strength, Minion Area of Effect]
+  endgame:
+    weapon:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, +Spirit, Increased Allies in presence Damage]
+    offhand:
+      base: Sacred Focus
+      mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence, Increased Cast Speed]
+    helmet:
+      base: Kamasan Tiara
+      mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+    body:
+      base: Sacramental Robe
+      mods: [+Spirit, Elemental Resistances, Energy Shield, +Intelligence]
+    gloves:
+      base: Vaal Gloves
+      mods: [Energy Shield, Elemental Resistances, +Attributes]
+    boots:
+      unique: "Bones of Ullr"
+    amulet:
+      base: Amber Amulet
+      mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Attributes]
+    ring1:
+      unique: "Evergrasping Ring"
+    ring2:
+      base: Topaz Ring
+      mods: [Increased Minion Damage, Critical Damage Bonus]
+    belt:
+      base: Heavy Belt
+      mods: [Increased Minion commanded skill Damage, Elemental Resistances, Minion Area of Effect, +Strength]
+  minmax:
+    weapon:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, +Spirit, Increased Allies in presence Damage]
+    offhand:
+      base: Sacred Focus
+      mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence, Increased Cast Speed]
+    helmet:
+      base: Ancestral Tiara
+      mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+    body:
+      base: Sacramental Robe
+      mods: [+Spirit, Elemental Resistances, Energy Shield, +Intelligence]
+    gloves:
+      base: Vaal Gloves
+      mods: [Energy Shield, Elemental Resistances, +Attributes]
+    boots:
+      unique: "Bones of Ullr"
+    amulet:
+      base: Portent Amulet
+      mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Attributes]
+    ring1:
+      base: Ruby Ring
+      mods: [Increased Minion Damage, Critical Damage Bonus]
+    ring2:
+      base: Topaz Ring
+      mods: [Increased Minion Damage, Critical Damage Bonus]
+    belt:
+      base: Heavy Belt
+      mods: [+Level of all Minion Skills, Increased Minion commanded skill Damage, Minion Area of Effect, Elemental Resistances]
 passives:
   attribute: int
   path:
