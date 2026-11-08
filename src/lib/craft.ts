@@ -2,14 +2,23 @@
 //
 // Real spawn weights are not public, so every eligible modifier tier is treated as equally likely. Rules covered:
 // prefix/suffix limits, one mod per group, item level, Greater/Perfect minimum mod level, the main omens, essences,
-// desecration and the one-crafted-mod / one-desecrated-mod limits.
+// desecration (from the separate desecrated pool, with the abyssal lord and Necromancy omens) and the one-crafted-mod /
+// one-desecrated-mod limits.
 
 export type Affix = "P" | "S";
-/** [affix, group, level, text, affix name] */
-export type RawMod = [Affix, string, number, string, string];
+/** [affix, group, level, text, affix name, origin?]: origin "d" for desecrated mods, "d:<lord>" for an abyssal lord's. */
+export type RawMod = [Affix, string, number, string, string, string?];
+export type Lord = "ulaman" | "amanamu" | "kurgal";
+export const LORDS: { lord: Lord; name: string; omen: string }[] = [
+  { lord: "ulaman", name: "Ulaman", omen: "Omen of the Sovereign" },
+  { lord: "amanamu", name: "Amanamu", omen: "Omen of the Liege" },
+  { lord: "kurgal", name: "Kurgal", omen: "Omen of the Blackblooded" },
+];
 export interface CraftData {
   mods: RawMod[];
   sets: number[][];
+  /** Desecrated pool of each set (same order as `sets`). */
+  desecrated?: number[][];
   /** base name -> [item class, level requirement, icon, pool index] */
   bases: Record<string, [string, number, string | null, number]>;
   /** Currency / omen / essence name -> icon (Greater and Perfect orbs share the base orb's art). */
@@ -60,12 +69,25 @@ export class Crafter {
   constructor(readonly data: CraftData) {}
 
   mod(i: number) {
-    const [affix, group, level, text, name] = this.data.mods[i];
-    return { affix, group, level, text, name };
+    const [affix, group, level, text, name, origin] = this.data.mods[i];
+    const desecrated = Boolean(origin?.startsWith("d"));
+    const lord = (origin?.split(":")[1] as Lord | undefined) ?? null;
+    return { affix, group, level, text, name, desecrated, lord };
   }
+  /** Mods that regular currency can add. */
   pool(base: string): number[] {
     const b = this.data.bases[base];
     return b ? this.data.sets[b[3]] : [];
+  }
+  /** Mods that desecration can reveal (a separate pool, mostly tied to an abyssal lord). */
+  desecratedPool(base: string): number[] {
+    const b = this.data.bases[base];
+    return b ? (this.data.desecrated?.[b[3]] ?? []) : [];
+  }
+  /** Lord omens only work on weapons and jewellery. */
+  lordOmensApply(base: string) {
+    const cls = this.data.bases[base]?.[0] ?? "";
+    return !/Helmet|Body Armour|Gloves|Boots|Shield|Buckler|Focus|Quiver|Belt/.test(cls);
   }
   count(item: Item, affix: Affix) {
     return item.mods.filter((m) => this.mod(m.i).affix === affix).length;
@@ -75,13 +97,17 @@ export class Crafter {
   }
 
   /** Modifier tiers that could be added to `item` (as `rarity`), optionally restricted. */
-  candidates(item: Item, opts: { rarity?: Rarity; minLevel?: number; affix?: Affix; groups?: string[] } = {}): number[] {
+  candidates(
+    item: Item,
+    opts: { rarity?: Rarity; minLevel?: number; affix?: Affix; groups?: string[]; desecrated?: boolean; lord?: Lord } = {},
+  ): number[] {
     const rarity = opts.rarity ?? item.rarity;
     const free = this.free(item, rarity);
     const taken = new Set(item.mods.map((m) => this.mod(m.i).group));
-    return this.pool(item.base).filter((i) => {
+    return (opts.desecrated ? this.desecratedPool(item.base) : this.pool(item.base)).filter((i) => {
       const m = this.mod(i);
       return (
+        (!opts.lord || m.lord === opts.lord) &&
         m.level <= item.ilvl &&
         m.level >= (opts.minLevel ?? 0) &&
         free[m.affix] > 0 &&
@@ -175,11 +201,14 @@ export class Crafter {
     const cands = this.candidates(removed, { groups, minLevel: TIER_MIN_LEVEL.perfect });
     return this.add(removed, cands.length ? cands : this.candidates(removed, { groups }), rng, { crafted: true });
   }
-  /** Desecration: returns the item (a random mod removed if it was full) and three options to reveal. */
-  desecrate(item: Item, rng: Rng): { item: Item; options: number[] } {
-    const full = item.mods.length >= 6;
-    const base = full ? this.remove(item, rng) : item;
-    const cands = [...this.candidates(base)];
+  /**
+   * Desecration: returns the item (a random mod removed if it was full, on the omen's side if any) and three options
+   * to reveal, from the desecrated pool. A lord omen keeps that lord's mods; a Necromancy omen keeps one side.
+   */
+  desecrate(item: Item, rng: Rng, opts: DesecrateOptions = {}): { item: Item; options: number[] } {
+    const full = item.mods.length >= 6 || (opts.affix !== undefined && this.free(item)[opts.affix] <= 0);
+    const base = full ? this.remove(item, rng, opts.affix ? { affix: opts.affix } : {}) : item;
+    const cands = [...this.candidates(base, { desecrated: true, lord: opts.lord, affix: opts.affix })];
     const options: number[] = [];
     while (options.length < 3 && cands.length) {
       const k = Math.floor(rng() * cands.length);
@@ -191,9 +220,14 @@ export class Crafter {
   }
 }
 
+export interface DesecrateOptions {
+  lord?: Lord;
+  affix?: Affix;
+}
+
 /** Short label for a mod group: text of its best tier with numbers replaced by #. */
 export function groupLabel(c: Crafter, base: string, group: string) {
-  const tiers = c.pool(base).filter((i) => c.mod(i).group === group);
+  const tiers = [...c.pool(base), ...c.desecratedPool(base)].filter((i) => c.mod(i).group === group);
   if (!tiers.length) return group;
   const best = tiers.reduce((a, b) => (c.mod(b).level > c.mod(a).level ? b : a));
   return c.mod(best).text.replace(/\(([\d.]+)-([\d.]+)\)/g, "#").replace(/\d+(\.\d+)?/g, "#").replace(/\n/g, " / ");
@@ -208,6 +242,8 @@ export interface Action {
   omen?: string;
   /** Reveals three options to choose from instead of adding a mod directly. */
   reveal?: boolean;
+  /** Desecration options selected by the action's omen. */
+  desecrate?: DesecrateOptions;
   can: (c: Crafter, item: Item) => boolean;
   run: (c: Crafter, item: Item, rng: Rng) => Item;
 }
@@ -312,17 +348,37 @@ export function actions(): Action[] {
       run: (c, item, rng) => c.perfectEssence(item, e.groups, rng),
     });
   }
-  list.push({
-    id: "desecrate",
-    currency: "Preserved Rib",
-    reveal: true,
-    can: (c, item) => isRare(item) && !c.hasDesecrated(item),
-    // For the advisor: the player keeps the best of the three options (a target when one is offered).
-    run: (c, item, rng) => {
-      const { item: base, options } = c.desecrate(item, rng);
-      return options.length ? { ...base, mods: [...base.mods, { i: options[0], r: rng(), desecrated: true }] } : base;
-    },
-  });
+  // Desecration, plain or with an omen: a lord omen (weapons and jewellery) or Sinistral/Dextral Necromancy.
+  const variants: { suffix: string; omen?: string; opts: DesecrateOptions; can?: (c: Crafter, item: Item) => boolean }[] = [
+    { suffix: "", opts: {} },
+    ...LORDS.map((l) => ({
+      suffix: `-${l.lord}`,
+      omen: l.omen,
+      opts: { lord: l.lord },
+      can: (c: Crafter, item: Item) => c.lordOmensApply(item.base),
+    })),
+    { suffix: "-prefix", omen: "Omen of Sinistral Necromancy", opts: { affix: "P" as Affix } },
+    { suffix: "-suffix", omen: "Omen of Dextral Necromancy", opts: { affix: "S" as Affix } },
+  ];
+  for (const v of variants) {
+    list.push({
+      id: `desecrate${v.suffix}`,
+      currency: "Preserved Rib",
+      omen: v.omen,
+      reveal: true,
+      desecrate: v.opts,
+      can: (c, item) =>
+        isRare(item) &&
+        !c.hasDesecrated(item) &&
+        (v.can?.(c, item) ?? true) &&
+        c.desecrate(item, () => 0, v.opts).options.length > 0,
+      // For the advisor: the player keeps the best of the three options (a target when one is offered).
+      run: (c, item, rng) => {
+        const { item: base, options } = c.desecrate(item, rng, v.opts);
+        return options.length ? { ...base, mods: [...base.mods, { i: options[0], r: rng(), desecrated: true }] } : base;
+      },
+    });
+  }
   return list;
 }
 
@@ -346,7 +402,7 @@ export function advise(c: Crafter, item: Item, targets: Set<string>, runs = 800)
     for (let k = 0; k < runs; k++) {
       let after: Item;
       if (action.reveal) {
-        const { item: base, options } = c.desecrate(item, Math.random);
+        const { item: base, options } = c.desecrate(item, Math.random, action.desecrate);
         const best = options.find((i) => targets.has(c.mod(i).group)) ?? options[0];
         after = best === undefined ? base : { ...base, mods: [...base.mods, { i: best, desecrated: true }] };
       } else after = action.run(c, item, Math.random);

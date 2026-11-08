@@ -9,6 +9,7 @@ import {
   advise,
   diagnose,
   groupLabel,
+  LORDS,
   rolledText,
   type Action,
   type CraftData,
@@ -37,7 +38,7 @@ const ORBS: { kind: Kind; name: string; tiered: boolean }[] = [
   { kind: "desecrate", name: "Preserved Rib", tiered: false },
 ];
 /** Omen -> the currency it modifies and the action id suffix it selects. */
-const OMENS: { name: string; kind: "exalt" | "chaos" | "annul"; suffix: string }[] = [
+const OMENS: { name: string; kind: "exalt" | "chaos" | "annul" | "desecrate"; suffix: string }[] = [
   { name: "Omen of Sinistral Exaltation", kind: "exalt", suffix: "-prefix" },
   { name: "Omen of Dextral Exaltation", kind: "exalt", suffix: "-suffix" },
   { name: "Omen of Greater Exaltation", kind: "exalt", suffix: "-double" },
@@ -46,13 +47,19 @@ const OMENS: { name: string; kind: "exalt" | "chaos" | "annul"; suffix: string }
   { name: "Omen of Whittling", kind: "chaos", suffix: "-lowest" },
   { name: "Omen of Sinistral Annulment", kind: "annul", suffix: "-prefix" },
   { name: "Omen of Dextral Annulment", kind: "annul", suffix: "-suffix" },
+  { name: "Omen of the Sovereign", kind: "desecrate", suffix: "-ulaman" },
+  { name: "Omen of the Liege", kind: "desecrate", suffix: "-amanamu" },
+  { name: "Omen of the Blackblooded", kind: "desecrate", suffix: "-kurgal" },
+  { name: "Omen of Sinistral Necromancy", kind: "desecrate", suffix: "-prefix" },
+  { name: "Omen of Dextral Necromancy", kind: "desecrate", suffix: "-suffix" },
 ];
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z]+/g, "-");
 const TIER_NAME: Record<CurrencyTier, string> = { normal: "", greater: "Greater ", perfect: "Perfect " };
 
 function actionId(kind: Kind, tier: CurrencyTier, omen: string | null) {
   const o = OMENS.find((x) => x.name === omen && x.kind === kind)?.suffix ?? "";
-  if (kind === "alchemy" || kind === "desecrate") return kind;
+  if (kind === "alchemy") return kind;
+  if (kind === "desecrate") return `desecrate${o}`;
   if (kind === "annul") return `annul${o}`;
   return `${kind}-${tier}${o}`;
 }
@@ -181,13 +188,20 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
 
   const groups = useMemo(() => {
     const seen = new Map<string, "P" | "S">();
-    for (const i of c.pool(base)) seen.set(c.mod(i).group, c.mod(i).affix);
-    return [...seen].map(([g, affix]) => ({ group: g, affix, label: groupLabel(c, base, g) })).sort((a, b) => a.label.localeCompare(b.label));
+    const lordOf = new Map<string, string>();
+    for (const i of [...c.pool(base), ...c.desecratedPool(base)]) {
+      seen.set(c.mod(i).group, c.mod(i).affix);
+      if (c.mod(i).lord) lordOf.set(c.mod(i).group, LORDS.find((l) => l.lord === c.mod(i).lord)!.name);
+    }
+    // Desecrated-only stats are labelled with their abyssal lord.
+    return [...seen]
+      .map(([g, affix]) => ({ group: g, affix, label: groupLabel(c, base, g) + (lordOf.has(g) && !c.pool(base).some((i) => c.mod(i).group === g) ? ` (${lordOf.get(g)})` : "") }))
+      .sort((a, b) => a.label.localeCompare(b.label));
   }, [c, base]);
   const tierOf = useMemo(() => {
     const rank = new Map<number, number>();
     const byGroup = new Map<string, number[]>();
-    for (const i of c.pool(base)) byGroup.set(c.mod(i).group, [...(byGroup.get(c.mod(i).group) ?? []), i]);
+    for (const i of [...c.pool(base), ...c.desecratedPool(base)]) byGroup.set(c.mod(i).group, [...(byGroup.get(c.mod(i).group) ?? []), i]);
     for (const list of byGroup.values()) [...list].sort((a, b) => c.mod(b).level - c.mod(a).level).forEach((i, k) => rank.set(i, k + 1));
     return rank;
   }, [c, base]);
@@ -197,7 +211,7 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
   const icon = (name: string) => data.icons[name] ?? data.icons[name.replace(/^(Greater|Perfect) /, "")];
   const run = (a: Action, label: string, icons: { icon?: string; omenIcon?: string }) => {
     setHistory((h) => [...h, { item, label, ...icons }]);
-    if (a.reveal) setReveal(c.desecrate(item, Math.random));
+    if (a.reveal) setReveal(c.desecrate(item, Math.random, a.desecrate));
     else setItem(a.run(c, item, Math.random));
     if (a.omen) setOmen(null);
     setFlash((f) => f + 1);
