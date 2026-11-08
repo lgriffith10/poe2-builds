@@ -3,8 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { RefTooltips } from "@/components/ref-tooltips";
 import { getGuide, getGuides } from "@/lib/guides";
-import { fmt } from "@/i18n";
+import { fmt, getDictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
+import { articleLd, breadcrumbLd, JsonLd } from "@/components/json-ld";
+import { SITE_NAME } from "@/lib/site";
 
 export function generateStaticParams() {
   return getGuides().map((g) => ({ slug: g.slug }));
@@ -15,7 +17,12 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/guides/[sl
   const { slug } = await params;
   const guide = getGuide(slug, lang);
   if (!guide) return {};
-  return { title: guide.title, description: guide.summary, alternates: alternates(`/guides/${slug}`, lang) };
+  return {
+    title: guide.title,
+    description: guide.summary,
+    alternates: alternates(`/guides/${slug}`, lang),
+    openGraph: { title: guide.title, description: guide.summary, type: "article", siteName: SITE_NAME, locale: getDictionary(lang).meta.ogLocale },
+  };
 }
 
 export default async function GuidePage({ params }: PageProps<"/[lang]/guides/[slug]">) {
@@ -24,6 +31,15 @@ export default async function GuidePage({ params }: PageProps<"/[lang]/guides/[s
   if (!guide) notFound();
   return (
     <article>
+      <JsonLd
+        data={[
+          articleLd({ url: path(`/guides/${guide.slug}`), title: guide.title, description: guide.summary, lang, updated: guide.updated }),
+          breadcrumbLd([
+            [t.nav.guides, path("/guides")],
+            [guide.title, path(`/guides/${guide.slug}`)],
+          ]),
+        ]}
+      />
       <header className="border-b border-line">
         <div className="mx-auto max-w-7xl px-4 py-8">
           <Link href={path("/guides")} className="text-sm text-muted hover:text-gold">

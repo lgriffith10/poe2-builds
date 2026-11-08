@@ -24,6 +24,8 @@ import { TIER_CATEGORIES, type SkillRotation } from "@/lib/types";
 import { fmt, getDictionary, type Dictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
 import { WEAPON_SET_COLORS } from "@/lib/weapon-sets";
+import { articleLd, breadcrumbLd, JsonLd } from "@/components/json-ld";
+import { SITE_NAME } from "@/lib/site";
 
 export function generateStaticParams() {
   return getBuilds().map((b) => ({ slug: b.slug }));
@@ -34,10 +36,21 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/builds/[sl
   const { slug } = await params;
   const build = getBuild(slug, lang);
   if (!build) return {};
+  const t = getDictionary(lang);
+  const title = fmt(t.build.metaTitle, { title: build.title, patch: build.patch || "0.5" });
+  const description = fmt(t.meta.buildDescription, { summary: build.summary, patch: build.patch || "0.5" });
   return {
-    title: fmt(getDictionary(lang).build.metaTitle, { title: build.title }),
-    description: build.summary,
+    title,
+    description,
     alternates: alternates(`/builds/${slug}`, lang),
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      modifiedTime: build.updated || undefined,
+      siteName: SITE_NAME,
+      locale: t.meta.ogLocale,
+    },
   };
 }
 
@@ -111,6 +124,21 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
 
   return (
     <article>
+      <JsonLd
+        data={[
+          articleLd({
+            url: path(`/builds/${build.slug}`),
+            title: fmt(tr.build.metaTitle, { title: build.title, patch: build.patch || "0.5" }),
+            description: build.summary,
+            lang,
+            updated: build.updated || undefined,
+          }),
+          breadcrumbLd([
+            [tr.nav.builds, path("/")],
+            [build.title, path(`/builds/${build.slug}`)],
+          ]),
+        ]}
+      />
       <header className="border-b border-line">
         <div className="mx-auto max-w-7xl px-4 py-8">
           <div className="flex flex-wrap items-center justify-between gap-2">

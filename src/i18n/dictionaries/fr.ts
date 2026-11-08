@@ -3,9 +3,13 @@ import type { Dictionary } from "./en";
 
 export const fr: Dictionary = {
   meta: {
-    siteTitle: "Exile Codex · Builds, tier list et planner pour Path of Exile 2",
+    siteTitle: "Builds PoE2, tier list et planner d'arbre passif | Exile Codex",
     siteDescription:
-      "Guides de builds Path of Exile 2, tier list méta, planner interactif de l'arbre passif et base de données d'objets.",
+      "Guides de builds Path of Exile 2 (PoE2) pour le patch 0.5, tier list de début de ligue, méta du ladder, planner d'arbre passif, simulateur de craft et base de données d'objets.",
+    titleTemplate: "%s – PoE2 | Exile Codex",
+    keywords: ["Path of Exile 2", "PoE2", "build PoE2", "guide build PoE2", "tier list PoE2", "début de ligue", "planner arbre passif", "PoE2 0.5"],
+    buildDescription: "{summary} Compétences, arbre passif, équipement et montée en niveau pour Path of Exile 2 {patch}.",
+    ogLocale: "fr_FR",
   },
   nav: {
     builds: "Builds",
@@ -63,7 +67,7 @@ export const fr: Dictionary = {
   },
   home: {
     kicker: "Path of Exile 2 · Patch {v}",
-    title: "Builds méta",
+    title: "Builds méta PoE2",
     intro:
       "Des guides de builds pour chaque classe et ascendance, classés pour le début de ligue, les cartes en endgame et les boss. Ouvrez n'importe quel build dans le planner pour ajuster son arbre passif.",
     viewTierList: "Voir la tier list",
@@ -149,7 +153,7 @@ export const fr: Dictionary = {
     pointsAllocated: "{n} points passifs alloués.",
     ascendancyOrder: "Ordre d'ascendance",
     keyPassives: "Passifs clés",
-    metaTitle: "Guide du build {title}",
+    metaTitle: "Guide du build {title} ({patch})",
     gearStages: { campaign: "Campagne", mapping: "Premières cartes", endgame: "Endgame", minmax: "Min-max" },
     inventoryHint: "Survolez ou touchez un objet pour voir ses modificateurs. Les objets rares listent les modificateurs à chercher.",
     compareWith: "Comparer avec un autre build",
@@ -241,9 +245,9 @@ export const fr: Dictionary = {
       greaterEssence: "Magique → Rare avec ce modificateur garanti (fabriqué).",
       perfectEssence: "Sur un rare : retire un modificateur au hasard et ajoute celui-ci (fabriqué).",
     },
-    kindNames: { exalt: "Exalted Orb", chaos: "Chaos Orb", annul: "Orb of Annulment" },
+    kindNames: { exalt: "Exalted Orb", chaos: "Chaos Orb", annul: "Orb of Annulment", desecrate: "Preserved Rib" },
     omens: "Omens (cliquez pour activer ; utilisé par la prochaine orbe concernée)",
-    omenDesc: { prefix: "Préfixes uniquement", suffix: "Suffixes uniquement", double: "Ajoute deux modificateurs", lowest: "Retire le modificateur de plus bas niveau" },
+    omenDesc: { prefix: "Préfixes uniquement", suffix: "Suffixes uniquement", double: "Ajoute deux modificateurs", lowest: "Retire le modificateur de plus bas niveau", ulaman: "Uniquement des modificateurs d'Ulaman (armes et bijoux)", amanamu: "Uniquement des modificateurs d'Amanamu (armes et bijoux)", kurgal: "Uniquement des modificateurs de Kurgal (armes et bijoux)" },
     omenActive: "{omen} est actif : il s'applique à la prochaine orbe concernée.",
     essencesGreater: "Greater Essences (Magique → Rare)",
     essencesPerfect: "Perfect Essences (sur un rare)",

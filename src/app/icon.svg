@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Exile Codex mark: the site logo's gold hexagon and rune on a dark tile, strokes thickened for small sizes. -->
+  <rect width="64" height="64" rx="14" fill="#14100b"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#d4a64f" stroke-opacity=".35" stroke-width="3"/>
+  <path d="M32 9 51 20v24L32 55 13 44V20z" fill="#d4a64f" fill-opacity=".12" stroke="#d4a64f" stroke-width="4.5" stroke-linejoin="round"/>
+  <path d="M32 21v22M24 27l8 6 8-6" fill="none" stroke="#f0c46a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

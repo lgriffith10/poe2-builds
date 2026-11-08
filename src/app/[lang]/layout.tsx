@@ -9,6 +9,7 @@ import { DB_SECTIONS, NAV } from "@/lib/nav";
 import { getDictionary, localePath, LOCALES } from "@/i18n";
 import { I18nProvider } from "@/i18n/client";
 import { alternates, resolveLang } from "@/i18n/server";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
@@ -23,10 +24,15 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   const t = getDictionary(lang);
   return {
     // Share images need absolute URLs: SITE_URL, or the site address Netlify provides as URL during builds.
-    metadataBase: new URL(process.env.SITE_URL ?? process.env.URL ?? "http://localhost:3000"),
-    title: { default: t.meta.siteTitle, template: "%s · Exile Codex" },
+    metadataBase: new URL(SITE_URL),
+    title: { default: t.meta.siteTitle, template: t.meta.titleTemplate },
     description: t.meta.siteDescription,
+    applicationName: SITE_NAME,
+    keywords: t.meta.keywords,
     alternates: alternates("/", lang),
+    // Inherited by every page; titles and descriptions fall back to each page's own, images come from opengraph-image.
+    openGraph: { siteName: SITE_NAME, locale: t.meta.ogLocale, type: "website" },
+    twitter: { card: "summary_large_image" },
   };
 }
 

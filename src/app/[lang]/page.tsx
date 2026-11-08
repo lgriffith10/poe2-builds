@@ -5,12 +5,29 @@ import { pageI18n } from "@/i18n/server";
 import { getBuilds } from "@/lib/builds";
 import { summarize } from "@/lib/build-summary";
 import { classes, meta } from "@/lib/data";
+import { GAME, JsonLd, PUBLISHER } from "@/components/json-ld";
+import { absoluteUrl, SITE_NAME } from "@/lib/site";
 
 export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang, t, path } = await pageI18n(params);
   const builds = getBuilds(lang).map(summarize);
   return (
     <>
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: SITE_NAME,
+            url: absoluteUrl(path("/")),
+            description: t.meta.siteDescription,
+            inLanguage: lang,
+            about: GAME,
+            publisher: PUBLISHER,
+          },
+          { "@context": "https://schema.org", ...PUBLISHER },
+        ]}
+      />
       <section className="border-b border-line">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:py-14">
           <p className="text-sm uppercase tracking-[0.2em] text-gold">{fmt(t.home.kicker, { v: meta.treeVersion })}</p>

@@ -1,8 +1,14 @@
 // English UI strings. Game terms (gems, passives, items, classes) are not translated.
 export const en = {
   meta: {
-    siteTitle: "Exile Codex · Path of Exile 2 Builds, Tier List & Planner",
-    siteDescription: "Path of Exile 2 build guides, meta tier list, interactive passive tree planner and item database.",
+    siteTitle: "PoE2 Builds, Tier List & Passive Tree Planner | Exile Codex",
+    siteDescription:
+      "Path of Exile 2 (PoE2) build guides for patch 0.5, league starter tier list, ladder meta, passive tree planner, crafting simulator and item database.",
+    /** Appended to every page title (after the page's own title). */
+    titleTemplate: "%s – PoE2 | Exile Codex",
+    keywords: ["Path of Exile 2", "PoE2", "PoE 2 builds", "PoE2 build guide", "PoE2 tier list", "league starter", "passive tree planner", "PoE2 0.5"],
+    buildDescription: "{summary} Skills, passive tree, gear and leveling for Path of Exile 2 {patch}.",
+    ogLocale: "en_US",
   },
   nav: {
     builds: "Builds",
@@ -59,7 +65,7 @@ export const en = {
   },
   home: {
     kicker: "Path of Exile 2 · Patch {v}",
-    title: "Meta Builds",
+    title: "PoE2 Meta Builds",
     intro:
       "Build guides for every class and ascendancy, ranked for league start, endgame mapping and bossing. Open any build in the planner to tweak its passive tree.",
     viewTierList: "View tier list",
@@ -145,7 +151,7 @@ export const en = {
     pointsAllocated: "{n} passive points allocated.",
     ascendancyOrder: "Ascendancy order",
     keyPassives: "Key passives",
-    metaTitle: "{title} Build Guide",
+    metaTitle: "{title} Build Guide ({patch})",
     gearStages: { campaign: "Campaign", mapping: "Early maps", endgame: "Endgame", minmax: "Min-max" },
     inventoryHint: "Hover or tap an item to see its modifiers. Rare items list the modifiers to look for.",
     compareWith: "Compare with another build",
@@ -237,9 +243,9 @@ export const en = {
       greaterEssence: "Magic → Rare with this modifier guaranteed (crafted).",
       perfectEssence: "On a Rare: removes a random modifier and adds this one (crafted).",
     },
-    kindNames: { exalt: "Exalted Orb", chaos: "Chaos Orb", annul: "Orb of Annulment" },
+    kindNames: { exalt: "Exalted Orb", chaos: "Chaos Orb", annul: "Orb of Annulment", desecrate: "Preserved Rib" },
     omens: "Omens (click to activate, used by the next matching orb)",
-    omenDesc: { prefix: "Only prefixes", suffix: "Only suffixes", double: "Adds two modifiers", lowest: "Removes the lowest-level modifier" },
+    omenDesc: { prefix: "Only prefixes", suffix: "Only suffixes", double: "Adds two modifiers", lowest: "Removes the lowest-level modifier", ulaman: "Only Ulaman modifiers (weapons and jewellery)", amanamu: "Only Amanamu modifiers (weapons and jewellery)", kurgal: "Only Kurgal modifiers (weapons and jewellery)" },
     omenActive: "{omen} is active: it applies to the next matching orb.",
     essencesGreater: "Greater Essences (Magic → Rare)",
     essencesPerfect: "Perfect Essences (on a Rare)",

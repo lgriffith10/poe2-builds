@@ -1,7 +1,7 @@
 import "server-only";
 import { notFound } from "next/navigation";
 import { getDictionary } from "./index";
-import { LOCALES, isLocale, localePath, type Locale } from "./config";
+import { DEFAULT_LOCALE, LOCALES, isLocale, localePath, type Locale } from "./config";
 
 /** Reads and validates the [lang] route param. */
 export async function resolveLang(params: Promise<{ lang: string }>): Promise<Locale> {
@@ -20,6 +20,9 @@ export async function pageI18n(params: Promise<{ lang: string }>) {
 export function alternates(path: string, lang: Locale) {
   return {
     canonical: localePath(lang, path),
-    languages: Object.fromEntries(LOCALES.map((l) => [l, localePath(l, path)])),
+    languages: {
+      ...Object.fromEntries(LOCALES.map((l) => [l, localePath(l, path)])),
+      "x-default": localePath(DEFAULT_LOCALE, path),
+    },
   };
 }
