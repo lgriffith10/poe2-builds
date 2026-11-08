@@ -10,6 +10,7 @@ import { gemTip } from "@/lib/tips";
 import { getBuild, getBuilds } from "@/lib/builds";
 import { getClass, getGem, tree } from "@/lib/data";
 import { inventoryStages } from "@/lib/inventory";
+import { skillSources, type SkillSource } from "@/lib/skill-source";
 import { ladderPopularity } from "@/lib/ladder";
 
 const pctText = (share: number, lang: string) =>
@@ -50,6 +51,8 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
   });
 
   const inventory = inventoryStages(build, tr);
+  const sources = skillSources(build);
+  const sourceLabel = (src: SkillSource) => fmt(tr.build.skillFrom[src.kind], { from: "from" in src ? src.from : "" });
   const popularity = ladderPopularity(build);
 
   // Resolve leveling gems for the client and flag those absent from the previous step of the same path.
@@ -181,6 +184,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
 
           <section id="skills" className="scroll-mt-24">
             <SectionTitle sub={tr.build.skillsSub}>{tr.common.skills}</SectionTitle>
+            <p className="-mt-3 mb-4 text-xs text-faint">{tr.build.skillFromHint}</p>
             <div className="space-y-3">
               {build.skills.map((s) => {
                 const gem = getGem(s.gem)!;
@@ -188,7 +192,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                   <div key={s.gem} className="rounded-xl border border-line bg-surface p-4">
                     <div className="flex items-center gap-3">
                       <GemIcon gem={gem} size={48} />
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <Link
                           href={path(`/database/gems#${gem.id}`)}
                           data-tip={gemTip(gem.name)}
@@ -198,6 +202,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                         </Link>
                         {s.note && <p className="text-sm text-muted">{s.note}</p>}
                       </div>
+                      <SourceChip source={sources.get(s.gem)!} label={sourceLabel(sources.get(s.gem)!)} />
                     </div>
                     {s.supports.length > 0 && (
                       <div className="mt-3 flex flex-wrap gap-2">
@@ -290,7 +295,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               stages={inventory.stages}
               initialStage={inventory.initial}
               slotLabels={tr.slots}
-              hint={tr.build.inventoryHint}
+              hint={`${tr.build.inventoryHint} ${tr.build.modHint}`}
             />
           </section>
 
@@ -347,5 +352,25 @@ function ProsCons({ title, items, tone }: { title: string; items: string[]; tone
         ))}
       </ul>
     </div>
+  );
+}
+
+const SOURCE_STYLE: Record<SkillSource["kind"], string> = {
+  weapon: "border-amber-600/50 bg-amber-500/10 text-amber-200",
+  item: "border-unique/50 bg-unique/10 text-unique",
+  ascendancy: "border-violet-500/50 bg-violet-500/10 text-violet-200",
+  gem: "border-line-strong text-muted",
+  spirit: "border-teal-500/40 bg-teal-500/10 text-teal-200",
+};
+const SOURCE_ICON: Record<SkillSource["kind"], string> = { weapon: "⚔", item: "◈", ascendancy: "✦", gem: "◆", spirit: "◇" };
+
+function SourceChip({ source, label }: { source: SkillSource; label: string }) {
+  return (
+    <span className={`shrink-0 self-start rounded-full border px-2.5 py-0.5 text-xs ${SOURCE_STYLE[source.kind]}`}>
+      <span aria-hidden className="mr-1">
+        {SOURCE_ICON[source.kind]}
+      </span>
+      {label}
+    </span>
   );
 }

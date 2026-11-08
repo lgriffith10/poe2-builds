@@ -16,6 +16,7 @@
     "leveling:maxroll": "node scripts/leveling-from-maxroll.cjs",
     "ladder:sync": "node scripts/sync-ninja.mjs",
     "craft:data": "node scripts/craft-data.mjs",
+    "skills:granted": "node scripts/granted-skills.mjs",
     "draft:ninja": "node scripts/draft-from-ninja.mjs",
     "preview": "next build && next start"
   },

@@ -13,6 +13,8 @@ export interface InventoryItem {
   icon: string | null;
   implicits: string[];
   mods: string[];
+  /** "Grants Skill: …" line for bases that come with a skill (uniques list it in their mods). */
+  grants: string | null;
   note: string | null;
 }
 
@@ -119,6 +121,7 @@ export function GearInventory({
               {current.kind === "unique" && current.base && <p className="text-sm text-muted">{current.base}</p>}
             </div>
             <div className="space-y-2 px-4 py-3 text-center text-sm">
+              {current.grants && <p className="border-b border-line pb-2 font-semibold text-[#c8b47a]">{current.grants}</p>}
               {current.implicits.length > 0 && (
                 <ul className="space-y-0.5 border-b border-line pb-2 text-[#8fb6f0]">
                   {current.implicits.map((m, i) => (

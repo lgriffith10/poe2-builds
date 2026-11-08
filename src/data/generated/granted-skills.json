@@ -1,0 +1,1176 @@
+{
+ "bases": {
+  "Leather Buckler": [
+   "Parry"
+  ],
+  "Runeforged Leather Buckler": [
+   "Parry"
+  ],
+  "Wooden Buckler": [
+   "Parry"
+  ],
+  "Runeforged Wooden Buckler": [
+   "Parry"
+  ],
+  "Plated Buckler": [
+   "Parry"
+  ],
+  "Runeforged Plated Buckler": [
+   "Parry"
+  ],
+  "Iron Buckler": [
+   "Parry"
+  ],
+  "Runeforged Iron Buckler": [
+   "Parry"
+  ],
+  "Ridged Buckler": [
+   "Parry"
+  ],
+  "Runeforged Ridged Buckler": [
+   "Parry"
+  ],
+  "Spiked Buckler": [
+   "Parry"
+  ],
+  "Runeforged Spiked Buckler": [
+   "Parry"
+  ],
+  "Ringed Buckler": [
+   "Parry"
+  ],
+  "Runeforged Ringed Buckler": [
+   "Parry"
+  ],
+  "Edged Buckler": [
+   "Parry"
+  ],
+  "Runeforged Edged Buckler": [
+   "Parry"
+  ],
+  "Laminate Buckler": [
+   "Parry"
+  ],
+  "Oak Buckler": [
+   "Parry"
+  ],
+  "Runeforged Laminate Buckler": [
+   "Parry"
+  ],
+  "Painted Buckler": [
+   "Parry"
+  ],
+  "Pearl Buckler": [
+   "Parry"
+  ],
+  "Runeforged Pearl Buckler": [
+   "Parry"
+  ],
+  "Coiled Buckler": [
+   "Parry"
+  ],
+  "Ornate Buckler": [
+   "Parry"
+  ],
+  "Runeforged Ornate Buckler": [
+   "Parry"
+  ],
+  "Spikeward Buckler": [
+   "Parry"
+  ],
+  "Runeforged Spikeward Buckler": [
+   "Parry"
+  ],
+  "Array Buckler": [
+   "Parry"
+  ],
+  "Runeforged Array Buckler": [
+   "Parry"
+  ],
+  "Jingling Buckler": [
+   "Parry"
+  ],
+  "Runeforged Jingling Buckler": [
+   "Parry"
+  ],
+  "Bladeguard Buckler": [
+   "Parry"
+  ],
+  "Runeforged Bladeguard Buckler": [
+   "Parry"
+  ],
+  "Aegis Buckler": [
+   "Parry"
+  ],
+  "Runeforged Aegis Buckler": [
+   "Parry"
+  ],
+  "Gutspike Buckler": [
+   "Parry"
+  ],
+  "Runeforged Gutspike Buckler": [
+   "Parry"
+  ],
+  "Ancient Buckler": [
+   "Parry"
+  ],
+  "Runeforged Ancient Buckler": [
+   "Parry"
+  ],
+  "Desert Buckler": [
+   "Parry"
+  ],
+  "Runeforged Desert Buckler": [
+   "Parry"
+  ],
+  "Rattling Sceptre": [
+   "Skeletal Warrior"
+  ],
+  "Stoic Sceptre": [
+   "Discipline"
+  ],
+  "Lupine Sceptre": [
+   "Skeletal Warrior"
+  ],
+  "Omen Sceptre": [
+   "Malice"
+  ],
+  "Ochre Sceptre": [
+   "Skeletal Warrior"
+  ],
+  "Shrine Sceptre": [
+   "Purity of Fire",
+   "Purity of Ice",
+   "Purity of Lightning"
+  ],
+  "Devouring Sceptre": [
+   "Skeletal Warrior"
+  ],
+  "Clasped Sceptre": [
+   "Heart of Ice"
+  ],
+  "Devotional Sceptre": [
+   "Skeletal Warrior"
+  ],
+  "Wrath Sceptre": [
+   "Fulmination"
+  ],
+  "Aromatic Sceptre": [
+   "Skeletal Warrior"
+  ],
+  "Pious Sceptre": [
+   "Skeletal Warrior"
+  ],
+  "Hallowed Sceptre": [
+   "Skeletal Warrior"
+  ],
+  "Splintered Tower Shield": [
+   "Raise Shield"
+  ],
+  "Hardwood Targe": [
+   "Raise Shield"
+  ],
+  "Blazon Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Splintered Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Hardwood Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Blazon Crest Shield": [
+   "Raise Shield"
+  ],
+  "Painted Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Painted Tower Shield": [
+   "Raise Shield"
+  ],
+  "Sigil Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Sigil Crest Shield": [
+   "Raise Shield"
+  ],
+  "Pelage Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Pelage Targe": [
+   "Raise Shield"
+  ],
+  "Braced Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Braced Tower Shield": [
+   "Raise Shield"
+  ],
+  "Barricade Tower Shield": [
+   "Raise Shield"
+  ],
+  "Studded Targe": [
+   "Raise Shield"
+  ],
+  "Emblem Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Barricade Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Studded Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Emblem Crest Shield": [
+   "Raise Shield"
+  ],
+  "Effigial Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Effigial Tower Shield": [
+   "Raise Shield"
+  ],
+  "Crescent Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Crescent Targe": [
+   "Raise Shield"
+  ],
+  "Rampart Tower Shield": [
+   "Raise Shield"
+  ],
+  "Jingling Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Rampart Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Jingling Crest Shield": [
+   "Raise Shield"
+  ],
+  "Heraldric Tower Shield": [
+   "Raise Shield"
+  ],
+  "Chiseled Targe": [
+   "Raise Shield"
+  ],
+  "Sectarian Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Heraldric Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Chiseled Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Sectarian Crest Shield": [
+   "Raise Shield"
+  ],
+  "Stone Tower Shield": [
+   "Raise Shield"
+  ],
+  "Omen Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Stone Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Omen Crest Shield": [
+   "Raise Shield"
+  ],
+  "Feathered Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Feathered Targe": [
+   "Raise Shield"
+  ],
+  "Crucible Tower Shield": [
+   "Raise Shield"
+  ],
+  "Wayward Crest Shield": [
+   "Raise Shield"
+  ],
+  "Aged Tower Shield": [
+   "Raise Shield"
+  ],
+  "Ironwood Targe": [
+   "Raise Shield"
+  ],
+  "Painted Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Crucible Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Wayward Crest Shield": [
+   "Raise Shield"
+  ],
+  "Stratified Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Stratified Targe": [
+   "Raise Shield"
+  ],
+  "Metalworked Tower Shield": [
+   "Raise Shield"
+  ],
+  "Fur-lined Targe": [
+   "Raise Shield"
+  ],
+  "Engraved Crest Shield": [
+   "Raise Shield"
+  ],
+  "Ancestor Tower Shield": [
+   "Raise Shield"
+  ],
+  "Seer Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Ancestor Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Seer Crest Shield": [
+   "Raise Shield"
+  ],
+  "Carved Targe": [
+   "Raise Shield"
+  ],
+  "Cultist Tower Shield": [
+   "Raise Shield"
+  ],
+  "Mercenary Targe": [
+   "Raise Shield"
+  ],
+  "Descry Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Carved Targe": [
+   "Raise Shield"
+  ],
+  "Phalanx Tower Shield": [
+   "Raise Shield"
+  ],
+  "Mosaic Targe": [
+   "Raise Shield"
+  ],
+  "Stoic Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Phalanx Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Mosaic Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Stoic Crest Shield": [
+   "Raise Shield"
+  ],
+  "Bulwark Tower Shield": [
+   "Raise Shield"
+  ],
+  "Polished Targe": [
+   "Raise Shield"
+  ],
+  "Dekharan Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Bulwark Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Polished Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Dekharan Crest Shield": [
+   "Raise Shield"
+  ],
+  "Aureate Targe": [
+   "Raise Shield"
+  ],
+  "Empyreal Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Aureate Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Empyreal Crest Shield": [
+   "Raise Shield"
+  ],
+  "Defiant Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Defiant Tower Shield": [
+   "Raise Shield"
+  ],
+  "Noble Tower Shield": [
+   "Raise Shield"
+  ],
+  "Stone Targe": [
+   "Raise Shield"
+  ],
+  "Quartered Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Noble Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Stone Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Quartered Crest Shield": [
+   "Raise Shield"
+  ],
+  "Goldworked Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Goldworked Tower Shield": [
+   "Raise Shield"
+  ],
+  "Avian Targe": [
+   "Raise Shield"
+  ],
+  "Glowering Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Avian Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Glowering Crest Shield": [
+   "Raise Shield"
+  ],
+  "Blacksteel Tower Shield": [
+   "Raise Shield"
+  ],
+  "Grand Targe": [
+   "Raise Shield"
+  ],
+  "Deified Crest Shield": [
+   "Raise Shield"
+  ],
+  "Royal Tower Shield": [
+   "Raise Shield"
+  ],
+  "Mammoth Targe": [
+   "Raise Shield"
+  ],
+  "Intricate Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Blacksteel Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Grand Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Deified Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Royal Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Mammoth Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Intricate Crest Shield": [
+   "Raise Shield"
+  ],
+  "Fortress Tower Shield": [
+   "Raise Shield"
+  ],
+  "Baroque Targe": [
+   "Raise Shield"
+  ],
+  "Sekheman Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Fortress Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Baroque Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Sekheman Crest Shield": [
+   "Raise Shield"
+  ],
+  "Vaal Tower Shield": [
+   "Raise Shield"
+  ],
+  "Soaring Targe": [
+   "Raise Shield"
+  ],
+  "Vaal Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Vaal Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Soaring Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Vaal Crest Shield": [
+   "Raise Shield"
+  ],
+  "Tawhoan Tower Shield": [
+   "Raise Shield"
+  ],
+  "Golden Targe": [
+   "Raise Shield"
+  ],
+  "Blacksteel Crest Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Tawhoan Tower Shield": [
+   "Raise Shield"
+  ],
+  "Runeforged Golden Targe": [
+   "Raise Shield"
+  ],
+  "Runeforged Blacksteel Crest Shield": [
+   "Raise Shield"
+  ],
+  "Hardwood Spear": [
+   "Spear Throw"
+  ],
+  "Ironhead Spear": [
+   "Spear Throw"
+  ],
+  "Hunting Spear": [
+   "Spear Throw"
+  ],
+  "Winged Spear": [
+   "Spear Throw"
+  ],
+  "War Spear": [
+   "Spear Throw"
+  ],
+  "Forked Spear": [
+   "Spear Throw"
+  ],
+  "Barbed Spear": [
+   "Spear Throw"
+  ],
+  "Runeforged Ironhead Spear": [
+   "Spear Throw"
+  ],
+  "Runeforged Hunting Spear": [
+   "Spear Throw"
+  ],
+  "Broad Spear": [
+   "Spear Throw"
+  ],
+  "Runeforged Hardwood Spear": [
+   "Spear Throw"
+  ],
+  "Runeforged Winged Spear": [
+   "Spear Throw"
+  ],
+  "Runeforged War Spear": [
+   "Spear Throw"
+  ],
+  "Crossblade Spear": [
+   "Spear Throw"
+  ],
+  "Steelhead Spear": [
+   "Spear Throw"
+  ],
+  "Coursing Spear": [
+   "Spear Throw"
+  ],
+  "Seaglass Spear": [
+   "Spear Throw"
+  ],
+  "Swift Spear": [
+   "Spear Throw"
+  ],
+  "Sword Spear": [
+   "Spear Throw"
+  ],
+  "Branched Spear": [
+   "Spear Throw"
+  ],
+  "Striking Spear": [
+   "Spear Throw"
+  ],
+  "Runemastered Ironhead Spear": [
+   "Spear Throw"
+  ],
+  "Runeforged Forked Spear": [
+   "Spear Throw"
+  ],
+  "Runeforged Barbed Spear": [
+   "Spear Throw"
+  ],
+  "Jagged Spear": [
+   "Spear Throw"
+  ],
+  "Massive Spear": [
+   "Spear Throw"
+  ],
+  "Helix Spear": [
+   "Spear Throw"
+  ],
+  "Orichalcum Spear": [
+   "Spear Throw"
+  ],
+  "Soaring Spear": [
+   "Spear Throw"
+  ],
+  "Pronged Spear": [
+   "Spear Throw"
+  ],
+  "Guardian Spear": [
+   "Spear Throw"
+  ],
+  "Stalking Spear": [
+   "Spear Throw"
+  ],
+  "Spiked Spear": [
+   "Spear Throw"
+  ],
+  "Flying Spear": [
+   "Spear Throw"
+  ],
+  "Akoyan Spear": [
+   "Spear Throw"
+  ],
+  "Grand Spear": [
+   "Spear Throw"
+  ],
+  "Ashen Staff": [
+   "Firebolt"
+  ],
+  "Gelid Staff": [
+   "Freezing Shards"
+  ],
+  "Voltaic Staff": [
+   "Lightning Bolt"
+  ],
+  "Spriggan Staff": [
+   "Firebolt"
+  ],
+  "Pyrophyte Staff": [
+   "Solar Orb"
+  ],
+  "Chiming Staff": [
+   "Sigil of Power"
+  ],
+  "Rending Staff": [
+   "Soulrend"
+  ],
+  "Reaping Staff": [
+   "Reap"
+  ],
+  "Icicle Staff": [
+   "Firebolt"
+  ],
+  "Roaring Staff": [
+   "Unleash"
+  ],
+  "Paralysing Staff": [
+   "Enervating Nova"
+  ],
+  "Sanctified Staff": [
+   "Consecrate"
+  ],
+  "Dark Staff": [
+   "Dark Pact"
+  ],
+  "Ravenous Staff": [
+   "Feast of Flesh"
+  ],
+  "Withered Wand": [
+   "Chaos Bolt"
+  ],
+  "Bone Wand": [
+   "Bone Blast"
+  ],
+  "Attuned Wand": [
+   "Mana Drain"
+  ],
+  "Siphoning Wand": [
+   "Power Siphon"
+  ],
+  "Volatile Wand": [
+   "Volatile Dead"
+  ],
+  "Galvanic Wand": [
+   "Galvanic Field"
+  ],
+  "Acrid Wand": [
+   "Decompose"
+  ],
+  "Offering Wand": [
+   "Exsanguinate"
+  ],
+  "Frigid Wand": [
+   "Chaos Bolt"
+  ],
+  "Torture Wand": [
+   "Chaos Bolt"
+  ],
+  "Critical Wand": [
+   "Chaos Bolt"
+  ],
+  "Primordial Wand": [
+   "Wither"
+  ],
+  "Dueling Wand": [
+   "Spellslinger"
+  ]
+ },
+ "uniques": {
+  "Adonia's Ego": [
+   "Power Siphon",
+   "Pinnacle of Power"
+  ],
+  "Alkem Eira": [
+   "Raise Shield"
+  ],
+  "Arvil's Wheel": [
+   "Raise Shield"
+  ],
+  "Atziri's Acuity": [
+   "Herald of the Royal Queen"
+  ],
+  "Atziri's Contempt": [
+   "Spear Throw",
+   "Shattering Spite"
+  ],
+  "Atziri's Rule": [
+   "Mirror of Refraction"
+  ],
+  "Bijouborne": [
+   "Cast on Charm Use"
+  ],
+  "Bloodbarrier": [
+   "Parry"
+  ],
+  "Brutus' Lead Sprinkler": [
+   "Molten Shower"
+  ],
+  "Calgyra's Arc": [
+   "Parry"
+  ],
+  "Chainsting": [
+   "Spear Throw"
+  ],
+  "Chernobog's Pillar": [
+   "Raise Shield"
+  ],
+  "Choir of the Storm": [
+   "Lightning Bolt"
+  ],
+  "Corpsewade": [
+   "Decompose"
+  ],
+  "Cospri's Will": [
+   "Withering Presence"
+  ],
+  "Crest of Ardura": [
+   "Raise Shield"
+  ],
+  "Cursecarver": [
+   "Decompose"
+  ],
+  "Daevata's Wind": [
+   "Spear Throw"
+  ],
+  "Dionadair": [
+   "Raise Shield"
+  ],
+  "Doomgate": [
+   "Raise Shield"
+  ],
+  "Double Vision": [
+   "Gemini Surge"
+  ],
+  "Dunkelhalt": [
+   "Parry"
+  ],
+  "Dusk Vigil": [
+   "Firebolt",
+   "Ember Fusillade"
+  ],
+  "Earthbound": [
+   "Lightning Bolt",
+   "Spark"
+  ],
+  "Enezun's Charge": [
+   "Volatile Dead"
+  ],
+  "Eventide Petals": [
+   "Midnight Zenith"
+  ],
+  "Eyes of the Runefather": [
+   "Raise Shield"
+  ],
+  "Fairgraves' Curse": [
+   "Phantasmal Arrow"
+  ],
+  "Feathered Fortress": [
+   "Raise Shield"
+  ],
+  "Font of Power": [
+   "Malice"
+  ],
+  "Forgotten Warden": [
+   "Spirit Vessel"
+  ],
+  "Fury of the King": [
+   "Molten Crash"
+  ],
+  "Guiding Palm": [
+   "Purity of Lightning"
+  ],
+  "Guiding Palm of the Eye": [
+   "Purity of Ice"
+  ],
+  "Guiding Palm of the Heart": [
+   "Purity of Fire"
+  ],
+  "Guiding Palm of the Mind": [
+   "Purity of Lightning"
+  ],
+  "Hinekora's Sight": [
+   "Future-Past"
+  ],
+  "Horror's Flight": [
+   "Crushing Fear"
+  ],
+  "Hysseg's Claw": [
+   "Cackling Companions"
+  ],
+  "Kaltenhalt": [
+   "Parry"
+  ],
+  "Lifesprig": [
+   "Mana Drain"
+  ],
+  "Lightning Coil": [
+   "Valako's Charge"
+  ],
+  "Liminal Coil": [
+   "Coiling Bolts"
+  ],
+  "Lycosidae": [
+   "Raise Shield"
+  ],
+  "Mahuxotl's Machination": [
+   "Raise Shield"
+  ],
+  "Merit of Service": [
+   "Raise Shield"
+  ],
+  "Mjölner": [
+   "Thundergod's Wrath"
+  ],
+  "Murkshaft": [
+   "Bursting Fen Toad"
+  ],
+  "Nightfall": [
+   "Raise Shield"
+  ],
+  "Nocturne": [
+   "Parry"
+  ],
+  "Oaksworn": [
+   "Raise Shield"
+  ],
+  "Palm of the Dreamer": [
+   "Impurity"
+  ],
+  "Periphery": [
+   "Azmerian Swarms"
+  ],
+  "Prism Guardian": [
+   "Raise Shield"
+  ],
+  "Redblade Banner": [
+   "Raise Shield"
+  ],
+  "Reverie": [
+   "Rite of Restoration"
+  ],
+  "Rise of the Phoenix": [
+   "Raise Shield"
+  ],
+  "Rondel de Ezo": [
+   "Parry"
+  ],
+  "Runeseeker's Call": [
+   "The Stars Answer"
+  ],
+  "Sacred Flame": [
+   "Purity of Fire"
+  ],
+  "Sadist's Mercy": [
+   "Harbinger of Madness"
+  ],
+  "Saffell's Frame": [
+   "Raise Shield"
+  ],
+  "Saitha's Spear": [
+   "Spear Throw"
+  ],
+  "Sands of Silk": [
+   "Blink"
+  ],
+  "Sanguine Diviner": [
+   "Bone Blast"
+  ],
+  "Serle's Grit": [
+   "Runic Tempering"
+  ],
+  "Shankgonne": [
+   "Black Powder Blitz"
+  ],
+  "Silverthorne": [
+   "Parry"
+  ],
+  "Sire of Shards": [
+   "Sigil of Power"
+  ],
+  "Skysliver": [
+   "Spear Throw"
+  ],
+  "Spire of Ire": [
+   "Spear Throw",
+   "Chaotic Surge"
+  ],
+  "Spiteful Floret": [
+   "Sanguine Revelry"
+  ],
+  "Splinter of Lorrata": [
+   "Spear Throw"
+  ],
+  "Sunsplinter": [
+   "Parry"
+  ],
+  "Svalinn": [
+   "Raise Shield",
+   "Cast on Block"
+  ],
+  "Sylvan's Effigy": [
+   "Discipline",
+   "Azmerian Wolf"
+  ],
+  "Tangletongue": [
+   "Spear Throw"
+  ],
+  "Taryn's Shiver": [
+   "Freezing Shards"
+  ],
+  "The Auspex": [
+   "Mist Raven"
+  ],
+  "The Burden of Shadows": [
+   "Sigil of Power"
+  ],
+  "The Coming Calamity": [
+   "Herald of Ash",
+   "Herald of Ice",
+   "Herald of Thunder"
+  ],
+  "The Covenant": [
+   "Life Remnants"
+  ],
+  "The Dark Defiler": [
+   "Skeletal Warrior Minion"
+  ],
+  "The Hollow Mask": [
+   "Wildwood's Gifts"
+  ],
+  "The Last Lament": [
+   "Compose Requiem"
+  ],
+  "The Ordained": [
+   "Spear Throw",
+   "Righteous Descent"
+  ],
+  "The Raven's Flock": [
+   "Spiraling Conspiracy"
+  ],
+  "The Searing Touch": [
+   "Solar Orb"
+  ],
+  "The Surrender": [
+   "Raise Shield"
+  ],
+  "The Unborn Lich": [
+   "Feast of Flesh"
+  ],
+  "The Wailing Wall": [
+   "Raise Shield"
+  ],
+  "The Whispering Ice": [
+   "Heart of Ice",
+   "Icestorm"
+  ],
+  "The Wicked Quill": [
+   "Chaos Bolt"
+  ],
+  "Thunderfist": [
+   "Crackling Palm"
+  ],
+  "Twisted Empyrean": [
+   "Starborn Onslaught"
+  ],
+  "Tyranny's Grip": [
+   "Spear Throw"
+  ],
+  "Window to Paradise": [
+   "Raise Shield"
+  ],
+  "Wulfsbane": [
+   "Raise Shield"
+  ]
+ },
+ "ascendancy": {
+  "Hollow Form Technique": [
+   "Hollow Form"
+  ],
+  "Unleash Hell!": [
+   "Supporting Fire"
+  ],
+  "Unbound Encore": [
+   "Time Snap"
+  ],
+  "Converging Paths": [
+   "Moment of Vulnerability"
+  ],
+  "Mirage Deadeye": [
+   "Mirage Deadeye"
+  ],
+  "Jade Heritage": [
+   "Encase in Jade"
+  ],
+  "Elemental Surge": [
+   "Elemental Surge"
+  ],
+  "Sanguimancy": [
+   "Life Remnants"
+  ],
+  "Navira's Fracturing": [
+   "Navira's Fracturing"
+  ],
+  "Essence of Virtue": [
+   "Virtuous Barrier"
+  ],
+  "Faith is a Choice": [
+   "Meditate"
+  ],
+  "Tempest Caller": [
+   "Elemental Storm"
+  ],
+  "Barya of Kelari": [
+   "Kelari, the Tainted Sands"
+  ],
+  "Ruzhan's Fury": [
+   "Ruzhan's Fury"
+  ],
+  "Hollow Resonance Technique": [
+   "Hollow Resonance"
+  ],
+  "Loyal Hellhound": [
+   "Summon Infernal Hound"
+  ],
+  "Hollow Focus Technique": [
+   "Hollow Focus"
+  ],
+  "Heat of the Forge": [
+   "Fire Spell on Hit"
+  ],
+  "Kelari's Deception": [
+   "Kelari's Deception"
+  ],
+  "Demonic Possession": [
+   "Demon Form"
+  ],
+  "Kelari's Judgment": [
+   "Kelari's Judgment"
+  ],
+  "Ruzhan's Reckoning": [
+   "Ruzhan's Reckoning"
+  ],
+  "Footprints in the Sand": [
+   "Temporal Rift"
+  ],
+  "Bringer of the Apocalypse": [
+   "Apocalypse"
+  ],
+  "As the Whispers Demand": [
+   "Ritual Sacrifice"
+  ],
+  "Grasp of the Void": [
+   "Void Illusion"
+  ],
+  "Barya of Navira": [
+   "Navira, the Last Mirage"
+  ],
+  "Barya of Ruzhan": [
+   "Ruzhan, the Blazing Sword"
+  ],
+  "Archon of Chayula": [
+   "Archon of Chayula"
+  ],
+  "Kelari's Malediction": [
+   "Kelari's Malediction"
+  ],
+  "Corrupted Lifeforce": [
+   "Blood Boil"
+  ],
+  "Fateful Vision": [
+   "Align Fate"
+  ],
+  "Obsessive Rituals": [
+   "Sorcery Ward"
+  ],
+  "Devotion to the King": [
+   "Queen's Procession"
+  ],
+  "Answered Call": [
+   "Ancestral Spirits"
+  ],
+  "Vivid Stampede": [
+   "Vivid Stampede"
+  ],
+  "Inevitability": [
+   "Inevitable Agony"
+  ],
+  "Navira's Well": [
+   "Navira's Well"
+  ],
+  "Navira's Oasis": [
+   "Navira's Oasis"
+  ],
+  "Primal Bounty": [
+   "Primal Bounty"
+  ],
+  "Living Weapon": [
+   "Manifest Weapon"
+  ],
+  "Waking Dream": [
+   "Into the Breach"
+  ],
+  "...and Scatter Them to the Winds": [
+   "Elemental Expression"
+  ],
+  "Ultimate Command": [
+   "Time Freeze"
+  ],
+  "Called Shots": [
+   "Called Shots"
+  ],
+  "Against the Anvil": [
+   "Temper Weapon"
+  ],
+  "Wild Protector": [
+   "Wild Protector"
+  ],
+  "...and I Shall Rage": [
+   "Unbound Avatar"
+  ],
+  "Ruzhan's Trap": [
+   "Ruzhan's Trap"
+  ]
+ }
+}

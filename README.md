@@ -26,6 +26,7 @@ npm run dev          # http://localhost:3000
 | `npm run draft:maxroll -- <guide-slug> --stages [--map "campaign=Name,endgame=Name"]` | Prints a `gearStages` block from every equipment set of the guide's planner; without `--map`, stages are picked from the set names |
 | `npm run ladder:sync [-- leagueUrl]` | Snapshots ladder statistics from poe.ninja into `src/data/generated/ladder.json` (ascendancy, skill, unique and key passive popularity) |
 | `npm run draft:ninja -- "<Ascendancy>" "<Main skill>" [pick]` | Drafts a "ladder build" from a representative poe.ninja character (the `pick`-th in poe.ninja's list for that filter); ladder statistics for the write-up go to stderr |
+| `npm run skills:granted` | Lists skills granted by base types, uniques and ascendancy notables (`src/data/generated/granted-skills.json`), shown as each skill's origin on build pages |
 | `npm run research:maxroll -- <plannerId> [profile]` | Human-readable summary of a Maxroll planner |
 | `npm run lint` | ESLint |
 

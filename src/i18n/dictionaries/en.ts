@@ -91,6 +91,16 @@ export const en = {
     },
   },
   build: {
+    grantsSkill: "Grants Skill: {skills}",
+    skillFrom: {
+      weapon: "Weapon: {from}",
+      item: "Item: {from}",
+      ascendancy: "Ascendancy: {from}",
+      gem: "Skill gem",
+      spirit: "Spirit gem",
+    },
+    skillFromHint: "Where the skill comes from: a skill or spirit gem you socket, or a skill granted by your weapon, an item or an ascendancy notable (no gem needed).",
+    modHint: "+# = a flat amount added, #% = a percentage. Aim for the highest values you can afford.",
     drawnFrom: "Drawn from",
     ladderNote:
       "This is not a written guide: skills, gear and passives come from one representative ladder character, and the notes use poe.ninja statistics for every character with the same ascendancy and main skill. The write-up is our own.",

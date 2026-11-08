@@ -95,6 +95,16 @@ export const fr: Dictionary = {
     },
   },
   build: {
+    grantsSkill: "Accorde la compétence : {skills}",
+    skillFrom: {
+      weapon: "Arme : {from}",
+      item: "Objet : {from}",
+      ascendancy: "Ascendance : {from}",
+      gem: "Gemme de compétence",
+      spirit: "Gemme d'esprit",
+    },
+    skillFromHint: "D'où vient la compétence : une gemme de compétence ou d'esprit à sertir, ou une compétence accordée par votre arme, un objet ou un notable d'ascendance (sans gemme).",
+    modHint: "+# = valeur fixe ajoutée, #% = pourcentage. Visez les valeurs les plus hautes que votre budget permet.",
     drawnFrom: "Tiré de",
     ladderNote:
       "Ce n'est pas un guide rédigé : compétences, équipement et passifs viennent d'un personnage représentatif du ladder, et les notes s'appuient sur les statistiques poe.ninja de tous les personnages ayant la même ascendance et la même compétence principale. Le texte est le nôtre.",

@@ -3,6 +3,8 @@ import type { InventoryItem, InventoryStage } from "@/components/gear-inventory"
 import { fmt, type Dictionary } from "@/i18n";
 import type { Build } from "./builds";
 import { getBase, getUnique } from "./data";
+import { modLabel } from "./mod-labels";
+import { baseGrants } from "./skill-source";
 import { GEAR_SLOTS, GEAR_STAGES, type GearSet } from "./types";
 
 /** Resolves a gear set into what the inventory panel shows (names, icons, modifier lines). */
@@ -24,6 +26,7 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           icon: unique.icon,
           implicits: unique.implicits,
           mods: unique.mods,
+          grants: null,
           note: piece.note ?? null,
         }
       : {
@@ -34,7 +37,8 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           base: base?.name ?? null,
           icon: base?.icon ?? null,
           implicits: [],
-          mods: piece.mods ?? [],
+          mods: (piece.mods ?? []).map(modLabel),
+          grants: baseGrants(base?.name).length ? fmt(t.build.grantsSkill, { skills: baseGrants(base?.name).join(" / ") }) : null,
           note: piece.note ?? null,
         };
   });
