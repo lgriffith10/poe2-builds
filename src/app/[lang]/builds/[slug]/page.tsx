@@ -14,6 +14,7 @@ import { getClass, getGem, tree } from "@/lib/data";
 import { inventoryStages } from "@/lib/inventory";
 import { skillSources, type SkillSource } from "@/lib/skill-source";
 import { ladderPopularity } from "@/lib/ladder";
+import { prices } from "@/lib/prices";
 
 const pctText = (share: number, lang: string) =>
   new Intl.NumberFormat(lang === "fr" ? "fr-FR" : "en-US", { style: "percent", maximumFractionDigits: share >= 0.1 ? 0 : 1 }).format(share);
@@ -52,7 +53,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
     return tree.nodes[id];
   });
 
-  const inventory = inventoryStages(build, tr);
+  const inventory = inventoryStages(build, tr, lang);
   const sources = skillSources(build);
   const sourceLabel = (src: SkillSource) => fmt(tr.build.skillFrom[src.kind], { from: "from" in src ? src.from : "" });
   const popularity = ladderPopularity(build);
@@ -299,6 +300,12 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               initialStage={inventory.initial}
               slotLabels={tr.slots}
               hint={`${tr.build.inventoryHint} ${tr.build.modHint}`}
+              priceLabels={{
+                divine: "Divine Orb",
+                exalted: "Exalted Orb",
+                stageTotal: tr.build.stageTotal,
+                note: fmt(tr.build.priceNote, { league: prices.league, date: prices.fetchedAt }),
+              }}
             />
           </section>
 

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense, type ReactNode } from "react";
+import { Price } from "@/components/gear-inventory";
 import { ClassEmblem, GemIcon, PageHeader, TierBadge } from "@/components/ui";
+import { priceTag, uniquePrice } from "@/lib/prices";
 import { getBuilds, type Build } from "@/lib/builds";
 import { getGem } from "@/lib/data";
 import { GEAR_STAGES, TIER_CATEGORIES } from "@/lib/types";
@@ -109,9 +111,12 @@ async function CompareBody({ params, searchParams }: Pick<PageProps<"/[lang]/com
       list.length ? (
         <ul className="space-y-1 text-sm">
           {list.map((u) => (
-            <li key={u} className={other.includes(u) ? "font-semibold text-gold" : "text-unique"}>
-              {other.includes(u) && <span aria-hidden>◆ </span>}
-              {u}
+            <li key={u} className={`flex items-center justify-between gap-2 ${other.includes(u) ? "font-semibold text-gold" : "text-unique"}`}>
+              <span>
+                {other.includes(u) && <span aria-hidden>◆ </span>}
+                {u}
+              </span>
+              {uniquePrice(u) !== null && <Price tag={priceTag(uniquePrice(u)!, lang)} alt={priceTag(uniquePrice(u)!, lang).unit === "divine" ? "Divine Orb" : "Exalted Orb"} />}
             </li>
           ))}
         </ul>

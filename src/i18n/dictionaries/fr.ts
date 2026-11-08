@@ -95,6 +95,8 @@ export const fr: Dictionary = {
     },
   },
   build: {
+    stageTotal: "Uniques de cette étape :",
+    priceNote: "Prix poe.ninja, {league}, {date}. Les objets rares ne sont pas chiffrés : leur prix dépend de leurs modificateurs.",
     campaignRotations: "Rotations de campagne",
     grantsSkill: "Accorde la compétence : {skills}",
     skillFrom: {
@@ -267,6 +269,14 @@ export const fr: Dictionary = {
     history: "Étapes",
     disclaimer:
       "Les chances sont des estimations : les vrais poids d'apparition ne sont pas publics, donc chaque palier possible compte comme également probable. En jeu, les meilleurs paliers sont plus rares. Les listes de mods viennent des données du jeu (RePoE) ; les seuils Greater et Perfect (niveaux 44 et 70) et les essences suivent le guide de craft de Maxroll.",
+  },
+  search: {
+    open: "Rechercher sur le site",
+    placeholder: "Rechercher builds, guides, gemmes, uniques…",
+    loading: "Chargement des gemmes et objets…",
+    none: "Aucun résultat.",
+    kinds: { page: "Pages", build: "Builds", guide: "Guides", gem: "Gemmes", unique: "Uniques", base: "Bases" },
+    gemTypes: { active: "Gemme de compétence", support: "Gemme de soutien", spirit: "Gemme d'esprit" },
   },
   planner: {
     metaTitle: "Planner d'arbre passif",

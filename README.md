@@ -24,6 +24,9 @@ npm run dev          # http://localhost:3000
 | `npm run test:planner` | Sanity checks for the passive tree logic and share codes |
 | `npm run draft:maxroll -- <guide-slug> [profile]` | Drafts a guide's front matter (skills, ascendancy order, key passives, gear) from a public Maxroll guide; prints to stdout, notes to stderr |
 | `npm run draft:maxroll -- <guide-slug> --stages [--map "campaign=Name,endgame=Name"]` | Prints a `gearStages` block from every equipment set of the guide's planner; without `--map`, stages are picked from the set names |
+| `npm run prices:sync [-- "League name"]` | Snapshots unique prices from poe.ninja into `src/data/generated/prices.json` (gear panel, compare page) |
+| `npm run sources:check` | Lists build guides whose Maxroll source was updated after our version |
+| `npm run data:refresh` | `ladder:sync` + `prices:sync` + `sources:check` |
 | `npm run ladder:sync [-- leagueUrl]` | Snapshots ladder statistics from poe.ninja into `src/data/generated/ladder.json` (ascendancy, skill, unique and key passive popularity) |
 | `npm run draft:ninja -- "<Ascendancy>" "<Main skill>" [pick]` | Drafts a "ladder build" from a representative poe.ninja character (the `pick`-th in poe.ninja's list for that filter); ladder statistics for the write-up go to stderr |
 | `npm run skills:granted` | Lists skills granted by base types, uniques and ascendancy notables (`src/data/generated/granted-skills.json`), shown as each skill's origin on build pages |
@@ -119,6 +122,18 @@ protobuf search responses and its "NDIC" dictionaries, and throttles requests (o
 Guides with `origin: ladder` are drawn from one ladder character instead of a written guide; the page says so and links
 the character as the source. Pick a character whose main damage really comes from the skill in the title (check its DPS
 breakdown), and prefer modest gear over the richest character.
+
+## Automatic data refresh
+
+`.github/workflows/data-refresh.yml` runs every Monday (or by hand from the Actions tab): it refreshes the ladder and
+price snapshots, checks the Maxroll source guides, makes sure the site still builds, and opens a "Weekly data refresh"
+pull request. Nothing changes on the live site until that PR is merged. The repository must allow GitHub Actions to
+create pull requests (Settings → Actions → General → Workflow permissions).
+
+## Search
+
+The header search (Ctrl+K or /) covers pages, builds and guides (passed by the layout at build time) and every gem,
+unique and base type (loaded from `public/data/catalog.json` when the search opens).
 
 ## Guides
 

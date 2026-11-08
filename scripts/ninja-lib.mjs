@@ -152,3 +152,9 @@ export function character(snap, account, name) {
   const qs = new URLSearchParams({ account, name, overview: snap.overview });
   return get(`${BASE}/builds/${snap.version}/character?${qs}`);
 }
+
+/** Economy overview: "exchange" for currency, "stash" for unique items (`type` e.g. Currency, UniqueArmours). */
+export function economy(league, kind, type) {
+  const qs = new URLSearchParams({ league, type });
+  return get(kind === "exchange" ? `${BASE}/economy/exchange/current/overview?${qs}` : `${BASE}/economy/stash/current/item/overview?${qs}`);
+}

@@ -1,0 +1,66 @@
+# Weekly refresh of the data snapshots the static site is built from (poe.ninja ladder and prices),
+# plus a check of the Maxroll guides our builds are based on. Opens a pull request; nothing is deployed
+# until it is merged.
+name: Data refresh
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.18.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Ladder snapshot (poe.ninja)
+        run: node scripts/sync-ninja.mjs
+
+      - name: Unique prices (poe.ninja)
+        run: node scripts/sync-prices.mjs
+
+      - name: Maxroll source guides
+        run: node scripts/check-sources.mjs --out "$RUNNER_TEMP/sources.md"
+
+      - name: Check that the site still builds
+        run: |
+          pnpm run builds:check
+          pnpm run build
+
+      - name: Pull request body
+        run: |
+          {
+            echo "Automated weekly refresh of the poe.ninja ladder and price snapshots."
+            echo
+            echo "- \`src/data/generated/ladder.json\`: ladder statistics (Meta page, popularity lines)"
+            echo "- \`src/data/generated/prices.json\`: unique prices (gear panel, compare page)"
+            echo
+            cat "$RUNNER_TEMP/sources.md"
+          } > "$RUNNER_TEMP/body.md"
+
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: data/refresh
+          delete-branch: true
+          commit-message: "Refresh ladder and price snapshots"
+          title: "Weekly data refresh"
+          body-path: ${{ runner.temp }}/body.md
+          add-paths: |
+            src/data/generated/ladder.json
+            src/data/generated/prices.json

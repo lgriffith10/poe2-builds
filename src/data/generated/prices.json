@@ -1,0 +1,1715 @@
+{
+ "source": "poe.ninja",
+ "league": "Forbidden Rites",
+ "fetchedAt": "2026-11-08",
+ "rates": {
+  "exalted": 640,
+  "chaos": 9.53
+ },
+ "uniques": {
+  "Winter's Bite": {
+   "div": 43710000,
+   "listings": 1
+  },
+  "Bluetongue": {
+   "div": 2050,
+   "listings": 2
+  },
+  "Redbeak": {
+   "div": 1680,
+   "listings": 4
+  },
+  "Runeseeker's Call": {
+   "div": 1350,
+   "listings": 82
+  },
+  "The Ordained": {
+   "div": 7,
+   "listings": 1593
+  },
+  "Atziri's Rule": {
+   "div": 2.11,
+   "listings": 1194
+  },
+  "Sacred Flame": {
+   "div": 1,
+   "listings": 548
+  },
+  "Twisted Empyrean": {
+   "div": 1,
+   "listings": 454
+  },
+  "Guiding Palm of the Mind": {
+   "div": 0.6676,
+   "listings": 1150
+  },
+  "Guiding Palm of the Eye": {
+   "div": 0.5295,
+   "listings": 1223
+  },
+  "Guiding Palm of the Heart": {
+   "div": 0.5295,
+   "listings": 1185
+  },
+  "Sylvan's Effigy": {
+   "div": 0.3177,
+   "listings": 6123
+  },
+  "Periphery": {
+   "div": 0.3177,
+   "listings": 901
+  },
+  "Adonia's Ego": {
+   "div": 0.2118,
+   "listings": 3134
+  },
+  "Lioneye's Glare": {
+   "div": 0.1152,
+   "listings": 1088
+  },
+  "Fury of the King": {
+   "div": 0.1059,
+   "listings": 4353
+  },
+  "Doomfletch": {
+   "div": 0.1059,
+   "listings": 315
+  },
+  "The Hammer of Faith": {
+   "div": 0.1059,
+   "listings": 1090
+  },
+  "Atziri's Contempt": {
+   "div": 0.1059,
+   "listings": 5428
+  },
+  "Trenchtimbre": {
+   "div": 0.1059,
+   "listings": 1580
+  },
+  "Mjölner": {
+   "div": 0.1059,
+   "listings": 1138
+  },
+  "Skysliver": {
+   "div": 0.1059,
+   "listings": 8289
+  },
+  "Saitha's Spear": {
+   "div": 0.1059,
+   "listings": 2714
+  },
+  "Brutus' Lead Sprinkler": {
+   "div": 0.1059,
+   "listings": 1840
+  },
+  "Redemption": {
+   "div": 0.1059,
+   "listings": 2771
+  },
+  "Liminal Coil": {
+   "div": 0.1059,
+   "listings": 1284
+  },
+  "Duality": {
+   "div": 0.1059,
+   "listings": 5556
+  },
+  "The Raven's Flock": {
+   "div": 0.03028,
+   "listings": 2064
+  },
+  "Hrimnor's Hymn": {
+   "div": 0.0268,
+   "listings": 483
+  },
+  "Spire of Ire": {
+   "div": 0.02271,
+   "listings": 2259
+  },
+  "Quill Rain": {
+   "div": 0.02271,
+   "listings": 928
+  },
+  "The Whispering Ice": {
+   "div": 0.01802,
+   "listings": 1945
+  },
+  "Lifesprig": {
+   "div": 0.01669,
+   "listings": 3848
+  },
+  "Collapsing Horizon": {
+   "div": 0.01612,
+   "listings": 943
+  },
+  "The Last Lament": {
+   "div": 0.01514,
+   "listings": 2069
+  },
+  "Voltaxic Rift": {
+   "div": 0.01514,
+   "listings": 1089
+  },
+  "Marohi Erqi": {
+   "div": 0.01514,
+   "listings": 1228
+  },
+  "Quecholli": {
+   "div": 0.00757,
+   "listings": 410
+  },
+  "Nebuloch": {
+   "div": 0.00757,
+   "listings": 1762
+  },
+  "Slivertongue": {
+   "div": 0.00584,
+   "listings": 4422
+  },
+  "Sire of Shards": {
+   "div": 0.00515,
+   "listings": 4949
+  },
+  "Frostbreath": {
+   "div": 0.00515,
+   "listings": 1727
+  },
+  "Nazir's Judgement": {
+   "div": 0.00515,
+   "listings": 3117
+  },
+  "Sculpted Suffering": {
+   "div": 0.00515,
+   "listings": 1879
+  },
+  "Surge of the Tide": {
+   "div": 0.00515,
+   "listings": 4281
+  },
+  "Matsya": {
+   "div": 0.00454,
+   "listings": 1522
+  },
+  "Taryn's Shiver": {
+   "div": 0.00454,
+   "listings": 580
+  },
+  "Rampart Raptor": {
+   "div": 0.00454,
+   "listings": 3335
+  },
+  "Sadist's Mercy": {
+   "div": 0.00454,
+   "listings": 6227
+  },
+  "The Unborn Lich": {
+   "div": 0.00439,
+   "listings": 10000
+  },
+  "Cursecarver": {
+   "div": 0.00358,
+   "listings": 4572
+  },
+  "Fairgraves' Curse": {
+   "div": 0.00358,
+   "listings": 5205
+  },
+  "Dusk Vigil": {
+   "div": 0.00358,
+   "listings": 6216
+  },
+  "Sanguine Diviner": {
+   "div": 0.00358,
+   "listings": 2418
+  },
+  "The Empty Roar": {
+   "div": 0.00358,
+   "listings": 1619
+  },
+  "Hoghunt": {
+   "div": 0.00358,
+   "listings": 2057
+  },
+  "Trephina": {
+   "div": 0.00358,
+   "listings": 1643
+  },
+  "Mist Whisper": {
+   "div": 0.00358,
+   "listings": 3695
+  },
+  "Font of Power": {
+   "div": 0.00358,
+   "listings": 4248
+  },
+  "Shyaba": {
+   "div": 0.00358,
+   "listings": 2842
+  },
+  "The Wicked Quill": {
+   "div": 0.00358,
+   "listings": 3292
+  },
+  "Brynhand's Mark": {
+   "div": 0.00358,
+   "listings": 2001
+  },
+  "The Blood Thorn": {
+   "div": 0.0035,
+   "listings": 2052
+  },
+  "Amor Mandragora": {
+   "div": 0.00303,
+   "listings": 2043
+  },
+  "The Burden of Shadows": {
+   "div": 0.00303,
+   "listings": 302
+  },
+  "Death's Harp": {
+   "div": 0.00303,
+   "listings": 1033
+  },
+  "Ironbound": {
+   "div": 0.00303,
+   "listings": 846
+  },
+  "The Searing Touch": {
+   "div": 0.00288,
+   "listings": 911
+  },
+  "The Sentry": {
+   "div": 0.00275,
+   "listings": 2688
+  },
+  "Widowhail": {
+   "div": 0.00151,
+   "listings": 3337
+  },
+  "Double Vision": {
+   "div": 0.00151,
+   "listings": 5053
+  },
+  "Hysseg's Claw": {
+   "div": 0.00151,
+   "listings": 4181
+  },
+  "Tangletongue": {
+   "div": 0.00151,
+   "listings": 10000
+  },
+  "Splinter of Lorrata": {
+   "div": 0.00151,
+   "listings": 1075
+  },
+  "Chainsting": {
+   "div": 0.00151,
+   "listings": 1691
+  },
+  "Tyranny's Grip": {
+   "div": 0.00151,
+   "listings": 6985
+  },
+  "Chober Chaber": {
+   "div": 0.00151,
+   "listings": 3887
+  },
+  "Pillar of the Caged God": {
+   "div": 0.00151,
+   "listings": 2496
+  },
+  "Seeing Stars": {
+   "div": 0.00151,
+   "listings": 981
+  },
+  "Tidebreaker": {
+   "div": 0.00151,
+   "listings": 740
+  },
+  "The Dark Defiler": {
+   "div": 0.00151,
+   "listings": 3078
+  },
+  "Splinterheart": {
+   "div": 0.00151,
+   "listings": 2840
+  },
+  "Brain Rattler": {
+   "div": 0.00151,
+   "listings": 402
+  },
+  "Olrovasara": {
+   "div": 0.00151,
+   "listings": 1661
+  },
+  "The Flesh Poppet": {
+   "div": 0.00151,
+   "listings": 1414
+  },
+  "Enezun's Charge": {
+   "div": 0.00151,
+   "listings": 1866
+  },
+  "Earthbound": {
+   "div": 0.00151,
+   "listings": 4903
+  },
+  "Daevata's Wind": {
+   "div": 0.00151,
+   "listings": 5563
+  },
+  "Serle's Grit": {
+   "div": 0.00151,
+   "listings": 2534
+  },
+  "Spiteful Floret": {
+   "div": 0.00151,
+   "listings": 2885
+  },
+  "Temporalis": {
+   "div": 6830,
+   "listings": 15
+  },
+  "Death Articulated": {
+   "div": 25,
+   "listings": 35
+  },
+  "Rathpith Globe": {
+   "div": 5.36,
+   "listings": 1370
+  },
+  "Svalinn": {
+   "div": 4,
+   "listings": 687
+  },
+  "Morior Invictus": {
+   "div": 4,
+   "listings": 3803
+  },
+  "Sandstorm Visage": {
+   "div": 3,
+   "listings": 24
+  },
+  "Skin of the Loyal": {
+   "div": 2,
+   "listings": 123
+  },
+  "Tabula Rasa": {
+   "div": 1.26,
+   "listings": 371
+  },
+  "Alpha's Howl": {
+   "div": 1,
+   "listings": 1466
+  },
+  "Hateforge": {
+   "div": 1,
+   "listings": 643
+  },
+  "Cadiro's Gambit": {
+   "div": 1,
+   "listings": 359
+  },
+  "Sine Aequo": {
+   "div": 0.5365,
+   "listings": 528
+  },
+  "Loreweave": {
+   "div": 0.5365,
+   "listings": 8930
+  },
+  "Hand of Wisdom and Action": {
+   "div": 0.5258,
+   "listings": 394
+  },
+  "The Bringer of Rain": {
+   "div": 0.4438,
+   "listings": 1196
+  },
+  "Decree of Flight": {
+   "div": 0.3219,
+   "listings": 1596
+  },
+  "Greymake": {
+   "div": 0.317,
+   "listings": 2288
+  },
+  "Asphyxia's Wrath": {
+   "div": 0.2146,
+   "listings": 543
+  },
+  "Maligaro's Virtuosity": {
+   "div": 0.2146,
+   "listings": 2348
+  },
+  "Cornathaum": {
+   "div": 0.2146,
+   "listings": 517
+  },
+  "Drillneck": {
+   "div": 0.2146,
+   "listings": 3292
+  },
+  "The Vertex": {
+   "div": 0.2146,
+   "listings": 1391
+  },
+  "Nightfall": {
+   "div": 0.2146,
+   "listings": 1073
+  },
+  "Sunsplinter": {
+   "div": 0.2135,
+   "listings": 1668
+  },
+  "Hyrri's Ire": {
+   "div": 0.1073,
+   "listings": 3596
+  },
+  "The Brass Dome": {
+   "div": 0.1073,
+   "listings": 4368
+  },
+  "Kaom's Heart": {
+   "div": 0.1073,
+   "listings": 387
+  },
+  "Myris Uxor": {
+   "div": 0.1073,
+   "listings": 1318
+  },
+  "Prism Guardian": {
+   "div": 0.1073,
+   "listings": 1388
+  },
+  "Facebreaker": {
+   "div": 0.1073,
+   "listings": 834
+  },
+  "Horror's Flight": {
+   "div": 0.1073,
+   "listings": 2363
+  },
+  "Forgotten Warden": {
+   "div": 0.1073,
+   "listings": 10000
+  },
+  "The Unleashed": {
+   "div": 0.1044,
+   "listings": 165
+  },
+  "Bones of Ullr": {
+   "div": 0.1,
+   "listings": 3837
+  },
+  "Goldrim": {
+   "div": 0.09971,
+   "listings": 1937
+  },
+  "Atziri's Splendour": {
+   "div": 0.07925,
+   "listings": 5141
+  },
+  "Trampletoe": {
+   "div": 0.07925,
+   "listings": 962
+  },
+  "Ghostwrithe": {
+   "div": 0.0634,
+   "listings": 823
+  },
+  "Wanderlust": {
+   "div": 0.04755,
+   "listings": 1998
+  },
+  "The Mutable Star": {
+   "div": 0.04596,
+   "listings": 1517
+  },
+  "Thrillsteel": {
+   "div": 0.04596,
+   "listings": 921
+  },
+  "Decree of Acuity": {
+   "div": 0.04596,
+   "listings": 2022
+  },
+  "Veil of the Night": {
+   "div": 0.0317,
+   "listings": 448
+  },
+  "Enfolding Dawn": {
+   "div": 0.0317,
+   "listings": 3145
+  },
+  "The Covenant": {
+   "div": 0.03136,
+   "listings": 1219
+  },
+  "Blackbraid": {
+   "div": 0.03136,
+   "listings": 684
+  },
+  "Perfidy": {
+   "div": 0.03058,
+   "listings": 2203
+  },
+  "Ghostmarch": {
+   "div": 0.03012,
+   "listings": 1916
+  },
+  "Constricting Command": {
+   "div": 0.02916,
+   "listings": 3590
+  },
+  "Leopold's Applause": {
+   "div": 0.02352,
+   "listings": 1423
+  },
+  "The Master's Reach": {
+   "div": 0.02352,
+   "listings": 1489
+  },
+  "Crown of Eyes": {
+   "div": 0.02321,
+   "listings": 1404
+  },
+  "Reverie": {
+   "div": 0.01709,
+   "listings": 4400
+  },
+  "Windscream": {
+   "div": 0.01585,
+   "listings": 2210
+  },
+  "Aurseize": {
+   "div": 0.01585,
+   "listings": 850
+  },
+  "Atziri's Acuity": {
+   "div": 0.01585,
+   "listings": 1813
+  },
+  "Mahuxotl's Machination": {
+   "div": 0.01585,
+   "listings": 1088
+  },
+  "Cloak of Flame": {
+   "div": 0.01585,
+   "listings": 1404
+  },
+  "Snakebite": {
+   "div": 0.01585,
+   "listings": 1372
+  },
+  "Painter's Servant": {
+   "div": 0.01585,
+   "listings": 4198
+  },
+  "Heatshiver": {
+   "div": 0.01585,
+   "listings": 1279
+  },
+  "Silks of Veneration": {
+   "div": 0.01568,
+   "listings": 4054
+  },
+  "Essentia Sanguis": {
+   "div": 0.01568,
+   "listings": 1060
+  },
+  "Ab Aeterno": {
+   "div": 0.01568,
+   "listings": 256
+  },
+  "Solus Ipse": {
+   "div": 0.01568,
+   "listings": 653
+  },
+  "Crown of the Victor": {
+   "div": 0.01568,
+   "listings": 675
+  },
+  "Northpaw": {
+   "div": 0.01458,
+   "listings": 1161
+  },
+  "Lochtonial Caress": {
+   "div": 0.01458,
+   "listings": 7602
+  },
+  "The Auspex": {
+   "div": 0.01458,
+   "listings": 1503
+  },
+  "Saffell's Frame": {
+   "div": 0.01453,
+   "listings": 1004
+  },
+  "Chernobog's Pillar": {
+   "div": 0.01254,
+   "listings": 1929
+  },
+  "Pragmatism": {
+   "div": 0.01254,
+   "listings": 293
+  },
+  "Treefingers": {
+   "div": 0.01098,
+   "listings": 1460
+  },
+  "Effigy of Cruelty": {
+   "div": 0.00784,
+   "listings": 1094
+  },
+  "Sacrosanctum": {
+   "div": 0.00784,
+   "listings": 3453
+  },
+  "Plaguefinger": {
+   "div": 0.00784,
+   "listings": 1307
+  },
+  "Cloak of Defiance": {
+   "div": 0.00784,
+   "listings": 2199
+  },
+  "Redblade Banner": {
+   "div": 0.00784,
+   "listings": 990
+  },
+  "Queen of the Forest": {
+   "div": 0.00784,
+   "listings": 897
+  },
+  "Thunderfist": {
+   "div": 0.00784,
+   "listings": 2876
+  },
+  "Gravebind": {
+   "div": 0.00627,
+   "listings": 901
+  },
+  "Vestige of Darkness": {
+   "div": 0.00627,
+   "listings": 2995
+  },
+  "Atziri's Step": {
+   "div": 0.00612,
+   "listings": 5407
+  },
+  "Ashrend": {
+   "div": 0.00612,
+   "listings": 662
+  },
+  "Sands of Silk": {
+   "div": 0.00612,
+   "listings": 2201
+  },
+  "Redflare Conduit": {
+   "div": 0.00494,
+   "listings": 2318
+  },
+  "Carrion Call": {
+   "div": 0.00494,
+   "listings": 2049
+  },
+  "Corpsewade": {
+   "div": 0.00494,
+   "listings": 2461
+  },
+  "Widow's Reign": {
+   "div": 0.00494,
+   "listings": 691
+  },
+  "Soul Mantle": {
+   "div": 0.00494,
+   "listings": 2906
+  },
+  "Beetlebite": {
+   "div": 0.00494,
+   "listings": 1002
+  },
+  "Aerisvane's Wings": {
+   "div": 0.0047,
+   "listings": 703
+  },
+  "Mind of the Council": {
+   "div": 0.0047,
+   "listings": 847
+  },
+  "The Coming Calamity": {
+   "div": 0.0047,
+   "listings": 3683
+  },
+  "Bloodbarrier": {
+   "div": 0.0047,
+   "listings": 565
+  },
+  "Starkonja's Head": {
+   "div": 0.0047,
+   "listings": 2006
+  },
+  "Indigon": {
+   "div": 0.0047,
+   "listings": 973
+  },
+  "Wake of Destruction": {
+   "div": 0.0047,
+   "listings": 3664
+  },
+  "Murkshaft": {
+   "div": 0.0047,
+   "listings": 1194
+  },
+  "Shackles of the Wretched": {
+   "div": 0.00443,
+   "listings": 1271
+  },
+  "Window to Paradise": {
+   "div": 0.00443,
+   "listings": 1607
+  },
+  "Visage of Ayah": {
+   "div": 0.00443,
+   "listings": 3692
+  },
+  "Alkem Eira": {
+   "div": 0.00443,
+   "listings": 1172
+  },
+  "Rearguard": {
+   "div": 0.00443,
+   "listings": 2881
+  },
+  "Dreadfist": {
+   "div": 0.00443,
+   "listings": 2551
+  },
+  "Doomgate": {
+   "div": 0.00443,
+   "listings": 2778
+  },
+  "Pariah's Embrace": {
+   "div": 0.00443,
+   "listings": 4154
+  },
+  "Shankgonne": {
+   "div": 0.00443,
+   "listings": 3110
+  },
+  "The Smiling Knight": {
+   "div": 0.00443,
+   "listings": 2000
+  },
+  "Feathered Fortress": {
+   "div": 0.00443,
+   "listings": 1759
+  },
+  "Gloamgown": {
+   "div": 0.00443,
+   "listings": 5176
+  },
+  "Deidbell": {
+   "div": 0.00443,
+   "listings": 2468
+  },
+  "Gamblesprint": {
+   "div": 0.00443,
+   "listings": 2369
+  },
+  "Bitterbloom": {
+   "div": 0.00443,
+   "listings": 2134
+  },
+  "Blackgleam": {
+   "div": 0.00443,
+   "listings": 1878
+  },
+  "Blueflame Bracers": {
+   "div": 0.00443,
+   "listings": 1933
+  },
+  "Erian's Cobble": {
+   "div": 0.00443,
+   "listings": 4066
+  },
+  "Arvil's Wheel": {
+   "div": 0.00443,
+   "listings": 1740
+  },
+  "Apron of Emiran": {
+   "div": 0.00443,
+   "listings": 1501
+  },
+  "The Hollow Mask": {
+   "div": 0.00443,
+   "listings": 2507
+  },
+  "The Black Doubt": {
+   "div": 0.00443,
+   "listings": 2532
+  },
+  "Leer Cast": {
+   "div": 0.00443,
+   "listings": 2172
+  },
+  "Demon Stitcher": {
+   "div": 0.00443,
+   "listings": 2954
+  },
+  "Edyrn's Tusks": {
+   "div": 0.00443,
+   "listings": 2232
+  },
+  "Kitoko's Current": {
+   "div": 0.00443,
+   "listings": 3323
+  },
+  "Prayers for Rain": {
+   "div": 0.00443,
+   "listings": 2661
+  },
+  "Dunkelhalt": {
+   "div": 0.00443,
+   "listings": 2070
+  },
+  "The Knight-errant": {
+   "div": 0.00443,
+   "listings": 1991
+  },
+  "Icetomb": {
+   "div": 0.00443,
+   "listings": 1274
+  },
+  "Titanrot Cataphract": {
+   "div": 0.00443,
+   "listings": 3949
+  },
+  "Calgyra's Arc": {
+   "div": 0.00443,
+   "listings": 1911
+  },
+  "Valako's Vice": {
+   "div": 0.00443,
+   "listings": 4264
+  },
+  "Lycosidae": {
+   "div": 0.00443,
+   "listings": 1714
+  },
+  "Legionstride": {
+   "div": 0.00443,
+   "listings": 1876
+  },
+  "Bramblejack": {
+   "div": 0.00443,
+   "listings": 2017
+  },
+  "The Rat Cage": {
+   "div": 0.00443,
+   "listings": 2301
+  },
+  "Innsmouth": {
+   "div": 0.00443,
+   "listings": 2617
+  },
+  "The Vile Knight": {
+   "div": 0.00443,
+   "listings": 2429
+  },
+  "Wondertrap": {
+   "div": 0.00443,
+   "listings": 2853
+  },
+  "The Three Dragons": {
+   "div": 0.00443,
+   "listings": 3464
+  },
+  "Silverthorne": {
+   "div": 0.00443,
+   "listings": 2012
+  },
+  "Birth of Fury": {
+   "div": 0.00443,
+   "listings": 3084
+  },
+  "Waveshaper": {
+   "div": 0.00443,
+   "listings": 6858
+  },
+  "Empire's Grasp": {
+   "div": 0.00443,
+   "listings": 2970
+  },
+  "Deathrattle": {
+   "div": 0.00443,
+   "listings": 2465
+  },
+  "Atsak's Sight": {
+   "div": 0.00443,
+   "listings": 1926
+  },
+  "The Dancing Mirage": {
+   "div": 0.00443,
+   "listings": 2147
+  },
+  "The Devouring Diadem": {
+   "div": 0.00443,
+   "listings": 2530
+  },
+  "The Prisoner's Manacles": {
+   "div": 0.00443,
+   "listings": 3382
+  },
+  "Geofri's Sanctuary": {
+   "div": 0.00443,
+   "listings": 4972
+  },
+  "Obern's Bastion": {
+   "div": 0.00429,
+   "listings": 2914
+  },
+  "Nocturne": {
+   "div": 0.00429,
+   "listings": 1290
+  },
+  "Cospri's Will": {
+   "div": 0.00314,
+   "listings": 1080
+  },
+  "Deathblow": {
+   "div": 0.00314,
+   "listings": 1272
+  },
+  "Scold's Bridle": {
+   "div": 0.00314,
+   "listings": 1682
+  },
+  "Voll's Protector": {
+   "div": 0.00314,
+   "listings": 590
+  },
+  "Doryani's Prototype": {
+   "div": 0.00314,
+   "listings": 697
+  },
+  "Candlemaker": {
+   "div": 0.00314,
+   "listings": 1325
+  },
+  "Coat of Red": {
+   "div": 0.00302,
+   "listings": 2220
+  },
+  "Bronzebeard": {
+   "div": 0.00302,
+   "listings": 1834
+  },
+  "Bristleboar": {
+   "div": 0.00302,
+   "listings": 2127
+  },
+  "Bushwhack": {
+   "div": 0.00302,
+   "listings": 3799
+  },
+  "Wulfsbane": {
+   "div": 0.00302,
+   "listings": 1035
+  },
+  "Rondel de Ezo": {
+   "div": 0.00302,
+   "listings": 1296
+  },
+  "Briskwrap": {
+   "div": 0.00302,
+   "listings": 4942
+  },
+  "Oaksworn": {
+   "div": 0.00302,
+   "listings": 2417
+  },
+  "Ezomyte Peak": {
+   "div": 0.00302,
+   "listings": 3026
+  },
+  "Dionadair": {
+   "div": 0.00302,
+   "listings": 1498
+  },
+  "Wandering Reliquary": {
+   "div": 0.00302,
+   "listings": 2461
+  },
+  "Dustbloom": {
+   "div": 0.00302,
+   "listings": 2493
+  },
+  "Irongrasp": {
+   "div": 0.00302,
+   "listings": 3114
+  },
+  "Gloomform": {
+   "div": 0.00299,
+   "listings": 3033
+  },
+  "Mask of the Stitched Demon": {
+   "div": 0.00298,
+   "listings": 616
+  },
+  "Zerphi's Serape": {
+   "div": 0.00298,
+   "listings": 480
+  },
+  "Necromantle": {
+   "div": 0.00266,
+   "listings": 4761
+  },
+  "The Infinite Pursuit": {
+   "div": 0.00266,
+   "listings": 3343
+  },
+  "The Eternal Spark": {
+   "div": 0.00266,
+   "listings": 1852
+  },
+  "Kingsguard": {
+   "div": 0.00266,
+   "listings": 2058
+  },
+  "Elevore": {
+   "div": 0.00266,
+   "listings": 2058
+  },
+  "Kaltenhalt": {
+   "div": 0.00266,
+   "listings": 2071
+  },
+  "The Barrow Dweller": {
+   "div": 0.00266,
+   "listings": 2598
+  },
+  "Corona of the Red Sun": {
+   "div": 0.00266,
+   "listings": 2201
+  },
+  "Black Sun Crest": {
+   "div": 0.00266,
+   "listings": 5485
+  },
+  "The Sunken Vessel": {
+   "div": 0.00266,
+   "listings": 3959
+  },
+  "Lightning Coil": {
+   "div": 0.00157,
+   "listings": 2165
+  },
+  "Darkray Vectors": {
+   "div": 0.00157,
+   "listings": 585
+  },
+  "Assailum": {
+   "div": 0.00157,
+   "listings": 1886
+  },
+  "The Black Insignia": {
+   "div": 0.00157,
+   "listings": 1161
+  },
+  "Crown of the Pale King": {
+   "div": 0.00157,
+   "listings": 1861
+  },
+  "Belly of the Beast": {
+   "div": 0.00157,
+   "listings": 875
+  },
+  "Mask of the Sanguimancer": {
+   "div": 0.00157,
+   "listings": 2154
+  },
+  "Blood Price": {
+   "div": 0.00157,
+   "listings": 1364
+  },
+  "Grip of Winter": {
+   "div": 0.00157,
+   "listings": 3826
+  },
+  "Couture of Crimson": {
+   "div": 0.00157,
+   "listings": 1093
+  },
+  "Atziri's Disdain": {
+   "div": 0.00157,
+   "listings": 4916
+  },
+  "Powertread": {
+   "div": 0.00157,
+   "listings": 1489
+  },
+  "Crest of Ardura": {
+   "div": 0.00157,
+   "listings": 1843
+  },
+  "Radiant Grief": {
+   "div": 0.00157,
+   "listings": 1755
+  },
+  "Briarpatch": {
+   "div": 0.00157,
+   "listings": 1719
+  },
+  "Killjoy": {
+   "div": 0.00157,
+   "listings": 1425
+  },
+  "Sierran Inheritance": {
+   "div": 0.00157,
+   "listings": 694
+  },
+  "Rise of the Phoenix": {
+   "div": 0.00157,
+   "listings": 986
+  },
+  "Nightscale": {
+   "div": 0.00157,
+   "listings": 5786
+  },
+  "Vis Mortis": {
+   "div": 0.00157,
+   "listings": 702
+  },
+  "Foxshade": {
+   "div": 0.00157,
+   "listings": 1684
+  },
+  "Jarngreipr": {
+   "div": 0.00157,
+   "listings": 1398
+  },
+  "Horns of Bynden": {
+   "div": 0.00157,
+   "listings": 907
+  },
+  "Wings of Caelyn": {
+   "div": 0.00157,
+   "listings": 969
+  },
+  "The Lethal Draw": {
+   "div": 0.00157,
+   "listings": 765
+  },
+  "Idle Hands": {
+   "div": 0.00157,
+   "listings": 1779
+  },
+  "Quatl's Molt": {
+   "div": 0.00157,
+   "listings": 890
+  },
+  "Keeper of the Arc": {
+   "div": 0.00157,
+   "listings": 1141
+  },
+  "Doedre's Tenure": {
+   "div": 0.00157,
+   "listings": 4425
+  },
+  "Luminous Pace": {
+   "div": 0.00157,
+   "listings": 2189
+  },
+  "Yriel's Fostering": {
+   "div": 0.00157,
+   "listings": 1460
+  },
+  "Serpent's Lesson": {
+   "div": 0.00157,
+   "listings": 489
+  },
+  "Glimpse of Chaos": {
+   "div": 0.00157,
+   "listings": 1599
+  },
+  "Crown of Thorns": {
+   "div": 0.00157,
+   "listings": 2711
+  },
+  "Greed's Embrace": {
+   "div": 0.00157,
+   "listings": 1098
+  },
+  "The Surrender": {
+   "div": 0.00157,
+   "listings": 1045
+  },
+  "Beyond Reach": {
+   "div": 0.00157,
+   "listings": 732
+  },
+  "Ironride": {
+   "div": 0.00157,
+   "listings": 538
+  },
+  "Apep's Supremacy": {
+   "div": 0.00157,
+   "listings": 763
+  },
+  "Tetzlapokal's Desire": {
+   "div": 0.00157,
+   "listings": 814
+  },
+  "Threaded Light": {
+   "div": 0.00157,
+   "listings": 2058
+  },
+  "Decree of Loyalty": {
+   "div": 0.00157,
+   "listings": 3238
+  },
+  "Eyes of the Runefather": {
+   "div": 0.00157,
+   "listings": 995
+  },
+  "The Gnashing Sash": {
+   "div": 3620,
+   "listings": 7
+  },
+  "Bursting Decay": {
+   "div": 193.2,
+   "listings": 10
+  },
+  "Mageblood": {
+   "div": 115,
+   "listings": 7457
+  },
+  "Eshtera's Path": {
+   "div": 50,
+   "listings": 57
+  },
+  "The Taming": {
+   "div": 8.2,
+   "listings": 347
+  },
+  "Headhunter": {
+   "div": 7.15,
+   "listings": 1487
+  },
+  "Safrin's Resolve": {
+   "div": 5,
+   "listings": 115
+  },
+  "Choir of the Storm": {
+   "div": 2,
+   "listings": 586
+  },
+  "Dream Fragments": {
+   "div": 2,
+   "listings": 543
+  },
+  "Kalandra's Touch": {
+   "div": 1.26,
+   "listings": 839
+  },
+  "Zaida's Longevity": {
+   "div": 1,
+   "listings": 150
+  },
+  "Snakepit": {
+   "div": 0.9864,
+   "listings": 2086
+  },
+  "Original Sin": {
+   "div": 0.411,
+   "listings": 411
+  },
+  "Astramentis": {
+   "div": 0.3159,
+   "listings": 1271
+  },
+  "Berek's Grip": {
+   "div": 0.2762,
+   "listings": 3864
+  },
+  "Berek's Pass": {
+   "div": 0.2466,
+   "listings": 3857
+  },
+  "Berek's Respite": {
+   "div": 0.2466,
+   "listings": 3914
+  },
+  "Andvarius": {
+   "div": 0.245,
+   "listings": 2176
+  },
+  "Yoke of Suffering": {
+   "div": 0.2106,
+   "listings": 7300
+  },
+  "Immaculate Adherence": {
+   "div": 0.2106,
+   "listings": 288
+  },
+  "Ventor's Gamble": {
+   "div": 0.1743,
+   "listings": 10000
+  },
+  "Defiance of Destiny": {
+   "div": 0.1053,
+   "listings": 3688
+  },
+  "Eventide Petals": {
+   "div": 0.1053,
+   "listings": 2113
+  },
+  "Blackflame": {
+   "div": 0.103,
+   "listings": 5167
+  },
+  "Death Rush": {
+   "div": 0.0822,
+   "listings": 2521
+  },
+  "Levinstone": {
+   "div": 0.06576,
+   "listings": 1420
+  },
+  "Call of the Brotherhood": {
+   "div": 0.06412,
+   "listings": 3612
+  },
+  "Ingenuity": {
+   "div": 0.04932,
+   "listings": 10000
+  },
+  "Seed of Cataclysm": {
+   "div": 0.04768,
+   "listings": 1880
+  },
+  "Doedre's Damning": {
+   "div": 0.03288,
+   "listings": 1997
+  },
+  "Meginord's Girdle": {
+   "div": 0.03124,
+   "listings": 2163
+  },
+  "Serpent's Egg": {
+   "div": 0.02724,
+   "listings": 929
+  },
+  "Xoph's Blood": {
+   "div": 0.02283,
+   "listings": 1817
+  },
+  "The Pandemonius": {
+   "div": 0.02207,
+   "listings": 1096
+  },
+  "Prized Pain": {
+   "div": 0.01808,
+   "listings": 779
+  },
+  "Grip of Kulemak": {
+   "div": 0.01644,
+   "listings": 10000
+  },
+  "Carnage Heart": {
+   "div": 0.01644,
+   "listings": 3591
+  },
+  "Ming's Heart": {
+   "div": 0.01644,
+   "listings": 3535
+  },
+  "Idol of Uldurn": {
+   "div": 0.01644,
+   "listings": 3956
+  },
+  "Thief's Torment": {
+   "div": 0.01644,
+   "listings": 1295
+  },
+  "Vigilant View": {
+   "div": 0.01644,
+   "listings": 1817
+  },
+  "Perandus Seal": {
+   "div": 0.01644,
+   "listings": 1592
+  },
+  "Blackheart": {
+   "div": 0.01644,
+   "listings": 3998
+  },
+  "Icefang Orbit": {
+   "div": 0.01644,
+   "listings": 3248
+  },
+  "Venopuncture": {
+   "div": 0.01644,
+   "listings": 3496
+  },
+  "Glowswarm": {
+   "div": 0.01644,
+   "listings": 3890
+  },
+  "Ryslatha's Coil": {
+   "div": 0.01644,
+   "listings": 5181
+  },
+  "Evergrasping Ring": {
+   "div": 0.01644,
+   "listings": 8248
+  },
+  "Heartbound Loop": {
+   "div": 0.01644,
+   "listings": 4150
+  },
+  "Gifts from Above": {
+   "div": 0.01644,
+   "listings": 4894
+  },
+  "Blistering Bond": {
+   "div": 0.01644,
+   "listings": 2098
+  },
+  "Cracklecreep": {
+   "div": 0.01644,
+   "listings": 3963
+  },
+  "Polcirkeln": {
+   "div": 0.01644,
+   "listings": 5016
+  },
+  "Whisper of the Brotherhood": {
+   "div": 0.01644,
+   "listings": 3547
+  },
+  "Fireflower": {
+   "div": 0.01644,
+   "listings": 2614
+  },
+  "Strugglescream": {
+   "div": 0.01644,
+   "listings": 645
+  },
+  "The Burrower": {
+   "div": 0.01644,
+   "listings": 2359
+  },
+  "Shavronne's Satchel": {
+   "div": 0.01522,
+   "listings": 5500
+  },
+  "Veilpiercer": {
+   "div": 0.00761,
+   "listings": 2681
+  },
+  "The Anvil": {
+   "div": 0.00565,
+   "listings": 1327
+  },
+  "Rondel of Fragility": {
+   "div": 0.00565,
+   "listings": 4326
+  },
+  "Coward's Legacy": {
+   "div": 0.00565,
+   "listings": 3158
+  },
+  "Hinekora's Sight": {
+   "div": 0.00565,
+   "listings": 1951
+  },
+  "Cat O' Nine Tails": {
+   "div": 0.00565,
+   "listings": 2535
+  },
+  "Eye of Chayula": {
+   "div": 0.00377,
+   "listings": 897
+  },
+  "Ligurium Talisman": {
+   "div": 0.00377,
+   "listings": 4878
+  },
+  "Stone of Lazhwar": {
+   "div": 0.00377,
+   "listings": 3103
+  },
+  "Keelhaul": {
+   "div": 0.00377,
+   "listings": 3187
+  },
+  "Umbilicus Immortalis": {
+   "div": 0.00377,
+   "listings": 4900
+  },
+  "Midnight Braid": {
+   "div": 0.00377,
+   "listings": 6347
+  },
+  "Birthright Buckle": {
+   "div": 0.00338,
+   "listings": 6488
+  },
+  "Revered Resin": {
+   "div": 0.00275,
+   "listings": 4192
+  },
+  "Ungil's Harmony": {
+   "div": 0.00275,
+   "listings": 4575
+  },
+  "Igniferis": {
+   "div": 0.00275,
+   "listings": 5234
+  },
+  "The Everlasting Gaze": {
+   "div": 0.00152,
+   "listings": 5597
+  },
+  "Bijouborne": {
+   "div": 0.00152,
+   "listings": 3717
+  },
+  "Darkness Enthroned": {
+   "div": 0.00152,
+   "listings": 10000
+  },
+  "Waistgate": {
+   "div": 0.00152,
+   "listings": 3316
+  },
+  "Zerphi's Genesis": {
+   "div": 0.00152,
+   "listings": 2132
+  },
+  "Surefooted Sigil": {
+   "div": 0.00152,
+   "listings": 3893
+  },
+  "Soul Tether": {
+   "div": 0.00152,
+   "listings": 3968
+  },
+  "Goregirdle": {
+   "div": 0.00152,
+   "listings": 1878
+  },
+  "Beacon of Azis": {
+   "div": 0.00152,
+   "listings": 7139
+  },
+  "Fixation of Yix": {
+   "div": 0.00152,
+   "listings": 10000
+  },
+  "Byrnabas": {
+   "div": 0.00152,
+   "listings": 1191
+  },
+  "Olroth's Resolve": {
+   "div": 10,
+   "listings": 230
+  },
+  "Lavianga's Spirits": {
+   "div": 0.1053,
+   "listings": 5393
+  },
+  "Melting Maelstrom": {
+   "div": 0.1053,
+   "listings": 958
+  },
+  "Uhtred's Chalice": {
+   "div": 0.1053,
+   "listings": 2642
+  },
+  "Opportunity": {
+   "div": 0.01533,
+   "listings": 3145
+  },
+  "Blood of the Warrior": {
+   "div": 0.00153,
+   "listings": 6645
+  },
+  "Rite of Passage": {
+   "div": 5,
+   "listings": 2293
+  },
+  "The Fall of the Axe": {
+   "div": 0.5265,
+   "listings": 718
+  },
+  "For Utopia": {
+   "div": 0.4088,
+   "listings": 475
+  },
+  "Nascent Hope": {
+   "div": 0.1053,
+   "listings": 3316
+  },
+  "Forsaken Bangle": {
+   "div": 0.01635,
+   "listings": 1065
+  },
+  "Beira's Anguish": {
+   "div": 0.01635,
+   "listings": 3488
+  },
+  "Arakaali's Gift": {
+   "div": 0.00549,
+   "listings": 3798
+  },
+  "Ngamahu's Chosen": {
+   "div": 0.00549,
+   "listings": 2836
+  },
+  "Valako's Roar": {
+   "div": 0.00549,
+   "listings": 4109
+  },
+  "The Black Cat": {
+   "div": 0.00445,
+   "listings": 652
+  },
+  "Breath of the Mountains": {
+   "div": 0.00378,
+   "listings": 4212
+  },
+  "Sanguis Heroum": {
+   "div": 0.00153,
+   "listings": 1985
+  },
+  "Grand Spectrum": {
+   "div": 2,
+   "listings": 102
+  },
+  "Against the Darkness": {
+   "div": 8.95,
+   "listings": 1832
+  },
+  "Controlled Metamorphosis": {
+   "div": 6,
+   "listings": 813
+  },
+  "Undying Hate": {
+   "div": 1,
+   "listings": 3527
+  },
+  "Heroic Tragedy": {
+   "div": 0.5265,
+   "listings": 8301
+  },
+  "Heart of the Well": {
+   "div": 0.4578,
+   "listings": 10000
+  }
+ }
+}

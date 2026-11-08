@@ -91,6 +91,8 @@ export const en = {
     },
   },
   build: {
+    stageTotal: "Uniques in this stage:",
+    priceNote: "poe.ninja prices, {league}, {date}. Rare items are not priced: their cost depends on their modifiers.",
     campaignRotations: "Campaign rotations",
     grantsSkill: "Grants Skill: {skills}",
     skillFrom: {
@@ -263,6 +265,14 @@ export const en = {
     history: "Steps",
     disclaimer:
       "Odds are estimates: real spawn weights are not public, so every possible modifier tier counts as equally likely. Rare modifiers are rarer in game. Pools come from game data (RePoE); Greater and Perfect thresholds (levels 44 and 70) and essences follow Maxroll's crafting guide.",
+  },
+  search: {
+    open: "Search the site",
+    placeholder: "Search builds, guides, gems, uniques…",
+    loading: "Loading gems and items…",
+    none: "Nothing found.",
+    kinds: { page: "Pages", build: "Builds", guide: "Guides", gem: "Gems", unique: "Uniques", base: "Base types" },
+    gemTypes: { active: "Skill gem", support: "Support gem", spirit: "Spirit gem" },
   },
   planner: {
     metaTitle: "Passive Tree Planner",

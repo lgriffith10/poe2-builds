@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import type { PriceTag } from "@/lib/prices";
 import type { GearSlot, GearStage } from "@/lib/types";
 
 export interface InventoryItem {
@@ -16,12 +17,26 @@ export interface InventoryItem {
   /** "Grants Skill: …" line for bases that come with a skill (uniques list it in their mods). */
   grants: string | null;
   note: string | null;
+  /** Market price for uniques (poe.ninja), null when unknown or for rares. */
+  price: PriceTag | null;
 }
 
 export interface InventoryStage {
   id: GearStage | "default";
   label: string;
   items: InventoryItem[];
+  /** Sum of the uniques' prices in this stage. */
+  total: PriceTag | null;
+}
+
+/** Small "19 [exalted icon]" chip. */
+export function Price({ tag, alt }: { tag: PriceTag; alt: string }) {
+  return (
+    <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-md border border-line bg-black/40 px-1.5 py-0.5 text-xs font-semibold tabular-nums text-ink">
+      ≈ {tag.amount}
+      <img src={tag.icon} alt={alt} width={16} height={16} className="h-4 w-4" />
+    </span>
+  );
 }
 
 /** Grid placement of each slot, mirroring the in-game equipment panel (8 columns x 7 rows). */
@@ -44,11 +59,14 @@ export function GearInventory({
   initialStage,
   slotLabels,
   hint,
+  priceLabels,
 }: {
   stages: InventoryStage[];
   initialStage: number;
   slotLabels: Record<GearSlot, string>;
   hint: string;
+  /** { divine, exalted, stageTotal, note } labels for the price chips. */
+  priceLabels: { divine: string; exalted: string; stageTotal: string; note: string };
 }) {
   const [stageIndex, setStageIndex] = useState(initialStage);
   const stage = stages[stageIndex];
@@ -72,6 +90,13 @@ export function GearInventory({
             </button>
           ))}
         </div>
+      )}
+      {stage.total && (
+        <p className="mb-3 flex flex-wrap items-center gap-2 text-sm text-muted">
+          {priceLabels.stageTotal}
+          <Price tag={stage.total} alt={stage.total.unit === "divine" ? priceLabels.divine : priceLabels.exalted} />
+          <span className="text-xs text-faint">{priceLabels.note}</span>
+        </p>
       )}
       <div className="flex flex-col gap-4 md:flex-row md:items-start">
         <div className="w-full max-w-sm shrink-0 self-center rounded-xl border border-line bg-[radial-gradient(ellipse_at_center,#1d1913_0%,#0c0a08_80%)] p-3 md:self-start">
@@ -119,6 +144,11 @@ export function GearInventory({
                 {current.title}
               </p>
               {current.kind === "unique" && current.base && <p className="text-sm text-muted">{current.base}</p>}
+              {current.price && (
+                <p className="mt-1.5">
+                  <Price tag={current.price} alt={current.price.unit === "divine" ? priceLabels.divine : priceLabels.exalted} />
+                </p>
+              )}
             </div>
             <div className="space-y-2 px-4 py-3 text-center text-sm">
               {current.grants && <p className="border-b border-line pb-2 font-semibold text-[#c8b47a]">{current.grants}</p>}

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { LOCALE_COOKIE, LOCALE_NAMES, LOCALES, localePath, stripLocale, type Locale } from "@/i18n/config";
 import { useI18n } from "@/i18n/client";
 import { NAV } from "@/lib/nav";
@@ -52,11 +52,12 @@ function LanguageSwitch({ current, page }: { current: Locale; page: string }) {
 }
 
 /** Navigation with the active link highlighted (reads the URL, so it renders inside Suspense). */
-export function NavLinks() {
-  return <NavBar pathname={stripLocale(usePathname())} />;
+export function NavLinks({ slot }: { slot?: ReactNode }) {
+  return <NavBar pathname={stripLocale(usePathname())} slot={slot} />;
 }
 
-export function NavBar({ pathname }: { pathname: string | null }) {
+/** `slot`: extra controls shown before the language switch (the search button). */
+export function NavBar({ pathname, slot }: { pathname: string | null; slot?: ReactNode }) {
   const { t, lang, path } = useI18n();
   const [open, setOpen] = useState(false);
   const active = (href: string) =>
@@ -81,6 +82,7 @@ export function NavBar({ pathname }: { pathname: string | null }) {
       <Logo href={path("/")} />
       <nav className="hidden gap-1 lg:flex">{links}</nav>
       <div className="ml-auto flex items-center gap-2">
+        {slot}
         <LanguageSwitch current={lang} page={pathname ?? "/"} />
         <button
           type="button"
