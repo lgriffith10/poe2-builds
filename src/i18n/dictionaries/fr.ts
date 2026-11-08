@@ -95,6 +95,12 @@ export const fr: Dictionary = {
     },
   },
   build: {
+    checklist: "Checklist",
+    checklistCount: "{n}/{total} gemmes obtenues",
+    checklistReset: "Tout décocher",
+    checklistHint: "Cochez les gemmes au fur et à mesure : la progression est gardée dans ce navigateur et vaut pour toutes les étapes.",
+    checklistToggle: "Obtenue : {gem}",
+    checklistStepDone: "toutes les gemmes",
     stageTotal: "Uniques de cette étape :",
     priceNote: "Prix poe.ninja, {league}, {date}. Les objets rares ne sont pas chiffrés : leur prix dépend de leurs modificateurs.",
     campaignRotations: "Rotations de campagne",
@@ -277,6 +283,15 @@ export const fr: Dictionary = {
     none: "Aucun résultat.",
     kinds: { page: "Pages", build: "Builds", guide: "Guides", gem: "Gemmes", unique: "Uniques", base: "Bases" },
     gemTypes: { active: "Gemme de compétence", support: "Gemme de soutien", spirit: "Gemme d'esprit" },
+  },
+  og: {
+    siteTitle: "Builds, tier list et outils Path of Exile 2",
+    siteSubtitle: "Des guides de build pour chaque classe, la méta du ladder, un planner d'arbre passif et un simulateur de craft.",
+    planner: "Planner d'arbre",
+    craft: "Simulateur de craft",
+    buildGuide: "Guide de build",
+    guide: "Guide",
+    footer: "Guides · Tier list · Planner",
   },
   planner: {
     metaTitle: "Planner d'arbre passif",

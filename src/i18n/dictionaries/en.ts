@@ -91,6 +91,12 @@ export const en = {
     },
   },
   build: {
+    checklist: "Checklist",
+    checklistCount: "{n}/{total} gems obtained",
+    checklistReset: "Untick all",
+    checklistHint: "Tick gems as you get them: progress is saved in this browser and counts for every step.",
+    checklistToggle: "Obtained: {gem}",
+    checklistStepDone: "all gems",
     stageTotal: "Uniques in this stage:",
     priceNote: "poe.ninja prices, {league}, {date}. Rare items are not priced: their cost depends on their modifiers.",
     campaignRotations: "Campaign rotations",
@@ -273,6 +279,15 @@ export const en = {
     none: "Nothing found.",
     kinds: { page: "Pages", build: "Builds", guide: "Guides", gem: "Gems", unique: "Uniques", base: "Base types" },
     gemTypes: { active: "Skill gem", support: "Support gem", spirit: "Spirit gem" },
+  },
+  og: {
+    siteTitle: "Path of Exile 2 builds, tier list and tools",
+    siteSubtitle: "Build guides for every class, a ladder meta, a passive tree planner and a crafting simulator.",
+    planner: "Tree planner",
+    craft: "Crafting simulator",
+    buildGuide: "Build guide",
+    guide: "Guide",
+    footer: "Guides · Tier list · Planner",
   },
   planner: {
     metaTitle: "Passive Tree Planner",

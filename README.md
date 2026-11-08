@@ -130,6 +130,23 @@ price snapshots, checks the Maxroll source guides, makes sure the site still bui
 pull request. Nothing changes on the live site until that PR is merged. The repository must allow GitHub Actions to
 create pull requests (Settings → Actions → General → Workflow permissions).
 
+## Share images
+
+Every page has an Open Graph image (1200x630) generated at build time: a site card (`[lang]/opengraph-image.tsx`),
+one per build (class emblem, tiers, main skills) and one per guide. Image links must be absolute: the site uses
+`SITE_URL` (e.g. `SITE_URL=https://example.com`), or the `URL` variable Netlify sets during builds.
+
+## Deploying on Netlify
+
+`netlify.toml` holds the build settings (Node 24, pnpm from `packageManager`, `pnpm run build`). Netlify's Next.js
+runtime is detected automatically and turns the `/api/pobb/[id]` route into a function. To use a custom domain in
+share images before it becomes the site's main URL, set `SITE_URL` in the site's environment variables.
+
+## Leveling checklist
+
+On build pages, gems in the leveling timeline can be ticked as obtained. The state is stored in the browser
+(`localStorage`, key `exile-codex:leveling:<slug>`) and counts for every step of the timeline.
+
 ## Search
 
 The header search (Ctrl+K or /) covers pages, builds and guides (passed by the layout at build time) and every gem,

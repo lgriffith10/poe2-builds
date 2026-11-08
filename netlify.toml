@@ -1,0 +1,10 @@
+# Netlify build settings. Next.js is detected automatically (Netlify's Next.js runtime / OpenNext adapter):
+# static pages are served from the CDN and the /api/pobb/[id] relay becomes a function.
+[build]
+  command = "pnpm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "24"
+  # Recommended by Netlify for Next.js projects installed with pnpm.
+  PNPM_FLAGS = "--shamefully-hoist"

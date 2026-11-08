@@ -289,7 +289,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               >
                 {tr.build.leveling}
               </SectionTitle>
-              <LevelingTimeline paths={leveling} />
+              <LevelingTimeline paths={leveling} storageKey={build.slug} />
             </section>
           )}
 

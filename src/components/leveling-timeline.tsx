@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useI18n } from "@/i18n/client";
 import type { Gem } from "@/lib/types";
 import { stepFr } from "@/lib/step-labels";
@@ -22,8 +22,72 @@ export interface TimelinePath {
  * With several paths, the last one is the continuation of the others (alternative starts such as "Crossbow" or
  * "Twister" that both lead into "Minions"); it is also the one that ends with the early maps step.
  */
-export function LevelingTimeline({ paths }: { paths: TimelinePath[] }) {
+// Gems ticked as obtained, per build, kept in this browser only (localStorage, shared between tabs).
+const listeners = new Set<() => void>();
+const readStore = (key: string) => {
+  try {
+    return localStorage.getItem(key) ?? "[]";
+  } catch {
+    return "[]"; // Storage unavailable (private mode, blocked site data).
+  }
+};
+const subscribe = (notify: () => void) => {
+  listeners.add(notify);
+  window.addEventListener("storage", notify);
+  return () => {
+    listeners.delete(notify);
+    window.removeEventListener("storage", notify);
+  };
+};
+
+function useObtained(storageKey: string) {
+  const key = `exile-codex:leveling:${storageKey}`;
+  const raw = useSyncExternalStore(subscribe, () => readStore(key), () => "[]");
+  const obtained = useMemo(() => {
+    try {
+      const list = JSON.parse(raw);
+      return new Set<string>(Array.isArray(list) ? list.filter((x) => typeof x === "string") : []);
+    } catch {
+      return new Set<string>();
+    }
+  }, [raw]);
+  const save = (next: Set<string>) => {
+    try {
+      localStorage.setItem(key, JSON.stringify([...next]));
+    } catch {
+      // Storage unavailable: nothing is kept, the boxes simply do not stay ticked.
+    }
+    listeners.forEach((l) => l());
+  };
+  const toggle = (name: string) => {
+    const next = new Set(obtained);
+    if (next.has(name)) next.delete(name);
+    else next.add(name);
+    save(next);
+  };
+  return { obtained, toggle, reset: () => save(new Set()) };
+}
+
+function Check({ on, label, onClick, size = "md" }: { on: boolean; label: string; onClick: () => void; size?: "sm" | "md" }) {
+  return (
+    <button
+      type="button"
+      role="checkbox"
+      aria-checked={on}
+      aria-label={label}
+      onClick={onClick}
+      className={`flex shrink-0 items-center justify-center rounded border transition ${size === "sm" ? "h-4 w-4 text-[10px]" : "h-5 w-5 text-xs"} ${
+        on ? "border-emerald-400 bg-emerald-500/20 text-emerald-300" : "border-line-strong text-transparent hover:border-gold-soft"
+      }`}
+    >
+      ✓
+    </button>
+  );
+}
+
+export function LevelingTimeline({ paths, storageKey }: { paths: TimelinePath[]; storageKey: string }) {
   const { t, fmt, lang, path } = useI18n();
+  const { obtained, toggle, reset } = useObtained(storageKey);
   const root = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const current = paths[active] ?? paths[0];
@@ -79,38 +143,70 @@ export function LevelingTimeline({ paths }: { paths: TimelinePath[] }) {
           </div>
         </div>
       )}
-      <ol className="relative space-y-4 border-l border-line pl-6">
-        {current.steps.map((step, i) => (
-          <li key={`${active}-${i}`} className="relative">
-            <span className="absolute -left-[31px] top-3 flex h-3.5 w-3.5 items-center justify-center rounded-full border border-gold-soft bg-bg">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+      {(() => {
+        const all = [...new Set(current.steps.flatMap((st) => st.skills.flatMap((k) => [k.gem.name, ...k.supports.map((x) => x.name)])))];
+        const done = all.filter((n) => obtained.has(n)).length;
+        return (
+          <div className="mb-5 flex flex-wrap items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3 text-sm">
+            <span className="font-semibold text-gold">{t.build.checklist}</span>
+            <span className="h-2 min-w-32 flex-1 overflow-hidden rounded-full bg-line/50">
+              <span className="block h-full rounded-full bg-emerald-400/80 transition-all" style={{ width: `${(100 * done) / Math.max(1, all.length)}%` }} />
             </span>
-            <div className="rounded-xl border border-line bg-surface p-4">
-              <h3 className="font-display text-base font-semibold text-gold">{label(step.name)}</h3>
+            <span className="tabular-nums text-muted">{fmt(t.build.checklistCount, { n: done, total: all.length })}</span>
+            {done > 0 && (
+              <button type="button" onClick={reset} className="text-xs text-faint hover:text-red-300">
+                {t.build.checklistReset}
+              </button>
+            )}
+            <span className="basis-full text-xs text-faint">{t.build.checklistHint}</span>
+          </div>
+        );
+      })()}
+      <ol className="relative space-y-4 border-l border-line pl-6">
+        {current.steps.map((step, i) => {
+          const names = [...new Set(step.skills.flatMap((k) => [k.gem.name, ...k.supports.map((x) => x.name)]))];
+          const got = names.filter((n) => obtained.has(n)).length;
+          const complete = names.length > 0 && got === names.length;
+          return (
+          <li key={`${active}-${i}`} className="relative">
+            <span
+              className={`absolute -left-[31px] top-3 flex h-3.5 w-3.5 items-center justify-center rounded-full border bg-bg ${complete ? "border-emerald-400" : "border-gold-soft"}`}
+            >
+              <span className={`h-1.5 w-1.5 rounded-full ${complete ? "bg-emerald-400" : "bg-gold"}`} />
+            </span>
+            <div className={`rounded-xl border bg-surface p-4 ${complete ? "border-emerald-500/40" : "border-line"}`}>
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="font-display text-base font-semibold text-gold">{label(step.name)}</h3>
+                <span className={`text-xs tabular-nums ${complete ? "text-emerald-300" : "text-faint"}`}>
+                  {complete ? `✓ ${t.build.checklistStepDone}` : `${got}/${names.length}`}
+                </span>
+              </div>
               <ul className="mt-3 space-y-2.5">
                 {step.skills.map(({ gem, supports }) => (
                   <li key={gem.name} className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+                    <Check on={obtained.has(gem.name)} label={fmt(t.build.checklistToggle, { gem: gem.name })} onClick={() => toggle(gem.name)} />
                     <Link
                       href={path(`/database/gems#${gem.id}`)}
                       data-tip={gem.tip}
-                      className="flex min-w-44 items-center gap-2 text-sm font-semibold hover:text-gold"
+                      className={`flex min-w-44 items-center gap-2 text-sm font-semibold hover:text-gold ${obtained.has(gem.name) ? "opacity-60" : ""}`}
                     >
                       <GemIcon gem={gem} size={32} />
                       {gem.name}
                       {gem.isNew && <NewTag text={t.build.newGem} />}
                     </Link>
                     {supports.map((s) => (
-                      <Link
+                      <span
                         key={s.name}
-                        href={path(`/database/gems#${s.id}`)}
-                        data-tip={s.tip}
-                        className={`flex items-center gap-1.5 rounded-md border bg-surface-2 py-0.5 pl-0.5 pr-2 text-xs hover:border-line-strong ${
-                          s.isNew ? "border-gold-soft text-ink" : "border-line text-muted"
+                        className={`flex items-center gap-1 rounded-md border bg-surface-2 py-0.5 pl-1 pr-2 text-xs ${
+                          obtained.has(s.name) ? "border-emerald-500/40 text-muted" : s.isNew ? "border-gold-soft text-ink" : "border-line text-muted"
                         }`}
                       >
-                        <GemIcon gem={s} size={20} />
-                        {s.name}
-                      </Link>
+                        <Check on={obtained.has(s.name)} label={fmt(t.build.checklistToggle, { gem: s.name })} onClick={() => toggle(s.name)} size="sm" />
+                        <Link href={path(`/database/gems#${s.id}`)} data-tip={s.tip} className="flex items-center gap-1.5 hover:text-ink">
+                          <GemIcon gem={s} size={20} />
+                          {s.name}
+                        </Link>
+                      </span>
                     ))}
                   </li>
                 ))}
@@ -129,7 +225,8 @@ export function LevelingTimeline({ paths }: { paths: TimelinePath[] }) {
               )}
             </div>
           </li>
-        ))}
+          );
+        })}
       </ol>
       {active < last && (
         <button

@@ -22,6 +22,8 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   const lang = await resolveLang(params);
   const t = getDictionary(lang);
   return {
+    // Share images need absolute URLs: SITE_URL, or the site address Netlify provides as URL during builds.
+    metadataBase: new URL(process.env.SITE_URL ?? process.env.URL ?? "http://localhost:3000"),
     title: { default: t.meta.siteTitle, template: "%s · Exile Codex" },
     description: t.meta.siteDescription,
     alternates: alternates("/", lang),
