@@ -146,6 +146,29 @@ leveling:
             supports: [Elemental Army, Meat Shield II, Loyalty, Exposing Cry]
           - gem: "Malice"
             supports: [Prolonged Duration II]
+    rotations:
+      - name: "Act 1 Bossing"
+        steps:
+          - gem: "Frost Bomb"
+          - gem: "Parry"
+          - gem: "Fangs of Frost"
+          - gem: "Whirling Slash"
+            count: 3
+          - gem: "Twister"
+      - name: "Act 2+ Bossing"
+        steps:
+          - gem: "Ice-Tipped Arrows"
+          - gem: "Freezing Mark"
+          - gem: "Barrage"
+          - gem: "Whirling Slash"
+            count: 3
+          - gem: "Twister"
+      - name: "Map Clear"
+        steps:
+          - gem: "Ice-Tipped Arrows"
+          - gem: "Whirling Slash"
+            count: 3
+          - gem: "Twister"
 rotations:
   - name: "Bossing"
     steps:

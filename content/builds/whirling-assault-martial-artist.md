@@ -220,23 +220,46 @@ leveling:
             supports: [Magnified Area II, Stun II]
           - gem: "Ghost Dance"
             supports: [Cooldown Recovery II, Clarity I]
+    rotations:
+      - name: "L22 Clear"
+        steps:
+          - gem: "Frozen Locus"
+          - gem: "Storm Wave"
+      - name: "L22 Single Target"
+        steps:
+          - gem: "Hand of Chayula"
+            label: "As the Boss Spawns"
+          - gem: "Frost Bomb"
+          - gem: "Frozen Locus"
+            label: "Build Freeze"
+          - gem: "Storm Wave"
+          - gem: "Wave of Frost"
+            label: "Freeze Enemies"
+          - gem: "Glacial Cascade"
+            label: "Consume Freeze"
 rotations:
   - name: "Clear"
     steps:
       - gem: "Whirling Assault"
       - gem: "Mantra of Destruction"
+        label: "Consume Combo for Damage"
       - gem: "Devour"
+        label: "Generate & Consume Power Charges"
       - gem: "Charged Staff"
   - name: "Single Target"
     steps:
       - gem: "Devour"
+        label: "Generate & Consume Power Charges"
       - gem: "Rend"
       - gem: "Charged Staff"
       - gem: "Hand of Chayula"
+        label: "As the Boss Spawns"
       - gem: "Whirling Assault"
+        label: "Generate & Consume Combo"
       - gem: "Mantra of Destruction"
       - gem: "Tempest Bell"
       - gem: "Whirling Assault"
+        label: "Dps"
 gear:
   weapon:
     base: Sinister Quarterstaff

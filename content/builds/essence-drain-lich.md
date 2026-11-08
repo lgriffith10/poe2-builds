@@ -192,6 +192,22 @@ leveling:
             supports: [Poison III, Escalating Poison, Prolonged Duration II, Withering Touch]
           - gem: "Convalescence"
             supports: [Cooldown Recovery II, Second Wind III, Prolonged Duration II]
+    rotations:
+      - name: "Clear"
+        steps:
+          - gem: "Contagion"
+          - gem: "Essence Drain"
+      - name: "Single Target"
+        steps:
+          - gem: "Sigil of Power"
+            label: "Before the Boss Spawns"
+          - gem: "Despair"
+          - gem: "Dark Effigy"
+          - gem: "Essence Drain"
+            label: "Apply DoTs"
+          - gem: "Contagion"
+          - gem: "Chaos Bolt"
+            label: "Max Wither"
 rotations:
   - name: "Clear"
     steps:
@@ -200,11 +216,14 @@ rotations:
   - name: "Single Target"
     steps:
       - gem: "Sigil of Power"
+        label: "Before the Boss Spawns"
       - gem: "Despair"
       - gem: "Dark Effigy"
       - gem: "Essence Drain"
+        label: "Apply DoTs"
       - gem: "Contagion"
       - gem: "Chaos Bolt"
+        label: "Max Wither"
 gear:
   weapon:
     base: Withered Wand

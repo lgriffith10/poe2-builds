@@ -160,6 +160,14 @@ function parseBuild(file: string): { build: Build; markdown: string } {
   });
 
   const gemNamed = (name: string, where: string) => getGem(name)?.name ?? fail(`${where}: unknown gem "${name}"`);
+  const parseRotation = (r: SkillRotation, where: string): SkillRotation => ({
+    name: String(r.name),
+    steps: (r.steps ?? []).map((s) => ({
+      gem: gemNamed(s.gem, `${where} "${r.name}"`),
+      ...(s.count && s.count > 1 && { count: s.count }),
+      ...(s.label && { label: String(s.label) }),
+    })),
+  });
   const leveling: LevelingPath[] = (fm.leveling ?? []).map((p: LevelingPath, i: number) => ({
     ...(p.name && { name: String(p.name) }),
     steps: (p.steps ?? []).map((s) => {
@@ -173,14 +181,9 @@ function parseBuild(file: string): { build: Build; markdown: string } {
         })),
       };
     }),
+    ...(p.rotations?.length && { rotations: p.rotations.map((r) => parseRotation(r, `leveling[${i}].rotations`)) }),
   }));
-  const rotations: SkillRotation[] = (fm.rotations ?? []).map((r: SkillRotation) => ({
-    name: String(r.name),
-    steps: (r.steps ?? []).map((s) => ({
-      gem: gemNamed(s.gem, `rotations "${r.name}"`),
-      ...(s.count && s.count > 1 && { count: s.count }),
-    })),
-  }));
+  const rotations: SkillRotation[] = (fm.rotations ?? []).map((r: SkillRotation) => parseRotation(r, "rotations"));
 
   const parseGear = (raw: unknown, where: string): GearSet => {
     const set: GearSet = {};

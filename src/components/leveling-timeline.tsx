@@ -4,13 +4,17 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { useI18n } from "@/i18n/client";
 import type { Gem } from "@/lib/types";
+import { stepFr } from "@/lib/step-labels";
+import { RotationStrip, type RotationView } from "./rotation-strip";
 import { GemIcon } from "./ui";
 
 /** `tip` is the hover-card data (lib/tips.ts), shown by the enclosing TipScope. */
 export type TimelineGem = Pick<Gem, "id" | "name" | "icon" | "color"> & { tip: string; isNew: boolean };
 export interface TimelinePath {
   name?: string;
-  steps: { name: string; skills: { gem: TimelineGem; supports: TimelineGem[] }[] }[];
+  steps: { name: string; skills: { gem: TimelineGem; supports: TimelineGem[] }[]; rotations: RotationView[] }[];
+  /** Campaign rotations that are not tied to one act (e.g. "Clear", "Bossing (Lvl 1-13)"). */
+  rotations: RotationView[];
 }
 
 /**
@@ -65,6 +69,16 @@ export function LevelingTimeline({ paths }: { paths: TimelinePath[] }) {
           .
         </p>
       )}
+      {current.rotations.length > 0 && (
+        <div className="mb-5">
+          <h3 className="mb-2 text-sm font-semibold uppercase tracking-wider text-faint">{t.build.campaignRotations}</h3>
+          <div className="grid gap-3 lg:grid-cols-2">
+            {current.rotations.map((r) => (
+              <RotationStrip key={r.name} rotation={{ ...r, name: label(r.name), steps: r.steps.map((st) => ({ ...st, label: st.label && label(st.label) })) }} gemsHref={path("/database/gems")} />
+            ))}
+          </div>
+        </div>
+      )}
       <ol className="relative space-y-4 border-l border-line pl-6">
         {current.steps.map((step, i) => (
           <li key={`${active}-${i}`} className="relative">
@@ -101,6 +115,18 @@ export function LevelingTimeline({ paths }: { paths: TimelinePath[] }) {
                   </li>
                 ))}
               </ul>
+              {step.rotations.length > 0 && (
+                <div className="mt-4 space-y-2 border-t border-line pt-3">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-faint">{t.build.rotation}</p>
+                  {step.rotations.map((r) => (
+                    <RotationStrip
+                      key={r.name}
+                      rotation={{ ...r, name: label(r.name), steps: r.steps.map((st) => ({ ...st, label: st.label && label(st.label) })) }}
+                      gemsHref={path("/database/gems")}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </li>
         ))}
@@ -126,21 +152,3 @@ function NewTag({ text }: { text: string }) {
   );
 }
 
-// Step names are the source planner's English labels; translate the common words for the French site.
-const FR_WORDS: [RegExp, string][] = [
-  [/\bEnd of Campaign\b/gi, "fin de campagne"],
-  [/\bEarly Maps?\b|\bEarly Mapping\b/gi, "début des maps"],
-  [/\bNew Supports?\b/gi, "nouveaux supports"],
-  [/\bCampaign\b/gi, "Campagne"],
-  [/\bAct\b/g, "Acte"],
-  [/\bLevels?\b/g, "Niveau"],
-  [/\blevel\b/g, "niveau"],
-  [/\bStep\b/gi, "étape"],
-  [/\bBefore\b/gi, "avant"],
-  [/\bAfter\b/gi, "après"],
-  [/\bto\b/g, "à"],
-  [/\band\b/g, "et"],
-  [/\bAscendancy\b/gi, "Ascendance"],
-  [/\b(\d)(st|nd|rd|th)\b/g, "$1e"],
-];
-const stepFr = (s: string) => FR_WORDS.reduce((acc, [re, to]) => acc.replace(re, to), s);

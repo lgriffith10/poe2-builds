@@ -150,6 +150,22 @@ leveling:
             supports: [Prolonged Duration II, Daresso's Passion, Refraction II]
           - gem: "Purity of Ice"
             supports: [Vitality II, Cannibalism II, Herbalism II, Cool Headed]
+    rotations:
+      - name: "Act I"
+        steps:
+          - gem: "Frost Bomb"
+          - gem: "Parry"
+          - gem: "Fangs of Frost"
+          - gem: "Whirling Slash"
+            count: 3
+          - gem: "Twister"
+      - name: "Glacial Lance"
+        steps:
+          - gem: "War Banner"
+          - gem: "Pounce"
+          - gem: "Arctic Howl"
+          - gem: "Barrage"
+          - gem: "Glacial Lance"
 rotations:
   - name: "Glacial Lance"
     steps:

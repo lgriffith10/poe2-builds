@@ -91,6 +91,7 @@ export const en = {
     },
   },
   build: {
+    campaignRotations: "Campaign rotations",
     grantsSkill: "Grants Skill: {skills}",
     skillFrom: {
       weapon: "Weapon: {from}",

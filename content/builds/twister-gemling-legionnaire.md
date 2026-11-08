@@ -102,6 +102,20 @@ leveling:
           - gem: "Berserk"
             supports: [Vitality I]
           - gem: "Charge Regulation"
+    rotations:
+      - name: "Clear"
+        steps:
+          - gem: "Whirling Slash"
+            count: 3
+          - gem: "Ice-Tipped Arrows"
+          - gem: "Twister"
+      - name: "Single Target"
+        steps:
+          - gem: "Whirling Slash"
+            count: 3
+          - gem: "Ice-Tipped Arrows"
+          - gem: "Barrage"
+          - gem: "Twister"
 rotations:
   - name: "Clear"
     steps:

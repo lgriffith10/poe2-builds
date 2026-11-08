@@ -179,18 +179,22 @@ rotations:
       - gem: "Pounce"
       - gem: "Lunar Assault"
       - gem: "Cross Slash"
+        label: "Once Every 1 Min"
       - gem: "Rend"
       - gem: "Savage Fury"
   - name: "Bossing"
     steps:
       - gem: "Lunar Blessing"
+        label: "Get Buffs"
       - gem: "Shred"
       - gem: "Cross Slash"
       - gem: "Rend"
       - gem: "Savage Fury"
       - gem: "Lunar Assault"
+        label: "Freeze Boss"
       - gem: "Arctic Howl"
       - gem: "Shred"
+        label: "During Freeze"
       - gem: "Cross Slash"
 gear:
   weapon:

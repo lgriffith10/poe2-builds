@@ -104,6 +104,19 @@ leveling:
           - gem: "Siphon Elements"
             supports: [Harmonic Remnants II, Cold Mastery]
           - gem: "Powered by Verisium"
+    rotations:
+      - name: "Campaign Clear"
+        steps:
+          - gem: "Frost Bomb"
+          - gem: "Spark"
+      - name: "Campaign Single Target"
+        steps:
+          - gem: "Elemental Weakness"
+          - gem: "Frost Bomb"
+          - gem: "Orb of Storms"
+            count: 2
+          - gem: "Flame Wall"
+          - gem: "Spark"
 rotations:
   - name: "Campaign Clear"
     steps:

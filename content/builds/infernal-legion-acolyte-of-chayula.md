@@ -135,11 +135,24 @@ leveling:
             supports: [Bleed III, Rearm II, Magnified Area II]
           - gem: "Purity of Fire"
             supports: [Upwelling II, Vitality II, Clarity II]
+    rotations:
+      - name: "Bossing"
+        steps:
+          - gem: "Hand of Chayula"
+            label: "Debuff"
+          - gem: "Frost Bomb"
+          - gem: "Freezing Mark"
+          - gem: "Ice Strike"
+            count: 4
+            label: "Build Combo"
+          - gem: "Tempest Bell"
 rotations:
   - name: "Bossing"
     steps:
       - gem: "Frost Bomb"
+        label: "Debuff"
       - gem: "Spearfield"
+        label: "Aggravate"
 gear:
   weapon:
     unique: "Trenchtimbre"

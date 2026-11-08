@@ -139,14 +139,19 @@ rotations:
   - name: "Rares"
     steps:
       - gem: "Lightning Rod"
+        label: "Stack 20"
       - gem: "Barrage"
+        label: "Spam"
       - gem: "Lightning Arrow"
   - name: "Bosses"
     steps:
       - gem: "Tornado Shot"
+        label: "Pre-Stack & Maintain"
       - gem: "Lightning Rod"
       - gem: "Voltaic Mark"
+        label: "Refresh"
       - gem: "Barrage"
+        label: "Spam"
       - gem: "Lightning Arrow"
 gear:
   weapon:

@@ -86,6 +86,27 @@ leveling:
           - gem: "War Banner"
             supports: [Prolonged Duration I]
           - gem: "Freezing Mark"
+    rotations:
+      - name: "Spear Twister"
+        steps:
+          - gem: "Whirling Slash"
+            count: 3
+            label: "3x Slash & Twister"
+          - gem: "Twister"
+      - name: "Bossing"
+        steps:
+          - gem: "Frost Bomb"
+            label: "Pre-cast"
+          - gem: "War Banner"
+          - gem: "Explosive Grenade"
+            label: "On cooldown"
+          - gem: "Flash Grenade"
+          - gem: "Crossbow Shot"
+      - name: "Clearing"
+        steps:
+          - gem: "Flash Grenade"
+          - gem: "Explosive Grenade"
+          - gem: "Crossbow Shot"
   - name: "Campaign Twister"
     steps:
       - name: "Act 1 Step 1"
@@ -134,6 +155,32 @@ leveling:
           - gem: "Skeletal Warrior"
             supports: [Last Gasp, Lightning Attunement]
           - gem: "Herald of Ice"
+    rotations:
+      - name: "Act 1 Bossing"
+        steps:
+          - gem: "Frost Bomb"
+          - gem: "Parry"
+          - gem: "Fangs of Frost"
+          - gem: "Whirling Slash"
+            count: 3
+            label: "3x Slash & Twister"
+          - gem: "Twister"
+      - name: "Act 2 Bossing"
+        steps:
+          - gem: "Ice-Tipped Arrows"
+          - gem: "Freezing Mark"
+          - gem: "Barrage"
+          - gem: "Whirling Slash"
+            count: 3
+            label: "3x Slash & Twister"
+          - gem: "Twister"
+      - name: "Map Clear"
+        steps:
+          - gem: "Ice-Tipped Arrows"
+          - gem: "Whirling Slash"
+            count: 3
+            label: "3x Slash & Twister"
+          - gem: "Twister"
   - name: "Campaign Minions (level 22)"
     steps:
       - name: "Act 2 & Bear Asendancy"
@@ -259,13 +306,29 @@ leveling:
             supports: [Cooldown Recovery II, Upwelling I]
           - gem: "Refutation"
             supports: [Prolonged Duration II, Cooldown Recovery II, Rapid Casting II, Mobility]
+    rotations:
+      - name: "Wild Protector & Minions"
+        steps:
+          - gem: "Pain Offering"
+            label: "Buff"
+          - gem: "Freezing Mark"
+            label: "Armour Break"
+          - gem: "Sniper's Mark"
+          - gem: "Despair"
+            label: "Debuff"
+          - gem: "Refutation"
+            label: "Defensive skill"
 rotations:
   - name: "Wild Protector & Minions"
     steps:
       - gem: "Pain Offering"
+        label: "Buff"
       - gem: "Sniper's Mark"
+        label: "Armour Break"
       - gem: "Despair"
+        label: "Debuff"
       - gem: "Refutation"
+        label: "Defensive skill"
 gear:
   weapon:
     unique: "Tyranny's Grip"

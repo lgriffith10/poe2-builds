@@ -187,14 +187,63 @@ leveling:
             supports: [Feeding Frenzy II, Muster, Pin II, Rage III]
           - gem: "Raging Spirits"
             supports: [Muster, Feeding Frenzy II, Last Gasp, Minion Splash II]
+    rotations:
+      - name: "Act1 Step 1 & 2"
+        steps:
+          - gem: "Volcano"
+            label: "Command skill"
+          - gem: "Skeletal Sniper"
+          - gem: "Contagion"
+            label: "Aoe dmg"
+          - gem: "Unearth"
+            label: "Corpses"
+          - gem: "Frost Bomb"
+            label: "Bosses/rares"
+      - name: "Act 1 Step 3"
+        steps:
+          - gem: "Volcano"
+            label: "Command Skill"
+          - gem: "Skeletal Sniper"
+          - gem: "Volcano"
+            label: "Raging Spirits"
+          - gem: "Frost Bomb"
+            label: "Rares & Bosses"
+          - gem: "Unearth"
+            label: "Corpses"
+      - name: "Act 2"
+        steps:
+          - gem: "Volcano"
+            label: "Command Skill"
+          - gem: "Skeletal Sniper"
+          - gem: "Volcano"
+            label: "More Raging Spirits"
+          - gem: "Elemental Weakness"
+          - gem: "Elemental Weakness"
+            label: "Rares & Bosses"
+          - gem: "Frost Bomb"
+          - gem: "Unearth"
+            label: "Corpses"
+      - name: "Act 3 & Act 4 & Interlude Spectres"
+        steps:
+          - gem: "Elemental Weakness"
+            label: "Raging Spirits"
+          - gem: "Pain Offering"
+            label: "Rares & Bosses"
+          - gem: "Frost Bomb"
+          - gem: "Elemental Weakness"
+          - gem: "Unearth"
+            label: "Corpses"
 rotations:
   - name: "Early"
     steps:
       - gem: "Elemental Weakness"
+        label: "Raging Spirits"
       - gem: "Pain Offering"
+        label: "Rares & Bosses"
       - gem: "Frost Bomb"
       - gem: "Elemental Weakness"
       - gem: "Unearth"
+        label: "Corpses"
 gear:
   weapon:
     base: Rattling Sceptre

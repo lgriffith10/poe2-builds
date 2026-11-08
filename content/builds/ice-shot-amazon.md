@@ -151,6 +151,14 @@ leveling:
             supports: [Compressed Duration II]
           - gem: "Rhoa Mount"
             supports: [Loyalty, Meat Shield II, Elemental Army]
+    rotations:
+      - name: "Single Target"
+        steps:
+          - gem: "Tornado Shot"
+          - gem: "Freezing Mark"
+          - gem: "Ice Shot"
+          - gem: "Barrage"
+          - gem: "Snipe"
 rotations:
   - name: "Single Target"
     steps:

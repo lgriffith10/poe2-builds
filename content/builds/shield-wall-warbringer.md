@@ -70,6 +70,16 @@ leveling:
           - gem: "Herald of Ash"
           - gem: "Perfect Strike"
             supports: [Window of Opportunity I, Rapid Attacks I]
+    rotations:
+      - name: "Clear"
+        steps:
+          - gem: "Rolling Slam"
+          - gem: "Boneshatter"
+      - name: "Single Target"
+        steps:
+          - gem: "Infernal Cry"
+          - gem: "Perfect Strike"
+            count: 2
   - name: "Shield Wall Campaign"
     steps:
       - name: "Shield Wall Swap"
@@ -125,6 +135,13 @@ leveling:
             supports: [Prolonged Duration II, Cannibalism I]
           - gem: "Encase in Jade"
             supports: [Prolonged Duration II, Physical Mastery]
+    rotations:
+      - name: "Skill Rotation"
+        steps:
+          - gem: "Infernal Cry"
+          - gem: "Shield Wall"
+          - gem: "Fortifying Cry"
+          - gem: "Shield Wall"
 rotations:
   - name: "Skill Rotation"
     steps:

@@ -95,6 +95,7 @@ export const fr: Dictionary = {
     },
   },
   build: {
+    campaignRotations: "Rotations de campagne",
     grantsSkill: "Accorde la compétence : {skills}",
     skillFrom: {
       weapon: "Arme : {from}",

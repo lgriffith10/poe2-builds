@@ -5,6 +5,8 @@ import { TipScope } from "@/components/ref-tooltips";
 import { BuildTreeViewer } from "@/components/build-tree-viewer";
 import { GearInventory } from "@/components/gear-inventory";
 import { LevelingTimeline, type TimelinePath } from "@/components/leveling-timeline";
+import { RotationStrip, type RotationGem, type RotationView } from "@/components/rotation-strip";
+import { stepFr } from "@/lib/step-labels";
 import { ClassEmblem, GemIcon, Pill, SectionTitle, TierBadge } from "@/components/ui";
 import { gemTip } from "@/lib/tips";
 import { getBuild, getBuilds } from "@/lib/builds";
@@ -17,7 +19,7 @@ const pctText = (share: number, lang: string) =>
   new Intl.NumberFormat(lang === "fr" ? "fr-FR" : "en-US", { style: "percent", maximumFractionDigits: share >= 0.1 ? 0 : 1 }).format(share);
 import { findNodeByName } from "@/lib/tree";
 import { createGraph } from "@/lib/tree";
-import { TIER_CATEGORIES } from "@/lib/types";
+import { TIER_CATEGORIES, type SkillRotation } from "@/lib/types";
 import { fmt, getDictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
 
@@ -55,18 +57,44 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
   const sourceLabel = (src: SkillSource) => fmt(tr.build.skillFrom[src.kind], { from: "from" in src ? src.from : "" });
   const popularity = ladderPopularity(build);
 
+  const gemView = (name: string): RotationGem => {
+    const { id, icon, color } = getGem(name)!;
+    return { id, name, icon, color, tip: gemTip(name)! };
+  };
+  const rotationView = (r: SkillRotation): RotationView => ({
+    name: r.name,
+    steps: r.steps.map((st) => ({ gem: gemView(st.gem), count: st.count, label: st.label })),
+  });
+
   // Resolve leveling gems for the client and flag those absent from the previous step of the same path.
-  const leveling: TimelinePath[] = build.leveling.map((p) => ({
-    name: p.name,
-    steps: p.steps.map((step, i) => {
-      const before = new Set(i ? p.steps[i - 1].skills.flatMap((s) => [s.gem, ...s.supports]) : []);
-      const info = (name: string) => {
-        const { id, icon, color } = getGem(name)!;
-        return { id, name, icon, color, tip: gemTip(name)!, isNew: i > 0 && !before.has(name) };
-      };
-      return { name: step.name, skills: step.skills.map((s) => ({ gem: info(s.gem), supports: s.supports.map(info) })) };
-    }),
-  }));
+  // Campaign rotations named after an act ("Act 2 Bosses") go under the first step of that act.
+  const leveling: TimelinePath[] = build.leveling.map((p) => {
+    const stepKeys = p.steps.map((st) => ({ act: actOf(st.name), step: stepOf(st.name) }));
+    const placed = new Map<number, RotationView[]>();
+    const general: RotationView[] = [];
+    for (const r of p.rotations ?? []) {
+      const act = actOf(r.name);
+      const step = stepOf(r.name);
+      // Same act and step number ("Act 1 Step 3"), else the first step of that act.
+      let at = act === null ? -1 : stepKeys.findIndex((k) => k.act === act && step !== null && k.step === step);
+      if (at < 0 && act !== null) at = stepKeys.findIndex((k) => k.act === act);
+      if (at < 0) general.push(rotationView(r));
+      else placed.set(at, [...(placed.get(at) ?? []), rotationView(r)]);
+    }
+    return {
+      name: p.name,
+      rotations: general,
+      steps: p.steps.map((step, i) => {
+        const before = new Set(i ? p.steps[i - 1].skills.flatMap((s) => [s.gem, ...s.supports]) : []);
+        const info = (name: string) => ({ ...gemView(name), isNew: i > 0 && !before.has(name) });
+        return {
+          name: step.name,
+          skills: step.skills.map((s) => ({ gem: info(s.gem), supports: s.supports.map(info) })),
+          rotations: placed.get(i) ?? [],
+        };
+      }),
+    };
+  });
 
   const sections = [
     { id: "overview", text: tr.common.overview },
@@ -230,34 +258,9 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               <div className="mt-6">
                 <h3 className="font-semibold">{tr.build.rotation}</h3>
                 <p className="text-sm text-muted">{tr.build.rotationSub}</p>
-                <div className="mt-3 space-y-3">
+                <div className="mt-3 grid gap-3 lg:grid-cols-2">
                   {build.rotations.map((r) => (
-                    <div key={r.name} className="rounded-xl border border-line bg-surface p-4">
-                      <p className="text-sm font-semibold text-gold">{r.name}</p>
-                      <ol className="mt-3 flex flex-wrap items-center gap-x-1.5 gap-y-3">
-                        {r.steps.map((step, i) => {
-                          const gem = getGem(step.gem)!;
-                          return (
-                            <li key={i} className="flex items-center gap-1.5">
-                              {i > 0 && (
-                                <span aria-hidden className="text-faint">
-                                  →
-                                </span>
-                              )}
-                              <Link
-                                href={path(`/database/gems#${gem.id}`)}
-                                data-tip={gemTip(gem.name)}
-                                className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 py-1 pl-1 pr-2.5 text-sm hover:border-line-strong"
-                              >
-                                <GemIcon gem={gem} size={28} />
-                                {gem.name}
-                                {step.count && <span className="text-xs text-gold">×{step.count}</span>}
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ol>
-                    </div>
+                    <RotationStrip key={r.name} rotation={localizeRotation(rotationView(r), lang)} gemsHref={path("/database/gems")} />
                   ))}
                 </div>
               </div>
@@ -374,3 +377,18 @@ function SourceChip({ source, label }: { source: SkillSource; label: string }) {
     </span>
   );
 }
+
+const ROMAN: Record<string, number> = { i: 1, ii: 2, iii: 3, iv: 4 };
+/** Act number in a step or rotation name ("Act 2", "Act1 Step 3", "ACT I"), or null. */
+function actOf(name: string): number | null {
+  const m = name.match(/\bact\s*(\d+|iv|i{1,3})\b/i);
+  if (!m) return null;
+  return /\d/.test(m[1]) ? Number(m[1]) : ROMAN[m[1].toLowerCase()];
+}
+/** Step number in a name ("Act1 Step 1 & 2" -> 1), or null. */
+function stepOf(name: string): number | null {
+  const m = name.match(/\bstep\s*(\d+)/i);
+  return m ? Number(m[1]) : null;
+}
+const localizeRotation = (r: RotationView, lang: string): RotationView =>
+  lang === "fr" ? { ...r, name: stepFr(r.name), steps: r.steps.map((st) => ({ ...st, label: st.label && stepFr(st.label) })) } : r;

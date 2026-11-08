@@ -97,6 +97,28 @@ leveling:
             supports: [Spell Echo, Overabundance I, Potent Exposure, Efficiency II]
           - gem: "Purity of Fire"
             supports: [Vitality II, Mysticism II, Clarity II]
+    rotations:
+      - name: "Bossing (Lvl 1-13)"
+        steps:
+          - gem: "Frost Bomb"
+          - gem: "Volcano"
+      - name: "Pack Clear (Lvl 1-13)"
+        steps:
+          - gem: "Contagion"
+          - gem: "Essence Drain"
+      - name: "Bossing (lvl14+)"
+        steps:
+          - gem: "Bonestorm"
+          - gem: "Thrashing Vines"
+          - gem: "Bonestorm"
+          - gem: "Thunderstorm"
+          - gem: "Bonestorm"
+      - name: "Pack Clear (Lvl 14+)"
+        steps:
+          - gem: "Bone Cage"
+          - gem: "Entangle"
+          - gem: "Thrashing Vines"
+          - gem: "Thunderstorm"
 rotations:
   - name: "Bossing (Lvl 1-13)"
     steps:

@@ -46,16 +46,18 @@ function leveling(d, warn) {
   const profiles = d.profiles.filter((p) => !p.hidden || isCampaign(p.name));
   const campaignProfiles = profiles.filter((p) => isCampaign(p.name));
   if (campaignProfiles.length) {
-    for (const p of campaignProfiles) paths.push({ name: p.name, steps: p.skills.steps });
+    for (const p of campaignProfiles) paths.push({ name: p.name, steps: p.skills.steps, rotations: rotationList(p.skillRotations) });
   } else {
-    // Single-profile planners keep the campaign as one or more named steps.
+    // Single-profile planners keep the campaign as one or more named steps (and act-named rotations).
     const steps = profiles.flatMap((p) => p.skills.steps.filter((s) => isCampaign(s.name)));
-    if (steps.length) paths.push({ name: null, steps });
+    const rots = profiles.flatMap((p) => rotationList(p.skillRotations).filter((r) => isCampaign(r.name)));
+    if (steps.length) paths.push({ name: null, steps, rotations: rots });
   }
   return paths
     .map((p) => ({
       name: p.name,
       steps: p.steps.map((s) => ({ name: s.name.trim(), skills: groups(s, warn) })).filter((s) => s.skills.length),
+      rotations: p.rotations ?? [],
     }))
     .filter((p) => p.steps.length);
 }
@@ -79,28 +81,43 @@ function firstMapStep(d, warn) {
 // Some planners label rotations in capitals ("SINGLE TARGET").
 const titleIfCaps = (s) => (s === s.toUpperCase() ? s.toLowerCase().replace(/(^|[\s&/(-])\p{L}/gu, (c) => c.toUpperCase()) : s);
 
-function rotations(d) {
-  const preferred =
-    d.profiles.find((p) => /map|endgame/i.test(p.name) && !/aspir|min.?max/i.test(p.name) && p.skillRotations?.length) ??
-    d.profiles.find((p) => p.skillRotations?.length);
-  return (preferred?.skillRotations ?? [])
+/**
+ * Planner rotations -> [{ name, steps: [{ gem, count?, label? }] }]. A group's text becomes the label of its first
+ * step, unless it only repeats the gem name.
+ */
+function rotationList(skillRotations) {
+  return (skillRotations ?? [])
     .map((r) => {
       const steps = [];
       for (const g of r.groups ?? []) {
+        const text = (g.text ?? "").trim();
+        let first = true;
         for (const gem of g.gems ?? []) {
           const name = gemName(gem.id);
           if (!name || !gemByName.has(name)) continue;
+          const label = first && text && text.toLowerCase() !== name.toLowerCase() ? titleIfCaps(text) : undefined;
+          first = false;
           const last = steps.at(-1);
-          if (last?.gem === name) last.count = (last.count ?? 1) + 1;
-          else steps.push({ gem: name });
+          if (last?.gem === name && !label) last.count = (last.count ?? 1) + 1;
+          else steps.push({ gem: name, ...(label && { label }) });
         }
       }
       return { name: titleIfCaps(r.name.trim()), steps };
     })
     .filter((r) => r.steps.length > 1);
 }
-
+function rotations(d) {
+  const preferred =
+    d.profiles.find((p) => /map|endgame/i.test(p.name) && !/aspir|min.?max/i.test(p.name) && p.skillRotations?.length) ??
+    d.profiles.find((p) => p.skillRotations?.length);
+  return rotationList(preferred?.skillRotations);
+}
 const q = (s) => JSON.stringify(s);
+const rotationStep = (st, ind) => [
+  `${ind}- gem: ${q(st.gem)}`,
+  ...(st.count ? [`${ind}  count: ${st.count}`] : []),
+  ...(st.label ? [`${ind}  label: ${q(st.label)}`] : []),
+];
 const list = (xs) => `[${xs.map((x) => (/^[\w' -]+$/.test(x) && !/^\d/.test(x) ? x : q(x))).join(", ")}]`;
 
 function yaml(paths, rots, levelingSource) {
@@ -120,13 +137,20 @@ function yaml(paths, rots, levelingSource) {
           if (g.supports.length) out.push(`            supports: ${list(g.supports)}`);
         }
       }
+      if (p.rotations?.length) {
+        out.push("    rotations:");
+        for (const r of p.rotations) {
+          out.push(`      - name: ${q(r.name)}`, "        steps:");
+          for (const st of r.steps) out.push(...rotationStep(st, "          "));
+        }
+      }
     }
   }
   if (rots.length) {
     out.push("rotations:");
     for (const r of rots) {
       out.push(`  - name: ${q(r.name)}`, "    steps:");
-      for (const s of r.steps) out.push(`      - gem: ${q(s.gem)}${s.count ? `\n        count: ${s.count}` : ""}`);
+      for (const st of r.steps) out.push(...rotationStep(st, "      "));
     }
   }
   return out;
@@ -194,6 +218,8 @@ async function loadGuide(url) {
     const rots = rotations(guide.planner);
     rewrite(DIR + f, yaml(paths, rots, levelingSource));
     const steps = paths.map((p) => `${p.name ?? "campaign"}: ${p.steps.length}`).join(", ");
+    const actRots = paths.flatMap((p) => p.rotations.map((r) => r.name));
+    console.log(`✓ ${f}: campaign rotations [${actRots.join(", ") || "none"}]`);
     console.log(`✓ ${f}: leveling [${steps || "none"}]${levelingSource ? ` from ${levelingSource.url}` : ""}, rotations [${rots.map((r) => r.name).join(", ") || "none"}]`);
     for (const w of [...new Set(warnings)]) console.log(`    note: ${w}`);
   }

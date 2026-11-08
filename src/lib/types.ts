@@ -191,12 +191,15 @@ export interface LevelingStep {
 export interface LevelingPath {
   name?: string;
   steps: LevelingStep[];
+  /** Campaign rotations of this path (often one per act), from the source planner. */
+  rotations?: SkillRotation[];
 }
 
 /** Order in which skills are used for a situation (e.g. "Single Target"). */
 export interface SkillRotation {
   name: string;
-  steps: { gem: string; count?: number }[];
+  /** `label`: the source's note for that step ("Pre-buff before boss fight"). */
+  steps: { gem: string; count?: number; label?: string }[];
 }
 
 export interface PlannerState {

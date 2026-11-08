@@ -146,14 +146,32 @@ leveling:
             supports: [Sniper's Mark, Freezing Mark, Charged Mark, Mark of Siphoning, Charge Profusion II]
           - gem: "Freezing Salvo"
             supports: [Elemental Armament II, Cold Attunement, Freeze, Ice Bite II]
+    rotations:
+      - name: "Bossing"
+        steps:
+          - gem: "Ice-Tipped Arrows"
+          - gem: "Tornado Shot"
+          - gem: "Ice Shot"
+            label: "Use until Boss is frozen"
+          - gem: "Barrage"
+          - gem: "Snipe"
+            label: "Use Only on Frozen Boss"
+      - name: "Mapping"
+        steps:
+          - gem: "Barrage"
+          - gem: "Ice-Tipped Arrows"
+          - gem: "Tornado Shot"
+          - gem: "Ice Shot"
 rotations:
   - name: "Bossing"
     steps:
       - gem: "Ice-Tipped Arrows"
       - gem: "Tornado Shot"
       - gem: "Ice Shot"
+        label: "Use until Boss is frozen"
       - gem: "Barrage"
       - gem: "Snipe"
+        label: "Use Only on Frozen Boss"
   - name: "Mapping"
     steps:
       - gem: "Barrage"

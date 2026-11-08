@@ -98,6 +98,17 @@ leveling:
             supports: [Mark of Siphoning II, Charged Mark, Lightning Exposure, Efficiency II]
           - gem: "Sorcery Ward"
             supports: [Cold Mastery, Clarity I]
+    rotations:
+      - name: "Single Target"
+        steps:
+          - gem: "Explosive Grenade"
+          - gem: "Freezing Mark"
+          - gem: "Permafrost Bolts"
+          - gem: "Fragmentation Rounds"
+      - name: "Clear"
+        steps:
+          - gem: "Permafrost Bolts"
+          - gem: "Fragmentation Rounds"
 rotations:
   - name: "Single Target"
     steps:

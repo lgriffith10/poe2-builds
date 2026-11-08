@@ -88,6 +88,21 @@ leveling:
           - gem: "Freezing Mark"
           - gem: "Supporting Fire"
             supports: [Bidding I, Cold Attunement]
+    rotations:
+      - name: "Clear"
+        steps:
+          - gem: "Permafrost Bolts"
+          - gem: "Crossbow Shot"
+          - gem: "Herald of Ice"
+          - gem: "Supporting Fire"
+      - name: "Single Target"
+        steps:
+          - gem: "Frost Bomb"
+            label: "Setup"
+          - gem: "Freezing Mark"
+          - gem: "Permafrost Bolts"
+            label: "Until Frozen"
+          - gem: "Fragmentation Rounds"
   - name: "Supporting Fire Campaign"
     steps:
       - name: "Act 3"
@@ -150,19 +165,33 @@ leveling:
             supports: [Last Gasp, Rapid Casting II, Meat Shield II]
           - gem: "Malice"
             supports: [Upwelling II, Clarity II, Vitality II]
+    rotations:
+      - name: "Single Target"
+        steps:
+          - gem: "Elemental Weakness"
+            label: "Setup"
+          - gem: "Frost Bomb"
+          - gem: "Skeletal Sniper"
+            label: "Command"
+          - gem: "Supporting Fire"
 rotations:
   - name: "Clear"
     steps:
       - gem: "Supporting Fire"
+        label: "Maintain"
       - gem: "Skeletal Arsonist"
+        label: "Command"
   - name: "Single Target"
     steps:
       - gem: "Elemental Weakness"
+        label: "Setup"
       - gem: "Frost Bomb"
       - gem: "Pounce"
       - gem: "Skeletal Arsonist"
+        label: "Command"
       - gem: "Skeletal Brute"
       - gem: "Supporting Fire"
+        label: "Archon of Undeath"
 gear:
   weapon:
     base: Omen Sceptre

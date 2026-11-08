@@ -191,24 +191,54 @@ leveling:
             supports: [Harmonic Remnants II, Remnant Potency III, Clarity I]
           - gem: "Mana Remnants"
             supports: [Harmonic Remnants II, Remnant Potency III]
+    rotations:
+      - name: "Arc Clear"
+        steps:
+          - gem: "Orb of Storms"
+          - gem: "Arc"
+          - gem: "Mana Tempest"
+            label: "Extra Clear (Optional)"
+      - name: "Arc Single Target"
+        steps:
+          - gem: "Sigil of Power"
+            label: "Before the Boss Spawns"
+          - gem: "Orb of Storms"
+          - gem: "Elemental Weakness"
+          - gem: "Orb of Storms"
+            label: "As the Boss Spawns"
+          - gem: "Frost Bomb"
+          - gem: "Orb of Storms"
+            label: "Deal Damage"
+          - gem: "Arc"
+          - gem: "Frost Bomb"
+            label: "Recast as Necessary"
+          - gem: "Orb of Storms"
+          - gem: "Mana Tempest"
+            label: "Bonus Damage after Mana Remnant Ramp"
 rotations:
   - name: "Clear"
     steps:
       - gem: "Orb of Storms"
       - gem: "Arc"
       - gem: "Mana Tempest"
+        label: "Extra Clear (Optional)"
   - name: "Single Target"
     steps:
       - gem: "Sigil of Power"
+        label: "Before the Boss Spawns"
       - gem: "Orb of Storms"
       - gem: "Elemental Weakness"
       - gem: "Orb of Storms"
+        label: "As the Boss Spawns"
       - gem: "Frost Bomb"
       - gem: "Orb of Storms"
+        label: "Deal Damage"
       - gem: "Arc"
       - gem: "Frost Bomb"
+        label: "Recast as Necessary"
       - gem: "Orb of Storms"
       - gem: "Mana Tempest"
+        label: "Bonus Damage after Mana Remnant Ramp"
 gear:
   weapon:
     base: Attuned Wand
