@@ -4,13 +4,13 @@ tags: [serviteurs, spectre, bouclier d'énergie, blocage, début de ligue]
 damage: Physique / Foudre
 playstyle: Serviteurs
 pros:
-  - Des serviteurs dès le début de la campagne
-  - Très résistante avec bouclier d'énergie, blocage et Eternal Life
-  - Beaucoup de serviteurs différents, l'armée n'est jamais vide
+  - "Des serviteurs dès le début de la campagne"
+  - "Très résistante avec bouclier d'énergie, blocage et Eternal Life"
+  - "Beaucoup de serviteurs différents, l'armée n'est jamais vide"
 cons:
-  - Beaucoup de gemmes à monter et à lier
-  - Les explosions des Vaal Guards fatiguent les yeux et l'ordinateur
-  - Les spectres sont à remplacer vers le niveau 92
+  - "Beaucoup de gemmes à monter et à lier"
+  - "Les explosions des Vaal Guards fatiguent les yeux et l'ordinateur"
+  - "Les spectres sont à remplacer vers le niveau 92"
 ---
 
 ## Fonctionnement

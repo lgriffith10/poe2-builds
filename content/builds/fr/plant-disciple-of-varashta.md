@@ -4,13 +4,13 @@ tags: [lanceur, plantes, djinn, bouclier d'énergie, début de ligue]
 damage: Physique / Foudre
 playstyle: Lanceur de sorts
 pros:
-  - Énormes explosions qui nettoient tout l'écran
-  - Bonne cible unique avec Thrashing Vines
-  - Fonctionne sans aucun unique
+  - "Énormes explosions qui nettoient tout l'écran"
+  - "Bonne cible unique avec Thrashing Vines"
+  - "Fonctionne sans aucun unique"
 cons:
-  - L'écran devient très chargé
-  - Le passage en Chaos Inoculation en fin de partie demande un respec
-  - Plusieurs sorts à enchaîner contre les boss
+  - "L'écran devient très chargé"
+  - "Le passage en Chaos Inoculation en fin de partie demande un respec"
+  - "Plusieurs sorts à enchaîner contre les boss"
 ---
 
 ## Fonctionnement

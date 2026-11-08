@@ -4,13 +4,13 @@ tags: [serviteurs, spectre, bouclier d'énergie, évasion, début de ligue]
 damage: Physique / Foudre
 playstyle: Serviteurs
 pros:
-  - Très sûr : l'armée encaisse pendant que vous restez en retrait
-  - Peu de boutons une fois l'armée en place
-  - Aucun unique nécessaire pour la campagne
+  - "Très sûr : l'armée encaisse pendant que vous restez en retrait"
+  - "Peu de boutons une fois l'armée en place"
+  - "Aucun unique nécessaire pour la campagne"
 cons:
-  - Se joue à l'arbalète et aux grenades jusqu'à la fin de l'acte 3
-  - Beaucoup de gemmes de serviteurs à monter et à lier
-  - Les spectres changent plusieurs fois au fil de la progression
+  - "Se joue à l'arbalète et aux grenades jusqu'à la fin de l'acte 3"
+  - "Beaucoup de gemmes de serviteurs à monter et à lier"
+  - "Les spectres changent plusieurs fois au fil de la progression"
 ---
 
 ## Fonctionnement

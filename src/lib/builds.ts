@@ -325,6 +325,11 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
   for (const key of Object.keys(tr)) {
     if (!known.includes(key)) throw new BuildError(where, `Unknown translation field "${key}"`);
   }
+  // Same check as the English guides: an unquoted "Label : text" item parses as an object and crashes the page.
+  for (const key of ["pros", "cons", "tags"]) {
+    const bad = (tr[key] ?? []).find((v: unknown) => typeof v !== "string");
+    if (bad !== undefined) throw new BuildError(where, `${key} item ${JSON.stringify(bad)} is not text (quote items that contain ": ")`);
+  }
   const b = base.build;
   for (const gem of Object.keys(tr.skillNotes ?? {})) {
     if (!b.skills.some((s) => s.gem === gem)) throw new BuildError(where, `skillNotes: "${gem}" is not a skill of this guide`);

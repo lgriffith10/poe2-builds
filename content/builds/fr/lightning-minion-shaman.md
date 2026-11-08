@@ -4,13 +4,13 @@ tags: [serviteurs, spectre, foudre, bouclier d'énergie, début de ligue]
 damage: Foudre / Physique
 playstyle: Serviteurs
 pros:
-  - Excellent contre les boss
-  - Très résistante avec Chaos Inoculation, blocage et la réduction de dégâts de la Shaman
-  - Aucun unique nécessaire
+  - "Excellent contre les boss"
+  - "Très résistante avec Chaos Inoculation, blocage et la réduction de dégâts de la Shaman"
+  - "Aucun unique nécessaire"
 cons:
-  - Beaucoup de gemmes de serviteurs à monter
-  - Les spectres changent pendant les interludes
-  - Les dégâts dépendent de la survie de l'armée
+  - "Beaucoup de gemmes de serviteurs à monter"
+  - "Les spectres changent pendant les interludes"
+  - "Les dégâts dépendent de la survie de l'armée"
 ---
 
 ## Fonctionnement
