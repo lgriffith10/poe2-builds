@@ -48,6 +48,24 @@ skills:
     supports: [Cooldown Recovery II, Upwelling I]
   - gem: "Refutation"
     supports: [Prolonged Duration II, Cooldown Recovery II, Rapid Casting II, Mobility]
+gemPriority:
+  skills:
+    - label: "First"
+      gems: [Twister, Explosive Grenade]
+    - label: ""
+      gems: [Flash Grenade, Frost Bomb]
+    - label: ""
+      gems: [Pain Offering, Freezing Mark, Skeletal Sniper]
+  spirit:
+    - label: "ACT I (The King in The Mist)"
+      gems: [War Banner]
+    - label: "ACT II ( Golden Tomb)"
+      gems: [Withering Presence]
+  supports:
+    - label: "Act I"
+      gems: [Multishot I, Lightning Attunement, Elemental Armament I, Rapid Attacks I, Prolonged Duration I, Last Gasp]
+    - label: "Act Ii"
+      gems: [Short Fuse I, Minion Splash I, Upwelling I, Mark for Death, Danse Macabre, Meat Shield I, Maim, Last Gasp]
 leveling:
   - name: "Campaign Crossbow"
     steps:

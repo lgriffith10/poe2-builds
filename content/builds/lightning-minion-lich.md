@@ -63,6 +63,38 @@ skills:
   - gem: "Bind Spectre"
     supports: [Muster, Pierce III, Wildshards II, Dialla's Desire, Vilenta's Propulsion]
     note: "Powered Zealot spectres (the ones that cast lightning balls): main damage"
+gemPriority:
+  skills:
+    - label: "First"
+      gems: [Skeletal Sniper]
+    - label: ""
+      gems: [Volcano, Contagion, Frost Bomb]
+    - label: ""
+      gems: [Elemental Weakness, Pain Offering]
+    - label: "Act 4 (Use one or two)"
+      gems: [Skeletal Cleric]
+    - label: "Swap to Powered Zealot Spectres in the Interlude"
+      gems: [Bind Spectre]
+    - label: "One to debuff enemies with shock"
+      gems: [Skeletal Storm Mage]
+  spirit:
+    - label: "ACT I (The King in The Mist)"
+      gems: [Raging Spirits]
+    - label: "ACT II (Golden Tomb)"
+      gems: [Raging Spirits]
+    - label: "ACT III (The Azak Bog Witch)"
+      gems: [Raging Spirits]
+    - label: "+Damage & 10% less dmg taken"
+      gems: [Wolf Pack]
+  supports:
+    - label: "Act I"
+      gems: [Multishot I, Fire Attunement, Ignite I, Unleash, Last Gasp, Arcane Surge]
+    - label: "Act Ii"
+      gems: [Minion Splash I, Infernal Legion I, Multishot II, Spell Cascade, Efficiency I, Minion Instability, Fire Attunement, Potent Exposure]
+    - label: "Act III"
+      gems: [Feeding Frenzy I, Focused Curse, Infernal Legion I, Last Gasp, Loyalty, Meat Shield II, Elemental Army]
+    - label: "Act 4"
+      gems: [Feeding Frenzy II, Muster, Efficiency II, Rapid Attacks II, Danse Macabre, Sacrificial Lamb I, Meat Shield II, Rapid Casting II, Wildshards II, Pierce III]
 leveling:
   - name: "Campaign"
     steps:

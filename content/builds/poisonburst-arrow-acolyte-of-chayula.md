@@ -57,31 +57,141 @@ skills:
 gear:
   ring1:
     base: Breach Ring
-    mods: [Adds 43 to 59 Fire damage to Attacks, Adds 4 to 113 Lightning damage to Attacks, +25% to Chaos Resistance]
+    implicits: [+20% to Maximum Quality]
+    mods: [+16% to all Elemental Resistances, Adds 43 to 59 Fire damage to Attacks, Adds 4 to 113 Lightning damage to Attacks, +25% to Chaos Resistance, Adds 28 to 51 Physical Damage to Attacks, 12% increased Attack Speed]
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 16
+      - name: Original Sin
+        pct: 1
+      - name: Icefang Orbit
+        pct: 1
   ring2:
     unique: Kalandra's Touch
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 16
+      - name: Original Sin
+        pct: 1
+      - name: Icefang Orbit
+        pct: 1
   body:
     unique: Morior Invictus
+    runes: [+30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield, 12% increased Rarity of Items found, 10% increased Deflection Rating]
+    ladder:
+      - name: Rare Body Armour
+        pct: 67
+      - name: Morior Invictus
+        pct: 29
+      - name: The Brass Dome
+        pct: 1
+      - name: Cospri's Will
+        pct: 1
   weapon:
     base: Obliterator Bow
-    mods: [204% increased Physical Damage, +139 to Accuracy Rating, +17% to Critical Damage Bonus]
+    implicits: [50% reduced Projectile Range]
+    mods: [+4.93% to Critical Hit Chance, 204% increased Physical Damage, +139 to Accuracy Rating, +17% to Critical Damage Bonus, Adds 30 to 52 Physical Damage, +2 to Level of all Attack Skills]
+    runes: [Bow Attacks fire an additional Arrow, 25% reduced Poison Duration, Targets can be affected by +1 of your Poisons at the same time]
+    ladder:
+      - name: Rare Bow
+        pct: 79
+      - name: Hysseg's Claw
+        pct: 34
+      - name: Voltaxic Rift
+        pct: 17
+      - name: Amor Mandragora
+        pct: 10
   helmet:
     base: Kamasan Tiara
-    mods: [139% increased Energy Shield, +34 to maximum Mana, +45% to Fire Resistance, +41% to Cold Resistance]
+    mods: [+73 to maximum Energy Shield, 139% increased Energy Shield, +34 to maximum Mana, +45% to Fire Resistance, +41% to Cold Resistance, +44% to Lightning Resistance]
+    runes: ["40% increased Armour, Evasion and Energy Shield"]
+    ladder:
+      - name: Rare Helmet
+        pct: 91
+      - name: Alpha's Howl
+        pct: 5
+      - name: Decree of Acuity
+        pct: 1
+      - name: Vestige of Darkness
+        pct: 1
   offhand:
     base: Primed Quiver
-    mods: [Adds 16 to 27 Physical Damage to Attacks, 44% increased Damage with Bow Skills, +1 to Level of all Projectile Skills, 31% increased Critical Hit Chance for Attacks, 39% increased Critical Damage Bonus for Attack Damage]
+    implicits: [7% increased Attack Speed]
+    mods: [Adds 16 to 27 Physical Damage to Attacks, 44% increased Damage with Bow Skills, +1 to Level of all Projectile Skills, 31% increased Critical Hit Chance for Attacks, 39% increased Critical Damage Bonus for Attack Damage, Increases and Reductions to Projectile Speed also apply to Damage with Bows]
+    ladder:
+      - name: Rare Quiver
+        pct: 89
+      - name: Cadiro's Gambit
+        pct: 10
+      - name: Murkshaft
+        pct: 1
+      - name: Drillneck
+        pct: 0
   gloves:
     base: Secured Wraps
-    mods: [Adds 19 to 31 Physical Damage to Attacks, 40% increased Projectile Speed, 29% increased Projectile Damage]
+    mods: [+2 to Level of all Projectile Skills, Adds 19 to 31 Physical Damage to Attacks, 40% increased Projectile Speed, 29% increased Projectile Damage, 16% increased Attack Speed, 25% increased Critical Damage Bonus]
+    runes: [8% increased Attack Speed, Can roll Marksman modifiers]
+    ladder:
+      - name: Rare Gloves
+        pct: 89
+      - name: Hateforge
+        pct: 5
+      - name: Maligaro's Virtuosity
+        pct: 1
+      - name: Plaguefinger
+        pct: 1
+  weapon2:
+    unique: Hysseg's Claw
+    ladder:
+      - name: Rare Bow
+        pct: 79
+      - name: Hysseg's Claw
+        pct: 34
+      - name: Voltaxic Rift
+        pct: 17
+      - name: Amor Mandragora
+        pct: 10
   boots:
     base: Daggerfoot Shoes
-    mods: [35% increased Movement Speed, 100% increased Evasion and Energy Shield]
+    mods: [Gain Deflection Rating equal to 23% of Evasion Rating, 35% increased Movement Speed, 100% increased Evasion and Energy Shield, +76 to Evasion Rating, +24 to maximum Energy Shield, 60% increased effect of Socketed Augment Items, +12 to Spirit]
+    runes: [+9% to all Elemental Resistances, 16% increased Movement Speed when on Low Life]
+    ladder:
+      - name: Rare Boots
+        pct: 94
+      - name: Atziri's Step
+        pct: 4
+      - name: Decree of Flight
+        pct: 1
+      - name: Corpsewade
+        pct: 0
   belt:
     unique: Headhunter
+    ladder:
+      - name: Rare Belt
+        pct: 35
+      - name: Mageblood
+        pct: 29
+      - name: Headhunter
+        pct: 28
+      - name: Darkness Enthroned
+        pct: 4
   amulet:
     base: Absent Amulet
-    mods: [+3 to Level of all Projectile Skills]
+    implicits: [-1 Prefix Modifier allowed, -1 Suffix Modifier allowed]
+    mods: [+50 to Spirit, +3 to Level of all Projectile Skills, +5% to Quality of all Skills, "40% increased Global Armour, Evasion and Energy Shield"]
+    ladder:
+      - name: Rare Amulet
+        pct: 99
+      - name: Astramentis
+        pct: 1
+      - name: Beacon of Azis
+        pct: 0
+      - name: Idol of Uldurn
+        pct: 0
 passives:
   attribute: dex
   path:

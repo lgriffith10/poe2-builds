@@ -53,6 +53,18 @@ skills:
   - gem: "War Banner"
     supports: [Prolonged Duration I, Magnified Area II]
     note: "Damage banner"
+gemPriority:
+  skills:
+    - label: "Gem Cut Order"
+      gems: [Explosive Spear, Disengage, Rake, Spearfield, Blood Hunt, Bloodhound's Mark]
+  spirit:
+    - label: "First Spirit Gem"
+      gems: [Herald of Blood]
+    - label: "Second Spirit Gem"
+      gems: [Wind Dancer]
+  supports:
+    - label: "Early Support Order"
+      gems: [Elemental Armament I, Magnified Area I, Rapid Attacks I]
 leveling:
   - steps:
       - name: "Campaign"

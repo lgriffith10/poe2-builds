@@ -58,32 +58,133 @@ skills:
 gear:
   belt:
     unique: Headhunter
+    ladder:
+      - name: Mageblood
+        pct: 39
+      - name: Rare Belt
+        pct: 39
+      - name: Headhunter
+        pct: 9
+      - name: Cat O' Nine Tails
+        pct: 7
   ring1:
     base: Gold Ring
-    mods: [Adds 14 to 32 Physical Damage to Attacks, 31% increased Chaos Damage, +113 to maximum Life, 16% increased Rarity of Items found, +14% to all Elemental Resistances]
+    implicits: [13% increased Rarity of Items found]
+    mods: [Adds 14 to 32 Physical Damage to Attacks, 31% increased Chaos Damage, +113 to maximum Life, 16% increased Rarity of Items found, +14% to all Elemental Resistances, +19% to Fire and Chaos Resistances]
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 28
+      - name: Blistering Bond
+        pct: 3
+      - name: Andvarius
+        pct: 1
   boots:
     base: Bulwark Greaves
-    mods: [30% increased Movement Speed, +100 to maximum Life, +93 to maximum Mana, +39% to Lightning Resistance]
+    mods: [30% increased Movement Speed, +100 to maximum Life, +93 to maximum Mana, +39% to Lightning Resistance, 48% increased Life Regeneration Rate while moving, +34% to Fire Resistance]
+    runes: [+150 to maximum Life, +2% to Chaos Resistance for each Corrupted Item Equipped, Corrupting will always result in change]
+    ladder:
+      - name: Rare Boots
+        pct: 96
+      - name: Beetlebite
+        pct: 1
+      - name: Briarpatch
+        pct: 1
+      - name: Birth of Fury
+        pct: 1
   helmet:
     unique: Constricting Command
+    runes: [+75 to maximum Life, Raven-Touched]
+    ladder:
+      - name: Constricting Command
+        pct: 75
+      - name: Rare Helmet
+        pct: 15
+      - name: Thrillsteel
+        pct: 4
+      - name: Vestige of Darkness
+        pct: 2
   offhand:
     base: Tawhoan Tower Shield
-    mods: [+276 to Armour, 37% increased Armour, +3% to Maximum Lightning Resistance, +37% to Cold Resistance, +76 to Stun Threshold]
+    mods: [6% additional Physical Damage Reduction, +276 to Armour, 37% increased Armour, +3% to Maximum Lightning Resistance, +37% to Cold Resistance, +76 to Stun Threshold, 108% increased Armour]
+    runes: ["60% increased Armour, Evasion and Energy Shield"]
+    ladder:
+      - name: Rare Shield
+        pct: 95
+      - name: Eyes of the Runefather
+        pct: 2
+      - name: Chernobog's Pillar
+        pct: 2
+      - name: Nightfall
+        pct: 2
   body:
     base: Ornate Plate
+    implicits: [Regenerate 2.5% of maximum Life per second]
     mods: []
+    runes: [5% increased maximum Life, 12% increased Rarity of Items found, +13% to Chaos Resistance, Regenerate 1.5% of maximum Life per second]
+    ladder:
+      - name: The Brass Dome
+        pct: 29
+      - name: Skin of the Loyal
+        pct: 5
+      - name: Cloak of Flame
+        pct: 2
+      - name: Lightning Coil
+        pct: 2
   amulet:
     base: Gold Amulet
-    mods: [16% increased Rarity of Items found, +4 to Level of all Melee Skills, +14% to all Elemental Resistances, +44% to Fire Resistance]
+    implicits: [20% increased Rarity of Items found]
+    mods: [+50 to Spirit, 16% increased Rarity of Items found, +4 to Level of all Melee Skills, +14% to all Elemental Resistances, +44% to Fire Resistance, +117 to maximum Life]
+    ladder:
+      - name: Rare Amulet
+        pct: 67
+      - name: Defiance of Destiny
+        pct: 29
+      - name: Astramentis
+        pct: 1
+      - name: Xoph's Blood
+        pct: 1
   weapon:
     base: Disintegrating Maul
-    mods: [Adds 1 to 343 Lightning Damage, 28% increased Attack Speed]
+    implicits: ["Causes Enemies to Explode on Critical kill, for 10% of their Life as Physical Damage"]
+    mods: [+5 to Level of all Melee Skills, Adds 1 to 343 Lightning Damage, 28% increased Attack Speed, 99% increased Damage against Enemies with Fully Broken Armour, Gain 33% of Damage as Extra Physical Damage, 29% increased Magnitude of Ailments you inflict]
+    runes: [Gain 13% of Damage as Extra Chaos Damage, 25% reduced Poison Duration, Targets can be affected by +1 of your Poisons at the same time, 25% increased Magnitude of Poison you inflict]
+    ladder:
+      - name: Sacred Flame
+        pct: 44
+      - name: Nebuloch
+        pct: 40
+      - name: Amor Mandragora
+        pct: 7
+      - name: Guiding Palm of the Heart
+        pct: 4
   ring2:
     base: Gold Ring
-    mods: [Adds 24 to 39 Fire damage to Attacks, 30% increased Chaos Damage, +110 to maximum Life, +19% to all Elemental Resistances]
+    implicits: [15% increased Rarity of Items found]
+    mods: [Adds 24 to 39 Fire damage to Attacks, 30% increased Chaos Damage, +110 to maximum Life, +19% to all Elemental Resistances, +20% to Fire and Chaos Resistances, 15% increased Rarity of Items found]
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 28
+      - name: Blistering Bond
+        pct: 3
+      - name: Andvarius
+        pct: 1
   gloves:
     base: Gleaming Cuffs
-    mods: [37% increased Armour and Energy Shield, Adds 10 to 20 Physical Damage to Attacks, +38 to maximum Life, +2 to Level of all Melee Skills, 16% increased Attack Speed, +32 to Dexterity]
+    mods: [37% increased Armour and Energy Shield, Adds 10 to 20 Physical Damage to Attacks, +38 to maximum Life, +2 to Level of all Melee Skills, 16% increased Attack Speed, +32 to Dexterity, +132 to maximum Life]
+    runes: [8% increased Attack Speed, 20% increased Magnitude of Damaging Ailments you inflict]
+    ladder:
+      - name: Rare Gloves
+        pct: 97
+      - name: Hateforge
+        pct: 1
+      - name: Dreadfist
+        pct: 1
+      - name: Essentia Sanguis
+        pct: 0
 passives:
   attribute: str
   path:

@@ -58,6 +58,36 @@ skills:
   - gem: Rhoa Mount
     supports: [Loyalty, Meat Shield II, Elemental Army]
     note: Mounted movement speed in maps
+gemPriority:
+  skills:
+    - label: ""
+      gems: [Escape Shot]
+    - label: ""
+      gems: [Frost Bomb]
+    - label: ""
+      gems: [Stormcaller Arrow]
+    - label: ""
+      gems: [Snipe, Ice-Tipped Arrows]
+    - label: ""
+      gems: [Barrage]
+    - label: ""
+      gems: [Freezing Salvo]
+    - label: ""
+      gems: [Ice Shot]
+  spirit:
+    - label: ""
+      gems: [Herald of Ice]
+    - label: ""
+      gems: [Combat Frenzy]
+    - label: ""
+      gems: [Wind Dancer]
+    - label: ""
+      gems: [Rhoa Mount]
+  supports:
+    - label: "Level 1-5"
+      gems: [Rapid Attacks I, Cold Attunement]
+    - label: ""
+      gems: [Ice Bite I, Freeze, Cold Attunement, Window of Opportunity I, Concentrated Area, Magnified Area I, Elemental Armament I]
 leveling:
   - name: "Campaign"
     steps:

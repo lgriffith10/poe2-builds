@@ -54,29 +54,122 @@ skills:
 gear:
   gloves:
     base: Blacksteel Gauntlets
-    mods: [90% increased Armour and Evasion, +134 to maximum Life, +2 to Level of all Projectile Skills]
+    mods: [Adds 17 to 31 Physical Damage to Attacks, 90% increased Armour and Evasion, +134 to maximum Life, +2 to Level of all Projectile Skills, +36% to Cold Resistance, 18% increased Rarity of Items found]
+    runes: [+75 to maximum Life, Can roll Marksman modifiers]
+    ladder:
+      - name: Rare Gloves
+        pct: 99
+      - name: Maligaro's Virtuosity
+        pct: 0
+      - name: Painter's Servant
+        pct: 0
   boots:
     base: Vaal Greaves
-    mods: [35% increased Movement Speed, 91% increased Armour, +100 to maximum Life, +27% to Chaos Resistance]
+    mods: [35% increased Movement Speed, 91% increased Armour, +100 to maximum Life, +27% to Chaos Resistance, +38% to Fire Resistance, 16% increased Rarity of Items found]
+    runes: [5% increased Movement Speed, +75 to maximum Life]
+    ladder:
+      - name: Rare Boots
+        pct: 100
   ring1:
     base: Topaz Ring
-    mods: [Adds 13 to 23 Physical Damage to Attacks, Adds 29 to 44 Fire damage to Attacks, +124 to maximum Life, +32% to Lightning Resistance, 20.9 Life Regeneration per second]
+    implicits: [+22% to Lightning Resistance]
+    mods: [Adds 13 to 23 Physical Damage to Attacks, Adds 29 to 44 Fire damage to Attacks, +124 to maximum Life, +32% to Lightning Resistance, 20.9 Life Regeneration per second, +14% to Lightning and Chaos Resistances]
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 11
+      - name: Ventor's Gamble
+        pct: 1
+      - name: Andvarius
+        pct: 1
   belt:
     unique: Mageblood
+    ladder:
+      - name: Rare Belt
+        pct: 61
+      - name: Mageblood
+        pct: 31
+      - name: Headhunter
+        pct: 6
+      - name: Ryslatha's Coil
+        pct: 1
   body:
     base: Ornate Plate
-    mods: [107% increased Armour, +61 to Spirit, +40% to Lightning Resistance, +33% of Armour also applies to Elemental Damage, 26.4 Life Regeneration per second]
+    implicits: [Regenerate 2.3% of maximum Life per second]
+    mods: [107% increased Armour, +61 to Spirit, +40% to Lightning Resistance, +33% of Armour also applies to Elemental Damage, 26.4 Life Regeneration per second, +290 to Armour]
+    runes: ["20% increased Armour, Evasion and Energy Shield", 5% increased maximum Life, +50% of Armour also applies to Elemental Damage, +2 to Armour per 1 Spirit]
+    ladder:
+      - name: Rare Body Armour
+        pct: 95
+      - name: Morior Invictus
+        pct: 2
+      - name: Reverie
+        pct: 1
+      - name: The Brass Dome
+        pct: 1
+  weapon2:
+    unique: Frostbreath
+    ladder:
+      - name: Rare Crossbow
+        pct: 98
+      - name: Sculpted Suffering
+        pct: 4
+      - name: Rare Talisman
+        pct: 3
+      - name: Frostbreath
+        pct: 2
   ring2:
     base: Gold Ring
-    mods: [Adds 12 to 24 Physical Damage to Attacks, +107 to maximum Life, +41% to Fire Resistance, +48% to Cold Resistance]
+    implicits: [10% increased Rarity of Items found]
+    mods: [Adds 12 to 24 Physical Damage to Attacks, +107 to maximum Life, +41% to Fire Resistance, +48% to Cold Resistance, 19% increased Rarity of Items found, 16% increased Rarity of Items found]
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 11
+      - name: Ventor's Gamble
+        pct: 1
+      - name: Andvarius
+        pct: 1
   helmet:
     base: Imperial Greathelm
-    mods: [+215 to Armour, 39% increased Armour, +215 to maximum Life, +45% to Fire Resistance]
+    mods: [17% increased Rarity of Items found, +215 to Armour, 39% increased Armour, +215 to maximum Life, +45% to Fire Resistance, +36% of Armour also applies to Elemental Damage]
+    runes: [+4 to Maximum Rage, Raven-Touched]
+    ladder:
+      - name: Rare Helmet
+        pct: 96
+      - name: Alpha's Howl
+        pct: 2
+      - name: Constricting Command
+        pct: 1
+      - name: Decree of Acuity
+        pct: 0
   weapon:
     base: Siege Crossbow
-    mods: [169% increased Physical Damage, +5 to Level of all Projectile Skills]
+    implicits: [Grenade Skills Fire an additional Projectile]
+    mods: [Adds 53 to 91 Physical Damage, 169% increased Physical Damage, +5 to Level of all Projectile Skills, 73% increased Physical Damage, +165 to Accuracy Rating, 16% increased Attack Speed, +2 to maximum number of Summoned Ballista Totems]
+    runes: [40% increased Physical Damage, +1 to Level of all Grenade Skill Gems]
+    ladder:
+      - name: Rare Crossbow
+        pct: 98
+      - name: Sculpted Suffering
+        pct: 4
+      - name: Rare Talisman
+        pct: 3
+      - name: Frostbreath
+        pct: 2
   amulet:
     unique: Fireflower
+    ladder:
+      - name: Fireflower
+        pct: 74
+      - name: Idol of Uldurn
+        pct: 15
+      - name: Rare Amulet
+        pct: 10
+      - name: Astramentis
+        pct: 1
 passives:
   attribute: str
   path:

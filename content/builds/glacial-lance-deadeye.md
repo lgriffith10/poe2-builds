@@ -50,6 +50,28 @@ skills:
     supports: [Prolonged Duration II, Daresso's Passion, Refraction II]
   - gem: "Purity of Ice"
     supports: [Vitality II, Cannibalism II, Herbalism II, Cool Headed]
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Whirling Slash, Twister, Frost Bomb, Fangs of Frost, Barrage]
+    - label: "Act Ii"
+      gems: [Freezing Mark, Ice-Tipped Arrows]
+    - label: "ACT II Swap"
+      gems: [Glacial Lance, Pounce, Freezing Mark, Arctic Howl]
+  spirit:
+    - label: "Act I"
+      gems: [War Banner]
+    - label: "Act Ii"
+      gems: [Mirage Archer, Herald of Ice, Wind Dancer]
+    - label: "Act Iii"
+      gems: [Combat Frenzy]
+  supports:
+    - label: "Act I"
+      gems: [Retreat I, Rage I, Rapid Attacks I, Prolonged Duration I, Rapid Casting I]
+    - label: "Act Ii"
+      gems: [Frost Nexus, Elemental Armament II, Prolonged Duration I]
+    - label: "Glacial Lance Swap"
+      gems: [Cold Attunement, Elemental Armament II, Raging Cry, Rapid Attacks I, Ice Bite II]
 leveling:
   - name: "Campaign"
     steps:

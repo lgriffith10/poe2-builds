@@ -65,6 +65,17 @@ skills:
     supports: [Prolonged Duration II, Magnified Area II, Cooldown Recovery II]
     note: "From a Chiming Staff on weapon set 2"
     weaponSet: 2
+gemPriority:
+  skills:
+    - label: "Damage"
+      gems: [Frostbolt, Frost Wall, Comet, Snap]
+    - label: "Debuffs"
+      gems: [Frost Bomb, Elemental Weakness]
+  spirit:
+    - label: "Early"
+      gems: [Cast on Freeze]
+    - label: "50%+ Crit Chance"
+      gems: [Cast on Critical]
 levelingSource:
   title: "Ice Nova Snap Stormweaver Build Guide"
   url: https://maxroll.gg/poe2/build-guides/cold-snap-frostbolt-stormweaver-leveling-guide

@@ -49,6 +49,36 @@ skills:
     supports: [Prolonged Duration II, Cooldown Recovery I, Rapid Casting II, Mobility, Efficiency II]
   - gem: "Skeletal Sniper"
     supports: [Maim, Last Gasp, Chain III, Culling Strike II, Rapid Attacks II]
+gemPriority:
+  skills:
+    - label: "First"
+      gems: [Contagion, Skeletal Sniper]
+    - label: ""
+      gems: [Unearth, Frost Bomb]
+    - label: ""
+      gems: [Elemental Weakness, Pain Offering]
+    - label: "Act 4 (Use one or two)"
+      gems: [Skeletal Cleric]
+  spirit:
+    - label: "ACT I (The King in The Mist)"
+      gems: [Raging Spirits]
+    - label: "ACT II (Golden Tomb)"
+      gems: [Raging Spirits]
+    - label: "ACT III (The Azak Bog Witch)"
+      gems: [Raging Spirits]
+    - label: "+Damage & 10% less dmg taken"
+      gems: [Wolf Pack]
+  supports:
+    - label: "Act I"
+      gems: [Unleash, Multishot I, Fire Attunement, Ignite I, Last Gasp, Arcane Surge]
+    - label: "Act Ii"
+      gems: [Minion Splash I, Infernal Legion I, Multishot II, Minion Instability, Efficiency I, Potent Exposure, Last Gasp]
+    - label: "Act Iii"
+      gems: [Feeding Frenzy I, Last Gasp, Loyalty]
+    - label: ""
+      gems: [Feeding Frenzy I, Cursed Ground, Meat Shield II, Elemental Army, Rapid Casting I, Ignite II]
+    - label: "Act 4"
+      gems: [Feeding Frenzy II, Muster, Rapid Attacks II, Sacrificial Lamb I, Danse Macabre, Meat Shield II, Rapid Casting II]
 leveling:
   - name: "Campaign"
     steps:

@@ -62,6 +62,18 @@ skills:
   - gem: "Elemental Weakness"
     supports: [Rapid Casting II, Cursed Ground, Cold Mastery, Heightened Curse]
     note: "Curse for bosses"
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Spark, Frost Bomb, Orb of Storms]
+  spirit:
+    - label: "Early"
+      gems: [Arctic Armour, Siphon Elements, Mana Remnants]
+    - label: "Late"
+      gems: [Cast on Critical, Convalescence]
+  supports:
+    - label: "Act I"
+      gems: [Short Fuse I, Overabundance I, Unleash]
 leveling:
   - steps:
       - name: "CAMPAIGN"

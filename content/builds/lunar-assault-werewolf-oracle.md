@@ -59,6 +59,38 @@ skills:
   - gem: "Rend"
     supports: [Prolonged Duration II, Rapid Attacks II, Blazing Critical, Rage III, Innervate]
     note: "Extra damage buff for attacks"
+gemPriority:
+  skills:
+    - label: "Act 1"
+      gems: [Lunar Assault, Entangle, Pounce, Frost Bomb]
+    - label: "Act 2"
+      gems: [Arctic Howl, Cross Slash]
+    - label: "Interludes"
+      gems: [Lunar Blessing, Freezing Mark]
+  spirit:
+    - label: "Act 1"
+      gems: [Herald of Ice]
+    - label: "Act 3"
+      gems: [Savage Fury, Overwhelming Presence]
+    - label: "Interludes"
+      gems: [Berserk]
+    - label: "High Budget"
+      gems: [Charge Regulation, Combat Frenzy]
+  supports:
+    - label: "Act 1"
+      gems: [Ice Bite I, Rapid Attacks I, Rage I, Fist of War I]
+    - label: "Act 2"
+      gems: [Mark for Death, Magnified Area I, Elemental Armament II, Overabundance I, Compressed Duration I, Execute I, Armour Break I, Deep Freeze, Ice Bite I]
+    - label: "Act 3"
+      gems: [Close Combat I, Ice Bite II, Elemental Armament II, Eternal Mark, Elemental Focus, Magnified Area II, Prolonged Duration II]
+    - label: "Act 4"
+      gems: [Rapid Attacks II, Supercritical, Blazing Critical, Rage II]
+    - label: "Interludes"
+      gems: [Close Combat II, Rage III, Supercritical, Mark of Siphoning II, Magnified Area II, Prolonged Duration II, Elemental Armament II, Cannibalism I, Vitality I, Culmination II, Heavy Swing]
+    - label: "Maps"
+      gems: [Crescendo II, Bhatair's Vengeance, Close Combat II, Ice Bite II, Mark of Siphoning II, Tireless, Raging Cry, Rage III, Armour Break III, Armour Explosion, Armour Demolisher II]
+    - label: "High Budget"
+      gems: [Ailith's Chimes, Garukhan's Resolve, Rakiata's Flow, Dialla's Desire, Prolonged Duration II, Blazing Critical, Rage III, Rapid Attacks III, Innervate, Cooldown Recovery II, Vitality II, Charge Profusion II, Empowered Sparks II, Uhtred's Augury, Uhtred's Exodus, Uhtred's Omen, Uruk's Smelting]
 leveling:
   - steps:
       - name: "Level 3"

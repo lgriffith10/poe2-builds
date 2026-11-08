@@ -66,27 +66,128 @@ skills:
 gear:
   amulet:
     base: Absent Amulet
-    mods: [+176 to maximum Mana, +50 to Spirit]
+    implicits: [-1 Prefix Modifier allowed, -1 Suffix Modifier allowed]
+    mods: [+4 to Level of all Spell Skills, +176 to maximum Mana, +50 to Spirit, 37% increased Cast Speed]
+    ladder:
+      - name: Rare Amulet
+        pct: 99
+      - name: Defiance of Destiny
+        pct: 1
+      - name: Beacon of Azis
+        pct: 0
+      - name: Astramentis
+        pct: 0
   body:
     unique: Morior Invictus
+    runes: [+100 to maximum Mana, +66% to Cold Resistance]
+    ladder:
+      - name: Rare Body Armour
+        pct: 52
+      - name: Morior Invictus
+        pct: 42
+      - name: Reverie
+        pct: 1
+      - name: Kaom's Heart
+        pct: 1
   boots:
     base: Sekhema Sandals
-    mods: [35% increased Movement Speed, +59 to maximum Energy Shield, +43% to Lightning Resistance, +25% to Chaos Resistance]
+    mods: [+44% to Fire Resistance, 35% increased Movement Speed, +59 to maximum Energy Shield, +43% to Lightning Resistance, +25% to Chaos Resistance, 99% increased Energy Shield]
+    runes: [5% increased Movement Speed, 10% increased Movement Speed when on Low Life]
+    ladder:
+      - name: Rare Boots
+        pct: 99
+      - name: Decree of Flight
+        pct: 1
+      - name: Ghostmarch
+        pct: 0
+      - name: Wanderlust
+        pct: 0
   belt:
     unique: Mageblood
+    ladder:
+      - name: Headhunter
+        pct: 43
+      - name: Mageblood
+        pct: 38
+      - name: Rare Belt
+        pct: 12
+      - name: Ingenuity
+        pct: 6
   helmet:
     base: Ancestral Tiara
-    mods: [37% increased Energy Shield, +32 to maximum Mana, 26% increased Critical Hit Chance, +37% to Fire Resistance, +35% to Lightning Resistance]
+    mods: [+72 to maximum Energy Shield, 37% increased Energy Shield, +32 to maximum Mana, 26% increased Critical Hit Chance, +37% to Fire Resistance, +35% to Lightning Resistance, 100% increased Energy Shield]
+    runes: [Pain Attunement, Raven-Touched]
+    ladder:
+      - name: Rare Helmet
+        pct: 95
+      - name: Alpha's Howl
+        pct: 2
+      - name: Veil of the Night
+        pct: 2
+      - name: Scold's Bridle
+        pct: 1
   gloves:
     base: Opulent Gloves
-    mods: [+2 to Level of all Projectile Skills, 38% increased Projectile Damage]
+    mods: [+122 to maximum Mana, +2 to Level of all Projectile Skills, 38% increased Projectile Damage, +56 to maximum Energy Shield, 60% increased effect of Socketed Augment Items, 28% increased Critical Damage Bonus]
+    runes: [12% increased Cast Speed, Can roll Marksman modifiers]
+    ladder:
+      - name: Rare Gloves
+        pct: 96
+      - name: Leopold's Applause
+        pct: 2
+      - name: Maligaro's Virtuosity
+        pct: 1
+      - name: Painter's Servant
+        pct: 1
+  weapon2:
+    base: Chiming Staff
+    mods: [Gain 52% of Damage as Extra Lightning Damage, 132% increased Spell Damage, +22 to Intelligence, 72% increased chance to Shock, +172 to maximum Mana, +6 to Level of all Spell Skills]
+    runes: [Can have 1 additional Crafted Modifier, 30% increased Mana Regeneration Rate]
+    ladder:
+      - name: The Unborn Lich
+        pct: 100
+      - name: Rare Staff
+        pct: 71
+      - name: Rare Talisman
+        pct: 1
+      - name: Amor Mandragora
+        pct: 1
   ring1:
     unique: Kalandra's Touch
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 75
+      - name: Ventor's Gamble
+        pct: 1
+      - name: Andvarius
+        pct: 1
   weapon:
     unique: The Unborn Lich
+    runes: [+1 to Level of all Spell Skills, Gain 5% of Damage as Extra Damage of all Elements, 25% chance for Spell Skills to fire 2 additional Projectiles]
+    ladder:
+      - name: The Unborn Lich
+        pct: 100
+      - name: Rare Staff
+        pct: 71
+      - name: Rare Talisman
+        pct: 1
+      - name: Amor Mandragora
+        pct: 1
   ring2:
     base: Mnemonic Ring
-    mods: [21% increased Cast Speed, +31 to Intelligence, +15% to all Elemental Resistances]
+    implicits: [8% increased maximum Mana]
+    mods: [+254 to maximum Mana, 21% increased Cast Speed, +31 to Intelligence, +15% to all Elemental Resistances, Gain 11% of Damage as Extra Fire Damage with Spells, 8% increased maximum Mana]
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 75
+      - name: Ventor's Gamble
+        pct: 1
+      - name: Andvarius
+        pct: 1
 passives:
   attribute: int
   path:

@@ -48,6 +48,28 @@ skills:
     supports: [Upheaval II, Pinpoint Critical, Inexorable Critical II, Rapid Casting II]
   - gem: "Scavenged Plating"
     supports: [Prolonged Duration II]
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Furious Slam, Volcano, Shockwave Totem, Pounce, Frost Bomb, Fury of the Mountain]
+    - label: "Act Ii"
+      gems: [Rampage, Ferocious Roar, Infernal Cry]
+    - label: "Act Iii+"
+      gems: [Rampage, Walking Calamity]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Ash]
+    - label: "Act Iii"
+      gems: [Savage Fury]
+    - label: "End of Campaign"
+      gems: [Charge Regulation]
+  supports:
+    - label: "Act I"
+      gems: [Fist of War I, Rapid Attacks I, Concentrated Area, Magnified Area I, Urgent Totems I, Overabundance I, Upheaval I, Elemental Armament I]
+    - label: "Act Ii"
+      gems: [Fist of War II, Raging Cry, Armour Break I, Magnified Area I]
+    - label: "Act Iii+"
+      gems: [Momentum, Burgeon I, Stomping Ground, Fire Penetration I, Prolonged Duration II, Close Combat I]
 leveling:
   - steps:
       - name: "Act 1"

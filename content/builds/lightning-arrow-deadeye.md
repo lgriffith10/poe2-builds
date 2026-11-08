@@ -59,6 +59,22 @@ skills:
   - gem: "Rhoa Mount"
     supports: [Blind I, Minion Mastery]
     note: "No movement speed penalty while shooting"
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Lightning Arrow, Lightning Rod, Freezing Salvo, Voltaic Mark, Barrage, Electrocuting Arrow]
+    - label: "Act Iii"
+      gems: [Tornado Shot]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Thunder]
+    - label: "Act Iii"
+      gems: [Wind Dancer]
+  supports:
+    - label: "Act I"
+      gems: [Rapid Attacks I, Multishot I, Elemental Armament I, Pierce I, Concentrated Area, Hourglass, Prolonged Duration I]
+    - label: "Act Iii"
+      gems: [Elemental Armament I, Charged Shots I, Lightning Attunement]
 leveling:
   - steps:
       - name: "Act 1"

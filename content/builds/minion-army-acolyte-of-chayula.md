@@ -49,6 +49,38 @@ skills:
     supports: [Prolonged Duration II, Cooldown Recovery II, Uhtred's Constellation, Rapid Casting II, Efficiency II]
   - gem: "Wardbound Minions"
     supports: [Efficiency II, Rapid Casting II, Mobility]
+gemPriority:
+  skills:
+    - label: "First"
+      gems: [Killing Palm]
+    - label: ""
+      gems: [Explosive Grenade, Flash Grenade, Frost Bomb]
+    - label: "Cut one with a level 5 skill gem. Save it for later on."
+      gems: [Flame Wall]
+    - label: "Act 2"
+      gems: [Elemental Weakness]
+    - label: "Act 3"
+      gems: [Bind Spectre, Despair, Pain Offering, Skeletal Storm Mage]
+  spirit:
+    - label: "ACT 1 (The King in The Mist)"
+      gems: [War Banner]
+    - label: "ACT 2 ( Golden Tomb)"
+      gems: [War Banner]
+    - label: "ACT 3 (The Azak Bog Witch)"
+      gems: [Wolf Pack]
+    - label: "Cut with an extra level +9 Spirit gem"
+      gems: [Raging Spirits]
+  supports:
+    - label: "Act 1"
+      gems: [Multishot I, Lightning Attunement, Elemental Armament I, Heightened Curse, Rapid Casting I]
+    - label: "Act 2"
+      gems: [Short Fuse I, Multishot II]
+    - label: "ACT 1 & 2 Minion gems"
+      gems: [Last Gasp, Loyalty, Selfless Remnants, Minion Splash I, Arcane Surge]
+    - label: "Act 3"
+      gems: [Cooldown Recovery I, Remnant Potency II, Harmonic Remnants II, Cursed Ground, Feeding Frenzy I, Muster]
+    - label: "ACT 3 Minion gems"
+      gems: [Last Gasp, Danse Macabre, Meat Shield II]
 leveling:
   - name: "Campaign Crossbow"
     steps:

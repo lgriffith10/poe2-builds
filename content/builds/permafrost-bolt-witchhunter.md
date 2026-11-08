@@ -46,6 +46,38 @@ skills:
     supports: [Mark of Siphoning II, Charged Mark, Lightning Exposure, Efficiency II]
   - gem: "Sorcery Ward"
     supports: [Cold Mastery, Clarity I]
+gemPriority:
+  skills:
+    - label: "1"
+      gems: [Permafrost Bolts]
+    - label: "2"
+      gems: [Fragmentation Rounds]
+    - label: "3"
+      gems: [Explosive Grenade]
+    - label: "4"
+      gems: [Freezing Mark]
+  spirit:
+    - label: ""
+      gems: [Herald of Ash]
+    - label: ""
+      gems: [Shard Scavenger]
+    - label: ""
+      gems: [Herald of Ice]
+    - label: ""
+      gems: [Wind Dancer]
+  supports:
+    - label: ""
+      gems: [Ice Bite I]
+    - label: ""
+      gems: [Concentrated Area]
+    - label: ""
+      gems: [Elemental Armament I]
+    - label: ""
+      gems: [Elemental Armament I]
+    - label: ""
+      gems: [Multishot I]
+    - label: ""
+      gems: [Magnified Area I]
 leveling:
   - name: "Campaign"
     steps:

@@ -49,6 +49,38 @@ skills:
     supports: [Cooldown Recovery II, Prolonged Duration II, Rapid Casting II, Uhtred's Constellation, Upwelling I]
   - gem: "Refutation"
     supports: [Cooldown Recovery II, Prolonged Duration II, Rapid Casting II, Mobility, Efficiency II]
+gemPriority:
+  skills:
+    - label: "First"
+      gems: [Skeletal Sniper]
+    - label: ""
+      gems: [Volcano, Contagion, Frost Bomb]
+    - label: ""
+      gems: [Elemental Weakness]
+    - label: ""
+      gems: [Pain Offering]
+    - label: "(Swap after you have enough spirit to summon at least 4-5)"
+      gems: [Skeletal Arsonist]
+    - label: "Act 4 (Use one or two)"
+      gems: [Skeletal Cleric]
+  spirit:
+    - label: "ACT I (The King in The Mist)"
+      gems: [Raging Spirits]
+    - label: "ACT II (Golden Tomb)"
+      gems: [Raging Spirits]
+    - label: "ACT III (The Azak Bog Witch)"
+      gems: [Raging Spirits]
+  supports:
+    - label: "Act 1"
+      gems: [Multishot I, Fire Attunement, Ignite I, Unleash, Last Gasp, Arcane Surge, Brutality I]
+    - label: "Act 2"
+      gems: [Minion Splash I, Multishot II, Last Gasp, Loyalty, Efficiency I, Potent Exposure, Brutality II]
+    - label: "Act 3"
+      gems: [Feeding Frenzy I, Cursed Ground, Meat Shield II, Rapid Casting I, Sacrificial Lamb I, Meat Shield I]
+    - label: "Act 4"
+      gems: [Danse Macabre, Muster, Feeding Frenzy II, Fire Exposure, Heightened Curse, Rapid Attacks II, Rapid Casting II, Meat Shield II]
+    - label: "Interludes"
+      gems: [Minion Splash II, Rage III, Brutality III]
 leveling:
   - name: "Campaign"
     steps:

@@ -55,6 +55,17 @@ skills:
   - gem: "Scavenged Plating"
     supports: [Prolonged Duration II, Cannibalism I]
     note: "Armour buff"
+gemPriority:
+  skills:
+    - label: "Level first"
+      gems: [Shield Wall, Fortifying Cry]
+    - label: "Level carefully only if mana is comfortable"
+      gems: [Infernal Cry]
+    - label: "Do not level"
+      gems: [Shield Charge, Leap Slam, Tame Beast]
+  spirit:
+    - label: "Lower prio"
+      gems: [Herald of Ash]
 levelingSource:
   title: "Boneshatter Titan Build Guide"
   url: https://maxroll.gg/poe2/build-guides/boneshatter-titan-leveling-guide

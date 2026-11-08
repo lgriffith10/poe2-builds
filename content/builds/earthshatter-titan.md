@@ -62,29 +62,144 @@ skills:
 gear:
   gloves:
     base: Massive Mitts
-    mods: [+183 to Armour, Adds 6 to 12 Physical Damage to Attacks, 16% increased Attack Speed, +41% of Armour also applies to Elemental Damage]
+    mods: [+22% to Chaos Resistance, +183 to Armour, Adds 6 to 12 Physical Damage to Attacks, 16% increased Attack Speed, +41% of Armour also applies to Elemental Damage, 37% increased Armour, +39 to maximum Life]
+    runes: [Adds 5 to 12 Physical Damage to Attacks, 8% increased Attack Speed, 1% increased Skill Speed for each Corrupted Item Equipped, Corrupting will always result in change]
+    ladder:
+      - name: Rare Gloves
+        pct: 73
+      - name: Horror's Flight
+        pct: 17
+      - name: Hateforge
+        pct: 4
+      - name: Maligaro's Virtuosity
+        pct: 2
+  weapon2:
+    unique: Sadist's Mercy
+    runes: [5% increased Attack Speed]
+    ladder:
+      - name: Sadist's Mercy
+        pct: 47
+      - name: Mjölner
+        pct: 23
+      - name: Amor Mandragora
+        pct: 9
+      - name: Sacred Flame
+        pct: 9
   amulet:
     base: Lament Amulet
-    mods: [+4 to Level of all Melee Skills, +31 to Dexterity]
+    implicits: [-1 Prefix Modifier allowed]
+    mods: [+50 to Spirit, +4 to Level of all Melee Skills, +31 to Dexterity, 6% increased Skill Speed, "28% increased Global Armour, Evasion and Energy Shield"]
+    ladder:
+      - name: Rare Amulet
+        pct: 84
+      - name: Astramentis
+        pct: 6
+      - name: Defiance of Destiny
+        pct: 5
+      - name: Immaculate Adherence
+        pct: 3
   helmet:
     unique: Vestige of Darkness
+    runes: [+75 to maximum Life, +50 to all Attributes]
+    ladder:
+      - name: Constricting Command
+        pct: 35
+      - name: Vestige of Darkness
+        pct: 23
+      - name: Rare Helmet
+        pct: 21
+      - name: Thrillsteel
+        pct: 12
   belt:
     unique: Mageblood
+    ladder:
+      - name: Mageblood
+        pct: 44
+      - name: Rare Belt
+        pct: 36
+      - name: Headhunter
+        pct: 14
+      - name: Darkness Enthroned
+        pct: 2
   ring1:
     base: Prismatic Ring
-    mods: [+91 to maximum Life, 32% increased Rarity of Items found, +11% to all Elemental Resistances, Leech 8.16% of Physical Attack Damage as Mana]
+    implicits: [+9% to all Elemental Resistances]
+    mods: [+91 to maximum Life, 32% increased Rarity of Items found, +11% to all Elemental Resistances, Leech 8.16% of Physical Attack Damage as Mana, Adds 15 to 25 Physical Damage to Attacks]
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 15
+      - name: Polcirkeln
+        pct: 4
+      - name: Andvarius
+        pct: 0
   ring2:
     base: Gold Ring
-    mods: [+112 to maximum Life, 18% increased Rarity of Items found, +18% to Chaos Resistance, Leech 8.26% of Physical Attack Damage as Mana]
+    implicits: [12% increased Rarity of Items found]
+    mods: [+112 to maximum Life, 18% increased Rarity of Items found, +18% to Chaos Resistance, Leech 8.26% of Physical Attack Damage as Mana, Adds 22 to 26 Physical Damage to Attacks, 10% increased Attack Speed]
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 15
+      - name: Polcirkeln
+        pct: 4
+      - name: Andvarius
+        pct: 0
   body:
     base: Ornate Plate
-    mods: [+176 to maximum Life, +61 to Spirit, +23% to Lightning Resistance, +47% of Armour also applies to Elemental Damage]
+    implicits: [Regenerate 2.37% of maximum Life per second]
+    mods: [+176 to maximum Life, +61 to Spirit, +23% to Lightning Resistance, +47% of Armour also applies to Elemental Damage, +25% to Chaos Resistance, 10% increased maximum Life]
+    runes: [5% increased maximum Life, Regenerate 2% of maximum Life per second]
+    ladder:
+      - name: Morior Invictus
+        pct: 49
+      - name: Rare Body Armour
+        pct: 33
+      - name: The Brass Dome
+        pct: 11
+      - name: Reverie
+        pct: 2
+  offhand2:
+    base: Tawhoan Tower Shield
+    mods: [28% increased Block chance, 99% increased Armour, +187 to maximum Life, 8% additional Physical Damage Reduction, +45% to Cold Resistance, +40% of Armour also applies to Elemental Damage]
+    runes: [15% increased Block chance, +25% of Armour also applies to Elemental Damage]
+    ladder:
+      - name: Chernobog's Pillar
+        pct: 27
+      - name: Rare Shield
+        pct: 12
+      - name: Svalinn
+        pct: 5
+      - name: Nightfall
+        pct: 3
   boots:
     base: Vaal Greaves
-    mods: [+178 to Armour, +141 to maximum Life, +37% to Fire Resistance, +37% to Lightning Resistance, +40% of Armour also applies to Elemental Damage]
+    mods: [+178 to Armour, +141 to maximum Life, +37% to Fire Resistance, +37% to Lightning Resistance, +40% of Armour also applies to Elemental Damage, +26% to Chaos Resistance, 30% increased Movement Speed]
+    runes: [+1 Suffix Modifier allowed, +75 to maximum Life]
+    ladder:
+      - name: Rare Boots
+        pct: 98
+      - name: Atziri's Step
+        pct: 1
+      - name: Decree of Flight
+        pct: 1
+      - name: Trampletoe
+        pct: 0
   weapon:
     base: Flanged Mace
-    mods: [Adds 26 to 35 Cold Damage, Adds 1 to 59 Lightning Damage, 35% reduced Attribute Requirements, Causes 80% increased Stun Buildup]
+    mods: [Adds 26 to 35 Cold Damage, Adds 1 to 59 Lightning Damage, 35% reduced Attribute Requirements, Causes 80% increased Stun Buildup, +330 to Accuracy Rating, 31% increased Attack Speed]
+    runes: [15% increased Attack Speed]
+    ladder:
+      - name: Sadist's Mercy
+        pct: 47
+      - name: Mjölner
+        pct: 23
+      - name: Amor Mandragora
+        pct: 9
+      - name: Sacred Flame
+        pct: 9
 passives:
   attribute: str
   path:

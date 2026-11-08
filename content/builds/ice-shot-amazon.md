@@ -47,6 +47,34 @@ skills:
     supports: [Compressed Duration II]
   - gem: "Rhoa Mount"
     supports: [Loyalty, Meat Shield II, Elemental Army]
+gemPriority:
+  skills:
+    - label: ""
+      gems: [Escape Shot]
+    - label: ""
+      gems: [Frost Bomb]
+    - label: ""
+      gems: [Stormcaller Arrow]
+    - label: ""
+      gems: [Snipe, Ice-Tipped Arrows]
+    - label: ""
+      gems: [Barrage]
+    - label: ""
+      gems: [Freezing Salvo]
+    - label: ""
+      gems: [Ice Shot]
+  spirit:
+    - label: ""
+      gems: [Herald of Ice]
+    - label: ""
+      gems: [Combat Frenzy]
+    - label: ""
+      gems: [Wind Dancer]
+  supports:
+    - label: "Level 1-5"
+      gems: [Rapid Attacks I, Cold Attunement]
+    - label: ""
+      gems: [Ice Bite I, Cold Attunement, Freeze, Window of Opportunity I, Concentrated Area, Magnified Area I, Elemental Armament I]
 leveling:
   - name: "Campaign"
     steps:

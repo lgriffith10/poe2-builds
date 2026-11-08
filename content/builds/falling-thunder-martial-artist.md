@@ -49,6 +49,24 @@ skills:
     supports: [Prolonged Duration II, Rapid Attacks III]
   - gem: "Hollow Focus"
     supports: [Concentrated Area, Cooldown Recovery II]
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Frozen Locus, Killing Palm, Frost Bomb, Wing Blast, Wind Blast, Devour]
+    - label: "Act Ii"
+      gems: [Storm Wave, Siphoning Strike]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Ice]
+    - label: "Act Iii"
+      gems: [Herald of Thunder]
+  supports:
+    - label: "Act I"
+      gems: [Rage I, Rapid Attacks I, Thrill of the Kill, Lightning Attunement, Elemental Armament I]
+    - label: "Act Ii"
+      gems: [Magnified Area I, Concentrated Area, Ice Bite I]
+    - label: "Act Iii"
+      gems: [Prolonged Duration I, Cooldown Recovery I, Charge Profusion I, Elemental Focus]
 leveling:
   - name: "Campaign"
     steps:

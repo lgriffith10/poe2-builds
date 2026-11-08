@@ -51,6 +51,36 @@ skills:
     supports: [Last Gasp, Muster, Maim, Feeding Frenzy II]
   - gem: "Refutation"
     supports: [Prolonged Duration II, Cooldown Recovery II, Rapid Casting II]
+gemPriority:
+  skills:
+    - label: "First"
+      gems: [Contagion, Skeletal Sniper]
+    - label: ""
+      gems: [Unearth, Frost Bomb]
+    - label: ""
+      gems: [Elemental Weakness, Pain Offering]
+    - label: "Act 4 (Use one or two)"
+      gems: [Skeletal Cleric]
+    - label: "Swap to Powered Zealot Spectres in the Interlude"
+      gems: [Bind Spectre]
+  spirit:
+    - label: "ACT I (The King in The Mist)"
+      gems: [Raging Spirits]
+    - label: "ACT II (Golden Tomb)"
+      gems: [Raging Spirits]
+    - label: "ACT III (The Azak Bog Witch)"
+      gems: [Raging Spirits]
+    - label: "+Damage & 10% less dmg taken"
+      gems: [Wolf Pack]
+  supports:
+    - label: "Act I"
+      gems: [Unleash, Multishot I, Fire Attunement, Ignite I, Last Gasp, Arcane Surge]
+    - label: "Act Ii"
+      gems: [Minion Splash I, Infernal Legion I, Multishot II, Minion Instability, Potent Exposure, Efficiency I]
+    - label: "Act Iii"
+      gems: [Feeding Frenzy I, Cursed Ground, Last Gasp, Loyalty, Meat Shield II, Elemental Army, Ignite II, Rapid Casting I]
+    - label: "Act 4"
+      gems: [Feeding Frenzy II, Muster, Efficiency II, Danse Macabre, Rapid Attacks II, Rapid Casting II, Heightened Curse, Wildshards II, Pierce III]
 leveling:
   - name: "Campaign"
     steps:

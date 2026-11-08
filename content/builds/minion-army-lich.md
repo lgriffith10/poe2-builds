@@ -49,6 +49,38 @@ skills:
     supports: [Bidding III, Last Gasp, Prolonged Duration II, Magnified Area II, Efficiency II]
   - gem: "Refutation"
     supports: [Prolonged Duration II, Cooldown Recovery II, Rapid Casting II, Mobility, Efficiency II]
+gemPriority:
+  skills:
+    - label: "First"
+      gems: [Skeletal Sniper]
+    - label: ""
+      gems: [Volcano, Contagion, Frost Bomb]
+    - label: ""
+      gems: [Elemental Weakness]
+    - label: ""
+      gems: [Pain Offering]
+    - label: "(Swap after you have enough spirit to summon at least 4-5)"
+      gems: [Skeletal Arsonist]
+    - label: "Act 4 & Interludes (Use one or two)"
+      gems: [Skeletal Cleric]
+  spirit:
+    - label: "ACT I (The King in The Mist)"
+      gems: [Raging Spirits]
+    - label: "ACT II (Golden Tomb)"
+      gems: [Raging Spirits]
+    - label: "ACT III (The Azak Bog Witch)"
+      gems: [Raging Spirits]
+    - label: "+Damage & 10% less dmg taken"
+      gems: [Wolf Pack]
+  supports:
+    - label: "Act I"
+      gems: [Multishot I, Fire Attunement, Ignite I, Unleash, Last Gasp, Arcane Surge]
+    - label: "Act Ii"
+      gems: [Minion Splash I, Infernal Legion I, Multishot II, Spell Cascade, Efficiency I, Minion Instability, Fire Attunement, Potent Exposure]
+    - label: "Act Iii"
+      gems: [Feeding Frenzy I, Focused Curse, Meat Shield II, Elemental Army, Loyalty, Muster]
+    - label: "Act 4 & Interludes"
+      gems: [Feeding Frenzy II, Last Gasp, Sacrificial Lamb I, Danse Macabre, Efficiency II, Rapid Casting II, Rapid Attacks II, Meat Shield II]
 leveling:
   - name: "Campaign"
     steps:

@@ -59,6 +59,20 @@ skills:
     supports: []
   - gem: Charge Regulation
     supports: []
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Whirling Slash, Twister, Frost Bomb, Barrage, Ice-Tipped Arrows]
+    - label: "Act Ii"
+      gems: [Freezing Mark]
+  spirit:
+    - label: "Act I"
+      gems: [War Banner, Herald of Ice, Wind Dancer]
+  supports:
+    - label: "Act I"
+      gems: [Rage I, Rapid Attacks I, Retreat I, Projectile Acceleration I]
+    - label: "Act Ii"
+      gems: [Salvo]
 leveling:
   - name: "Leveling"
     steps:

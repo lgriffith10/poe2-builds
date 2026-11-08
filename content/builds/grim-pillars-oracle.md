@@ -49,6 +49,24 @@ skills:
     supports: [Mysticism II, Clarity II, Vitality II]
     note: Aura
     weaponSet: 2
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Contagion, Frost Bomb, Essence Drain, Bone Cage, Bonestorm, Thunderstorm]
+    - label: "Act Ii"
+      gems: [Entangle]
+    - label: "Act Iii"
+      gems: [Thrashing Vines]
+  spirit:
+    - label: "Act I"
+      gems: [Ravenous Swarm]
+  supports:
+    - label: "Act I"
+      gems: [Unleash, Controlled Destruction, Spell Cascade, Swift Affliction I, Rapid Casting I, Burgeon I, Corrosion]
+    - label: "Act Ii"
+      gems: [Living Lightning, Magnified Area I, Lightning Attunement, Concentrated Area]
+    - label: "Act Iii"
+      gems: [Branching Fissures I]
 leveling:
   - name: "Plants Leveling"
     steps:

@@ -63,31 +63,142 @@ skills:
 gear:
   boots:
     base: Sekhema Sandals
-    mods: []
+    mods: [35% increased Movement Speed, +57 to maximum Energy Shield, 89% increased Energy Shield, +44% to Fire Resistance, +34% to Cold Resistance, +41% to Lightning Resistance]
+    runes: ["20% increased Armour, Evasion and Energy Shield"]
+    ladder:
+      - name: Rare Boots
+        pct: 91
+      - name: Bones of Ullr
+        pct: 4
+      - name: Decree of Flight
+        pct: 4
+      - name: Wanderlust
+        pct: 0
   amulet:
     base: Portent Amulet
-    mods: [+58 to maximum Energy Shield, +4 to Level of all Minion Skills]
+    implicits: [-1 Suffix Modifier allowed]
+    mods: [+50 to Spirit, +58 to maximum Energy Shield, +4 to Level of all Minion Skills, Minions have 28% increased Cooldown Recovery Rate, "30% increased Global Armour, Evasion and Energy Shield"]
+    ladder:
+      - name: Rare Amulet
+        pct: 99
+      - name: Ligurium Talisman
+        pct: 0
+      - name: Beacon of Azis
+        pct: 0
+      - name: Astramentis
+        pct: 0
   weapon:
     base: Shrine Sceptre
-    mods: [85% increased Spirit, +41 to maximum Mana, Minions have 50% increased maximum Life]
+    mods: [+4 to Level of all Minion Skills, 85% increased Spirit, +41 to maximum Mana, Minions have 50% increased maximum Life, Allies in your Presence deal 102% increased Damage, +5 maximum stacks of Puppet Master]
+    runes: [Allies in your Presence deal 40% increased Damage, 30% reduced Mana Cost Efficiency of Command Skills, Minions deal 60% increased Damage with Command Skills]
+    ladder:
+      - name: Rare Sceptre
+        pct: 98
+      - name: Rare Staff
+        pct: 5
+      - name: Rare Talisman
+        pct: 5
+      - name: Hysseg's Claw
+        pct: 2
   body:
     unique: The Mutable Star
+    runes: [12% increased Rarity of Items found, Hits against you have 50% reduced Critical Damage Bonus, +50% of Armour also applies to Elemental Damage, +2 to Armour per 1 Spirit]
+    ladder:
+      - name: Rare Body Armour
+        pct: 71
+      - name: Silks of Veneration
+        pct: 12
+      - name: Morior Invictus
+        pct: 6
+      - name: The Mutable Star
+        pct: 3
   gloves:
     base: Ancient Cuffs
-    mods: [93% increased Armour and Energy Shield, Adds 21 to 36 Fire damage to Attacks, +42% to Fire Resistance, +41% to Lightning Resistance, +40% of Armour also applies to Elemental Damage]
+    mods: [93% increased Armour and Energy Shield, Adds 21 to 36 Fire damage to Attacks, +42% to Fire Resistance, +41% to Lightning Resistance, +40% of Armour also applies to Elemental Damage, +43 to Armour, +10 to maximum Energy Shield]
+    runes: [Destroys all Augment Sockets on the item to create a Jewel Socket]
+    ladder:
+      - name: Rare Gloves
+        pct: 96
+      - name: Horror's Flight
+        pct: 3
+      - name: Aurseize
+        pct: 1
+      - name: Maligaro's Virtuosity
+        pct: 0
   ring2:
     base: Unset Ring
-    mods: [Adds 1 to 25 Lightning damage to Attacks, +76 to maximum Life, Minions have 47% increased Critical Hit Chance, Minions have 49% increased Critical Damage Bonus]
+    implicits: [Grants 1 additional Skill Slot]
+    mods: [Adds 1 to 25 Lightning damage to Attacks, +76 to maximum Life, Minions have 47% increased Critical Hit Chance, Minions have 49% increased Critical Damage Bonus, Minions have 35% increased Cooldown Recovery Rate, 5% increased maximum Mana]
+    ladder:
+      - name: Rare Ring
+        pct: 76
+      - name: Evergrasping Ring
+        pct: 47
+      - name: Kalandra's Touch
+        pct: 23
+      - name: Ventor's Gamble
+        pct: 7
   offhand:
     base: Tasalian Focus
-    mods: [+85 to maximum Energy Shield, 38% increased Energy Shield, +30 to maximum Mana, +42% to Fire Resistance, 21% increased Energy Shield Recharge Rate]
+    mods: [96% increased Energy Shield, +85 to maximum Energy Shield, 38% increased Energy Shield, +30 to maximum Mana, +42% to Fire Resistance, 21% increased Energy Shield Recharge Rate, +2 to Level of all Minion Skills]
+    runes: ["40% increased Armour, Evasion and Energy Shield"]
+    ladder:
+      - name: Rare Focus
+        pct: 95
+      - name: Rare Shield
+        pct: 1
+      - name: Drillneck
+        pct: 1
+      - name: Prism Guardian
+        pct: 0
   ring1:
     unique: Kalandra's Touch
+    ladder:
+      - name: Rare Ring
+        pct: 76
+      - name: Evergrasping Ring
+        pct: 47
+      - name: Kalandra's Touch
+        pct: 23
+      - name: Ventor's Gamble
+        pct: 7
   belt:
     unique: Mageblood
+    ladder:
+      - name: Rare Belt
+        pct: 59
+      - name: Mageblood
+        pct: 31
+      - name: Headhunter
+        pct: 5
+      - name: Ingenuity
+        pct: 2
   helmet:
     base: Ancestral Tiara
-    mods: [+70 to maximum Energy Shield, 90% increased Energy Shield, 17% increased Rarity of Items found, +2 to Level of all Minion Skills, 16% increased Energy Shield Recharge Rate]
+    mods: [+70 to maximum Energy Shield, 90% increased Energy Shield, 17% increased Rarity of Items found, +2 to Level of all Minion Skills, 16% increased Energy Shield Recharge Rate, 19% increased Rarity of Items found]
+    runes: [8% increased Reservation Efficiency of Minion Skills, Raven-Touched]
+    ladder:
+      - name: Rare Helmet
+        pct: 99
+      - name: Alpha's Howl
+        pct: 1
+      - name: Vestige of Darkness
+        pct: 0
+      - name: Atziri's Disdain
+        pct: 0
+  weapon2:
+    base: Omen Sceptre
+    mods: [28% increased Spirit]
+    runes: [+24 to Intelligence]
+    ladder:
+      - name: Rare Sceptre
+        pct: 98
+      - name: Rare Staff
+        pct: 5
+      - name: Rare Talisman
+        pct: 5
+      - name: Hysseg's Claw
+        pct: 2
 passives:
   attribute: int
   path:

@@ -57,31 +57,138 @@ skills:
 gear:
   body:
     unique: Morior Invictus
+    runes: [+30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield, "80% increased Armour, Evasion and Energy Shield"]
+    ladder:
+      - name: Rare Body Armour
+        pct: 62
+      - name: Morior Invictus
+        pct: 32
+      - name: Atziri's Splendour
+        pct: 2
+      - name: Forgotten Warden
+        pct: 2
   ring1:
     unique: Kalandra's Touch
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 13
+      - name: Polcirkeln
+        pct: 5
+      - name: Andvarius
+        pct: 1
   boots:
     base: Daggerfoot Shoes
-    mods: [90% increased Evasion and Energy Shield, +39% to Fire Resistance, Skills have 14% chance to not remove Charges but still count as consuming them, +0.4 metres to Dodge Roll distance]
+    mods: [35% increased Movement Speed, 90% increased Evasion and Energy Shield, +39% to Fire Resistance, Skills have 14% chance to not remove Charges but still count as consuming them, +0.4 metres to Dodge Roll distance, Gain Deflection Rating equal to 20% of Evasion Rating, +14 to Spirit]
+    runes: [+1 Suffix Modifier allowed, Can roll Chronomancy modifiers]
+    ladder:
+      - name: Rare Boots
+        pct: 94
+      - name: Atziri's Step
+        pct: 2
+      - name: Powertread
+        pct: 2
+      - name: Decree of Flight
+        pct: 1
   helmet:
     base: Grinning Mask
-    mods: [42% increased Evasion and Energy Shield, +42 to maximum Life, 17% increased Rarity of Items found, 30% increased Critical Hit Chance, +32 to Dexterity, +41% to Fire Resistance]
+    mods: [42% increased Evasion and Energy Shield, +42 to maximum Life, 17% increased Rarity of Items found, 30% increased Critical Hit Chance, +32 to Dexterity, +41% to Fire Resistance, 54% increased Evasion and Energy Shield]
+    runes: ["40% increased Armour, Evasion and Energy Shield"]
+    ladder:
+      - name: Rare Helmet
+        pct: 97
+      - name: Alpha's Howl
+        pct: 2
+      - name: Vestige of Darkness
+        pct: 1
   amulet:
     base: Absent Amulet
-    mods: [+4 to Level of all Melee Skills]
+    implicits: [-1 Prefix Modifier allowed, -1 Suffix Modifier allowed]
+    mods: [+122 to maximum Mana, +4 to Level of all Melee Skills, +5% to Quality of all Skills, "28% increased Global Armour, Evasion and Energy Shield"]
+    ladder:
+      - name: Rare Amulet
+        pct: 95
+      - name: Astramentis
+        pct: 1
+      - name: Beacon of Azis
+        pct: 1
+      - name: Choir of the Storm
+        pct: 1
+  weapon2:
+    base: Sinister Quarterstaff
+    mods: [Adds 115 to 178 Cold Damage, Adds 14 to 295 Lightning Damage, Causes 76% increased Stun Buildup, 133% increased Elemental Damage with Attacks, 24% increased Attack Speed, +3 to Level of all Attack Skills]
+    runes: [Adds 16 to 20 Cold Damage, Gain 5% of Damage as Extra Damage of all Elements]
+    ladder:
+      - name: Rare Quarterstaff
+        pct: 90
+      - name: Rare Wand
+        pct: 11
+      - name: Rare Sceptre
+        pct: 8
+      - name: Duality
+        pct: 5
   offhand:
     base: Tasalian Focus
-    mods: []
+    mods: [+77 to maximum Energy Shield, 110% increased Energy Shield, +15 to maximum Mana, 16% increased Cast Speed, +40% to Fire Resistance, 19% increased Energy Shield Recharge Rate]
+    ladder:
+      - name: Rare Focus
+        pct: 13
+      - name: Redblade Banner
+        pct: 6
+      - name: Crest of Ardura
+        pct: 1
+      - name: Kaltenhalt
+        pct: 1
   weapon:
     base: Withered Wand
     mods: [Gain 30% of Damage as Extra Lightning Damage, 79% increased Chaos Damage, +145 to maximum Mana, +3 to Level of all Spell Skills, 28% increased Cast Speed, +28 to Intelligence]
+    ladder:
+      - name: Rare Quarterstaff
+        pct: 90
+      - name: Rare Wand
+        pct: 11
+      - name: Rare Sceptre
+        pct: 8
+      - name: Duality
+        pct: 5
   belt:
     unique: Mageblood
+    ladder:
+      - name: Mageblood
+        pct: 42
+      - name: Headhunter
+        pct: 24
+      - name: Shavronne's Satchel
+        pct: 15
+      - name: Rare Belt
+        pct: 14
   ring2:
     base: Prismatic Ring
-    mods: [Adds 33 to 51 Fire damage to Attacks, +166 to maximum Mana, +13% to all Elemental Resistances, +30% to Cold Resistance, +41% to Lightning Resistance]
+    implicits: [+10% to all Elemental Resistances]
+    mods: [Adds 33 to 51 Fire damage to Attacks, +166 to maximum Mana, +13% to all Elemental Resistances, +30% to Cold Resistance, +41% to Lightning Resistance, Adds 18 to 26 Cold damage to Attacks]
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 13
+      - name: Polcirkeln
+        pct: 5
+      - name: Andvarius
+        pct: 1
   gloves:
     base: Ancient Cuffs
-    mods: [24% increased Armour and Energy Shield, Adds 13 to 18 Cold damage to Attacks, Adds 2 to 71 Lightning damage to Attacks, +24 to maximum Life, +2 to Level of all Melee Skills, +45% to Cold Resistance]
+    mods: [24% increased Armour and Energy Shield, Adds 13 to 18 Cold damage to Attacks, Adds 2 to 71 Lightning damage to Attacks, +24 to maximum Life, +2 to Level of all Melee Skills, +45% to Cold Resistance, Leech 8.19% of Physical Attack Damage as Mana]
+    runes: [Destroys all Augment Sockets on the item to create a Jewel Socket]
+    ladder:
+      - name: Rare Gloves
+        pct: 94
+      - name: Thunderfist
+        pct: 2
+      - name: Hand of Wisdom and Action
+        pct: 1
+      - name: Kitoko's Current
+        pct: 1
 passives:
   attribute: dex
   path:

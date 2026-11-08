@@ -56,6 +56,38 @@ skills:
     supports: [Last Gasp, Maim, Chain III]
   - gem: Wolf Pack
     supports: [Muster, Last Gasp, Loyalty, Rage III, Feeding Frenzy II]
+gemPriority:
+  skills:
+    - label: "First    (Max level 7 Volcano)"
+      gems: [Volcano, Skeletal Sniper]
+    - label: ""
+      gems: [Unearth, Contagion, Frost Bomb]
+    - label: ""
+      gems: [Skeletal Arsonist, Freezing Mark, Skeletal Reaver, Skeletal Sniper, Pain Offering, Skeletal Storm Mage]
+    - label: "Act 4 (Use one or two)"
+      gems: [Skeletal Cleric]
+    - label: "Swap to Powered Zealot Spectres in the Interlude"
+      gems: [Bind Spectre, Elemental Weakness]
+  spirit:
+    - label: "ACT I (The King in The Mist)"
+      gems: [Raging Spirits]
+    - label: "ACT II (Golden Tomb)"
+      gems: [Raging Spirits]
+    - label: "ACT III (The Azak Bog Witch)"
+      gems: [Wolf Pack]
+  supports:
+    - label: "Act I"
+      gems: [Multishot I, Fire Attunement, Ignite I, Last Gasp, Arcane Surge, Lightning Attunement, Rapid Casting I]
+    - label: "Act II"
+      gems: [Multishot II, Bidding I, Elemental Armament II, Mark for Death, Armour Demolisher I, Fire Attunement, Last Gasp]
+    - label: "Act Iii"
+      gems: [Muster, Bidding I, Loyalty, Last Gasp]
+    - label: ""
+      gems: [Last Gasp, Meat Shield II]
+    - label: "Act 4"
+      gems: [Bidding II, Long Fuse I, Feeding Frenzy II, Danse Macabre, Meat Shield II, Elemental Army, Muster]
+    - label: "Interludes"
+      gems: [Pierce III, Wildshards II, Brutality III, Maim, Cursed Ground, Heightened Curse, Efficiency II, Chain III, Mobility, Heft]
 leveling:
   - name: "Campaign"
     steps:

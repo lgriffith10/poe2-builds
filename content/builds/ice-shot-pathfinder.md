@@ -55,31 +55,140 @@ skills:
 gear:
   weapon:
     base: Warmonger Bow
-    mods: [Adds 35 to 57 Physical Damage, 100% increased Elemental Damage with Attacks, +200% Surpassing chance to fire an additional Arrow]
+    mods: [179% increased Physical Damage, Adds 35 to 57 Physical Damage, 100% increased Elemental Damage with Attacks, +200% Surpassing chance to fire an additional Arrow, +4.5% to Critical Hit Chance, +2 to Level of all Attack Skills, 25% chance to gain Onslaught on Killing Hits with this Weapon]
+    runes: [+1 Suffix Modifier allowed, Bow Attacks fire an additional Arrow, Gain 5% of Damage as Extra Damage of all Elements]
+    ladder:
+      - name: Rare Bow
+        pct: 95
+      - name: Hysseg's Claw
+        pct: 27
+      - name: Adonia's Ego
+        pct: 4
+      - name: Sylvan's Effigy
+        pct: 2
   body:
     unique: Morior Invictus
+    runes: [+30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield, 15% of Chaos Damage from Hits taken as Damage of a random Element, 10% increased Deflection Rating]
+    ladder:
+      - name: Rare Body Armour
+        pct: 65
+      - name: Morior Invictus
+        pct: 30
+      - name: Hyrri's Ire
+        pct: 2
+      - name: The Brass Dome
+        pct: 1
   belt:
     unique: Mageblood
+    ladder:
+      - name: Mageblood
+        pct: 49
+      - name: Headhunter
+        pct: 42
+      - name: Rare Belt
+        pct: 6
+      - name: Ingenuity
+        pct: 2
   ring1:
     base: Gold Ring
-    mods: [Adds 32 to 47 Cold damage to Attacks, +14% to all Elemental Resistances, +21% to Chaos Resistance]
+    implicits: [15% increased Rarity of Items found]
+    mods: [19% increased Rarity of Items found, Adds 32 to 47 Cold damage to Attacks, +14% to all Elemental Resistances, +21% to Chaos Resistance, Adds 25 to 40 Physical Damage to Attacks, 11% increased Attack Speed]
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 47
+      - name: Andvarius
+        pct: 1
+      - name: Ventor's Gamble
+        pct: 0
   amulet:
     base: Gold Amulet
-    mods: [65% increased maximum Energy Shield, +46 to Spirit, 36% increased Critical Hit Chance, +24 to all Attributes]
+    implicits: [20% increased Rarity of Items found]
+    mods: [+3 to Level of all Projectile Skills, 65% increased maximum Energy Shield, +46 to Spirit, 36% increased Critical Hit Chance, +24 to all Attributes, Gain 17% of Physical Damage as Extra Cold Damage]
+    ladder:
+      - name: Rare Amulet
+        pct: 97
+      - name: Astramentis
+        pct: 1
+      - name: Yoke of Suffering
+        pct: 1
+      - name: Eventide Petals
+        pct: 0
+  weapon2:
+    unique: Hysseg's Claw
+    ladder:
+      - name: Rare Bow
+        pct: 95
+      - name: Hysseg's Claw
+        pct: 27
+      - name: Adonia's Ego
+        pct: 4
+      - name: Sylvan's Effigy
+        pct: 2
   offhand:
     unique: Cadiro's Gambit
+    ladder:
+      - name: Cadiro's Gambit
+        pct: 83
+      - name: Rare Quiver
+        pct: 18
+      - name: Drillneck
+        pct: 0
+      - name: Sunsplinter
+        pct: 0
   boots:
     base: Daggerfoot Shoes
-    mods: [35% increased Movement Speed, 90% increased Evasion and Energy Shield, +43% to Fire Resistance]
+    mods: [23% increased Movement Speed while Sprinting, 35% increased Movement Speed, 90% increased Evasion and Energy Shield, +43% to Fire Resistance, 16% increased Rarity of Items found, 60% increased effect of Socketed Augment Items]
+    runes: [8% increased Movement Speed, Can roll Chronomancy modifiers]
+    ladder:
+      - name: Rare Boots
+        pct: 98
+      - name: Atziri's Step
+        pct: 1
+      - name: Ghostmarch
+        pct: 0
+      - name: Gamblesprint
+        pct: 0
   helmet:
     base: Ancestral Tiara
-    mods: [42% increased Energy Shield, +45 to maximum Life, 16% increased Rarity of Items found, 32% increased Critical Hit Chance, +40% to Lightning Resistance]
+    mods: [100% increased Energy Shield, 42% increased Energy Shield, +45 to maximum Life, 16% increased Rarity of Items found, 32% increased Critical Hit Chance, +40% to Lightning Resistance, +73 to maximum Energy Shield]
+    runes: [+50 to all Attributes, Raven-Touched]
+    ladder:
+      - name: Rare Helmet
+        pct: 97
+      - name: Alpha's Howl
+        pct: 2
+      - name: Decree of Acuity
+        pct: 0
+      - name: Crown of Eyes
+        pct: 0
   ring2:
     base: Gold Ring
-    mods: [Adds 26 to 44 Physical Damage to Attacks, Adds 1 to 91 Lightning damage to Attacks, 18% increased Rarity of Items found, +14% to all Elemental Resistances, +37% to Cold Resistance]
+    implicits: [15% increased Rarity of Items found]
+    mods: [Adds 26 to 44 Physical Damage to Attacks, Adds 1 to 91 Lightning damage to Attacks, 18% increased Rarity of Items found, +14% to all Elemental Resistances, +37% to Cold Resistance, Adds 33 to 46 Fire damage to Attacks]
+    ladder:
+      - name: Rare Ring
+        pct: 99
+      - name: Kalandra's Touch
+        pct: 47
+      - name: Andvarius
+        pct: 1
+      - name: Ventor's Gamble
+        pct: 0
   gloves:
     base: Secured Wraps
-    mods: [Adds 28 to 44 Fire damage to Attacks, +2 to Level of all Projectile Skills, 39% increased Projectile Damage]
+    mods: [Adds 1 to 57 Lightning damage to Attacks, Adds 28 to 44 Fire damage to Attacks, +2 to Level of all Projectile Skills, 39% increased Projectile Damage, +65% Surpassing chance to fire an additional Projectile, 26% increased Critical Damage Bonus]
+    runes: [8% increased Attack Speed, Can roll Marksman modifiers]
+    ladder:
+      - name: Rare Gloves
+        pct: 97
+      - name: Maligaro's Virtuosity
+        pct: 1
+      - name: Sine Aequo
+        pct: 1
+      - name: Painter's Servant
+        pct: 1
 passives:
   attribute: int
   path:

@@ -54,6 +54,26 @@ skills:
   - gem: "War Banner"
     supports: [Magnified Area II, Prolonged Duration II, Daresso's Passion]
     note: "Extra single-target damage"
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Boneshatter, Shockwave Totem, Perfect Strike, Infernal Cry, Frost Bomb]
+    - label: "Act Ii"
+      gems: [Leap Slam, Forge Hammer]
+    - label: "Act Iii"
+      gems: [Hammer of the Gods, Earthshatter, Seismic Cry]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Ash]
+    - label: "Act Iii"
+      gems: [Scavenged Plating]
+  supports:
+    - label: "ACT I (Rapid Twice)"
+      gems: [Impact Shockwave, Concentrated Area, Rapid Attacks I, Magnified Area I, Overabundance I, Window of Opportunity I]
+    - label: "Act Ii"
+      gems: [Execute I, Brink I, Rapid Attacks I, Fist of War I, Crater]
+    - label: "Act Iii+"
+      gems: [Branching Fissures I, Fist of War II, Execute II, Urgent Totems II, Cannibalism I, Rapid Attacks II]
 leveling:
   - steps:
       - name: "Act 1"

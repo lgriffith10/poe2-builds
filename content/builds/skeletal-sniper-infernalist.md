@@ -48,6 +48,44 @@ skills:
     supports: [Cursed Ground, Heightened Curse, Focused Curse, Efficiency II, Prolonged Duration II]
   - gem: "Convalescence"
     supports: [Cooldown Recovery II, Prolonged Duration II, Upwelling I, Uhtred's Constellation]
+gemPriority:
+  skills:
+    - label: "First"
+      gems: [Skeletal Sniper]
+    - label: ""
+      gems: [Volcano, Contagion, Frost Bomb]
+    - label: ""
+      gems: [Elemental Weakness]
+    - label: ""
+      gems: [Pain Offering]
+    - label: "Use a few reavers as front-line fighters"
+      gems: [Skeletal Reaver]
+    - label: "Act 4 (Use one or two)"
+      gems: [Skeletal Cleric]
+    - label: "One to apply shock vs bosses in maps"
+      gems: [Skeletal Storm Mage]
+    - label: "One Brute to debuff enemies with Intimidate"
+      gems: [Skeletal Brute]
+    - label: "Replace Vulnerability in the Mid setup"
+      gems: [Despair]
+  spirit:
+    - label: "ACT I (The King in The Mist)"
+      gems: [Raging Spirits]
+    - label: "ACT II (Golden Tomb)"
+      gems: [Raging Spirits]
+    - label: "ACT III (The Azak Bog Witch)"
+      gems: [Raging Spirits]
+    - label: "Mid extra ES Recovery"
+      gems: [Convalescence]
+  supports:
+    - label: "Act 1"
+      gems: [Multishot I, Fire Attunement, Ignite I, Unleash, Last Gasp, Brutality I, Arcane Surge]
+    - label: "Act 2"
+      gems: [Minion Splash I, Multishot II, Last Gasp, Loyalty, Efficiency I, Fire Attunement, Potent Exposure, Brutality II]
+    - label: "Act 3"
+      gems: [Feeding Frenzy I, Cursed Ground, Meat Shield II, Rapid Casting I, Elemental Army, Sacrificial Lamb I]
+    - label: "Act 4"
+      gems: [Muster, Last Gasp, Danse Macabre, Rapid Casting II, Feeding Frenzy II]
 leveling:
   - steps:
       - name: "Act 1 - Step 1"

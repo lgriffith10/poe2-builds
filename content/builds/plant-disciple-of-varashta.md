@@ -49,6 +49,24 @@ skills:
     supports: [Temporal Chains, Magnified Area II, Ritualistic Curse]
   - gem: "Convalescence"
     supports: [Prolonged Duration II, Cooldown Recovery II, Second Wind II]
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Entangle, Contagion, Essence Drain, Bonestorm]
+    - label: "Act Ii"
+      gems: [Thunderstorm]
+    - label: "Act Iii"
+      gems: [Thrashing Vines]
+  spirit:
+    - label: "Act I"
+      gems: [Arctic Armour]
+    - label: "Act Iii"
+      gems: [Blasphemy]
+  supports:
+    - label: "Act I"
+      gems: [Rapid Casting I, Controlled Destruction, Considered Casting, Burgeon I]
+    - label: "Act Ii"
+      gems: [Accelerated Growth, Living Lightning]
 leveling:
   - name: "Early Campaign"
     steps:

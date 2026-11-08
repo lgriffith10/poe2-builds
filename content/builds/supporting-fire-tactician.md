@@ -50,6 +50,22 @@ skills:
     supports: [Last Gasp, Rapid Casting II, Minion Mastery, Meat Shield II]
   - gem: "Skeletal Sniper"
     supports: [Multishot II, Last Gasp, Culling Strike II, Soul Drain]
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Permafrost Bolts, Fragmentation Rounds, Frost Bomb]
+    - label: "Act Ii"
+      gems: [Freezing Mark]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Ice]
+  supports:
+    - label: "Act I"
+      gems: [Elemental Armament I, Ice Bite I, Concentrated Area, Magnified Area I]
+    - label: "Act Ii"
+      gems: [Elemental Armament II, Bidding I, Cold Attunement]
+    - label: "Act Iii"
+      gems: [Deliberation]
 leveling:
   - name: "Crossbow Campaign"
     steps:

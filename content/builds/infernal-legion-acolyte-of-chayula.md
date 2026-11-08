@@ -46,6 +46,28 @@ skills:
     note: The tamed companion is your damage source; these supports go on it.
   - gem: "Purity of Fire"
     supports: [Upwelling II, Vitality II, Clarity II, Cannibalism II]
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Frozen Locus, Glacial Cascade, Ice Strike, Frost Bomb]
+    - label: "Act Ii"
+      gems: [Tempest Bell, Freezing Mark]
+    - label: "Act Iii"
+      gems: [Hand of Chayula, Shattering Palm, Elemental Weakness]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Ice]
+    - label: "Act Iii"
+      gems: [Ghost Dance]
+  supports:
+    - label: "Act I"
+      gems: [Rage I, Elemental Armament I, Magnified Area I]
+    - label: "Act Ii"
+      gems: [Ice Bite I, Overabundance I, Harmonic Remnants I, Remnant Potency I]
+    - label: "Act Iii"
+      gems: [Embitter, Cooldown Recovery I, Cannibalism I, Clarity I, Magnified Area II, Harmonic Remnants II]
+    - label: "Act Iv"
+      gems: [Ancestral Call I, Rage II]
 leveling:
   - name: "Hollow Palm Campaign"
     steps:

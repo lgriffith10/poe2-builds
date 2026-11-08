@@ -57,27 +57,139 @@ skills:
 gear:
   body:
     base: Sleek Jacket
-    mods: [+160 to Evasion Rating, +48 to maximum Energy Shield, 109% increased Evasion and Energy Shield, +44% to Cold Resistance, +43% to Lightning Resistance]
+    mods: [Gain Deflection Rating equal to 26% of Evasion Rating, +160 to Evasion Rating, +48 to maximum Energy Shield, 109% increased Evasion and Energy Shield, +44% to Cold Resistance, +43% to Lightning Resistance, +50 to Evasion Rating, +15 to maximum Energy Shield, 40% increased Evasion and Energy Shield]
+    runes: ["40% increased Armour, Evasion and Energy Shield", Skills have 10% chance to not remove Charges but still count as consuming them]
+    ladder:
+      - name: Morior Invictus
+        pct: 65
+      - name: Rare Body Armour
+        pct: 21
+      - name: Greed's Embrace
+        pct: 3
+      - name: Atziri's Splendour
+        pct: 2
   weapon:
     base: Soaring Spear
-    mods: [Adds 3 to 78 Lightning Damage, 80% increased Elemental Damage with Attacks, 28% increased Attack Speed, +29 to Strength]
+    mods: [Adds 3 to 78 Lightning Damage, 80% increased Elemental Damage with Attacks, 28% increased Attack Speed, +29 to Strength, 20% increased effect of Socketed Augment Items, +340 to Accuracy Rating, 8% increased Attack Speed]
+    runes: [18% increased Attack Speed]
+    ladder:
+      - name: Rare Spear
+        pct: 74
+      - name: Sacred Flame
+        pct: 64
+      - name: The Ordained
+        pct: 37
+      - name: Skysliver
+        pct: 28
   amulet:
     base: Gold Amulet
-    mods: [19% increased Rarity of Items found, +3 to Level of all Projectile Skills, +24 to all Attributes]
+    implicits: [20% increased Rarity of Items found]
+    mods: [+50 to Spirit, 19% increased Rarity of Items found, +3 to Level of all Projectile Skills, +24 to all Attributes, 17% increased Rarity of Items found, "36% increased Global Armour, Evasion and Energy Shield"]
+    ladder:
+      - name: Rare Amulet
+        pct: 85
+      - name: Astramentis
+        pct: 9
+      - name: Yoke of Suffering
+        pct: 3
+      - name: Defiance of Destiny
+        pct: 1
   ring1:
     unique: Andvarius
+    ladder:
+      - name: Rare Ring
+        pct: 69
+      - name: The Taming
+        pct: 69
+      - name: Kalandra's Touch
+        pct: 60
+      - name: Andvarius
+        pct: 43
   helmet:
     base: Ancestral Tiara
-    mods: [100% increased Energy Shield, 17% increased Rarity of Items found, +22% to Chaos Resistance]
+    mods: [+40% to Cold Resistance, 100% increased Energy Shield, 17% increased Rarity of Items found, +22% to Chaos Resistance, +71 to maximum Energy Shield, 18% increased Rarity of Items found]
+    runes: ["20% increased Armour, Evasion and Energy Shield", Pain Attunement, Raven-Touched]
+    ladder:
+      - name: Rare Helmet
+        pct: 86
+      - name: Alpha's Howl
+        pct: 5
+      - name: Decree of Acuity
+        pct: 2
+      - name: Black Sun Crest
+        pct: 1
   boots:
     unique: Wondertrap
+    runes: [+44% to Fire Resistance]
+    ladder:
+      - name: Rare Boots
+        pct: 77
+      - name: Wondertrap
+        pct: 10
+      - name: Atziri's Step
+        pct: 8
+      - name: Trampletoe
+        pct: 2
   belt:
     unique: Mageblood
+    ladder:
+      - name: Mageblood
+        pct: 48
+      - name: Headhunter
+        pct: 34
+      - name: Rare Belt
+        pct: 9
+      - name: Ingenuity
+        pct: 8
   ring2:
     unique: Kalandra's Touch
+    ladder:
+      - name: Rare Ring
+        pct: 69
+      - name: The Taming
+        pct: 69
+      - name: Kalandra's Touch
+        pct: 60
+      - name: Andvarius
+        pct: 43
+  weapon2:
+    base: Akoyan Spear
+    mods: [+4.98% to Critical Hit Chance, Adds 93 to 146 Fire Damage, Adds 74 to 123 Cold Damage, +22% to Critical Damage Bonus, +4 to Level of all Projectile Skills, Adds 6 to 231 Lightning Damage]
+    runes: [40% increased Elemental Damage with Attacks, Gain 5% of Damage as Extra Damage of all Elements]
+    ladder:
+      - name: Rare Spear
+        pct: 74
+      - name: Sacred Flame
+        pct: 64
+      - name: The Ordained
+        pct: 37
+      - name: Skysliver
+        pct: 28
   gloves:
     base: Blacksteel Gauntlets
-    mods: [Adds 21 to 33 Cold damage to Attacks, Adds 1 to 70 Lightning damage to Attacks, +2 to Level of all Projectile Skills]
+    mods: [39% increased Projectile Speed, Adds 21 to 33 Cold damage to Attacks, Adds 1 to 70 Lightning damage to Attacks, +2 to Level of all Projectile Skills, 15% increased Attack Speed, 29% increased Critical Damage Bonus]
+    runes: [15% chance when you gain a Frenzy Charge to gain an additional Frenzy Charge, Can roll Marksman modifiers]
+    ladder:
+      - name: Rare Gloves
+        pct: 71
+      - name: Aurseize
+        pct: 15
+      - name: Hand of Wisdom and Action
+        pct: 10
+      - name: Horror's Flight
+        pct: 1
+  offhand2:
+    unique: Sacred Flame
+    runes: [15% increased Spirit, +1 to Level of all Wind Skill Gems]
+    ladder:
+      - name: Svalinn
+        pct: 3
+      - name: Rare Focus
+        pct: 1
+      - name: Rare Shield
+        pct: 1
+      - name: Arvil's Wheel
+        pct: 1
 passives:
   attribute: int
   path:

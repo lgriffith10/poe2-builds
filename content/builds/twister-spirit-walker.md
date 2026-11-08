@@ -64,6 +64,28 @@ skills:
   - gem: Malice
     supports: [Prolonged Duration II]
     note: Aura
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Twister, Frost Bomb, Fangs of Frost, Barrage]
+    - label: "Act Ii"
+      gems: [Ice-Tipped Arrows, Freezing Mark]
+  spirit:
+    - label: "Act I"
+      gems: [War Banner]
+    - label: "Act Ii"
+      gems: [Herald of Ice]
+    - label: "Act Iii"
+      gems: [Combat Frenzy]
+    - label: ""
+      gems: [Wind Dancer]
+  supports:
+    - label: "Act I"
+      gems: [Retreat I, Rage I, Rapid Attacks I, Prolonged Duration I, Rapid Casting I]
+    - label: "Act Ii"
+      gems: [Frost Nexus, Elemental Armament II, Prolonged Duration I, Magnified Area I, Overreach]
+    - label: "Act Iii"
+      gems: [Retreat III, Projectile Acceleration III, Elemental Focus, Charged Mark, Cooldown Recovery II, Cold Attunement, Rage III, Rapid Attacks III, Frozen Spite, Life Leech III, Mark of Siphoning II, Eternal Mark, Charge Profusion I]
 leveling:
   - name: "Campaign"
     steps:

@@ -54,6 +54,16 @@ skills:
     supports: [Prolonged Duration II, Physical Mastery]
   - gem: Raise Shield
     supports: []
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Boneshatter, Infernal Cry, Perfect Strike]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Ash]
+  supports:
+    - label: "Act I"
+      gems: [Impact Shockwave, Concentrated Area, Rapid Attacks I, Magnified Area I, Window of Opportunity I, Tireless]
 leveling:
   - name: "Level 1-22"
     steps:
