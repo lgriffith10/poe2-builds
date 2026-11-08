@@ -1,6 +1,8 @@
 // Adds campaign leveling steps and skill rotations to build guides from their public Maxroll planner.
 // Facts only (which gems at which stage, in which order); step and rotation names are Maxroll's labels.
-// Rewrites the `leveling:` and `rotations:` blocks of the front matter and leaves everything else untouched.
+// Also adds `gemPriority`: which skill, spirit and support gems to engrave first, act by act (Maxroll's "Gem Engraving
+// Priority", from the planner's skillPriorities).
+// Rewrites the `leveling:`, `rotations:` and `gemPriority:` blocks of the front matter and leaves everything else untouched.
 //
 // Usage: node scripts/leveling-from-maxroll.cjs [slug...]   (no slug = every guide whose source is maxroll.gg)
 // Run `npm run data:sync` first.
@@ -112,6 +114,23 @@ function rotations(d) {
     d.profiles.find((p) => p.skillRotations?.length);
   return rotationList(preferred?.skillRotations);
 }
+/** Engraving priority by category, from the first profile that has one: [{ label, gems }] per category. */
+function gemPriority(d) {
+  const sp = d.profiles.map((p) => p.skillPriorities).find((x) => x && Object.values(x).some((v) => v?.length));
+  if (!sp) return null;
+  const out = {};
+  for (const [key, cat] of [["active", "skills"], ["spirit", "spirit"], ["support", "supports"]]) {
+    const stages = (sp[key] ?? [])
+      .map((g) => ({
+        label: titleIfCaps((g.text ?? "").trim()),
+        gems: [...new Set((g.gems ?? []).map((x) => gemName(x.id)).filter((n) => n && gemByName.has(n)))],
+      }))
+      .filter((g) => g.gems.length);
+    if (stages.length) out[cat] = stages;
+  }
+  return Object.keys(out).length ? out : null;
+}
+
 const q = (s) => JSON.stringify(s);
 const rotationStep = (st, ind) => [
   `${ind}- gem: ${q(st.gem)}`,
@@ -120,8 +139,15 @@ const rotationStep = (st, ind) => [
 ];
 const list = (xs) => `[${xs.map((x) => (/^[\w' -]+$/.test(x) && !/^\d/.test(x) ? x : q(x))).join(", ")}]`;
 
-function yaml(paths, rots, levelingSource) {
+function yaml(paths, rots, levelingSource, priority) {
   const out = [];
+  if (priority) {
+    out.push("gemPriority:");
+    for (const [cat, stages] of Object.entries(priority)) {
+      out.push(`  ${cat}:`);
+      for (const st of stages) out.push(`    - label: ${q(st.label)}`, `      gems: ${list(st.gems)}`);
+    }
+  }
   if (levelingSource) {
     out.push("levelingSource:", `  title: ${q(levelingSource.title)}`, `  url: ${levelingSource.url}`);
   }
@@ -164,7 +190,7 @@ function rewrite(file, block) {
   const kept = [];
   let skipping = false;
   for (const line of lines) {
-    if (/^(leveling|levelingSource|rotations):/.test(line)) skipping = true;
+    if (/^(leveling|levelingSource|rotations|gemPriority):/.test(line)) skipping = true;
     else if (skipping && /^\S/.test(line)) skipping = false;
     if (!skipping) kept.push(line);
   }
@@ -207,18 +233,21 @@ async function loadGuide(url) {
     const warnings = [];
     let paths = leveling(guide.planner, (w) => warnings.push(w));
     let levelingSource = null;
+    let priority = gemPriority(guide.planner);
     // Endgame-only guides link to a separate leveling guide: take the campaign from its planner.
     if (!paths.length && guide.levelingUrl) {
       const lv = await loadGuide(guide.levelingUrl);
       paths = lv ? leveling(lv.planner, (w) => warnings.push(w)) : [];
       if (paths.length) levelingSource = { title: lv.title, url: guide.levelingUrl };
+      if (!priority && lv) priority = gemPriority(lv.planner);
     }
     const end = paths.length ? firstMapStep(guide.planner, (w) => warnings.push(w)) : null;
     if (end) paths.at(-1).steps.push(end);
     const rots = rotations(guide.planner);
-    rewrite(DIR + f, yaml(paths, rots, levelingSource));
+    rewrite(DIR + f, yaml(paths, rots, levelingSource, priority));
     const steps = paths.map((p) => `${p.name ?? "campaign"}: ${p.steps.length}`).join(", ");
     const actRots = paths.flatMap((p) => p.rotations.map((r) => r.name));
+    console.log(`✓ ${f}: gem priority [${priority ? Object.entries(priority).map(([k, v]) => `${k} ${v.length}`).join(", ") : "none"}]`);
     console.log(`✓ ${f}: campaign rotations [${actRots.join(", ") || "none"}]`);
     console.log(`✓ ${f}: leveling [${steps || "none"}]${levelingSource ? ` from ${levelingSource.url}` : ""}, rotations [${rots.map((r) => r.name).join(", ") || "none"}]`);
     for (const w of [...new Set(warnings)]) console.log(`    note: ${w}`);

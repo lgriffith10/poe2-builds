@@ -175,8 +175,14 @@ export interface GearPiece {
   unique?: string;
   /** Base type for rare items. */
   base?: string;
-  /** Priority modifiers for rare items. */
+  /** Priority modifiers for rare items (or, for ladder guides, the reference character's modifiers). */
   mods?: string[];
+  /** Implicit modifiers of the reference rare (ladder guides). */
+  implicits?: string[];
+  /** Socketed runes and soul cores (ladder guides). */
+  runes?: string[];
+  /** What the ladder characters of this build wear in this slot, most worn first (% of characters). */
+  ladder?: { name: string; pct: number }[];
   note?: string;
 }
 

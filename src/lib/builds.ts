@@ -32,6 +32,23 @@ import {
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "builds");
 
+export interface GemPriorityStage {
+  label: string;
+  gems: string[];
+}
+export type GemPriority = Partial<Record<"skills" | "spirit" | "supports", GemPriorityStage[]>>;
+
+export interface PassiveStep {
+  name: string;
+  id: number;
+  /** Nodes allocated by this step, in path order (the notable last). */
+  nodes: number[];
+  /** Passive points those nodes cost. */
+  points: number;
+  /** Weapon set the step's points belong to. */
+  set?: 1 | 2;
+}
+
 export interface Build {
   slug: string;
   title: string;
@@ -68,12 +85,19 @@ export interface Build {
   /** Set when the leveling comes from another guide than `source` (endgame-only guides). */
   levelingSource: { title: string; url: string } | null;
   rotations: SkillRotation[];
+  /** Which gems to engrave first, act by act, per category (from the source planner). */
+  gemPriority: GemPriority | null;
   /** Reference gear (used by the planner and character comparison). */
   gear: GearSet;
   /** Optional gear progression; `gear` is shown when empty. */
   gearStages: Partial<Record<GearStage, GearSet>>;
   ascendancyOrder: string[];
   keyPassives: string[];
+  /**
+   * Main-tree progression in the order the guide takes its key passives (shared tree, then each weapon set):
+   * each step is a notable and the nodes its path adds.
+   */
+  passiveSteps: PassiveStep[];
   planner: PlannerState;
   plannerCode: string;
   pointsUsed: number;
@@ -190,6 +214,17 @@ function parseBuild(file: string): { build: Build; markdown: string } {
     ...(p.rotations?.length && { rotations: p.rotations.map((r) => parseRotation(r, `leveling[${i}].rotations`)) }),
   }));
   const rotations: SkillRotation[] = (fm.rotations ?? []).map((r: SkillRotation) => parseRotation(r, "rotations"));
+  let gemPriority: GemPriority | null = null;
+  if (fm.gemPriority) {
+    gemPriority = {};
+    for (const [cat, stages] of Object.entries(fm.gemPriority as Record<string, GemPriorityStage[]>)) {
+      if (!["skills", "spirit", "supports"].includes(cat)) fail(`gemPriority: unknown category "${cat}"`);
+      gemPriority[cat as keyof GemPriority] = stages.map((st) => ({
+        label: String(st.label),
+        gems: (st.gems ?? []).map((g) => gemNamed(g, `gemPriority.${cat} "${st.label}"`)),
+      }));
+    }
+  }
 
   const parseGear = (raw: unknown, where: string): GearSet => {
     const set: GearSet = {};
@@ -197,6 +232,11 @@ function parseBuild(file: string): { build: Build; markdown: string } {
       if (!(GEAR_SLOTS as readonly string[]).includes(slot)) fail(`${where}: unknown gear slot "${slot}"`);
       if (piece.unique && !getUnique(piece.unique)) fail(`${where}: unknown unique "${piece.unique}"`);
       if (piece.base && !getBase(piece.base)) fail(`${where}: unknown base type "${piece.base}"`);
+      for (const key of ["mods", "implicits", "runes"] as const) {
+        if ((piece[key] ?? []).some((m) => typeof m !== "string")) fail(`${where}.${slot}.${key}: every line must be text`);
+      }
+      if ((piece.ladder ?? []).some((e) => typeof e?.name !== "string" || typeof e?.pct !== "number"))
+        fail(`${where}.${slot}.ladder: expected { name, pct } entries`);
       set[slot as GearSlot] = {
         ...piece,
         unique: piece.unique ? getUnique(piece.unique)!.name : undefined,
@@ -224,7 +264,7 @@ function parseBuild(file: string): { build: Build; markdown: string } {
   const keyPassives: string[] = fm.passives?.path ?? [];
   const ascendancyOrder: string[] = fm.passives?.ascendancy ?? [];
   const targets = [...keyPassives, ...ascendancyOrder].map(resolve);
-  const { allocated: shared, unreachable } = allocateTargets(graph, cls, ascendancy, targets);
+  const { allocated: shared, unreachable, steps: sharedSteps } = allocateTargets(graph, cls, ascendancy, targets);
   if (unreachable.length) fail(`Unreachable passives: ${unreachable.map((id) => tree.nodes[id].n).join(", ")}`);
   // Weapon-set passives: notables taken with each weapon set's own points, pathed from the shared tree.
   const setTargets = {
@@ -232,6 +272,13 @@ function parseBuild(file: string): { build: Build; markdown: string } {
     2: ((fm.passives?.weaponSet2 ?? []) as string[]).map(resolve),
   };
   const sets = allocateWeaponSetTargets(graph, cls, ascendancy, shared, setTargets);
+  const passiveSteps: PassiveStep[] = [...sharedSteps.filter((st) => !tree.nodes[st.target].a), ...sets.steps].map((st) => ({
+    name: tree.nodes[st.target].n.trim(),
+    id: st.target,
+    nodes: st.nodes,
+    points: st.nodes.filter((id) => !tree.nodes[id].free && tree.nodes[id].t !== "start").length,
+    ...(st.set && { set: st.set }),
+  }));
   if (sets.unreachable.length) fail(`Unreachable weapon-set passives: ${sets.unreachable.map((id) => tree.nodes[id].n).join(", ")}`);
   const allocated = sets.allocated;
 
@@ -295,10 +342,12 @@ function parseBuild(file: string): { build: Build; markdown: string } {
       ? { title: String(fm.levelingSource.title ?? fm.levelingSource.url), url: String(fm.levelingSource.url) }
       : null,
     rotations,
+    gemPriority,
     gear,
     gearStages,
     ascendancyOrder,
     keyPassives,
+    passiveSteps,
     planner,
     plannerCode: encodeBuild(planner),
     pointsUsed,
@@ -360,13 +409,13 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
 // The cache lives on globalThis to survive dev module reloads.
 type Parsed = { build: Build; markdown: string };
 const store = globalThis as typeof globalThis & {
-  __buildCacheV12?: {
+  __buildCacheV14?: {
     files: Map<string, { mtimeMs: number; parsed: Parsed }>;
     lists: Map<Locale, { key: string; list: Build[] }>;
   };
 };
 // Versioned key: a dev server still holding a cache in an older shape (hot reload keeps globalThis) gets a fresh one.
-const cache = (store.__buildCacheV12 ??= { files: new Map(), lists: new Map() });
+const cache = (store.__buildCacheV14 ??= { files: new Map(), lists: new Map() });
 
 const mtime = (p: string) => (fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0);
 

@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 // Drafts a build guide's front matter from the poe.ninja ladder (facts only; write the text by hand).
 //
-// Usage: node scripts/draft-from-ninja.mjs "<Ascendancy>" "<Main skill>" [pick] [leagueUrl]
+// Usage: node scripts/draft-from-ninja.mjs "<Ascendancy>" "<Main skill>" [pick] [leagueUrl] [--char <account>/<name>]
 //   pick: index in poe.ninja's character list for that filter (default 10, so not the single richest character)
+//   --char: draft from that exact character instead (e.g. to refresh an existing ladder guide)
 //
 // Prints the YAML front matter to stdout and ladder statistics to stderr:
 //   - skills, supports, gear and passives come from one representative character;
@@ -19,7 +20,10 @@ const gems = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/generated/gems
 const uniques = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/generated/uniques.json")));
 const bases = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/generated/bases.json")));
 
-const [ascName, skillName, pickArg, leagueArg] = process.argv.slice(2);
+const argv = process.argv.slice(2);
+const charIdx = argv.indexOf("--char");
+const charArg = charIdx >= 0 ? argv.splice(charIdx, 2)[1] : null;
+const [ascName, skillName, pickArg, leagueArg] = argv;
 if (!ascName || !skillName) {
   console.error('Usage: node scripts/draft-from-ninja.mjs "<Ascendancy>" "<Main skill>" [pick] [leagueUrl]');
   process.exit(1);
@@ -31,7 +35,9 @@ const filters = { class: ascName, skills: skillName };
 const agg = await search(snap, filters);
 const list = await characters(snap, filters);
 if (!list.length) throw new Error(`No ladder characters for ${ascName} / ${skillName}`);
-const who = list[Math.min(pick, list.length - 1)];
+const who = charArg
+  ? { account: charArg.slice(0, charArg.indexOf("/")), name: charArg.slice(charArg.indexOf("/") + 1) }
+  : list[Math.min(pick, list.length - 1)];
 const c = await character(snap, who.account, who.name);
 
 // "[Tag|Shown text]" and "[Tag]" markup in poe.ninja mod text -> plain text.
@@ -57,29 +63,63 @@ for (const group of c.skills) {
 skills.sort((a, b) => (b.gem === skillName) - (a.gem === skillName));
 
 // --- gear ----------------------------------------------------------------------------------------
-const SLOTS = { Weapon: "weapon", Offhand: "offhand", Helm: "helmet", BodyArmour: "body", Gloves: "gloves", Boots: "boots", Amulet: "amulet", Ring: "ring1", Ring2: "ring2", Belt: "belt" };
+// Weapon2/Offhand2 are the weapon set II (swap) slots.
+const SLOTS = {
+  Weapon: "weapon", Offhand: "offhand", Weapon2: "weapon2", Offhand2: "offhand2", Helm: "helmet", BodyArmour: "body",
+  Gloves: "gloves", Boots: "boots", Amulet: "amulet", Ring: "ring1", Ring2: "ring2", Belt: "belt",
+};
+const isUnique = (d) => d.rarity === "Unique" || d.frameType === 3 || d.frameTypeId === 3;
+// Rune and soul core lines, without "Bonded" lines (they only apply to another class).
+const runeLines = (d) => (d.runeMods ?? []).filter((m) => !/\|Bonded\]/.test(m)).map(plain);
 const gear = {};
 for (const { itemData: d } of c.items) {
   const slot = SLOTS[d.inventoryId];
   if (!slot) continue;
-  if (d.rarity === "Unique") {
-    if (uniques.some((u) => u.name === d.name)) gear[slot] = { unique: d.name };
+  const runes = runeLines(d);
+  if (isUnique(d)) {
+    if (uniques.some((u) => u.name === d.name)) gear[slot] = { unique: d.name, ...(runes.length && { runes }) };
     else console.error(`NOTE ${slot}: unique "${d.name}" not in our data, slot left out`);
     continue;
   }
   const base = d.baseType?.replace(/^(Runeforged|Runemastered) /, "");
+  const implicits = (d.implicitMods ?? []).map(plain);
+  // Every modifier the item has: fractured, explicit, desecrated and crafted.
+  const mods = [...(d.fracturedMods ?? []), ...(d.explicitMods ?? []), ...(d.desecratedMods ?? []), ...(d.craftedMods ?? [])].map(plain);
   gear[slot] = {
     ...(bases.some((b) => b.name === base) ? { base } : {}),
-    mods: (d.explicitMods ?? []).map(plain).slice(0, 6),
+    ...(implicits.length && { implicits }),
+    mods: [...new Set(mods)],
+    ...(runes.length && { runes }),
   };
+}
+
+// Ladder popularity per slot: what the characters of this ascendancy + skill wear there ("Rare Boots" or a unique).
+const SLOT_CLASSES = {
+  helmet: ["Helmet"], body: ["Body Armour"], gloves: ["Gloves"], boots: ["Boots"], amulet: ["Amulet"],
+  ring1: ["Ring"], ring2: ["Ring"], belt: ["Belt"],
+  offhand: ["Shield", "Buckler", "Focus", "Quiver"], offhand2: ["Shield", "Buckler", "Focus", "Quiver"],
+};
+const WEAPONS = [
+  "Bow", "Crossbow", "Spear", "Warstaff", "Quarterstaff", "Wand", "Staff", "Sceptre", "Talisman", "Flail", "Claw", "Dagger",
+  "Mace", "One Hand Mace", "Two Hand Mace", "Sword", "One Hand Sword", "Two Hand Sword", "Axe", "One Hand Axe", "Two Hand Axe",
+];
+SLOT_CLASSES.weapon = SLOT_CLASSES.weapon2 = WEAPONS;
+const classOf = (entry) =>
+  entry.name.startsWith("Rare ") ? entry.name.slice(5) : uniques.find((u) => u.name === entry.name)?.class;
+for (const [slot, piece] of Object.entries(gear)) {
+  const fits = (cls) => Boolean(cls && SLOT_CLASSES[slot]?.includes(cls));
+  const rows = (agg.dims.items ?? []).filter((e) => fits(classOf(e))).slice(0, 4);
+  if (rows.length) piece.ladder = rows.map((e) => ({ name: e.name, pct: Math.round((100 * e.count) / agg.total) }));
 }
 
 // --- passives: notables/keystones ordered by distance from the class start, inside the character's own tree
 const allocated = new Set(c.passiveSelection);
+// Distances run through weapon-set nodes too: the shared tree can continue past them.
+const reach = new Set([...allocated, ...(c.passiveSelectionSet1 ?? []), ...(c.passiveSelectionSet2 ?? [])]);
 const adj = new Map();
 for (const [a, b] of tree.edges) {
-  if (!allocated.has(a) && !tree.classes.some((k) => k.start === a)) continue;
-  if (!allocated.has(b) && !tree.classes.some((k) => k.start === b)) continue;
+  if (!reach.has(a) && !tree.classes.some((k) => k.start === a)) continue;
+  if (!reach.has(b) && !tree.classes.some((k) => k.start === b)) continue;
   (adj.get(a) ?? adj.set(a, []).get(a)).push(b);
   (adj.get(b) ?? adj.set(b, []).get(b)).push(a);
 }

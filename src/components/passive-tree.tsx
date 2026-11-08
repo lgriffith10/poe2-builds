@@ -21,6 +21,8 @@ interface Props {
   /** Allocated nodes that belong to a weapon set, drawn in that set's colour. */
   weaponSets?: WeaponSetMap;
   highlight?: ReadonlySet<number>;
+  /** Small numbered badges drawn next to nodes (e.g. the order of a guide's key passives). */
+  markers?: ReadonlyMap<number, number>;
   /** When provided, nodes are clickable. */
   onNodeClick?: (id: number, event: { shift: boolean }) => void;
   /** Path that hovering a node would allocate/remove. */
@@ -185,6 +187,7 @@ export function PassiveTree({
   attributes = {},
   weaponSets = NO_SETS,
   highlight,
+  markers,
   onNodeClick,
   previewFor,
   className = "h-[600px]",
@@ -408,6 +411,31 @@ export function PassiveTree({
       }
     }
 
+    // Order badges: a gold disc with the step number, at the node's upper right, constant size on screen.
+    if (markers?.size) {
+      const br = 9 * px;
+      ctx.font = `bold ${11 * px}px Inter, sans-serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      for (const [id, num] of markers) {
+        const p = geo.pos.get(id);
+        if (!p || Math.abs(p.x - x) > halfW + 80 || Math.abs(p.y - y) > halfH + 80) continue;
+        const r = Math.max(RADIUS[tree.nodes[id].t], 3 * px);
+        const bx = p.x + r * 0.9 + br * 0.6;
+        const by = p.y - r * 0.9 - br * 0.6;
+        const on = allocated.has(id);
+        ctx.beginPath();
+        ctx.arc(bx, by, br, 0, Math.PI * 2);
+        ctx.fillStyle = on ? COLORS.alloc : "#3a3227";
+        ctx.fill();
+        ctx.lineWidth = 1.5 * px;
+        ctx.strokeStyle = "#1a1612";
+        ctx.stroke();
+        ctx.fillStyle = on ? "#1a1612" : "#b8ad98";
+        ctx.fillText(String(num), bx, by + 0.5 * px);
+      }
+    }
+
     if (showLabels) {
       ctx.textAlign = "center";
       ctx.textBaseline = "top";
@@ -422,7 +450,7 @@ export function PassiveTree({
         ctx.fillText(n.n, p.x, p.y + RADIUS[n.t] + 6 * px);
       }
     }
-  }, [geo, paths, size, tree, allocated, attributes, weaponSets, highlight, classIndex, atlas, atlasWanted, frames, ring, backdrop, art, view, extent]);
+  }, [geo, paths, size, tree, allocated, attributes, weaponSets, highlight, markers, classIndex, atlas, atlasWanted, frames, ring, backdrop, art, view, extent]);
 
   const requestDraw = useCallback(() => {
     cancelAnimationFrame(frame.current);

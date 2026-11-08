@@ -9,7 +9,7 @@ import { RotationStrip, type RotationGem, type RotationView } from "@/components
 import { stepFr } from "@/lib/step-labels";
 import { ClassEmblem, GemIcon, Pill, SectionTitle, TierBadge } from "@/components/ui";
 import { gemTip } from "@/lib/tips";
-import { getBuild, getBuilds } from "@/lib/builds";
+import { getBuild, getBuilds, type GemPriority } from "@/lib/builds";
 import { getClass, getGem, tree } from "@/lib/data";
 import { inventoryStages } from "@/lib/inventory";
 import { skillSources, type SkillSource } from "@/lib/skill-source";
@@ -21,7 +21,7 @@ const pctText = (share: number, lang: string) =>
 import { findNodeByName } from "@/lib/tree";
 import { createGraph } from "@/lib/tree";
 import { TIER_CATEGORIES, type SkillRotation } from "@/lib/types";
-import { fmt, getDictionary } from "@/i18n";
+import { fmt, getDictionary, type Dictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
 import { WEAPON_SET_COLORS } from "@/lib/weapon-sets";
 
@@ -300,6 +300,14 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                 {tr.build.leveling}
               </SectionTitle>
               <LevelingTimeline paths={leveling} storageKey={build.slug} />
+              {build.gemPriority && (
+                <GemPriorityTable
+                  priority={build.gemPriority}
+                  tr={tr}
+                  path={path}
+                  label={(l) => (lang === "fr" ? stepFr(l) : l)}
+                />
+              )}
             </section>
           )}
 
@@ -310,6 +318,8 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               initialStage={inventory.initial}
               slotLabels={tr.slots}
               weaponSetsLabel={tr.tree.weaponSets}
+              weaponLabels={{ title: tr.build.weapons, set1: tr.tree.weaponSet1, set2: tr.tree.weaponSet2 }}
+              labels={{ runes: tr.build.socketed, ladder: tr.build.ladderSlot }}
               hint={`${tr.build.inventoryHint} ${tr.build.modHint}`}
               priceLabels={{
                 divine: "Divine Orb",
@@ -322,8 +332,8 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
 
           <section id="passives" className="scroll-mt-24">
             <SectionTitle sub={fmt(tr.build.pointsAllocated, { n: build.pointsUsed })}>{tr.common.passiveTree}</SectionTitle>
-            <BuildTreeViewer planner={build.planner} code={build.plannerCode} />
-            <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <BuildTreeViewer planner={build.planner} code={build.plannerCode} steps={build.passiveSteps} />
+            <div className="mt-6">
               <div>
                 <h3 className="font-semibold">{tr.build.ascendancyOrder}</h3>
                 <ol className="mt-2 space-y-2">
@@ -341,14 +351,6 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                     </li>
                   ))}
                 </ol>
-              </div>
-              <div>
-                <h3 className="font-semibold">{tr.build.keyPassives}</h3>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {build.keyPassives.map((p) => (
-                    <Pill key={p}>{p}</Pill>
-                  ))}
-                </div>
               </div>
             </div>
           </section>
@@ -410,3 +412,53 @@ function stepOf(name: string): number | null {
 }
 const localizeRotation = (r: RotationView, lang: string): RotationView =>
   lang === "fr" ? { ...r, name: stepFr(r.name), steps: r.steps.map((st) => ({ ...st, label: st.label && stepFr(st.label) })) } : r;
+
+/** Engraving priority per category: each stage (usually an act) lists its gems in the order to engrave them. */
+function GemPriorityTable({
+  priority,
+  tr,
+  path,
+  label,
+}: {
+  priority: GemPriority;
+  tr: Dictionary;
+  path: (p: string) => string;
+  /** Localizes a stage label ("Act I"). */
+  label: (s: string) => string;
+}) {
+  const cats = (["skills", "spirit", "supports"] as const).filter((c) => priority[c]?.length);
+  return (
+    <div className="mt-6">
+      <h3 className="font-semibold">{tr.build.gemPriority}</h3>
+      <p className="text-sm text-muted">{tr.build.gemPrioritySub}</p>
+      <div className={`mt-3 grid gap-3 ${cats.length > 2 ? "lg:grid-cols-3" : "md:grid-cols-2"}`}>
+        {cats.map((cat) => (
+          <div key={cat} className="rounded-xl border border-line bg-surface p-3">
+            <p className="font-display text-sm font-semibold uppercase tracking-wider text-gold">{tr.build.gemPriorityCats[cat]}</p>
+            <ol className="mt-2 space-y-3">
+              {priority[cat]!.map((st) => (
+                <li key={st.label}>
+                  <p className="text-xs uppercase tracking-wider text-faint">{label(st.label)}</p>
+                  <ol className="mt-1 space-y-1">
+                    {st.gems.map((name, i) => {
+                      const gem = getGem(name)!;
+                      return (
+                        <li key={name} className="flex items-center gap-2 text-sm">
+                          <span className="w-4 text-right text-xs tabular-nums text-faint">{i + 1}</span>
+                          <GemIcon gem={gem} size={22} />
+                          <Link href={path(`/database/gems#${gem.id}`)} data-tip={gemTip(gem.name)} className="hover:text-gold">
+                            {gem.name}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

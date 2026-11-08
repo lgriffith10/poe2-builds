@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { PriceTag } from "@/lib/prices";
 import type { GearSlot, GearStage } from "@/lib/types";
+import { WEAPON_SET_COLORS } from "@/lib/weapon-sets";
 
 export interface InventoryItem {
   slot: GearSlot;
@@ -14,6 +15,10 @@ export interface InventoryItem {
   icon: string | null;
   implicits: string[];
   mods: string[];
+  /** Socketed runes and soul cores. */
+  runes: string[];
+  /** Ladder popularity for this slot among characters of the build (% of characters). */
+  ladder: { name: string; pct: number }[];
   /** "Grants Skill: …" line for bases that come with a skill (uniques list it in their mods). */
   grants: string | null;
   note: string | null;
@@ -62,6 +67,8 @@ export function GearInventory({
   initialStage,
   slotLabels,
   weaponSetsLabel = "Weapon sets",
+  weaponLabels = { title: "Weapons", set1: "Weapon Set I", set2: "Weapon Set II" },
+  labels = { runes: "Socketed", ladder: "On the ladder" },
   hint,
   priceLabels,
 }: {
@@ -69,6 +76,10 @@ export function GearInventory({
   initialStage: number;
   slotLabels: Record<GearSlot, string>;
   weaponSetsLabel?: string;
+  /** Titles of the weapons row under the inventory. */
+  weaponLabels?: { title: string; set1: string; set2: string };
+  /** Section titles in the item panel. */
+  labels?: { runes: string; ladder: string };
   hint: string;
   /** { divine, exalted, stageTotal, note } labels for the price chips. */
   priceLabels: { divine: string; exalted: string; stageTotal: string; note: string };
@@ -77,16 +88,34 @@ export function GearInventory({
   const stage = stages[stageIndex];
   const bySlot = new Map(stage.items.map((it) => [it.slot, it]));
   const [selected, setSelected] = useState<GearSlot>(stage.items[0]?.slot ?? "weapon");
-  const current = bySlot.get(selected) ?? stage.items[0];
+  const current = bySlot.get(selected) ?? bySlot.get("weapon") ?? stage.items[0];
   const hasSwap = bySlot.has("weapon2") || bySlot.has("offhand2");
-  const [swap, setSwap] = useState(false);
+  const [swapState, setSwap] = useState(false);
+  // Weapon set II is only shown where the stage has one.
+  const swap = hasSwap && swapState;
   const shownSlot = (slot: GearSlot): GearSlot =>
-    hasSwap && swap && (slot === "weapon" || slot === "offhand") ? (slot === "weapon" ? "weapon2" : "offhand2") : slot;
-  const pickSet = (two: boolean) => {
-    setSwap(two);
-    const weapon = two ? (bySlot.has("weapon2") ? "weapon2" : "offhand2") : bySlot.has("weapon") ? "weapon" : "offhand";
-    if (bySlot.has(weapon)) setSelected(weapon);
+    swap && (slot === "weapon" || slot === "offhand") ? (slot === "weapon" ? "weapon2" : "offhand2") : slot;
+  const pick = (slot: GearSlot) => {
+    setSelected(slot);
+    if (slot === "weapon2" || slot === "offhand2") setSwap(true);
+    else if (slot === "weapon" || slot === "offhand") setSwap(false);
   };
+  // Changing stage keeps the slot being looked at when the new stage has it (set II falls back to set I).
+  const changeStage = (i: number) => {
+    const next = new Set(stages[i].items.map((it) => it.slot));
+    setStageIndex(i);
+    if (!next.has(selected)) {
+      const alt = selected === "weapon2" ? "weapon" : selected === "offhand2" ? "offhand" : null;
+      setSelected(alt && next.has(alt) ? alt : next.has("weapon") ? "weapon" : (stages[i].items[0]?.slot ?? "weapon"));
+    }
+    if (!next.has("weapon2") && !next.has("offhand2")) setSwap(false);
+  };
+  const weaponSets = ([
+    [1, ["weapon", "offhand"]],
+    [2, ["weapon2", "offhand2"]],
+  ] as const)
+    .map(([set, slots]) => ({ set, items: slots.map((sl) => bySlot.get(sl)).filter((it): it is InventoryItem => Boolean(it)) }))
+    .filter((g) => g.items.length);
 
   return (
     <div>
@@ -97,7 +126,7 @@ export function GearInventory({
               key={s.id}
               role="tab"
               aria-selected={i === stageIndex}
-              onClick={() => setStageIndex(i)}
+              onClick={() => changeStage(i)}
               className={`rounded-md px-3 py-1.5 text-sm ${i === stageIndex ? "bg-surface-2 text-gold" : "text-muted hover:text-ink"}`}
             >
               {s.label}
@@ -115,24 +144,6 @@ export function GearInventory({
       <div className="flex flex-col gap-4 md:flex-row md:items-start">
         <div className="w-full max-w-sm shrink-0 self-center rounded-xl border border-line bg-[radial-gradient(ellipse_at_center,#1d1913_0%,#0c0a08_80%)] p-3 md:self-start">
           <div className="grid aspect-[8/7] grid-cols-8 grid-rows-7 gap-1.5">
-            {hasSwap && (
-              <div className="col-start-1 col-span-2 row-start-1 flex items-center gap-1" role="group" aria-label={weaponSetsLabel}>
-                {[false, true].map((two) => (
-                  <button
-                    key={String(two)}
-                    type="button"
-                    onClick={() => pickSet(two)}
-                    aria-pressed={swap === two}
-                    title={two ? slotLabels.weapon2 : slotLabels.weapon}
-                    className={`h-6 flex-1 rounded border font-display text-xs ${
-                      swap === two ? "border-gold-soft bg-surface-2 text-gold" : "border-line text-muted hover:text-ink"
-                    }`}
-                  >
-                    {two ? "II" : "I"}
-                  </button>
-                ))}
-              </div>
-            )}
             {ORDER.map((base) => {
               const slot = shownSlot(base);
               const it = bySlot.get(slot);
@@ -157,12 +168,64 @@ export function GearInventory({
                   {it?.icon ? (
                     <img src={it.icon} alt="" loading="lazy" className="h-full w-full object-contain p-0.5" />
                   ) : (
-                    <span className="px-0.5 text-center text-[10px] leading-tight text-faint">{slotLabels[slot]}</span>
+                    <span className={`px-0.5 text-center text-[10px] leading-tight ${it ? "text-[#e8d77a]" : "text-faint"}`}>
+                      {it ? it.title : slotLabels[slot]}
+                    </span>
+                  )}
+                  {hasSwap && (base === "weapon" || base === "offhand") && (
+                    <span
+                      className="absolute left-1 top-1 rounded px-1 font-display text-[10px] font-bold text-black"
+                      style={{ background: WEAPON_SET_COLORS[swap ? 2 : 1].main }}
+                    >
+                      {swap ? "II" : "I"}
+                    </span>
                   )}
                 </button>
               );
             })}
           </div>
+          {weaponSets.length > 0 && (
+            <div className="mt-3 border-t border-line pt-3" role="group" aria-label={weaponSetsLabel}>
+              <p className="text-xs uppercase tracking-wider text-faint">{weaponLabels.title}</p>
+              <div className={`mt-2 grid gap-2 ${weaponSets.length > 1 ? "grid-cols-2" : ""}`}>
+                {weaponSets.map((g) => {
+                  const on = (g.set === 2) === swap;
+                  return (
+                    <div
+                      key={g.set}
+                      className={`rounded-lg border p-1.5 ${on ? "bg-surface-2" : ""}`}
+                      style={{ borderColor: on ? WEAPON_SET_COLORS[g.set].main : "var(--color-line, #3a3227)" }}
+                    >
+                      <p className="flex items-center gap-1.5 text-[11px] font-semibold" style={{ color: WEAPON_SET_COLORS[g.set].light }}>
+                        <span className="h-2 w-2 rounded-full" style={{ background: WEAPON_SET_COLORS[g.set].main }} />
+                        {g.set === 1 ? weaponLabels.set1 : weaponLabels.set2}
+                      </p>
+                      <ul className="mt-1 space-y-1">
+                        {g.items.map((it) => (
+                          <li key={it.slot}>
+                            <button
+                              type="button"
+                              onClick={() => pick(it.slot)}
+                              className={`flex w-full items-center gap-2 rounded px-1 py-0.5 text-left text-xs hover:bg-black/30 ${
+                                current?.slot === it.slot ? "ring-1 ring-gold" : ""
+                              }`}
+                            >
+                              {it.icon ? (
+                                <img src={it.icon} alt="" loading="lazy" className="h-8 w-8 shrink-0 object-contain" />
+                              ) : (
+                                <span className="h-8 w-8 shrink-0 rounded bg-black/40" />
+                              )}
+                              <span className={`min-w-0 truncate ${it.kind === "unique" ? "text-unique" : "text-[#e8d77a]"}`}>{it.title}</span>
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
 
         {current && (
@@ -197,7 +260,35 @@ export function GearInventory({
                   <li key={i}>{m}</li>
                 ))}
               </ul>
+              {current.runes.length > 0 && (
+                <div className="border-t border-line pt-2">
+                  <p className="text-xs uppercase tracking-wider text-faint">{labels.runes}</p>
+                  <ul className="mt-0.5 space-y-0.5 text-[#c8b47a]">
+                    {current.runes.map((m, i) => (
+                      <li key={i}>{m}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               {current.note && <p className="border-t border-line pt-2 text-xs text-muted">{current.note}</p>}
+              {current.ladder.length > 0 && (
+                <div className="border-t border-line pt-2 text-left">
+                  <p className="text-center text-xs uppercase tracking-wider text-faint">{labels.ladder}</p>
+                  <ul className="mt-1.5 space-y-1">
+                    {current.ladder.map((e) => (
+                      <li key={e.name} className="flex items-center gap-2 text-xs">
+                        <span className="w-36 shrink-0 truncate text-muted" title={e.name}>
+                          {e.name}
+                        </span>
+                        <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-2">
+                          <span className="block h-full rounded-full bg-gold/70" style={{ width: `${e.pct}%` }} />
+                        </span>
+                        <span className="w-9 text-right tabular-nums text-muted">{e.pct}%</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         )}

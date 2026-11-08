@@ -195,10 +195,11 @@ export function allocateWeaponSetTargets(
   ascendancy: string | null,
   allocated: ReadonlySet<number>,
   targets: Partial<Record<WeaponSet, number[]>>,
-): { allocated: Set<number>; weaponSets: Record<number, WeaponSet>; unreachable: number[] } {
+): { allocated: Set<number>; weaponSets: Record<number, WeaponSet>; unreachable: number[]; steps: AllocationStep[] } {
   const all = new Set(allocated);
   const weaponSets: Record<number, WeaponSet> = {};
   const unreachable: number[] = [];
+  const steps: AllocationStep[] = [];
   for (const set of [1, 2] as const) {
     const own = new Set(allocated);
     const other = new Set<number>(
@@ -209,15 +210,17 @@ export function allocateWeaponSetTargets(
     for (const target of targets[set] ?? []) {
       const path = findPath(graph, own, target, cls, ascendancy, other);
       if (path === null) unreachable.push(target);
-      else
+      else {
         for (const id of path) {
           own.add(id);
           all.add(id);
           weaponSets[id] = set;
         }
+        steps.push({ target, nodes: path, set });
+      }
     }
   }
-  return { allocated: all, weaponSets, unreachable };
+  return { allocated: all, weaponSets, unreachable, steps };
 }
 
 /**
@@ -229,16 +232,27 @@ export function allocateTargets(
   cls: ClassInfo,
   ascendancy: string | null,
   targets: number[],
-): { allocated: Set<number>; unreachable: number[] } {
+): { allocated: Set<number>; unreachable: number[]; steps: AllocationStep[] } {
   const rootIds = roots(graph, cls, ascendancy);
   const allocated = new Set<number>(rootIds);
   const unreachable: number[] = [];
+  const steps: AllocationStep[] = [];
   for (const target of targets) {
     const path = findPath(graph, allocated, target, cls, ascendancy);
     if (path === null) unreachable.push(target);
-    else path.forEach((id) => allocated.add(id));
+    else {
+      path.forEach((id) => allocated.add(id));
+      steps.push({ target, nodes: path });
+    }
   }
-  return { allocated, unreachable };
+  return { allocated, unreachable, steps };
+}
+
+/** One guide target and the nodes its path allocated (empty when already on the tree). */
+export interface AllocationStep {
+  target: number;
+  nodes: number[];
+  set?: WeaponSet;
 }
 
 /** Finds the node with this name allowed for the class/ascendancy, preferring the closest one to the start. */
