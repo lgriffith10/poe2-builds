@@ -91,9 +91,12 @@ for (const queue = [cls.start]; queue.length; ) {
 }
 const node = (id) => tree.nodes[id];
 const keyNodes = [...allocated]
-  .filter((id) => node(id) && !node(id).a && ["notable", "keystone"].includes(node(id).t))
+  // Nodes not connected to the class start (e.g. Dominion, granted without a path) cannot be pathed to.
+  .filter((id) => node(id) && !node(id).a && ["notable", "keystone"].includes(node(id).t) && dist.has(id))
   .sort((a, b) => (dist.get(a) ?? 999) - (dist.get(b) ?? 999));
-const ascOrder = [...allocated].filter((id) => node(id)?.a === ascName && node(id).t === "notable").map((id) => node(id).n);
+// Some ascendancies (e.g. Abyssal Lich) share the nodes of another one and are listed in `a2`.
+const inAsc = (n) => n && (n.a === ascName || (n.a2 ?? []).includes(ascName));
+const ascOrder = [...allocated].filter((id) => inAsc(node(id)) && node(id).t === "notable").map((id) => node(id).n);
 const attrCount = { str: 0, dex: 0, int: 0 };
 for (const v of Object.values(c.passiveSkillOverrides ?? {})) {
   const m = String(v).match(/generic_attribute_(strength|dexterity|intelligence)/);
@@ -125,7 +128,22 @@ const fm = {
   cons: [],
   skills,
   gear,
-  passives: { attribute, path: keyNodes.map((id) => node(id).n), ascendancy: ascOrder },
+  passives: {
+    attribute,
+    path: keyNodes.map((id) => node(id).n),
+    ascendancy: ascOrder,
+    // Weapon-set points (kept apart from passiveSelection by poe.ninja).
+    ...Object.fromEntries(
+      [1, 2]
+        .map((set) => [
+          `weaponSet${set}`,
+          (c[`passiveSelectionSet${set}`] ?? [])
+            .filter((id) => node(id) && ["notable", "keystone"].includes(node(id).t))
+            .map((id) => node(id).n.trim()),
+        ])
+        .filter(([, names]) => names.length),
+    ),
+  },
 };
 const doc = new YAML.Document(fm);
 YAML.visit(doc, {

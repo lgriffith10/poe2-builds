@@ -101,7 +101,7 @@ function statLabel(id) {
   return `?${id}`;
 }
 
-const SLOTS = { Weapon: "weapon", Offhand: "offhand", Helm: "helmet", BodyArmour: "body", Gloves: "gloves", Boots: "boots", Amulet: "amulet", Ring: "ring1", Ring2: "ring2", Belt: "belt" };
+const SLOTS = { Weapon: "weapon", Offhand: "offhand", Helm: "helmet", BodyArmour: "body", Gloves: "gloves", Boots: "boots", Amulet: "amulet", Ring: "ring1", Ring2: "ring2", Belt: "belt", Weapon2: "weapon2", Offhand2: "offhand2" };
 
 const yamlList = (items) => `[${items.map((s) => (/[:,[\]#]/.test(s) || /^[!&*'"]/.test(s) ? JSON.stringify(s) : s)).join(", ")}]`;
 
@@ -148,7 +148,11 @@ function printStages(d, gearFor, mapArg) {
   const stagesMode = args.includes("--stages");
   const mapIdx = args.indexOf("--map");
   const stageArgs = mapIdx >= 0 ? args[mapIdx + 1] : "";
-  const [slug, wanted] = args.filter((a, i) => !a.startsWith("--") && i !== mapIdx + 1 || (mapIdx < 0 && !a.startsWith("--")));
+  // --tree <name>: passive tree variant to use (default: the longest one of the profile).
+  const treeIdx = args.indexOf("--tree");
+  const treeArg = treeIdx >= 0 ? args[treeIdx + 1] : null;
+  const valueIdx = new Set([mapIdx + 1, treeIdx + 1].filter((i) => i > 0));
+  const [slug, wanted] = args.filter((a, i) => !a.startsWith("--") && !valueIdx.has(i));
   const url = `https://maxroll.gg/poe2/build-guides/${slug}`;
   const html = await (await fetch(url)).text();
   const plannerId = html.match(/maxroll\.gg\/poe2\/planner\/([a-z0-9]+)/)?.[1];
@@ -170,11 +174,12 @@ function printStages(d, gearFor, mapArg) {
   const cls = tree.classes.find((c) => c.name === charName);
   const asc = cls?.ascendancies[Number(profile.ascendancy.match(/(\d+)$/)?.[1]) - 1];
 
-  // Passives: history is a flat id list or {add, remove} steps.
+  // Passives: history is a flat id list, {add, remove} steps, or {id, set} weapon-set allocations (set 1 or 2).
   const flatten = (h) => {
     const out = [];
     for (const step of h) {
       if (typeof step === "number") out.push(step);
+      else if (step.set !== undefined) continue;
       else {
         for (const id of step.add ?? []) if (!out.includes(id)) out.push(id);
         for (const id of step.remove ?? []) if (out.includes(id)) out.splice(out.indexOf(id), 1);
@@ -182,10 +187,19 @@ function printStages(d, gearFor, mapArg) {
     }
     return out;
   };
-  const variants = profile.passives.variants.map((v) => ({ ...v, history: flatten(v.history) }));
-  const pv = variants.sort((a, b) => b.history.length - a.history.length)[0];
+  const setNodes = (h, set) => h.filter((s) => s && s.set === set && tree.nodes[s.id]).map((s) => s.id);
+  const variants = profile.passives.variants.map((v) => ({
+    ...v,
+    history: flatten(v.history),
+    sets: { 1: setNodes(v.history, 1), 2: setNodes(v.history, 2) },
+  }));
+  const pv = variants.find((v) => v.name === treeArg) ?? variants.sort((a, b) => b.history.length - a.history.length)[0];
+  if (treeArg && pv.name !== treeArg) console.error(`NOTE tree "${treeArg}" not found, using "${pv.name}"`);
   const main = pv.history.filter((n) => tree.nodes[n] && !tree.nodes[n].a);
   const key = [...new Set(main.filter((n) => ["notable", "keystone"].includes(tree.nodes[n].t)).map((n) => tree.nodes[n].n))];
+  const setKey = (set) => [...new Set(pv.sets[set].filter((n) => ["notable", "keystone"].includes(tree.nodes[n].t)).map((n) => tree.nodes[n].n.trim()))];
+  const weaponSet1 = setKey(1);
+  const weaponSet2 = setKey(2);
   const ascOrder = pv.history.filter((n) => tree.nodes[n]?.a && tree.nodes[n].t === "notable").map((n) => tree.nodes[n].n);
   const attrCounts = [0, 0, 0];
   Object.values(pv.attributes ?? {}).forEach((v) => attrCounts[v]++);
@@ -204,8 +218,10 @@ function printStages(d, gearFor, mapArg) {
       console.error(`NOTE skipped group led by a placeholder gem: ${names.join(" + ")}`);
       continue;
     }
-    skills.push({ gem, supports });
+    skills.push({ gem, supports, weaponSet: s.weaponSet });
   }
+  // Only worth showing when the build socket skills on both weapon sets.
+  const bothSets = new Set(skills.map((s) => s.weaponSet).filter(Boolean)).size > 1;
 
   // Gear: one YAML block per equipment variant.
   const notes = [];
@@ -275,18 +291,18 @@ tiers:
 pros: []
 cons: []
 skills:
-${skills.map((s) => `  - gem: ${JSON.stringify(s.gem)}\n    supports: ${yamlList(s.supports)}`).join("\n")}
+${skills.map((s) => `  - gem: ${JSON.stringify(s.gem)}\n    supports: ${yamlList(s.supports)}${bothSets && s.weaponSet ? `\n    weaponSet: ${s.weaponSet}` : ""}`).join("\n")}
 gear:
 ${gear.join("\n")}
 passives:
   attribute: ${attribute}
   path:
 ${key.map((k) => `    - ${JSON.stringify(k)}`).join("\n")}
-  ascendancy: ${yamlList(ascOrder)}
+  ascendancy: ${yamlList(ascOrder)}${weaponSet1.length ? `\n  weaponSet1: ${yamlList(weaponSet1)}` : ""}${weaponSet2.length ? `\n  weaponSet2: ${yamlList(weaponSet2)}` : ""}
 ---
 `;
   process.stdout.write(out);
-  console.error(`profile "${profile.name}" / tree "${pv.name}": ${main.length} main nodes, ${ascOrder.length} ascendancy notables`);
+  console.error(`profile "${profile.name}" / tree "${pv.name}": ${main.length} main nodes, ${ascOrder.length} ascendancy notables, weapon sets ${pv.sets[1].length}/${pv.sets[2].length} nodes`);
   for (const n of notes) console.error("NOTE " + n);
   const unknown = gear.join("\n").match(/\?[a-z_.+%]+/g);
   if (unknown) console.error("UNMAPPED STATS " + [...new Set(unknown)].join(", "));

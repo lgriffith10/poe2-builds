@@ -32,6 +32,7 @@ skills:
   - gem: Whirling Slash
     supports: [Rage III, Rapid Attacks III, Knockback, Magnified Area II]
     note: Builds the whirlwind stages that empower Twister; use on tanky rares
+    weaponSet: 1
   - gem: Ice-Tipped Arrows
     supports: [Magnified Area II, Elemental Focus, Cooldown Recovery II, Elemental Armament II]
     note: Icy fragments that clear most trash on their own
@@ -53,6 +54,7 @@ skills:
   - gem: War Banner
     supports: [Prolonged Duration II, Magnified Area II, Refraction II]
     note: Damage banner for bosses
+    weaponSet: 2
   - gem: Combat Frenzy
     supports: [Charge Profusion II]
     note: Frenzy charge generation
@@ -217,6 +219,12 @@ gear:
   belt:
     base: Rawhide Belt
     mods: [+Maximum Life, Elemental Resistances]
+  weapon2:
+    base: Akoyan Spear
+    mods: [High Physical DPS, Critical Hit Chance, +Level of all Projectile Skills, Critical Damage Bonus]
+  offhand2:
+    base: Omen Sceptre
+    mods: []
 passives:
   attribute: dex
   path:
@@ -240,6 +248,8 @@ passives:
     - Deep Freeze
     - Enhanced Reflexes
   ascendancy: [Primal Bounty, Wild Protector, Vivid Stampede, Sacred Unity]
+  weaponSet1: [Agile Succession, Precision Salvo, Versatile Arms]
+  weaponSet2: [Disorientation, Forces of Nature, Blinding Strike]
 ---
 
 ## How It Works

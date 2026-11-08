@@ -254,6 +254,9 @@ gear:
   belt:
     base: Fine Belt
     mods: [Elemental Resistances]
+  weapon2:
+    base: Chiming Staff
+    mods: [+Level of all Spell Skills, Increased Cast Speed]
 gearStages:
   campaign:
     weapon:
@@ -286,6 +289,9 @@ gearStages:
     belt:
       base: Ornate Belt
       mods: [+Maximum Life, +Strength]
+    weapon2:
+      base: Chiming Staff
+      mods: [Increased Cast Speed]
   mapping:
     weapon:
       base: Withered Wand
@@ -316,6 +322,9 @@ gearStages:
     belt:
       base: Fine Belt
       mods: [Fire Resistance, Cold Resistance, Lightning Resistance]
+    weapon2:
+      base: Chiming Staff
+      mods: [+Level of all Spell Skills, Increased Cast Speed]
   endgame:
     weapon:
       base: Withered Wand
@@ -345,6 +354,9 @@ gearStages:
       mods: [Increased Chaos Damage, Increased Cast Speed, Elemental Resistances]
     belt:
       unique: "Ingenuity"
+    weapon2:
+      base: Chiming Staff
+      mods: [+Maximum Mana, +Level of all Spell Skills, Increased Cast Speed]
   minmax:
     weapon:
       base: Withered Wand
@@ -373,6 +385,9 @@ gearStages:
       unique: "Kalandra's Touch"
     belt:
       unique: "Headhunter"
+    weapon2:
+      base: Chiming Staff
+      mods: [+Maximum Mana, +Level of all Spell Skills, Increased Cast Speed]
 passives:
   attribute: int
   path:

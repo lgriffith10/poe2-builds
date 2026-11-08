@@ -6,13 +6,17 @@ import { DEFAULT_LOCALE, LOCALES } from "@/i18n/config";
 import { getBuilds } from "@/lib/builds";
 import { getGuides } from "@/lib/guides";
 import { tree } from "@/lib/data";
-import { MAX_ASCENDANCY_POINTS, MAX_PASSIVE_POINTS } from "@/lib/tree";
+import { MAX_ASCENDANCY_POINTS, MAX_PASSIVE_POINTS, MAX_WEAPON_SET_POINTS } from "@/lib/tree";
 
 let warnings = 0;
 for (const b of getBuilds()) {
   const asc = b.planner.nodes.filter((id) => tree.nodes[id].a && tree.nodes[id].t !== "ascStart").length;
-  console.log(`✓ ${b.slug}: ${b.pointsUsed}/${MAX_PASSIVE_POINTS} passive, ${asc}/${MAX_ASCENDANCY_POINTS} ascendancy`);
-  if (b.pointsUsed > MAX_PASSIVE_POINTS || asc > MAX_ASCENDANCY_POINTS) {
+  const sets = Object.values(b.planner.weaponSets ?? {});
+  const set1 = sets.filter((s) => s === 1).length;
+  const set2 = sets.filter((s) => s === 2).length;
+  const setInfo = sets.length ? `, weapon sets ${set1}/${set2} of ${MAX_WEAPON_SET_POINTS}` : "";
+  console.log(`✓ ${b.slug}: ${b.pointsUsed}/${MAX_PASSIVE_POINTS} passive, ${asc}/${MAX_ASCENDANCY_POINTS} ascendancy${setInfo}`);
+  if (b.pointsUsed > MAX_PASSIVE_POINTS || asc > MAX_ASCENDANCY_POINTS || set1 > MAX_WEAPON_SET_POINTS || set2 > MAX_WEAPON_SET_POINTS) {
     console.warn(`  ⚠ ${b.slug} exceeds the point budget`);
     warnings++;
   }

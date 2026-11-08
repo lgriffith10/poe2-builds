@@ -43,6 +43,9 @@ export function Price({ tag, alt }: { tag: PriceTag; alt: string }) {
 const PLACEMENT: Record<GearSlot, string> = {
   weapon: "col-start-1 col-span-2 row-start-2 row-span-4",
   offhand: "col-start-7 col-span-2 row-start-2 row-span-4",
+  // Weapon set II takes the same cells; a I / II switch above the weapon swaps them, like in game.
+  weapon2: "col-start-1 col-span-2 row-start-2 row-span-4",
+  offhand2: "col-start-7 col-span-2 row-start-2 row-span-4",
   helmet: "col-start-4 col-span-2 row-start-1 row-span-2",
   amulet: "col-start-6 row-start-2",
   body: "col-start-4 col-span-2 row-start-3 row-span-3",
@@ -58,12 +61,14 @@ export function GearInventory({
   stages,
   initialStage,
   slotLabels,
+  weaponSetsLabel = "Weapon sets",
   hint,
   priceLabels,
 }: {
   stages: InventoryStage[];
   initialStage: number;
   slotLabels: Record<GearSlot, string>;
+  weaponSetsLabel?: string;
   hint: string;
   /** { divine, exalted, stageTotal, note } labels for the price chips. */
   priceLabels: { divine: string; exalted: string; stageTotal: string; note: string };
@@ -73,6 +78,15 @@ export function GearInventory({
   const bySlot = new Map(stage.items.map((it) => [it.slot, it]));
   const [selected, setSelected] = useState<GearSlot>(stage.items[0]?.slot ?? "weapon");
   const current = bySlot.get(selected) ?? stage.items[0];
+  const hasSwap = bySlot.has("weapon2") || bySlot.has("offhand2");
+  const [swap, setSwap] = useState(false);
+  const shownSlot = (slot: GearSlot): GearSlot =>
+    hasSwap && swap && (slot === "weapon" || slot === "offhand") ? (slot === "weapon" ? "weapon2" : "offhand2") : slot;
+  const pickSet = (two: boolean) => {
+    setSwap(two);
+    const weapon = two ? (bySlot.has("weapon2") ? "weapon2" : "offhand2") : bySlot.has("weapon") ? "weapon" : "offhand";
+    if (bySlot.has(weapon)) setSelected(weapon);
+  };
 
   return (
     <div>
@@ -101,7 +115,26 @@ export function GearInventory({
       <div className="flex flex-col gap-4 md:flex-row md:items-start">
         <div className="w-full max-w-sm shrink-0 self-center rounded-xl border border-line bg-[radial-gradient(ellipse_at_center,#1d1913_0%,#0c0a08_80%)] p-3 md:self-start">
           <div className="grid aspect-[8/7] grid-cols-8 grid-rows-7 gap-1.5">
-            {ORDER.map((slot) => {
+            {hasSwap && (
+              <div className="col-start-1 col-span-2 row-start-1 flex items-center gap-1" role="group" aria-label={weaponSetsLabel}>
+                {[false, true].map((two) => (
+                  <button
+                    key={String(two)}
+                    type="button"
+                    onClick={() => pickSet(two)}
+                    aria-pressed={swap === two}
+                    title={two ? slotLabels.weapon2 : slotLabels.weapon}
+                    className={`h-6 flex-1 rounded border font-display text-xs ${
+                      swap === two ? "border-gold-soft bg-surface-2 text-gold" : "border-line text-muted hover:text-ink"
+                    }`}
+                  >
+                    {two ? "II" : "I"}
+                  </button>
+                ))}
+              </div>
+            )}
+            {ORDER.map((base) => {
+              const slot = shownSlot(base);
               const it = bySlot.get(slot);
               const active = it && current?.slot === slot;
               return (

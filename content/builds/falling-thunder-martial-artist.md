@@ -289,6 +289,9 @@ gear:
     mods: [Elemental Resistances, +Maximum Life, Adds Fire Damage to Attacks, Fire Resistance]
   belt:
     unique: "Shavronne's Satchel"
+  weapon2:
+    base: Voltfang Talisman
+    mods: [Increased Attack Speed]
 gearStages:
   campaign:
     weapon:

@@ -13,12 +13,17 @@ export interface ItemOption {
 }
 
 /** Item classes that fit each equipment slot. */
+const WEAPONS = [
+  "Bow", "Crossbow", "Spear", "Warstaff", "Wand", "Staff", "Sceptre", "Talisman", "Mace", "One Hand Mace",
+  "Two Hand Mace", "One Hand Sword", "Two Hand Sword", "One Hand Axe", "Two Hand Axe", "Dagger", "Claw", "Flail",
+];
+const OFFHANDS = ["Shield", "Buckler", "Focus", "Focii", "Quiver", "Sceptre", "Wand"];
+
 export const SLOT_CLASSES: Record<GearSlot, string[]> = {
-  weapon: [
-    "Bow", "Crossbow", "Spear", "Warstaff", "Wand", "Staff", "Sceptre", "Talisman", "Mace", "One Hand Mace",
-    "Two Hand Mace", "One Hand Sword", "Two Hand Sword", "One Hand Axe", "Two Hand Axe", "Dagger", "Claw", "Flail",
-  ],
-  offhand: ["Shield", "Buckler", "Focus", "Focii", "Quiver", "Sceptre", "Wand"],
+  weapon: WEAPONS,
+  offhand: OFFHANDS,
+  weapon2: WEAPONS,
+  offhand2: OFFHANDS,
   helmet: ["Helmet"],
   body: ["Body Armour"],
   gloves: ["Gloves"],

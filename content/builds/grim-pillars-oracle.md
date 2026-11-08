@@ -28,21 +28,27 @@ skills:
   - gem: Spell Totem
     supports: [Grim Pillars, Urgent Totems III, Efficiency II, Magnified Area II, Cold Mastery]
     note: Main damage; totems cast Grim Pillars
+    weaponSet: 1
   - gem: Entangle
     supports: [Biting Frost I, Living Lightning II, Branching Fissures I, Rapid Casting II, Magnified Area II]
     note: Consumes the Ice Crystals' freeze. Keep a copy at gem level 1 for a tiny mana cost.
+    weaponSet: 2
   - gem: Mana Tempest
     supports: [Advancing Storm, Efficiency II, Lightning Mastery]
     note: Damage buff
+    weaponSet: 2
   - gem: Frost Bomb
     supports: [Spell Echo, Overabundance I, Potent Exposure, Efficiency II]
     note: Exposure for bosses
+    weaponSet: 2
   - gem: Elemental Weakness
     supports: [Efficiency II, Cursed Ground, Heightened Curse, Ritualistic Curse]
     note: Curse
+    weaponSet: 2
   - gem: Purity of Fire
     supports: [Mysticism II, Clarity II, Vitality II]
     note: Aura
+    weaponSet: 2
 leveling:
   - name: "Plants Leveling"
     steps:
@@ -172,6 +178,12 @@ gear:
   belt:
     base: Utility Belt
     mods: [+Maximum Life, +Maximum Mana, +Strength, Elemental Resistances]
+  weapon2:
+    base: Attuned Wand
+    mods: [Increased Spell Damage, +Level of all Cold Spell Skills, Increased Cast Speed, Spell Critical Hit Chance, Gain Damage as Extra Lightning]
+  offhand2:
+    base: Shrine Sceptre
+    mods: [+Spirit, +Maximum Mana]
 gearStages:
   campaign:
     weapon:
@@ -264,6 +276,12 @@ gearStages:
     belt:
       base: Utility Belt
       mods: [+Strength, Fire Resistance, Cold Resistance, +Maximum Life, +Maximum Mana]
+    weapon2:
+      base: Attuned Wand
+      mods: [+Level of all Cold Spell Skills, Gain Damage as Extra Cold, Increased Elemental Damage]
+    offhand2:
+      base: Shrine Sceptre
+      mods: [+Spirit, +Maximum Mana]
   minmax:
     weapon:
       base: Attuned Wand
@@ -294,6 +312,12 @@ gearStages:
       mods: [Fire Resistance, Cold Resistance, +Maximum Mana, Increased Cast Speed]
     belt:
       unique: "Mageblood"
+    weapon2:
+      base: Attuned Wand
+      mods: [+Level of all Cold Spell Skills, Gain Damage as Extra Cold, Increased Elemental Damage]
+    offhand2:
+      base: Shrine Sceptre
+      mods: [+Spirit, +Maximum Mana]
 passives:
   attribute: str
   path:
@@ -315,6 +339,8 @@ passives:
     - Calculated Hunter
     - Cower Before the First Ones
   ascendancy: [The Unseen Path, The Lesser Harm, Forced Outcome, Unnamed Heartwood]
+  weaponSet1: [Ancestral Alacrity, Supportive Ancestors, Ancestral Reach, Ancestral Conduits, Stormcharged, Rustle of the Leaves, Mighty Trunk]
+  weaponSet2: [Radial Force, Splitting Ground, Touch the Arcane, Erraticism, Casting Cascade, Overzealous]
 ---
 
 ## How It Works

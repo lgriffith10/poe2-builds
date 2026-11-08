@@ -1,5 +1,5 @@
 // Encodes planner state into a compact, URL-safe string (stored in the URL hash).
-import { GEAR_SLOTS, type GearSlot, type PlannerState } from "./types";
+import { GEAR_SLOTS, type GearSlot, type PlannerState, type WeaponSet } from "./types";
 
 const VERSION = 1;
 
@@ -11,6 +11,8 @@ interface Encoded {
   n: string;
   /** attribute choices: "<index in sorted node list>:<choice>" pairs */
   at?: string;
+  /** weapon-set nodes: "<index in sorted node list>:<set>" pairs */
+  ws?: string;
   s?: [string, ...string[]][];
   g?: Record<string, string>;
 }
@@ -42,8 +44,13 @@ export function encodeBuild(state: PlannerState): string {
     .map((id, i) => (state.attributes[id] !== undefined ? `${i.toString(36)}:${state.attributes[id]}` : null))
     .filter(Boolean)
     .join(".");
+  const ws = sorted
+    .map((id, i) => (state.weaponSets?.[id] ? `${i.toString(36)}:${state.weaponSets[id]}` : null))
+    .filter(Boolean)
+    .join(".");
   const payload: Encoded = { v: VERSION, c: state.classIndex, a: state.ascIndex, n };
   if (at) payload.at = at;
+  if (ws) payload.ws = ws;
   const skills = state.skills.filter((s) => s.gem);
   if (skills.length) payload.s = skills.map((s) => [s.gem, ...s.supports]);
   const gear = Object.fromEntries(Object.entries(state.gear).filter(([, v]) => v));
@@ -63,6 +70,12 @@ export function decodeBuild(code: string): PlannerState | null {
       const id = nodes[parseInt(i, 36)];
       if (id !== undefined) attributes[id] = Number(choice);
     }
+    const weaponSets: Record<number, WeaponSet> = {};
+    for (const pair of p.ws?.split(".") ?? []) {
+      const [i, set] = pair.split(":");
+      const id = nodes[parseInt(i, 36)];
+      if (id !== undefined && (set === "1" || set === "2")) weaponSets[id] = Number(set) as WeaponSet;
+    }
     const gear: PlannerState["gear"] = {};
     for (const [slot, name] of Object.entries(p.g ?? {})) {
       if ((GEAR_SLOTS as readonly string[]).includes(slot)) gear[slot as GearSlot] = name;
@@ -71,6 +84,7 @@ export function decodeBuild(code: string): PlannerState | null {
       classIndex: p.c,
       ascIndex: p.a,
       nodes,
+      ...(Object.keys(weaponSets).length && { weaponSets }),
       attributes,
       skills: (p.s ?? []).map(([gem, ...supports]) => ({ gem, supports })),
       gear,

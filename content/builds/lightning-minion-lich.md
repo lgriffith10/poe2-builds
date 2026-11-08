@@ -273,6 +273,11 @@ gear:
   belt:
     base: Heavy Belt
     mods: [+Level of all Minion Skills, Elemental Resistances, +Maximum Life, +Strength]
+  weapon2:
+    base: Chiming Staff
+    mods: [+Level of all Spell Skills]
+  offhand2:
+    unique: Prism Guardian
 gearStages:
   campaign:
     weapon:
@@ -303,6 +308,11 @@ gearStages:
     belt:
       base: Fine Belt
       mods: [Elemental Resistances, +Maximum Life, Chaos Resistance, +Strength, Armour, +Maximum Mana]
+    weapon2:
+      unique: Trenchtimbre
+    offhand2:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit]
   mapping:
     weapon:
       base: Rattling Sceptre
@@ -332,6 +342,9 @@ gearStages:
     belt:
       base: Fine Belt
       mods: [Elemental Resistances, +Maximum Life, +Strength, Armour]
+    weapon2:
+      base: Chiming Staff
+      mods: [+Level of all Spell Skills]
   endgame:
     weapon:
       base: Rattling Sceptre
@@ -360,6 +373,12 @@ gearStages:
     belt:
       base: Heavy Belt
       mods: [Elemental Resistances, +Strength, +Maximum Life, Armour]
+    weapon2:
+      base: Chiming Staff
+      mods: [+Level of all Spell Skills]
+    offhand2:
+      base: Sacred Focus
+      mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
   minmax:
     weapon:
       base: Rattling Sceptre
@@ -389,6 +408,11 @@ gearStages:
     belt:
       base: Heavy Belt
       mods: [+Level of all Minion Skills, Elemental Resistances, +Maximum Life, +Strength]
+    weapon2:
+      base: Chiming Staff
+      mods: [+Level of all Spell Skills]
+    offhand2:
+      unique: Prism Guardian
 passives:
   attribute: int
   path:

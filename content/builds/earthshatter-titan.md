@@ -108,6 +108,8 @@ passives:
     - "Voracious"
     - "Vengeful Fury"
   ascendancy: [Ancestral Empowerment, Hulking Form, Earthbreaker, Colossal Capacity]
+  weaponSet1: [Brutal, Bond of the Wolf, Sturdy Metal, Relentless, Mass Hysteria, Blurred Motion]
+  weaponSet2: [Acceleration, Split the Earth, Crushing Verdict, Channelled Heritage, Guided Hand, Bloodthirsty]
 ---
 
 ## How It Works

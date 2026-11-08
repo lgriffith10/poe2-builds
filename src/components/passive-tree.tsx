@@ -2,8 +2,9 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useI18n } from "@/i18n/client";
-import { belongsToAscendancy, nodeStats } from "@/lib/tree";
-import type { TreeData, TreeNode } from "@/lib/types";
+import { belongsToAscendancy, nodeStats, type WeaponSetMap } from "@/lib/tree";
+import type { TreeData, TreeNode, WeaponSet } from "@/lib/types";
+import { WEAPON_SET_COLORS } from "@/lib/weapon-sets";
 
 export interface NodePreview {
   add: number[];
@@ -17,6 +18,8 @@ interface Props {
   view: "main" | "ascendancy";
   allocated: ReadonlySet<number>;
   attributes?: Record<number, number>;
+  /** Allocated nodes that belong to a weapon set, drawn in that set's colour. */
+  weaponSets?: WeaponSetMap;
   highlight?: ReadonlySet<number>;
   /** When provided, nodes are clickable. */
   onNodeClick?: (id: number, event: { shift: boolean }) => void;
@@ -74,6 +77,7 @@ const COLORS = {
   allocStroke: "#ffe2a3",
   highlight: "#5be0f0",
 };
+
 
 interface Geometry {
   ids: number[];
@@ -144,6 +148,8 @@ function buildGeometry(tree: TreeData, view: Props["view"], ascendancy: string |
   return { ids, pos, edges };
 }
 
+const NO_SETS: WeaponSetMap = {};
+
 const atlasCache = new Map<string, Promise<HTMLImageElement>>();
 
 /** Loads the passive icon atlas once per page and shares it between tree instances. */
@@ -177,6 +183,7 @@ export function PassiveTree({
   view,
   allocated,
   attributes = {},
+  weaponSets = NO_SETS,
   highlight,
   onNodeClick,
   previewFor,
@@ -209,6 +216,7 @@ export function PassiveTree({
   const paths = useMemo(() => {
     const base = new Path2D();
     const alloc = new Path2D();
+    const sets: Record<WeaponSet, Path2D> = { 1: new Path2D(), 2: new Path2D() };
     const add = new Path2D();
     const remove = new Path2D();
     const adding = new Set(preview?.add ?? []);
@@ -216,12 +224,13 @@ export function PassiveTree({
     for (const e of geo.edges) {
       const aOn = allocated.has(e.a);
       const bOn = allocated.has(e.b);
-      if (aOn && bOn) e.draw(removing.has(e.a) || removing.has(e.b) ? remove : alloc);
+      const set = weaponSets[e.a] ?? weaponSets[e.b];
+      if (aOn && bOn) e.draw(removing.has(e.a) || removing.has(e.b) ? remove : set ? sets[set] : alloc);
       else if ((aOn || adding.has(e.a)) && (bOn || adding.has(e.b))) e.draw(add);
       else e.draw(base);
     }
-    return { base, alloc, add, remove, adding, removing };
-  }, [geo, allocated, preview]);
+    return { base, alloc, sets, add, remove, adding, removing };
+  }, [geo, allocated, preview, weaponSets]);
 
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
@@ -266,6 +275,10 @@ export function PassiveTree({
     ctx.lineWidth = Math.max(9, 2.5 * px);
     ctx.strokeStyle = COLORS.edgeAlloc;
     ctx.stroke(paths.alloc);
+    for (const set of [1, 2] as const) {
+      ctx.strokeStyle = WEAPON_SET_COLORS[set].main;
+      ctx.stroke(paths.sets[set]);
+    }
     ctx.strokeStyle = COLORS.edgeAdd;
     ctx.stroke(paths.add);
     ctx.strokeStyle = COLORS.edgeRemove;
@@ -283,6 +296,7 @@ export function PassiveTree({
       const n = tree.nodes[id];
       const r = Math.max(RADIUS[n.t], (n.t === "normal" || n.t === "attribute" ? 2 : 3) * px);
       const on = allocated.has(id);
+      const set = on ? weaponSets[id] : undefined;
       const isRemove = paths.removing.has(id);
       const isAdd = paths.adding.has(id);
 
@@ -334,7 +348,15 @@ export function PassiveTree({
           framed = true;
         }
       } else {
-        ctx.fillStyle = isRemove ? "#5a2018" : on ? COLORS.alloc : isAdd ? "#2f4a26" : COLORS.node;
+        ctx.fillStyle = isRemove
+          ? "#5a2018"
+          : set
+            ? WEAPON_SET_COLORS[set].main
+            : on
+              ? COLORS.alloc
+              : isAdd
+                ? "#2f4a26"
+                : COLORS.node;
         ctx.fill();
       }
       if (!framed || isRemove) {
@@ -343,7 +365,9 @@ export function PassiveTree({
       ctx.lineWidth = Math.max(n.t === "normal" || n.t === "attribute" ? 4 : 7, 1.2 * px);
       ctx.strokeStyle = isRemove
         ? COLORS.edgeRemove
-        : on
+        : set
+          ? WEAPON_SET_COLORS[set].light
+          : on
           ? COLORS.allocStroke
           : isAdd
             ? COLORS.edgeAdd
@@ -355,6 +379,14 @@ export function PassiveTree({
                   ? COLORS.jewelStroke
                   : COLORS.nodeStroke;
       ctx.stroke();
+      }
+      if (set && framed && !isRemove) {
+        // Weapon-set node: coloured ring over the (gold) allocated frame.
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, r * FRAME_SCALE[n.t] * 0.92, 0, Math.PI * 2);
+        ctx.lineWidth = Math.max(r * 0.28, 2 * px);
+        ctx.strokeStyle = WEAPON_SET_COLORS[set].main;
+        ctx.stroke();
       }
       if (n.t === "attribute" && on && attributes[id] !== undefined) {
         const letter = ["S", "D", "I"][attributes[id]];
@@ -385,11 +417,12 @@ export function PassiveTree({
         if (n.t !== "notable" && n.t !== "keystone" && n.t !== "ascStart") continue;
         const p = geo.pos.get(id)!;
         if (Math.abs(p.x - x) > halfW || Math.abs(p.y - y) > halfH) continue;
-        ctx.fillStyle = allocated.has(id) ? "#ffe2a3" : "#b8ad98";
+        const labelSet = allocated.has(id) ? weaponSets[id] : undefined;
+        ctx.fillStyle = labelSet ? WEAPON_SET_COLORS[labelSet].light : allocated.has(id) ? "#ffe2a3" : "#b8ad98";
         ctx.fillText(n.n, p.x, p.y + RADIUS[n.t] + 6 * px);
       }
     }
-  }, [geo, paths, size, tree, allocated, attributes, highlight, classIndex, atlas, atlasWanted, frames, ring, backdrop, art, view, extent]);
+  }, [geo, paths, size, tree, allocated, attributes, weaponSets, highlight, classIndex, atlas, atlasWanted, frames, ring, backdrop, art, view, extent]);
 
   const requestDraw = useCallback(() => {
     cancelAnimationFrame(frame.current);
@@ -563,6 +596,10 @@ export function PassiveTree({
   };
 
   const hovered = hover ? tree.nodes[hover.id] : null;
+  const setsShown = useMemo(
+    () => ([1, 2] as const).filter((set) => [...allocated].some((id) => weaponSets[id] === set)),
+    [allocated, weaponSets],
+  );
 
   useEffect(() => {
     const onChange = () => setFull(document.fullscreenElement === wrapRef.current);
@@ -647,10 +684,25 @@ export function PassiveTree({
           </button>
         ))}
       </div>
+      {setsShown.length > 0 && view === "main" && (
+        <div className="pointer-events-none absolute bottom-3 left-3 flex flex-col gap-1 rounded-md border border-line-strong bg-surface/90 px-2.5 py-1.5 text-xs text-muted">
+          <span className="flex items-center gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-full" style={{ background: COLORS.alloc }} />
+            {t.tree.sharedNodes}
+          </span>
+          {setsShown.map((set) => (
+            <span key={set} className="flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full" style={{ background: WEAPON_SET_COLORS[set].main }} />
+              {set === 1 ? t.tree.weaponSet1 : t.tree.weaponSet2}
+            </span>
+          ))}
+        </div>
+      )}
       {hovered && hover && (
         <NodeTooltip
           node={hovered}
           attribute={attributes[hover.id]}
+          weaponSet={allocated.has(hover.id) ? weaponSets[hover.id] : undefined}
           allocated={allocated.has(hover.id)}
           preview={preview}
           x={hover.sx}
@@ -665,6 +717,7 @@ export function PassiveTree({
 function NodeTooltip({
   node,
   attribute,
+  weaponSet,
   allocated,
   preview,
   x,
@@ -673,6 +726,7 @@ function NodeTooltip({
 }: {
   node: TreeNode;
   attribute?: number;
+  weaponSet?: WeaponSet;
   allocated: boolean;
   preview: NodePreview | null;
   x: number;
@@ -707,6 +761,11 @@ function NodeTooltip({
           <li key={i}>{s}</li>
         ))}
       </ul>
+      {weaponSet && (
+        <p className="mt-1 text-xs font-semibold" style={{ color: WEAPON_SET_COLORS[weaponSet].light }}>
+          {weaponSet === 1 ? t.tree.weaponSet1Only : t.tree.weaponSet2Only}
+        </p>
+      )}
       {node.t === "attribute" && allocated && <p className="mt-1.5 text-xs text-faint">{t.tree.shiftCycle}</p>}
       {node.f && <p className="mt-2 text-xs italic text-unique">{node.f}</p>}
       {preview && (preview.add.length > 0 || preview.remove.length > 0) && (

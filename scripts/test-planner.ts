@@ -4,7 +4,8 @@ import fs from "node:fs";
 import zlib from "node:zlib";
 import { decodeBuild, encodeBuild } from "@/lib/build-code";
 import {
-  aggregateStats, allocateTargets, countPoints, createGraph, deallocate, dependents, findNodeByName, findPath, roots,
+  aggregateStats, allocateTargets, allocateWeaponSetTargets, countPoints, createGraph, deallocate, dependents, findNodeByName,
+  findPath, matchingNodes, nodesForSet, pruneWithWeaponSets, roots,
 } from "@/lib/tree";
 import { rankGuides } from "@/lib/compare";
 import { decodePobCode, extractPobbId, parsePobXml } from "@/lib/pob";
@@ -78,6 +79,41 @@ test("build codes round-trip", () => {
   assert.deepEqual(decoded.skills, state.skills);
   assert.deepEqual(decoded.gear, state.gear);
   assert.equal(decodeBuild("not-a-code"), null);
+});
+
+test("weapon sets: separate paths, counts, round-trip and pruning", () => {
+  const shared = allocateTargets(graph, ranger, null, []).allocated;
+  const near = (from: number) => [...graph.adj.get(from)!].find((id) => tree.nodes[id].t !== "start")!;
+  const a = near(ranger.start);
+  const b = near(a);
+  const sets = allocateWeaponSetTargets(graph, ranger, null, shared, { 1: [b], 2: [b] });
+  // Each set paths on its own, never through the other set's nodes: the shared target is taken by set 1 only.
+  assert.deepEqual(sets.unreachable, [b]);
+  assert.equal(sets.weaponSets[a], 1);
+  assert.equal(countPoints(graph, sets.allocated, sets.weaponSets).set1, 2);
+  assert.equal(countPoints(graph, sets.allocated, sets.weaponSets).main, 0);
+  assert.equal(nodesForSet(sets.allocated, sets.weaponSets, 2).has(a), false);
+  const state = { classIndex: 0, ascIndex: -1, nodes: [...sets.allocated], weaponSets: sets.weaponSets, attributes: {}, skills: [], gear: {} };
+  assert.deepEqual(decodeBuild(encodeBuild(state))!.weaponSets, sets.weaponSets);
+  const next = new Set(sets.allocated);
+  next.delete(a);
+  const pruned = pruneWithWeaponSets(graph, next, sets.weaponSets, [ranger.start]);
+  assert.equal(pruned.allocated.has(b), false);
+  assert.deepEqual(pruned.weaponSets, {});
+});
+
+test("tree overlap only matches weapon-set nodes taken with set points, whatever the set number", () => {
+  // Node 2 is set I in a and set II in b (numbering is arbitrary): it matches. Node 3 is shared in a but set in b: matches.
+  assert.equal(matchingNodes([1, 2, 3], { 2: 1 }, [1, 2, 3], { 2: 2, 3: 1 }), 3);
+  // Nodes 2 and 3 are in different sets in a but in the same set in b: only one of them can match.
+  assert.equal(matchingNodes([2, 3], { 2: 1, 3: 2 }, [2, 3], { 2: 1, 3: 1 }), 1);
+});
+
+test("PoB weapon-set nodes are read from <WeaponSet1/2>", () => {
+  const xml = `<PathOfBuilding2><Build className="Ranger" level="90"/><Tree activeSpec="1"><Spec treeVersion="0_5" nodes="1,2,3,4"><WeaponSet1 nodes="2"/><WeaponSet2 nodes="3,99"/></Spec></Tree></PathOfBuilding2>`;
+  const char = parsePobXml(xml);
+  assert.deepEqual(char.nodes, [1, 2, 3, 4]);
+  assert.deepEqual(char.weaponSets, { 2: 1, 3: 2 });
 });
 
 test("stats aggregate identical wordings", () => {

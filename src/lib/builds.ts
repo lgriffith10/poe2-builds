@@ -6,7 +6,7 @@ import { marked } from "marked";
 import { classes, getBase, getClass, getGem, getUnique, tree } from "./data";
 import { gemTip, tipAttr, uniqueTip } from "./tips";
 import { renderItemCards } from "./item-cards";
-import { allocateTargets, createGraph, findNodeByName } from "./tree";
+import { allocateTargets, allocateWeaponSetTargets, createGraph, findNodeByName } from "./tree";
 import { encodeBuild } from "./build-code";
 import { DEFAULT_LOCALE, localePath, type Locale } from "@/i18n/config";
 import {
@@ -156,7 +156,13 @@ function parseBuild(file: string): { build: Build; markdown: string } {
 
   const skills: SkillGroup[] = (fm.skills ?? []).map((s: SkillGroup) => {
     for (const name of [s.gem, ...(s.supports ?? [])]) if (!getGem(name)) fail(`Unknown gem "${name}"`);
-    return { gem: getGem(s.gem)!.name, supports: (s.supports ?? []).map((n) => getGem(n)!.name), note: s.note };
+    if (s.weaponSet !== undefined && s.weaponSet !== 1 && s.weaponSet !== 2) fail(`${s.gem}: weaponSet must be 1 or 2`);
+    return {
+      gem: getGem(s.gem)!.name,
+      supports: (s.supports ?? []).map((n) => getGem(n)!.name),
+      note: s.note,
+      ...(s.weaponSet && { weaponSet: s.weaponSet }),
+    };
   });
 
   const gemNamed = (name: string, where: string) => getGem(name)?.name ?? fail(`${where}: unknown gem "${name}"`);
@@ -218,8 +224,16 @@ function parseBuild(file: string): { build: Build; markdown: string } {
   const keyPassives: string[] = fm.passives?.path ?? [];
   const ascendancyOrder: string[] = fm.passives?.ascendancy ?? [];
   const targets = [...keyPassives, ...ascendancyOrder].map(resolve);
-  const { allocated, unreachable } = allocateTargets(graph, cls, ascendancy, targets);
+  const { allocated: shared, unreachable } = allocateTargets(graph, cls, ascendancy, targets);
   if (unreachable.length) fail(`Unreachable passives: ${unreachable.map((id) => tree.nodes[id].n).join(", ")}`);
+  // Weapon-set passives: notables taken with each weapon set's own points, pathed from the shared tree.
+  const setTargets = {
+    1: ((fm.passives?.weaponSet1 ?? []) as string[]).map(resolve),
+    2: ((fm.passives?.weaponSet2 ?? []) as string[]).map(resolve),
+  };
+  const sets = allocateWeaponSetTargets(graph, cls, ascendancy, shared, setTargets);
+  if (sets.unreachable.length) fail(`Unreachable weapon-set passives: ${sets.unreachable.map((id) => tree.nodes[id].n).join(", ")}`);
+  const allocated = sets.allocated;
 
   const attrChoice = { str: 0, dex: 1, int: 2 }[fm.passives?.attribute as string] ?? 0;
   const attributes: Record<number, number> = {};
@@ -229,6 +243,7 @@ function parseBuild(file: string): { build: Build; markdown: string } {
     classIndex: classes.indexOf(cls),
     ascIndex,
     nodes: [...allocated],
+    ...(Object.keys(sets.weaponSets).length && { weaponSets: sets.weaponSets }),
     attributes,
     skills,
     gear: Object.fromEntries(
@@ -237,7 +252,7 @@ function parseBuild(file: string): { build: Build; markdown: string } {
   };
   const pointsUsed = [...allocated].filter((id) => {
     const n = tree.nodes[id];
-    return !n.a && n.t !== "start";
+    return !n.a && n.t !== "start" && !sets.weaponSets[id];
   }).length;
 
   const { html, toc } = renderBody(content, file);
@@ -340,13 +355,13 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
 // The cache lives on globalThis to survive dev module reloads.
 type Parsed = { build: Build; markdown: string };
 const store = globalThis as typeof globalThis & {
-  __buildCacheV11?: {
+  __buildCacheV12?: {
     files: Map<string, { mtimeMs: number; parsed: Parsed }>;
     lists: Map<Locale, { key: string; list: Build[] }>;
   };
 };
 // Versioned key: a dev server still holding a cache in an older shape (hot reload keeps globalThis) gets a fresh one.
-const cache = (store.__buildCacheV11 ??= { files: new Map(), lists: new Map() });
+const cache = (store.__buildCacheV12 ??= { files: new Map(), lists: new Map() });
 
 const mtime = (p: string) => (fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0);
 

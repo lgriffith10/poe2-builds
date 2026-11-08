@@ -159,6 +159,11 @@ gear:
     mods: [+Maximum Life, Adds Physical Damage to Attacks, +Strength, +Intelligence, Elemental Resistances]
   belt:
     unique: Darkness Enthroned
+  weapon2:
+    base: Akoyan Spear
+    mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance]
+  offhand2:
+    unique: Guiding Palm of the Eye
 passives:
   attribute: dex
   path:
@@ -181,6 +186,8 @@ passives:
     - Focused Thrust
     - Catapult
   ascendancy: [Essence of Virtue, Advanced Thaumaturgy, Gem Studded, Integrated Efficiency]
+  weaponSet1: [Stimulants, Roll and Strike, Precise Point, Versatile Arms, Bond of the Wolf]
+  weaponSet2: [Prolonged Assault, Coming Calamity, Material Solidification, Maiming Strike, Javelin, Crystal Elixir, The Frenzied Bear]
 ---
 
 ## How It Works

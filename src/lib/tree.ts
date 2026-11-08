@@ -1,9 +1,11 @@
 // Passive tree graph logic shared by the planner (client) and the build loader (server).
-import type { ClassInfo, TreeData, TreeNode } from "./types";
+import type { ClassInfo, TreeData, TreeNode, WeaponSet } from "./types";
 
 /** Passive points available at level 100 (99 from levels + 24 from quests). */
 export const MAX_PASSIVE_POINTS = 123;
 export const MAX_ASCENDANCY_POINTS = 8;
+/** Weapon-set passive points: each weapon set gets its own 24, on top of the regular points. */
+export const MAX_WEAPON_SET_POINTS = 24;
 
 export interface TreeGraph {
   data: TreeData;
@@ -52,7 +54,8 @@ export function roots(graph: TreeGraph, cls: ClassInfo, ascendancy: string | nul
 /**
  * Shortest path (by node count) from any allocated node to `target`.
  * Returns the newly allocated nodes, ordered from the allocated set to the target,
- * or null when unreachable.
+ * or null when unreachable. `blocked` nodes can be neither crossed nor targeted
+ * (e.g. the other weapon set's nodes while allocating into a set).
  */
 export function findPath(
   graph: TreeGraph,
@@ -60,8 +63,10 @@ export function findPath(
   target: number,
   cls: ClassInfo,
   ascendancy: string | null,
+  blocked?: ReadonlySet<number>,
 ): number[] | null {
   if (allocated.has(target)) return [];
+  if (blocked?.has(target)) return null;
   const prev = new Map<number, number>();
   const queue: number[] = [];
   for (const id of allocated) {
@@ -71,7 +76,7 @@ export function findPath(
   for (let head = 0; head < queue.length; head++) {
     const cur = queue[head];
     for (const next of graph.adj.get(cur) ?? []) {
-      if (prev.has(next)) continue;
+      if (prev.has(next) || blocked?.has(next)) continue;
       const node = graph.node(next);
       if (!node || !isAllocatable(node, cls, ascendancy)) continue;
       // Paths may not travel through any start node (main or ascendancy).
@@ -118,16 +123,101 @@ export function dependents(graph: TreeGraph, allocated: ReadonlySet<number>, id:
   return new Set([...allocated].filter((n) => !kept.has(n)));
 }
 
-export function countPoints(graph: TreeGraph, allocated: Iterable<number>) {
+export function countPoints(graph: TreeGraph, allocated: Iterable<number>, weaponSets: WeaponSetMap = {}) {
   let main = 0;
   let ascendancy = 0;
+  const sets = { 1: 0, 2: 0 };
   for (const id of allocated) {
     const node = graph.node(id);
     if (!node || node.t === "start" || node.t === "ascStart" || node.free) continue;
     if (node.a) ascendancy++;
+    else if (weaponSets[id]) sets[weaponSets[id]]++;
     else main++;
   }
-  return { main, ascendancy };
+  return { main, ascendancy, set1: sets[1], set2: sets[2] };
+}
+
+export type WeaponSetMap = Readonly<Record<number, WeaponSet>>;
+
+/** Nodes of one weapon set view: the shared nodes plus that set's own nodes (set 0: everything). */
+export function nodesForSet(allocated: Iterable<number>, weaponSets: WeaponSetMap, set: 0 | WeaponSet): Set<number> {
+  return new Set([...allocated].filter((id) => !set || !weaponSets[id] || weaponSets[id] === set));
+}
+
+/**
+ * Keeps only nodes still connected to a root: shared nodes through shared nodes,
+ * and each weapon set's nodes through shared nodes or nodes of the same set.
+ */
+export function pruneWithWeaponSets(
+  graph: TreeGraph,
+  allocated: ReadonlySet<number>,
+  weaponSets: WeaponSetMap,
+  rootIds: number[],
+): { allocated: Set<number>; weaponSets: Record<number, WeaponSet> } {
+  const shared = new Set([...allocated].filter((id) => !weaponSets[id]));
+  const keep = pruneDisconnected(graph, shared, rootIds);
+  const sets: Record<number, WeaponSet> = {};
+  for (const set of [1, 2] as const) {
+    const view = new Set([...keep, ...[...allocated].filter((id) => weaponSets[id] === set)]);
+    for (const id of pruneDisconnected(graph, view, rootIds)) {
+      if (!keep.has(id)) sets[id] = set;
+    }
+  }
+  return { allocated: new Set([...keep, ...Object.keys(sets).map(Number)]), weaponSets: sets };
+}
+
+/**
+ * How many of `a`'s nodes `b` also allocates in a compatible way: shared nodes must be shared (or in either set)
+ * in `b`, and a set node must be in a set of `b` too. Which set is called I or II is arbitrary between two builds,
+ * so set nodes are matched with `b`'s sets as numbered and swapped, keeping the best.
+ */
+export function matchingNodes(a: Iterable<number>, aSets: WeaponSetMap, b: Iterable<number>, bSets: WeaponSetMap): number {
+  const inB = new Set(b);
+  const ids = [...a].filter((id) => inB.has(id));
+  const count = (swap: boolean) =>
+    ids.filter((id) => {
+      const sa = aSets[id];
+      const sb = bSets[id];
+      if (!sa) return true; // a shared node of `a` is active in both of `b`'s sets as well
+      if (!sb) return true; // shared in `b`: active whatever set `a` uses it with
+      return swap ? sa !== sb : sa === sb;
+    }).length;
+  return Math.max(count(false), count(true));
+}
+
+/**
+ * Allocates weapon-set targets on top of an allocation, set by set, each via its shortest path from the
+ * shared nodes and the nodes already in that set. Targets already allocated as shared nodes are skipped.
+ */
+export function allocateWeaponSetTargets(
+  graph: TreeGraph,
+  cls: ClassInfo,
+  ascendancy: string | null,
+  allocated: ReadonlySet<number>,
+  targets: Partial<Record<WeaponSet, number[]>>,
+): { allocated: Set<number>; weaponSets: Record<number, WeaponSet>; unreachable: number[] } {
+  const all = new Set(allocated);
+  const weaponSets: Record<number, WeaponSet> = {};
+  const unreachable: number[] = [];
+  for (const set of [1, 2] as const) {
+    const own = new Set(allocated);
+    const other = new Set<number>(
+      Object.entries(weaponSets)
+        .filter(([, s]) => s !== set)
+        .map(([id]) => Number(id)),
+    );
+    for (const target of targets[set] ?? []) {
+      const path = findPath(graph, own, target, cls, ascendancy, other);
+      if (path === null) unreachable.push(target);
+      else
+        for (const id of path) {
+          own.add(id);
+          all.add(id);
+          weaponSets[id] = set;
+        }
+    }
+  }
+  return { allocated: all, weaponSets, unreachable };
 }
 
 /**
@@ -153,9 +243,9 @@ export function allocateTargets(
 
 /** Finds the node with this name allowed for the class/ascendancy, preferring the closest one to the start. */
 export function findNodeByName(graph: TreeGraph, name: string, cls: ClassInfo, ascendancy: string | null): number | null {
-  const lower = name.toLowerCase();
+  const lower = name.trim().toLowerCase();
   const matches = Object.entries(graph.data.nodes)
-    .filter(([, n]) => n.n.toLowerCase() === lower && n.t !== "start" && isAllocatable(n, cls, ascendancy))
+    .filter(([, n]) => n.n.trim().toLowerCase() === lower && n.t !== "start" && isAllocatable(n, cls, ascendancy))
     .map(([id]) => Number(id));
   if (matches.length <= 1) return matches[0] ?? null;
   // Duplicate names (e.g. generic notables): pick the one closest to the class start.

@@ -274,6 +274,9 @@ gearStages:
     belt:
       base: Utility Belt
       mods: [Chaos Resistance, +Strength, +Maximum Life]
+    weapon2:
+      base: Solemn Maul
+      mods: [Adds Physical Damage, Increased Physical Damage, Increased Attack Speed]
   endgame:
     weapon:
       base: Sacred Maul
@@ -304,6 +307,9 @@ gearStages:
     belt:
       base: Utility Belt
       mods: [+Maximum Life, Chaos Resistance, +Strength, Fire Resistance]
+    weapon2:
+      base: Sacred Maul
+      mods: [Increased Physical Damage, Adds Physical Damage, Accuracy Rating, Increased Attack Speed, +Level of all Melee Skills]
 passives:
   attribute: str
   path:

@@ -244,6 +244,8 @@ gearStages:
     belt:
       base: Heavy Belt
       mods: [+Strength, Fire Resistance, Lightning Resistance, +Maximum Life]
+    weapon2:
+      unique: Saitha's Spear
   endgame:
     weapon:
       base: Shrine Sceptre
@@ -274,6 +276,11 @@ gearStages:
     belt:
       base: Heavy Belt
       mods: [Minion Area of Effect, Minion Life, Elemental Resistances]
+    weapon2:
+      unique: Saitha's Spear
+    offhand2:
+      base: Tasalian Focus
+      mods: []
   minmax:
     weapon:
       base: Shrine Sceptre
@@ -303,6 +310,11 @@ gearStages:
       unique: "Kalandra's Touch"
     belt:
       unique: "Mageblood"
+    weapon2:
+      unique: Saitha's Spear
+    offhand2:
+      base: Tasalian Focus
+      mods: [Energy Shield, Elemental Resistances]
 passives:
   attribute: dex
   path:
@@ -322,6 +334,8 @@ passives:
     - "The Hollowkeeper"
     - "Heavy Buffer"
   ascendancy: [Waking Dream, Chayula's Gift]
+  weaponSet1: [Dead can Dance, Vile Mending, Lord of Horrors, Right Hand of Darkness, Living Death, Unspoken Bond]
+  weaponSet2: [Arcane Remnants, Vigorous Remnants, Empowering Remnants, Remnant Attraction]
 ---
 ## How It Works
 

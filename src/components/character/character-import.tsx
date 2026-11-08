@@ -123,6 +123,9 @@ export function CharacterImport({ guides, meta }: { guides: GuideFingerprint[]; 
       classIndex,
       ascIndex,
       nodes,
+      weaponSets: Object.fromEntries(
+        Object.entries(char.weaponSets ?? {}).filter(([id]) => nodes.includes(Number(id))),
+      ),
       attributes: {},
       skills: char.skills,
       gear: Object.fromEntries(
@@ -130,7 +133,14 @@ export function CharacterImport({ guides, meta }: { guides: GuideFingerprint[]; 
       ),
     };
     const ranking = rankGuides(
-      { className: char.className, ascendancy: char.ascendancy, nodes, skills: char.skills, uniques: uniquesWorn },
+      {
+        className: char.className,
+        ascendancy: char.ascendancy,
+        nodes,
+        weaponSets: planner.weaponSets,
+        skills: char.skills,
+        uniques: uniquesWorn,
+      },
       guides,
     );
     return {

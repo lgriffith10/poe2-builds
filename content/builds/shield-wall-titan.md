@@ -194,6 +194,8 @@ passives:
     - "Irreparable"
     - "Knight of Tarcus"
   ascendancy: [Colossal Capacity, Hulking Form, Stone Skin, Mysterious Lineage]
+  weaponSet1: [Unyielding, Sand in the Eyes, The Molten One's Gift, Mass Hysteria]
+  weaponSet2: [Admonisher, Escalation, Vocal Empowerment, Cacophony, Roaring Cries, Inherited Strength]
 ---
 ## How It Works
 

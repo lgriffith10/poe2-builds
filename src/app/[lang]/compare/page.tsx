@@ -6,6 +6,7 @@ import { ClassEmblem, GemIcon, PageHeader, TierBadge } from "@/components/ui";
 import { priceTag, uniquePrice } from "@/lib/prices";
 import { getBuilds, type Build } from "@/lib/builds";
 import { getGem } from "@/lib/data";
+import { matchingNodes } from "@/lib/tree";
 import { GEAR_STAGES, TIER_CATEGORIES } from "@/lib/types";
 import { fmt, getDictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
@@ -89,9 +90,9 @@ async function CompareBody({ params, searchParams }: Pick<PageProps<"/[lang]/com
     const sharedSupports = [...supA].filter((s) => supB.has(s)).sort();
     const uA = uniquesOf(a);
     const uB = uniquesOf(b);
-    const nodesA = new Set(a.planner.nodes);
-    const sharedNodes = b.planner.nodes.filter((n) => nodesA.has(n)).length;
-    const treeOverlap = Math.round((100 * sharedNodes) / Math.max(1, new Set([...a.planner.nodes, ...b.planner.nodes]).size));
+    // Weapon-set nodes only overlap when both builds take them with weapon-set points (see matchingNodes).
+    const sharedNodes = matchingNodes(a.planner.nodes, a.planner.weaponSets ?? {}, b.planner.nodes, b.planner.weaponSets ?? {});
+    const treeOverlap = Math.round((100 * sharedNodes) / Math.max(1, a.planner.nodes.length + b.planner.nodes.length - sharedNodes));
 
     const gemList = (list: string[], other: string[]) => (
       <ul className="space-y-1.5">

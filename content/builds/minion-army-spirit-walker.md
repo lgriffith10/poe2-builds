@@ -359,6 +359,11 @@ gear:
   belt:
     base: Fine Belt
     mods: [Elemental Resistances, +Strength, +Maximum Life, Armour, Minion Melee Splash]
+  weapon2:
+    unique: Trenchtimbre
+  offhand2:
+    base: Rattling Sceptre
+    mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Physical Damage, Allies in Presence Attack Speed]
 gearStages:
   campaign:
     weapon:
@@ -390,6 +395,11 @@ gearStages:
     belt:
       base: Fine Belt
       mods: [Elemental Resistances, +Maximum Life, Chaos Resistance, +Strength]
+    weapon2:
+      unique: Trenchtimbre
+    offhand2:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Lightning Damage, Allies in Presence Attack Speed]
   mapping:
     weapon:
       unique: "Tyranny's Grip"
@@ -420,6 +430,11 @@ gearStages:
     belt:
       base: Fine Belt
       mods: [Elemental Resistances, +Strength, +Maximum Life, Armour, Minion Melee Splash]
+    weapon2:
+      unique: Trenchtimbre
+    offhand2:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Physical Damage, Allies in Presence Attack Speed]
   endgame:
     weapon:
       unique: "Trenchtimbre"
@@ -478,6 +493,9 @@ gearStages:
     belt:
       base: Fine Belt
       mods: [+Level of all Minion Skills, Minion Melee Splash, Elemental Resistances, Armour, Minion Life]
+    weapon2:
+      base: Grand Spear
+      mods: [Increased Physical Damage, Adds Physical Damage, Accuracy Rating, Increased Attack Speed]
 passives:
   attribute: str
   path:

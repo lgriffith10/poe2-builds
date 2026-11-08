@@ -1,6 +1,6 @@
 // Path of Building (PoE2) export codes: base64url-encoded, zlib-compressed XML.
 // Parsing is string-based so it runs both in the browser and in Node tests.
-import type { GearSlot, SkillGroup } from "./types";
+import type { GearSlot, SkillGroup, WeaponSet } from "./types";
 
 export interface PobItem {
   rarity: string;
@@ -14,7 +14,10 @@ export interface PobCharacter {
   ascendancy: string | null;
   level: number;
   treeVersion: string | null;
+  /** Every allocated node, weapon-set nodes included. */
   nodes: number[];
+  /** Nodes allocated with weapon-set points, by set. */
+  weaponSets: Record<number, WeaponSet>;
   /** Gem groups in the active skill set; the first gem of each group is the one PoB lists first. */
   skills: SkillGroup[];
   items: Partial<Record<GearSlot, PobItem>>;
@@ -23,6 +26,8 @@ export interface PobCharacter {
 const SLOT_MAP: Record<string, GearSlot> = {
   "Weapon 1": "weapon",
   "Weapon 2": "offhand",
+  "Weapon 1 Swap": "weapon2",
+  "Weapon 2 Swap": "offhand2",
   Helmet: "helmet",
   "Body Armour": "body",
   Gloves: "gloves",
@@ -88,12 +93,20 @@ export function parsePobXml(xml: string): PobCharacter {
   // Tree: the active spec.
   const treeTag = xml.match(/<Tree\b[^>]*>/)?.[0] ?? "";
   const activeSpec = Number(attr(treeTag, "activeSpec") ?? 1);
-  const specs = [...xml.matchAll(/<Spec\b[^>]*>/g)].map((m) => m[0]);
-  const spec = specs[activeSpec - 1] ?? specs[0] ?? "";
-  const nodes = (attr(spec, "nodes") ?? "")
-    .split(",")
-    .map(Number)
-    .filter((n) => Number.isFinite(n) && n > 0);
+  // Each <Spec> holds its tree in `nodes`; <WeaponSet1/2 nodes="…"/> children tag the weapon-set ones.
+  const specs = [...xml.matchAll(/<Spec\b[^>]*?(?:\/>|>([\s\S]*?)<\/Spec>)/g)];
+  const specMatch = specs[activeSpec - 1] ?? specs[0];
+  const spec = specMatch?.[0].match(/<Spec\b[^>]*>/)?.[0] ?? "";
+  const idList = (s: string | null) =>
+    (s ?? "")
+      .split(",")
+      .map(Number)
+      .filter((n) => Number.isFinite(n) && n > 0);
+  const nodes = idList(attr(spec, "nodes"));
+  const weaponSets: Record<number, WeaponSet> = {};
+  for (const m of (specMatch?.[1] ?? "").matchAll(/<WeaponSet([12])\b[^>]*>/g)) {
+    for (const id of idList(attr(m[0], "nodes"))) if (nodes.includes(id)) weaponSets[id] = Number(m[1]) as WeaponSet;
+  }
 
   // Skills: the active skill set, enabled groups only.
   const skillsTag = xml.match(/<Skills\b[^>]*>/)?.[0] ?? "";
@@ -138,6 +151,7 @@ export function parsePobXml(xml: string): PobCharacter {
     level: Number(attr(build, "level") ?? 1),
     treeVersion: attr(spec, "treeVersion"),
     nodes,
+    weaponSets,
     skills,
     items,
   };

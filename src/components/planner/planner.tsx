@@ -5,17 +5,19 @@ import { decodeBuild, encodeBuild } from "@/lib/build-code";
 import {
   MAX_ASCENDANCY_POINTS,
   MAX_PASSIVE_POINTS,
+  MAX_WEAPON_SET_POINTS,
   aggregateStats,
   belongsToAscendancy,
   countPoints,
   createGraph,
-  deallocate,
-  dependents,
   findPath,
   nodeStats,
+  nodesForSet,
+  pruneWithWeaponSets,
   roots,
 } from "@/lib/tree";
-import type { PlannerState, SkillGroup, TreeData } from "@/lib/types";
+import type { PlannerState, SkillGroup, TreeData, WeaponSet } from "@/lib/types";
+import { WEAPON_SET_COLORS } from "@/lib/weapon-sets";
 import { PassiveTree, type NodePreview } from "../passive-tree";
 import { ClassEmblem } from "../ui";
 import { useCatalog } from "@/lib/catalog";
@@ -39,7 +41,11 @@ export function Planner() {
         const shared = code ? decodeBuild(code) : null;
         const initial: PlannerState =
           shared && tree.classes[shared.classIndex]
-            ? { ...shared, nodes: shared.nodes.filter((id) => tree.nodes[id]) }
+            ? {
+                ...shared,
+                nodes: shared.nodes.filter((id) => tree.nodes[id]),
+                weaponSets: Object.fromEntries(Object.entries(shared.weaponSets ?? {}).filter(([id]) => tree.nodes[id])),
+              }
             : { classIndex: 0, ascIndex: -1, nodes: [tree.classes[0].start], attributes: {}, skills: [], gear: {} };
         setLoaded({ tree, initial });
       })
@@ -59,6 +65,9 @@ function PlannerInner({ tree, initial }: { tree: TreeData; initial: PlannerState
   const [classIndex, setClassIndex] = useState(initial.classIndex);
   const [ascIndex, setAscIndex] = useState(initial.ascIndex);
   const [allocated, setAllocated] = useState<Set<number>>(() => new Set(initial.nodes));
+  const [weaponSets, setWeaponSets] = useState<Record<number, WeaponSet>>(initial.weaponSets ?? {});
+  /** Where clicks allocate: the shared tree (0) or one weapon set, whose view then hides the other set. */
+  const [activeSet, setActiveSet] = useState<0 | WeaponSet>(0);
   const [attributes, setAttributes] = useState<Record<number, number>>(initial.attributes);
   const [defaultAttr, setDefaultAttr] = useState(0);
   const [skills, setSkills] = useState<SkillGroup[]>(initial.skills);
@@ -75,8 +84,16 @@ function PlannerInner({ tree, initial }: { tree: TreeData; initial: PlannerState
   const rootIds = useMemo(() => roots(graph, cls, ascendancy), [graph, cls, ascendancy]);
 
   const state: PlannerState = useMemo(
-    () => ({ classIndex, ascIndex, nodes: [...allocated], attributes, skills, gear }),
-    [classIndex, ascIndex, allocated, attributes, skills, gear],
+    () => ({
+      classIndex,
+      ascIndex,
+      nodes: [...allocated],
+      ...(Object.keys(weaponSets).length && { weaponSets }),
+      attributes,
+      skills,
+      gear,
+    }),
+    [classIndex, ascIndex, allocated, weaponSets, attributes, skills, gear],
   );
   const code = useMemo(() => encodeBuild(state), [state]);
 
@@ -90,6 +107,7 @@ function PlannerInner({ tree, initial }: { tree: TreeData; initial: PlannerState
     setClassIndex(index);
     setAscIndex(-1);
     setAllocated(new Set([tree.classes[index].start]));
+    setWeaponSets({});
     setAttributes({});
   };
 
@@ -104,6 +122,33 @@ function PlannerInner({ tree, initial }: { tree: TreeData; initial: PlannerState
     if (name) setTab("ascendancy");
   };
 
+  // Weapon-set mode only applies to the main tree; ascendancy nodes are always shared.
+  const mode: 0 | WeaponSet = tab === "tree" ? activeSet : 0;
+  const shown = useMemo(() => nodesForSet(allocated, weaponSets, mode), [allocated, weaponSets, mode]);
+
+  /** Allocation after removing `id`, with everything that no longer connects (per weapon set) pruned. */
+  const without = useCallback(
+    (id: number) => {
+      const next = new Set(allocated);
+      next.delete(id);
+      return pruneWithWeaponSets(graph, next, weaponSets, rootIds);
+    },
+    [allocated, weaponSets, graph, rootIds],
+  );
+
+  /** Path to `id` from the nodes usable in the current mode, without crossing the other set's nodes. */
+  const pathTo = useCallback(
+    (id: number) => {
+      const blocked = new Set(
+        Object.entries(weaponSets)
+          .filter(([, set]) => set !== mode)
+          .map(([n]) => Number(n)),
+      );
+      return findPath(graph, shown, id, cls, ascendancy, blocked);
+    },
+    [weaponSets, mode, graph, shown, cls, ascendancy],
+  );
+
   const onNodeClick = useCallback(
     (id: number, { shift }: { shift: boolean }) => {
       const node = tree.nodes[id];
@@ -112,30 +157,37 @@ function PlannerInner({ tree, initial }: { tree: TreeData; initial: PlannerState
           setAttributes((a) => ({ ...a, [id]: ((a[id] ?? 0) + 1) % 3 }));
           return;
         }
-        const next = deallocate(graph, allocated, id, rootIds);
-        setAllocated(next);
-        setAttributes((a) => Object.fromEntries(Object.entries(a).filter(([k]) => next.has(Number(k)))));
+        if (rootIds.includes(id)) return;
+        const next = without(id);
+        setAllocated(next.allocated);
+        setWeaponSets(next.weaponSets);
+        setAttributes((a) => Object.fromEntries(Object.entries(a).filter(([k]) => next.allocated.has(Number(k)))));
         return;
       }
-      const path = findPath(graph, allocated, id, cls, ascendancy);
+      const path = pathTo(id);
       if (!path) return;
       setAllocated(new Set([...allocated, ...path]));
+      if (mode) {
+        const set = mode;
+        setWeaponSets((w) => ({ ...w, ...Object.fromEntries(path.filter((p) => !tree.nodes[p].a).map((p) => [p, set])) }));
+      }
       const newAttrs = path.filter((p) => tree.nodes[p].t === "attribute");
       if (newAttrs.length) setAttributes((a) => ({ ...a, ...Object.fromEntries(newAttrs.map((p) => [p, defaultAttr])) }));
     },
-    [allocated, graph, rootIds, cls, ascendancy, tree, defaultAttr],
+    [allocated, rootIds, without, pathTo, mode, tree, defaultAttr],
   );
 
   const previewFor = useCallback(
     (id: number): NodePreview | null => {
       if (allocated.has(id)) {
         if (rootIds.includes(id)) return null;
-        return { add: [], remove: [...dependents(graph, allocated, id, rootIds)] };
+        const kept = without(id).allocated;
+        return { add: [], remove: [...allocated].filter((n) => !kept.has(n)) };
       }
-      const path = findPath(graph, allocated, id, cls, ascendancy);
+      const path = pathTo(id);
       return path ? { add: path, remove: [] } : null;
     },
-    [allocated, graph, rootIds, cls, ascendancy],
+    [allocated, rootIds, without, pathTo],
   );
 
   const highlight = useMemo(() => {
@@ -148,25 +200,26 @@ function PlannerInner({ tree, initial }: { tree: TreeData; initial: PlannerState
     return out;
   }, [search, tree]);
 
-  const points = countPoints(graph, allocated);
+  const points = countPoints(graph, allocated, weaponSets);
   const stats = useMemo(() => {
-    const lines = [...allocated].flatMap((id) => nodeStats(tree.nodes[id], attributes[id]));
+    const lines = [...shown].flatMap((id) => nodeStats(tree.nodes[id], attributes[id]));
     return aggregateStats(lines);
-  }, [allocated, attributes, tree]);
+  }, [shown, attributes, tree]);
   const attrTotals = useMemo(() => {
     const t = [cls.base.str, cls.base.dex, cls.base.int];
     const re = /^\+(\d+) to (Strength|Dexterity|Intelligence)$/;
-    for (const id of allocated) {
+    for (const id of shown) {
       for (const s of nodeStats(tree.nodes[id], attributes[id])) {
         const m = s.match(re);
         if (m) t[["Strength", "Dexterity", "Intelligence"].indexOf(m[2])] += Number(m[1]);
       }
     }
     return t;
-  }, [allocated, attributes, cls, tree]);
+  }, [shown, attributes, cls, tree]);
 
   const reset = () => {
     setAllocated(new Set(rootIds));
+    setWeaponSets({});
     setAttributes({});
   };
 
@@ -222,6 +275,29 @@ function PlannerInner({ tree, initial }: { tree: TreeData; initial: PlannerState
       <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-line bg-surface p-3">
         <Counter label={tr.planner.passive} value={points.main} max={MAX_PASSIVE_POINTS} />
         <Counter label={tr.common.ascendancy} value={points.ascendancy} max={MAX_ASCENDANCY_POINTS} />
+        <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
+          {tr.planner.allocateInto}
+          <div className="inline-flex rounded-lg border border-line p-0.5" role="group" aria-label={tr.planner.allocateInto}>
+            {([0, 1, 2] as const).map((set) => (
+              <button
+                key={set}
+                type="button"
+                onClick={() => setActiveSet(set)}
+                aria-pressed={activeSet === set}
+                title={set ? tr.planner.weaponSetHelp : undefined}
+                className={`flex items-center gap-1.5 rounded-md px-2.5 py-1 ${activeSet === set ? "bg-surface-2 text-ink" : "hover:text-ink"}`}
+              >
+                {set > 0 && <span className="h-2 w-2 rounded-full" style={{ background: WEAPON_SET_COLORS[set as WeaponSet].main }} />}
+                {set === 0 ? tr.tree.sharedNodes : set === 1 ? tr.tree.weaponSet1 : tr.tree.weaponSet2}
+                {set > 0 && (
+                  <span className={(set === 1 ? points.set1 : points.set2) > MAX_WEAPON_SET_POINTS ? "text-red-400" : "text-faint"}>
+                    {set === 1 ? points.set1 : points.set2}/{MAX_WEAPON_SET_POINTS}
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
         <div className="flex items-center gap-1 text-sm text-muted">
           {attrTotals.map((v, i) => (
             <span key={i} className="rounded bg-surface-2 px-2 py-1" title={attrNames[i]}>
@@ -296,7 +372,8 @@ function PlannerInner({ tree, initial }: { tree: TreeData; initial: PlannerState
                   classIndex={classIndex}
                   ascendancy={ascendancy}
                   view={tab === "tree" ? "main" : "ascendancy"}
-                  allocated={allocated}
+                  allocated={shown}
+                  weaponSets={weaponSets}
                   attributes={attributes}
                   highlight={highlight}
                   onNodeClick={onNodeClick}

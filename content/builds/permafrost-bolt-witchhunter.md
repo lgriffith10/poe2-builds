@@ -261,6 +261,8 @@ passives:
     - "Careful Consideration"
     - "Escape Strategy"
   ascendancy: [Pitiless Killer, "Judge, Jury, and Executioner", Obsessive Rituals, Ceremonial Ablution]
+  weaponSet1: [Adrenaline Rush, The Spring Hare]
+  weaponSet2: [Grenadier, Cluster Bombs]
 ---
 ## How It Works
 

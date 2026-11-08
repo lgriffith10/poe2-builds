@@ -379,6 +379,11 @@ gearStages:
     belt:
       base: Fine Belt
       mods: [Elemental Resistances, +Maximum Life, +Strength]
+    weapon2:
+      unique: Trenchtimbre
+    offhand2:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, Allies in Presence Attack Speed, +Spirit]
   endgame:
     weapon:
       base: Rattling Sceptre
@@ -408,6 +413,11 @@ gearStages:
     belt:
       base: Heavy Belt
       mods: [Minion Melee Splash, Elemental Resistances, +Maximum Life, +Strength, Minion Life]
+    weapon2:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, +Spirit, +Maximum Mana, Increased Allies in presence Damage, Allies in Presence Attack Speed, Elemental Resistances]
+    offhand2:
+      unique: Prism Guardian
   minmax:
     weapon:
       base: Rattling Sceptre
@@ -438,6 +448,11 @@ gearStages:
     belt:
       base: Heavy Belt
       mods: [Minion Melee Splash, Elemental Resistances, +Maximum Life, +Strength, Minion Life]
+    weapon2:
+      base: Rattling Sceptre
+      mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit, +Maximum Mana, Allies in Presence Attack Speed, Elemental Resistances]
+    offhand2:
+      unique: Prism Guardian
 passives:
   attribute: int
   path:

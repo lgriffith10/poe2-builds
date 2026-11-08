@@ -288,6 +288,8 @@ gear:
   belt:
     base: Ornate Belt
     mods: [+Maximum Life, +Strength, Elemental Resistances]
+  weapon2:
+    unique: Amor Mandragora
 gearStages:
   campaign:
     helmet:
@@ -342,6 +344,8 @@ gearStages:
     belt:
       base: Ornate Belt
       mods: [+Maximum Life, +Strength, Fire Resistance, Lightning Resistance]
+    weapon2:
+      unique: Amor Mandragora
   endgame:
     weapon:
       base: Sinister Quarterstaff
@@ -368,6 +372,8 @@ gearStages:
       mods: [Adds Physical Damage to Attacks, Adds Lightning Damage to Attacks, Elemental Resistances, Lightning Resistance]
     belt:
       unique: "Headhunter"
+    weapon2:
+      unique: Amor Mandragora
   minmax:
     weapon:
       base: Razor Quarterstaff
@@ -394,6 +400,8 @@ gearStages:
       mods: [Adds Physical Damage to Attacks, Adds Fire Damage to Attacks, Elemental Resistances, Fire Resistance]
     belt:
       unique: "Headhunter"
+    weapon2:
+      unique: Amor Mandragora
 passives:
   attribute: dex
   path:

@@ -23,6 +23,7 @@ import { createGraph } from "@/lib/tree";
 import { TIER_CATEGORIES, type SkillRotation } from "@/lib/types";
 import { fmt, getDictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
+import { WEAPON_SET_COLORS } from "@/lib/weapon-sets";
 
 export function generateStaticParams() {
   return getBuilds().map((b) => ({ slug: b.slug }));
@@ -231,6 +232,15 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                         </Link>
                         {s.note && <p className="text-sm text-muted">{s.note}</p>}
                       </div>
+                      {s.weaponSet && (
+                        <span
+                          className="whitespace-nowrap rounded-md border px-2 py-0.5 text-xs font-semibold"
+                          style={{ color: WEAPON_SET_COLORS[s.weaponSet].light, borderColor: WEAPON_SET_COLORS[s.weaponSet].main }}
+                          title={tr.build.weaponSetSkillHint}
+                        >
+                          {s.weaponSet === 1 ? tr.tree.weaponSet1 : tr.tree.weaponSet2}
+                        </span>
+                      )}
                       <SourceChip source={sources.get(s.gem)!} label={sourceLabel(sources.get(s.gem)!)} />
                     </div>
                     {s.supports.length > 0 && (
@@ -299,6 +309,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               stages={inventory.stages}
               initialStage={inventory.initial}
               slotLabels={tr.slots}
+              weaponSetsLabel={tr.tree.weaponSets}
               hint={`${tr.build.inventoryHint} ${tr.build.modHint}`}
               priceLabels={{
                 divine: "Divine Orb",

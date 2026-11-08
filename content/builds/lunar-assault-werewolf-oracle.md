@@ -221,6 +221,9 @@ gear:
     mods: [Adds Physical Damage to Attacks, Adds Fire Damage to Attacks, Cold Resistance, Fire Resistance, Chaos Resistance]
   belt:
     unique: "Headhunter"
+  weapon2:
+    base: Fungal Talisman
+    mods: [Increased Attack Speed, +Level of all Attack Skills]
 gearStages:
   campaign:
     weapon:
@@ -274,6 +277,9 @@ gearStages:
       mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, Cold Resistance, Lightning Resistance, Chaos Resistance]
     belt:
       unique: "Goregirdle"
+    weapon2:
+      base: Fungal Talisman
+      mods: [Increased Attack Speed, Increased Physical Damage, Adds Physical Damage]
   minmax:
     weapon:
       base: Fungal Talisman
@@ -299,11 +305,13 @@ gearStages:
       mods: [Adds Physical Damage to Attacks, Adds Fire Damage to Attacks, Cold Resistance, Fire Resistance, Chaos Resistance]
     belt:
       unique: "Headhunter"
+    weapon2:
+      base: Fungal Talisman
+      mods: [Increased Attack Speed, +Level of all Attack Skills]
 passives:
   attribute: str
   path:
     - "Relentless Vindicator"
-    - "Cruel Fate"
     - "Radial Force"
     - "Primal Rage"
     - "Vulgar Methods"
@@ -316,7 +324,6 @@ passives:
     - "Blood Magic"
     - "Vengeful Fury"
     - "Ancestral Bond"
-    - "Stormcharged"
     - "In Your Face"
     - "Devoted Protector"
     - "Deadly Swarm"
@@ -327,6 +334,7 @@ passives:
     - "Left Ventricle"
     - "Enhanced Barrier"
   ascendancy: [The Lesser Harm, Forced Outcome, The Unseen Path, Entwined Realities]
+  weaponSet1: [Cruel Fate, Stormcharged]
 ---
 ## How It Works
 

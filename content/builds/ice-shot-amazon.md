@@ -196,6 +196,12 @@ gear:
   belt:
     base: Linen Belt
     mods: [Charm Slots, +Maximum Life]
+  weapon2:
+    base: Obliterator Bow
+    mods: [Increased Physical Damage, Adds Physical Damage, Accuracy Rating, Critical Hit Chance, +Level of all Attack Skills]
+  offhand2:
+    base: Visceral Quiver
+    mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, +Level of all Projectile Skills, Attack Critical Hit Chance, Critical Damage Bonus]
 gearStages:
   campaign:
     weapon:
@@ -257,6 +263,12 @@ gearStages:
     belt:
       base: Linen Belt
       mods: [Charm Slots, +Maximum Life]
+    weapon2:
+      base: Obliterator Bow
+      mods: [Increased Physical Damage, Adds Physical Damage, Accuracy Rating, Critical Hit Chance, +Level of all Attack Skills]
+    offhand2:
+      base: Visceral Quiver
+      mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, +Level of all Projectile Skills, Attack Critical Hit Chance, Critical Damage Bonus]
 passives:
   attribute: dex
   path:

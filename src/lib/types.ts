@@ -140,6 +140,9 @@ export const GEAR_SLOTS = [
   "ring1",
   "ring2",
   "belt",
+  // Weapon set II (swap weapons); "weapon"/"offhand" are weapon set I.
+  "weapon2",
+  "offhand2",
 ] as const;
 export type GearSlot = (typeof GEAR_SLOTS)[number];
 export type GearSet = Partial<Record<GearSlot, GearPiece>>;
@@ -163,6 +166,8 @@ export const SLOT_LABELS: Record<GearSlot, string> = {
   ring1: "Ring",
   ring2: "Ring",
   belt: "Belt",
+  weapon2: "Weapon (Set II)",
+  offhand2: "Off-hand (Set II)",
 };
 
 export interface GearPiece {
@@ -179,6 +184,8 @@ export interface SkillGroup {
   gem: string;
   supports: string[];
   note?: string;
+  /** Weapon set the skill is socketed on, when the build uses both sets for different skills. */
+  weaponSet?: WeaponSet;
 }
 
 /** One stage of the campaign (e.g. "Act 2") and the skills used during it. */
@@ -202,11 +209,19 @@ export interface SkillRotation {
   steps: { gem: string; count?: number; label?: string }[];
 }
 
+export type WeaponSet = 1 | 2;
+
 export interface PlannerState {
   classIndex: number;
   /** -1 when no ascendancy is chosen. */
   ascIndex: number;
+  /** Every allocated node, weapon-set nodes included (like Path of Building's `nodes`). */
   nodes: number[];
+  /**
+   * Nodes allocated with weapon-set points, by set (1 or 2). They only apply while that weapon set is
+   * equipped; the other nodes of `nodes` are shared by both sets.
+   */
+  weaponSets?: Record<number, WeaponSet>;
   /** Attribute choice per attribute node: 0 str, 1 dex, 2 int. */
   attributes: Record<number, number>;
   skills: SkillGroup[];

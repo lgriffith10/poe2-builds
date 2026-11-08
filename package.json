@@ -11,6 +11,7 @@
     "data:sync": "node scripts/sync-data.mjs",
     "builds:check": "tsx --conditions=react-server scripts/validate-builds.ts",
     "builds:fit": "tsx --conditions=react-server scripts/fit-passives.ts",
+    "builds:weapon-sets": "tsx --conditions=react-server scripts/weapon-sets.ts",
     "test:planner": "tsx scripts/test-planner.ts",
     "research:maxroll": "node scripts/research-maxroll.cjs",
     "draft:maxroll": "node scripts/draft-from-maxroll.cjs",

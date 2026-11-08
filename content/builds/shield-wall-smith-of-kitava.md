@@ -110,6 +110,8 @@ passives:
     - "Unbending"
     - "Chillproof"
   ascendancy: [Internal Layer, Leather Bindings, Smith's Masterwork, Flowing Metal, Tribute to Utula, Heatproofing, Coal Stoker]
+  weaponSet1: [In the Thick of It, Ignore Pain, Pile On, Favourable Odds, Unyielding, Punctured Lung]
+  weaponSet2: [Last Stand, Lasting Toxins, Fast Acting Toxins, Deterioration, Stacking Toxins]
 ---
 
 ## How It Works

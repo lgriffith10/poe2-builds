@@ -310,6 +310,9 @@ gearStages:
     belt:
       base: Heavy Belt
       mods: [Minion Area of Effect, Increased Minion commanded skill Damage, +Strength, Elemental Resistances]
+    weapon2:
+      base: Spiny Talisman
+      mods: [Critical Hit Chance, Increased Attack Speed, Accuracy Rating]
   minmax:
     weapon:
       unique: "Chober Chaber"
@@ -337,6 +340,9 @@ gearStages:
       unique: "Kalandra's Touch"
     belt:
       unique: "Mageblood"
+    weapon2:
+      base: Spiny Talisman
+      mods: [Adds Cold Damage, Critical Hit Chance, Increased Attack Speed, Accuracy Rating]
 passives:
   attribute: int
   path:

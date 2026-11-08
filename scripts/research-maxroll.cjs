@@ -27,6 +27,7 @@ const gemName = (id) =>
     const out = [];
     for (const step of h) {
       if (typeof step === "number") out.push(step);
+      else if (step.set !== undefined) continue; // weapon-set allocation, listed separately below
       else {
         for (const id of step.add ?? []) if (!out.includes(id)) out.push(id);
         for (const id of step.remove ?? []) out.splice(out.indexOf(id), out.includes(id) ? 1 : 0);
@@ -34,7 +35,10 @@ const gemName = (id) =>
     }
     return out;
   };
-  for (const v of p.passives.variants) v.history = flatten(v.history);
+  for (const v of p.passives.variants) {
+    v.sets = [1, 2].map((set) => v.history.filter((s) => s && s.set === set).map((s) => s.id));
+    v.history = flatten(v.history);
+  }
   const pv = [...p.passives.variants].sort((a, b) => b.history.length - a.history.length)[0];
   console.log(`passive variants: ${p.passives.variants.map((v) => `${v.name}(${v.history.length})`).join(", ")} -> using ${pv.name}`);
   const hist = pv.history;
@@ -45,6 +49,11 @@ const gemName = (id) =>
   console.log(`nodes: ${hist.length} (main ${main.length}, asc ${asc.length}, missing in our tree ${missing.length})`);
   console.log(`attributes chosen: ${JSON.stringify(pv.attributes ?? {}).slice(0, 200)}`);
   console.log(`KEY PASSIVES (in order): ${key.join(" | ")}`);
+  for (const [i, ids] of pv.sets.entries()) {
+    if (!ids.length) continue;
+    const key = ids.filter((n) => ["notable", "keystone"].includes(tree.nodes[n]?.t)).map((n) => tree.nodes[n].n.trim());
+    console.log(`WEAPON SET ${i + 1} (${ids.length} points): ${key.join(" | ")}`);
+  }
   console.log(`ASCENDANCY (in order): ${asc.filter((n) => tree.nodes[n].t === "notable").map((n) => tree.nodes[n].n).join(" | ")}`);
   console.log(`jewels: ${JSON.stringify(pv.jewels ?? {}).slice(0, 200)}`);
 

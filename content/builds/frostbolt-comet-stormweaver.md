@@ -31,18 +31,23 @@ skills:
   - gem: "Frostbolt"
     supports: [Sione's Temper, Pinpoint Critical, Rising Tempest, Magnified Area II, Vilenta's Propulsion]
     note: "Main skill; forks and explodes with Snakepit"
+    weaponSet: 1
   - gem: "Frost Wall"
     supports: [Spell Cascade, Cooldown Recovery II, Pinpoint Critical, Fortress II, Rapid Casting II]
     note: "Ice crystals that explode into chain reactions"
+    weaponSet: 1
   - gem: "Snap"
     supports: [Pinpoint Critical, Rising Tempest, Concentrated Area, Considered Casting, Elemental Focus]
     note: "Detonates Frostbolts and ice crystals"
+    weaponSet: 1
   - gem: "Frost Bomb"
     supports: [Potent Exposure, Magnified Area II, Cooldown Recovery II]
     note: "Exposure; use from weapon set 2"
+    weaponSet: 2
   - gem: "Cast on Critical"
     supports: [Comet, Living Bomb, Efficiency II, Pinpoint Critical, Dialla's Desire]
     note: "Triggers Comet once you have Snakepit"
+    weaponSet: 1
   - gem: "Cast on Elemental Ailment"
     supports: [Comet, Living Bomb, Spell Cascade, Efficiency II, Pinpoint Critical]
     note: "Comet trigger for the pre-Snakepit version"
@@ -55,9 +60,11 @@ skills:
   - gem: "Elemental Weakness"
     supports: [Heightened Curse, Prolonged Duration II, Cursed Ground]
     note: "Curse; use from weapon set 2"
+    weaponSet: 2
   - gem: "Sigil of Power"
     supports: [Prolonged Duration II, Magnified Area II, Cooldown Recovery II]
     note: "From a Chiming Staff on weapon set 2"
+    weaponSet: 2
 levelingSource:
   title: "Ice Nova Snap Stormweaver Build Guide"
   url: https://maxroll.gg/poe2/build-guides/cold-snap-frostbolt-stormweaver-leveling-guide
@@ -178,6 +185,9 @@ gear:
   belt:
     base: Rawhide Belt
     mods: [Cold Resistance, Fire Resistance, Lightning Resistance]
+  weapon2:
+    base: Chiming Staff
+    mods: [Increased Chaos Damage, +Level of all Spell Skills, Increased Cast Speed, Spell Critical Hit Chance, Gain Damage as Extra Cold, Gain Damage as Extra Fire]
 gearStages:
   mapping:
     weapon:
@@ -267,6 +277,9 @@ gearStages:
     belt:
       base: Rawhide Belt
       mods: [Cold Resistance, Fire Resistance, Lightning Resistance]
+    weapon2:
+      base: Chiming Staff
+      mods: [Increased Chaos Damage, +Level of all Spell Skills, Increased Cast Speed, Spell Critical Hit Chance, Gain Damage as Extra Cold, Gain Damage as Extra Fire]
 passives:
   attribute: int
   path:
@@ -295,6 +308,8 @@ passives:
     - "Practiced Signs"
     - "Raw Power"
   ascendancy: [Constant Gale, Force of Will, Strike Twice, Refracted Infusion]
+  weaponSet1: [Thin Ice, Heavy Frost, Careful Assassin, Controlling Magic, Inescapable Cold, Endless Blizzard, Critical Exploit, Harsh Winter, Alternating Current]
+  weaponSet2: [Preservation, Lingering Whispers, Master of Hexes, Overexposure]
 ---
 ## How It Works
 

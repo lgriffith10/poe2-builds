@@ -187,6 +187,9 @@ gearStages:
     belt:
       base: Rawhide Belt
       mods: [Cold Resistance, Fire Resistance, +Maximum Life]
+    weapon2:
+      base: Stoic Sceptre
+      mods: [+Spirit, +Maximum Mana, Allies in Presence Attack Speed]
   endgame:
     weapon:
       base: Dueling Wand
@@ -215,6 +218,8 @@ gearStages:
     belt:
       base: Heavy Belt
       mods: [+Strength, Fire Resistance, Lightning Resistance]
+    weapon2:
+      unique: The Whispering Ice
   minmax:
     weapon:
       base: Dueling Wand
@@ -241,6 +246,8 @@ gearStages:
       mods: [Cold Resistance, Increased Cast Speed, +Maximum Mana]
     belt:
       unique: "Headhunter"
+    weapon2:
+      unique: The Whispering Ice
 passives:
   attribute: int
   path:
@@ -275,6 +282,8 @@ passives:
     - "Spell Haste"
     - "Spaghettification"
   ascendancy: [Relentless Pursuit, Running Assault, Path Seeker, Traveller's Wisdom]
+  weaponSet1: [Preservation, Controlling Magic, Careful Assassin, Effervescent, Evocational Practitioner, Critical Exploit]
+  weaponSet2: [Forthcoming, Roil, Stripped Defences, Secrets of the Orb, Overexposure]
 ---
 ## How It Works
 

@@ -31,6 +31,7 @@ function fingerprints(lang: Locale): GuideFingerprint[] {
       className: b.className,
       ascendancy: b.ascendancy,
       nodes: b.planner.nodes.filter((id) => !["start", "ascStart"].includes(tree.nodes[id].t)),
+      ...(b.planner.weaponSets && { weaponSets: b.planner.weaponSets }),
       keyPassives: [...b.keyPassives, ...b.ascendancyOrder].map((name) => ({
         name,
         id: findNodeByName(graph, name, cls, b.ascendancy)!,

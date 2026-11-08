@@ -1,5 +1,6 @@
 // Compares an imported character with the site's build guides.
-import type { SkillGroup } from "./types";
+import { matchingNodes } from "./tree";
+import type { SkillGroup, WeaponSet } from "./types";
 
 export interface GuideFingerprint {
   slug: string;
@@ -8,6 +9,8 @@ export interface GuideFingerprint {
   ascendancy: string;
   /** Every passive allocated by the guide (main tree and ascendancy, starts excluded). */
   nodes: number[];
+  /** Nodes of `nodes` allocated with weapon-set points. */
+  weaponSets?: Record<number, WeaponSet>;
   keyPassives: { id: number; name: string }[];
   skills: SkillGroup[];
   uniques: string[];
@@ -17,6 +20,7 @@ export interface CharacterFingerprint {
   className: string;
   ascendancy: string | null;
   nodes: number[];
+  weaponSets?: Record<number, WeaponSet>;
   skills: SkillGroup[];
   uniques: string[];
 }
@@ -39,7 +43,9 @@ const lower = (s: string) => s.toLowerCase();
 
 export function compareWithGuide(char: CharacterFingerprint, guide: GuideFingerprint): Comparison {
   const nodes = new Set(char.nodes);
-  const passives = guide.nodes.length ? guide.nodes.filter((n) => nodes.has(n)).length / guide.nodes.length : 0;
+  // Weapon-set nodes only count when the character takes them with weapon-set points as well.
+  const matched = matchingNodes(guide.nodes, guide.weaponSets ?? {}, char.nodes, char.weaponSets ?? {});
+  const passives = guide.nodes.length ? matched / guide.nodes.length : 0;
 
   const charGems = new Set(char.skills.flatMap((s) => [s.gem, ...s.supports]).map(lower));
   const mainGems = guide.skills.map((s) => s.gem);

@@ -208,6 +208,12 @@ gear:
   belt:
     base: Wide Belt
     mods: [+Maximum Life, Elemental Resistances]
+  weapon2:
+    base: Obliterator Bow
+    mods: [High Physical DPS, Critical Hit Chance, +Level of all Projectile Skills, Critical Damage Bonus]
+  offhand2:
+    base: Volant Quiver
+    mods: [Adds Cold Damage to Attacks, Adds Physical Damage to Attacks, Attack Critical Hit Chance, Critical Damage Bonus, +Level of all Projectile Skills]
 gearStages:
   campaign:
     weapon:
@@ -295,6 +301,12 @@ gearStages:
     belt:
       base: Heavy Belt
       mods: [+Maximum Life, +Maximum Mana]
+    weapon2:
+      base: Obliterator Bow
+      mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance, Critical Damage Bonus, +Level of all Projectile Skills, Accuracy Rating]
+    offhand2:
+      base: Visceral Quiver
+      mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, +Level of all Projectile Skills, Attack Critical Hit Chance, Critical Damage Bonus]
 passives:
   attribute: dex
   path:

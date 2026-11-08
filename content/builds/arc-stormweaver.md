@@ -29,14 +29,19 @@ cons:
 skills:
   - gem: "Sigil of Power"
     supports: [Magnified Area II, Prolonged Duration II, Cooldown Recovery II, Rapid Casting II]
+    weaponSet: 2
   - gem: "Arc"
     supports: [Considered Casting, Zenith II, Unleash, Lightning Mastery]
+    weaponSet: 1
   - gem: "Orb of Storms"
     supports: [Overabundance II, Considered Casting, Harmonic Remnants II]
+    weaponSet: 1
   - gem: "Elemental Weakness"
     supports: [Heightened Curse, Cursed Ground, Prolonged Duration II]
+    weaponSet: 2
   - gem: "Frost Bomb"
     supports: [Potent Exposure, Cooldown Recovery II, Long Fuse II]
+    weaponSet: 2
   - gem: "Mana Tempest"
     supports: [Rapid Casting II, Efficiency II, Lightning Mastery]
   - gem: "Archmage"
@@ -270,6 +275,9 @@ gear:
   belt:
     base: Utility Belt
     mods: [+Maximum Mana, Cold Resistance, Lightning Resistance]
+  weapon2:
+    base: Chiming Staff
+    mods: [Increased Cast Speed, +Level of all Spell Skills]
 gearStages:
   campaign:
     weapon:
@@ -299,6 +307,9 @@ gearStages:
     belt:
       base: Utility Belt
       mods: [+Maximum Mana, Cold Resistance, Lightning Resistance, Fire Resistance]
+    weapon2:
+      base: Chiming Staff
+      mods: [Increased Cast Speed]
   mapping:
     weapon:
       base: Attuned Wand
@@ -330,6 +341,9 @@ gearStages:
     belt:
       base: Utility Belt
       mods: [+Maximum Mana, Cold Resistance, Lightning Resistance]
+    weapon2:
+      base: Chiming Staff
+      mods: [Increased Cast Speed, +Level of all Spell Skills]
   endgame:
     weapon:
       base: Attuned Wand
@@ -361,6 +375,9 @@ gearStages:
     belt:
       base: Linen Belt
       mods: [+Maximum Mana, +Strength, Cold Resistance, Lightning Resistance]
+    weapon2:
+      base: Chiming Staff
+      mods: [Increased Cast Speed, +Maximum Mana, +Level of all Spell Skills]
   minmax:
     weapon:
       base: Attuned Wand
@@ -390,6 +407,9 @@ gearStages:
       mods: [+Maximum Mana, Increased Cast Speed, +All Attributes, Elemental Resistances]
     belt:
       unique: "Headhunter"
+    weapon2:
+      base: Chiming Staff
+      mods: [Increased Cast Speed, +Maximum Mana, +Level of all Spell Skills]
 passives:
   attribute: int
   path:
