@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { GemList } from "@/components/database/gem-list";
 import { getDictionary } from "@/i18n";
-import { alternates, resolveLang } from "@/i18n/server";
+import { alternates, resolveLang, pageI18n } from "@/i18n/server";
 import { gems } from "@/lib/data";
+import { DbHeading } from "@/components/ui";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/database/gems">): Promise<Metadata> {
   const lang = await resolveLang(params);
@@ -11,7 +12,12 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/database/g
 }
 
 export default async function GemsPage({ params }: PageProps<"/[lang]/database/gems">) {
-  await resolveLang(params);
+  const { t } = await pageI18n(params);
   // Only the fields the list displays; recommended supports are not shown here.
-  return <GemList gems={gems.map((g) => ({ ...g, recommended: [] }))} />;
+  return (
+    <>
+      <DbHeading title={t.database.h1.gems} sub={t.database.gemsMeta} />
+      <GemList gems={gems.map((g) => ({ ...g, recommended: [] }))} />
+    </>
+  );
 }

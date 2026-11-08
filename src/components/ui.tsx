@@ -170,3 +170,13 @@ export function DifficultyBadge({ difficulty, label }: { difficulty: Difficulty;
     </span>
   );
 }
+
+/** Heading (H1) and one-line intro of a database page, under the database navigation. */
+export function DbHeading({ title, sub }: { title: string; sub?: string }) {
+  return (
+    <div className="mb-4">
+      <h1 className="font-display text-xl font-semibold tracking-wide text-ink">{title}</h1>
+      {sub && <p className="text-sm text-muted">{sub}</p>}
+    </div>
+  );
+}

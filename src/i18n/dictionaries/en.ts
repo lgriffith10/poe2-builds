@@ -150,7 +150,6 @@ export const en = {
     gearSub: "Uniques to aim for, and the modifiers to prioritise on rare items.",
     pointsAllocated: "{n} passive points allocated.",
     ascendancyOrder: "Ascendancy order",
-    keyPassives: "Key passives",
     metaTitle: "{title} Build Guide ({patch})",
     gearStages: { campaign: "Campaign", mapping: "Early maps", endgame: "Endgame", minmax: "Min-max" },
     inventoryHint: "Hover or tap an item to see its modifiers. Rare items list the modifiers to look for.",
@@ -401,6 +400,15 @@ export const en = {
     ascendancies: "Ascendancies",
     ascendanciesBlurb: "Every ascendancy class and its notable passives.",
     gemsMeta: "Path of Exile 2 skill, support and spirit gems.",
+    /** Page headings (H1) of the database pages. */
+    h1: {
+      index: "Path of Exile 2 Database",
+      gems: "Path of Exile 2 Gems",
+      uniques: "Path of Exile 2 Unique Items",
+      bases: "Path of Exile 2 Base Types",
+      ascendancies: "Path of Exile 2 Ascendancies",
+    },
+    indexMeta: "Gems, unique items, base types and ascendancies of Path of Exile 2, searchable and up to date with patch 0.5.",
     uniquesTitle: "Unique Items",
     uniquesMeta: "Path of Exile 2 unique items and their modifiers.",
     basesMeta: "Path of Exile 2 equipment base types.",

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useI18n } from "@/i18n/client";
 import { MAX_WEAPON_SET_POINTS, nodesForSet } from "@/lib/tree";
 import type { PlannerState, TreeData, WeaponSet } from "@/lib/types";
@@ -21,12 +21,24 @@ export function BuildTreeViewer({ planner, code, steps = [] }: { planner: Planne
   /** Number of steps shown (steps.length = the whole tree). */
   const [stepCount, setStepCount] = useState(steps.length);
 
+  // The tree data and art (~500 KB) are only fetched when the viewer gets close to the screen: on guide pages it sits
+  // far below the fold, and many readers never scroll that far.
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [near, setNear] = useState(false);
   useEffect(() => {
+    const el = wrapRef.current;
+    if (!el || near) return;
+    const io = new IntersectionObserver(([e]) => e.isIntersecting && setNear(true), { rootMargin: "600px 0px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [near]);
+  useEffect(() => {
+    if (!near) return;
     fetch("/data/tree.json")
       .then((r) => r.json())
       .then(setTree)
       .catch(() => setTree(null));
-  }, []);
+  }, [near]);
 
   const weaponSets = useMemo(() => planner.weaponSets ?? {}, [planner.weaponSets]);
   const setCounts = useMemo(() => {
@@ -57,7 +69,7 @@ export function BuildTreeViewer({ planner, code, steps = [] }: { planner: Planne
   }, [steps]);
 
   return (
-    <div>
+    <div ref={wrapRef}>
       <div className="mb-3 flex flex-wrap items-center gap-2">
         <div className="inline-flex rounded-lg border border-line p-1">
           {(["main", "ascendancy"] as const).map((v) => (

@@ -4,6 +4,7 @@ import { fmt, getDictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
 import { classes, tree } from "@/lib/data";
 import { belongsToAscendancy } from "@/lib/tree";
+import { DbHeading } from "@/components/ui";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/database/ascendancies">): Promise<Metadata> {
   const lang = await resolveLang(params);
@@ -16,6 +17,7 @@ export default async function AscendanciesPage({ params }: PageProps<"/[lang]/da
   const nodes = Object.values(tree.nodes);
   return (
     <div className="mt-6 space-y-10">
+      <DbHeading title={t.database.h1.ascendancies} sub={t.database.ascendanciesMeta} />
       {classes.map((cls) => (
         <section key={cls.name}>
           <div className="mb-4 flex items-center gap-3">

@@ -103,7 +103,7 @@ export function LevelingTimeline({ paths, storageKey }: { paths: TimelinePath[];
     <div ref={root} className="scroll-mt-24">
       {paths.length > 1 && (
         <div role="tablist" className="mb-5 flex flex-wrap gap-2">
-          {paths.map((p, i) => (
+          {paths.map((_, i) => (
             <button
               key={i}
               type="button"

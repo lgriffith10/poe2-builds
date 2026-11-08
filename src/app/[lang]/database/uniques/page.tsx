@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { UniqueList } from "@/components/database/unique-list";
 import { getDictionary } from "@/i18n";
-import { alternates, resolveLang } from "@/i18n/server";
+import { alternates, resolveLang, pageI18n } from "@/i18n/server";
 import { uniques } from "@/lib/data";
+import { DbHeading } from "@/components/ui";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/database/uniques">): Promise<Metadata> {
   const lang = await resolveLang(params);
@@ -11,6 +12,11 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/database/u
 }
 
 export default async function UniquesPage({ params }: PageProps<"/[lang]/database/uniques">) {
-  await resolveLang(params);
-  return <UniqueList uniques={uniques} />;
+  const { t } = await pageI18n(params);
+  return (
+    <>
+      <DbHeading title={t.database.h1.uniques} sub={t.database.uniquesMeta} />
+      <UniqueList uniques={uniques} />
+    </>
+  );
 }

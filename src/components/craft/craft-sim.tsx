@@ -274,8 +274,9 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
           <div className="text-[11px] uppercase tracking-wider text-faint">
             {t.itemLevel}
             <div className="mt-1 flex items-center overflow-hidden rounded-md border border-line bg-surface-2">
-              <button type="button" onClick={() => { const v = Math.max(1, ilvl - 1); setIlvl(v); reset(base, v); }} className="px-2 py-1.5 text-muted hover:text-ink">−</button>
+              <button type="button" aria-label={`${t.itemLevel} −1`} onClick={() => { const v = Math.max(1, ilvl - 1); setIlvl(v); reset(base, v); }} className="px-2 py-1.5 text-muted hover:text-ink">−</button>
               <input
+                aria-label={t.itemLevel}
                 type="number"
                 min={1}
                 max={86}
@@ -287,7 +288,7 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
                 }}
                 className="w-12 bg-transparent py-1.5 text-center text-sm text-ink [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
               />
-              <button type="button" onClick={() => { const v = Math.min(86, ilvl + 1); setIlvl(v); reset(base, v); }} className="px-2 py-1.5 text-muted hover:text-ink">+</button>
+              <button type="button" aria-label={`${t.itemLevel} +1`} onClick={() => { const v = Math.min(86, ilvl + 1); setIlvl(v); reset(base, v); }} className="px-2 py-1.5 text-muted hover:text-ink">+</button>
             </div>
           </div>
         </div>

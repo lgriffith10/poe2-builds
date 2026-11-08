@@ -4,10 +4,12 @@ import { getDictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
 import { bases, classes, gems, uniques } from "@/lib/data";
 import { DB_SECTIONS } from "@/lib/nav";
+import { DbHeading } from "@/components/ui";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/database">): Promise<Metadata> {
   const lang = await resolveLang(params);
-  return { title: getDictionary(lang).database.title, alternates: alternates("/database", lang) };
+  const t = getDictionary(lang);
+  return { title: t.database.title, description: t.database.indexMeta, alternates: alternates("/database", lang) };
 }
 
 export default async function DatabasePage({ params }: PageProps<"/[lang]/database">) {
@@ -19,7 +21,11 @@ export default async function DatabasePage({ params }: PageProps<"/[lang]/databa
     "/database/ascendancies": classes.reduce((n, c) => n + c.ascendancies.length, 0),
   };
   return (
-    <div className="mt-6 grid gap-4 sm:grid-cols-2">
+    <>
+    <div className="mt-6">
+      <DbHeading title={t.database.h1.index} sub={t.database.indexMeta} />
+    </div>
+    <div className="grid gap-4 sm:grid-cols-2">
       {DB_SECTIONS.map((s) => (
         <Link
           key={s.href}
@@ -32,5 +38,6 @@ export default async function DatabasePage({ params }: PageProps<"/[lang]/databa
         </Link>
       ))}
     </div>
+    </>
   );
 }

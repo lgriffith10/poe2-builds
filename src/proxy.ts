@@ -30,6 +30,7 @@ export function proxy(req: NextRequest) {
 }
 
 export const config = {
-  // Skip Next internals, the API, static data/images and any file with an extension.
-  matcher: ["/((?!_next|api|data|img|favicon\\.ico|.*\\.[a-zA-Z0-9]+$).*)"],
+  // Skip Next internals, the API, the static data/ and img/ folders and any file with an extension.
+  // The folders need their trailing slash: "/database" starts with "data" and must go through the proxy.
+  matcher: ["/((?!_next/|api/|data/|img/|favicon\\.ico|.*\\.[a-zA-Z0-9]+$).*)"],
 };
