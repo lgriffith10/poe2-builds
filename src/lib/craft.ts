@@ -412,8 +412,8 @@ export function advise(c: Crafter, item: Item, targets: Set<string>, runs = 800)
     }
     if (gain > 0) out.push({ action, gain: gain / runs, loss: loss / runs });
   }
-  // Prefer safe actions: a wanted mod lost is worth slightly more than one gained.
-  return out.sort((a, b) => b.gain - 1.2 * b.loss - (a.gain - 1.2 * a.loss)).slice(0, 6);
+  // Prefer safe actions: losing a wanted mod (often one the player already paid for) costs twice what a gain is worth.
+  return out.sort((a, b) => b.gain - 2 * b.loss - (a.gain - 2 * a.loss)).slice(0, 6);
 }
 
 /** Why a wanted modifier can or cannot be reached on this item. */

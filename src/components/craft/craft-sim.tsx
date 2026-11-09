@@ -17,6 +17,7 @@ import {
   type Item,
   type Rarity,
 } from "@/lib/craft";
+import { parseItemText } from "@/lib/craft-import";
 
 type Tc = ReturnType<typeof useI18n>["t"]["craft"];
 type Fmt = ReturnType<typeof useI18n>["fmt"];
@@ -169,6 +170,11 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
   const [omen, setOmen] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [flash, setFlash] = useState(0);
+  const [importOpen, setImportOpen] = useState(false);
+  const [importText, setImportText] = useState("");
+  const [importMsg, setImportMsg] = useState<{ ok: boolean; text: string; unmatched?: string[] } | null>(null);
+  const [editing, setEditing] = useState(false);
+  const [editQuery, setEditQuery] = useState("");
 
   const basesOfClass = useMemo(
     () => Object.entries(data.bases).filter(([, b]) => b[0] === cls).sort((a, b) => b[1][1] - a[1][1] || a[0].localeCompare(b[0])),
@@ -185,6 +191,63 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
     setTargets(new Set());
     reset(b);
   };
+  /** Item level change: keeps the item, minus the modifiers the new level cannot have. */
+  const setLevel = (v: number) => {
+    setIlvl(v);
+    setItem((it) => ({ ...it, ilvl: v, mods: it.mods.filter((m) => c.mod(m.i).level <= v) }));
+    setReveal(null);
+  };
+  const importItem = () => {
+    const res = parseItemText(c, importText);
+    if (!res.item) {
+      setImportMsg({ ok: false, text: t.importErrors[res.error ?? "base"] });
+      return;
+    }
+    const it = res.item;
+    setCls(data.bases[it.base][0]);
+    setBase(it.base);
+    setIlvl(it.ilvl);
+    setItem(it);
+    setHistory([]);
+    setReveal(null);
+    setOmen(null);
+    setTargets(new Set());
+    setFlash((f) => f + 1);
+    setImportMsg({ ok: true, text: fmt(t.importOk, { n: it.mods.length }), unmatched: res.unmatched });
+  };
+
+  // Manual edits (to rebuild an item by hand); each one can be undone like a currency.
+  const edit = (next: Item) => {
+    setHistory((h) => [...h, { item, label: t.manualEdit }]);
+    setItem(next);
+    setFlash((f) => f + 1);
+  };
+  const tiersOf = (group: string, desecrated: boolean) =>
+    (desecrated ? c.desecratedPool(base) : c.pool(base))
+      .filter((i) => c.mod(i).group === group && c.mod(i).level <= item.ilvl)
+      .sort((a, b) => c.mod(b).level - c.mod(a).level);
+  const canAdd = (group: string, affix: "P" | "S") =>
+    !item.mods.some((m) => c.mod(m.i).group === group) &&
+    c.free(item, "rare")[affix] > 0 &&
+    (tiersOf(group, false).length > 0 || tiersOf(group, true).length > 0);
+  const addMod = (group: string) => {
+    const regular = tiersOf(group, false);
+    const tiers = regular.length ? regular : tiersOf(group, true);
+    if (!tiers.length) return;
+    const affix = c.mod(tiers[0]).affix;
+    let rarity: Rarity = item.rarity === "normal" ? "magic" : item.rarity;
+    if (rarity === "magic" && c.free(item, "magic")[affix] <= 0) rarity = "rare";
+    if (c.free(item, rarity)[affix] <= 0) return;
+    edit({ ...item, rarity, mods: [...item.mods, { i: tiers[0], r: 0.5, ...(regular.length ? {} : { desecrated: true }) }] });
+  };
+  const rarityAllowed = (r: Rarity) =>
+    r === "rare" || (r === "magic" ? c.count(item, "P") <= 1 && c.count(item, "S") <= 1 : item.mods.length === 0);
+  const toggleTarget = (g: string) =>
+    setTargets((s) => {
+      const n = new Set(s);
+      if (!n.delete(g)) n.add(g);
+      return n;
+    });
 
   const groups = useMemo(() => {
     const seen = new Map<string, "P" | "S">();
@@ -274,23 +337,72 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
           <div className="text-[11px] uppercase tracking-wider text-faint">
             {t.itemLevel}
             <div className="mt-1 flex items-center overflow-hidden rounded-md border border-line bg-surface-2">
-              <button type="button" aria-label={`${t.itemLevel} −1`} onClick={() => { const v = Math.max(1, ilvl - 1); setIlvl(v); reset(base, v); }} className="px-2 py-1.5 text-muted hover:text-ink">−</button>
+              <button type="button" aria-label={`${t.itemLevel} −1`} onClick={() => setLevel(Math.max(1, ilvl - 1))} className="px-2 py-1.5 text-muted hover:text-ink">−</button>
               <input
                 aria-label={t.itemLevel}
                 type="number"
                 min={1}
                 max={86}
                 value={ilvl}
-                onChange={(e) => {
-                  const v = Math.max(1, Math.min(86, Number(e.target.value) || 1));
-                  setIlvl(v);
-                  reset(base, v);
-                }}
+                onChange={(e) => setLevel(Math.max(1, Math.min(86, Number(e.target.value) || 1)))}
                 className="w-12 bg-transparent py-1.5 text-center text-sm text-ink [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
               />
-              <button type="button" aria-label={`${t.itemLevel} +1`} onClick={() => { const v = Math.min(86, ilvl + 1); setIlvl(v); reset(base, v); }} className="px-2 py-1.5 text-muted hover:text-ink">+</button>
+              <button type="button" aria-label={`${t.itemLevel} +1`} onClick={() => setLevel(Math.min(86, ilvl + 1))} className="px-2 py-1.5 text-muted hover:text-ink">+</button>
             </div>
           </div>
+        </div>
+
+        {/* Start from an existing item */}
+        <div className="rounded-xl border border-line bg-surface">
+          <button
+            type="button"
+            onClick={() => setImportOpen((o) => !o)}
+            aria-expanded={importOpen}
+            className="flex w-full items-center justify-between px-3 py-2.5 text-left text-sm font-semibold text-gold"
+          >
+            {t.startFrom}
+            <span className="text-faint">{importOpen ? "−" : "+"}</span>
+          </button>
+          {importOpen && (
+            <div className="space-y-2 border-t border-line p-3">
+              <p className="text-xs leading-relaxed text-muted">{t.importHint}</p>
+              <textarea
+                value={importText}
+                onChange={(e) => setImportText(e.target.value)}
+                rows={6}
+                aria-label={t.startFrom}
+                placeholder={"Item Class: Boots\nRarity: Rare\n…"}
+                className="w-full rounded-lg border border-line bg-surface-2 px-3 py-2 font-mono text-xs placeholder:text-faint focus:border-gold-soft focus:outline-none"
+              />
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  type="button"
+                  onClick={importItem}
+                  disabled={!importText.trim()}
+                  className="rounded-md bg-gold px-3 py-1.5 text-sm font-semibold text-black hover:brightness-110 disabled:opacity-40"
+                >
+                  {t.importButton}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setEditing(true)}
+                  className="rounded-md border border-line px-3 py-1.5 text-sm hover:border-gold-soft"
+                >
+                  ✎ {t.editByHand}
+                </button>
+              </div>
+              {importMsg && (
+                <div className={`text-xs ${importMsg.ok ? "text-emerald-300" : "text-red-300"}`}>
+                  <p>{importMsg.text}{importMsg.ok && ` ${t.importNext}`}</p>
+                  {!!importMsg.unmatched?.length && (
+                    <p className="mt-1 text-faint">
+                      {t.importUnmatched} <span className="text-muted">{importMsg.unmatched.join(" · ")}</span>
+                    </p>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Item */}
@@ -323,21 +435,55 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
                     .map((m) => {
                       const mod = c.mod(m.i);
                       const wanted = targets.has(mod.group);
+                      const tiers = editing ? tiersOf(mod.group, Boolean(m.desecrated)) : [];
                       return (
-                        <li key={m.i} className="group/mod relative grid grid-cols-[2.2rem_1fr_2.2rem] items-center gap-1">
+                        <li key={m.i} className={`group/mod relative grid items-center gap-1 ${editing ? "grid-cols-[2.2rem_1fr_auto]" : "grid-cols-[2.2rem_1fr_2.2rem]"}`}>
                           <span className={`justify-self-start rounded px-1 text-[9px] font-bold ${mod.affix === "P" ? "bg-sky-500/15 text-sky-300" : "bg-violet-500/15 text-violet-300"}`}>
                             {mod.affix === "P" ? t.prefixShort : t.suffixShort}
                           </span>
-                          <span
-                            className="whitespace-pre-line leading-snug"
+                          <button
+                            type="button"
+                            disabled={editing}
+                            onClick={() => toggleTarget(mod.group)}
+                            title={wanted ? t.unmarkWanted : t.markWanted}
+                            aria-pressed={wanted}
+                            className={`whitespace-pre-line rounded leading-snug ${editing ? "" : "hover:bg-white/5"} ${wanted ? "underline decoration-gold/50 underline-offset-2" : ""}`}
                             style={{ color: m.desecrated ? "#d4807a" : m.crafted ? "#b9a6ff" : wanted ? "#e8c46a" : "#8888ff" }}
                           >
                             {rolledText(mod.text, m.r)}
-                          </span>
+                          </button>
+                          {editing ? (
+                            <span className="flex items-center gap-1 justify-self-end">
+                              <select
+                                aria-label={t.tierSelect}
+                                value={m.i}
+                                onChange={(e) => {
+                                  const i = Number(e.target.value);
+                                  edit({ ...item, mods: item.mods.map((x) => (x === m ? { ...x, i } : x)) });
+                                }}
+                                className="rounded border border-line bg-surface-2 px-1 py-0.5 text-[11px] text-ink"
+                              >
+                                {(tiers.includes(m.i) ? tiers : [m.i, ...tiers]).map((i) => (
+                                  <option key={i} value={i}>
+                                    T{tierOf.get(i)} · {c.mod(i).text.match(/\(([\d.-]+-[\d.-]+)\)/)?.[1] ?? fmt(t.levelShort, { n: c.mod(i).level })}
+                                  </option>
+                                ))}
+                              </select>
+                              <button
+                                type="button"
+                                aria-label={t.removeMod}
+                                onClick={() => edit({ ...item, mods: item.mods.filter((x) => x !== m) })}
+                                className="px-1 text-faint hover:text-red-300"
+                              >
+                                ×
+                              </button>
+                            </span>
+                          ) : (
                           <span className="justify-self-end text-[10px] text-faint" title={mod.text}>
                             {m.crafted ? <span className="mr-0.5 text-[#b9a6ff]">✦</span> : m.desecrated ? <span className="mr-0.5 text-[#d4807a]">◆</span> : null}
                             T{tierOf.get(m.i)}
                           </span>
+                          )}
                         </li>
                       );
                     })}
@@ -370,6 +516,60 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
                 </p>
               )}
             </div>
+            {item.mods.length > 0 && !editing && <p className="-mt-1 px-4 pb-2 text-[10px] text-faint">{t.clickToWant}</p>}
+            {editing && (
+              <div className="border-t border-line bg-surface/60 px-4 py-3 text-left">
+                <div className="mb-2 flex flex-wrap items-center gap-2">
+                  <span className="text-[11px] uppercase tracking-wider text-faint">{t.rarityLabel}</span>
+                  {(["normal", "magic", "rare"] as Rarity[]).map((r) => (
+                    <button
+                      key={r}
+                      type="button"
+                      disabled={!rarityAllowed(r) || item.rarity === r}
+                      onClick={() => edit({ ...item, rarity: r })}
+                      className={`rounded px-2 py-0.5 text-xs ${item.rarity === r ? "bg-surface-2" : "text-muted hover:text-ink disabled:opacity-40"}`}
+                      style={item.rarity === r ? { color: RARITY_COLOR[r] } : undefined}
+                    >
+                      {t.rarity[r]}
+                    </button>
+                  ))}
+                  <button
+                    type="button"
+                    onClick={() => setEditing(false)}
+                    className="ml-auto rounded-md bg-gold px-2.5 py-1 text-xs font-semibold text-black hover:brightness-110"
+                  >
+                    {t.editDone}
+                  </button>
+                </div>
+                <p className="mb-2 text-[11px] text-faint">{t.editHint}</p>
+                <input
+                  type="search"
+                  value={editQuery}
+                  onChange={(e) => setEditQuery(e.target.value)}
+                  placeholder={t.addMod}
+                  className="mb-1 w-full rounded-lg border border-line bg-surface-2 px-3 py-1.5 text-sm placeholder:text-faint focus:border-gold-soft focus:outline-none"
+                />
+                <ul className="max-h-48 space-y-0.5 overflow-y-auto pr-1">
+                  {groups
+                    .filter((g) => (!editQuery || g.label.toLowerCase().includes(editQuery.toLowerCase())) && canAdd(g.group, g.affix))
+                    .map((g) => (
+                      <li key={g.group}>
+                        <button
+                          type="button"
+                          onClick={() => addMod(g.group)}
+                          className="flex w-full items-center gap-2 rounded px-2 py-1 text-left text-sm text-muted hover:bg-surface-2 hover:text-ink"
+                        >
+                          <span className="text-gold">+</span>
+                          <span className="flex-1">{g.label}</span>
+                          <span className={`text-[9px] font-bold ${g.affix === "P" ? "text-sky-300/70" : "text-violet-300/70"}`}>
+                            {g.affix === "P" ? t.prefixShort : t.suffixShort}
+                          </span>
+                        </button>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            )}
             {reveal && (
               <div className="border-t border-red-900/50 bg-red-950/20 px-4 py-3">
                 <p className="mb-2 text-xs text-red-200/80">{t.revealPick}</p>
@@ -425,7 +625,7 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
                   label={name}
                   badge={o.tiered && tier !== "normal" ? (tier === "greater" ? "G" : "P") : undefined}
                   desc={t.kinds[o.kind]}
-                  disabled={!!reveal || !orbUsable(o.kind)}
+                  disabled={!!reveal || editing || !orbUsable(o.kind)}
                   onClick={() => applyOrb(o.kind)}
                 />
               );
@@ -462,7 +662,7 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
                   label={name}
                   desc={`${e.groups.map((g) => groupLabel(c, base, g)).join(" / ")} — ${essenceTier === "greater" ? t.kinds.greaterEssence : t.kinds.perfectEssence}`}
                   size={44}
-                  disabled={!!reveal || !a?.can(c, item)}
+                  disabled={!!reveal || editing || !a?.can(c, item)}
                   onClick={() => a && run(a, a.currency, { icon: data.icons[name] })}
                 />
               );
@@ -476,12 +676,21 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
             <button type="button" onClick={() => reset()} className="rounded-md border border-line px-3 py-1 text-sm hover:border-gold-soft">
               {t.reset}
             </button>
+            <button
+              type="button"
+              onClick={() => setEditing((e) => !e)}
+              aria-pressed={editing}
+              disabled={!!reveal}
+              className={`rounded-md border px-3 py-1 text-sm disabled:opacity-40 ${editing ? "border-gold-soft text-gold" : "border-line hover:border-gold-soft"}`}
+            >
+              ✎ {t.editByHand}
+            </button>
             {history.length > 0 && (
               <div className="ml-auto flex max-w-full flex-wrap items-center gap-1" aria-label={t.history}>
                 {history.map((h, k) => (
                   <span key={k} className="group relative">
                     <span className="flex h-7 w-7 items-center justify-center rounded border border-line bg-black/40">
-                      {h.icon && <img src={h.icon} alt={h.label} className="h-5 w-5 object-contain" />}
+                      {h.icon ? <img src={h.icon} alt={h.label} className="h-5 w-5 object-contain" /> : <span className="text-xs text-muted" aria-label={h.label}>✎</span>}
                       {h.omenIcon && <img src={h.omenIcon} alt="" className="absolute -right-1 -top-1 h-3.5 w-3.5" />}
                     </span>
                     <span className="pointer-events-none invisible absolute bottom-full right-0 z-30 mb-1 whitespace-nowrap rounded border border-line bg-surface px-2 py-1 text-[11px] text-muted opacity-0 group-hover:visible group-hover:opacity-100">
