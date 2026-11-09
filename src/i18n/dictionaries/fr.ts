@@ -65,6 +65,14 @@ export const fr: Dictionary = {
     endgameBlurb: "Vitesse en cartes, sécurité et progression avec l'investissement dans l'endgame de l'Atlas.",
     bossingBlurb: "Dégâts sur cible unique et survie face aux boss ultimes.",
   },
+  favorites: {
+    filter: "Favoris ({n})",
+    empty: "Aucun favori pour l'instant : cliquez sur l'étoile d'un build pour le retrouver ici. Les favoris sont gardés dans ce navigateur.",
+    add: "Ajouter {title} aux favoris",
+    remove: "Retirer {title} des favoris",
+    save: "Favori",
+    saved: "En favori",
+  },
   home: {
     kicker: "Path of Exile 2 · Patch {v}",
     title: "Builds méta PoE2",

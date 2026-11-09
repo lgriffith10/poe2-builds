@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { BuildSummary } from "@/lib/build-summary";
 import { useI18n } from "@/i18n/client";
 import { DEFAULT_CATEGORY, DIFFICULTIES, TIER_CATEGORIES, TIERS, type Difficulty, type TierCategory } from "@/lib/types";
+import { useFavorites } from "@/lib/favorites";
 import { BuildCard } from "./build-card";
 import { ClassEmblem } from "./ui";
 
@@ -15,6 +16,9 @@ export function BuildsBrowser({ builds, classes }: { builds: BuildSummary[]; cla
   // "" = all, "site:Maxroll" = every guide from a site, "author:Maxroll:aer0" = one author.
   const [source, setSource] = useState("");
   const [difficulty, setDifficulty] = useState<Difficulty | null>(null);
+  const [onlyFavorites, setOnlyFavorites] = useState(false);
+  const { favorites } = useFavorites();
+  const favoriteCount = builds.filter((b) => favorites.has(b.slug)).length;
 
   // Guides spell the same author with different casing ("Havoc" / "havoc"): use the most frequent spelling.
   const list = useMemo(() => {
@@ -57,6 +61,7 @@ export function BuildsBrowser({ builds, classes }: { builds: BuildSummary[]; cla
       return t ? TIERS.indexOf(t) : TIERS.length;
     };
     return list
+      .filter((b) => !onlyFavorites || favorites.has(b.slug))
       .filter((b) => !cls || b.className === cls)
       .filter(matchesSource)
       .filter((b) => !difficulty || b.difficulty === difficulty)
@@ -78,11 +83,22 @@ export function BuildsBrowser({ builds, classes }: { builds: BuildSummary[]; cla
             .includes(q),
       )
       .sort((a, b) => rank(a) - rank(b) || a.title.localeCompare(b.title));
-  }, [list, cls, category, query, source, difficulty]);
+  }, [list, cls, category, query, source, difficulty, onlyFavorites, favorites]);
 
   return (
     <div>
       <div className="flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={() => setOnlyFavorites(!onlyFavorites)}
+          aria-pressed={onlyFavorites}
+          className={`flex items-center gap-1.5 rounded-lg border px-3 py-2 text-sm ${
+            onlyFavorites ? "border-gold-soft bg-surface-2 text-gold" : "border-line text-muted hover:text-ink"
+          }`}
+        >
+          <span aria-hidden="true">{onlyFavorites ? "★" : "☆"}</span>
+          {fmt(t.favorites.filter, { n: favoriteCount })}
+        </button>
         <button
           type="button"
           onClick={() => setCls(null)}
@@ -174,7 +190,9 @@ export function BuildsBrowser({ builds, classes }: { builds: BuildSummary[]; cla
           ))}
         </div>
       ) : (
-        <p className="mt-10 text-center text-muted">{t.home.noMatch}</p>
+        <p className="mt-10 text-center text-muted">
+          {onlyFavorites && !favoriteCount ? t.favorites.empty : t.home.noMatch}
+        </p>
       )}
     </div>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TipScope } from "@/components/ref-tooltips";
 import { BuildTreeViewer } from "@/components/build-tree-viewer";
+import { FavoriteButton } from "@/components/favorite-button";
 import { GearInventory } from "@/components/gear-inventory";
 import { LevelingTimeline, type TimelinePath } from "@/components/leveling-timeline";
 import { RotationStrip, type RotationGem, type RotationView } from "@/components/rotation-strip";
@@ -145,12 +146,15 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
             <Link href={path("/")} className="text-sm text-muted hover:text-gold">
               {tr.build.allBuilds}
             </Link>
-            <Link
-              href={path(`/compare?a=${build.slug}`)}
+            <div className="flex flex-wrap items-center gap-2">
+              <FavoriteButton slug={build.slug} title={build.title} labeled />
+              <Link
+                href={path(`/compare?a=${build.slug}`)}
               className="rounded-lg border border-gold-soft px-3 py-1 text-sm text-gold hover:bg-gold/10"
             >
-              {tr.build.compareWith} →
-            </Link>
+                {tr.build.compareWith} →
+              </Link>
+            </div>
           </div>
           <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-center">
             <ClassEmblem name={build.className} size={72} />

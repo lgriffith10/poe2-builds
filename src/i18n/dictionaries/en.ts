@@ -63,6 +63,14 @@ export const en = {
     endgameBlurb: "Mapping speed, safety and scaling with investment in the Atlas endgame.",
     bossingBlurb: "Single-target damage and survivability against pinnacle bosses.",
   },
+  favorites: {
+    filter: "Favorites ({n})",
+    empty: "No favorites yet: click the star on a build to keep it here. Favorites are saved in this browser.",
+    add: "Add {title} to favorites",
+    remove: "Remove {title} from favorites",
+    save: "Favorite",
+    saved: "Favorited",
+  },
   home: {
     kicker: "Path of Exile 2 · Patch {v}",
     title: "PoE2 Meta Builds",

@@ -5,6 +5,7 @@ import { useI18n } from "@/i18n/client";
 import type { BuildSummary } from "@/lib/build-summary";
 import { classStyle } from "@/lib/classes";
 import { DEFAULT_CATEGORY, type TierCategory } from "@/lib/types";
+import { FavoriteButton } from "./favorite-button";
 import { ClassEmblem, DifficultyBadge, GemIcon, Pill, TierBadge } from "./ui";
 
 export function BuildCard({ build, category = DEFAULT_CATEGORY }: { build: BuildSummary; category?: TierCategory }) {
@@ -12,12 +13,13 @@ export function BuildCard({ build, category = DEFAULT_CATEGORY }: { build: Build
   const tier = build.tiers[category];
   const { color } = classStyle(build.className);
   return (
-    <Link
-      href={path(`/builds/${build.slug}`)}
-      className="group relative flex flex-col overflow-hidden rounded-xl border border-line bg-surface transition hover:border-line-strong hover:bg-surface-2"
+    <div className="relative flex">
+      <Link
+        href={path(`/builds/${build.slug}`)}
+        className="group relative flex w-full flex-col overflow-hidden rounded-xl border border-line bg-surface transition hover:border-line-strong hover:bg-surface-2"
     >
       <span className="absolute inset-x-0 top-0 h-0.5" style={{ background: `linear-gradient(90deg, ${color}, transparent)` }} />
-      <div className="flex items-start gap-3 p-4">
+      <div className="flex items-start gap-3 p-4 pr-14">
         <ClassEmblem name={build.className} size={44} />
         <div className="min-w-0 flex-1">
           <h3 className="truncate font-semibold group-hover:text-gold">{build.title}</h3>
@@ -50,6 +52,10 @@ export function BuildCard({ build, category = DEFAULT_CATEGORY }: { build: Build
         {build.sample && <Pill tone="warn">{t.common.sample}</Pill>}
         {build.origin === "ladder" && <Pill>{t.common.ladderBuild}</Pill>}
       </div>
-    </Link>
+      </Link>
+      <div className="absolute right-4 top-4">
+        <FavoriteButton slug={build.slug} title={build.title} />
+      </div>
+    </div>
   );
 }
