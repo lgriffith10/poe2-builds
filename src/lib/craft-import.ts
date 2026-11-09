@@ -160,13 +160,17 @@ export function parseItemText(c: Crafter, raw: string, fallbackBase?: string): I
       const h = l.match(/^\{\s*(.*?)\s*\}$/);
       if (h) {
         const m = h[1].match(/(Prefix|Suffix) Modifier(?: "([^"]+)")?/i);
-        const mFr = h[1].match(/Modificateur (préfixe|suffixe)/i);
+        // French: "Modificateur de préfixe", "Modificateur préfixe"… (French affix names are not in the data).
+        const fr = /pr[ée]fixe/i.test(h[1]) ? "P" : /suffixe/i.test(h[1]) ? "S" : null;
         header = m
           ? { affix: m[1].toLowerCase() === "prefix" ? "P" : "S", name: m[2], skip: false }
-          : mFr
-            ? { affix: mFr[1].toLowerCase() === "préfixe" ? "P" : "S", skip: false } // French affix names are not in the data
-            : { skip: true }; // implicit, rune, unique modifiers
-        if (!header.skip) modLines.push({ text: "", affix: header.affix, name: header.name, desecrated: /desecrated|profané/i.test(h[1]) }); // merged below
+          : fr
+            ? { affix: fr, skip: false }
+            : /implicit|rune|unique|enchant|corrupt|corromp|sanctif/i.test(h[1])
+              ? { skip: true } // implicit, rune, unique modifiers
+              : { skip: false }; // unknown header: its lines are matched one by one
+        // A header marker closes the previous advanced-text group (merged below).
+        if (!header.skip) modLines.push({ text: "", affix: header.affix, name: header.name, desecrated: /desecrated|profané/i.test(h[1]) });
         continue;
       }
       if (header?.skip) continue;
@@ -235,8 +239,10 @@ export function parseItemText(c: Crafter, raw: string, fallbackBase?: string): I
     item.mods.push(mod);
   };
 
-  for (let k = 0; k < groups.length; k++) {
-    const g = groups[k];
+  // Lines without an affix header are matched one by one (two may still form a hybrid below).
+  const flat = groups.flatMap((g) => (g.affix ? [g] : g.text.split("\n").map((text) => ({ ...g, text }))));
+  for (let k = 0; k < flat.length; k++) {
+    const g = flat[k];
     if (!g.text) continue;
     if (g.affix) {
       const hit = best(g.text, g, g.text.split("\n").length);
@@ -245,7 +251,7 @@ export function parseItemText(c: Crafter, raw: string, fallbackBase?: string): I
       continue;
     }
     // Plain text: try a hybrid (two lines) before a single line.
-    const next = groups[k + 1];
+    const next = flat[k + 1];
     const pair = next?.text && !next.affix ? best(`${g.text}\n${next.text}`, g, 2) : null;
     if (pair && pair.score >= 15) {
       push(pair.m.i, pair.r);
