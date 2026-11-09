@@ -2,18 +2,19 @@ import type { Dictionary } from "@/i18n/dictionaries/en";
 
 /** Main navigation; labels come from the dictionary's `nav` section. */
 export const NAV: { href: string; key: keyof Dictionary["nav"] }[] = [
-  { href: "/", key: "builds" },
+  { href: "/builds", key: "builds" },
   { href: "/tier-list", key: "tierList" },
   { href: "/meta", key: "meta" },
   { href: "/guides", key: "guides" },
   { href: "/planner", key: "planner" },
   { href: "/craft", key: "craft" },
+  { href: "/weapons", key: "weapons" },
   { href: "/database", key: "database" },
   { href: "/compare", key: "compare" },
   { href: "/character", key: "character" },
 ];
 
-type DatabaseKey = "gems" | "uniques" | "bases" | "ascendancies";
+type DatabaseKey = "gems" | "uniques" | "bases" | "ascendancies" | "currency";
 
 /** Database sections; label and blurb keys live in the dictionary's `database` section. */
 export const DB_SECTIONS: { href: string; key: DatabaseKey; blurb: `${DatabaseKey}Blurb` }[] = [
@@ -21,4 +22,5 @@ export const DB_SECTIONS: { href: string; key: DatabaseKey; blurb: `${DatabaseKe
   { href: "/database/uniques", key: "uniques", blurb: "uniquesBlurb" },
   { href: "/database/bases", key: "bases", blurb: "basesBlurb" },
   { href: "/database/ascendancies", key: "ascendancies", blurb: "ascendanciesBlurb" },
+  { href: "/database/currency", key: "currency", blurb: "currencyBlurb" },
 ];

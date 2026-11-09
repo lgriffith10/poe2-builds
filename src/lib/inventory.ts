@@ -7,6 +7,21 @@ import { modLabel } from "./mod-labels";
 import { priceTag, uniquePrice } from "./prices";
 import { baseGrants } from "./skill-source";
 import { GEAR_SLOTS, GEAR_STAGES, type GearSet } from "./types";
+import fs from "node:fs";
+import path from "node:path";
+import { localePath, type Locale } from "@/i18n/config";
+import { Crafter } from "./craft";
+import { encodeCraft, groupsForLines } from "./craft-share";
+
+let crafter: Crafter | null = null;
+/** Link to the crafting simulator with this rare's base and its listed modifiers as goals (null when not craftable). */
+function craftLink(base: string | undefined, mods: string[], lang: string): string | null {
+  crafter ??= new Crafter(JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "craft.json"), "utf8")));
+  if (!base || !crafter.data.bases[base]) return null;
+  const targets = groupsForLines(crafter, base, mods);
+  const code = encodeCraft(crafter, { base, ilvl: 82, rarity: "normal", mods: [] }, targets);
+  return localePath(lang as Locale, `/craft#c=${code}`);
+}
 
 /** Resolves a gear set into what the inventory panel shows (names, icons, modifier lines). */
 export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet, lang = "en"): InventoryItem[] {
@@ -30,6 +45,7 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           runes: piece.runes ?? [],
           ladder: piece.ladder ?? [],
           grants: null,
+          craft: null,
           price: uniquePrice(unique.name) !== null ? priceTag(uniquePrice(unique.name)!, lang) : null,
           note: piece.note ?? null,
         }
@@ -42,6 +58,7 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           icon: base?.icon ?? null,
           implicits: piece.implicits ?? [],
           mods: (piece.mods ?? []).map(modLabel),
+          craft: craftLink(base?.name, (piece.mods ?? []).map(modLabel), lang),
           runes: piece.runes ?? [],
           ladder: piece.ladder ?? [],
           price: null,

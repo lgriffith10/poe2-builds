@@ -12,7 +12,60 @@ export interface ImportResult {
   name?: string;
   /** Mod lines that matched nothing the base can roll (implicits, runes, essence-only or unsupported mods). */
   unmatched: string[];
-  error?: "empty" | "base" | "unique";
+  error?: "empty" | "unique";
+  /** The base type was not recognised: the item uses the fallback base. */
+  baseGuessed?: boolean;
+  /** The text came from a French game client. */
+  french?: boolean;
+}
+
+/**
+ * Stat key shared with scripts/craft-data.mjs: numbers and ranges -> #, no "+" sign, no space before %, lower case.
+ * French texts use a comma decimal separator and a (narrow) no-break space before %.
+ */
+export const statKey = (s: string) =>
+  normalize(s)
+    .replace(/\((-?[\d.]+)-(-?[\d.]+)\)/g, "#")
+    .replace(NUMBER, "#")
+    .replace(/\+#/g, "#")
+    .replace(/\s*\(local\)$/i, "")
+    .toLowerCase();
+const NUMBER = /\+?-?\d+(\.\d+)?/g;
+const normalize = (s: string) =>
+  s
+    .replace(/[\u00a0\u202f]/g, " ")
+    .replace(/\s+%/g, "%")
+    .replace(/(\d),(\d)/g, "$1.$2")
+    .replace(/\s+/g, " ")
+    .trim();
+
+/** French "reduced" wordings -> the "increased" ones the trade site uses for both signs. */
+const REDUCED_FR: [RegExp, string][] = [
+  [/\bde réduction\b/, "d'augmentation"],
+  [/\brédui(tes)\b/, "augmentées"],
+  [/\brédui(ts)\b/, "augmentés"],
+  [/\brédui(te)\b/, "augmentée"],
+  [/\brédui(t)\b/, "augmenté"],
+];
+
+/** A French mod line in English, or null when the stat is unknown. */
+function translateLine(c: Crafter, line: string): string | null {
+  const stats = c.data.fr?.stats;
+  if (!stats) return null;
+  const text = normalize(line);
+  const values = [...text.replace(/\+(?=\d)/g, "").matchAll(/-?\d+(\.\d+)?/g)].map((m) => m[0]);
+  const fill = (en: string) => {
+    let k = 0;
+    return en.replace(/#/g, () => values[k++] ?? "#");
+  };
+  const direct = stats[statKey(text)];
+  if (direct) return fill(direct);
+  for (const [re, to] of REDUCED_FR) {
+    if (!re.test(text)) continue;
+    const en = stats[statKey(text.replace(re, to))];
+    if (en) return fill(en).replace(/\bincreased\b/, "reduced");
+  }
+  return null;
 }
 
 const RANGE = /\((-?[\d.]+)-(-?[\d.]+)\)/g;
@@ -29,6 +82,7 @@ function matcher(c: Crafter, i: number): Matcher {
   const text = c.mod(i).text;
   const ranges: [number, number][] = [];
   let re = "";
+  // The "+" sign is optional on both sides (the French texts of the trade site drop it).
   let last = 0;
   for (const m of text.matchAll(RANGE)) {
     re += escape(text.slice(last, m.index));
@@ -37,7 +91,7 @@ function matcher(c: Crafter, i: number): Matcher {
     last = m.index + m[0].length;
   }
   re += escape(text.slice(last));
-  return { i, re: new RegExp(`^${re}$`, "i"), ranges, lines: text.split("\n").length };
+  return { i, re: new RegExp(`^${re.replace(/\\\+(?=\(|\d|$)/g, "\\+?")}$`, "i"), ranges, lines: text.split("\n").length };
 }
 
 /** Advanced text writes "+80(70-89) to maximum Life"; keep the rolled value only. */
@@ -47,18 +101,24 @@ const cleanLine = (s: string) =>
     .replace(/\s+—\s+Unscalable Value$/i, "")
     .trim();
 
-const FLAG = /\s*\((crafted|desecrated|fractured|implicit|rune|enchant|augmented)\)$/i;
-const SKIP_FLAGS = new Set(["implicit", "rune", "enchant"]);
+const FLAG = /\s*\((crafted|desecrated|fractured|implicit|rune|enchant|augmented|implicite|enchantement|profanée?|fracturée?|augmentée?|façonnée?)\)$/i;
+const SKIP_FLAGS = /^(implicite?|rune|enchant(ement)?)$/i;
+const isDesecratedFlag = (f?: string) => !!f && /^(desecrated|profanée?)$/i.test(f);
+const HEADER = /^(Item Class|Rarity|Classe d['’]objet|Rareté)\s*:/i;
+const RARITY = /^(Rarity|Rareté)\s*:/i;
+const ITEM_LEVEL = /^(Item Level|Niveau d['’]objet|Niveau de l['’]objet)\s*:/i;
 
 interface Line {
   text: string;
+  /** A French line that could not be translated (kept to report it). */
+  skip?: string;
   desecrated?: boolean;
   /** From an advanced-text header. */
   affix?: Affix;
   name?: string;
 }
 
-export function parseItemText(c: Crafter, raw: string): ImportResult {
+export function parseItemText(c: Crafter, raw: string, fallbackBase?: string): ImportResult {
   const lines = raw.replace(/\r/g, "").split("\n").map((l) => l.trim());
   if (!lines.some(Boolean)) return { item: null, unmatched: [], error: "empty" };
   const sections: string[][] = [[]];
@@ -69,23 +129,26 @@ export function parseItemText(c: Crafter, raw: string): ImportResult {
 
   // Header: "Item Class: …", "Rarity: …", then the name and/or base type.
   const head = sections[0];
-  const rarityText = head.find((l) => /^Rarity:/i.test(l))?.split(":")[1]?.trim().toLowerCase() ?? "normal";
+  const french = head.some((l) => /^(Classe d['’]objet|Rareté)\s*:/i.test(l));
+  const rarityText = head.find((l) => RARITY.test(l))?.split(":")[1]?.trim().toLowerCase() ?? "normal";
   if (rarityText === "unique") return { item: null, unmatched: [], error: "unique" };
-  const rarity: Rarity = rarityText === "rare" ? "rare" : rarityText === "magic" ? "magic" : "normal";
-  const titles = head.filter((l) => !/^(Item Class|Rarity):/i.test(l));
-  const bases = Object.keys(c.data.bases);
-  const base =
-    titles.map((t) => bases.find((b) => b === t)).find(Boolean) ??
+  const rarity: Rarity = rarityText === "rare" ? "rare" : /^(magic|magique)$/.test(rarityText) ? "magic" : "normal";
+  const titles = head.filter((l) => !HEADER.test(l));
+  // Base names by language (French names map to the English ones).
+  const names: [string, string][] = french ? Object.entries(c.data.fr?.bases ?? {}) : Object.keys(c.data.bases).map((b) => [b, b]);
+  const found =
+    names.find(([n]) => titles.includes(n)) ??
     // Magic items carry their affixes around the base name: the longest base contained in a title.
-    bases.filter((b) => titles.some((t) => t.includes(b))).sort((a, b) => b.length - a.length)[0];
-  if (!base) return { item: null, unmatched: [], error: "base" };
+    names.filter(([n]) => titles.some((t) => t.includes(n))).sort((a, b) => b[0].length - a[0].length)[0];
+  const base = found?.[1] ?? (fallbackBase && c.data.bases[fallbackBase] ? fallbackBase : undefined);
+  if (!base) return { item: null, unmatched: [], error: "empty" };
   const name = rarity === "rare" && titles.length > 1 ? titles[0] : undefined;
 
   let ilvl = 82;
   const modLines: Line[] = [];
   let afterLevel = false;
   for (const section of sections.slice(1)) {
-    const level = section.find((l) => /^Item Level:/i.test(l));
+    const level = section.find((l) => ITEM_LEVEL.test(l));
     if (level) {
       ilvl = Number(level.split(":")[1]) || ilvl;
       afterLevel = true;
@@ -97,24 +160,41 @@ export function parseItemText(c: Crafter, raw: string): ImportResult {
       const h = l.match(/^\{\s*(.*?)\s*\}$/);
       if (h) {
         const m = h[1].match(/(Prefix|Suffix) Modifier(?: "([^"]+)")?/i);
+        const mFr = h[1].match(/Modificateur (préfixe|suffixe)/i);
         header = m
           ? { affix: m[1].toLowerCase() === "prefix" ? "P" : "S", name: m[2], skip: false }
-          : { skip: true }; // implicit, rune, unique modifiers
-        if (!header.skip) modLines.push({ text: "", affix: header.affix, name: header.name, desecrated: /desecrated/i.test(h[1]) }); // merged below
+          : mFr
+            ? { affix: mFr[1].toLowerCase() === "préfixe" ? "P" : "S", skip: false } // French affix names are not in the data
+            : { skip: true }; // implicit, rune, unique modifiers
+        if (!header.skip) modLines.push({ text: "", affix: header.affix, name: header.name, desecrated: /desecrated|profané/i.test(h[1]) }); // merged below
         continue;
       }
       if (header?.skip) continue;
-      if (/^(Corrupted|Unidentified|Mirrored|Sanctified)$/i.test(l) || /:/.test(l) || /^".*"$/.test(l)) continue;
-      const flag = l.match(FLAG)?.[1]?.toLowerCase();
-      if (flag && SKIP_FLAGS.has(flag)) continue;
-      modLines.push({ text: cleanLine(l.replace(FLAG, "")), desecrated: flag === "desecrated" });
+      if (/^(Corrupted|Unidentified|Mirrored|Sanctified|Corrompu|Non identifié|Reflété|Sanctifié)$/i.test(l) || /:/.test(l) || /^".*"$/.test(l)) continue;
+      const flag = l.match(FLAG)?.[1];
+      if (flag && SKIP_FLAGS.test(flag)) continue;
+      let text = cleanLine(l.replace(FLAG, ""));
+      if (french) {
+        const en = translateLine(c, text);
+        if (!en) {
+          modLines.push({ text: "", skip: text }); // reported as not recognised
+          continue;
+        }
+        text = en;
+      }
+      modLines.push({ text, desecrated: isDesecratedFlag(flag) });
     }
   }
 
   // Advanced text: the lines under one header form one mod.
   const groups: Line[] = [];
   let open: Line | null = null;
+  const unmatched: string[] = [];
   for (const l of modLines) {
+    if (l.skip) {
+      unmatched.push(l.skip);
+      continue;
+    }
     if (!l.text) {
       open = { ...l };
       groups.push(open);
@@ -125,7 +205,6 @@ export function parseItemText(c: Crafter, raw: string): ImportResult {
   const cands = [...new Set([...c.pool(base), ...c.desecratedPool(base)])].map((i) => matcher(c, i));
   const regular = new Set(c.pool(base));
   const item: Item = { base, ilvl, rarity, mods: [] };
-  const unmatched: string[] = [];
 
   const best = (text: string, line: Line, lines: number) => {
     let found: { m: Matcher; r: number; score: number } | null = null;
@@ -182,6 +261,31 @@ export function parseItemText(c: Crafter, raw: string): ImportResult {
   const count = (a: Affix) => item.mods.filter((m) => c.mod(m.i).affix === a).length;
   if (item.rarity === "normal" && item.mods.length) item.rarity = "magic";
   if (item.rarity === "magic" && (count("P") > 1 || count("S") > 1)) item.rarity = "rare";
-  return { item, name, unmatched };
+  return { item, name, unmatched, baseGuessed: !found, french };
 }
 
+
+/**
+ * A mod text (rolled values, ranges or # placeholders) in French, line by line; lines without a translation stay in
+ * English. Ranges "(a-b)" are kept as they are.
+ */
+export function frenchModText(c: Crafter, text: string): string {
+  const table = c.data.fr?.text;
+  if (!table) return text;
+  return text
+    .split("\n")
+    .map((line) => {
+      const values = [...line.matchAll(/\((-?[\d.]+)-(-?[\d.]+)\)|#|-?\d+(\.\d+)?/g)].map((m) => m[0].replace(/^(\d)/, "$1"));
+      const fill = (fr: string) => {
+        let k = 0;
+        return fr.replace(/#/g, () => values[k++] ?? "#");
+      };
+      const sign = (fr: string) => (/^\+/.test(line) && /^#/.test(fr) ? `+${fill(fr)}` : fill(fr));
+      const direct = table[statKey(line)];
+      if (direct) return sign(direct);
+      const flipped = table[statKey(line.replace(/\breduced\b/, "increased"))];
+      if (flipped) return sign(flipped).replace(/d'augmentation/, "de réduction").replace(/augmenté(e?s?)\b/, "réduit$1");
+      return line;
+    })
+    .join("\n");
+}

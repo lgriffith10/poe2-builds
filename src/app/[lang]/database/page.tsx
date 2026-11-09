@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getDictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
 import { bases, classes, gems, uniques } from "@/lib/data";
+import { currencies } from "@/lib/currency";
 import { DB_SECTIONS } from "@/lib/nav";
 import { DbHeading } from "@/components/ui";
 
@@ -19,6 +20,7 @@ export default async function DatabasePage({ params }: PageProps<"/[lang]/databa
     "/database/uniques": uniques.length,
     "/database/bases": bases.length,
     "/database/ascendancies": classes.reduce((n, c) => n + c.ascendancies.length, 0),
+    "/database/currency": currencies.length,
   };
   return (
     <>

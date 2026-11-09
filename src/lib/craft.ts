@@ -23,6 +23,8 @@ export interface CraftData {
   bases: Record<string, [string, number, string | null, number]>;
   /** Currency / omen / essence name -> icon (Greater and Perfect orbs share the base orb's art). */
   icons: Record<string, string>;
+  /** French stat key -> English stat text, French base name -> English base name (from the trade site). */
+  fr?: { stats: Record<string, string>; bases: Record<string, string>; text: Record<string, string> };
 }
 
 export type Rarity = "normal" | "magic" | "rare";
@@ -245,7 +247,42 @@ export interface Action {
   /** Desecration options selected by the action's omen. */
   desecrate?: DesecrateOptions;
   can: (c: Crafter, item: Item) => boolean;
-  run: (c: Crafter, item: Item, rng: Rng) => Item;
+  run: (c: Crafter, item: Item, rng: Rng, targets?: Set<string>) => Item;
+  /** Exact (or close) one-step odds without simulation, used by the strategy planner. */
+  odds: (c: Crafter, item: Item, targets: Set<string>) => Odds;
+}
+
+export interface Odds {
+  /** Chance to add a wanted modifier the item does not have. */
+  gain: number;
+  /** Chance to remove a wanted modifier it has. */
+  loss: number;
+}
+
+const hit = (c: Crafter, item: Item, targets: Set<string>, opts: Parameters<Crafter["candidates"]>[1] = {}) =>
+  c.hitChance(c.candidates(item, opts), targets);
+const atLeastOnce = (p: number, n: number) => 1 - (1 - p) ** n;
+/** Odds of "remove one mod (uniformly among `opts`) then something": `after` gives the gain chance on the reduced item. */
+function removalOdds(c: Crafter, item: Item, targets: Set<string>, opts: { affix?: Affix; lowest?: boolean }, after: (it: Item) => number): Odds {
+  const idx = c.removable(item, opts);
+  if (!idx.length) return { gain: after(item), loss: 0 };
+  let gain = 0, loss = 0;
+  for (const k of idx) {
+    gain += after({ ...item, mods: item.mods.filter((_, j) => j !== k) });
+    if (targets.has(c.mod(item.mods[k].i).group)) loss++;
+  }
+  return { gain: gain / idx.length, loss: loss / idx.length };
+}
+/** Chance that three revealed options (distinct groups) include a wanted one. */
+function revealHit(c: Crafter, item: Item, targets: Set<string>, opts: DesecrateOptions) {
+  const groups = new Set(c.candidates(item, { desecrated: true, lord: opts.lord, affix: opts.affix }).map((i) => c.mod(i).group));
+  const n = groups.size, k = [...groups].filter((g) => targets.has(g)).length;
+  if (!k) return 0;
+  if (n <= 3) return 1;
+  // 1 - C(n-k, 3) / C(n, 3)
+  let miss = 1;
+  for (let j = 0; j < 3; j++) miss *= Math.max(0, n - k - j) / (n - j);
+  return 1 - miss;
 }
 
 const TIER_PREFIX: Record<CurrencyTier, string> = { normal: "", greater: "Greater ", perfect: "Perfect " };
@@ -260,18 +297,21 @@ export function actions(): Action[] {
       currency: `${TIER_PREFIX[t]}Orb of Transmutation`,
       can: (_, item) => item.rarity === "normal",
       run: (c, item, rng) => c.transmute(item, t, rng),
+      odds: (c, item, tg) => ({ gain: hit(c, { ...item, rarity: "magic" }, tg, { minLevel: TIER_MIN_LEVEL[t] }), loss: 0 }),
     });
     list.push({
       id: `augment-${t}`,
       currency: `${TIER_PREFIX[t]}Orb of Augmentation`,
       can: (c, item) => item.rarity === "magic" && c.candidates(item, { minLevel: TIER_MIN_LEVEL[t] }).length > 0,
       run: (c, item, rng) => c.augment(item, t, rng),
+      odds: (c, item, tg) => ({ gain: hit(c, item, tg, { minLevel: TIER_MIN_LEVEL[t] }), loss: 0 }),
     });
     list.push({
       id: `regal-${t}`,
       currency: `${TIER_PREFIX[t]}Regal Orb`,
       can: (_, item) => item.rarity === "magic",
       run: (c, item, rng) => c.regal(item, t, rng),
+      odds: (c, item, tg) => ({ gain: hit(c, { ...item, rarity: "rare" }, tg, { minLevel: TIER_MIN_LEVEL[t] }), loss: 0 }),
     });
     const exaltOmens: [string, string | undefined, { affix?: Affix; double?: boolean }][] = [
       ["", undefined, {}],
@@ -290,6 +330,10 @@ export function actions(): Action[] {
           c.candidates(item, { minLevel: TIER_MIN_LEVEL[t], affix: o.affix }).length > 0 &&
           (!o.affix || c.free(item)[o.affix === "P" ? "S" : "P"] > 0), // the omen only matters when both sides are open
         run: (c, item, rng) => c.exalt(item, t, rng, o),
+        odds: (c, item, tg) => {
+          const p = hit(c, item, tg, { minLevel: TIER_MIN_LEVEL[t], affix: o.affix });
+          return { gain: o.double ? atLeastOnce(p, 2) : p, loss: 0 };
+        },
       });
     }
     const chaosOmens: [string, string | undefined, { affix?: Affix; lowest?: boolean }][] = [
@@ -305,6 +349,7 @@ export function actions(): Action[] {
         omen,
         can: (c, item) => isRare(item) && c.removable(item, o).length > 0,
         run: (c, item, rng) => c.chaos(item, t, rng, o),
+        odds: (c, item, tg) => removalOdds(c, item, tg, o, (it) => hit(c, it, tg, { minLevel: TIER_MIN_LEVEL[t] })),
       });
     }
   }
@@ -313,6 +358,7 @@ export function actions(): Action[] {
     currency: "Orb of Alchemy",
     can: (_, item) => item.rarity === "normal",
     run: (c, item, rng) => c.alchemy(item, rng),
+    odds: (c, item, tg) => ({ gain: atLeastOnce(hit(c, { ...item, rarity: "rare" }, tg), 4), loss: 0 }),
   });
   for (const [suffix, omen, o] of [
     ["", undefined, {}],
@@ -325,6 +371,7 @@ export function actions(): Action[] {
       omen,
       can: (c, item) => item.rarity !== "normal" && c.removable(item, o).length > 0,
       run: (c, item, rng) => c.annul(item, rng, o),
+      odds: (c, item, tg) => ({ gain: 0, loss: c.loseChance(item, tg, o) }),
     });
   }
   for (const e of ESSENCES) {
@@ -335,6 +382,7 @@ export function actions(): Action[] {
       can: (c, item) =>
         item.rarity === "magic" && !c.hasCrafted(item) && c.candidates({ ...item, rarity: "rare" }, { groups: e.groups }).length > 0,
       run: (c, item, rng) => c.greaterEssence(item, e.groups, rng),
+      odds: (_, __, tg) => ({ gain: e.groups.some((g) => tg.has(g)) ? 1 : 0, loss: 0 }),
     });
     list.push({
       id: `perfect-${slug}`,
@@ -346,6 +394,11 @@ export function actions(): Action[] {
         c.pool(item.base).some((i) => e.groups.includes(c.mod(i).group)) &&
         !item.mods.some((m) => e.groups.includes(c.mod(m.i).group)),
       run: (c, item, rng) => c.perfectEssence(item, e.groups, rng),
+      odds: (c, item, tg) => {
+        const affix = c.pool(item.base).map((i) => c.mod(i)).find((m) => e.groups.includes(m.group))?.affix;
+        const side = affix && c.free(item)[affix] <= 0 ? { affix } : {};
+        return { gain: e.groups.some((g) => tg.has(g)) ? 1 : 0, loss: c.loseChance(item, tg, side) };
+      },
     });
   }
   // Desecration, plain or with an omen: a lord omen (weapons and jewellery) or Sinistral/Dextral Necromancy.
@@ -372,10 +425,17 @@ export function actions(): Action[] {
         !c.hasDesecrated(item) &&
         (v.can?.(c, item) ?? true) &&
         c.desecrate(item, () => 0, v.opts).options.length > 0,
-      // For the advisor: the player keeps the best of the three options (a target when one is offered).
-      run: (c, item, rng) => {
+      // The player keeps the best of the three options: a wanted one when offered (the planner passes its goals).
+      run: (c, item, rng, targets?: Set<string>) => {
         const { item: base, options } = c.desecrate(item, rng, v.opts);
-        return options.length ? { ...base, mods: [...base.mods, { i: options[0], r: rng(), desecrated: true }] } : base;
+        const pick = options.find((i) => targets?.has(c.mod(i).group)) ?? options[0];
+        return pick !== undefined ? { ...base, mods: [...base.mods, { i: pick, r: rng(), desecrated: true }] } : base;
+      },
+      odds: (c, item, tg) => {
+        const full = item.mods.length >= 6 || (v.opts.affix !== undefined && c.free(item)[v.opts.affix] <= 0);
+        return full
+          ? removalOdds(c, item, tg, v.opts.affix ? { affix: v.opts.affix } : {}, (it) => revealHit(c, it, tg, v.opts))
+          : { gain: revealHit(c, item, tg, v.opts), loss: 0 };
       },
     });
   }
@@ -437,4 +497,134 @@ export function rolledText(text: string, r = 0.5) {
     const v = Number(a) + r * (Number(b) - Number(a));
     return decimals ? v.toFixed(decimals) : String(Math.round(v));
   });
+}
+
+// --- strategy planner ----------------------------------------------------------------------------
+
+const LOST_GOAL = 2;
+
+export interface PlanResult {
+  trials: number;
+  /** Share of runs that end with every reachable goal. */
+  success: number;
+  /** Average number of currency uses in successful runs. */
+  steps: number;
+  /** Average currency used per run (successful or not), most used first. */
+  usage: { currency: string; omen?: string; avg: number }[];
+  /** Average cost of a run in Divine Orbs (null without prices); `partial` when some currency had no price. */
+  cost: number | null;
+  partial: boolean;
+  /** Most common sequence of the first steps. */
+  route: { currency: string; omen?: string }[];
+  /** Goals left out because the base or item level cannot have them. */
+  unreachable: string[];
+}
+
+/**
+ * Plays a greedy strategy many times (each step: the action with the best gain minus twice its loss, per Divine when
+ * prices are known; when nothing can add a goal, an annulment that frees the blocked side) and summarises the runs.
+ */
+export function planCraft(
+  c: Crafter,
+  start: Item,
+  goals: Set<string>,
+  prices: Record<string, number> = {},
+  { trials = 150, maxSteps = 80, rng = Math.random }: { trials?: number; maxSteps?: number; rng?: Rng } = {},
+): PlanResult {
+  const unreachable = [...goals].filter((g) => ["impossible", "ilvl"].includes(diagnose(c, start, g).status));
+  const targets = new Set([...goals].filter((g) => !unreachable.includes(g)));
+  const list = actions();
+  const empty: PlanResult = { trials, success: 0, steps: 0, usage: [], cost: null, partial: false, route: [], unreachable };
+  if (!targets.size) return empty;
+  const priced = Object.keys(prices).length > 0;
+  const actionCost = (a: Action) => (prices[a.currency] ?? 0) + (a.omen ? (prices[a.omen] ?? 0) : 0);
+  const lowestCost = (a: Action, it: Item) => actionCost(a) + a.odds(c, it, targets).loss * LOST_GOAL;
+  const done = (it: Item) => [...targets].every((g) => it.mods.some((m) => c.mod(m.i).group === g));
+  const memo = new Map<string, Action | null>();
+  const choose = (it: Item): Action | null => {
+    const key = `${it.rarity}|${it.mods.map((m) => m.i).sort((a, b) => a - b).join(",")}`;
+    if (memo.has(key)) return memo.get(key)!;
+    let best: Action | null = null, score = 0;
+    for (const a of list) {
+      if (!a.can(c, it)) continue;
+      const o = a.odds(c, it, targets);
+      if (o.gain <= 0) continue;
+      // With prices: progress per Divine spent (a small floor keeps near-free orbs from dominating everything).
+      const v = (o.gain - 2 * o.loss) / (priced ? actionCost(a) + 0.02 : 1);
+      if (v > score) {
+        best = a;
+        score = v;
+      }
+    }
+    const direct = best;
+    const blocked = [...targets].some((g) => diagnose(c, it, g).status === "blocked");
+    if (!best || (blocked && priced)) {
+      best = null;
+      // Blocked: annul on the side of a missing goal, preferring the omen that cannot hit a kept mod.
+      const sides = new Set([...targets].filter((g) => diagnose(c, it, g).status === "blocked").map((g) => c.mod(c.pool(it.base).find((i) => c.mod(i).group === g)!).affix));
+      // A lost goal is counted as about LOST_GOAL Divines to roll again when prices are known.
+      let lowest = Infinity;
+      for (const a of list) {
+        if (!a.id.startsWith("annul") || !a.can(c, it)) continue;
+        const side = a.id.endsWith("-prefix") ? "P" : a.id.endsWith("-suffix") ? "S" : null;
+        if (side && !sides.has(side)) continue;
+        const loss = a.odds(c, it, targets).loss;
+        if (loss >= 1) continue;
+        const v = priced ? actionCost(a) + loss * LOST_GOAL : loss;
+        if (v < lowest) {
+          best = a;
+          lowest = v;
+        }
+      }
+    }
+    // Keep the direct action unless freeing the side first is cheaper (one step ahead: annul, then add).
+    if (direct && (!best || !priced || actionCost(direct) <= lowestCost(best, it))) best = direct;
+    memo.set(key, best);
+    return best;
+  };
+
+  const usage = new Map<string, { currency: string; omen?: string; n: number }>();
+  const routes = new Map<string, number>();
+  let wins = 0, winSteps = 0;
+  for (let k = 0; k < trials; k++) {
+    let it = start;
+    const route: string[] = [];
+    let steps = 0;
+    while (!done(it) && steps < maxSteps) {
+      const a = choose(it);
+      if (!a) break;
+      it = a.run(c, it, rng, targets);
+      steps++;
+      const u = usage.get(a.id) ?? { currency: a.currency, omen: a.omen, n: 0 };
+      u.n++;
+      usage.set(a.id, u);
+      if (route.length < 6) route.push(a.id);
+    }
+    if (done(it)) {
+      wins++;
+      winSteps += steps;
+      const key = route.join(">");
+      routes.set(key, (routes.get(key) ?? 0) + 1);
+    }
+  }
+  let cost = 0, partial = false;
+  for (const u of usage.values()) {
+    for (const name of [u.currency, u.omen]) {
+      if (!name) continue;
+      if (prices[name] === undefined) partial = true;
+      else cost += (prices[name] * u.n) / trials;
+    }
+  }
+  const byId = new Map(list.map((a) => [a.id, a]));
+  const top = [...routes].sort((a, b) => b[1] - a[1])[0]?.[0];
+  return {
+    trials,
+    success: wins / trials,
+    steps: wins ? winSteps / wins : 0,
+    usage: [...usage.values()].sort((a, b) => b.n - a.n).map((u) => ({ currency: u.currency, omen: u.omen, avg: u.n / trials })),
+    cost: Object.keys(prices).length ? cost : null,
+    partial,
+    route: top ? top.split(">").map((id) => ({ currency: byId.get(id)!.currency, omen: byId.get(id)!.omen })) : [],
+    unreachable,
+  };
 }

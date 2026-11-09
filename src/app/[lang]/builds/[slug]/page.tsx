@@ -5,6 +5,10 @@ import { TipScope } from "@/components/ref-tooltips";
 import { BuildTreeViewer } from "@/components/build-tree-viewer";
 import { FavoriteButton } from "@/components/favorite-button";
 import { GearInventory } from "@/components/gear-inventory";
+import { LootFilterPanel } from "@/components/loot-filter-panel";
+import { filterTargets, lootFilter } from "@/lib/loot-filter";
+import { localePath } from "@/i18n/config";
+import { absoluteUrl } from "@/lib/site";
 import { LevelingTimeline, type TimelinePath } from "@/components/leveling-timeline";
 import { RotationStrip, type RotationGem, type RotationView } from "@/components/rotation-strip";
 import { stepFr } from "@/lib/step-labels";
@@ -135,7 +139,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
             updated: build.updated || undefined,
           }),
           breadcrumbLd([
-            [tr.nav.builds, path("/")],
+            [tr.nav.builds, path("/builds")],
             [build.title, path(`/builds/${build.slug}`)],
           ]),
         ]}
@@ -143,7 +147,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
       <header className="border-b border-line">
         <div className="mx-auto max-w-7xl px-4 py-8">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <Link href={path("/")} className="text-sm text-muted hover:text-gold">
+            <Link href={path("/builds")} className="text-sm text-muted hover:text-gold">
               {tr.build.allBuilds}
             </Link>
             <div className="flex flex-wrap items-center gap-2">
@@ -351,7 +355,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               slotLabels={tr.slots}
               weaponSetsLabel={tr.tree.weaponSets}
               weaponLabels={{ title: tr.build.weapons, set1: tr.tree.weaponSet1, set2: tr.tree.weaponSet2 }}
-              labels={{ runes: tr.build.socketed, ladder: tr.build.ladderSlot }}
+              labels={{ runes: tr.build.socketed, ladder: tr.build.ladderSlot, craft: tr.build.craftThis }}
               hint={`${tr.build.inventoryHint} ${tr.build.modHint}`}
               priceLabels={{
                 divine: "Divine Orb",
@@ -360,6 +364,17 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                 note: fmt(tr.build.priceNote, { league: prices.league, date: prices.fetchedAt }),
               }}
             />
+            <h3 id="loot-filter" className="mt-6 scroll-mt-24 font-semibold">{tr.build.lootFilter.title}</h3>
+            <div className="mt-2">
+              <LootFilterPanel
+                {...lootFilter(build, absoluteUrl(localePath(lang, `/builds/${build.slug}`)))}
+                summary={(() => {
+                  const f = filterTargets(build);
+                  return [...f.uniques, ...f.bases, ...f.weaponClasses.map((c) => fmt(tr.build.lootFilter.rareClass, { c }))];
+                })()}
+                labels={tr.build.lootFilter}
+              />
+            </div>
           </section>
 
           <section id="passives" className="scroll-mt-24">

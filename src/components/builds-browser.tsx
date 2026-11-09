@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { BuildSummary } from "@/lib/build-summary";
 import { useI18n } from "@/i18n/client";
 import { DEFAULT_CATEGORY, DIFFICULTIES, TIER_CATEGORIES, TIERS, type Difficulty, type TierCategory } from "@/lib/types";
@@ -19,6 +19,13 @@ export function BuildsBrowser({ builds, classes }: { builds: BuildSummary[]; cla
   const [onlyFavorites, setOnlyFavorites] = useState(false);
   const { favorites } = useFavorites();
   const favoriteCount = builds.filter((b) => favorites.has(b.slug)).length;
+
+  // Links from the home page preselect a class with ?class=Name (read after hydration: the page is static).
+  useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get("class");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time sync from the URL
+    if (wanted && classes.includes(wanted)) setCls(wanted);
+  }, [classes]);
 
   // Guides spell the same author with different casing ("Havoc" / "havoc"): use the most frequent spelling.
   const list = useMemo(() => {

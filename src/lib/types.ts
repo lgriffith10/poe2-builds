@@ -83,7 +83,27 @@ export interface GemDetails {
 /** Data shown when hovering a [[Name]] reference in guide text. */
 export type RefTip =
   | ({ kind: "gem" } & Pick<Gem, "name" | "icon" | "color" | "type" | "tier" | "tags" | "text"> & GemDetails)
-  | ({ kind: "unique" } & Pick<UniqueItem, "name" | "icon" | "base" | "category" | "level" | "implicits" | "mods">);
+  | ({ kind: "unique" } & Pick<UniqueItem, "name" | "icon" | "base" | "category" | "level" | "implicits" | "mods">)
+  | ({ kind: "currency" } & Pick<CurrencyItem, "name" | "icon" | "description" | "directions" | "essence" | "socket">);
+
+/** Crafting consumable of the currency wiki (scripts/currency-data.mjs). */
+export interface CurrencyItem {
+  slug: string;
+  name: string;
+  category: CurrencyCategory;
+  icon: string | null;
+  /** In-game description and directions (English game text). */
+  description: string | null;
+  directions: string | null;
+  stack: number | null;
+  /** Minimum area level where it drops. */
+  level: number | null;
+  /** Essences: guaranteed modifier per item class (from Path of Building). */
+  essence?: { text: string; classes: string[] }[];
+  /** Runes, soul cores, idols, abyssal eyes: what they grant per slot. */
+  socket?: { slots: string[]; lines: string[]; level: number | null }[];
+}
+export type CurrencyCategory = "orbs" | "essences" | "omens" | "abyss" | "catalysts" | "emotions" | "runes" | "soulcores" | "idols";
 
 export interface UniqueItem {
   id: string;

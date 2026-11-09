@@ -6,8 +6,10 @@ export interface Prices {
   fetchedAt: string;
   rates: { exalted: number; chaos: number };
   uniques: Record<string, { div: number; listings: number }>;
+  /** Crafting consumables: price of one item in Divine Orbs. */
+  currency?: Record<string, number>;
 }
-/** Unique item prices from poe.ninja (scripts/sync-prices.mjs), committed and read at build time. */
+/** Unique item and currency prices from poe.ninja (scripts/sync-prices.mjs), committed and read at build time. */
 export const prices = pricesJson as Prices;
 
 export interface PriceTag {

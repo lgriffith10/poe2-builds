@@ -1,6 +1,6 @@
 "use client";
 
-// Game-style hover cards for gems and uniques.
+// Game-style hover cards for gems, uniques and crafting currencies.
 // The server embeds each link's data in a `data-tip` attribute (see lib/tips.ts); TipScope listens for hover/focus
 // on those links anywhere inside it and shows one positioned card.
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
@@ -86,7 +86,13 @@ export function TipScope({ children, className }: { children: ReactNode; classNa
           className="poe-tip pointer-events-none fixed z-50 w-80 max-w-[calc(100vw-1.5rem)]"
           style={pos ? { left: pos.left, top: pos.top } : { left: 0, top: 0, visibility: "hidden" }}
         >
-          {tip.data.kind === "gem" ? <GemCard gem={tip.data} /> : <UniqueCard item={tip.data} />}
+          {tip.data.kind === "gem" ? (
+            <GemCard gem={tip.data} />
+          ) : tip.data.kind === "unique" ? (
+            <UniqueCard item={tip.data} />
+          ) : (
+            <CurrencyCard item={tip.data} />
+          )}
         </div>
       )}
     </>
@@ -191,6 +197,50 @@ function UniqueCard({ item }: { item: Extract<RefTip, { kind: "unique" }> }) {
             ))}
           </>
         )}
+      </div>
+    </>
+  );
+}
+
+/** In-game style card of a crafting consumable: description, directions, essence or socket effects. */
+export function CurrencyCard({
+  item,
+  children,
+}: {
+  item: Omit<Extract<RefTip, { kind: "currency" }>, "kind">;
+  /** Extra lines under the game text (e.g. the simulator's note). */
+  children?: ReactNode;
+}) {
+  return (
+    <>
+      <div className="poe-tip-head poe-tip-head-currency">
+        <span className="poe-tip-name">{item.name}</span>
+      </div>
+      <div className="poe-tip-body">
+        {item.icon && <img src={item.icon} alt="" width={48} height={48} className="mx-auto mb-1 h-12 w-12 object-contain" />}
+        {item.essence?.map((e) => (
+          <p key={e.text} className="poe-tip-prop">
+            {e.classes.join(", ")}: <span className="poe-tip-mod">{e.text}</span>
+          </p>
+        ))}
+        {item.socket?.map((s) => (
+          <p key={s.slots.join()} className="poe-tip-prop">
+            {s.slots.map(cap).join(", ")}: <span className="poe-tip-mod whitespace-pre-line">{s.lines.join("\n")}</span>
+          </p>
+        ))}
+        {item.description && (
+          <>
+            {(item.essence || item.socket) && <hr className="poe-tip-sep poe-tip-sep-currency" />}
+            <p className="poe-tip-desc whitespace-pre-line">{item.description}</p>
+          </>
+        )}
+        {item.directions && (
+          <>
+            <hr className="poe-tip-sep poe-tip-sep-currency" />
+            <p className="poe-tip-prop whitespace-pre-line">{item.directions}</p>
+          </>
+        )}
+        {children}
       </div>
     </>
   );

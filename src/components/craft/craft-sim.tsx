@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { useI18n } from "@/i18n/client";
 import {
   Crafter,
@@ -10,6 +10,8 @@ import {
   diagnose,
   groupLabel,
   LORDS,
+  planCraft,
+  type PlanResult,
   rolledText,
   type Action,
   type CraftData,
@@ -17,7 +19,8 @@ import {
   type Item,
   type Rarity,
 } from "@/lib/craft";
-import { parseItemText } from "@/lib/craft-import";
+import { frenchModText, parseItemText } from "@/lib/craft-import";
+import { decodeCraft, encodeCraft } from "@/lib/craft-share";
 
 type Tc = ReturnType<typeof useI18n>["t"]["craft"];
 type Fmt = ReturnType<typeof useI18n>["fmt"];
@@ -65,7 +68,11 @@ function actionId(kind: Kind, tier: CurrencyTier, omen: string | null) {
   return `${kind}-${tier}${o}`;
 }
 
-/** Square stash slot with a hover card (not the browser's title tooltip). */
+/** Currency wiki entries by currency name (passed from the page, see lib/currency.ts). */
+export type CraftWiki = Record<string, { slug: string; description: string | null }>;
+const WikiContext = createContext<CraftWiki>({});
+
+/** Square stash slot with a hover card (not the browser's title tooltip) showing the game text and a wiki link. */
 function Tile({
   icon,
   label,
@@ -85,6 +92,8 @@ function Tile({
   onClick?: () => void;
   size?: number;
 }) {
+  const { t, path } = useI18n();
+  const entry = useContext(WikiContext)[label];
   return (
     <span className="group relative inline-block">
       <button
@@ -103,12 +112,21 @@ function Tile({
           <span className="absolute -bottom-1 -right-1 rounded bg-gold px-1 text-[9px] font-bold leading-tight text-black">{badge}</span>
         )}
       </button>
+      {/* Padding (not margin) under the card keeps the hover alive while the pointer moves up to the wiki link. */}
       <span
         role="tooltip"
-        className="pointer-events-none invisible absolute bottom-full left-1/2 z-30 mb-2 w-56 -translate-x-1/2 rounded-lg border border-line-strong bg-surface p-2.5 text-left text-xs opacity-0 shadow-xl shadow-black/60 transition group-hover:visible group-hover:opacity-100"
+        className="pointer-events-none invisible absolute bottom-full left-1/2 z-30 w-64 -translate-x-1/2 pb-2 opacity-0 transition group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100"
       >
-        <span className="block font-semibold text-[#c9b37e]">{label}</span>
-        {desc && <span className="mt-1 block leading-snug text-muted">{desc}</span>}
+        <span className="block rounded-lg border border-line-strong bg-surface p-2.5 text-left text-xs shadow-xl shadow-black/60">
+          <span className="block font-semibold text-[#c9b37e]">{label}</span>
+          {entry?.description && <span className="mt-1 block whitespace-pre-line leading-snug text-ink/85">{entry.description}</span>}
+          {desc && <span className="mt-1 block leading-snug text-muted">{desc}</span>}
+          {entry && (
+            <a href={path(`/database/currency/${entry.slug}`)} className="mt-1.5 block font-semibold text-gold hover:underline">
+              {t.craft.wikiLink} →
+            </a>
+          )}
+        </span>
       </span>
     </span>
   );
@@ -136,8 +154,8 @@ function Pips({ used, max, label }: { used: number; max: number; label: string }
 
 // --- main ---------------------------------------------------------------------------------------
 
-export function CraftSim() {
-  const { t, fmt } = useI18n();
+export function CraftSim({ wiki = {}, prices = {} }: { wiki?: CraftWiki; prices?: Record<string, number> } = {}) {
+  const { t, fmt, lang } = useI18n();
   const [data, setData] = useState<CraftData | null>(null);
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
@@ -151,20 +169,33 @@ export function CraftSim() {
     return (
       <div className="flex h-96 items-center justify-center rounded-xl border border-line bg-surface text-muted">{t.craft.loading}</div>
     );
-  return <Workbench data={data} t={t.craft} fmt={fmt} />;
+  return (
+    <WikiContext.Provider value={wiki}>
+      <Workbench data={data} t={t.craft} fmt={fmt} french={lang === "fr"} prices={prices} />
+    </WikiContext.Provider>
+  );
 }
 
-function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
+function Workbench({ data, t, fmt, french, prices }: { data: CraftData; t: Tc; fmt: Fmt; french: boolean; prices: Record<string, number> }) {
   const c = useMemo(() => new Crafter(data), [data]);
+  // A shared link (#c=…) opens on its item and goals; the workbench only mounts in the browser, once data is loaded.
+  const [shared] = useState(() => (window.location.hash.startsWith("#c=") ? decodeCraft(new Crafter(data), window.location.hash.slice(3)) : null));
+  /** Mod texts in the page language (French from the trade site's translations, English otherwise). */
+  const tr = useMemo(() => (french ? (s: string) => frenchModText(c, s) : (s: string) => s), [c, french]);
+  const baseNames = useMemo(
+    () => new Map(french ? Object.entries(data.fr?.bases ?? {}).map(([fr, en]) => [en, fr]) : []),
+    [data, french],
+  );
+  const baseName = (b: string) => baseNames.get(b) ?? b;
   const all = useMemo(() => new Map(actions().map((a) => [a.id, a])), []);
   const classes = useMemo(() => [...new Set(Object.values(data.bases).map((b) => b[0]))].sort(), [data]);
 
-  const [cls, setCls] = useState("Boots");
-  const [base, setBase] = useState("Sleek Boots");
-  const [ilvl, setIlvl] = useState(82);
-  const [item, setItem] = useState<Item>({ base: "Sleek Boots", ilvl: 82, rarity: "normal", mods: [] });
+  const [cls, setCls] = useState(shared ? data.bases[shared.item.base][0] : "Boots");
+  const [base, setBase] = useState(shared?.item.base ?? "Sleek Boots");
+  const [ilvl, setIlvl] = useState(shared?.item.ilvl ?? 82);
+  const [item, setItem] = useState<Item>(shared?.item ?? { base: "Sleek Boots", ilvl: 82, rarity: "normal", mods: [] });
   const [history, setHistory] = useState<{ item: Item; label: string; icon?: string; omenIcon?: string }[]>([]);
-  const [targets, setTargets] = useState<Set<string>>(new Set());
+  const [targets, setTargets] = useState<Set<string>>(new Set(shared?.targets ?? []));
   const [reveal, setReveal] = useState<{ item: Item; options: number[] } | null>(null);
   const [tier, setTier] = useState<CurrencyTier>("normal");
   const [omen, setOmen] = useState<string | null>(null);
@@ -175,6 +206,32 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
   const [importMsg, setImportMsg] = useState<{ ok: boolean; text: string; unmatched?: string[] } | null>(null);
   const [editing, setEditing] = useState(false);
   const [editQuery, setEditQuery] = useState("");
+  const [copied, setCopied] = useState(false);
+  const [plan, setPlan] = useState<{ key: string; result: PlanResult } | null>(null);
+  const [planning, setPlanning] = useState(false);
+  const planKey = `${item.base}|${item.ilvl}|${item.rarity}|${item.mods.map((m) => m.i).join(",")}|${[...targets].join(",")}`;
+  const share = () => {
+    const url = `${window.location.origin}${window.location.pathname}#c=${encodeCraft(c, item, targets)}`;
+    window.history.replaceState(null, "", url);
+    navigator.clipboard?.writeText(url).then(
+      () => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      },
+      () => undefined,
+    );
+  };
+  const runPlan = () => {
+    setPlanning(true);
+    // Let the spinner paint before the (1-3 s) simulation blocks the thread.
+    setTimeout(() => {
+      setPlan({ key: planKey, result: planCraft(c, item, targets, prices, { trials: 100 }) });
+      setPlanning(false);
+    }, 30);
+  };
+  const exaltedPerDivine = prices["Exalted Orb"] ? 1 / prices["Exalted Orb"] : null;
+  const priceText = (div: number) =>
+    div < 1 && exaltedPerDivine ? fmt(t.priceExalted, { n: Math.max(1, Math.round(div * exaltedPerDivine)) }) : fmt(t.priceDivine, { n: div < 10 ? div.toFixed(1) : Math.round(div) });
 
   const basesOfClass = useMemo(
     () => Object.entries(data.bases).filter(([, b]) => b[0] === cls).sort((a, b) => b[1][1] - a[1][1] || a[0].localeCompare(b[0])),
@@ -198,9 +255,9 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
     setReveal(null);
   };
   const importItem = () => {
-    const res = parseItemText(c, importText);
+    const res = parseItemText(c, importText, base);
     if (!res.item) {
-      setImportMsg({ ok: false, text: t.importErrors[res.error ?? "base"] });
+      setImportMsg({ ok: false, text: t.importErrors[res.error ?? "empty"] });
       return;
     }
     const it = res.item;
@@ -213,7 +270,11 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
     setOmen(null);
     setTargets(new Set());
     setFlash((f) => f + 1);
-    setImportMsg({ ok: true, text: fmt(t.importOk, { n: it.mods.length }), unmatched: res.unmatched });
+    setImportMsg({
+      ok: true,
+      text: fmt(t.importOk, { n: it.mods.length }) + (res.baseGuessed ? ` ${fmt(t.importBaseGuessed, { base: it.base })}` : ""),
+      unmatched: res.unmatched,
+    });
   };
 
   // Manual edits (to rebuild an item by hand); each one can be undone like a currency.
@@ -258,9 +319,9 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
     }
     // Desecrated-only stats are labelled with their abyssal lord.
     return [...seen]
-      .map(([g, affix]) => ({ group: g, affix, label: groupLabel(c, base, g) + (lordOf.has(g) && !c.pool(base).some((i) => c.mod(i).group === g) ? ` (${lordOf.get(g)})` : "") }))
+      .map(([g, affix]) => ({ group: g, affix, label: tr(groupLabel(c, base, g)) + (lordOf.has(g) && !c.pool(base).some((i) => c.mod(i).group === g) ? ` (${lordOf.get(g)})` : "") }))
       .sort((a, b) => a.label.localeCompare(b.label));
-  }, [c, base]);
+  }, [c, base, tr]);
   const tierOf = useMemo(() => {
     const rank = new Map<number, number>();
     const byGroup = new Map<string, number[]>();
@@ -329,7 +390,7 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
             <select value={base} onChange={(e) => pickBase(e.target.value)} className="mt-1 w-full rounded-md border border-line bg-surface-2 px-2 py-1.5 text-sm normal-case tracking-normal text-ink">
               {basesOfClass.map(([n, b]) => (
                 <option key={n} value={n}>
-                  {n} · {b[1]}
+                  {baseName(n)} · {b[1]}
                 </option>
               ))}
             </select>
@@ -418,7 +479,7 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
             <div className="border-b px-4 py-2" style={{ borderColor: `${color}55`, background: `linear-gradient(180deg, ${color}2e, ${color}0d)` }}>
               {item.rarity !== "normal" && <p className="text-[10px] uppercase tracking-[0.25em]" style={{ color }}>{t.rarity[item.rarity]}</p>}
               <p className="font-display text-xl" style={{ color }}>
-                {base}
+                {baseName(base)}
               </p>
             </div>
             <div className="px-4 py-3 text-sm">
@@ -450,7 +511,7 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
                             className={`whitespace-pre-line rounded leading-snug ${editing ? "" : "hover:bg-white/5"} ${wanted ? "underline decoration-gold/50 underline-offset-2" : ""}`}
                             style={{ color: m.desecrated ? "#d4807a" : m.crafted ? "#b9a6ff" : wanted ? "#e8c46a" : "#8888ff" }}
                           >
-                            {rolledText(mod.text, m.r)}
+                            {tr(rolledText(mod.text, m.r))}
                           </button>
                           {editing ? (
                             <span className="flex items-center gap-1 justify-self-end">
@@ -586,7 +647,7 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
                       className="block w-full rounded border border-red-900/60 bg-black/40 px-2 py-1.5 text-sm hover:border-red-400"
                       style={{ color: targets.has(c.mod(i).group) ? "#e8c46a" : "#d4807a" }}
                     >
-                      {c.mod(i).text}
+                      {tr(c.mod(i).text)}
                     </button>
                   ))}
                   {reveal.options.length === 0 && <p className="text-sm text-faint">{t.revealNone}</p>}
@@ -660,7 +721,7 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
                   key={e.name}
                   icon={data.icons[name]}
                   label={name}
-                  desc={`${e.groups.map((g) => groupLabel(c, base, g)).join(" / ")} — ${essenceTier === "greater" ? t.kinds.greaterEssence : t.kinds.perfectEssence}`}
+                  desc={`${e.groups.map((g) => tr(groupLabel(c, base, g))).join(" / ")} — ${essenceTier === "greater" ? t.kinds.greaterEssence : t.kinds.perfectEssence}`}
                   size={44}
                   disabled={!!reveal || editing || !a?.can(c, item)}
                   onClick={() => a && run(a, a.currency, { icon: data.icons[name] })}
@@ -684,6 +745,9 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
               className={`rounded-md border px-3 py-1 text-sm disabled:opacity-40 ${editing ? "border-gold-soft text-gold" : "border-line hover:border-gold-soft"}`}
             >
               ✎ {t.editByHand}
+            </button>
+            <button type="button" onClick={share} className="rounded-md border border-line px-3 py-1 text-sm hover:border-gold-soft">
+              {copied ? `✓ ${t.shared}` : t.share}
             </button>
             {history.length > 0 && (
               <div className="ml-auto flex max-w-full flex-wrap items-center gap-1" aria-label={t.history}>
@@ -818,6 +882,81 @@ function Workbench({ data, t, fmt }: { data: CraftData; t: Tc; fmt: Fmt }) {
             </ol>
           )}
           <p className="mt-3 text-[11px] leading-relaxed text-faint">{t.disclaimer}</p>
+        </div>
+
+        {/* Whole strategy: success rate, currency used and cost */}
+        <div className="rounded-xl border border-line bg-surface p-4">
+          <h3 className="font-display text-lg text-gold">{t.plan}</h3>
+          <p className="mt-1 text-xs text-faint">{t.planHint}</p>
+          <button
+            type="button"
+            onClick={runPlan}
+            disabled={!targets.size || planning}
+            className="mt-3 rounded-md bg-gold px-3 py-1.5 text-sm font-semibold text-black hover:brightness-110 disabled:opacity-40"
+          >
+            {planning ? t.planRunning : t.planRun}
+          </button>
+          {plan && plan.key !== planKey && <p className="mt-2 text-xs text-faint">{t.planStale}</p>}
+          {plan && plan.key === planKey && (
+            <div className="mt-3 space-y-3 text-sm">
+              <div className="grid grid-cols-3 gap-2 text-center">
+                <div className="rounded-lg border border-line bg-surface-2/50 p-2">
+                  <p className="text-lg font-semibold text-gold tabular-nums">{pct(plan.result.success)}</p>
+                  <p className="text-[11px] text-faint">{t.planSuccess}</p>
+                </div>
+                <div className="rounded-lg border border-line bg-surface-2/50 p-2">
+                  <p className="text-lg font-semibold tabular-nums">{plan.result.success ? plan.result.steps.toFixed(0) : "—"}</p>
+                  <p className="text-[11px] text-faint">{t.planSteps}</p>
+                </div>
+                <div className="rounded-lg border border-line bg-surface-2/50 p-2">
+                  <p className="text-lg font-semibold tabular-nums">{plan.result.cost === null ? "—" : `${plan.result.partial ? "≥ " : "≈ "}${priceText(plan.result.cost)}`}</p>
+                  <p className="text-[11px] text-faint">{t.planCost}</p>
+                </div>
+              </div>
+              {plan.result.route.length > 0 && (
+                <div>
+                  <p className="mb-1.5 text-[11px] uppercase tracking-wider text-faint">{t.planRoute}</p>
+                  <ol className="flex flex-wrap items-center gap-1">
+                    {plan.result.route.map((r, k) => (
+                      <li key={k} className="flex items-center gap-1">
+                        {k > 0 && <span className="text-faint">›</span>}
+                        <span className="relative" title={r.omen ? `${r.currency} + ${r.omen}` : r.currency}>
+                          <img src={icon(r.currency)} alt={r.currency} className="h-8 w-8 rounded border border-line bg-black/40 object-contain p-0.5" />
+                          {r.omen && <img src={icon(r.omen)} alt="" className="absolute -bottom-1 -right-1 h-4 w-4 rounded border border-red-500/70 bg-black" />}
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+              {plan.result.usage.length > 0 && (
+                <div>
+                  <p className="mb-1 text-[11px] uppercase tracking-wider text-faint">{t.planUsage}</p>
+                  <ul className="space-y-0.5 text-xs">
+                    {plan.result.usage.slice(0, 8).map((u) => (
+                      <li key={`${u.currency}|${u.omen}`} className="flex items-center gap-2">
+                        <span className="w-10 text-right tabular-nums text-gold">×{u.avg < 10 ? u.avg.toFixed(1) : Math.round(u.avg)}</span>
+                        <span className="min-w-0 flex-1 truncate text-muted">
+                          {u.currency}
+                          {u.omen && <span className="text-red-300/90"> + {u.omen}</span>}
+                        </span>
+                        {prices[u.currency] !== undefined && (!u.omen || prices[u.omen] !== undefined) && (
+                          <span className="shrink-0 tabular-nums text-faint">{priceText((prices[u.currency] + (u.omen ? prices[u.omen] : 0)) * u.avg)}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {plan.result.unreachable.length > 0 && (
+                <p className="text-xs text-red-300">
+                  {t.planUnreachable} {plan.result.unreachable.map((g) => groups.find((x) => x.group === g)?.label ?? g).join(", ")}
+                </p>
+              )}
+              {plan.result.partial && <p className="text-xs text-faint">{t.planPartial}</p>}
+            </div>
+          )}
+          <p className="mt-3 text-[11px] leading-relaxed text-faint">{t.planDisclaimer}</p>
         </div>
       </div>
     </div>

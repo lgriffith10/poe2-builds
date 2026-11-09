@@ -1,14 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CraftSim } from "@/components/craft/craft-sim";
+import { CraftSim, type CraftWiki } from "@/components/craft/craft-sim";
 import { PageHeader } from "@/components/ui";
 import { getDictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
+import { getCurrency, simulatorNames } from "@/lib/currency";
+import prices from "@/data/generated/prices.json";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/craft">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const t = getDictionary(lang);
   return { title: t.craft.title, description: t.craft.intro, alternates: alternates("/craft", lang) };
+}
+
+/** Wiki entry (game text + page) of every currency the simulator uses, for the stash tooltips. */
+function craftWiki(): CraftWiki {
+  const wiki: CraftWiki = {};
+  for (const name of simulatorNames) {
+    const c = getCurrency(name);
+    if (c) wiki[name] = { slug: c.slug, description: c.description };
+  }
+  return wiki;
+}
+
+/** Market prices (Divine Orbs) of the currencies the simulator can use, for the strategy's cost. */
+function craftPrices(): Record<string, number> {
+  const all = (prices as { currency?: Record<string, number> }).currency ?? {};
+  return Object.fromEntries([...simulatorNames, "Exalted Orb"].filter((n) => all[n] !== undefined).map((n) => [n, all[n]]));
 }
 
 export default async function CraftPage({ params }: PageProps<"/[lang]/craft">) {
@@ -32,7 +50,7 @@ export default async function CraftPage({ params }: PageProps<"/[lang]/craft">) 
             {t.craft.help.link} →
           </Link>
         </details>
-        <CraftSim />
+        <CraftSim wiki={craftWiki()} prices={craftPrices()} />
       </div>
     </>
   );

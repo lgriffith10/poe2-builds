@@ -61,8 +61,7 @@ export function NavBar({ pathname, slot }: { pathname: string | null; slot?: Rea
   const { t, lang, path } = useI18n();
   const [open, setOpen] = useState(false);
   const active = (href: string) =>
-    pathname !== null &&
-    (href === "/" ? pathname === "/" || pathname.startsWith("/builds") : pathname.startsWith(href));
+    pathname !== null && pathname.startsWith(href);
 
   const links = NAV.map((item) => (
     <Link

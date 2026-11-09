@@ -48,7 +48,7 @@ jobs:
             echo "Automated weekly refresh of the poe.ninja ladder and price snapshots."
             echo
             echo "- \`src/data/generated/ladder.json\`: ladder statistics (Meta page, popularity lines)"
-            echo "- \`src/data/generated/prices.json\`: unique prices (gear panel, compare page)"
+            echo "- \`src/data/generated/prices.json\`: unique and crafting currency prices (gear panel, compare page, currency wiki)"
             echo
             cat "$RUNNER_TEMP/sources.md"
           } > "$RUNNER_TEMP/body.md"

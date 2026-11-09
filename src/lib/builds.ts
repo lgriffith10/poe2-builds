@@ -6,6 +6,7 @@ import { marked } from "marked";
 import { classes, getBase, getClass, getGem, getUnique, tree } from "./data";
 import { gemTip, tipAttr, uniqueTip } from "./tips";
 import { renderItemCards } from "./item-cards";
+import { currencyHref, currencyTip, getCurrency } from "./currency";
 import { allocateTargets, allocateWeaponSetTargets, createGraph, findNodeByName } from "./tree";
 import { encodeBuild } from "./build-code";
 import { DEFAULT_LOCALE, localePath, type Locale } from "@/i18n/config";
@@ -121,7 +122,7 @@ const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-/** Replaces [[Name]] references with links to the database (gems or uniques), carrying hover-card data. */
+/** Replaces [[Name]] references with links to the database (gems, uniques or currencies), carrying hover-card data. */
 function linkReferences(markdown: string, file: string): string {
   return markdown.replace(/\[\[([^\]]+)\]\]/g, (_, name: string) => {
     const gem = getGem(name);
@@ -130,7 +131,11 @@ function linkReferences(markdown: string, file: string): string {
     if (unique) {
       return `<a class="ref ref-unique" href="/database/uniques#${unique.id}" ${tipAttr(uniqueTip(name)!)}>${unique.name}</a>`;
     }
-    throw new BuildError(file, `Unknown reference [[${name}]] (not a gem or unique)`);
+    const currency = getCurrency(name);
+    if (currency) {
+      return `<a class="ref ref-currency" href="${currencyHref(currency)}" ${tipAttr(currencyTip(name)!)}>${currency.name}</a>`;
+    }
+    throw new BuildError(file, `Unknown reference [[${name}]] (not a gem, unique or currency)`);
   });
 }
 

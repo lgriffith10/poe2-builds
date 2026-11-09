@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Snapshots unique item prices from poe.ninja into src/data/generated/prices.json (committed, read at build time).
+// Snapshots unique item and crafting currency prices from poe.ninja into src/data/generated/prices.json (committed, read at build time).
 // Values are in Divine Orbs; the exchange rates to Exalted and Chaos Orbs are stored with them.
-// Only uniques are priced: rare items have no meaningful single price.
+// Uniques and crafting consumables are priced: rare items have no meaningful single price.
 //
 // Usage: node scripts/sync-prices.mjs [League name]   (default: the league of the ladder snapshot)
 
@@ -46,6 +46,16 @@ for (const type of TYPES) {
   console.log(`  ${type}: ${data.lines.length} lines`);
 }
 
+// Crafting consumables (the currency wiki): every exchange category it covers, price of one item in Divine Orbs.
+const EXCHANGE = ["Currency", "Essences", "Ritual", "Abyss", "Breach", "Delirium", "Runes", "SoulCores", "Idols"];
+const currencies = {};
+for (const type of EXCHANGE) {
+  const data = type === "Currency" ? currency : await economy(LEAGUE, "exchange", type);
+  const names = new Map(data.items.map((i) => [i.id, i.name]));
+  for (const l of data.lines) if (names.has(l.id) && l.primaryValue > 0) currencies[names.get(l.id)] = Number(l.primaryValue.toPrecision(3));
+  console.log(`  ${type}: ${data.lines.length} lines`);
+}
+
 const prices = {
   source: "poe.ninja",
   league: LEAGUE,
@@ -53,6 +63,7 @@ const prices = {
   /** How many Exalted / Chaos Orbs one Divine Orb is worth. */
   rates: { exalted: Math.round(1 / exalted), chaos: Number((1 / chaos).toFixed(2)) },
   uniques,
+  currency: currencies,
 };
 await fs.writeFile(OUT, JSON.stringify(prices, null, 1) + "\n");
-console.log(`wrote ${path.relative(ROOT, OUT)}: ${Object.keys(uniques).length} uniques, 1 divine = ${prices.rates.exalted} exalted`);
+console.log(`wrote ${path.relative(ROOT, OUT)}: ${Object.keys(uniques).length} uniques, ${Object.keys(currencies).length} currencies, 1 divine = ${prices.rates.exalted} exalted`);
