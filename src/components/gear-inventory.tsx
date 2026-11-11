@@ -25,6 +25,8 @@ export interface InventoryItem {
   grants: string | null;
   /** Crafting simulator link (base + listed modifiers as goals) for rares. */
   craft: string | null;
+  /** "Grants Skill: Level # …" lines for skills the build takes from this rare's base (higher level is better). */
+  grantsUsed: string[];
   /** Prefilled official trade site search for this item, or null. */
   trade: TradeSearch | null;
   note: string | null;

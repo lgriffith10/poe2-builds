@@ -34,7 +34,8 @@ export function statPriority(stages: InventoryStage[], ordered = true, limit = 1
   return stages.map((stage) => {
     const rares = stage.items
       .filter((i): i is InventoryItem => i.kind === "rare")
-      .map((i) => ({ ...i, mods: [...new Set(i.mods.filter((m) => !IGNORED.test(m)).map(generic))] }))
+      // A skill the build takes from the item comes first: its level is the item's main job.
+      .map((i) => ({ ...i, mods: [...new Set([...i.grantsUsed, ...i.mods.filter((m) => !IGNORED.test(m)).map(generic)])] }))
       .filter((i) => i.mods.length > 0);
     const weapons = rares
       .filter((i) => WEAPON_SLOTS.includes(i.slot))

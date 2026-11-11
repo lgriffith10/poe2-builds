@@ -12,8 +12,15 @@ export interface TradeSearch {
 
 let queries: TradeQueries | null = null;
 
-export function tradeSearch(slot: GearSlot, piece: GearPiece, ordered: boolean): TradeSearch | null {
-  queries ??= new TradeQueries(statsJson as TradeStat[]);
-  const query = queries.query(slot, piece, ordered);
+const tradeQueries = () => (queries ??= new TradeQueries(statsJson as TradeStat[]));
+
+/** `grantedSkills`: skills the build uses that this item's base grants. */
+export function tradeSearch(slot: GearSlot, piece: GearPiece, ordered: boolean, grantedSkills: string[] = []): TradeSearch | null {
+  const query = tradeQueries().query(slot, piece, ordered, grantedSkills);
   return query ? { league: prices.league, query } : null;
+}
+
+/** Trade site wording of a granted skill's level line ("Grants Skill: Level # Skeletal Warrior Minion"). */
+export function grantedSkillLine(skill: string): string {
+  return tradeQueries().grantedSkill(skill)?.[0] ?? `Grants Skill: Level # ${skill}`;
 }

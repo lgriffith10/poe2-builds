@@ -12,7 +12,7 @@ import path from "node:path";
 import { localePath, type Locale } from "@/i18n/config";
 import { Crafter } from "./craft";
 import { encodeCraft, groupsForLines } from "./craft-share";
-import { tradeSearch } from "./trade";
+import { grantedSkillLine, tradeSearch } from "./trade";
 
 let crafter: Crafter | null = null;
 /** Link to the crafting simulator with this rare's base and its listed modifiers as goals (null when not craftable). */
@@ -25,8 +25,13 @@ function craftLink(base: string | undefined, mods: string[], lang: string): stri
 }
 
 /** Resolves a gear set into what the inventory panel shows (names, icons, modifier lines). */
-/** `ordered`: whether rare items list their modifiers by importance (guides) rather than as found (ladder); used for trade searches. */
-export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet, lang = "en", ordered = true): InventoryItem[] {
+const sameSkill = (a: string, b: string) => a.replace(/ Minion$/, "") === b.replace(/ Minion$/, "");
+
+/**
+ * `ordered`: whether rare items list their modifiers by importance (guides) rather than as found (ladder).
+ * `skills`: the build's skills; those a rare's base grants become its first priority (their level is the skill's level).
+ */
+export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet, lang = "en", ordered = true, skills: string[] = []): InventoryItem[] {
   return GEAR_SLOTS.filter((slot) => gear[slot]).map((slot) => {
     const ref = reference?.[slot];
     // Notes are written for the reference gear; reuse them when a stage has the same item in that slot.
@@ -47,6 +52,7 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           runes: piece.runes ?? [],
           ladder: piece.ladder ?? [],
           grants: null,
+          grantsUsed: [],
           craft: null,
           trade: tradeSearch(slot, piece, ordered),
           price: uniquePrice(unique.name) !== null ? priceTag(uniquePrice(unique.name)!, lang) : null,
@@ -61,7 +67,8 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           icon: base?.icon ?? null,
           implicits: piece.implicits ?? [],
           mods: (piece.mods ?? []).map(modLabel),
-          trade: tradeSearch(slot, piece, ordered),
+          trade: tradeSearch(slot, piece, ordered, usedGrants(base?.name, skills)),
+          grantsUsed: usedGrants(base?.name, skills).map(grantedSkillLine),
           craft: craftLink(base?.name, (piece.mods ?? []).map(modLabel), lang),
           runes: piece.runes ?? [],
           ladder: piece.ladder ?? [],
@@ -71,6 +78,11 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
         };
   });
 }
+
+const buildSkills = (build: Build) => build.skills.map((s) => s.gem);
+
+/** Skills of the build that this base grants. */
+const usedGrants = (base: string | undefined, skills: string[]) => baseGrants(base).filter((g) => skills.some((s) => sameSkill(s, g)));
 
 /** Gear progression tabs; the reference gear alone when the guide has no stages. Endgame is selected first. */
 /** Price of the uniques in a gear set, or null when it has no priced unique. */
@@ -84,11 +96,11 @@ export function inventoryStages(build: Build, t: Dictionary, lang = "en"): { sta
   const stages: InventoryStage[] = GEAR_STAGES.filter((s) => build.gearStages[s]).map((s) => ({
     id: s,
     label: t.build.gearStages[s],
-    items: inventoryItems(build.gearStages[s]!, t, build.gear, lang, build.origin === "guide"),
+    items: inventoryItems(build.gearStages[s]!, t, build.gear, lang, build.origin === "guide", buildSkills(build)),
     total: stageTotal(build.gearStages[s]!, lang),
   }));
   if (!stages.length)
-    return { stages: [{ id: "default", label: "", items: inventoryItems(build.gear, t, undefined, lang, build.origin === "guide"), total: stageTotal(build.gear, lang) }], initial: 0 };
+    return { stages: [{ id: "default", label: "", items: inventoryItems(build.gear, t, undefined, lang, build.origin === "guide", buildSkills(build)), total: stageTotal(build.gear, lang) }], initial: 0 };
   const endgame = stages.findIndex((s) => s.id === "endgame");
   return { stages, initial: endgame >= 0 ? endgame : stages.length - 1 };
 }

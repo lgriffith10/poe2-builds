@@ -87,9 +87,15 @@ const norm = (s: string) =>
 
 export class TradeQueries {
   private byText = new Map<string, string>();
+  /** "Grants Skill: Level # <skill>" stats, by skill name. */
+  private skills = new Map<string, TradeStat>();
 
   constructor(stats: TradeStat[]) {
-    for (const [text, id] of stats) if (id.startsWith("explicit.") && !this.byText.has(norm(text))) this.byText.set(norm(text), id);
+    for (const [text, id] of stats) {
+      if (id.startsWith("explicit.") && !this.byText.has(norm(text))) this.byText.set(norm(text), id);
+      const skill = id.startsWith("skill.") && text.match(/^Grants Skill: Level # (.+?)(?: Minion)?$/);
+      if (skill) this.skills.set(skill[1], [text, id]);
+    }
   }
 
   /** Trade stat id for a guide modifier label, or null when the trade site has no clear match. */
@@ -100,12 +106,17 @@ export class TradeQueries {
     return this.byText.get(norm(l)) ?? null;
   }
 
+  /** The "Grants Skill: Level # …" stat for a skill granted by an item ("Skeletal Warrior"), or null. */
+  grantedSkill(name: string): TradeStat | null {
+    return this.skills.get(name.replace(/ Minion$/, "")) ?? null;
+  }
+
   /**
    * Search for a gear piece. Uniques: by name. Rares: the item category, the base's defence type, the first two
    * stats the guide asks for, and at least one of the others. `ordered` is false for ladder characters, whose
    * modifiers are not listed by importance: half of them are asked for, in any order.
    */
-  query(slot: GearSlot, piece: GearPiece, ordered: boolean): object | null {
+  query(slot: GearSlot, piece: GearPiece, ordered: boolean, grantedSkills: string[] = []): object | null {
     const status = { option: "available" };
     if (piece.unique) {
       const u = getUnique(piece.unique);
@@ -118,10 +129,15 @@ export class TradeQueries {
     const ids = [...new Set((piece.mods ?? []).filter((m) => !DEFENCE_LABEL.test(m)).map((m) => this.statId(m)).filter((x): x is string => !!x))];
     if (!ids.length) return null;
     const filter = (id: string) => ({ id });
+    // Skills the build takes from this item: the item must grant them (the level is left to the player to compare).
+    const skillIds = grantedSkills.map((s) => this.grantedSkill(s)?.[1]).filter((x): x is string => !!x);
     const stats = !ordered
-      ? [{ type: "count", value: { min: Math.ceil(ids.length / 2) }, filters: ids.map(filter) }]
+      ? [
+          ...(skillIds.length ? [{ type: "and", filters: skillIds.map(filter) }] : []),
+          { type: "count", value: { min: Math.ceil(ids.length / 2) }, filters: ids.map(filter) },
+        ]
       : [
-          { type: "and", filters: ids.slice(0, 2).map(filter) },
+          { type: "and", filters: [...skillIds, ...ids.slice(0, 2)].map(filter) },
           ...(ids.length > 2 ? [{ type: "count", value: { min: 1 }, filters: ids.slice(2).map(filter) }] : []),
         ];
     const defence: Record<string, { min: number }> = {};
