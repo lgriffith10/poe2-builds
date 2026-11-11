@@ -6,6 +6,8 @@ import { BuildTreeViewer } from "@/components/build-tree-viewer";
 import { FavoriteButton } from "@/components/favorite-button";
 import { GearInventory } from "@/components/gear-inventory";
 import { LootFilterPanel } from "@/components/loot-filter-panel";
+import { StatPriority } from "@/components/stat-priority";
+import { statPriority } from "@/lib/stat-priority";
 import { filterTargets, lootFilter } from "@/lib/loot-filter";
 import { localePath } from "@/i18n/config";
 import { absoluteUrl } from "@/lib/site";
@@ -120,6 +122,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
     { id: "overview", text: tr.common.overview },
     { id: "skills", text: tr.common.skills },
     ...(leveling.length ? [{ id: "leveling", text: tr.build.leveling }] : []),
+    { id: "stats", text: tr.build.statPriority.title },
     { id: "gear", text: tr.common.gear },
     { id: "passives", text: tr.common.passiveTree },
     ...build.toc.filter((t) => t.id !== "overview").map((t) => ({ ...t, id: `guide-${t.id}` })),
@@ -346,6 +349,14 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               )}
             </section>
           )}
+
+          <section id="stats" className="scroll-mt-24">
+            <SectionTitle sub={tr.build.statPriority.sub}>{tr.build.statPriority.title}</SectionTitle>
+            <StatPriority stages={statPriority(inventory.stages, build.origin === "guide")} initialStage={inventory.initial}
+              ordered={build.origin === "guide"}
+              labels={tr.build.statPriority}
+             />
+          </section>
 
           <section id="gear" className="scroll-mt-24">
             <SectionTitle sub={tr.build.gearSub}>{tr.common.gear}</SectionTitle>
