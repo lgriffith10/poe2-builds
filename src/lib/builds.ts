@@ -7,7 +7,7 @@ import { classes, getBase, getClass, getGem, getUnique, tree } from "./data";
 import { gemTip, tipAttr, uniqueTip } from "./tips";
 import { renderItemCards } from "./item-cards";
 import { currencyHref, currencyTip, getCurrency } from "./currency";
-import { allocateTargets, allocateWeaponSetTargets, createGraph, findNodeByName } from "./tree";
+import { allocateTargets, allocateWeaponSetTargets, createGraph, findNodeByName, isAllocatable, pruneDisconnected, roots } from "./tree";
 import { encodeBuild } from "./build-code";
 import { DEFAULT_LOCALE, localePath, type Locale } from "@/i18n/config";
 import {
@@ -29,7 +29,13 @@ import {
   type Tier,
   type TierCategory,
   type TierChange,
+  TREE_STAGES,
+  type PassiveStep,
+  type TreeStage,
+  type TreeVariant,
 } from "./types";
+
+export type { PassiveStep, TreeVariant };
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "builds");
 
@@ -38,17 +44,6 @@ export interface GemPriorityStage {
   gems: string[];
 }
 export type GemPriority = Partial<Record<"skills" | "spirit" | "supports", GemPriorityStage[]>>;
-
-export interface PassiveStep {
-  name: string;
-  id: number;
-  /** Nodes allocated by this step, in path order (the notable last). */
-  nodes: number[];
-  /** Passive points those nodes cost. */
-  points: number;
-  /** Weapon set the step's points belong to. */
-  set?: 1 | 2;
-}
 
 export interface Build {
   slug: string;
@@ -102,6 +97,10 @@ export interface Build {
   planner: PlannerState;
   plannerCode: string;
   pointsUsed: number;
+  /** Alternative trees from the source planner (leveling stages, respecs, endgame variants); empty when none. */
+  treeVariants: TreeVariant[];
+  /** Planner the alternative trees come from. */
+  treeVariantsSource: string | null;
   html: string;
   toc: { id: string; text: string }[];
 }
@@ -156,6 +155,106 @@ export function renderBody(markdown: string, file: string, lang: Locale = DEFAUL
     // Site-relative links follow the page language.
     .replace(/href="(\/[^"]*)"/g, (_, href: string) => `href="${localePath(lang, href)}"`);
   return { html, toc };
+}
+
+const TREES_DIR = path.join(CONTENT_DIR, "trees");
+const treesFile = (file: string) => path.join(TREES_DIR, file.replace(/\.md$/, ".json"));
+const KEY_TYPES = new Set(["notable", "keystone"]);
+
+interface TreeVariantFile {
+  name: string;
+  stage: TreeStage;
+  level?: number;
+  nodes: number[];
+  attributes?: Record<string, number>;
+  weaponSets?: Record<string, 1 | 2>;
+}
+
+/** Loads and checks content/builds/trees/<slug>.json, and derives what the guide page shows for each tree. */
+function readTreeVariants(
+  file: string,
+  cls: NonNullable<ReturnType<typeof getClass>>,
+  ascendancy: string,
+): { treeVariants: TreeVariant[]; treeVariantsSource: string | null } {
+  const p = treesFile(file);
+  if (!fs.existsSync(p)) return { treeVariants: [], treeVariantsSource: null };
+  const where = `trees/${path.basename(p)}`;
+  const data = JSON.parse(fs.readFileSync(p, "utf8")) as { planner?: string; trees: TreeVariantFile[] };
+  const rootIds = roots(graph, cls, ascendancy);
+  const name = (id: number) => tree.nodes[id].n.trim();
+  const out: TreeVariant[] = [];
+  for (const v of data.trees) {
+    const fail = (msg: string): never => {
+      throw new BuildError(where, `"${v.name}": ${msg} (re-run npm run trees:maxroll)`);
+    };
+    if (!(TREE_STAGES as readonly string[]).includes(v.stage)) fail(`unknown stage "${v.stage}"`);
+    const bad = v.nodes.filter((id) => !tree.nodes[id] || !isAllocatable(tree.nodes[id], cls, ascendancy));
+    if (bad.length) fail(`nodes ${bad.join(", ")} are unknown or not allowed for ${cls.name}/${ascendancy}`);
+    const weaponSets = Object.fromEntries(Object.entries(v.weaponSets ?? {}).map(([id, set]) => [Number(id), set]));
+    const attributes = Object.fromEntries(Object.entries(v.attributes ?? {}).map(([id, a]) => [Number(id), a]));
+    const nodes = [...rootIds, ...v.nodes];
+    const connected = pruneDisconnected(graph, new Set(nodes), rootIds);
+
+    // Steps: the nodes taken since the previous notable/keystone of the same pool (shared tree or weapon set).
+    const steps: PassiveStep[] = [];
+    const pending: Record<0 | 1 | 2, number[]> = { 0: [], 1: [], 2: [] };
+    const cost = (ids: number[]) => ids.filter((id) => !tree.nodes[id].free).length;
+    for (const id of v.nodes) {
+      if (tree.nodes[id].a) continue;
+      const set = (weaponSets[id] ?? 0) as 0 | 1 | 2;
+      pending[set].push(id);
+      if (!KEY_TYPES.has(tree.nodes[id].t)) continue;
+      steps.push({ name: name(id), id, nodes: pending[set], points: cost(pending[set]), ...(set && { set }) });
+      pending[set] = [];
+    }
+    for (const set of [0, 1, 2] as const) {
+      if (!pending[set].length) continue;
+      const last = steps.findLast((st) => (st.set ?? 0) === set);
+      if (last) {
+        last.nodes = [...last.nodes, ...pending[set]];
+        last.points += cost(pending[set]);
+      } else {
+        const id = pending[set].at(-1)!;
+        steps.push({ name: name(id), id, nodes: pending[set], points: cost(pending[set]), ...(set && { set }) });
+      }
+    }
+
+    const main = v.nodes.filter((id) => !tree.nodes[id].a && !tree.nodes[id].free);
+    const attrNodes = v.nodes.filter((id) => tree.nodes[id].t === "attribute");
+    const planner: TreeVariant["planner"] = { nodes, attributes, ...(Object.keys(weaponSets).length && { weaponSets }) };
+    const prev = out.at(-1);
+    let changes: TreeVariant["changes"] = null;
+    if (prev) {
+      const key = (pl: TreeVariant["planner"], id: number) => `${id}:${pl.weaponSets?.[id] ?? 0}`;
+      const before = new Set(prev.planner.nodes.map((id) => key(prev.planner, id)));
+      const after = new Set(nodes.map((id) => key(planner, id)));
+      const added = nodes.filter((id) => !before.has(key(planner, id)));
+      const removed = prev.planner.nodes.filter((id) => !after.has(key(prev.planner, id)));
+      const keys = (ids: number[]) => [...new Set(ids.filter((id) => KEY_TYPES.has(tree.nodes[id].t)).map(name))];
+      changes = { from: prev.name, added: added.length, removed: removed.length, addedKeys: keys(added), removedKeys: keys(removed) };
+    }
+    out.push({
+      name: v.name,
+      stage: v.stage,
+      level: v.level ?? null,
+      planner,
+      steps,
+      points: main.filter((id) => !weaponSets[id]).length,
+      setPoints: { 1: main.filter((id) => weaponSets[id] === 1).length, 2: main.filter((id) => weaponSets[id] === 2).length },
+      attributes: {
+        str: attrNodes.filter((id) => attributes[id] === 0).length,
+        dex: attrNodes.filter((id) => attributes[id] === 1).length,
+        int: attrNodes.filter((id) => attributes[id] === 2).length,
+        free: attrNodes.filter((id) => attributes[id] === undefined).length,
+      },
+      detached: v.nodes.filter((id) => !connected.has(id) && KEY_TYPES.has(tree.nodes[id].t)).map(name),
+      changes,
+    });
+  }
+  return {
+    treeVariants: out,
+    treeVariantsSource: data.planner ? `https://maxroll.gg/poe2/planner/${data.planner}` : null,
+  };
 }
 
 function parseBuild(file: string): { build: Build; markdown: string } {
@@ -356,6 +455,7 @@ function parseBuild(file: string): { build: Build; markdown: string } {
     planner,
     plannerCode: encodeBuild(planner),
     pointsUsed,
+    ...readTreeVariants(file, cls, ascendancy),
     html,
     toc,
   };
@@ -414,25 +514,28 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
 // The cache lives on globalThis to survive dev module reloads.
 type Parsed = { build: Build; markdown: string };
 const store = globalThis as typeof globalThis & {
-  __buildCacheV14?: {
-    files: Map<string, { mtimeMs: number; parsed: Parsed }>;
+  __buildCacheV15?: {
+    files: Map<string, { stamp: string; parsed: Parsed }>;
     lists: Map<Locale, { key: string; list: Build[] }>;
   };
 };
 // Versioned key: a dev server still holding a cache in an older shape (hot reload keeps globalThis) gets a fresh one.
-const cache = (store.__buildCacheV14 ??= { files: new Map(), lists: new Map() });
+const cache = (store.__buildCacheV15 ??= { files: new Map(), lists: new Map() });
 
 const mtime = (p: string) => (fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0);
 
 export function getBuilds(lang: Locale = DEFAULT_LOCALE): Build[] {
   const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".md"));
-  const stamps = files.map((f) => [f, mtime(path.join(CONTENT_DIR, f)), mtime(path.join(CONTENT_DIR, lang, f))] as const);
+  // A guide is re-parsed when its file or its trees file (content/builds/trees) changes.
+  const stamps = files.map(
+    (f) => [f, `${mtime(path.join(CONTENT_DIR, f))}/${mtime(treesFile(f))}`, mtime(path.join(CONTENT_DIR, lang, f))] as const,
+  );
   const key = stamps.map(([f, m, t]) => `${f}:${m}:${t}`).join("|");
   const cached = cache.lists.get(lang);
   if (cached && cached.key === key) return cached.list;
 
-  for (const [file, mtimeMs] of stamps) {
-    if (cache.files.get(file)?.mtimeMs !== mtimeMs) cache.files.set(file, { mtimeMs, parsed: parseBuild(file) });
+  for (const [file, stamp] of stamps) {
+    if (cache.files.get(file)?.stamp !== stamp) cache.files.set(file, { stamp, parsed: parseBuild(file) });
   }
   for (const file of cache.files.keys()) if (!files.includes(file)) cache.files.delete(file);
 

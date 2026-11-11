@@ -253,3 +253,41 @@ export interface PlannerState {
   skills: SkillGroup[];
   gear: Partial<Record<GearSlot, string>>;
 }
+
+export interface PassiveStep {
+  name: string;
+  id: number;
+  /** Nodes allocated by this step, in path order (the notable last). */
+  nodes: number[];
+  /** Passive points those nodes cost. */
+  points: number;
+  /** Weapon set the step's points belong to. */
+  set?: 1 | 2;
+}
+
+export const TREE_STAGES = ["leveling", "mapping", "endgame", "minmax"] as const;
+export type TreeStage = (typeof TREE_STAGES)[number];
+
+/**
+ * One passive tree of the source guide's planner (campaign, respec, mapping, endgame, min-max...), node for node, from
+ * content/builds/trees/<slug>.json (written by `npm run trees:maxroll`).
+ */
+export interface TreeVariant {
+  /** The source planner's label. */
+  name: string;
+  stage: TreeStage;
+  /** Level the source suggests switching to this tree at. */
+  level: number | null;
+  /** The tree's part of the planner state; skills and gear are the guide's (merged by the viewer). */
+  planner: Pick<PlannerState, "nodes" | "attributes" | "weaponSets">;
+  /** Allocation order: each notable/keystone and the nodes taken since the previous one. */
+  steps: PassiveStep[];
+  points: number;
+  setPoints: Record<1 | 2, number>;
+  /** Attribute nodes per chosen attribute; `free` = left to the player by the source. */
+  attributes: { str: number; dex: number; int: number; free: number };
+  /** Notables and keystones with no path from the class start in our tree data (anointed, granted by a jewel...). */
+  detached: string[];
+  /** Difference with the previous tree of the list: what to refund and what to take when moving on. */
+  changes: { from: string; added: number; removed: number; addedKeys: string[]; removedKeys: string[] } | null;
+}

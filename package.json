@@ -25,6 +25,7 @@
     "currency:data": "node scripts/currency-data.mjs",
     "skills:granted": "node scripts/granted-skills.mjs",
     "draft:ninja": "node scripts/draft-from-ninja.mjs",
+    "trees:maxroll": "tsx --conditions=react-server scripts/trees-from-maxroll.ts",
     "preview": "next build && next start"
   },
   "dependencies": {

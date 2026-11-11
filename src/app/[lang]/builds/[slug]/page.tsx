@@ -390,7 +390,13 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
 
           <section id="passives" className="scroll-mt-24">
             <SectionTitle sub={fmt(tr.build.pointsAllocated, { n: build.pointsUsed })}>{tr.common.passiveTree}</SectionTitle>
-            <BuildTreeViewer planner={build.planner} code={build.plannerCode} steps={build.passiveSteps} />
+            <BuildTreeViewer
+              planner={build.planner}
+              code={build.plannerCode}
+              steps={build.passiveSteps}
+              variants={build.treeVariants}
+              variantsSource={build.treeVariantsSource}
+            />
             <div className="mt-6">
               <div>
                 <h3 className="font-semibold">{tr.build.ascendancyOrder}</h3>

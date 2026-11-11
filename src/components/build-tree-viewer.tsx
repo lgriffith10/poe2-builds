@@ -3,18 +3,42 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useI18n } from "@/i18n/client";
+import { encodeBuild } from "@/lib/build-code";
 import { MAX_WEAPON_SET_POINTS, nodesForSet } from "@/lib/tree";
-import type { PlannerState, TreeData, WeaponSet } from "@/lib/types";
+import { TREE_STAGES, type PassiveStep, type PlannerState, type TreeData, type TreeVariant, type WeaponSet } from "@/lib/types";
 import { WEAPON_SET_COLORS } from "@/lib/weapon-sets";
-import type { PassiveStep } from "@/lib/builds";
+
 import { PassiveTree } from "./passive-tree";
 
 /**
  * Read-only passive tree for a build guide. With `steps`, a progression bar replays the guide's key passives in
- * order (numbered on the tree), so readers know which branch to take first.
+ * order (numbered on the tree), so readers know which branch to take first. With `variants`, readers can switch to the
+ * source planner's other trees (leveling stages, respecs, endgame variants).
  */
-export function BuildTreeViewer({ planner, code, steps = [] }: { planner: PlannerState; code: string; steps?: PassiveStep[] }) {
+export function BuildTreeViewer({
+  planner: guidePlanner,
+  code: guideCode,
+  steps: guideSteps = [],
+  variants = [],
+  variantsSource = null,
+}: {
+  planner: PlannerState;
+  code: string;
+  steps?: PassiveStep[];
+  variants?: TreeVariant[];
+  variantsSource?: string | null;
+}) {
   const { t, fmt, path } = useI18n();
+  /** -1 = the guide tree, else an index in `variants`. */
+  const [variantIndex, setVariantIndex] = useState(-1);
+  const variant = variants[variantIndex] ?? null;
+  // A source tree keeps the guide's skills and gear; the guide tree's weapon sets must not leak into it.
+  const planner = useMemo<PlannerState>(
+    () => (variant ? { ...guidePlanner, weaponSets: undefined, ...variant.planner } : guidePlanner),
+    [variant, guidePlanner],
+  );
+  const code = useMemo(() => (variant ? encodeBuild(planner) : guideCode), [variant, planner, guideCode]);
+  const steps = variant?.steps ?? guideSteps;
   const [tree, setTree] = useState<TreeData | null>(null);
   const [view, setView] = useState<"main" | "ascendancy">("main");
   const [shownSet, setShownSet] = useState<0 | WeaponSet>(0);
@@ -68,8 +92,22 @@ export function BuildTreeViewer({ planner, code, steps = [] }: { planner: Planne
     return steps.map((st) => (sums[st.set ?? 0] += st.points));
   }, [steps]);
 
+  const pickVariant = (i: number) => {
+    setVariantIndex(i);
+    setShownSet(0);
+    setStepCount((variants[i]?.steps ?? guideSteps).length);
+  };
+
   return (
     <div ref={wrapRef}>
+      {variants.length > 0 && (
+        <TreeVariantPicker
+          variants={variants}
+          current={variantIndex}
+          onPick={pickVariant}
+          source={variantsSource}
+        />
+      )}
       <div className="mb-3 flex flex-wrap items-center gap-2">
         <div className="inline-flex rounded-lg border border-line p-1">
           {(["main", "ascendancy"] as const).map((v) => (
@@ -201,6 +239,111 @@ export function BuildTreeViewer({ planner, code, steps = [] }: { planner: Planne
               );
             })}
           </ol>
+        </div>
+      )}
+    </div>
+  );
+}
+
+const STAGE_COLORS: Record<TreeVariant["stage"], string> = {
+  leveling: "#7fb069",
+  mapping: "#5aa9e6",
+  endgame: "#d4a64f",
+  minmax: "#c06cd4",
+};
+
+/** Buttons for the guide tree and each source tree (grouped by stage), and what changes with the selected one. */
+function TreeVariantPicker({
+  variants,
+  current,
+  onPick,
+  source,
+}: {
+  variants: TreeVariant[];
+  current: number;
+  onPick: (i: number) => void;
+  source: string | null;
+}) {
+  const { t, fmt } = useI18n();
+  const v = variants[current] ?? null;
+  const chip = (active: boolean) =>
+    `rounded-md border px-2.5 py-1 text-sm ${active ? "border-gold-soft bg-surface-2 text-ink" : "border-line text-muted hover:border-line-strong hover:text-ink"}`;
+  const attrs = v
+    ? (["str", "dex", "int", "free"] as const)
+        .filter((k) => v.attributes[k] > 0)
+        .map((k) => `${v.attributes[k]} ${t.build.treeAttrNames[k]}`)
+    : [];
+  return (
+    <div className="mb-3 rounded-xl border border-line bg-surface p-3">
+      <div className="flex flex-wrap items-baseline justify-between gap-2">
+        <span className="text-sm font-semibold">{t.build.treeVariants}</span>
+        {source && (
+          <a href={source} rel="noopener" target="_blank" className="text-xs text-gold hover:underline">
+            {t.build.treeVariantsSource} ↗
+          </a>
+        )}
+      </div>
+      <p className="mt-1 text-xs text-faint">{t.build.treeVariantsHint}</p>
+      <div className="mt-3 flex flex-col gap-2">
+        <div className="flex flex-wrap items-center gap-1.5">
+          <button type="button" onClick={() => onPick(-1)} aria-pressed={current === -1} className={chip(current === -1)}>
+            {t.build.guideTree}
+          </button>
+        </div>
+        {TREE_STAGES.filter((st) => variants.some((x) => x.stage === st)).map((st) => (
+          <div key={st} className="flex flex-wrap items-center gap-1.5">
+            <span className="flex w-24 shrink-0 items-center gap-1.5 text-xs uppercase tracking-wide text-faint">
+              <span className="h-2 w-2 rounded-full" style={{ background: STAGE_COLORS[st] }} />
+              {t.build.treeStages[st]}
+            </span>
+            {variants.map((x, i) =>
+              x.stage === st ? (
+                <button key={i} type="button" onClick={() => onPick(i)} aria-pressed={current === i} className={chip(current === i)}>
+                  {x.name}
+                  {x.level && <span className="ml-1.5 text-xs text-faint">{x.level}+</span>}
+                </button>
+              ) : null,
+            )}
+          </div>
+        ))}
+      </div>
+      {v && (
+        <div className="mt-3 space-y-1 border-t border-line pt-3 text-sm">
+          <p className="text-muted">
+            {[
+              v.level && fmt(t.build.treeFromLevel, { n: v.level }),
+              fmt(t.build.treePoints, { n: v.points }),
+              (v.setPoints[1] || v.setPoints[2]) && fmt(t.build.treeSetPoints, { a: v.setPoints[1], b: v.setPoints[2] }),
+            ]
+              .filter(Boolean)
+              .join(" · ")}
+            {attrs.length > 0 && (
+              <>
+                {" · "}
+                {t.build.treeAttributes} <span className="text-ink">{attrs.join(", ")}</span>
+              </>
+            )}
+          </p>
+          {v.changes && (
+            <div className="text-muted">
+              <p>{fmt(t.build.treeChanges, { from: v.changes.from, added: v.changes.added, removed: v.changes.removed })}</p>
+              {v.changes.removedKeys.length > 0 && (
+                <p>
+                  <span className="text-[#e07a6a]">{t.build.treeRefund}</span> {v.changes.removedKeys.join(", ")}
+                </p>
+              )}
+              {v.changes.addedKeys.length > 0 && (
+                <p>
+                  <span className="text-[#7fb069]">{t.build.treeNew}</span> {v.changes.addedKeys.join(", ")}
+                </p>
+              )}
+            </div>
+          )}
+          {v.detached.length > 0 && (
+            <p className="text-muted">
+              {t.build.treeDetached} <span className="text-ink">{v.detached.join(", ")}</span>
+            </p>
+          )}
         </div>
       )}
     </div>

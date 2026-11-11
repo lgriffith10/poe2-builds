@@ -15,7 +15,7 @@ for (const b of getBuilds()) {
   const set1 = sets.filter((s) => s === 1).length;
   const set2 = sets.filter((s) => s === 2).length;
   const setInfo = sets.length ? `, weapon sets ${set1}/${set2} of ${MAX_WEAPON_SET_POINTS}` : "";
-  console.log(`✓ ${b.slug}: ${b.pointsUsed}/${MAX_PASSIVE_POINTS} passive, ${asc}/${MAX_ASCENDANCY_POINTS} ascendancy${setInfo}`);
+  console.log(`✓ ${b.slug}: ${b.pointsUsed}/${MAX_PASSIVE_POINTS} passive, ${asc}/${MAX_ASCENDANCY_POINTS} ascendancy${setInfo}${b.treeVariants.length ? `, ${b.treeVariants.length} source trees` : ""}`);
   if (b.pointsUsed > MAX_PASSIVE_POINTS || asc > MAX_ASCENDANCY_POINTS || set1 > MAX_WEAPON_SET_POINTS || set2 > MAX_WEAPON_SET_POINTS) {
     console.warn(`  ⚠ ${b.slug} exceeds the point budget`);
     warnings++;
