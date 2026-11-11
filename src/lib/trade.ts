@@ -1,26 +1,19 @@
 import "server-only";
-import fs from "node:fs";
-import path from "node:path";
+import statsJson from "@/data/generated/trade-stats.json";
+import { prices } from "./prices";
+import { TradeQueries, type TradeStat } from "./trade-query";
+import type { GearPiece, GearSlot } from "./types";
 
-interface TradeFile {
+/** A prefilled trade site search; the browser adds the level filter and turns it into a link. */
+export interface TradeSearch {
   league: string;
-  updated: string;
-  searches: Record<string, string>;
-  links: Record<string, string>;
+  query: object;
 }
 
-const FILE = path.join(process.cwd(), "src/data/generated/trade.json");
-let cache: TradeFile | null | undefined;
-const load = () => (cache ??= fs.existsSync(FILE) ? (JSON.parse(fs.readFileSync(FILE, "utf8")) as TradeFile) : null);
+let queries: TradeQueries | null = null;
 
-/** Link to the trade site search created for this gear piece by `npm run trade:sync`, or null. */
-export function tradeLink(key: string): string | null {
-  const t = load();
-  const id = t && t.links[key] && t.searches[t.links[key]];
-  return id ? `https://www.pathofexile.com/trade2/search/poe2/${encodeURIComponent(t.league)}/${id}` : null;
+export function tradeSearch(slot: GearSlot, piece: GearPiece, ordered: boolean): TradeSearch | null {
+  queries ??= new TradeQueries(statsJson as TradeStat[]);
+  const query = queries.query(slot, piece, ordered);
+  return query ? { league: prices.league, query } : null;
 }
-
-export const tradeKey = {
-  rare: (slug: string, stage: string, slot: string) => `${slug}|${stage}|${slot}`,
-  unique: (name: string) => `unique|${name}`,
-};

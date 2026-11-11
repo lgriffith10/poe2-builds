@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import type { PriceTag } from "@/lib/prices";
+import type { TradeSearch } from "@/lib/trade";
+import { useTradeLevel } from "@/lib/trade-level";
 import type { GearSlot, GearStage } from "@/lib/types";
 import { WEAPON_SET_COLORS } from "@/lib/weapon-sets";
 
@@ -23,8 +25,8 @@ export interface InventoryItem {
   grants: string | null;
   /** Crafting simulator link (base + listed modifiers as goals) for rares. */
   craft: string | null;
-  /** Official trade site search for this item, or null. */
-  trade: string | null;
+  /** Prefilled official trade site search for this item, or null. */
+  trade: TradeSearch | null;
   note: string | null;
   /** Market price for uniques (poe.ninja), null when unknown or for rares. */
   price: PriceTag | null;
@@ -46,6 +48,13 @@ export function Price({ tag, alt }: { tag: PriceTag; alt: string }) {
       <img src={tag.icon} alt={alt} width={16} height={16} className="h-4 w-4" />
     </span>
   );
+}
+
+/** Link to the trade site with the search prefilled; the level, when given, caps the required level. */
+function tradeUrl(t: TradeSearch, level: number | null) {
+  const query = t.query as { filters?: object };
+  const q = level ? { ...query, filters: { ...query.filters, req_filters: { filters: { lvl: { max: level } } } } } : query;
+  return `https://www.pathofexile.com/trade2/search/poe2/${encodeURIComponent(t.league)}?q=${encodeURIComponent(JSON.stringify({ query: q, sort: { price: "asc" } }))}`;
 }
 
 /** Grid placement of each slot, mirroring the in-game equipment panel (8 columns x 7 rows). */
@@ -72,7 +81,7 @@ export function GearInventory({
   slotLabels,
   weaponSetsLabel = "Weapon sets",
   weaponLabels = { title: "Weapons", set1: "Weapon Set I", set2: "Weapon Set II" },
-  labels = { runes: "Socketed", ladder: "On the ladder", craft: "Craft this item", trade: "Search on trade" },
+  labels = { runes: "Socketed", ladder: "On the ladder", craft: "Craft this item", trade: "Search on trade", tradeLevel: "My level" },
   hint,
   priceLabels,
 }: {
@@ -83,7 +92,7 @@ export function GearInventory({
   /** Titles of the weapons row under the inventory. */
   weaponLabels?: { title: string; set1: string; set2: string };
   /** Section titles in the item panel. */
-  labels?: { runes: string; ladder: string; craft: string; trade: string };
+  labels?: { runes: string; ladder: string; craft: string; trade: string; tradeLevel: string };
   hint: string;
   /** { divine, exalted, stageTotal, note } labels for the price chips. */
   priceLabels: { divine: string; exalted: string; stageTotal: string; note: string };
@@ -95,6 +104,7 @@ export function GearInventory({
   const current = bySlot.get(selected) ?? bySlot.get("weapon") ?? stage.items[0];
   const hasSwap = bySlot.has("weapon2") || bySlot.has("offhand2");
   const [swapState, setSwap] = useState(false);
+  const [level, changeLevel] = useTradeLevel();
   // Weapon set II is only shown where the stage has one.
   const swap = hasSwap && swapState;
   const shownSlot = (slot: GearSlot): GearSlot =>
@@ -278,14 +288,29 @@ export function GearInventory({
               {(current.craft || current.trade) && (
                 <p className="flex flex-wrap justify-center gap-2 border-t border-line pt-2">
                   {current.trade && (
-                    <a
-                      href={current.trade}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 rounded-md border border-gold-soft px-2.5 py-1 text-xs text-gold hover:bg-surface-2"
-                    >
-                      ⇄ {labels.trade} ↗
-                    </a>
+                    <span className="inline-flex items-center gap-2">
+                      <a
+                        href={tradeUrl(current.trade, level)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 rounded-md border border-gold-soft px-2.5 py-1 text-xs text-gold hover:bg-surface-2"
+                      >
+                        ⇄ {labels.trade} ↗
+                      </a>
+                      <label className="inline-flex items-center gap-1 text-xs text-muted">
+                        {labels.tradeLevel}
+                        <input
+                          type="number"
+                          min={1}
+                          max={100}
+                          inputMode="numeric"
+                          value={level ?? ""}
+                          onChange={(e) => changeLevel(e.target.value)}
+                          placeholder="—"
+                          className="w-12 rounded border border-line bg-black/40 px-1 py-0.5 text-center text-ink"
+                        />
+                      </label>
+                    </span>
                   )}
                   {current.craft && (
                     <a href={current.craft} className="inline-flex items-center gap-1 rounded-md border border-gold-soft px-2.5 py-1 text-xs text-gold hover:bg-surface-2">

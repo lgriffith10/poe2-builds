@@ -1,17 +1,13 @@
 /**
- * Builds official trade site searches (pathofexile.com/trade2) for a build's gear.
- * The trade site does not accept a search in its URL: a search must be created through its API, which answers
- * with an id usable in a link. `npm run trade:sync` creates them ahead of time (see scripts/trade-searches.ts).
+ * Builds official trade site searches (pathofexile.com/trade2) for a build's gear. The trade site accepts a search
+ * in its URL (`?q={"query": …}`), so links are built in the browser, with the player's level when they give it.
  */
 import { getBase, getUnique } from "./data";
 import { modLabel } from "./mod-labels";
 import type { GearPiece, GearSlot } from "./types";
 
-export interface TradeStat {
-  id: string;
-  text: string;
-  type: string;
-}
+/** [text, id] pairs from the trade site's stat list (src/data/generated/trade-stats.json, `npm run trade:stats`). */
+export type TradeStat = [string, string];
 
 const CLASS_CATEGORY: Record<string, string> = {
   Bow: "weapon.bow",
@@ -93,7 +89,7 @@ export class TradeQueries {
   private byText = new Map<string, string>();
 
   constructor(stats: TradeStat[]) {
-    for (const s of stats) if (s.type === "explicit" && !this.byText.has(norm(s.text))) this.byText.set(norm(s.text), s.id);
+    for (const [text, id] of stats) if (id.startsWith("explicit.") && !this.byText.has(norm(text))) this.byText.set(norm(text), id);
   }
 
   /** Trade stat id for a guide modifier label, or null when the trade site has no clear match. */

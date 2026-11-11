@@ -178,6 +178,7 @@ export const en = {
     },
     craftThis: "Craft this item",
     tradeSearch: "Search on trade",
+    tradeLevel: "My level",
     ladderSlot: "Worn by ladder players of this build",
     treeVariants: "Trees by stage",
     treeVariantsHint: "The guide tree is our recommended tree. The others come node for node from the source guide's planner: leveling trees use the points you have at that stage, so switch when you reach it and refund what is listed.",

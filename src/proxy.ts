@@ -15,11 +15,12 @@ export function proxy(req: NextRequest) {
   }
   if (isLocale(first)) return NextResponse.next();
 
-  // First visit with a French browser and no explicit choice yet: send to the French site.
+  // The language picked with the switch (cookie) wins; with no choice yet, a French browser gets the French site.
   const chosen = req.cookies.get(LOCALE_COOKIE)?.value;
-  if (!chosen && /^fr\b/i.test(req.headers.get("accept-language") ?? "")) {
+  const target = chosen && isLocale(chosen) ? chosen : !chosen && /^fr\b/i.test(req.headers.get("accept-language") ?? "") ? "fr" : null;
+  if (target && target !== DEFAULT_LOCALE) {
     const url = req.nextUrl.clone();
-    url.pathname = `/fr${pathname === "/" ? "" : pathname}`;
+    url.pathname = `/${target}${pathname === "/" ? "" : pathname}`;
     return NextResponse.redirect(url);
   }
 
