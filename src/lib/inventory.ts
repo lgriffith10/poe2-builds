@@ -12,6 +12,7 @@ import path from "node:path";
 import { localePath, type Locale } from "@/i18n/config";
 import { Crafter } from "./craft";
 import { encodeCraft, groupsForLines } from "./craft-share";
+import { tradeKey, tradeLink } from "./trade";
 
 let crafter: Crafter | null = null;
 /** Link to the crafting simulator with this rare's base and its listed modifiers as goals (null when not craftable). */
@@ -24,7 +25,8 @@ function craftLink(base: string | undefined, mods: string[], lang: string): stri
 }
 
 /** Resolves a gear set into what the inventory panel shows (names, icons, modifier lines). */
-export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet, lang = "en"): InventoryItem[] {
+/** `tradeStage` ("<slug>|<stage>") finds the trade site searches created for rare items by `npm run trade:sync`. */
+export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet, lang = "en", tradeStage?: [string, string]): InventoryItem[] {
   return GEAR_SLOTS.filter((slot) => gear[slot]).map((slot) => {
     const ref = reference?.[slot];
     // Notes are written for the reference gear; reuse them when a stage has the same item in that slot.
@@ -46,6 +48,7 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           ladder: piece.ladder ?? [],
           grants: null,
           craft: null,
+          trade: tradeLink(tradeKey.unique(unique.name)),
           price: uniquePrice(unique.name) !== null ? priceTag(uniquePrice(unique.name)!, lang) : null,
           note: piece.note ?? null,
         }
@@ -58,6 +61,7 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           icon: base?.icon ?? null,
           implicits: piece.implicits ?? [],
           mods: (piece.mods ?? []).map(modLabel),
+          trade: tradeStage ? tradeLink(tradeKey.rare(tradeStage[0], tradeStage[1], slot)) : null,
           craft: craftLink(base?.name, (piece.mods ?? []).map(modLabel), lang),
           runes: piece.runes ?? [],
           ladder: piece.ladder ?? [],
@@ -80,11 +84,11 @@ export function inventoryStages(build: Build, t: Dictionary, lang = "en"): { sta
   const stages: InventoryStage[] = GEAR_STAGES.filter((s) => build.gearStages[s]).map((s) => ({
     id: s,
     label: t.build.gearStages[s],
-    items: inventoryItems(build.gearStages[s]!, t, build.gear, lang),
+    items: inventoryItems(build.gearStages[s]!, t, build.gear, lang, [build.slug, s]),
     total: stageTotal(build.gearStages[s]!, lang),
   }));
   if (!stages.length)
-    return { stages: [{ id: "default", label: "", items: inventoryItems(build.gear, t, undefined, lang), total: stageTotal(build.gear, lang) }], initial: 0 };
+    return { stages: [{ id: "default", label: "", items: inventoryItems(build.gear, t, undefined, lang, [build.slug, "default"]), total: stageTotal(build.gear, lang) }], initial: 0 };
   const endgame = stages.findIndex((s) => s.id === "endgame");
   return { stages, initial: endgame >= 0 ? endgame : stages.length - 1 };
 }

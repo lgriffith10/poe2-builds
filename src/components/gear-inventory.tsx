@@ -23,6 +23,8 @@ export interface InventoryItem {
   grants: string | null;
   /** Crafting simulator link (base + listed modifiers as goals) for rares. */
   craft: string | null;
+  /** Official trade site search for this item, or null. */
+  trade: string | null;
   note: string | null;
   /** Market price for uniques (poe.ninja), null when unknown or for rares. */
   price: PriceTag | null;
@@ -70,7 +72,7 @@ export function GearInventory({
   slotLabels,
   weaponSetsLabel = "Weapon sets",
   weaponLabels = { title: "Weapons", set1: "Weapon Set I", set2: "Weapon Set II" },
-  labels = { runes: "Socketed", ladder: "On the ladder", craft: "Craft this item" },
+  labels = { runes: "Socketed", ladder: "On the ladder", craft: "Craft this item", trade: "Search on trade" },
   hint,
   priceLabels,
 }: {
@@ -81,7 +83,7 @@ export function GearInventory({
   /** Titles of the weapons row under the inventory. */
   weaponLabels?: { title: string; set1: string; set2: string };
   /** Section titles in the item panel. */
-  labels?: { runes: string; ladder: string; craft: string };
+  labels?: { runes: string; ladder: string; craft: string; trade: string };
   hint: string;
   /** { divine, exalted, stageTotal, note } labels for the price chips. */
   priceLabels: { divine: string; exalted: string; stageTotal: string; note: string };
@@ -273,11 +275,23 @@ export function GearInventory({
                 </div>
               )}
               {current.note && <p className="border-t border-line pt-2 text-xs text-muted">{current.note}</p>}
-              {current.craft && (
-                <p className="border-t border-line pt-2">
-                  <a href={current.craft} className="inline-flex items-center gap-1 rounded-md border border-gold-soft px-2.5 py-1 text-xs text-gold hover:bg-surface-2">
-                    ⚒ {labels.craft} →
-                  </a>
+              {(current.craft || current.trade) && (
+                <p className="flex flex-wrap justify-center gap-2 border-t border-line pt-2">
+                  {current.trade && (
+                    <a
+                      href={current.trade}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 rounded-md border border-gold-soft px-2.5 py-1 text-xs text-gold hover:bg-surface-2"
+                    >
+                      ⇄ {labels.trade} ↗
+                    </a>
+                  )}
+                  {current.craft && (
+                    <a href={current.craft} className="inline-flex items-center gap-1 rounded-md border border-gold-soft px-2.5 py-1 text-xs text-gold hover:bg-surface-2">
+                      ⚒ {labels.craft} →
+                    </a>
+                  )}
                 </p>
               )}
               {current.ladder.length > 0 && (

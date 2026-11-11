@@ -179,6 +179,7 @@ export const fr: Dictionary = {
       install: "Placez le fichier dans Documents/My Games/Path of Exile 2, puis choisissez-le dans Options > Jeu > Filtre d'objets.",
     },
     craftThis: "Crafter cet objet",
+    tradeSearch: "Chercher sur le trade",
     ladderSlot: "Porté par les joueurs du ladder sur ce build",
     treeVariants: "Arbres par étape",
     treeVariantsHint: "L'arbre du guide est notre arbre recommandé. Les autres viennent nœud pour nœud du planner du guide source : les arbres de leveling utilisent les points disponibles à cette étape, passez-y quand vous l'atteignez et remboursez ce qui est listé.",
