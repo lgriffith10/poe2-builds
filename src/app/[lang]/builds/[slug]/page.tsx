@@ -38,6 +38,10 @@ export function generateStaticParams() {
   return getBuilds().map((b) => ({ slug: b.slug }));
 }
 
+// Every build page is prerendered (generateStaticParams), so a navigation only waits for its static payload:
+// no loading shell is needed, and the dev "instant navigation" check is turned off for this route.
+export const instant = false;
+
 export async function generateMetadata({ params }: PageProps<"/[lang]/builds/[slug]">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const { slug } = await params;
@@ -500,8 +504,9 @@ function GemPriorityTable({
           <div key={cat} className="rounded-xl border border-line bg-surface p-3">
             <p className="font-display text-sm font-semibold uppercase tracking-wider text-gold">{tr.build.gemPriorityCats[cat]}</p>
             <ol className="mt-2 space-y-3">
-              {priority[cat]!.map((st) => (
-                <li key={st.label}>
+              {/* Stage labels are often empty, so the position is part of the key. */}
+              {priority[cat]!.map((st, si) => (
+                <li key={`${si}-${st.label}`}>
                   <p className="text-xs uppercase tracking-wider text-faint">{label(st.label)}</p>
                   <ol className="mt-1 space-y-1">
                     {st.gems.map((name, i) => {
