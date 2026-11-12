@@ -208,7 +208,7 @@ export function GearInventory({
                   disabled={!it}
                   onClick={() => it && open(slot)}
                   aria-label={it ? `${slotLabels[slot]}: ${it.title}` : slotLabels[slot]}
-                  className={`${PLACEMENT[slot]} relative flex items-center justify-center overflow-hidden rounded-md border bg-black/40 transition ${
+                  className={`${PLACEMENT[slot]} relative flex cursor-pointer disabled:cursor-default items-center justify-center overflow-hidden rounded-md border bg-black/40 transition ${
                     !it
                       ? "border-line/60"
                       : it.kind === "unique"
@@ -264,7 +264,7 @@ export function GearInventory({
                             <button
                               type="button"
                               onClick={() => open(it.slot)}
-                              className={`flex w-full items-center gap-2 rounded px-1 py-0.5 text-left text-xs hover:bg-black/30 ${
+                              className={`flex w-full cursor-pointer items-center gap-2 rounded px-1 py-0.5 text-left text-xs hover:bg-black/30 ${
                                 current?.slot === it.slot ? "ring-1 ring-gold" : ""
                               }`}
                             >
@@ -298,7 +298,7 @@ export function GearInventory({
               type="button"
               onClick={() => dialog.current?.close()}
               aria-label={labels.close}
-              className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-md text-lg text-muted hover:bg-surface-2 hover:text-ink"
+              className="absolute right-2 top-2 z-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-md text-lg text-muted hover:bg-surface-2 hover:text-ink"
             >
               ×
             </button>
