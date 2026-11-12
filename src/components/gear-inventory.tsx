@@ -76,7 +76,7 @@ const sockets = (runes: SocketedRune[]) => runes.flatMap((r) => Array.from({ len
 
 /** Round socket holding a rune icon (or a gold dot when the augment is only known by its effect). */
 function Socket({ rune, size }: { rune: SocketedRune; size: "sm" | "md" }) {
-  const box = size === "sm" ? "h-4 w-4" : "h-8 w-8";
+  const box = size === "sm" ? "h-6 w-6" : "h-10 w-10";
   return (
     <span
       className={`${box} inline-flex shrink-0 items-center justify-center rounded-full border border-[#c8b47a]/70 bg-[radial-gradient(circle,#2a2216_0%,#0b0907_75%)] shadow-[0_0_4px_rgba(200,180,122,0.35)]`}
