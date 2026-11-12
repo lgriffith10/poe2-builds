@@ -7,6 +7,18 @@ import { useTradeLevel } from "@/lib/trade-level";
 import type { GearSlot, GearStage } from "@/lib/types";
 import { WEAPON_SET_COLORS } from "@/lib/weapon-sets";
 
+/** One augment socketed in an item: a named rune / soul core / idol, or a bare effect line nothing matched. */
+export interface SocketedRune {
+  /** How many sockets hold it. */
+  count: number;
+  name: string | null;
+  effect: string;
+  icon: string | null;
+  /** Currency wiki page. */
+  href: string | null;
+  price: PriceTag | null;
+}
+
 export interface InventoryItem {
   slot: GearSlot;
   slotLabel: string;
@@ -17,8 +29,8 @@ export interface InventoryItem {
   icon: string | null;
   implicits: string[];
   mods: string[];
-  /** Socketed runes and soul cores. */
-  runes: string[];
+  /** Socketed runes, soul cores and idols. */
+  runes: SocketedRune[];
   /** Ladder popularity for this slot among characters of the build (% of characters). */
   ladder: { name: string; pct: number }[];
   /** "Grants Skill: …" line for bases that come with a skill (uniques list it in their mods). */
@@ -57,6 +69,25 @@ function tradeUrl(t: TradeSearch, level: number | null) {
   const query = t.query as { filters?: object };
   const q = level ? { ...query, filters: { ...query.filters, req_filters: { filters: { lvl: { max: level } } } } } : query;
   return `https://www.pathofexile.com/trade2/search/poe2/${encodeURIComponent(t.league)}?q=${encodeURIComponent(JSON.stringify({ query: q, sort: { price: "asc" } }))}`;
+}
+
+/** One socket per augment (a named rune repeated `count` times), at most 6. */
+const sockets = (runes: SocketedRune[]) => runes.flatMap((r) => Array.from({ length: r.count }, () => r)).slice(0, 6);
+
+/** Round socket holding a rune icon (or a gold dot when the augment is only known by its effect). */
+function Socket({ rune, size }: { rune: SocketedRune; size: "sm" | "md" }) {
+  const box = size === "sm" ? "h-4 w-4" : "h-8 w-8";
+  return (
+    <span
+      className={`${box} inline-flex shrink-0 items-center justify-center rounded-full border border-[#c8b47a]/70 bg-[radial-gradient(circle,#2a2216_0%,#0b0907_75%)] shadow-[0_0_4px_rgba(200,180,122,0.35)]`}
+    >
+      {rune.icon ? (
+        <img src={rune.icon} alt="" loading="lazy" className="h-[85%] w-[85%] object-contain" />
+      ) : (
+        <span className="h-1/3 w-1/3 rounded-full bg-[#c8b47a]" />
+      )}
+    </span>
+  );
 }
 
 /** Grid placement of each slot, mirroring the in-game equipment panel (8 columns x 7 rows). */
@@ -188,6 +219,13 @@ export function GearInventory({
                       {it ? it.title : slotLabels[slot]}
                     </span>
                   )}
+                  {it && it.runes.length > 0 && (
+                    <span className="pointer-events-none absolute inset-x-0 bottom-0.5 flex flex-wrap justify-center gap-0.5">
+                      {sockets(it.runes).map((r, i) => (
+                        <Socket key={i} rune={r} size="sm" />
+                      ))}
+                    </span>
+                  )}
                   {hasSwap && (base === "weapon" || base === "offhand") && (
                     <span
                       className="absolute left-1 top-1 rounded px-1 font-display text-[10px] font-bold text-black"
@@ -278,10 +316,35 @@ export function GearInventory({
               </ul>
               {current.runes.length > 0 && (
                 <div className="border-t border-line pt-2">
-                  <p className="text-xs uppercase tracking-wider text-faint">{labels.runes}</p>
-                  <ul className="mt-0.5 space-y-0.5 text-[#c8b47a]">
-                    {current.runes.map((m, i) => (
-                      <li key={i}>{m}</li>
+                  <p className="flex items-center justify-center gap-1.5 text-xs uppercase tracking-wider text-faint">
+                    {labels.runes}
+                    <span className="inline-flex gap-0.5">
+                      {sockets(current.runes).map((r, i) => (
+                        <Socket key={i} rune={r} size="sm" />
+                      ))}
+                    </span>
+                  </p>
+                  <ul className="mt-2 space-y-1.5 text-left">
+                    {current.runes.map((r, i) => (
+                      <li key={i} className="flex items-center gap-2.5 rounded-lg border border-[#c8b47a]/20 bg-[#c8b47a]/5 px-2 py-1.5">
+                        <Socket rune={r} size="md" />
+                        <span className="min-w-0 flex-1">
+                          {r.name && (
+                            <span className="flex flex-wrap items-baseline gap-x-1.5 text-sm">
+                              {r.count > 1 && <span className="font-semibold tabular-nums text-gold">{r.count}×</span>}
+                              {r.href ? (
+                                <a href={r.href} className="font-semibold text-[#e2cf8f] hover:underline">
+                                  {r.name}
+                                </a>
+                              ) : (
+                                <span className="font-semibold text-[#e2cf8f]">{r.name}</span>
+                              )}
+                            </span>
+                          )}
+                          {r.effect && <span className={`block text-xs ${r.name ? "text-muted" : "text-[#c8b47a]"}`}>{r.effect}</span>}
+                        </span>
+                        {r.price && <Price tag={r.price} alt={r.price.unit === "divine" ? priceLabels.divine : priceLabels.exalted} />}
+                      </li>
                     ))}
                   </ul>
                 </div>

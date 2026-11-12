@@ -1,5 +1,6 @@
 import "server-only";
-import type { InventoryItem, InventoryStage } from "@/components/gear-inventory";
+import type { InventoryItem, InventoryStage, SocketedRune } from "@/components/gear-inventory";
+import { currencyHref, currencyPrice, currencyPriceTag, getCurrency } from "./currency";
 import { fmt, type Dictionary } from "@/i18n";
 import type { Build } from "./builds";
 import { getBase, getUnique } from "./data";
@@ -22,6 +23,22 @@ function craftLink(base: string | undefined, mods: string[], lang: string): stri
   const targets = groupsForLines(crafter, base, mods);
   const code = encodeCraft(crafter, { base, ilvl: 82, rarity: "normal", mods: [] }, targets);
   return localePath(lang as Locale, `/craft#c=${code}`);
+}
+
+/** "2× Greater Iron Rune: 18% increased Physical Damage" (or a bare effect line) -> socket entry with icon, link and price. */
+function socketed(line: string, lang: string): SocketedRune {
+  const m = line.match(/^(?:(\d+)× )?(.+?)(?:: (.+))?$/)!;
+  const c = getCurrency(m[2]);
+  if (!c) return { count: 1, name: null, effect: line, icon: null, href: null, price: null };
+  const div = currencyPrice(c.name);
+  return {
+    count: Number(m[1] ?? 1),
+    name: c.name,
+    effect: m[3] ?? "",
+    icon: c.icon,
+    href: localePath(lang as Locale, currencyHref(c)),
+    price: div !== null ? currencyPriceTag(div, lang) : null,
+  };
 }
 
 /** Resolves a gear set into what the inventory panel shows (names, icons, modifier lines). */
@@ -49,7 +66,7 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           icon: unique.icon,
           implicits: unique.implicits,
           mods: unique.mods,
-          runes: piece.runes ?? [],
+          runes: (piece.runes ?? []).map((r) => socketed(r, lang)),
           ladder: piece.ladder ?? [],
           grants: null,
           grantsUsed: [],
@@ -70,7 +87,7 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           trade: tradeSearch(slot, piece, ordered, usedGrants(base?.name, skills)),
           grantsUsed: usedGrants(base?.name, skills).map(grantedSkillLine),
           craft: craftLink(base?.name, (piece.mods ?? []).map(modLabel), lang),
-          runes: piece.runes ?? [],
+          runes: (piece.runes ?? []).map((r) => socketed(r, lang)),
           ladder: piece.ladder ?? [],
           price: null,
           grants: baseGrants(base?.name).length ? fmt(t.build.grantsSkill, { skills: baseGrants(base?.name).join(" / ") }) : null,
