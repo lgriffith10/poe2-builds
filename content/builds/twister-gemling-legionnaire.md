@@ -226,3 +226,15 @@ The Gemling Legionnaire ascendancy makes the combo faster: Advanced Thaumaturgy 
 ## Gear Priorities
 
 [[The Taming]] first, then [[Skysliver]] and a strong second spear. Evasion and Deflection on helmet, gloves and boots, and life everywhere. [[Yoke of Suffering]] and [[Guiding Palm of the Eye]] are strong damage pieces; [[Darkness Enthroned]] boosts socketed items.
+
+## FAQ
+
+**Which skills go on which weapon set?** [[Whirling Slash]] on weapon set 1 (it matters later for [[Rigwald's Ferocity]]) and [[Twister]] on weapon set 2. Enable spirit gems in the order you want them active across swaps: [[Wind Dancer]] and [[Berserk]] should be the first ones enabled, at the top of your gem list, so they stay on for both sets.
+
+**How do I sustain mana?** [[Lavianga's Spirits]] and physical damage leeched as mana on gloves, rings or the weapon should be enough; [[Oisín's Oath]] on Twister is a backup that should not be needed. Keeping [[Whirling Slash]] at gem level 1 is very important.
+
+**I feel squishy, what can I do?** The build has damage to spare, so take fewer damage nodes and more evasion or evasion/energy shield nodes. You can also run [[Berserk]] on weapon set 2 only to reduce its degeneration.
+
+**Do I have to use Salvo?** [[Salvo]] feels best in indoor areas. If you dislike it on outdoor maps, [[Deliberation]] or [[Ice Bite II]] are more consistent alternatives.
+
+**Why am I having attribute problems?** Keep your Strength and Intelligence spirit gems at low levels, especially [[Berserk]].

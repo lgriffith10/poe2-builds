@@ -45,3 +45,17 @@ L'évasion de [[Wind Dancer]] et de l'arbre évite la plupart des coups, et [[Gh
 ## Priorités d'équipement
 
 Il faut environ 95 points d'esprit sur l'armure de corps et l'amulette pour toutes les réservations. Cherchez des dégâts de foudre et physiques ajoutés, de la vitesse d'attaque et +niveau des compétences de projectile sur l'arc et le carquois, puis de la vie et des résistances partout ailleurs.
+
+## FAQ
+
+**Comment régler le mana ?** Le mana est un problème connu de ce build. Obtenez au moins un joyau Sapphire avec Recover 2% of mana on kill et une ligne « Gain # mana per enemy killed » sur l'arc ou le carquois. En cartes et contre les boss de carte ordinaires, Walker of the Wilds, une ligne de vol de mana et un bon flacon de mana règlent le reste.
+
+**Quels modificateurs de waystone éviter ?** Les monstres avec 50 à 59 % de seuil d'altération augmenté, et les zones avec des plaques de sol enflammé.
+
+**Pourquoi l'électrocution est-elle si importante ?** Elle fait subir plus de dégâts aux ennemis (20 % par défaut, davantage avec l'ampleur d'électrocution augmentée, pendant 4 secondes) et déclenche votre héraut. [[Lightning Arrow]] et [[Lightning Rod]] peuvent électrocuter et geler, et la chance dépend de la taille du coup : avec un équipement modeste, ouvrez les combats avec [[Voltaic Mark]]. L'icône d'éclair avec 20 % sous la barre de vie de l'ennemi confirme l'électrocution.
+
+**Quels joyaux acheter ?** Des joyaux Emerald, chacun avec des bonus augmentés du carquois équipé, associés à des stats comme la vitesse d'attaque à l'arc, les dégâts de projectile, la chance de rebondir sur le terrain, la vitesse de déplacement, les dégâts élémentaires ou les dégâts contre les ennemis rares et uniques. Il vous faut aussi au moins un Sapphire avec Recover 2% of mana on kill.
+
+**Quelle priorité pour les attributs ?** D'abord les prérequis des gemmes, ensuite ceux des bases d'objets, puis le reste en Intelligence pour Hand of Wisdom and Action. Vous voulez le plus de Dextérité possible pour les dégâts ajoutés et la vitesse d'attaque, mais gardez assez de Force pour vos gemmes de support.
+
+**Quelles récompenses de campagne choisir ?** Relique de l'acte 2 : 30 % de charges de charme gagnées augmentées. Venom Draught de l'acte 3 : 25 % de seuil d'étourdissement augmenté. Acte 4, Halls of the Dead : Tawhoa's Test pour 5 % de résistance à la foudre, Tasalio's Test pour 5 % de résistance au froid ou Ngamahu's Test pour 5 % de résistance au feu. Ces bonus sont mineurs : un autre choix ne pose pas de problème.

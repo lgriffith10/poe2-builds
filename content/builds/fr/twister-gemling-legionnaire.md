@@ -48,3 +48,15 @@ L'ascendance Gemling Legionnaire accélère le combo : Advanced Thaumaturgy donn
 ## Priorités d'équipement
 
 [[The Taming]] d'abord, puis [[Skysliver]] et une bonne deuxième lance. De l'évasion et de la déviation sur le casque, les gants et les bottes, et de la vie partout. [[Yoke of Suffering]] et [[Guiding Palm of the Eye]] sont de bonnes pièces de dégâts ; [[Darkness Enthroned]] renforce les objets sertis.
+
+## FAQ
+
+**Quelles compétences sur quel set d'armes ?** [[Whirling Slash]] sur le set d'armes 1 (c'est important plus tard pour [[Rigwald's Ferocity]]) et [[Twister]] sur le set d'armes 2. Activez les gemmes d'esprit dans l'ordre où vous voulez qu'elles restent actives lors des changements : [[Wind Dancer]] et [[Berserk]] doivent être activées en premier, en haut de votre liste de gemmes, pour rester actives sur les deux sets.
+
+**Comment gérer le mana ?** [[Lavianga's Spirits]] et le vol de mana sur dégâts physiques sur les gants, les bagues ou l'arme devraient suffire ; [[Oisín's Oath]] sur Twister est une solution de secours qui ne devrait pas être nécessaire. Garder [[Whirling Slash]] au niveau de gemme 1 est très important.
+
+**Je me sens fragile, que faire ?** Le build a des dégâts en réserve : prenez moins de nœuds de dégâts et plus de nœuds d'évasion ou d'évasion/bouclier d'énergie. Vous pouvez aussi n'utiliser [[Berserk]] que sur le set d'armes 2 pour réduire sa dégénérescence.
+
+**Faut-il absolument utiliser Salvo ?** [[Salvo]] est plus agréable en intérieur. S'il ne vous plaît pas sur les cartes extérieures, [[Deliberation]] ou [[Ice Bite II]] sont des alternatives plus régulières.
+
+**Pourquoi ai-je des problèmes d'attributs ?** Gardez vos gemmes d'esprit de Force et d'Intelligence à bas niveau, surtout [[Berserk]].

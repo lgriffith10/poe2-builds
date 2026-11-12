@@ -36,3 +36,17 @@ En début de partie, vous jouez un hybride vie et bouclier d'énergie avec de l'
 ## Priorités d'équipement
 
 +Niveau de toutes les compétences de sort et vitesse d'incantation sur le bâton, puis bouclier d'énergie et résistances partout ailleurs. Les bottes [[Bushwhack]] sont un excellent choix au début : vos dégâts physiques immobilisent les ennemis. [[Idol of Uldurn]] est une bonne amulette de campagne. La configuration Chaos Inoculation de fin de partie utilise [[Headhunter]], optionnelle et très chère.
+
+## FAQ
+
+**Pourquoi Thunderstorm n'électrocute-t-il pas ?** Depuis le patch 0.5, [[Shock Conduction II]] ne garantit plus l'électrocution. Il faut une bonne chance d'électrocution sur l'arbre, des dégâts gagnés en foudre sur l'équipement, et des niveaux en plus aux compétences de foudre ou de sort. L'arbre de changement d'arme ajoute aussi beaucoup d'effet d'électrocution : placez [[Entangle]] et [[Thrashing Vines]] sur le set d'armes 1 (nœuds de plantes) et [[Thunderstorm]] sur le set d'armes 2 (nœuds d'ampleur d'électrocution).
+
+**Peut-on monter de niveau avec Entangle ?** Pas seul avant le niveau 14 : il lui faut le support Accelerated Growth et [[Thunderstorm]] pour faire assez de dégâts. D'ici là, jouez [[Essence Drain]] et [[Contagion]], avec [[Bonestorm]] contre une cible unique.
+
+**Pourquoi mes dégâts sont-ils faibles pendant la campagne ?** Pour un lanceur de sorts, il manque presque toujours des niveaux de compétence en plus : continuez à vérifier les marchands en progressant. Dès que vous avez accès aux gemmes de support de rang 3, [[Accelerated Growth II]] sur [[Entangle]] est un gros gain, et [[Living Lightning]] peut ajouter beaucoup de dégâts au début grâce à sa chance d'empalement.
+
+**Quand mes Djinns gagnent-ils des supports et des niveaux ?** Ils évoluent avec le niveau de votre personnage. Emplacements de support : 3 au niveau 40, 4 au niveau 65 et 5 au niveau 90. Les paliers clés de niveau de gemme sont 17 au niveau 72 du personnage, 18 au 78, 19 au 84 et 20 au 90.
+
+**Comment régler les problèmes de mana ?** Plus tard, les [[Mana Remnants]] entretiennent votre mana, et [[Thunderstorm]] en génère vite tant que vous électrocutez. Quand vous commencez à optimiser, liez [[Thrashing Vines]] à [[Efficiency II]]. Vous pouvez aussi prendre Mind Eraser sur l'arbre, utiliser un joyau de mana à la mort d'un ennemi, ou appliquer l'instillation Efficient Casting.
+
+**Les embrasements bloquent sans cesse la recharge de mon bouclier d'énergie. Que faire ?** Sous Chaos Inoculation, c'est particulièrement gênant. Cherchez au plus vite l'augment de casque Amanamu's Gaze : il permet à votre compétence Command de retirer l'embrasement.

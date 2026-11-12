@@ -29,3 +29,11 @@ Le guide source commence avec [[Twister]] et [[Whirling Slash]] : Whirling Slash
 ## Priorités d'équipement
 
 Dégâts de la lance, coups critiques et niveaux de projectile d'abord, puis évasion, déviation et vie sur l'armure.
+
+## FAQ
+
+**Pourquoi ne puis-je pas utiliser Barrage ?** Avec [[Olroth's Conviction]], [[Barrage]] consomme du Ward : il vous faut du Ward sur une pièce d'équipement via l'établi kalguuran, idéalement les gants ou les bottes. Visez environ 1,5 à 2 fois le coût en Ward de Barrage en Ward total pour le garder actif en endgame.
+
+**Pourquoi ne génère-je pas de charges de puissance ou d'endurance ?** La plupart viennent de Thaumaturgic Generator, qui accorde des charges selon le type d'attribut de vos compétences et active Charge Regulation. On ne peut pas l'atteindre sur l'arbre : il faut l'instiller sur votre amulette. C'est coûteux, alors faites-le sur une bonne amulette plutôt que sur une que vous comptez remplacer bientôt.
+
+**Comment obtenir une bonne lance ?** L'Akoyan Spear, meilleure base d'endgame et très bonne pour les coups critiques, tombe dans les zones de niveau 78. Ramassez-les toutes et utilisez des Orbs of Transmutation et d'Augmentation pour chercher de bons modificateurs ; dès qu'une lance a deux bons modificateurs, une Essence et un Preserved Jawbone peuvent l'amener à quatre.

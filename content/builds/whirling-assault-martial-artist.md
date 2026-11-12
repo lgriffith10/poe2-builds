@@ -454,3 +454,11 @@ passives:
 ## Gear Priorities
 
 The quarterstaff comes first: physical damage, critical strike chance, +Level of all Melee Skills and attack speed. Then an amulet with +Level of all Melee Skills, gloves with added physical damage and critical damage, and hybrid evasion/energy shield armour with resistances.
+
+## FAQ
+
+**When can I stop using Hollow Palm Technique?** You take it at level 13 so you do not need to craft a quarterstaff while leveling. Switch as soon as a quarterstaff raises your damage: equip the candidate and compare your main skill's DPS in the gem menu (default key G).
+
+**Why is my Herald of Ice not chaining in the endgame?** It needs enough physical damage to break armour reliably, enough cold damage from [[Armour Explosion]] to freeze and shatter, and dense maps. That means a higher physical DPS quarterstaff, around 30% damage gained as extra physical and/or cold, high critical chance (40-50% early, eventually 100% with [[Ambush]]), lots of area of effect and the right [[Armour Break III]] and Armour Explosion gems. It takes a lot of gear, so stay on [[Herald of Ash]] as long as possible and only switch when the Herald of Ice setup is clearly better for your content.
+
+**How do I die less?** Your defences are a large energy shield pool, evasion and deflection, killing monsters with your large area before they reach you, and immobilising them with freeze or stun. If aggressive play is hard, do not dodge roll into packs; clip them with [[Whirling Assault]] from a distance, ideally starting a Herald of Ash chain. Upgrade body armour, helmet and boots bases, take more energy shield, evasion or deflection on the tree, cap elemental resistances and carry the charm that matches the threat (resistance, Amethyst for chaos, Stone for stuns, Thawing for freeze, Dousing for ignites, Staunching for bleeds).

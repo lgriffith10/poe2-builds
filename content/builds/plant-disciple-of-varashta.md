@@ -428,3 +428,17 @@ Early on you play a life and energy shield hybrid with armour. Later the source 
 ## Gear Priorities
 
 +Level of all Spell Skills and cast speed on the staff, then energy shield and resistances everywhere else. [[Bushwhack]] boots are a great early pick: your physical damage pins enemies in place. [[Idol of Uldurn]] is a good campaign amulet. The late Chaos Inoculation setup uses [[Headhunter]], which is optional and very expensive.
+
+## FAQ
+
+**Why isn't Thunderstorm shocking?** Since patch 0.5, [[Shock Conduction II]] no longer guarantees a shock. You need a decent amount of shock chance from the tree, damage gained as lightning on gear, and +levels to lightning or spell skills. The weapon swap tree also adds a lot of shock effect: put [[Entangle]] and [[Thrashing Vines]] on weapon set 1 (plant nodes) and [[Thunderstorm]] on weapon set 2 (shock magnitude nodes).
+
+**Can I level with Entangle?** Not on its own before level 14: it needs the Accelerated Growth support and [[Thunderstorm]] to deal enough damage. Until then, play [[Essence Drain]] and [[Contagion]], with [[Bonestorm]] for single target.
+
+**Why is my damage low in the campaign?** For a spellcaster it is almost always missing +skill levels, so keep checking vendors as you progress. Once you have tier 3 support gems, [[Accelerated Growth II]] on [[Entangle]] is a big upgrade, and [[Living Lightning]] can add a lot of early damage through its impale chance.
+
+**When do my Djinns get more supports and levels?** They grow with your character level. Support slots: 3 at level 40, 4 at level 65 and 5 at level 90. The key gem level breakpoints are level 17 at character level 72, 18 at 78, 19 at 84 and 20 at 90.
+
+**How do I fix mana problems?** Later on, [[Mana Remnants]] keep your mana up, and [[Thunderstorm]] generates them quickly as long as you shock. When you start min-maxing, link [[Thrashing Vines]] with [[Efficiency II]]. You can also take Mind Eraser on the tree, use a mana on kill jewel, or instil Efficient Casting.
+
+**Ignites keep stopping my energy shield recharge. What helps?** Under Chaos Inoculation this gets especially annoying. Look for the helmet augment Amanamu's Gaze as soon as you can: it lets your Command skill remove ignite.

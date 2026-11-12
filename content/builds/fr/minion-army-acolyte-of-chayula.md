@@ -34,3 +34,17 @@ Bouclier d'énergie et évasion sur toutes les pièces d'armure. Les serviteurs 
 ## Priorités d'équipement
 
 +Niveau de toutes les compétences de serviteur sur l'arme, le casque et l'amulette d'abord, puis de l'esprit pour entretenir tous les serviteurs. Les bottes [[Bones of Ullr]] sont une amélioration peu chère dès la campagne, et [[Enfolding Dawn]] est l'armure du guide source en début de partie. Pour les cartes, [[Alpha's Howl]] est l'unique clé du build.
+
+## FAQ
+
+**Quel Vaal Guard faut-il lier comme spectre ?** À Utzaal, à la fin de l'acte 3, trois monstres différents portent le nom de Vaal Guard. Utilisez [[Bind Spectre]] sur celui qui lance des bombes (50 d'esprit), pas sur celui de mêlée (50 d'esprit) ni sur celui à distance (60 d'esprit). C'est à ce moment que vous abandonnez [[Explosive Grenade]] : ayez déjà de l'équipement +1 aux compétences de serviteur (casque, amulette, sceptre).
+
+**Où trouver des Plague Harvesters ?** Dans la zone The Dreadnought de l'acte 2. Passez-y dans la configuration intermédiaire, dès que vous portez une ceinture avec « Minions' Strikes have Melee Splash » : ils se déplacent plus vite, survolent les obstacles et ne se bloquent pas entre eux comme les Skeletal Reavers.
+
+**Combien de serviteurs de chaque type invoquer ?** Cela dépend de votre esprit. Gardez les deux [[Skeletal Warrior]] gratuits du sceptre (n'en invoquez pas davantage), un ou deux [[Skeletal Cleric]], un [[Skeletal Storm Mage]] et [[Wolf Pack]], puis mettez le reste dans votre serviteur de dégâts. Pendant la campagne, cela veut dire trois Vaal Guards ou plus ; dès que vous obtenez un Greater Jeweller's Orb, utilisez-le sur [[Skeletal Reaver]] et remplacez les Vaal Guards par les Reavers.
+
+**Je meurs trop souvent, que vérifier ?** Montez vos résistances élémentaires à 75 %, gardez au moins 60 % de résistance au chaos, et portez des bases qui donnent le plus de bouclier d'énergie possible. Mind Over Matter et Heavy Buffer améliorent nettement la survie.
+
+**Comment obtenir plus de châsses de soutien pour mes Skeletal Warriors ?** Quand ils viennent d'un Rattling Sceptre, leur nombre de châsses dépend du niveau de la compétence sur le sceptre : un [[Skeletal Warrior]] de niveau 20 accepte cinq soutiens. Un Perfect Jeweller's Orb sur le sceptre ajoute des châsses, mais il ne fonctionne pas sur un objet corrompu ou sanctifié.
+
+**Comment faire plus de dégâts aux boss pinacles ?** Retirez [[Blasphemy]] et lancez [[Despair]] vous-même, soutenu par [[Heightened Curse]], [[Cursed Ground]], [[Prolonged Duration II]], [[Efficiency II]] et [[Ritualistic Curse]]. L'esprit libéré devrait aussi permettre une ou deux Plague Harvesters de plus.

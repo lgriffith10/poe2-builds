@@ -40,4 +40,12 @@ Ne mettez des points d'attribut en Intelligence et Dextérité que si l'équipem
 
 ## Priorités d'équipement
 
-Armure, vie et « Armour applies to Elemental Damage » sur chaque pièce d'armure, plus un bouclier avec une armure de base élevée. Sur la masse, cherchez des dégâts physiques, de la vitesse d'attaque et des dégâts contre l'armure totalement brisée. [[Thrillsteel]] accorde Onslaught en permanence.
+Armure, vie et « Armour applies to Elemental Damage » sur chaque pièce d'armure, plus un bouclier avec une armure de base élevée. Les dégâts propres de la masse ne comptent pas pour ce build : cherchez-y plutôt +niveaux de toutes les compétences d'attaque et des dégâts contre l'armure totalement brisée. [[Thrillsteel]] accorde Onslaught en permanence.
+
+## FAQ
+
+**Mes dégâts sur cible unique sont faibles contre les boss, comment y remédier ?** Remplacez [[Ahn's Citadel]] et [[Kaom's Madness]] par [[Concentrated Area]] et [[Close Combat II]], et utilisez [[Sunder]] sur le boss une fois son armure brisée, car il ajoute beaucoup de dégâts.
+
+**Comment régler les problèmes de mana ?** Un seul modificateur de Mana Leech sur une bague ou des gants les règle. Ne montez pas de niveau [[Leap Slam]], [[Infernal Cry]] ni [[Shield Charge]] ; monter Infernal Cry reste utile, mais seulement si votre mana est confortable ou si vous avez une cinquième châsse pour le soutenir avec [[Lifetap]].
+
+**Une amélioration m'empêche d'utiliser une compétence ou un objet, que faire ?** Dépensez de l'or auprès du Hooded One ou de Doryani pour réattribuer vos points d'attributs et atteindre les nouveaux prérequis.

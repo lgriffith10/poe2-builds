@@ -536,3 +536,17 @@ Ignite packs with [[Volcano]], command the Snipers' gas arrows, apply exposure w
 ## Gear Priorities
 
 Minion levels and energy shield. [[Enfolding Dawn]] provides Spirit for the army and [[Bones of Ullr]] makes undead minions cheaper to reserve.
+
+## FAQ
+
+**How do I fix mana problems?** Put [[Arcane Surge]] on [[Volcano]] and [[Efficiency I]] on [[Elemental Weakness]], and optionally another [[Efficiency I]] on [[Pain Offering]].
+
+**Where do I get Raging Spirits?** Defeating The King in the Mists gives an Uncut Spirit Gem (level 4). Raging Spirits is not in the Witch tab: switch to the Sorceress tab to find it. They are summoned by casting [[Volcano]], so try to keep ten of them up during the campaign.
+
+**Which act bonus should I take?** Early in Act 4, bring the Shark Fin quest item to Ngakanu for 30% increased maximum energy shield. Act bonuses are small, so a different pick is no big deal.
+
+**I die too often, what should I check?** Cap your elemental resistances, aim for roughly 60% chaos resistance, and wear bases that give as much energy shield as possible.
+
+**How do I get more support sockets for my Skeletal Warriors and Infernal Hound?** Skeletal Warriors from a Rattling Sceptre get sockets based on the skill level on the sceptre: level 20 [[Skeletal Warrior]] allows five supports. [[Summon Infernal Hound]] sockets follow your character level instead; the last one unlocks at level 90.
+
+**How many of each minion should I summon?** It depends on your Spirit. Keep the two free [[Skeletal Warrior]]s from the sceptre (do not summon more), one or two [[Skeletal Cleric]]s, one [[Skeletal Storm Mage]], up to one [[Skeletal Brute]] and several [[Skeletal Reaver]]s, but always keep enough Spirit for at least six [[Skeletal Sniper]]s. The late setup adds two Gargantuan Wasp spectres and aims for eight or more Snipers.

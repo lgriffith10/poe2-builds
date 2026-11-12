@@ -351,3 +351,15 @@ Start with [[Frost Bomb]], [[Escape Shot]] to freeze and reposition, and [[Light
 ## Gear Priorities
 
 Bow damage and critical strike, then evasion and life. The source guide uses [[Cadiro's Gambit]] and [[The Black Insignia]].
+
+## FAQ
+
+**How do I get a good bow?** Damage comes from the weapon's prefixes: up to three that add physical, cold, fire or lightning damage. With Penetrate it gets more subtle: the bow's base accuracy is added as global physical damage, but an accuracy roll takes one of those prefix slots, so it is only worth it at around 500 accuracy or more (runes can add to it). Do not ignore suffixes: critical damage bonus multiplies all the increased critical bonus on the tree. Attack speed is fine, but the build prefers slower, heavier hits.
+
+**I don't have enough attributes to level all my gems.** You do not need to level every gem at every stage, especially those asking for a lot of Intelligence or Dexterity; hybrid Dexterity and Intelligence gems are always fine to upgrade. Get most of your attributes from gear and plan for them when buying or crafting, then move attribute points on the tree as your gear changes. Runes can patch a shortfall, but only temporarily.
+
+**What should I anoint?** Serrated Edges is by far the strongest anoint. Very early in a league, when Distilled Emotions are expensive, Critical Exploit is a cheaper option for a little damage.
+
+**How do I fix mana while clearing?** A Sapphire jewel with 2% of mana gained on kill solves it completely.
+
+**What should I watch out for with Stalking Panther?** It reduces the evasion from your body armour while boosting the evasion of your helmet, gloves and boots. Switch to a body armour with plenty of energy shield and no evasion when you take it.

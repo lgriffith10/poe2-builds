@@ -407,3 +407,15 @@ The campaign is played with a crossbow until level 36:
 ## Gear Priorities
 
 Energy shield and minion modifiers. The source guide recommends jewels with increased maximum energy shield and faster start of energy shield recharge, then minion critical modifiers. [[Enfolding Dawn]] and [[Meginord's Girdle]] are its unique picks.
+
+## FAQ
+
+**Why wait until level 36 to respec into Supporting Fire?** That is when [[Supporting Fire]] gets its third support socket, and roughly when you can allocate all the cooldown recovery rate nodes it needs. The respec costs about 21,700 gold, so sell identified rares to vendors during the campaign and do not spend gold on gambling or expensive vendor rares. The next sockets come at level 65 and level 90.
+
+**How do I fix mana problems?** Run [[Clarity II]] on one of your persistent buffs, and use [[Lavianga's Spirits]] once you can afford it. Later, [[Infernal Legion I]] (not [[Infernal Legion II]]) with [[Essence Harvest]] on [[Wolf Pack]] gives a lot of mana recovery; do not link [[Last Gasp]] there, as it stops Essence Harvest from working.
+
+**How does Archon of Undeath work?** It grants 25% more minion damage and 200% more cooldown recovery rate for command skills, which lets you stack several [[Supporting Fire]] casts on a boss. When it ends, you must wait 20 seconds before gaining it again; Resurging Archon and Rune of Renown soften this early on, and Dominion removes the wait entirely. Trigger it with the [[Skeletal Arsonist]] command before casting Supporting Fire, since a cooldown already running is not updated when Archon starts.
+
+**How many of each minion do I use?** One of each, mainly to feed Muster, unless stated otherwise. Early on run two or three [[Skeletal Sniper]]s for single target, then drop to one once every Archon of Undeath node is allocated.
+
+**Why are my minions dying?** That is fine: they are not your damage, and Muster still counts them when they are dead, so the build does not invest in their defences. [[Last Gasp]] and later [[Tecrod's Revenge]] keep them alive long enough to apply Shock and Armour Break.

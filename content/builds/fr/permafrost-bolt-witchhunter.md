@@ -31,3 +31,13 @@ Vous pouvez maintenant tirer les deux à la suite sans recharger.
 **En carte.** Au début, gelez avec Permafrost Bolts et finissez avec Fragmentation Rounds. Plus tard, Permafrost Bolts nettoie seul et vous gardez Fragmentation Rounds pour les rares.
 
 **Contre les boss.** Appliquez [[Freezing Mark]], gelez le boss avec Permafrost Bolts, puis videz Fragmentation Rounds. [[Wind Dancer]] repousse les ennemis qui vous touchent.
+
+## FAQ
+
+**Comment améliorer mes défenses ?** Accumulez l'évasion. En plus d'éviter des coups, elle renforce vos autres couches : Deflect dépend de votre score d'évasion, le bouclier de [[Sorcery Ward]] dépend entièrement de votre évasion, et être moins touché permet à ce bouclier de se régénérer plus vite.
+
+**Sur quelles gemmes mettre de la qualité en premier ?** [[Permafrost Bolts]] d'abord, pour des projectiles supplémentaires qui accélèrent le nettoyage et gèlent les ennemis résistants, puis [[Fragmentation Rounds]], puis [[Explosive Grenade]], tous deux pour les dégâts sur cible unique.
+
+**Je n'ai pas assez d'esprit pour tous mes buffs, que faire ?** Dès que vous avez trouvé une gemme d'esprit supplémentaire, utilisez [[Herald of Ice]] et [[Shard Scavenger]] ensemble grâce au changement d'arme : Permafrost Bolts et Herald of Ice sur le set d'armes 1, Fragmentation Rounds et Shard Scavenger sur le set d'armes 2.
+
+**Je n'ai pas assez d'attributs pour monter toutes mes gemmes, que faire ?** Réorganisez les nœuds d'attributs de passage de votre arbre jusqu'à ce que les totaux, avec votre équipement, atteignent les prérequis. Si la Force manque, gardez [[Herald of Ash]] et [[Overwhelming Presence]] à des niveaux plus bas.

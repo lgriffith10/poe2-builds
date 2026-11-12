@@ -38,3 +38,15 @@ La campagne se joue à l'arbalète jusqu'au niveau 36 :
 ## Priorités d'équipement
 
 Bouclier d'énergie et modificateurs de serviteurs. Le guide source recommande des joyaux avec bouclier d'énergie maximum augmenté et début de recharge du bouclier d'énergie plus rapide, puis des modificateurs critiques pour les serviteurs. [[Enfolding Dawn]] et [[Meginord's Girdle]] sont ses choix d'uniques.
+
+## FAQ
+
+**Pourquoi attendre le niveau 36 pour passer à Supporting Fire ?** C'est à ce niveau que [[Supporting Fire]] obtient sa troisième châsse de soutien, et à peu près le moment où vous pouvez prendre tous les nœuds de vitesse de récupération des temps de recharge dont elle a besoin. La réattribution coûte environ 21 700 pièces d'or : vendez les objets rares identifiés pendant la campagne et ne dépensez pas votre or en jeux de hasard ni en objets rares chers chez les marchands. Les châsses suivantes arrivent aux niveaux 65 et 90.
+
+**Comment régler les problèmes de mana ?** Utilisez [[Clarity II]] sur l'un de vos buffs persistants, et [[Lavianga's Spirits]] dès que vous pouvez vous le permettre. Plus tard, [[Infernal Legion I]] (et non [[Infernal Legion II]]) avec [[Essence Harvest]] sur [[Wolf Pack]] apporte beaucoup de récupération de mana ; ne liez pas [[Last Gasp]] à cet endroit, car il empêche Essence Harvest de fonctionner.
+
+**Comment fonctionne Archon of Undeath ?** Il accorde 25 % de dégâts de serviteur en plus et 200 % de vitesse de récupération en plus pour les compétences de commandement, ce qui permet d'empiler plusieurs [[Supporting Fire]] sur un boss. Quand il expire, il faut attendre 20 secondes avant de pouvoir l'obtenir à nouveau ; Resurging Archon et Rune of Renown atténuent ce délai au début, et Dominion le supprime complètement. Déclenchez-le avec la commande de [[Skeletal Arsonist]] avant de lancer Supporting Fire, car un temps de recharge déjà en cours n'est pas mis à jour quand Archon s'active.
+
+**Combien de serviteurs de chaque type utiliser ?** Un de chaque, surtout pour alimenter Muster, sauf indication contraire. Au début, gardez deux ou trois [[Skeletal Sniper]] pour les dégâts sur cible unique, puis passez à un seul quand tous les nœuds Archon of Undeath sont pris.
+
+**Pourquoi mes serviteurs meurent-ils ?** Ce n'est pas grave : ils ne sont pas votre source de dégâts et Muster les compte même morts, donc le build n'investit pas dans leurs défenses. [[Last Gasp]], puis [[Tecrod's Revenge]], les gardent en vie assez longtemps pour appliquer Shock et Armour Break.

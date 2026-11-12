@@ -619,3 +619,17 @@ Energy shield and block, with [[Convalescence]] for recovery. The minions draw m
 ## Gear Priorities
 
 +Level of all Minion Skills and spirit first. [[Bones of Ullr]] and an [[Evergrasping Ring]] are the source guide's endgame uniques, with [[Prism Guardian]] on the second weapon set.
+
+## FAQ
+
+**Which Vaal Guard should I bind as a spectre?** In Utzaal at the end of Act 3, three different monsters are all called Vaal Guard. Use [[Bind Spectre]] on the one that throws bombs (50 Spirit), not the melee one (50 Spirit) or the ranged one (60 Spirit). Their explosions can hurt performance; if they do, stay on [[Skeletal Arsonist]] or [[Skeletal Sniper]] with the same supports.
+
+**How do I fix mana problems in the campaign?** Put [[Arcane Surge]] on [[Volcano]] and [[Efficiency I]] on [[Elemental Weakness]], and optionally another [[Efficiency I]] on [[Pain Offering]].
+
+**I die too often, what should I check?** Cap your elemental resistances at 75%, aim for roughly 60% chaos resistance, and wear bases that give as much energy shield as possible.
+
+**How do I get more support sockets for my Skeletal Warriors and Infernal Hound?** Skeletal Warriors from a Rattling Sceptre get sockets based on the skill level on the sceptre: level 20 [[Skeletal Warrior]] allows five supports, and a Perfect Jeweller's Orb on the sceptre adds more (not on corrupted or sanctified items). [[Summon Infernal Hound]] sockets follow your character level instead; the last one unlocks at level 90.
+
+**How many of each minion should I summon?** It depends on your Spirit. Keep the two free [[Skeletal Warrior]]s from the sceptre (do not summon more), one or two [[Skeletal Cleric]]s and one [[Skeletal Storm Mage]], plus a few [[Skeletal Reaver]]s (more as you progress). Spend the rest on Vaal Guard spectres.
+
+**What do I need before switching to Gargantuan Wasps?** The min-max setup asks for level 95 or higher and a rare belt with "Minions' Strikes have Melee Splash". The NPC can disenchant your Vaal Guard spectre gem into a clean [[Bind Spectre]] that keeps its level and sockets.

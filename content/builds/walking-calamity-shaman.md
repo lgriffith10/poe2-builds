@@ -347,3 +347,13 @@ With [[Polcirkeln]] and added cold damage on your gear, Walking Calamity can chi
 ## Gear Priorities
 
 The source guide's uniques are [[Cloak of Flame]], [[Defiance of Destiny]], [[Polcirkeln]] and [[Goregirdle]]; rares should bring armour, life and added cold damage.
+
+## FAQ
+
+**I'm running into mana issues, what should I check?** A well rolled mana flask, a Sapphire jewel with "Recover 2% of Mana on Kill", and [[Pounce]] linked to [[Mark of Siphoning II]].
+
+**How do I get Glory for Walking Calamity?** [[Walking Calamity]] costs Glory, which you generate by gaining Rage while already at maximum Rage. [[Maul]] gives 5 Rage per hit, and [[Ferocious Roar]] helps build Rage and Glory.
+
+**Why do some support gems do nothing on Walking Calamity?** Supports that say "Skills that you use yourself" have no effect on it.
+
+**Can I use a rare body armour?** Yes: it eases the pressure on your other affixes, at the cost of raw damage mitigation. Never wear a rare body armour together with [[Goregirdle]], though.

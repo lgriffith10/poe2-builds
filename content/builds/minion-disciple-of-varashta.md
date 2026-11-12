@@ -535,3 +535,17 @@ Defensively, the build is built on energy shield: The Fourth Teaching improves e
 ## Gear Priorities
 
 +Level of all Minion Skills on sceptre, helmet and amulet comes first, followed by energy shield and resistances. [[Enfolding Dawn]] gives a lot of Spirit for the army, and [[Bones of Ullr]] adds movement speed and reservation efficiency for undead minions. The source guide warns against "Minions have +% to all Elemental Resistances" modifiers on your gear for this setup.
+
+## FAQ
+
+**How do I get the right spectres?** At the end of Act 3, in Utzaal, use [[Bind Spectre]] on a Vaal Guard. Three monsters share that name: a melee one (50 Spirit), a ranged one (60 Spirit) and the one you want, which throws bombs (50 Spirit). In the Interludes, start with Doryani's Contingency: in its second to last area, Etched Ravine, three kinds of Powered Zealot appear, and only the one casting lightning balls (Spark) is worth binding, for 55 Spirit. Wait until you have cut [[Wildshards II]] and [[Pierce III]] before replacing your Vaal Guards. Disenchanting the Vaal Guard spectre gem at the NPC gives back a clean [[Bind Spectre]] with the same level and sockets.
+
+**How do I fix mana problems in the campaign?** Never level [[Volcano]] above level 7, and you can support it with [[Efficiency I]] instead of [[Arcane Surge]]. Support [[Elemental Weakness]] with [[Efficiency I]]; [[Pain Offering]] can take it too.
+
+**Why do I get one-shot with Chaos Inoculation and high energy shield?** Under Chaos Inoculation you cannot have any modifier saying damage taken bypasses energy shield, such as the Heavy Buffer notable. The Mind Over Matter keystone is one way around it: damage is taken from mana before life, at the cost of 50% less mana recovery. Never use a mana flask that removes mana recovered from life when used, like a Caustic Ultimate Mana Flask with that modifier. Before CI, cap elemental resistances at 75% and aim for around 60% chaos resistance; ignore chaos resistance once you have CI.
+
+**Can I replace the Powered Zealots with another spectre?** Yes: they are mainly there for bosses, so another boss-killing spectre works. In Act 1, look for Death Knights in the Cemetery of the Eternals and bind a rare one, since normal and magic ones lack the special skill that greatly boosts single target damage. Support it with [[Muster]], [[Feeding Frenzy II]], [[Rage III]], [[Rapid Attacks II]], and [[Heft]] or [[Brutality III]] (if you have no extra chaos damage) or [[Dialla's Desire]].
+
+**How many of each minion should I use?** It depends on your Spirit. As a guide: one to three [[Skeletal Cleric]]s, up to one [[Skeletal Sniper]] and one [[Skeletal Reaver]], the two [[Skeletal Warrior]]s that come free with your Rattling Sceptre (do not spend Spirit on more), [[Wolf Pack]], and the rest on Powered Zealot spectres.
+
+**How do I get more sockets for my Skeletal Warriors?** With Skeletal Warriors granted by a Rattling Sceptre, the number of support sockets follows the skill level on the sceptre: level 20 allows five supports. A Perfect Jeweller's Orb on the sceptre also adds sockets, except on corrupted or sanctified items.

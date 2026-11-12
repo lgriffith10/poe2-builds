@@ -40,3 +40,13 @@ En tant qu'Oracle, The Unseen Path débloque des passifs qu'aucune autre classe 
 ## Priorités d'équipement
 
 Le talisman vise les dégâts physiques, la vitesse d'attaque, le critique et +niveau des compétences d'attaque. La configuration finale utilise Sacrosanctum, Sine Aequo et Headhunter ; pendant la campagne, commencez avec Entangle jusqu'à obtenir les compétences de loup-garou.
+
+## FAQ
+
+**Comment tenir le coût en vie de mes compétences après avoir pris Blood Magic ?** Cumulez les trois sources de récupération : vol de vie, vie à la mort d'un ennemi et régénération de vie. Les dégâts physiques volés en vie se trouvent sur les anneaux ou les gants, et [[Mark of Siphoning II]] en ajoute, mais ce vol ne fonctionne que sur les dégâts physiques alors que [[Lunar Assault]] inflige surtout des dégâts élémentaires : quand vous êtes bas, utilisez quelques fois [[Shred]], qui ne coûte pas de vie. La vie à la mort d'un ennemi vient de [[Cannibalism I]] ou [[Cannibalism II]] selon votre Esprit, ou d'un joyau. La régénération via [[Vitality II]], les nœuds de l'arbre et [[Holy Descent]] est difficile à cumuler : concentrez-vous sur les deux autres.
+
+**Pourquoi prendre la keystone Ancestral Bond ?** Pas pour son effet : Entwined Realities permet d'attribuer les passifs autour des keystones que vous possédez, donc Ancestral Bond ouvre l'accès à des nœuds proches comme Electrified Claw et Stormcharged. Blood Magic est pris de la même manière, pour des nœuds comme Prism Guard et In Your Face.
+
+**Il me manque des attributs. Que faire ?** L'Oracle prend peu de nœuds de trajet, ce qui rend les attributs serrés. Portez quelques objets avec de la Force, de l'Intelligence ou de la Dextérité et prenez le reste sur l'arbre. Pendant la campagne, choisissez les attributs lors du choix du tatouage aux Halls of the Dead, dans l'acte 4.
+
+**Mes dégâts sont faibles pendant la campagne. Qu'est-ce qui compte le plus ?** Votre arme. Remplacez-la par une meilleure base chez les marchands tous les 5 à 8 niveaux, avec de la monnaie d'artisanat et le parieur d'or, ou mieux, achetez une arme dès vos une ou deux premières Exalted Orbs et améliorez-la ensuite.

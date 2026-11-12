@@ -39,3 +39,15 @@ Critical Strike, Penetrate, Predatory Instinct et In for the Kill de l'Amazon co
 ## Priorités d'équipement
 
 La lance a besoin de dégâts physiques, de vitesse d'attaque et de précision. Vie et résistances partout ailleurs, avec de la vitesse de déplacement sur les bottes. Horns of Bynden aide pendant la campagne, et la configuration endgame ajoute la ceinture Ryslatha's Coil.
+
+## FAQ
+
+**Pourquoi suis-je sans cesse étourdi ?** Deux solutions sur l'arbre : Hunter's Talisman donne un emplacement de charme supplémentaire pour un Stone Charm, ou investissez deux points dans Deft Recovery. Les étourdissements posent aussi moins de problèmes à mesure que votre réserve de vie augmente, même s'ils restent agaçants.
+
+**Pourquoi ne puis-je pas monter toutes mes gemmes ?** Monter chaque gemme demande beaucoup d'attributs. Au début, la Force passe en premier, avant même des gemmes au niveau maximal ; gardez simplement assez de Dextérité pour utiliser chaque gemme et porter de l'équipement d'évasion. Plus tard, il vous faut les deux : cherchez Dextérité et Force sur l'équipement et redistribuez vos points d'attributs au besoin (le Hooded One ou Doryani les réattribuent contre de l'or).
+
+**Comment tenir la vie et le mana en cartes ?** Ayez au moins une ligne de dégâts physiques volés en vie et une volée en mana. Elles peuvent apparaître sur l'arme, les anneaux ou les gants, idéalement les anneaux. La chance d'esquive est votre défense principale : gardez une armure de corps avec le plus d'évasion possible.
+
+**Puis-je utiliser Tame Beast, et pourquoi me manque-t-il de l'Esprit ?** Seulement si l'équipement, comme l'armure de corps ou l'amulette, vous laisse de l'Esprit en trop. [[Tame Beast]] transforme une bête rare capturée en sbire qui peut apporter des bonus utiles comme une aura physique, mais son coût en Esprit n'est pas fixe : il dépend du nombre de modificateurs de la bête.
+
+**Quels bonus choisir pour la relique de l'acte 2 et le Venom Draught de l'acte 3 ?** Ces bonus sont mineurs. Si vous avez choisi autre chose, notamment pour le Venom Draught, le build n'en souffrira guère.

@@ -37,3 +37,11 @@ Nettoyez avec [[Frozen Locus]] et [[Herald of Ice]], en faisant exploser le cris
 ## Priorités d'équipement
 
 Dégâts et coups critiques du bâton d'abord, puis armure hybride évasion et bouclier d'énergie. [[Shavronne's Satchel]] est la ceinture du guide source.
+
+## FAQ
+
+**Comment générer des charges de puissance ?** Cela évolue avec le build : [[Wing Blast]] et [[Killing Palm]] à l'acte 1, [[Siphoning Strike]] et [[Devour]] à partir de l'acte 2, [[Reaper's Invocation]] avec [[Profane Ritual]] dans les premières cartes, puis [[Ailith's Chimes]] et Martial Master en endgame.
+
+**Comment obtenir plus de chance de coup critique ?** Les dégâts du build en dépendent. Sources : les notables Deadly Force, Critical Exploit, Moment of Truth et Struck Through, un suffixe sur le casque et sur l'amulette, un Sinister Quarterstaff (la plus forte chance de critique de base), des gants Fists of Stone (Way of the Stonefist transforme leur modificateur de bonus de dégâts critiques en chance de critique de base), [[Charge Regulation]] (20 % de chance de critique en plus avec une charge de puissance), et les soutiens [[Blindside]] et [[Pinpoint Critical]].
+
+**Comment renforcer mes défenses ?** Montez vos résistances élémentaires au maximum et accumulez bouclier d'énergie, évasion et déviation, avec de bons jets de vie sur les premières variantes. La récupération du bouclier d'énergie vient de [[Shavronne's Satchel]] et d'un Ultimate Life Flask à récupération instantanée.

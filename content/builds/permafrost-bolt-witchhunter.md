@@ -315,3 +315,13 @@ You can now fire both in sequence without reloading.
 **Mapping.** Early on, freeze with Permafrost Bolts and finish with Fragmentation Rounds. Later, Permafrost Bolts clear on their own and you save Fragmentation Rounds for rares.
 
 **Bossing.** Apply [[Freezing Mark]], freeze the boss with Permafrost Bolts, then unload Fragmentation Rounds. [[Wind Dancer]] knocks back enemies that hit you.
+
+## FAQ
+
+**How do I improve my defences?** Stack evasion. Besides avoiding hits, it scales your other layers: Deflect is based on your evasion rating, the [[Sorcery Ward]] shield depends entirely on your evasion, and being hit less lets that shield regenerate faster.
+
+**Which gems should get quality first?** [[Permafrost Bolts]] first, for extra projectiles that speed up clearing and freeze tanky enemies, then [[Fragmentation Rounds]], then [[Explosive Grenade]], both for single target damage.
+
+**I don't have enough Spirit for all my buffs, what should I do?** Once you have found an extra Spirit gem, run [[Herald of Ice]] and [[Shard Scavenger]] together through weapon swap: Permafrost Bolts and Herald of Ice on weapon set 1, Fragmentation Rounds and Shard Scavenger on weapon set 2.
+
+**I don't have enough attributes to level all my gems, what can I do?** Rearrange the attribute travel nodes on your tree until the totals, combined with your gear, meet the requirements. If Strength is short, keep [[Herald of Ash]] and [[Overwhelming Presence]] at lower levels.

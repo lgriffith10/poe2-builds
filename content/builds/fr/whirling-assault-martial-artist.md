@@ -45,3 +45,11 @@ skillNotes:
 ## Priorités d'équipement
 
 Le bâton passe en premier : dégâts physiques, chance de coup critique, +niveau des compétences de corps à corps et vitesse d'attaque. Ensuite une amulette avec +niveau des compétences de corps à corps, des gants avec dégâts physiques ajoutés et dégâts critiques, et une armure hybride évasion/bouclier d'énergie avec des résistances.
+
+## FAQ
+
+**Quand abandonner Hollow Palm Technique ?** Vous le prenez au niveau 13 pour ne pas avoir à fabriquer de bâton pendant la progression. Changez dès qu'un bâton augmente vos dégâts : équipez le candidat et comparez le DPS de votre compétence principale dans le menu des gemmes (touche G par défaut).
+
+**Pourquoi mon Herald of Ice ne s'enchaîne-t-il pas en endgame ?** Il faut assez de dégâts physiques pour briser l'armure de façon fiable, assez de dégâts de froid d'[[Armour Explosion]] pour geler et briser les ennemis, et des cartes denses. Cela demande un bâton avec plus de DPS physique, environ 30 % de dégâts gagnés en physique et/ou en froid supplémentaires, une forte chance de critique (40 à 50 % au début, puis 100 % avec [[Ambush]]), beaucoup de zone d'effet et les bonnes gemmes [[Armour Break III]] et Armour Explosion. Cela demande beaucoup d'équipement : restez sur [[Herald of Ash]] le plus longtemps possible et ne changez que si la configuration Herald of Ice est nettement meilleure pour votre contenu.
+
+**Comment moins mourir ?** Vos défenses sont une grosse réserve de bouclier d'énergie, l'évasion et la déviation, tuer les monstres avec votre grande zone avant qu'ils vous atteignent, et les immobiliser par le gel ou l'étourdissement. Si le jeu agressif est difficile, ne roulez pas dans les groupes ; touchez-les avec [[Whirling Assault]] à distance, idéalement en lançant une chaîne de Herald of Ash. Améliorez les bases de l'armure, du casque et des bottes, prenez plus de bouclier d'énergie, d'évasion ou de déviation sur l'arbre, montez vos résistances élémentaires au maximum et portez le charme adapté à la menace (résistance, Amethyst pour le chaos, Stone pour les étourdissements, Thawing pour le gel, Dousing pour l'embrasement, Staunching pour les saignements).

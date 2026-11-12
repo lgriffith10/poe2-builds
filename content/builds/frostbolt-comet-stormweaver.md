@@ -343,3 +343,13 @@ Start as a life and energy shield hybrid. After the Snakepit swap, move to Chaos
 ## Gear Priorities
 
 Snakepit enables the crit version, Maligaro's Virtuosity adds a lot of critical damage, and Palm of the Dreamer is a strong but expensive off hand (Guiding Palm of the Eye is the cheaper alternative). Aim for at least 60% critical hit chance on Frostbolt.
+
+## FAQ
+
+**How do I fix my mana issues?** For clearing, two jewels with "Recover 2% of Maximum Mana on Kill" solve it. Against bosses mana stays tight, but mana regeneration rate, maximum mana and increased flask mana recovery on gear, plus reduced mana cost on the passive tree, all help.
+
+**I don't have enough Spirit for all my skills, what should I do?** [[Cast on Critical]] costs 100 Spirit, so it needs nothing extra. If your gear gives 30 more Spirit, add [[Convalescence]].
+
+**I don't have enough attributes to level all my gems, what can I do?** Leveling every gem is attribute hungry. Ingenuity gives +25 Intelligence, and gear can cover the rest; amulets in particular can roll attributes on both the implicit and the suffixes.
+
+**Why invest in shock magnitude with cold spells?** The Shaper of Storms ascendancy node lets your cold damage shock enemies.

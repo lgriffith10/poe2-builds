@@ -378,3 +378,17 @@ Act 1 is the hardest part. Clear with [[Frozen Locus]] detonated by the tip of [
 **Mapping.** Walk through packs and let the companion burn them; grab the Flames of Chayula as you go.
 
 **Bossing.** Keep [[Frost Bomb]] down for exposure, curse with [[Blasphemy]], and stay close so the companion and your defences remain active. [[Convalescence]] and [[Ghost Dance]] add defensive layers.
+
+## FAQ
+
+**Where do I tame the two companions?** Capture both beasts before the level 56 respec. In the Interludes, leave Khari Bazaar by its north-east exit and head north-west until you reach a merchant next to a checkpoint: two rare Plague Harvesters (they look like giant wasps) always spawn there, so do not kill them. In Act 3, the Troubled Camp in the Infested Barrens has a checkpoint with a rare Diretusk Boar. Each "Respawn at Checkpoint" rerolls their monster modifiers, so repeat it until you get the one you want, then tame it with [[Tame Beast]].
+
+**Which modifiers do the companions need?** The Plague Harvester must have "All Damage Ignites": without it, the companion gets nothing from [[Into the Breach]]. The Diretusk Boar must have "All Damage Shocks", which makes enemies take more damage. Later on, "Shroud Walker" (the companion teleports to nearby enemies) is the next most valuable modifier on the main companion. Do not lose hours chasing a perfect beast during the campaign. Set both companions to weapon set 1 only: swapping sets then heals them, or brings them back to you if they get stuck.
+
+**Are there modifiers to avoid?** Fire-based ones on the [[Infernal Legion II]] companion, such as Trail of Fire, Conjures Flamewalls, Periodic Fire Explosions or Periodically unleashes Fire. They can interfere with how the ignite is applied and cause gaps in your damage. It does not always happen, but keep it in mind.
+
+**What do I need for the switch to Infernal Legion?** Around level 56, when you start the Stolen Bayra interlude: about 40,000 gold, at least 18 weapon set points and several level 5 Uncut Support Gems. Do not use Infernal Legion I, which lacks the fire resistance and much of the radius. To afford the respec, identify and sell your rare items during the campaign rather than gambling or buying expensive rares from vendors. Switching much earlier feels bad: Vile Mending, which keeps the companion alive, sits far from the companion nodes.
+
+**Why do I feel squishy in the campaign?** The suggested tree takes many +5 attribute nodes to path towards Vile Mending, Long Distance Relationship and Bond of the Ape while keeping the respec cheap. While you play [[Ice Strike]], you can instead pick defensive nodes such as First Principle of the Hollow, Spectral Ward and the evasion and energy shield nodes; you will be much tankier, but the respec will cost more. For mana in the later acts, look for physical attack damage leeched as mana on a ring or the gloves.
+
+**Do I have to use weapon swap snapshotting?** No, but give it a real try first. With [[Into the Breach]] on weapon set 2, enter every new zone or map in set 2 (your companions are unsummoned and you hold [[Saitha's Spear]]): your Flames of Chayula pickup radius becomes huge. If you skip it, allocate enough remnant pickup range nodes on weapon set 1 so you do not miss the purple flames, dropping defensive nodes such as Enhanced Barrier to fund them.

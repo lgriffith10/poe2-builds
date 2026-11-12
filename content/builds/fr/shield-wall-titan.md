@@ -41,3 +41,13 @@ Colossal Capacity, Hulking Form, Stone Skin et Mysterious Lineage du Titan ajout
 ## Priorités d'équipement
 
 Cherchez le bouclier avec le plus d'armure possible, puis de la vie et des résistances partout. Une armure de corps avec beaucoup de vie et d'armure est la plus grosse amélioration défensive, et « Armour applies to Elemental Damage » est très précieux. La vitesse d'attaque sur les gants et la vitesse des compétences sur les bijoux rendent le build bien plus fluide. Thrillsteel et Constricting Command sont les uniques qui le poussent plus loin.
+
+## FAQ
+
+**Faut-il une bonne arme pour faire plus de dégâts ?** Non. Les dégâts de votre arme ne comptent pas du tout dans ce build ; seules comptent les statistiques liées à ses mécaniques clés.
+
+**Mes dégâts sur cible unique sont faibles contre les boss, comment y remédier ?** Remplacez [[Ahn's Citadel]] et [[Kaom's Madness]] par [[Concentrated Area]] et [[Close Combat II]], et utilisez [[Sunder]] sur le boss une fois son armure brisée, car il ajoute beaucoup de dégâts.
+
+**Comment régler les problèmes de mana ?** Un seul modificateur de Mana Leech sur une bague ou des gants les règle. Ne montez pas de niveau [[Leap Slam]], [[Infernal Cry]] ni [[Seismic Cry]] ; monter Infernal Cry reste utile, mais seulement si votre mana est confortable ou si vous avez une cinquième châsse pour le soutenir avec [[Lifetap]].
+
+**Une amélioration m'empêche d'utiliser une compétence ou un objet, que faire ?** Dépensez de l'or auprès du Hooded One ou de Doryani pour réattribuer vos points d'attributs et atteindre les nouveaux prérequis.

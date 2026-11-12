@@ -49,3 +49,17 @@ Le build repose sur l'évasion et la déviation plutôt que sur la vie brute. [[
 ## Priorités d'équipement
 
 L'arc est de loin l'objet le plus important : cherchez des dégâts physiques par seconde élevés, de la vitesse d'attaque et de la chance de coup critique, avec des dégâts de froid ajoutés et une flèche supplémentaire en bonus. Ensuite, une amulette avec de l'Esprit et +niveau des compétences de projectile, puis de la vie et des résistances sur le reste.
+
+## FAQ
+
+**Comment obtenir un bon arc ?** Les dégâts viennent des préfixes de l'arme : jusqu'à trois, qui ajoutent des dégâts physiques, de froid, de feu ou de foudre. Au début, tous les dégâts fixes sont forts, mais en fin de jeu concentrez-vous sur le physique et le froid ; les niveaux en plus aux compétences de projectile sont aussi très bons. Ne négligez pas les suffixes : en endgame, privilégiez la chance de coup critique et le bonus de dégâts critiques, qui multiplie tous les bonus critiques augmentés de l'arbre. La vitesse d'attaque est correcte, mais elle n'augmente pas les dégâts par coup, et le build se joue mieux avec de gros coups.
+
+**Je n'ai pas assez d'attributs pour monter toutes mes gemmes.** Inutile de monter chaque gemme à chaque étape, surtout celles qui demandent beaucoup d'Intelligence ou de Dextérité ; les gemmes hybrides Dextérité et Intelligence peuvent toujours être améliorées. Obtenez l'essentiel de vos attributs sur l'équipement en en tenant compte quand vous achetez ou fabriquez, puis déplacez vos points d'attributs sur l'arbre au fil de vos changements d'équipement. Les runes peuvent combler un manque, mais seulement temporairement.
+
+**Quel onguent appliquer ?** En début de ligue, quand les Distilled Emotions coûtent cher, Serrated Edges apporte beaucoup de dégâts. En endgame, Climate Change est fort, et la meilleure option est sans doute Zarokh's Gift, qui ajoute une châsse de joyau au centre de l'arbre mais peut coûter cher.
+
+**Comment régler le mana pendant le nettoyage ?** Un joyau Sapphire avec 2 % de mana récupéré à la mort d'un ennemi règle complètement le problème.
+
+**À quoi faire attention avec Beastial Skin ?** Il double l'évasion de votre armure de corps : assurez-vous que votre torse a déjà beaucoup d'évasion avant de le prendre.
+
+**Comment configurer le changement d'arme ?** En endgame, ayez deux arcs et deux carquois. Placez [[Ice Shot]] sur le set principal et [[Snipe]] sur le second grâce aux cases I et II de chaque compétence. L'arc de nettoyage veut des flèches supplémentaires, avec [[Cadiro's Gambit]] en carquois une fois que votre arc frappe assez fort ; le set de cible unique ignore la vitesse d'attaque et les flèches au profit des dégâts fixes, de la chance de critique et des niveaux de gemme.

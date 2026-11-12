@@ -389,3 +389,17 @@ The source guide levels through the campaign with plant skills and elemental spe
 ## Gear Priorities
 
 +Level of all Spell Skills on the wand and amulet, Spirit on the sceptre, amulet and body armour (each totem needs it), then life, mana and resistances. The build works on very little gear, which is what makes it such a strong league starter.
+
+## FAQ
+
+**How do I get the Grim Pillars gem?** As of patch 0.5.5, the exact drop source is still unknown: all that is known is that it is found somewhere in Act 4. Complete every Runes of Aldur encounter you come across, keep using your levelling setup until then, and switch to totems as soon as the gem drops.
+
+**Why do my totems disappear when I cast other spells?** Your weapon set passives are set up wrong, and this setup is mandatory, not a bonus. In the inventory, right-click both the wand and the sceptre on the weapon set 1 button so they are equipped in both sets (shadows appear in set 2). In the skills panel, put [[Spell Totem]] on weapon set 1 only and every other skill on weapon set 2 only. Allocate the totem passives on set 1 and the utility passives on set 2: totems always use the set 1 tree, whichever set you are holding. You should have 24 weapon set points after the campaign.
+
+**Which sceptre should I use?** Always one with [[Purity of Fire]], [[Purity of Ice]] or [[Purity of Lightning]] as its innate skill. These can run aura supports such as Mysticism II, Vitality II and Clarity II without reserving Spirit, which leaves all your Spirit for totems. Any other sceptre is useless for this build.
+
+**What levels should my gems be?** Only the level of [[Grim Pillars]] changes your damage: raise it with a Thaumaturgic Flux of the matching level, but never overlevel since it cannot be undone. Keep [[Spell Totem]] as high as possible early for survivability, then once you have Unnamed Heartwood set its total level to exactly 14, counting wand and amulet bonuses, to save mana while keeping two totems. Keep [[Entangle]] at level 1, and [[Elemental Weakness]] and [[Frost Bomb]] at level 18 for the endgame, not higher, to limit mana costs.
+
+**Where does the Spirit for more totems come from?** Campaign quests give up to 100: 30 by the end of Act 1, 60 by the end of Act 3 and 100 after the Interludes. A good sceptre is the biggest source with 150 to 210, then up to 65 from a Solar Amulet and up to 61 from a body armour prefix. Efficient Inscriptions on the amulet lowers the cost of each totem from 75 to 63 Spirit.
+
+**Any tips for levelling a spellcaster?** Take every % damage node you see on the tree and get +levels to skills on your wand, focus and amulet as early as possible: every level is a big damage increase. Check vendors at every level, and trade for them with the Exalted Orbs you find if needed.

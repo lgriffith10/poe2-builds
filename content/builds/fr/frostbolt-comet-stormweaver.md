@@ -45,3 +45,13 @@ Commencez en hybride vie et bouclier d'énergie. Après l'arrivée de Snakepit, 
 ## Priorités d'équipement
 
 Snakepit active la version critique, Maligaro's Virtuosity ajoute beaucoup de dégâts critiques, et Palm of the Dreamer est une main gauche puissante mais chère (Guiding Palm of the Eye est l'alternative bon marché). Visez au moins 60 % de chances de coup critique sur Frostbolt.
+
+## FAQ
+
+**Comment régler mes problèmes de mana ?** Pour le nettoyage, deux joyaux avec « Recover 2% of Maximum Mana on Kill » suffisent. Contre les boss, le mana reste juste, mais la vitesse de régénération du mana, le mana maximum et la récupération de mana des flacons sur l'équipement, ainsi que la réduction du coût en mana sur l'arbre passif, aident tous.
+
+**Je n'ai pas assez d'esprit pour toutes mes compétences, que faire ?** [[Cast on Critical]] coûte 100 d'esprit, il n'en faut donc pas davantage. Si votre équipement donne 30 d'esprit de plus, ajoutez [[Convalescence]].
+
+**Je n'ai pas assez d'attributs pour monter toutes mes gemmes, que faire ?** Monter toutes les gemmes demande beaucoup d'attributs. Ingenuity donne +25 d'Intelligence, et l'équipement peut combler le reste ; les amulettes en particulier peuvent avoir des attributs sur l'implicite comme sur les suffixes.
+
+**Pourquoi investir dans l'ampleur des chocs avec des sorts de froid ?** Le nœud d'ascendance Shaper of Storms permet à vos dégâts de froid d'infliger des chocs.

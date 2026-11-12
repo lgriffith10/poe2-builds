@@ -438,3 +438,13 @@ Stack energy shield on every armour slot and take the faster energy shield recha
 ## Gear Priorities
 
 +Level of all Chaos Spell Skills on the wand and +Level of all Spell Skills on the focus and amulet are the main damage upgrades, along with cast speed. Everything else is energy shield and resistances. [[Atziri's Disdain]] is the source guide's helmet of choice.
+
+## FAQ
+
+**How do I get to Low Life?** Temporarily equip a [[Visage of Ayah]] for Eldritch Battery, then cast any skill linked to [[Lifetap]] until your life drops to 35% of its maximum or lower. To confirm, check your movement speed in the character panel: you should be getting the bonus from Tecrod's Gaze.
+
+**I don't have enough Spirit for all my persistent buffs.** After the campaign, running both [[Convalescence]] and [[Ravenous Swarm]] needs +50 maximum Spirit in total from your amulet and body armour; one of those slots can roll the full +50 alone. If you cannot run both, use Convalescence for survivability or Ravenous Swarm for single target damage.
+
+**How do I deal more damage?** Upgrade your wand and focus, your skill gems and your combo. On the wand look for +level of all Spell or Chaos skills and increased spell or chaos damage; on the focus, +level of all Spell skills, increased spell or chaos damage and cast speed. Common mistakes: casting [[Essence Drain]] below 90% mana, keeping [[Chain I]] on bosses instead of another damage support, skipping [[Sigil of Power]], forgetting [[Chaos Bolt]] for Wither, letting [[Dark Effigy]] or [[Despair]] lapse, and mistiming Despair. Cast your damage skills only on weapon set 1 and Despair only on weapon set 2.
+
+**How do I die less?** Keep upgrading your energy shield gear, body armour, helmet, gloves and boots first, with better bases and more % maximum energy shield on the tree, and cap your elemental resistances. [[Blasphemy]] with [[Temporal Chains]] helps you keep your distance and step out of combat to recharge, and you can take more faster energy shield recharge on the tree. Some Atlas enemies such as Abyss monsters call for [[Convalescence]] if you want to play aggressively; otherwise cast [[Contagion]] and [[Essence Drain]] from a distance instead of rolling into packs. Wear the matching charms: resistance charms for elemental damage, Amethyst for chaos, Stone for stuns, Thawing for freeze, Dousing for ignites and Staunching for bleeding.

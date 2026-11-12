@@ -489,3 +489,17 @@ The Lich stacks energy shield, energy shield recovery and block. Eternal Life wi
 ## Gear Priorities
 
 +Level of all Minion Skills on the sceptre, helmet and amulet comes first, then Spirit for more minions. A Rattling Sceptre is best. Enfolding Dawn and a pair of Bones of Ullr are cheap, common uniques the build uses; the Kalandra's Touch ring shown here is the min-max option.
+
+## FAQ
+
+**How do I get the right spectres?** At the end of Act 3, in Utzaal, use [[Bind Spectre]] on a Vaal Guard. Three monsters share that name: a melee one (50 Spirit), a ranged one (60 Spirit) and the one you want, which throws bombs (50 Spirit). In the Interludes, start with Doryani's Contingency: in its second to last area, Etched Ravine, three kinds of Powered Zealot appear, and only the one casting lightning balls (Spark) is worth binding, for 55 Spirit. Wait until you have cut [[Wildshards II]] and [[Pierce III]] before replacing your Vaal Guards. Disenchanting the Vaal Guard spectre gem at the NPC gives back a clean [[Bind Spectre]] with the same level and sockets. Do not link [[Projectile Acceleration III]]: it lowers the Zealots' damage.
+
+**How do I fix mana problems in the campaign?** Support [[Volcano]] with [[Arcane Surge]] and [[Elemental Weakness]] with [[Efficiency I]]; [[Pain Offering]] can take [[Efficiency I]] too. Once you complete the second ascendancy trial and take Soulless Form, mana should no longer be an issue.
+
+**I'm dying too often. What can I do?** Cap your elemental resistances at 75% and aim for around 60% chaos resistance, and wear energy shield bases to get as much energy shield as possible. Early in Act 4, travel to Ngakanu and hand in the Shark Fin quest item for 30% increased maximum energy shield.
+
+**How many of each minion should I use?** It depends on your Spirit. As a guide: one or two [[Skeletal Cleric]]s, the two [[Skeletal Warrior]]s that come free with your Rattling Sceptre (do not spend Spirit on more), [[Wolf Pack]], and the rest on Powered Zealot spectres. Only add a [[Skeletal Storm Mage]] once you can run at least 6 Zealots, and a [[Skeletal Brute]] once you can run at least 9.
+
+**How do I get more sockets for my Skeletal Warriors?** With Skeletal Warriors granted by a Rattling Sceptre, the number of support sockets follows the skill level on the sceptre: level 20 allows five supports. A Perfect Jeweller's Orb on the sceptre also adds sockets, except on corrupted or sanctified items.
+
+**What is Sigil of Power and where does it come from?** [[Sigil of Power]] only exists on a Chiming Staff. It creates a blue circle that grants you and your minions more spell damage while you stand in it, growing stronger the more mana you spend inside. Your main weapon set holds the Rattling Sceptre, so put the staff on the second weapon set and cast it before bosses or Simulacrum waves, with second set passives in curse effect, spell duration and area. The key staff modifier is +level of all Spell Skills; quality from Arcanist's Etchers enlarges the circle.

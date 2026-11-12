@@ -30,3 +30,17 @@ Enflammez les packs avec [[Volcano]], commandez les flèches de gaz des Snipers,
 ## Priorités d'équipement
 
 Niveaux des serviteurs et bouclier d'énergie. [[Enfolding Dawn]] fournit de l'Esprit pour l'armée et [[Bones of Ullr]] réduit le coût de réservation des serviteurs morts-vivants.
+
+## FAQ
+
+**Comment régler les problèmes de mana ?** Placez [[Arcane Surge]] sur [[Volcano]] et [[Efficiency I]] sur [[Elemental Weakness]], et éventuellement un autre [[Efficiency I]] sur [[Pain Offering]].
+
+**Où obtenir Raging Spirits ?** Vaincre The King in the Mists donne une Uncut Spirit Gem (niveau 4). Raging Spirits ne se trouve pas dans l'onglet Witch : passez à l'onglet Sorceress pour la trouver. Ces esprits sont invoqués en lançant [[Volcano]] ; essayez d'en garder dix actifs pendant la campagne.
+
+**Quel bonus d'acte choisir ?** Au début de l'acte 4, rapportez l'objet de quête Shark Fin à Ngakanu pour obtenir 30 % de bouclier d'énergie maximum augmenté. Les bonus d'acte sont mineurs : un autre choix n'est pas grave.
+
+**Je meurs trop souvent, que vérifier ?** Montez vos résistances élémentaires au maximum, visez environ 60 % de résistance au chaos, et portez des bases qui donnent le plus de bouclier d'énergie possible.
+
+**Comment obtenir plus de châsses de soutien pour mes Skeletal Warriors et mon Infernal Hound ?** Les Skeletal Warriors d'un Rattling Sceptre ont un nombre de châsses lié au niveau de la compétence sur le sceptre : un [[Skeletal Warrior]] de niveau 20 accepte cinq soutiens. Les châsses de [[Summon Infernal Hound]] dépendent quant à elles du niveau de votre personnage ; la dernière se débloque au niveau 90.
+
+**Combien de serviteurs de chaque type invoquer ?** Cela dépend de votre esprit. Gardez les deux [[Skeletal Warrior]] gratuits du sceptre (n'en invoquez pas davantage), un ou deux [[Skeletal Cleric]], un [[Skeletal Storm Mage]], jusqu'à un [[Skeletal Brute]] et plusieurs [[Skeletal Reaver]], mais gardez toujours assez d'esprit pour au moins six [[Skeletal Sniper]]. La configuration tardive ajoute deux spectres Gargantuan Wasp et vise huit Snipers ou plus.

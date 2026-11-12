@@ -633,3 +633,17 @@ Stack energy shield, energy shield recovery and block. Soulless Form and Eternal
 ## Gear Priorities
 
 +Level of all Minion Skills and spirit on the sceptre, helmet and amulet. [[Prism Guardian]] is the shield of choice, with [[Bones of Ullr]] boots and an [[Evergrasping Ring]]. [[Enfolding Dawn]] is the source guide's campaign body armour.
+
+## FAQ
+
+**Which Vaal Guard should I bind as a spectre?** In Utzaal at the end of Act 3, three different monsters are all called Vaal Guard. Use [[Bind Spectre]] on the one that throws bombs (50 Spirit), not the melee one (50 Spirit) or the ranged one (60 Spirit). Their explosions can hurt performance; if they do, stay on [[Skeletal Arsonist]] or [[Skeletal Sniper]] with the same supports.
+
+**How do I fix mana problems in the campaign?** Put [[Arcane Surge]] on [[Volcano]] and [[Efficiency I]] on [[Elemental Weakness]], and optionally another [[Efficiency I]] on [[Pain Offering]]. Once your second ascendancy gives you Soulless Form, mana should stop being an issue.
+
+**I die too often, what should I check?** Cap your elemental resistances at 75%, aim for roughly 60% chaos resistance, and wear bases that give as much energy shield as possible.
+
+**How do I get more support sockets for my Skeletal Warriors?** When they come from a Rattling Sceptre, their socket count follows the skill level on the sceptre: level 20 [[Skeletal Warrior]] allows five supports. A Perfect Jeweller's Orb on the sceptre adds sockets, but it does not work on corrupted or sanctified items.
+
+**How many of each minion should I summon?** It depends on your Spirit. Keep the two free [[Skeletal Warrior]]s from the sceptre (do not summon more), one or two [[Skeletal Cleric]]s, one [[Skeletal Storm Mage]] and [[Wolf Pack]] (found in the Druid tab of an Uncut Spirit Gem), then spend all remaining Spirit on your main spectres. The late setup adds one [[Skeletal Brute]].
+
+**What do I need before switching to Gargantuan Wasps?** Be level 92 or higher and wear a rare belt with "Minions' Strikes have Melee Splash". You do not need a new gem: the NPC can disenchant your Vaal Guard spectre gem into a clean [[Bind Spectre]] that keeps its level and sockets.

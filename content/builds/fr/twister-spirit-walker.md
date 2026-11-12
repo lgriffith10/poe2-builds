@@ -48,3 +48,13 @@ Comme la plupart des builds de Huntress, les défenses viennent de l'évasion et
 ## Priorités d'équipement
 
 La lance compte le plus : +niveau des compétences de projectile, dégâts de froid et physiques ajoutés, vitesse d'attaque et chance de coup critique. Viennent ensuite une amulette avec de l'Esprit et des niveaux de projectile, puis de la vie, de l'évasion et de la déviation sur l'armure. Les améliorations de fin de progression du guide source comprennent [[The Black Insignia]], [[The Taming]] et [[Sacred Flame]].
+
+## FAQ
+
+**Ice-Tipped Arrows ne semble pas fonctionner, qu'est-ce qui ne va pas ?** [[Ice-Tipped Arrows]] doit être sur le set d'armes 2 avec [[Twister]]. Seuls [[Barrage]] et [[Whirling Slash]] vont sur le set d'armes 1.
+
+**Pourquoi utiliser deux sets d'armes ?** Le set d'armes 1 maximise la vitesse d'attaque de [[Whirling Slash]] (et la vitesse de compétence de Barrage via Dance with Death), tandis que le set d'armes 2 maximise les dégâts de [[Twister]], par exemple avec un Omen Sceptre pour plus de chance de critique. Placez [[War Banner]] sur le set 1 pour économiser de l'esprit.
+
+**Quand passer à l'arbre critique ?** Vers le milieu des niveaux 80, une fois que vous avez une lance avec une bonne chance de critique locale. La chance de critique de base compte beaucoup : ne changez pas avant d'avoir à la fois les niveaux et la lance.
+
+**J'ai l'impression de mourir trop souvent, que faire ?** Montez vos résistances élémentaires à 75 %, visez environ 60 % de résistance au chaos, et utilisez des bases qui donnent évasion et bouclier d'énergie aux bons emplacements. Ne lancez pas [[Whirling Slash]] quand vous êtes complètement encerclé : allez d'abord dans un endroit plus sûr.

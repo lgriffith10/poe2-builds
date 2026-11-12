@@ -43,3 +43,17 @@ La Lich empile bouclier d'énergie, récupération de bouclier d'énergie et blo
 ## Priorités d'équipement
 
 +niveau de toutes les compétences de serviteurs sur le sceptre, le casque et l'amulette en priorité, puis de l'esprit pour plus de serviteurs. Un Rattling Sceptre est idéal. Enfolding Dawn et une paire de Bones of Ullr sont des uniques courants et peu chers ; l'anneau Kalandra's Touch montré ici est l'option optimisée.
+
+## FAQ
+
+**Comment obtenir les bons spectres ?** À la fin de l'acte 3, à Utzaal, utilisez [[Bind Spectre]] sur un Vaal Guard. Trois monstres portent ce nom : un de mêlée (50 d'Esprit), un à distance (60 d'Esprit) et celui qu'il vous faut, qui lance des bombes (50 d'Esprit). Dans les Interludes, commencez par Doryani's Contingency : dans son avant-dernière zone, Etched Ravine, apparaissent trois sortes de Powered Zealot, et seul celui qui lance des boules de foudre (Spark) mérite d'être lié, pour 55 d'Esprit. Attendez d'avoir taillé [[Wildshards II]] et [[Pierce III]] avant de remplacer vos Vaal Guards. Désenchanter la gemme du spectre Vaal Guard auprès du PNJ rend une [[Bind Spectre]] vierge, de même niveau et avec les mêmes châsses. Ne liez pas [[Projectile Acceleration III]] : il réduit les dégâts des Zealots.
+
+**Comment régler les problèmes de mana pendant la campagne ?** Supportez [[Volcano]] avec [[Arcane Surge]] et [[Elemental Weakness]] avec [[Efficiency I]] ; [[Pain Offering]] peut aussi prendre [[Efficiency I]]. Une fois la deuxième épreuve d'ascendance terminée et Soulless Form obtenu, le mana ne devrait plus poser problème.
+
+**Je meurs trop souvent. Que faire ?** Montez vos résistances élémentaires à 75 % et visez environ 60 % de résistance au chaos, et portez des bases à bouclier d'énergie pour en obtenir le plus possible. Au début de l'acte 4, rendez-vous à Ngakanu et remettez l'objet de quête Shark Fin pour gagner 30 % de bouclier d'énergie maximal augmenté.
+
+**Combien de sbires de chaque type utiliser ?** Cela dépend de votre Esprit. À titre indicatif : un ou deux [[Skeletal Cleric]], les deux [[Skeletal Warrior]] offerts par votre Rattling Sceptre (ne dépensez pas d'Esprit pour en avoir plus), [[Wolf Pack]], et le reste en spectres Powered Zealot. N'ajoutez un [[Skeletal Storm Mage]] qu'une fois au moins 6 Zealots en jeu, et un [[Skeletal Brute]] qu'à partir d'au moins 9.
+
+**Comment obtenir plus de châsses pour mes Skeletal Warriors ?** Avec les Skeletal Warriors accordés par un Rattling Sceptre, le nombre de châsses de support suit le niveau de la compétence sur le sceptre : au niveau 20, cinq supports sont possibles. Un Perfect Jeweller's Orb sur le sceptre ajoute aussi des châsses, sauf sur un objet corrompu ou sanctifié.
+
+**Qu'est-ce que Sigil of Power et où le trouver ?** [[Sigil of Power]] n'existe que sur un Chiming Staff. Il crée un cercle bleu qui vous accorde, à vous et à vos sbires, plus de dégâts des sorts tant que vous restez dedans, et qui se renforce à mesure que vous y dépensez du mana. Votre set d'armes principal porte le Rattling Sceptre : placez donc le bâton sur le second set d'armes et lancez-le avant les boss ou les vagues du Simulacrum, avec les passifs du second set en effet de malédiction, durée et zone des sorts. Le modificateur clé du bâton est +niveau de toutes les compétences de sort ; la qualité apportée par les Arcanist's Etchers agrandit le cercle.

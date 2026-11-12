@@ -385,3 +385,13 @@ As an Oracle, The Unseen Path unlocks passives no other class can take, and Entw
 ## Gear Priorities
 
 The talisman wants physical damage, attack speed, crit and +level of attack skills. The finished setup uses Sacrosanctum, Sine Aequo and Headhunter; during the campaign, start with Entangle until you have Werewolf abilities.
+
+## FAQ
+
+**How do I sustain the life cost of my skills after taking Blood Magic?** Get all three sources of recovery: life leech, life on kill and life regeneration. Physical damage leeched as life rolls on rings or gloves, and [[Mark of Siphoning II]] adds more, but that leech only works on physical damage while [[Lunar Assault]] mostly deals elemental damage, so when you are low use [[Shred]] a few times, which costs no life. Life on kill comes from [[Cannibalism I]] or [[Cannibalism II]] depending on your Spirit, or from a jewel. Regeneration from [[Vitality II]], tree nodes and [[Holy Descent]] is hard to stack, so focus on the other two.
+
+**Why take the Ancestral Bond keystone?** Not for its effect: Entwined Realities lets you allocate passives around keystones you own, so Ancestral Bond opens the way to nearby nodes such as Electrified Claw and Stormcharged. Blood Magic is taken the same way, for nodes like Prism Guard and In Your Face.
+
+**I'm short on attributes. What should I do?** Oracle allocates few travel nodes, so attributes can be tight. Wear some items with Strength, Intelligence or Dexterity and take the rest on the tree. During the campaign, pick attributes when choosing your tattoo at the Halls of the Dead in Act 4.
+
+**My damage is low in the campaign. What matters most?** Your weapon. Replace it with a better base from vendors every 5 to 8 levels, using crafting currency and the gold gambler, or better, buy an early weapon with your first one or two Exalted Orbs and upgrade from there.

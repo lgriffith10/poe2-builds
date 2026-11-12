@@ -649,3 +649,17 @@ Energy shield, energy shield recovery and block. Reactive Growth and Avatar of E
 ## Gear Priorities
 
 +Level of all Minion Skills and spirit first. [[Bones of Ullr]] and two [[Evergrasping Ring]]s are the endgame uniques, with [[Prism Guardian]] on the second weapon set.
+
+## FAQ
+
+**Which Vaal Guard should I bind as a spectre?** In Utzaal at the end of Act 3, three different monsters are all called Vaal Guard. Use [[Bind Spectre]] on the one that throws bombs (50 Spirit), not the melee one (50 Spirit) or the ranged one (60 Spirit). Later, when Gargantuan Wasps take over, the NPC can disenchant that gem into a clean [[Bind Spectre]] with the same level and sockets.
+
+**How do I fix mana problems in the campaign?** Support [[Volcano]] and [[Elemental Weakness]] with [[Efficiency I]], and optionally [[Pain Offering]] as well.
+
+**I die too often, what should I check?** Cap your elemental resistances at 75%, aim for roughly 60% chaos resistance (not needed once you have Chaos Inoculation), and wear bases that give as much energy shield as possible.
+
+**Why do I get one-shot with Chaos Inoculation despite high energy shield?** Chaos Inoculation does not mix with any modifier saying "Damage taken bypasses Energy Shield": the Heavy Buffer notable, for example, must go. Mind Over Matter is one fix, since damage is taken from mana before life, at the cost of 50% less mana recovery. Never use a mana flask that "Removes 15% of Mana Recovered from Life when used". Take the keystone around level 83, ideally with 5-6k energy shield on pure energy shield bases.
+
+**How do I get more support sockets for my Skeletal Warriors?** When they come from a Rattling Sceptre, their socket count follows the skill level on the sceptre: level 20 [[Skeletal Warrior]] allows five supports. A Perfect Jeweller's Orb on the sceptre adds sockets, but it does not work on corrupted or sanctified items.
+
+**How many of each minion should I summon?** It depends on your Spirit. Keep the two free [[Skeletal Warrior]]s from the sceptre (do not summon more), one or two [[Skeletal Cleric]]s, one [[Skeletal Storm Mage]] and [[Wolf Pack]]; early and mid game also run a few [[Skeletal Reaver]]s, replaced by one [[Skeletal Brute]] later. Spend the rest on your main spectres.

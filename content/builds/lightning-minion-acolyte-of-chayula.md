@@ -500,3 +500,17 @@ Energy shield and evasion, with Wolf Pack's damage reduction and [[Refutation]] 
 ## Gear Priorities
 
 +Level of all Minion Skills and spirit first. [[Alpha's Howl]] is the key helmet for mapping, with [[Bones of Ullr]] boots and [[Prism Guardian]] on the second weapon set.
+
+## FAQ
+
+**How much gold do I need for the switch to minions?** Around level 41 to 43, when you reach Utzaal at the end of Act 3 and can bind Vaal Guards, you respec the whole tree into minions, which costs about 35,000 gold. Pick up and identify every rare to sell it, and avoid buying from shops unless you find a +1 or +2 minion skill helmet or sceptre. Keep an eye out for those, and for a +1 minion skill amulet, before the switch.
+
+**Which spectres should I bind?** In Utzaal, use [[Bind Spectre]] on the Vaal Guard that throws bombs (50 Spirit), not the melee (50 Spirit) or ranged (60 Spirit) monsters with the same name. They can cause performance issues; [[Skeletal Reaver]]s are the alternative if your computer struggles. In maps, replace them with Powered Zealots, or Chaos Zealots that sometimes appear in the Trial of Chaos, but only the version that casts Spark and costs 55 Spirit: let them attack you a few times to see the big blue lightning ball before binding. Wait until you have cut [[Wildshards II]] and [[Pierce III]], and disenchant the Vaal Guard gem at the NPC to get a clean [[Bind Spectre]] with the same level and sockets.
+
+**How does weapon set snapshotting work, and what if I forget it?** In maps, weapon set 2 holds the remnant nodes. Enter each zone with set 2 active, then swap to set 1: you keep the set 2 remnant bonuses and easily hold 10 remnant stacks, for 20 to 30% more damage. If you entered with the wrong set, take a portal out and back in or log out and in again with set 2 active; levelling up also resets the snapshot. Taking the snapshot tree without swapping costs about half your damage compared with the base tree.
+
+**I'm dying too often. What can I do?** Cap your elemental resistances at 75%, get at least 60% chaos resistance, and wear energy shield bases to get as much energy shield as possible. Mind Over Matter and Heavy Buffer also improve survivability a lot.
+
+**How do I get more sockets for my Skeletal Warriors?** With Skeletal Warriors granted by a Rattling Sceptre, the number of support sockets follows the skill level on the sceptre: level 20 allows five supports. A Perfect Jeweller's Orb on the sceptre also adds sockets, except on corrupted or sanctified items.
+
+**How do I deal more damage to pinnacle bosses?** Drop [[Blasphemy]] and self-cast [[Despair]] instead, supported by [[Heightened Curse]], [[Cursed Ground]], [[Prolonged Duration II]], [[Efficiency II]] and [[Ritualistic Curse]]. This should also free enough Spirit for two or three more Zealot spectres.

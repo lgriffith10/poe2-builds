@@ -494,3 +494,17 @@ Energy shield and evasion on every armour slot. The minions themselves are your 
 ## Gear Priorities
 
 +Level of all Minion Skills on the weapon, helmet and amulet comes first, then spirit to run every minion. [[Bones of Ullr]] boots are a cheap upgrade from the campaign onward, and [[Enfolding Dawn]] is the source guide's body armour early on. For mapping, [[Alpha's Howl]] is the key unique of the build.
+
+## FAQ
+
+**Which Vaal Guard should I bind as a spectre?** In Utzaal at the end of Act 3, three different monsters are all called Vaal Guard. Use [[Bind Spectre]] on the one that throws bombs (50 Spirit), not the melee one (50 Spirit) or the ranged one (60 Spirit). This is the moment you leave [[Explosive Grenade]] behind, so have +1 Minion skill gear (helmet, amulet, sceptre) ready.
+
+**Where do I find Plague Harvesters?** In The Dreadnought area of Act 2. Switch to them in the mid setup, once you wear a belt with "Minions' Strikes have Melee Splash": they move faster, fly over obstacles and do not get stuck on each other like Skeletal Reavers.
+
+**How many of each minion should I summon?** It depends on your Spirit. Keep the two free [[Skeletal Warrior]]s from the sceptre (do not summon more), one or two [[Skeletal Cleric]]s, one [[Skeletal Storm Mage]] and [[Wolf Pack]], then spend the rest on your damage minion. In the campaign that means three or more Vaal Guards; once you get a Greater Jeweller's Orb, use it on [[Skeletal Reaver]] and let the Reavers replace the Vaal Guards.
+
+**I die too often, what should I check?** Cap your elemental resistances at 75%, keep chaos resistance at 60% or more, and wear bases that give as much energy shield as possible. Mind Over Matter and Heavy Buffer add a lot of survivability.
+
+**How do I get more support sockets for my Skeletal Warriors?** When they come from a Rattling Sceptre, their socket count follows the skill level on the sceptre: level 20 [[Skeletal Warrior]] allows five supports. A Perfect Jeweller's Orb on the sceptre adds sockets, but it does not work on corrupted or sanctified items.
+
+**How can I deal more damage to pinnacle bosses?** Drop [[Blasphemy]] and cast [[Despair]] yourself, supported by [[Heightened Curse]], [[Cursed Ground]], [[Prolonged Duration II]], [[Efficiency II]] and [[Ritualistic Curse]]. The freed Spirit should also allow one or two more Plague Harvesters.

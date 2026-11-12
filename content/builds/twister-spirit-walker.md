@@ -293,3 +293,13 @@ Like most Huntress builds, defences come from Evasion and Deflection on every ar
 ## Gear Priorities
 
 The spear matters most: +Level of all Projectile Skills, added cold and physical damage, attack speed and critical strike chance. An amulet with Spirit and projectile levels comes next, then life, evasion and Deflection on armour. Later upgrades from the source guide's aspirational setup include [[The Black Insignia]], [[The Taming]] and [[Sacred Flame]].
+
+## FAQ
+
+**Ice-Tipped Arrows doesn't seem to work, what's wrong?** [[Ice-Tipped Arrows]] must be on weapon set 2 with [[Twister]]. Only [[Barrage]] and [[Whirling Slash]] belong on weapon set 1.
+
+**Why use two weapon sets?** Weapon set 1 maximises attack speed for [[Whirling Slash]] (and skill speed for Barrage through Dance with Death), while weapon set 2 maximises [[Twister]] damage, for example with an Omen Sceptre for extra critical chance. Put [[War Banner]] on set 1 to save Spirit.
+
+**When should I switch to the crit tree?** Around the mid 80s, once you own a spear with good local critical chance. Base critical chance matters a lot, so do not switch before you have both the levels and the spear.
+
+**I feel like I'm dying too much, what do I do?** Cap elemental resistances at 75%, aim for roughly 60% chaos resistance, and use bases that give evasion and energy shield in the right slots. Do not start [[Whirling Slash]] while fully surrounded: move somewhere safer first.

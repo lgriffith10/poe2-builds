@@ -225,3 +225,13 @@ The Titan's Colossal Capacity, Hulking Form, Stone Skin and Mysterious Lineage a
 ## Gear Priorities
 
 Look for the shield with the highest armour you can find, then life and resistances everywhere. A body armour with high life and armour is the biggest defensive upgrade, and "Armour applies to Elemental Damage" is very valuable. Attack speed on gloves and skill speed on jewellery make the build much smoother. Thrillsteel and Constricting Command are the uniques that take it further.
+
+## FAQ
+
+**Do I need a good weapon to deal more damage?** No. Your weapon's damage plays no part in this build; only the stats tied to its key mechanics matter.
+
+**My single target is weak on bosses, how do I fix it?** Swap [[Ahn's Citadel]] and [[Kaom's Madness]] for [[Concentrated Area]] and [[Close Combat II]], and use [[Sunder]] on the boss once its armour is broken, as it adds a lot of damage.
+
+**How do I fix mana problems?** One Mana Leech modifier on a ring or gloves solves them. Do not level [[Leap Slam]], [[Infernal Cry]] or [[Seismic Cry]]; leveling Infernal Cry is still worth it, but only if your mana is comfortable or you have a fifth socket to support it with [[Lifetap]].
+
+**An upgrade left me unable to use a skill or item, what now?** Spend gold at the Hooded One or Doryani to respec your attribute points so they meet the new requirements.

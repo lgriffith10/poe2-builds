@@ -291,3 +291,15 @@ The Amazon's Critical Strike, Penetrate, Predatory Instinct and In for the Kill 
 ## Gear Priorities
 
 The spear needs physical damage, attack speed and accuracy. Life and resistances everywhere else, with movement speed on boots. Horns of Bynden helps during the campaign, and the endgame setup adds a Ryslatha's Coil belt.
+
+## FAQ
+
+**Why do I keep getting stunned?** Two options on the tree: Hunter's Talisman gives you an extra charm slot for a Stone Charm, or spend two points on Deft Recovery. Stuns also become less of a problem as your life pool grows, even if they stay annoying.
+
+**Why can't I level all my gems?** Levelling every gem asks for a lot of attributes. Early on, Strength comes first, even before fully levelled gems; just keep enough Dexterity to use every gem and wear evasion gear. Later you need both, so look for Dexterity and Strength on gear and move attribute points as needed (the Hooded One or Doryani respec them for gold).
+
+**How do I sustain life and mana in maps?** Get at least one roll of physical damage leeched as life and one leeched as mana. They can roll on the weapon, rings or gloves, ideally rings. Chance to evade is your main defence, so keep a body armour with as much evasion as possible.
+
+**Can I use Tame Beast, and why is my Spirit short?** Only if you have spare Spirit from gear such as the body armour or amulet. [[Tame Beast]] turns a captured rare beast into a minion that can bring useful buffs like a physical aura, but its Spirit cost is not fixed: it depends on how many modifiers the beast has.
+
+**Which Act 2 relic and Act 3 Venom Draught bonuses should I take?** These bonuses are minor. If you picked something different, especially for the Venom Draught, it will not hurt the build much.

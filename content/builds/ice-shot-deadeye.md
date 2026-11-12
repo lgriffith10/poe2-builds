@@ -396,3 +396,17 @@ The build relies on Evasion and Deflection rather than raw life. [[Wind Dancer]]
 ## Gear Priorities
 
 Your bow is by far the most important item: look for high physical damage per second, attack speed and critical strike chance, with added cold damage and an additional arrow as bonuses. After that, an amulet with Spirit and +Level of all Projectile Skills, then life and resistances on the remaining slots.
+
+## FAQ
+
+**How do I get a good bow?** Damage comes from the weapon's prefixes: up to three that add physical, cold, fire or lightning damage. Early on any flat damage is strong, but in the late game focus on physical and cold, and +levels to projectile skills are strong too. Do not ignore suffixes: in the endgame prioritise critical hit chance and critical damage bonus, which multiplies all the increased critical bonus on the tree. Attack speed is fine, but it does not raise damage per hit, and the build feels better with bigger hits.
+
+**I don't have enough attributes to level all my gems.** You do not need to level every gem at every stage, especially those asking for a lot of Intelligence or Dexterity; hybrid Dexterity and Intelligence gems are always fine to upgrade. Get most of your attributes from gear and plan for them when buying or crafting, then move attribute points on the tree as your gear changes. Runes can patch a shortfall, but only temporarily.
+
+**What should I anoint?** Early in a league, when Distilled Emotions are expensive, Serrated Edges gives a lot of damage. In the endgame Climate Change is strong, and the best option is probably Zarokh's Gift, which adds a jewel socket in the centre of the tree but can be costly.
+
+**How do I fix mana while clearing?** A Sapphire jewel with 2% of mana gained on kill solves it completely.
+
+**What should I watch out for with Beastial Skin?** It doubles the evasion of your body armour, so make sure your chest already has a lot of evasion before you take it.
+
+**How should I set up my weapon swap?** In the endgame, carry two bows and two quivers. Put [[Ice Shot]] on the main set and [[Snipe]] on the second set using the I and II checkmarks on each skill. The clearing bow wants extra arrows, with [[Cadiro's Gambit]] as the quiver once your bow hits hard enough; the single target set ignores attack speed and arrows in favour of flat damage, critical chance and gem levels.

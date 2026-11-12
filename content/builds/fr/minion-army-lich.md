@@ -34,3 +34,17 @@ Empilez bouclier d'énergie, récupération de bouclier d'énergie et blocage. S
 ## Priorités d'équipement
 
 +Niveau de toutes les compétences de serviteur et esprit sur le sceptre, le casque et l'amulette. [[Prism Guardian]] est le bouclier de choix, avec les bottes [[Bones of Ullr]] et un [[Evergrasping Ring]]. [[Enfolding Dawn]] est l'armure de campagne du guide source.
+
+## FAQ
+
+**Quel Vaal Guard faut-il lier comme spectre ?** À Utzaal, à la fin de l'acte 3, trois monstres différents portent le nom de Vaal Guard. Utilisez [[Bind Spectre]] sur celui qui lance des bombes (50 d'esprit), pas sur celui de mêlée (50 d'esprit) ni sur celui à distance (60 d'esprit). Leurs explosions peuvent faire chuter les performances ; si c'est le cas, restez sur [[Skeletal Arsonist]] ou [[Skeletal Sniper]] avec les mêmes soutiens.
+
+**Comment régler les problèmes de mana pendant la campagne ?** Placez [[Arcane Surge]] sur [[Volcano]] et [[Efficiency I]] sur [[Elemental Weakness]], et éventuellement un autre [[Efficiency I]] sur [[Pain Offering]]. Dès que votre deuxième ascendance vous donne Soulless Form, le mana ne devrait plus poser problème.
+
+**Je meurs trop souvent, que vérifier ?** Montez vos résistances élémentaires à 75 %, visez environ 60 % de résistance au chaos, et portez des bases qui donnent le plus de bouclier d'énergie possible.
+
+**Comment obtenir plus de châsses de soutien pour mes Skeletal Warriors ?** Quand ils viennent d'un Rattling Sceptre, leur nombre de châsses dépend du niveau de la compétence sur le sceptre : un [[Skeletal Warrior]] de niveau 20 accepte cinq soutiens. Un Perfect Jeweller's Orb sur le sceptre ajoute des châsses, mais il ne fonctionne pas sur un objet corrompu ou sanctifié.
+
+**Combien de serviteurs de chaque type invoquer ?** Cela dépend de votre esprit. Gardez les deux [[Skeletal Warrior]] gratuits du sceptre (n'en invoquez pas davantage), un ou deux [[Skeletal Cleric]], un [[Skeletal Storm Mage]] et [[Wolf Pack]] (dans l'onglet Druid d'une Uncut Spirit Gem), puis mettez tout l'esprit restant dans vos spectres principaux. La configuration tardive ajoute un [[Skeletal Brute]].
+
+**Que faut-il avant de passer aux Gargantuan Wasps ?** Être au moins niveau 92 et porter une ceinture rare avec « Minions' Strikes have Melee Splash ». Inutile de trouver une nouvelle gemme : le PNJ peut désenchanter votre gemme de spectre Vaal Guard en un [[Bind Spectre]] vierge qui garde son niveau et ses châsses.

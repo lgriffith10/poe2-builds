@@ -278,3 +278,11 @@ The source guide starts with [[Twister]] and [[Whirling Slash]]: Whirling Slash 
 ## Gear Priorities
 
 Spear damage, critical strike and projectile levels first, then evasion, Deflection and life on armour.
+
+## FAQ
+
+**Why can't I use Barrage?** With [[Olroth's Conviction]], [[Barrage]] spends Ward, so you need Ward on a piece of gear from the Kalguuran bench, ideally gloves or boots. Aim for roughly 1.5 to 2 times Barrage's Ward cost in total Ward to keep it up in the endgame.
+
+**Why am I not generating power or endurance charges?** Most of them come from Thaumaturgic Generator, which grants charges based on the attribute type of your skills and enables Charge Regulation. It cannot be reached on the tree, so it has to be instilled on your amulet. That is expensive, so do it on a good amulet rather than one you plan to replace soon.
+
+**How do I get a good spear?** The Akoyan Spear, the best endgame base and very good for critical strikes, drops in level 78 zones. Pick up every one and use Orbs of Transmutation and Augmentation on them looking for good modifiers; once one has two good modifiers, an Essence and a Preserved Jawbone can bring it to four.

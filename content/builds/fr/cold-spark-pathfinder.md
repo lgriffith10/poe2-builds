@@ -46,3 +46,17 @@ Vous commencez en hybride vie et évasion. Plus tard, le guide source passe à C
 ## Priorités d'équipement
 
 Le build fonctionne sans uniques au début. Call of the Brotherhood aide à générer des Cold Infusions tôt, et Maligaro's Virtuosity compense la perte de dégâts critiques de Pinpoint Critical. La baguette vise la vitesse d'incantation, les niveaux de sorts et le critique des sorts.
+
+## FAQ
+
+**Que faut-il pour que Cast on Critical fonctionne ?** D'abord assez d'Esprit : le build l'obtient d'un sceptre, rare ou unique comme [[Guiding Palm]]. Ensuite assez de chance de coup critique, d'où [[Pinpoint Critical]] sur [[Spark]] associé à [[Maligaro's Virtuosity]]. Placez [[Cast on Critical]] en dernier dans votre liste de gemmes, sinon le changement d'arme ne fonctionnera pas plus tard.
+
+**Pourquoi ne puis-je pas lancer de sorts avec Atziri's Splendour ?** Si votre [[Atziri's Splendour]] a le modificateur qui convertit le coût en mana en coût en vie, il est incompatible avec Chaos Inoculation. Utilisez-en un dont ce modificateur a été retiré avec un Cultivation Orb.
+
+**Comment gérer les coûts en mana ?** Prenez Cost Efficiency dans Traveller's Wisdom au besoin, et utilisez [[Mana Remnants]] : il rend beaucoup de mana quand vous tuez des ennemis affectés par des altérations élémentaires ou leur infligez des coups critiques en cible unique. En endgame, une Dueling Wand avec Spellslinger aide beaucoup, et vous pouvez lui faire lancer une malédiction automatiquement en associant Spellslinger à une touche du pavé numérique puis en activant le verrouillage numérique.
+
+**Que prendre avec Traveller's Wisdom ?** Global Defence si vous vous sentez fragile, Cost Efficiency si les coûts en mana posent problème, les dégâts augmentés si vous voulez plus de dégâts. En général, Cost Efficiency et Global Defence offrent le meilleur rapport.
+
+**Pourquoi mes dégâts sont-ils faibles pendant la campagne ?** Pour un lanceur de sorts, il manque presque toujours des niveaux de compétence en plus : continuez à vérifier les marchands en progressant.
+
+**Je n'ai pas assez d'Esprit pour tous mes buffs.** Retirez [[Arctic Armour]] dès que vous commencez à utiliser [[Cast on Critical]]. Un sceptre rare permet de tout utiliser, mais les sceptres uniques sont meilleurs pour ce build.

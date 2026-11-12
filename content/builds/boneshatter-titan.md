@@ -378,3 +378,17 @@ The Titan's Colossal Capacity, Hulking Form, Stone Skin and Mysterious Lineage a
 ## Gear Priorities
 
 A big two-handed mace with physical damage first, then life, armour and resistances. The build needs no uniques; Thrillsteel is a common upgrade.
+
+## FAQ
+
+**Why doesn't Leap Slam prime enemies for Boneshatter?** Keep [[Leap Slam]] at a low level so it does not kill the monsters, and link it to Brink, which stops it from heavy stunning them so they stay primed, and to Overpower, which lets even a low level Leap Slam build enough stun. Never allocate Crushing Impacts: it removes your ability to prime enemies entirely. If you took it, respec it right away at the Hooded One.
+
+**How do I get enough Strength for Giant's Blood?** Take Strength on every travel node and path to the Polymathy cluster, whose small reduced attribute requirement nodes cut how much Strength you need. Look for as much Strength as possible on gear, and do not hesitate to use a lower tier weapon: a well rolled mid tier mace lasts until you can wield the best bases.
+
+**How do I fix mana problems?** One mana leech roll on a ring or the gloves solves them. Do not level [[Leap Slam]], [[Infernal Cry]] or [[Seismic Cry]]; levelling Infernal Cry for warcry speed is only worth it once your mana feels comfortable or you have a fifth socket to link [[Lifetap]].
+
+**I keep dying after leaping into packs. What can I do?** Most of the damage you take while levelling is physical, and most of your physical damage reduction comes from the body armour, so always wear the highest armour chest you can. Better still, avoid the hits: dodge roll right after landing so the monsters swing and miss, then [[Boneshatter]] them.
+
+**Why does the build feel sluggish?** Animation cancelling is a core part of the build. Hold the dodge roll button shortly before [[Leap Slam]] lands to roll out of the heavy landing, then chain Leap Slam, dodge roll, [[Mace Strike]] and another roll if nothing got primed, [[Boneshatter]] on a primed enemy and a final roll. Boneshatter hits early in its swing, so experiment with how soon you can roll out while still dealing damage.
+
+**Why does Perfect Strike deal no damage?** It needs precise timing to get its big damage multiplier: watch the mace flash as your character winds up and release the button as it blinks during the backswing. If you still struggle, replace Window of Opportunity with Fire Infusion.

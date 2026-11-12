@@ -40,3 +40,17 @@ Colossal Capacity, Hulking Form, Stone Skin et Mysterious Lineage du Titan ajout
 ## Priorités d'équipement
 
 Une grosse masse à deux mains avec des dégâts physiques d'abord, puis de la vie, de l'armure et des résistances. Le build n'a besoin d'aucun unique ; Thrillsteel est une amélioration courante.
+
+## FAQ
+
+**Pourquoi Leap Slam ne prépare-t-il pas les ennemis pour Boneshatter ?** Gardez [[Leap Slam]] à bas niveau pour qu'il ne tue pas les monstres, et liez-le à Brink, qui l'empêche de les étourdir lourdement pour qu'ils restent préparés, ainsi qu'à Overpower, qui permet même à un Leap Slam de bas niveau d'accumuler assez d'étourdissement. Ne prenez jamais Crushing Impacts : il supprime totalement votre capacité à préparer les ennemis. Si vous l'avez pris, faites-le retirer immédiatement auprès du Hooded One.
+
+**Comment obtenir assez de Force pour Giant's Blood ?** Prenez la Force sur chaque nœud de trajet et allez jusqu'au groupe Polymathy, dont les petits nœuds de réduction des prérequis d'attributs diminuent la Force nécessaire. Cherchez le plus de Force possible sur l'équipement, et n'hésitez pas à utiliser une arme de palier inférieur : une masse de milieu de gamme bien roulée suffit jusqu'à ce que vous puissiez manier les meilleures bases.
+
+**Comment régler les problèmes de mana ?** Une seule ligne de vol de mana sur un anneau ou les gants les résout. Ne montez pas [[Leap Slam]], [[Infernal Cry]] ni [[Seismic Cry]] ; monter Infernal Cry pour la vitesse des cris de guerre ne vaut la peine que si votre mana est confortable ou si vous avez une cinquième châsse pour y lier [[Lifetap]].
+
+**Je meurs sans cesse après avoir sauté dans les packs. Que faire ?** La plupart des dégâts subis pendant le leveling sont physiques, et l'essentiel de votre réduction des dégâts physiques vient de l'armure de corps : portez toujours le torse avec le plus d'armure possible. Mieux encore, évitez les coups : faites une roulade juste après l'atterrissage pour que les monstres frappent dans le vide, puis achevez-les avec [[Boneshatter]].
+
+**Pourquoi le build paraît-il lent ?** L'annulation d'animation est au cœur du build. Maintenez la touche de roulade juste avant que [[Leap Slam]] n'atterrisse pour sortir de la lourde réception, puis enchaînez Leap Slam, roulade, [[Mace Strike]] et une autre roulade si rien n'a été préparé, [[Boneshatter]] sur un ennemi préparé et une dernière roulade. Boneshatter frappe tôt dans son mouvement : testez à quel moment vous pouvez rouler tout en infligeant les dégâts.
+
+**Pourquoi Perfect Strike n'inflige-t-il aucun dégât ?** Il demande un timing précis pour obtenir son gros multiplicateur : surveillez le flash de la masse pendant que votre personnage arme son coup et relâchez la touche quand elle clignote pendant le mouvement de recul. Si vous avez encore du mal, remplacez Window of Opportunity par Fire Infusion.

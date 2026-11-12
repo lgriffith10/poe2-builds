@@ -446,3 +446,15 @@ Stormweaver's Strike Twice, Constant Gale and Storm's Recollection complete the 
 ## Gear Priorities
 
 The source guide eventually six-links Arc with a Perfect Jeweller's Orb and five-links the other skills. Gear focuses on spell levels, cast speed and energy shield.
+
+## FAQ
+
+**I don't have enough Spirit for all my persistent buffs, what should I do?** After the campaign, [[Archmage]] needs a total of +60 to maximum Spirit from your amulet and body armour, usually a body armour with +47 Spirit or more plus any Solar Amulet. At 20% quality, Archmage only needs +51, which a body armour alone can provide. Until then, run [[Arctic Armour]] or [[Convalescence]] for survivability, or [[Attrition]] if you lack single target damage.
+
+**How do I improve my mana sustain?** Cost efficiency is the strongest fix: take Efficient Casting and Conservative Casting on the tree, or temporarily link [[Efficiency II]] if your damage can spare a link. If remnants run short in boss fights, take Storm's Recollection as your third ascendancy point, aim for 30% or more critical hit chance, and consider Arcane Remnants and Empowering Remnants. If [[Mana Tempest]] is the drain, only activate it after you have picked up several [[Mana Remnants]]. Force of Will as the fourth ascendancy point, pressing a mana flask, mana regeneration and mana on kill (for clearing) are the next options.
+
+**How do I get more Lightning Infusions?** Make sure [[Orb of Storms]] is linked to [[Harmonic Remnants II]]. Refracted Infusion (fourth ascendancy point) makes [[Frost Bomb]], [[Living Bomb]] and [[Siphon Elements]] generate many more, and the Infusing Power, Everlasting Infusions, Shocking Limit and Infused Limits notables add more or keep them longer. If a boss is slow to appear, pre-cast Orb of Storms and let it expire so you start the fight with maximum infusions.
+
+**What combo mistakes cost the most damage?** Skills on the wrong weapon set, not walking over Lightning Infusions and Mana Remnants, activating Mana Tempest too early, skipping [[Sigil of Power]], letting [[Orb of Storms]] or [[Frost Bomb]] lapse, and mistiming [[Elemental Weakness]]. Elemental Archon should be triggered with Elemental Weakness early on and with [[Living Bomb]] later.
+
+**How do I die less?** Your defences are a large energy shield pool, staying at range, and Heavy Snows (which needs gain as extra cold damage) to slow monsters. Weave in and out of combat so energy shield can recharge, and take more faster start of energy shield recharge if needed. Upgrade armour bases for energy shield, cap elemental resistances, and carry the charm that matches the threat (resistance, Amethyst for chaos, Stone for stuns, Thawing for freeze, Dousing for ignites, Staunching for bleeds).

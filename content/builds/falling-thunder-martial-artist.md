@@ -454,3 +454,11 @@ Clear with [[Frozen Locus]] and [[Herald of Ice]], detonating the Locus crystal 
 ## Gear Priorities
 
 Quarterstaff damage and critical strike first, then hybrid evasion and energy shield armour. [[Shavronne's Satchel]] is the source guide's belt.
+
+## FAQ
+
+**How do I generate power charges?** It changes as the build develops: [[Wing Blast]] and [[Killing Palm]] in Act 1, [[Siphoning Strike]] and [[Devour]] from Act 2, [[Reaper's Invocation]] with [[Profane Ritual]] in early maps, then [[Ailith's Chimes]] and Martial Master in the endgame.
+
+**How do I get more critical hit chance?** The build's damage depends on it. Sources: the Deadly Force, Critical Exploit, Moment of Truth and Struck Through notables, a suffix on the helmet and on the amulet, a Sinister Quarterstaff (the highest base critical chance), Fists of Stone gloves (Way of the Stonefist turns their critical damage bonus modifier into base critical chance), [[Charge Regulation]] (20% more critical chance with a power charge), and the [[Blindside]] and [[Pinpoint Critical]] supports.
+
+**How do I raise my defences?** Cap your elemental resistances and build high energy shield, evasion and deflection, plus high life rolls on the early variants. Energy shield recovery comes from [[Shavronne's Satchel]] and an instant-recovery Ultimate Life Flask.

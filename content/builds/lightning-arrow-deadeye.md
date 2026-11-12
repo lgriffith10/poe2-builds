@@ -314,3 +314,17 @@ Evasion from [[Wind Dancer]] and the tree avoids most hits, and [[Ghost Dance]] 
 ## Gear Priorities
 
 You need about 95 Spirit from the body armour and amulet to run every reservation. Look for added lightning and physical damage, attack speed and +level of projectile skills on the bow and quiver, then life and resistances everywhere else.
+
+## FAQ
+
+**How do I solve mana?** Mana is a known problem on this build. Get at least one Sapphire jewel with Recover 2% of mana on kill and a "Gain # mana per enemy killed" roll on your bow or quiver. For mapping and regular map bosses, Walker of the Wilds, a mana leech roll and a good mana flask smooth out the rest.
+
+**Which waystone modifiers should I avoid?** Monsters having 50 to 59% increased ailment threshold, and areas with patches of burning ground.
+
+**Why does shock matter so much?** Shocks make enemies take more damage (20% by default, raised by increased shock magnitude, for 4 seconds) and trigger your herald. [[Lightning Arrow]] and [[Lightning Rod]] can shock and freeze, and the chance depends on how big the hit is, so on weaker gear, open fights with [[Voltaic Mark]]. You can confirm the shock by the lightning icon with 20% under the enemy's health bar.
+
+**What jewels should I buy?** Emerald jewels, each with increased bonuses gained from your equipped quiver, paired with stats such as attack speed with bows, projectile damage, chance to chain from terrain, movement speed, elemental damage or damage against rare and unique enemies. You also need at least one Sapphire with Recover 2% of mana on kill.
+
+**What is my attribute priority?** First meet gem requirements, then item base requirements, then put the rest into Intelligence for Hand of Wisdom and Action. You want as much Dexterity as possible for the added damage and attack speed, but keep enough Strength for your support gems.
+
+**Which campaign rewards should I pick?** Act 2 relic: 30% increased charm charges gained. Act 3 Venom Draught: 25% increased stun threshold. Act 4, Halls of the Dead: Tawhoa's Test for 5% lightning resistance, Tasalio's Test for 5% cold resistance or Ngamahu's Test for 5% fire resistance. These bonuses are minor, so a different pick is not a problem.

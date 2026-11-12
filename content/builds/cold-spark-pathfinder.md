@@ -318,3 +318,17 @@ You start as a life and evasion hybrid. Later, the source guide switches to Chao
 ## Gear Priorities
 
 The build works without uniques at first. Call of the Brotherhood helps generate Cold Infusions early, and Maligaro's Virtuosity fixes the critical damage loss from Pinpoint Critical. Wands want cast speed, spell levels and spell crit.
+
+## FAQ
+
+**What do I need for Cast on Critical to work?** Enough Spirit first: the build gets it from a sceptre, either a rare one or a unique such as [[Guiding Palm]]. Then enough critical hit chance, which is why [[Spark]] uses [[Pinpoint Critical]] together with [[Maligaro's Virtuosity]]. Keep [[Cast on Critical]] last in your gem list, otherwise weapon swapping will not work later.
+
+**Why can't I cast spells with Atziri's Splendour?** If your [[Atziri's Splendour]] has the modifier converting mana costs to life costs, it cannot be used with Chaos Inoculation. Use one where that modifier has been removed with a Cultivation Orb.
+
+**How do I deal with mana costs?** Take Cost Efficiency from Traveller's Wisdom as needed, and run [[Mana Remnants]]: it returns a lot of mana when you kill enemies with elemental ailments or crit them in single target. In the endgame, a Dueling Wand with Spellslinger helps a lot, and you can make it auto-cast a curse by binding Spellslinger to a numlock key and turning numlock on.
+
+**What should I take with Traveller's Wisdom?** Global Defence if you feel squishy, Cost Efficiency if mana costs are a problem, increased damage if you want more damage. In general, Cost Efficiency and Global Defence are the best value.
+
+**Why is my damage low in the campaign?** For a spellcaster it is almost always missing +skill levels, so keep checking vendors as you progress.
+
+**I don't have enough Spirit for all my buffs.** Drop [[Arctic Armour]] once you start using [[Cast on Critical]]. A rare sceptre lets you run everything, but the unique sceptres are better for this build.

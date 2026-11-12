@@ -297,4 +297,12 @@ Spend early attribute points on Intelligence and Dexterity only as needed for ge
 
 ## Gear Priorities
 
-Armour, life and "Armour applies to Elemental Damage" on every armour slot, plus a shield with high base Armour. On the mace, look for physical damage, attack speed and damage against fully broken armour. [[Thrillsteel]] grants permanent Onslaught.
+Armour, life and "Armour applies to Elemental Damage" on every armour slot, plus a shield with high base Armour. The mace's own damage does not matter for this build: on it, look for +Level of all Attack Skills and damage against fully broken armour. [[Thrillsteel]] grants permanent Onslaught.
+
+## FAQ
+
+**My single target is weak on bosses, how do I fix it?** Swap [[Ahn's Citadel]] and [[Kaom's Madness]] for [[Concentrated Area]] and [[Close Combat II]], and use [[Sunder]] on the boss once its armour is broken, as it adds a lot of damage.
+
+**How do I fix mana problems?** One Mana Leech modifier on a ring or gloves solves them. Do not level [[Leap Slam]], [[Infernal Cry]] or [[Shield Charge]]; leveling Infernal Cry is still worth it, but only if your mana is comfortable or you have a fifth socket to support it with [[Lifetap]].
+
+**An upgrade left me unable to use a skill or item, what now?** Spend gold at the Hooded One or Doryani to respec your attribute points so they meet the new requirements.
