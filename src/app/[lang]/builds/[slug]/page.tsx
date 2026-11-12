@@ -275,6 +275,14 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                         </Link>
                         {s.note && <p className="text-sm text-muted">{s.note}</p>}
                       </div>
+                      {s.level && (
+                        <span
+                          className="whitespace-nowrap rounded-md border border-sky-400/60 px-2 py-0.5 text-xs font-semibold text-sky-300"
+                          title={tr.build.gemLevelHint}
+                        >
+                          {fmt(tr.build.gemLevel, { level: s.level })}
+                        </span>
+                      )}
                       {s.weaponSet && (
                         <span
                           className="whitespace-nowrap rounded-md border px-2 py-0.5 text-xs font-semibold"

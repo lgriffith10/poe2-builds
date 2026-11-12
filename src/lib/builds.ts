@@ -285,11 +285,13 @@ function parseBuild(file: string): { build: Build; markdown: string } {
   const skills: SkillGroup[] = (fm.skills ?? []).map((s: SkillGroup) => {
     for (const name of [s.gem, ...(s.supports ?? [])]) if (!getGem(name)) fail(`Unknown gem "${name}"`);
     if (s.weaponSet !== undefined && s.weaponSet !== 1 && s.weaponSet !== 2) fail(`${s.gem}: weaponSet must be 1 or 2`);
+    if (s.level !== undefined && !(Number.isInteger(s.level) && s.level >= 1 && s.level <= 40)) fail(`${s.gem}: level must be an integer from 1 to 40`);
     return {
       gem: getGem(s.gem)!.name,
       supports: (s.supports ?? []).map((n) => getGem(n)!.name),
       note: s.note,
       ...(s.weaponSet && { weaponSet: s.weaponSet }),
+      ...(s.level && { level: s.level }),
     };
   });
 

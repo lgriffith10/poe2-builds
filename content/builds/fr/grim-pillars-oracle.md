@@ -10,7 +10,7 @@ cons:
   - Le style de jeu totem ne plaît pas à tout le monde
   - Beaucoup d'effets à l'écran, exigeant pour l'ordinateur
 skillNotes:
-  Spell Totem: "Dégâts principaux ; les totems lancent Grim Pillars"
+  Spell Totem: "Dégâts principaux ; les totems lancent Grim Pillars. Le plus haut possible au début, puis niveau total 14 une fois Unnamed Heartwood obtenu."
   Entangle: "Consomme le gel des Ice Crystals. Gardez-en une copie au niveau 1 pour un coût en mana minime."
   Mana Tempest: Bonus de dégâts
   Frost Bomb: Exposition pour les boss

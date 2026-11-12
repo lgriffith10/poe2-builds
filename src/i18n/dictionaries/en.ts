@@ -207,6 +207,8 @@ export const en = {
     gemPrioritySub: "Which uncut gems to engrave first, act by act, according to the source guide.",
     gemPriorityCats: { skills: "Skill gems", spirit: "Spirit gems", supports: "Support gems" },
     weapons: "Weapons",
+    gemLevel: "Keep at level {level}",
+    gemLevelHint: "Keep this gem at this level, not higher: higher levels mostly raise its mana cost. The level counts bonuses from your gear.",
     weaponSetSkillHint: "Socketed on this weapon set: the skill is only available while it is equipped.",
     skillFromHint: "Where the skill comes from: a skill or spirit gem you socket, or a skill granted by your weapon, an item or an ascendancy notable (no gem needed).",
     modHint: "+# = a flat amount added, #% = a percentage. Aim for the highest values you can afford.",

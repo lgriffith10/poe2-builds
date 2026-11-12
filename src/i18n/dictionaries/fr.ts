@@ -209,6 +209,8 @@ export const fr: Dictionary = {
     gemPrioritySub: "Quelles gemmes brutes graver en premier, acte par acte, selon le guide source.",
     gemPriorityCats: { skills: "Gemmes de compétence", spirit: "Gemmes d'esprit", supports: "Gemmes de soutien" },
     weapons: "Armes",
+    gemLevel: "Garder niveau {level}",
+    gemLevelHint: "Gardez cette gemme à ce niveau, pas plus haut : les niveaux supérieurs augmentent surtout son coût en mana. Le niveau inclut les bonus de votre équipement.",
     weaponSetSkillHint: "Sertie sur ce set d'armes : la compétence n'est disponible que lorsqu'il est équipé.",
     skillFromHint: "D'où vient la compétence : une gemme de compétence ou d'esprit à sertir, ou une compétence accordée par votre arme, un objet ou un notable d'ascendance (sans gemme).",
     modHint: "+# = valeur fixe ajoutée, #% = pourcentage. Visez les valeurs les plus hautes que votre budget permet.",

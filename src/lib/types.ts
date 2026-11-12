@@ -212,6 +212,8 @@ export interface SkillGroup {
   note?: string;
   /** Weapon set the skill is socketed on, when the build uses both sets for different skills. */
   weaponSet?: WeaponSet;
+  /** Gem level to keep the skill at (not higher), usually to limit its mana cost. */
+  level?: number;
 }
 
 /** One stage of the campaign (e.g. "Act 2") and the skills used during it. */

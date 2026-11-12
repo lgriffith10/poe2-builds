@@ -32,6 +32,7 @@ skills:
   - gem: Whirling Slash
     supports: [Rapid Attacks III, Rage III, Punch Through, Blind II, Maim]
     note: Builds up to three stages for multiple Twisters; also your movement. Keep it at gem level 1 and on weapon set 1.
+    level: 1
   - gem: Barrage
     supports: [Rapid Casting II, Cooldown Recovery II, Prolonged Duration II, Perpetual Charge]
     note: Multiplies the next Twister cast

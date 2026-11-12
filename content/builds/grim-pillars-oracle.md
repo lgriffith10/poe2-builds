@@ -27,12 +27,14 @@ cons:
 skills:
   - gem: Spell Totem
     supports: [Grim Pillars, Urgent Totems III, Efficiency II, Magnified Area II, Cold Mastery]
-    note: Main damage; totems cast Grim Pillars
+    note: Main damage; totems cast Grim Pillars. As high as possible early, then a total level of 14 once you have Unnamed Heartwood.
     weaponSet: 1
+    level: 14
   - gem: Entangle
     supports: [Biting Frost I, Living Lightning II, Branching Fissures I, Rapid Casting II, Magnified Area II]
     note: Consumes the Ice Crystals' freeze. Keep a copy at gem level 1 for a tiny mana cost.
     weaponSet: 2
+    level: 1
   - gem: Mana Tempest
     supports: [Advancing Storm, Efficiency II, Lightning Mastery]
     note: Damage buff
@@ -41,10 +43,12 @@ skills:
     supports: [Spell Echo, Overabundance I, Potent Exposure, Efficiency II]
     note: Exposure for bosses
     weaponSet: 2
+    level: 18
   - gem: Elemental Weakness
     supports: [Efficiency II, Cursed Ground, Heightened Curse, Ritualistic Curse]
     note: Curse
     weaponSet: 2
+    level: 18
   - gem: Purity of Fire
     supports: [Mysticism II, Clarity II, Vitality II]
     note: Aura
