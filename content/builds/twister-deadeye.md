@@ -232,3 +232,17 @@ Gathering Winds (93%), Called Shots (86%), Avidity (80%) and Thrilling Chase (74
 ## Gear
 
 [[The Taming]], Lavianga's Spirits (83%) and [[Sacred Flame]] (65%) are the most common uniques. This character also wears [[Yoke of Suffering]]; [[Mageblood]] is an endgame luxury.
+
+## FAQ
+
+**Why can't I move smoothly with Whirling Slash?** Because of how targeting works, the build strongly favours WASD movement. With mouse movement, [[Whirling Slash]] heads towards your cursor, so you have to keep the cursor very close to your character, which gets tiring.
+
+**Why do weapon sets matter so much?** Weapon set 1 stacks attack speed for [[Whirling Slash]], which is how you move around instead of running, and keeps the off-hand empty for Dance with Death and [[Rigwald's Ferocity]]. Weapon set 2 takes the damage passives for [[Twister]] and holds the off-hand sceptre, here [[Sacred Flame]].
+
+**How do I fit all my reservations?** Keep a sceptre in the weapon set 2 off-hand, and get a Spirit roll on your amulet, body armour or sceptre to fit [[Wind Dancer]]. Extra utility needs more or bigger Spirit rolls, or expensive items.
+
+**Why do I feel squishy?** Cap your elemental resistances at 75% and keep chaos resistance positive. The body armour is your most important defensive piece: get as much evasion on it as possible, since notables such as Spectral Ward make it count twice.
+
+**How do I fix mana problems?** Use a Sapphire with 2% mana on kill and a mana flask; later on, [[Lavianga's Spirits]] solves it.
+
+**Why Sacred Flame in the off-hand?** It is the highest damage sceptre, but with [[Rakiata's Flow]] it makes you pay more attention to positioning. It is also the right choice when you need more fire damage to balance [[Trinity]].

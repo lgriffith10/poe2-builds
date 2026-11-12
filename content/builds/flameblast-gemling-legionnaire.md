@@ -226,3 +226,9 @@ Essence of Virtue and Advanced Thaumaturgy (100%), Implanted Gems (96%), Gem Stu
 ## Gear
 
 Rite of Passage (60%), Lavianga's Spirits (59%) and Mageblood (55%) are the most common uniques. This character wears [[Decree of Acuity]], [[Atziri's Step]] and [[Blackflame]]; [[Mageblood]] and [[Morior Invictus]] are endgame luxuries.
+
+## FAQ
+
+**Why does my Flameblast deal no damage?** Restrict [[Flameblast]] to weapon set 1, the staff set. If it can also be used on the other set, you are effectively casting it without your weapon.
+
+**How do I fit all my Spirit buffs?** Restrict [[Cast on Dodge]] to weapon set 2, the crossbow set. For more Spirit, get it on your amulet and body armour, and up to +30 on the crossbow with two Soul Cores of Azcapa. Quality on [[Blasphemy]] also lowers its reservation.

@@ -235,3 +235,11 @@ Waking Dream (99%), Choice of Power and Lucid Dreaming (98%), Chayula's Gift (96
 ## Gear
 
 Nascent Hope (59%) and Hysseg's Claw (34%) are the most common uniques. This character wears [[Morior Invictus]], [[Kalandra's Touch]] and [[Headhunter]], which are endgame luxuries rather than requirements.
+
+## FAQ
+
+**Do I have to level with Poisonburst Arrow?** No. [[Poisonburst Arrow]] lacks single target damage until you get [[Toxic Growth]]. It works with levelling gear and is doable without, but grenades or [[Twister]] make Act 1 easier.
+
+**How does remnant snapshotting work?** Weapon set 2 holds the remnant nodes (Remnant Attraction, Vigorous Remnants, Empowering Remnants). Entering a zone while on set 2 applies those nodes for the whole zone, even after you swap back to set 1. If you enter a zone or map on set 1 by mistake, log out and back in or re-enter the zone. It adds a lot of damage; if it ever gets changed, remnant pickup range on gear or passives makes up for it.
+
+**Why is my single target damage low?** Keep [[Concentrated Area]] on [[Toxic Growth]], otherwise the pustules overlap much worse. Cast Toxic Growth once and only recast it after the first pustules explode, since a new cast destroys the old ones; with very high damage you can spam it during [[Archon of Chayula]]. Above all, stack flat damage on rings, quiver and gloves and as much damage as possible on the bow: that is where the damage comes from.

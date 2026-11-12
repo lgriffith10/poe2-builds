@@ -26,3 +26,11 @@ Waking Dream (99 %), Choice of Power et Lucid Dreaming (98 %), Chayula's Gift (9
 ## Équipement
 
 Nascent Hope (59 %) et Hysseg's Claw (34 %) sont les uniques les plus courants. Ce personnage porte [[Morior Invictus]], [[Kalandra's Touch]] et [[Headhunter]], des luxes d'endgame plutôt que des prérequis.
+
+## FAQ
+
+**Faut-il monter de niveau avec Poisonburst Arrow ?** Non. [[Poisonburst Arrow]] manque de dégâts sur cible unique jusqu'à l'obtention de [[Toxic Growth]]. Il fonctionne avec de l'équipement de leveling et reste jouable sans, mais les grenades ou [[Twister]] rendent l'acte 1 plus facile.
+
+**Comment fonctionne le snapshot des restes ?** Le set d'armes 2 porte les nœuds de restes (Remnant Attraction, Vigorous Remnants, Empowering Remnants). Entrer dans une zone en set 2 applique ces nœuds pour toute la zone, même après être repassé au set 1. Si vous entrez par erreur dans une zone ou une carte en set 1, déconnectez-vous puis reconnectez-vous, ou ressortez et revenez dans la zone. Cela ajoute beaucoup de dégâts ; si le mécanisme est un jour modifié, de la portée de ramassage des restes sur l'équipement ou les passifs compensera.
+
+**Pourquoi mes dégâts sur cible unique sont-ils faibles ?** Gardez [[Concentrated Area]] sur [[Toxic Growth]], sinon les pustules se chevauchent bien moins. Lancez Toxic Growth une fois et ne le relancez qu'après l'explosion des premières pustules, car un nouveau lancer détruit les anciennes ; avec de très gros dégâts, vous pouvez le spammer pendant [[Archon of Chayula]]. Surtout, cumulez les dégâts fixes sur les anneaux, le carquois et les gants, et le plus de dégâts possible sur l'arc : c'est de là que viennent les dégâts.
