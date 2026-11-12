@@ -84,7 +84,7 @@ gear:
         pct: 2
   helmet:
     unique: Decree of Acuity
-    runes: [+44% to Lightning Resistance]
+    runes: ["2× Perfect Storm Rune: +44% to Lightning Resistance"]
     ladder:
       - name: Rare Helmet
         pct: 91
@@ -98,7 +98,7 @@ gear:
     base: Siege Crossbow
     implicits: [Grenade Skills Fire an additional Projectile]
     mods: [+4 to Level of all Projectile Skills, Gain 22 Mana per enemy killed, Grenade Skills have +1 Cooldown Use, 16% increased Attack Speed]
-    runes: [+30 to Spirit, Gain 45 Life per enemy killed]
+    runes: ["2× Soul Core of Azcapa: +30 to Spirit", "Perfect Rebirth Rune: Gain 45 Life per enemy killed"]
     ladder:
       - name: Rare Staff
         pct: 91
@@ -111,7 +111,7 @@ gear:
   gloves:
     base: Massive Mitts
     mods: [+45% to Fire Resistance, +190 to Armour, 100% increased Armour, +45% to Cold Resistance, +25% to Chaos Resistance, 39% increased Armour, +46 to maximum Life]
-    runes: ["40% increased Armour, Evasion and Energy Shield"]
+    runes: ["2× Perfect Iron Rune: 40% increased Armour, Evasion and Energy Shield"]
     ladder:
       - name: Rare Gloves
         pct: 97
@@ -124,7 +124,7 @@ gear:
   weapon:
     base: Chiming Staff
     mods: [236% increased Fire Damage, +7 to Level of all Fire Spell Skills, 40% increased Cast Speed, +32 to Intelligence, Gain 56% of Damage as Extra Fire Damage, 181% increased Spell Damage]
-    runes: [Forged by the Passion of Aldur, +1 to Level of all Spell Skills, +1 to Level of all Nova Skill Gems]
+    runes: ["Forged by the Passion of Aldur", "Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills", "Jiquani's Soul Core of Rippling: +1 to Level of all Nova Skill Gems"]
     ladder:
       - name: Rare Staff
         pct: 91
@@ -136,7 +136,7 @@ gear:
         pct: 4
   boots:
     unique: Atziri's Step
-    runes: [+13% to Chaos Resistance]
+    runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     ladder:
       - name: Rare Boots
         pct: 77
@@ -183,7 +183,7 @@ gear:
         pct: 3
   body:
     unique: Morior Invictus
-    runes: ["20% increased Armour, Evasion and Energy Shield", 5% increased maximum Life, +50% of Armour also applies to Elemental Damage, Gain 5% of maximum Life as Extra maximum Runic Ward]
+    runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Soul Core of Jiquani: 5% increased maximum Life", "+50% of Armour also applies to Elemental Damage", "Warding Rune of Heart: Gain 5% of maximum Life as Extra maximum Runic Ward"]
     ladder:
       - name: Rare Body Armour
         pct: 48

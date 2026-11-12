@@ -13,6 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import YAML from "yaml";
 import { character, characters, search, snapshot } from "./ninja-lib.mjs";
+import { nameRunes, pieceClass } from "./rune-names.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const tree = JSON.parse(fs.readFileSync(path.join(ROOT, "public/data/tree.json")));
@@ -75,8 +76,9 @@ const gear = {};
 for (const { itemData: d } of c.items) {
   const slot = SLOTS[d.inventoryId];
   if (!slot) continue;
-  const runes = runeLines(d);
+  let runes = runeLines(d);
   if (isUnique(d)) {
+    runes = nameRunes(runes, pieceClass({ unique: d.name }));
     if (uniques.some((u) => u.name === d.name)) gear[slot] = { unique: d.name, ...(runes.length && { runes }) };
     else console.error(`NOTE ${slot}: unique "${d.name}" not in our data, slot left out`);
     continue;
@@ -85,6 +87,8 @@ for (const { itemData: d } of c.items) {
   const implicits = (d.implicitMods ?? []).map(plain);
   // Every modifier the item has: fractured, explicit, desecrated and crafted.
   const mods = [...(d.fracturedMods ?? []), ...(d.explicitMods ?? []), ...(d.desecratedMods ?? []), ...(d.craftedMods ?? [])].map(plain);
+  const boost = Number(mods.join("\n").match(/(\d+)% increased effect of Socketed Augment Items/)?.[1] ?? 0);
+  runes = nameRunes(runes, pieceClass({ base }), boost);
   gear[slot] = {
     ...(bases.some((b) => b.name === base) ? { base } : {}),
     ...(implicits.length && { implicits }),

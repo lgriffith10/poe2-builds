@@ -73,7 +73,7 @@ gear:
   helmet:
     base: Ancestral Tiara
     mods: [34% increased Critical Hit Chance, 137% increased Energy Shield, +42 to maximum Life, 18% increased Rarity of Items found, +45% to Lightning Resistance, +72 to maximum Energy Shield]
-    runes: ["20% increased Armour, Evasion and Energy Shield", Raven-Touched]
+    runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Raven-Touched Shard: Raven-Touched"]
     ladder:
       - name: Rare Helmet
         pct: 90
@@ -85,7 +85,7 @@ gear:
         pct: 1
   offhand2:
     unique: Sacred Flame
-    runes: [15% increased Spirit, +1 to Level of all Wind Skill Gems]
+    runes: ["Rabbit Idol: 15% increased Spirit", "Jiquani's Soul Core of Squalls: +1 to Level of all Wind Skill Gems"]
     ladder:
       - name: Svalinn
         pct: 1
@@ -98,7 +98,7 @@ gear:
   body:
     base: Sleek Jacket
     mods: [+45% to Fire Resistance, +48 to Evasion Rating, +15 to maximum Energy Shield, 146% increased Evasion and Energy Shield, +45% to Cold Resistance, Gain Deflection Rating equal to 26% of Evasion Rating, +146 to Evasion Rating, +48 to maximum Energy Shield]
-    runes: ["40% increased Armour, Evasion and Energy Shield", Skills have 10% chance to not remove Charges but still count as consuming them]
+    runes: ["2× Perfect Iron Rune: 40% increased Armour, Evasion and Energy Shield", "Idol of Eramir: Skills have 10% chance to not remove Charges but still count as consuming them"]
     ladder:
       - name: Rare Body Armour
         pct: 52
@@ -111,7 +111,7 @@ gear:
   weapon2:
     base: Akoyan Spear
     mods: [+3.6% to Critical Hit Chance, Adds 26 to 41 Physical Damage, Adds 6 to 234 Lightning Damage, +23% to Critical Damage Bonus, 134% increased Physical Damage, +2 to Level of all Attack Skills]
-    runes: [40% increased Elemental Damage with Attacks]
+    runes: ["Soul Core of Citaqualotl: 40% increased Elemental Damage with Attacks"]
     ladder:
       - name: Rare Spear
         pct: 71
@@ -148,7 +148,7 @@ gear:
   weapon:
     base: Soaring Spear
     mods: [30% increased Explicit Speed Modifier magnitudes, 36% increased Attack Speed, 5% increased Spirit Reservation Efficiency of Skills, 26% increased effect of Socketed Augment Items, +523 to Accuracy Rating, 10% increased Attack Speed]
-    runes: [6% increased Attack Speed, Can roll Destruction modifiers]
+    runes: ["Soul Core of Quipolatl: 6% increased Attack Speed", "Thrud's Might: Can roll Destruction modifiers"]
     ladder:
       - name: Rare Spear
         pct: 71
@@ -161,7 +161,7 @@ gear:
   boots:
     base: Quickslip Shoes
     mods: [+69 to Evasion Rating, +22 to maximum Energy Shield, 133% increased Evasion and Energy Shield, Gain Deflection Rating equal to 23% of Evasion Rating, +108 to Stun Threshold, Skills have 12% chance to not remove Charges but still count as consuming them, 15% increased Rarity of Items found]
-    runes: [Can roll Chronomancy modifiers]
+    runes: ["Uhtred's Sidereus: Can roll Chronomancy modifiers"]
     ladder:
       - name: Rare Boots
         pct: 83
@@ -185,7 +185,7 @@ gear:
   gloves:
     base: Secured Wraps
     mods: [Adds 16 to 29 Physical Damage to Attacks, Adds 27 to 45 Fire damage to Attacks, Adds 1 to 54 Lightning damage to Attacks, +27 to Dexterity, +43% to Fire Resistance, 27% increased Critical Damage Bonus]
-    runes: [8% increased Attack Speed]
+    runes: ["Idol of Sirrius: 8% increased Attack Speed"]
     ladder:
       - name: Rare Gloves
         pct: 89

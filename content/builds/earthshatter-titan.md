@@ -63,7 +63,7 @@ gear:
   gloves:
     base: Massive Mitts
     mods: [+22% to Chaos Resistance, +183 to Armour, Adds 6 to 12 Physical Damage to Attacks, 16% increased Attack Speed, +41% of Armour also applies to Elemental Damage, 37% increased Armour, +39 to maximum Life]
-    runes: [Adds 5 to 12 Physical Damage to Attacks, 8% increased Attack Speed, 1% increased Skill Speed for each Corrupted Item Equipped, Corrupting will always result in change]
+    runes: ["Atziri's Soul Core of Alacrity: 1% increased Skill Speed for each Corrupted Item Equipped, Corrupting will always result in change", "The Greatwolf's Rune of Claws: Adds 5 to 12 Physical Damage to Attacks", "Idol of Sirrius: 8% increased Attack Speed"]
     ladder:
       - name: Rare Gloves
         pct: 73
@@ -75,7 +75,7 @@ gear:
         pct: 2
   weapon2:
     unique: Sadist's Mercy
-    runes: [5% increased Attack Speed]
+    runes: ["Soul Core of Quipolatl: 5% increased Attack Speed"]
     ladder:
       - name: Sadist's Mercy
         pct: 47
@@ -100,7 +100,7 @@ gear:
         pct: 3
   helmet:
     unique: Vestige of Darkness
-    runes: [+75 to maximum Life, +50 to all Attributes]
+    runes: ["Perfect Body Rune: +75 to maximum Life", "+50 to all Attributes"]
     ladder:
       - name: Constricting Command
         pct: 35
@@ -151,7 +151,7 @@ gear:
     base: Ornate Plate
     implicits: [Regenerate 2.37% of maximum Life per second]
     mods: [+176 to maximum Life, +61 to Spirit, +23% to Lightning Resistance, +47% of Armour also applies to Elemental Damage, +25% to Chaos Resistance, 10% increased maximum Life]
-    runes: [5% increased maximum Life, Regenerate 2% of maximum Life per second]
+    runes: ["Soul Core of Jiquani: 5% increased maximum Life", "Tecrod's Gaze: Regenerate 2% of maximum Life per second"]
     ladder:
       - name: Morior Invictus
         pct: 49
@@ -164,7 +164,7 @@ gear:
   offhand2:
     base: Tawhoan Tower Shield
     mods: [28% increased Block chance, 99% increased Armour, +187 to maximum Life, 8% additional Physical Damage Reduction, +45% to Cold Resistance, +40% of Armour also applies to Elemental Damage]
-    runes: [15% increased Block chance, +25% of Armour also applies to Elemental Damage]
+    runes: ["Ox Idol: 15% increased Block chance", "Idol of Greust: +25% of Armour also applies to Elemental Damage"]
     ladder:
       - name: Chernobog's Pillar
         pct: 27
@@ -177,7 +177,7 @@ gear:
   boots:
     base: Vaal Greaves
     mods: [+178 to Armour, +141 to maximum Life, +37% to Fire Resistance, +37% to Lightning Resistance, +40% of Armour also applies to Elemental Damage, +26% to Chaos Resistance, 30% increased Movement Speed]
-    runes: [+1 Suffix Modifier allowed, +75 to maximum Life]
+    runes: ["Serle's Triumph: +1 Suffix Modifier allowed", "Perfect Body Rune: +75 to maximum Life"]
     ladder:
       - name: Rare Boots
         pct: 98
@@ -190,7 +190,7 @@ gear:
   weapon:
     base: Flanged Mace
     mods: [Adds 26 to 35 Cold Damage, Adds 1 to 59 Lightning Damage, 35% reduced Attribute Requirements, Causes 80% increased Stun Buildup, +330 to Accuracy Rating, 31% increased Attack Speed]
-    runes: [15% increased Attack Speed]
+    runes: ["3× Soul Core of Quipolatl: 15% increased Attack Speed"]
     ladder:
       - name: Sadist's Mercy
         pct: 47

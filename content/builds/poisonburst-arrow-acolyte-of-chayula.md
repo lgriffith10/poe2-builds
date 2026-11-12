@@ -81,7 +81,7 @@ gear:
         pct: 1
   body:
     unique: Morior Invictus
-    runes: [+30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield, 12% increased Rarity of Items found, 10% increased Deflection Rating]
+    runes: ["Rune of Foundations: +30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield", "Rabbit Idol: 12% increased Rarity of Items found", "Hawk Idol: 10% increased Deflection Rating"]
     ladder:
       - name: Rare Body Armour
         pct: 67
@@ -95,7 +95,7 @@ gear:
     base: Obliterator Bow
     implicits: [50% reduced Projectile Range]
     mods: [+4.93% to Critical Hit Chance, 204% increased Physical Damage, +139 to Accuracy Rating, +17% to Critical Damage Bonus, Adds 30 to 52 Physical Damage, +2 to Level of all Attack Skills]
-    runes: [Bow Attacks fire an additional Arrow, 25% reduced Poison Duration, Targets can be affected by +1 of your Poisons at the same time]
+    runes: ["Idol of Thruldana: 25% reduced Poison Duration, Targets can be affected by +1 of your Poisons at the same time", "Countess Seske's Rune of Archery: Bow Attacks fire an additional Arrow"]
     ladder:
       - name: Rare Bow
         pct: 79
@@ -108,7 +108,7 @@ gear:
   helmet:
     base: Kamasan Tiara
     mods: [+73 to maximum Energy Shield, 139% increased Energy Shield, +34 to maximum Mana, +45% to Fire Resistance, +41% to Cold Resistance, +44% to Lightning Resistance]
-    runes: ["40% increased Armour, Evasion and Energy Shield"]
+    runes: ["2× Perfect Iron Rune: 40% increased Armour, Evasion and Energy Shield"]
     ladder:
       - name: Rare Helmet
         pct: 91
@@ -134,7 +134,7 @@ gear:
   gloves:
     base: Secured Wraps
     mods: [+2 to Level of all Projectile Skills, Adds 19 to 31 Physical Damage to Attacks, 40% increased Projectile Speed, 29% increased Projectile Damage, 16% increased Attack Speed, 25% increased Critical Damage Bonus]
-    runes: [8% increased Attack Speed, Can roll Marksman modifiers]
+    runes: ["Idol of Sirrius: 8% increased Attack Speed", "Kolr's Hunt: Can roll Marksman modifiers"]
     ladder:
       - name: Rare Gloves
         pct: 89
@@ -158,7 +158,7 @@ gear:
   boots:
     base: Daggerfoot Shoes
     mods: [Gain Deflection Rating equal to 23% of Evasion Rating, 35% increased Movement Speed, 100% increased Evasion and Energy Shield, +76 to Evasion Rating, +24 to maximum Energy Shield, 60% increased effect of Socketed Augment Items, +12 to Spirit]
-    runes: [+9% to all Elemental Resistances, 16% increased Movement Speed when on Low Life]
+    runes: ["Soul Core of Citaqualotl: +9% to all Elemental Resistances", "Tecrod's Gaze: 16% increased Movement Speed when on Low Life"]
     ladder:
       - name: Rare Boots
         pct: 94

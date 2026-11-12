@@ -52,7 +52,7 @@ gear:
   boots:
     base: Luxurious Slippers
     mods: [+57 to maximum Energy Shield, 35% increased Movement Speed, +294 to Stun Threshold, 99% increased Energy Shield, 60% increased effect of Socketed Augment Items, 15% increased Rarity of Items found]
-    runes: ["64% increased Armour, Evasion and Energy Shield"]
+    runes: ["2× Perfect Iron Rune: 64% increased Armour, Evasion and Energy Shield"]
     ladder:
       - name: Rare Boots
         pct: 94
@@ -65,7 +65,7 @@ gear:
   weapon:
     base: Sinister Quarterstaff
     mods: [+5% to Critical Hit Chance, 18% increased Explicit Elemental Damage Modifier magnitudes, Adds 21 to 381 Lightning Damage, 158% increased Elemental Damage with Attacks, +5 to Level of all Melee Skills, Gain 38 Mana per enemy killed, Adds 138 to 219 Cold Damage]
-    runes: [+1 Suffix Modifier allowed, 40% increased Elemental Damage with Attacks, Gain 5% of Damage as Extra Damage of all Elements, Can roll Destruction modifiers]
+    runes: ["Serle's Triumph: +1 Suffix Modifier allowed", "Soul Core of Citaqualotl: 40% increased Elemental Damage with Attacks", "Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements", "Thrud's Might: Can roll Destruction modifiers"]
     ladder:
       - name: Rare Quarterstaff
         pct: 94
@@ -77,7 +77,7 @@ gear:
         pct: 4
   body:
     unique: Morior Invictus
-    runes: [+30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield, "40% increased Armour, Evasion and Energy Shield", +6% to all Elemental Resistances]
+    runes: ["Rune of Foundations: +30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield", "2× Perfect Iron Rune: 40% increased Armour, Evasion and Energy Shield", "Soul Core of Citaqualotl: +6% to all Elemental Resistances"]
     ladder:
       - name: Morior Invictus
         pct: 41
@@ -117,7 +117,7 @@ gear:
     base: Fists of Stone
     implicits: [Has +2 to Evasion Rating per player level, Has +1 to maximum Energy Shield per player level, Has +1 to maximum Runic Ward per player level]
     mods: [15% more Global Evasion Rating and Energy Shield, Attacks Gain 19% of Damage as Extra Cold Damage, +1 to Level of all Melee Skills, +10% to Quality of all Skills, 27% chance to gain Onslaught for 4 seconds on Hit, +2.24% to Critical Hit Chance, Attacks Gain 16% of Damage as Extra Lightning Damage]
-    runes: [Destroys all Augment Sockets on the item to create a Jewel Socket]
+    runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     ladder:
       - name: Rare Gloves
         pct: 83
@@ -152,7 +152,7 @@ gear:
   helmet:
     base: Ancestral Tiara
     mods: [16% increased Rarity of Items found, 97% increased Energy Shield, 34% increased Critical Hit Chance, +35 to Intelligence, +71 to maximum Energy Shield]
-    runes: ["20% increased Armour, Evasion and Energy Shield", Raven-Touched]
+    runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Raven-Touched Shard: Raven-Touched"]
     ladder:
       - name: Rare Helmet
         pct: 93

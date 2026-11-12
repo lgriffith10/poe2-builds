@@ -57,7 +57,7 @@ skills:
 gear:
   body:
     unique: Morior Invictus
-    runes: [+30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield, "80% increased Armour, Evasion and Energy Shield"]
+    runes: ["Rune of Foundations: +30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield", "4× Perfect Iron Rune: 80% increased Armour, Evasion and Energy Shield"]
     ladder:
       - name: Rare Body Armour
         pct: 62
@@ -81,7 +81,7 @@ gear:
   boots:
     base: Daggerfoot Shoes
     mods: [35% increased Movement Speed, 90% increased Evasion and Energy Shield, +39% to Fire Resistance, Skills have 14% chance to not remove Charges but still count as consuming them, +0.4 metres to Dodge Roll distance, Gain Deflection Rating equal to 20% of Evasion Rating, +14 to Spirit]
-    runes: [+1 Suffix Modifier allowed, Can roll Chronomancy modifiers]
+    runes: ["Serle's Triumph: +1 Suffix Modifier allowed", "Uhtred's Sidereus: Can roll Chronomancy modifiers"]
     ladder:
       - name: Rare Boots
         pct: 94
@@ -94,7 +94,7 @@ gear:
   helmet:
     base: Grinning Mask
     mods: [42% increased Evasion and Energy Shield, +42 to maximum Life, 17% increased Rarity of Items found, 30% increased Critical Hit Chance, +32 to Dexterity, +41% to Fire Resistance, 54% increased Evasion and Energy Shield]
-    runes: ["40% increased Armour, Evasion and Energy Shield"]
+    runes: ["2× Perfect Iron Rune: 40% increased Armour, Evasion and Energy Shield"]
     ladder:
       - name: Rare Helmet
         pct: 97
@@ -118,7 +118,7 @@ gear:
   weapon2:
     base: Sinister Quarterstaff
     mods: [Adds 115 to 178 Cold Damage, Adds 14 to 295 Lightning Damage, Causes 76% increased Stun Buildup, 133% increased Elemental Damage with Attacks, 24% increased Attack Speed, +3 to Level of all Attack Skills]
-    runes: [Adds 16 to 20 Cold Damage, Gain 5% of Damage as Extra Damage of all Elements]
+    runes: ["Perfect Glacial Rune: Adds 16 to 20 Cold Damage", "Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements"]
     ladder:
       - name: Rare Quarterstaff
         pct: 90
@@ -179,7 +179,7 @@ gear:
   gloves:
     base: Ancient Cuffs
     mods: [24% increased Armour and Energy Shield, Adds 13 to 18 Cold damage to Attacks, Adds 2 to 71 Lightning damage to Attacks, +24 to maximum Life, +2 to Level of all Melee Skills, +45% to Cold Resistance, Leech 8.19% of Physical Attack Damage as Mana]
-    runes: [Destroys all Augment Sockets on the item to create a Jewel Socket]
+    runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     ladder:
       - name: Rare Gloves
         pct: 94

@@ -64,7 +64,7 @@ gear:
   boots:
     base: Sekhema Sandals
     mods: [35% increased Movement Speed, +57 to maximum Energy Shield, 89% increased Energy Shield, +44% to Fire Resistance, +34% to Cold Resistance, +41% to Lightning Resistance]
-    runes: ["20% increased Armour, Evasion and Energy Shield"]
+    runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
     ladder:
       - name: Rare Boots
         pct: 91
@@ -90,7 +90,7 @@ gear:
   weapon:
     base: Shrine Sceptre
     mods: [+4 to Level of all Minion Skills, 85% increased Spirit, +41 to maximum Mana, Minions have 50% increased maximum Life, Allies in your Presence deal 102% increased Damage, +5 maximum stacks of Puppet Master]
-    runes: [Allies in your Presence deal 40% increased Damage, 30% reduced Mana Cost Efficiency of Command Skills, Minions deal 60% increased Damage with Command Skills]
+    runes: ["Idol of the Pharisee: 30% reduced Mana Cost Efficiency of Command Skills, Minions deal 60% increased Damage with Command Skills", "Primate Idol: Allies in your Presence deal 40% increased Damage"]
     ladder:
       - name: Rare Sceptre
         pct: 98
@@ -102,7 +102,7 @@ gear:
         pct: 2
   body:
     unique: The Mutable Star
-    runes: [12% increased Rarity of Items found, Hits against you have 50% reduced Critical Damage Bonus, +50% of Armour also applies to Elemental Damage, +2 to Armour per 1 Spirit]
+    runes: ["Rabbit Idol: 12% increased Rarity of Items found", "Soul Core of Ticaba: Hits against you have 50% reduced Critical Damage Bonus", "+50% of Armour also applies to Elemental Damage", "Amanamu's Gaze: +2 to Armour per 1 Spirit"]
     ladder:
       - name: Rare Body Armour
         pct: 71
@@ -115,7 +115,7 @@ gear:
   gloves:
     base: Ancient Cuffs
     mods: [93% increased Armour and Energy Shield, Adds 21 to 36 Fire damage to Attacks, +42% to Fire Resistance, +41% to Lightning Resistance, +40% of Armour also applies to Elemental Damage, +43 to Armour, +10 to maximum Energy Shield]
-    runes: [Destroys all Augment Sockets on the item to create a Jewel Socket]
+    runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     ladder:
       - name: Rare Gloves
         pct: 96
@@ -176,7 +176,7 @@ gear:
   helmet:
     base: Ancestral Tiara
     mods: [+70 to maximum Energy Shield, 90% increased Energy Shield, 17% increased Rarity of Items found, +2 to Level of all Minion Skills, 16% increased Energy Shield Recharge Rate, 19% increased Rarity of Items found]
-    runes: [8% increased Reservation Efficiency of Minion Skills, Raven-Touched]
+    runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills", "Raven-Touched Shard: Raven-Touched"]
     ladder:
       - name: Rare Helmet
         pct: 99
@@ -189,7 +189,7 @@ gear:
   weapon2:
     base: Omen Sceptre
     mods: [28% increased Spirit]
-    runes: [+24 to Intelligence]
+    runes: ["2× Greater Resolve Rune: +24 to Intelligence"]
     ladder:
       - name: Rare Sceptre
         pct: 98

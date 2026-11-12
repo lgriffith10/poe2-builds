@@ -83,7 +83,7 @@ gear:
   gloves:
     base: Opulent Gloves
     mods: [+75 to maximum Mana, 15% increased Projectile Speed, +2 to Level of all Projectile Skills, +25 to Intelligence, 33% increased Projectile Damage, Projectiles have 96% chance for an additional Projectile when Forking]
-    runes: [20% increased Life and Mana Recovery from Flasks, Can roll Marksman modifiers]
+    runes: ["Perfect Vision Rune: 20% increased Life and Mana Recovery from Flasks", "Kolr's Hunt: Can roll Marksman modifiers"]
     ladder:
       - name: Maligaro's Virtuosity
         pct: 53
@@ -120,7 +120,7 @@ gear:
   weapon2:
     base: Dueling Wand
     mods: [Gain 22% of Damage as Extra Cold Damage, 73% increased Fire Damage, +118 to maximum Mana, +4 to Level of all Spell Skills, 27% increased Cast Speed, Gain 22 Life per enemy killed]
-    runes: [30% increased Spell Damage]
+    runes: ["Greater Iron Rune: 30% increased Spell Damage"]
     ladder:
       - name: Rare Staff
         pct: 71
@@ -133,7 +133,7 @@ gear:
   boots:
     base: Sekhema Sandals
     mods: [+128 to maximum Life, +122 to maximum Mana, 18% increased Rarity of Items found, 58% reduced Shock duration on you, 35% increased Movement Speed, 60% increased effect of Socketed Augment Items]
-    runes: [16% increased Movement Speed when on Low Life, 32% increased Life and Mana Recovery from Flasks]
+    runes: ["Tecrod's Gaze: 16% increased Movement Speed when on Low Life", "Perfect Vision Rune: 32% increased Life and Mana Recovery from Flasks"]
     ladder:
       - name: Rare Boots
         pct: 98
@@ -145,7 +145,7 @@ gear:
         pct: 0
   helmet:
     unique: Alpha's Howl
-    runes: [15% increased Cost Efficiency]
+    runes: ["Idol of Eeshta: 15% increased Cost Efficiency"]
     ladder:
       - name: Rare Helmet
         pct: 73
@@ -157,7 +157,7 @@ gear:
         pct: 4
   offhand2:
     unique: Crest of Ardura
-    runes: [+60 to maximum Life]
+    runes: ["Greater Body Rune: +60 to maximum Life"]
     ladder:
       - name: Rare Focus
         pct: 30
@@ -169,7 +169,7 @@ gear:
         pct: 1
   body:
     unique: Reverie
-    runes: [Cannot be Ignited, -10 Physical Damage taken from Attack Hits, 20% increased Life and Mana Recovery from Flasks, 15% Life Recovery from Flasks also applies to Runic Ward]
+    runes: ["Cannot be Ignited", "-10 Physical Damage taken from Attack Hits", "Perfect Vision Rune: 20% increased Life and Mana Recovery from Flasks", "Warding Rune of Nourishment: 15% Life Recovery from Flasks also applies to Runic Ward"]
     ladder:
       - name: Rare Body Armour
         pct: 72
@@ -192,7 +192,7 @@ gear:
         pct: 1
   offhand:
     unique: Sacred Flame
-    runes: [15% increased Spirit, +15 to Intelligence]
+    runes: ["Rabbit Idol: 15% increased Spirit", "Perfect Resolve Rune: +15 to Intelligence"]
     ladder:
       - name: Rare Focus
         pct: 30
@@ -218,7 +218,7 @@ gear:
   weapon:
     base: Dueling Wand
     mods: [72% increased Critical Hit Chance for Spells, Gain 31% of Damage as Extra Fire Damage, +3 to Level of all Spell Skills, 123% increased Spell Damage, +175 to maximum Mana, +1 to Level of all Spell Skills, 28% increased Cast Speed, Gain 10% of Elemental Damage as Extra Cold Damage]
-    runes: [+1 to Level of all Spell Skills, Remnants you create have 25% reduced effect, Remnants can be collected from 50% further away]
+    runes: ["Rune of Reach: Remnants you create have 25% reduced effect, Remnants can be collected from 50% further away", "Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
     ladder:
       - name: Rare Staff
         pct: 71

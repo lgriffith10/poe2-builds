@@ -78,7 +78,7 @@ gear:
   weapon2:
     base: Withered Wand
     mods: [+4 to Level of all Spell Skills, 31% increased Cast Speed, 52% increased Mana Regeneration Rate, +162 to maximum Mana, +1 to Level of all Spell Skills]
-    runes: [40% less Mana Regeneration Rate, Mana Recovery from Regeneration is also applied to Runic Ward]
+    runes: ["Warding Rune of Equinox: 40% less Mana Regeneration Rate, Mana Recovery from Regeneration is also applied to Runic Ward"]
     ladder:
       - name: Rare Staff
         pct: 84
@@ -91,7 +91,7 @@ gear:
   boots:
     base: Sekhema Sandals
     mods: [35% increased Movement Speed, +114 to maximum Mana, +21 to Intelligence, +44% to Fire Resistance, +42% to Lightning Resistance, +135 to maximum Life]
-    runes: [+13% to Chaos Resistance]
+    runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     ladder:
       - name: Rare Boots
         pct: 99
@@ -129,7 +129,7 @@ gear:
         pct: 0
   offhand2:
     unique: Arvil's Wheel
-    runes: [21% increased Mana Regeneration Rate]
+    runes: ["Perfect Inspiration Rune: 21% increased Mana Regeneration Rate"]
     ladder:
       - name: Rare Focus
         pct: 13
@@ -141,7 +141,7 @@ gear:
         pct: 0
   gloves:
     unique: Maligaro's Virtuosity
-    runes: [Destroys all Augment Sockets on the item to create a Jewel Socket]
+    runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     ladder:
       - name: Rare Gloves
         pct: 81
@@ -154,7 +154,7 @@ gear:
   body:
     base: Vile Robe
     mods: [+95 to maximum Energy Shield, +211 to maximum Life, +33% to Fire Resistance, +37% to Cold Resistance, +33% to Lightning Resistance, +52 to Spirit]
-    runes: [50% reduced effect of Curses on you, 15% of Damage is taken from Mana before Life]
+    runes: ["Craiceann's Rune of Warding: 50% reduced effect of Curses on you", "The Greatwolf's Rune of Willpower: 15% of Damage is taken from Mana before Life"]
     ladder:
       - name: Rare Body Armour
         pct: 90
@@ -167,7 +167,7 @@ gear:
   weapon:
     base: Chiming Staff
     mods: [Gain 58% of Damage as Extra Cold Damage, +7 to Level of all Cold Spell Skills, 85% increased Critical Hit Chance for Spells, Gain 16 Mana per enemy killed, Gain 55% of Damage as Extra Cold Damage, +150 to maximum Mana, +1 to Level of all Spell Skills]
-    runes: [Forged by the Breath of Aldur, +1 to Level of all Spell Skills]
+    runes: ["Forged by the Breath of Aldur", "Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
     ladder:
       - name: Rare Staff
         pct: 84
@@ -191,7 +191,7 @@ gear:
   helmet:
     base: Ancestral Tiara
     mods: [40% increased Energy Shield, +201 to maximum Life, +148 to maximum Mana, +33 to Intelligence, +37% to Cold Resistance, +20% to Chaos Resistance]
-    runes: [15% increased Cost Efficiency]
+    runes: ["Idol of Eeshta: 15% increased Cost Efficiency"]
     ladder:
       - name: Rare Helmet
         pct: 59

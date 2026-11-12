@@ -79,7 +79,7 @@ gear:
         pct: 0
   body:
     unique: Morior Invictus
-    runes: [+100 to maximum Mana, +66% to Cold Resistance]
+    runes: ["2× Perfect Mind Rune: +100 to maximum Mana", "3× Perfect Glacial Rune: +66% to Cold Resistance"]
     ladder:
       - name: Rare Body Armour
         pct: 52
@@ -92,7 +92,7 @@ gear:
   boots:
     base: Sekhema Sandals
     mods: [+44% to Fire Resistance, 35% increased Movement Speed, +59 to maximum Energy Shield, +43% to Lightning Resistance, +25% to Chaos Resistance, 99% increased Energy Shield]
-    runes: [5% increased Movement Speed, 10% increased Movement Speed when on Low Life]
+    runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed", "Tecrod's Gaze: 10% increased Movement Speed when on Low Life"]
     ladder:
       - name: Rare Boots
         pct: 99
@@ -116,7 +116,7 @@ gear:
   helmet:
     base: Ancestral Tiara
     mods: [+72 to maximum Energy Shield, 37% increased Energy Shield, +32 to maximum Mana, 26% increased Critical Hit Chance, +37% to Fire Resistance, +35% to Lightning Resistance, 100% increased Energy Shield]
-    runes: [Pain Attunement, Raven-Touched]
+    runes: ["Pain Attunement", "Raven-Touched Shard: Raven-Touched"]
     ladder:
       - name: Rare Helmet
         pct: 95
@@ -129,7 +129,7 @@ gear:
   gloves:
     base: Opulent Gloves
     mods: [+122 to maximum Mana, +2 to Level of all Projectile Skills, 38% increased Projectile Damage, +56 to maximum Energy Shield, 60% increased effect of Socketed Augment Items, 28% increased Critical Damage Bonus]
-    runes: [12% increased Cast Speed, Can roll Marksman modifiers]
+    runes: ["Fenumus' Rune of Spinning: 12% increased Cast Speed", "Kolr's Hunt: Can roll Marksman modifiers"]
     ladder:
       - name: Rare Gloves
         pct: 96
@@ -142,7 +142,7 @@ gear:
   weapon2:
     base: Chiming Staff
     mods: [Gain 52% of Damage as Extra Lightning Damage, 132% increased Spell Damage, +22 to Intelligence, 72% increased chance to Shock, +172 to maximum Mana, +6 to Level of all Spell Skills]
-    runes: [Can have 1 additional Crafted Modifier, 30% increased Mana Regeneration Rate]
+    runes: ["Astrid's Creativity: Can have 1 additional Crafted Modifier", "Greater Inspiration Rune: 30% increased Mana Regeneration Rate"]
     ladder:
       - name: The Unborn Lich
         pct: 100
@@ -165,7 +165,7 @@ gear:
         pct: 1
   weapon:
     unique: The Unborn Lich
-    runes: [+1 to Level of all Spell Skills, Gain 5% of Damage as Extra Damage of all Elements, 25% chance for Spell Skills to fire 2 additional Projectiles]
+    runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills", "Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements", "Thane Girt's Rune of Wildness: 25% chance for Spell Skills to fire 2 additional Projectiles"]
     ladder:
       - name: The Unborn Lich
         pct: 100

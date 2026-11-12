@@ -55,7 +55,7 @@ gear:
   gloves:
     base: Blacksteel Gauntlets
     mods: [Adds 17 to 31 Physical Damage to Attacks, 90% increased Armour and Evasion, +134 to maximum Life, +2 to Level of all Projectile Skills, +36% to Cold Resistance, 18% increased Rarity of Items found]
-    runes: [+75 to maximum Life, Can roll Marksman modifiers]
+    runes: ["Perfect Body Rune: +75 to maximum Life", "Kolr's Hunt: Can roll Marksman modifiers"]
     ladder:
       - name: Rare Gloves
         pct: 99
@@ -66,7 +66,7 @@ gear:
   boots:
     base: Vaal Greaves
     mods: [35% increased Movement Speed, 91% increased Armour, +100 to maximum Life, +27% to Chaos Resistance, +38% to Fire Resistance, 16% increased Rarity of Items found]
-    runes: [5% increased Movement Speed, +75 to maximum Life]
+    runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed", "Perfect Body Rune: +75 to maximum Life"]
     ladder:
       - name: Rare Boots
         pct: 100
@@ -98,7 +98,7 @@ gear:
     base: Ornate Plate
     implicits: [Regenerate 2.3% of maximum Life per second]
     mods: [107% increased Armour, +61 to Spirit, +40% to Lightning Resistance, +33% of Armour also applies to Elemental Damage, 26.4 Life Regeneration per second, +290 to Armour]
-    runes: ["20% increased Armour, Evasion and Energy Shield", 5% increased maximum Life, +50% of Armour also applies to Elemental Damage, +2 to Armour per 1 Spirit]
+    runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Soul Core of Jiquani: 5% increased maximum Life", "+50% of Armour also applies to Elemental Damage", "Amanamu's Gaze: +2 to Armour per 1 Spirit"]
     ladder:
       - name: Rare Body Armour
         pct: 95
@@ -135,7 +135,7 @@ gear:
   helmet:
     base: Imperial Greathelm
     mods: [17% increased Rarity of Items found, +215 to Armour, 39% increased Armour, +215 to maximum Life, +45% to Fire Resistance, +36% of Armour also applies to Elemental Damage]
-    runes: [+4 to Maximum Rage, Raven-Touched]
+    runes: ["Tzamoto's Soul Core of Ferocity: +4 to Maximum Rage", "Raven-Touched Shard: Raven-Touched"]
     ladder:
       - name: Rare Helmet
         pct: 96
@@ -149,7 +149,7 @@ gear:
     base: Siege Crossbow
     implicits: [Grenade Skills Fire an additional Projectile]
     mods: [Adds 53 to 91 Physical Damage, 169% increased Physical Damage, +5 to Level of all Projectile Skills, 73% increased Physical Damage, +165 to Accuracy Rating, 16% increased Attack Speed, +2 to maximum number of Summoned Ballista Totems]
-    runes: [40% increased Physical Damage, +1 to Level of all Grenade Skill Gems]
+    runes: ["2× Perfect Iron Rune: 40% increased Physical Damage", "Jiquani's Soul Core of Munitions: +1 to Level of all Grenade Skill Gems"]
     ladder:
       - name: Rare Crossbow
         pct: 98

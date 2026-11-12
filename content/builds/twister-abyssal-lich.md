@@ -57,7 +57,7 @@ skills:
 gear:
   body:
     unique: Morior Invictus
-    runes: [+30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield, Gain 5% of maximum Life as Extra maximum Runic Ward, 5% of Damage taken bypasses Energy Shield, 1% increased Maximum Life for each Corrupted Item Equipped, Corrupting will always result in change]
+    runes: ["Rune of Foundations: +30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield", "Atziri's Soul Core of Vitality: 1% increased Maximum Life for each Corrupted Item Equipped, Corrupting will always result in change", "Warding Rune of Heart: Gain 5% of maximum Life as Extra maximum Runic Ward", "Stoat Idol: 5% of Damage taken bypasses Energy Shield"]
     ladder:
       - name: Rare Body Armour
         pct: 76
@@ -81,7 +81,7 @@ gear:
   offhand:
     base: Shrine Sceptre
     mods: [57% increased Spirit, Allies in your Presence deal 19 to 30 added Attack Physical Damage, Allies in your Presence have 19% increased Cast Speed, 30% reduced Attribute Requirements, +3 to Level of all Minion Skills, 34% increased Spirit, +38 to maximum Mana]
-    runes: [Allies in your Presence share Charges with you, 40% less Mana Regeneration Rate, Mana Recovery from Regeneration is also applied to Runic Ward]
+    runes: ["Warding Rune of Equinox: 40% less Mana Regeneration Rate, Mana Recovery from Regeneration is also applied to Runic Ward", "Idol of Eramir: Allies in your Presence share Charges with you"]
     ladder:
       - name: Rare Shield
         pct: 0
@@ -100,7 +100,7 @@ gear:
         pct: 1
   offhand2:
     unique: Palm of the Dreamer
-    runes: [15% increased Spirit]
+    runes: ["Rabbit Idol: 15% increased Spirit"]
     ladder:
       - name: Rare Shield
         pct: 0
@@ -120,7 +120,7 @@ gear:
   weapon:
     base: Soaring Spear
     mods: [Adds 42 to 61 Fire Damage, Adds 4 to 85 Lightning Damage, 25% increased Attack Speed, 10% increased Spirit Reservation Efficiency of Skills, 20% increased effect of Socketed Augment Items, +406 to Accuracy Rating, 8% increased Attack Speed]
-    runes: [12% increased Attack Speed]
+    runes: ["2× Soul Core of Quipolatl: 12% increased Attack Speed"]
     ladder:
       - name: Sacred Flame
         pct: 78
@@ -133,7 +133,7 @@ gear:
   gloves:
     base: Vaal Gloves
     mods: [+58 to maximum Energy Shield, 98% increased Energy Shield, 13% increased Attack Speed, +30 to Intelligence, Adds 22 to 36 Cold damage to Attacks, 27% increased Critical Damage Bonus]
-    runes: [Destroys all Augment Sockets on the item to create a Jewel Socket]
+    runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     ladder:
       - name: Rare Gloves
         pct: 93
@@ -145,7 +145,7 @@ gear:
         pct: 0
   helmet:
     unique: Alpha's Howl
-    runes: [8% increased Reservation Efficiency of Minion Skills, 1% increased Spirit for each Corrupted Item Equipped, Corrupting will always result in change]
+    runes: ["Atziri's Soul Core of Devotion: 1% increased Spirit for each Corrupted Item Equipped, Corrupting will always result in change", "Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills"]
     ladder:
       - name: Rare Helmet
         pct: 61
@@ -158,7 +158,7 @@ gear:
   weapon2:
     base: Akoyan Spear
     mods: [73% increased Physical Damage, +159 to Accuracy Rating, Adds 4 to 222 Lightning Damage, +4.79% to Critical Hit Chance, Adds 57 to 90 Fire Damage, +2 to Level of all Attack Skills, 21% chance to gain Onslaught on Killing Hits with this Weapon]
-    runes: [Gain 5% of Damage as Extra Damage of all Elements]
+    runes: ["Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements"]
     ladder:
       - name: Sacred Flame
         pct: 78
@@ -182,7 +182,7 @@ gear:
   boots:
     base: Sandsworn Sandals
     mods: [+55 to maximum Energy Shield, 138% increased Energy Shield, +31 to Intelligence, +127 to Stun Threshold, 60% increased effect of Socketed Augment Items, +14 to Spirit]
-    runes: [+35% to Fire Resistance, +3% to Chaos Resistance for each Corrupted Item Equipped, Corrupting will always result in change]
+    runes: ["Perfect Desert Rune: +35% to Fire Resistance", "+3% to Chaos Resistance for each Corrupted Item Equipped", "Corrupting will always result in change"]
     ladder:
       - name: Rare Boots
         pct: 89

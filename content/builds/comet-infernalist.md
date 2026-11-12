@@ -77,7 +77,7 @@ gear:
         pct: 3
   offhand:
     unique: Svalinn
-    runes: [15% increased Block chance, 20% increased Runic Ward]
+    runes: ["Ox Idol: 15% increased Block chance", "Warding Rune of Reinforcement: 20% increased Runic Ward"]
     ladder:
       - name: Svalinn
         pct: 54
@@ -89,7 +89,7 @@ gear:
         pct: 2
   helmet:
     unique: Alpha's Howl
-    runes: [15% increased Cost Efficiency, Raven-Touched]
+    runes: ["Idol of Eeshta: 15% increased Cost Efficiency", "Raven-Touched Shard: Raven-Touched"]
     ladder:
       - name: Alpha's Howl
         pct: 76
@@ -115,7 +115,7 @@ gear:
   boots:
     base: Blacksteel Sabatons
     mods: [18% increased Rarity of Items found, 35% increased Movement Speed, +123 to maximum Mana, +45% to Lightning Resistance, 60% increased effect of Socketed Augment Items, 30% increased Runic Ward]
-    runes: [+48 to maximum Runic Ward, 32% increased Runic Ward, 16% increased Movement Speed when on Low Life]
+    runes: ["Perfect Ward Rune: +48 to maximum Runic Ward", "Warding Rune of Reinforcement: 32% increased Runic Ward", "Tecrod's Gaze: 16% increased Movement Speed when on Low Life"]
     ladder:
       - name: Rare Boots
         pct: 99
@@ -127,7 +127,7 @@ gear:
         pct: 0
   body:
     unique: The Brass Dome
-    runes: [80% increased Runic Ward]
+    runes: ["4× Warding Rune of Reinforcement: 80% increased Runic Ward"]
     ladder:
       - name: The Brass Dome
         pct: 78
@@ -166,7 +166,7 @@ gear:
   gloves:
     base: Blacksteel Gauntlets
     mods: [+2 to Level of all Projectile Skills, 33% increased Projectile Speed, 34% increased Critical Damage Bonus, +36 to Dexterity, 40% increased Projectile Damage, 26% increased Runic Ward, Remnants can be collected from 44% further away]
-    runes: [+1 Suffix Modifier allowed, 20% increased Magnitude of Damaging Ailments you inflict, Can roll Marksman modifiers]
+    runes: ["Serle's Triumph: +1 Suffix Modifier allowed", "Courtesan Mannan's Rune of Cruelty: 20% increased Magnitude of Damaging Ailments you inflict", "Kolr's Hunt: Can roll Marksman modifiers"]
     ladder:
       - name: Rare Gloves
         pct: 94
@@ -178,7 +178,7 @@ gear:
         pct: 1
   weapon:
     unique: Runeseeker's Call
-    runes: [105% increased Spell Damage, +9 to Level of all Spell Skills, Gain 45% of maximum Life as Extra maximum Runic Ward, 45% less maximum Life, Gain 15% of Damage as Extra Damage of all Elements, 150% increased Spell Damage while your Companion is in your Presence]
+    runes: ["105% increased Spell Damage", "+9 to Level of all Spell Skills", "Gain 45% of maximum Life as Extra maximum Runic Ward", "45% less maximum Life", "Gain 15% of Damage as Extra Damage of all Elements", "150% increased Spell Damage while your Companion is in your Presence"]
     ladder:
       - name: Runeseeker's Call
         pct: 57

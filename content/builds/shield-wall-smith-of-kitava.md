@@ -83,7 +83,7 @@ gear:
   boots:
     base: Bulwark Greaves
     mods: [30% increased Movement Speed, +100 to maximum Life, +93 to maximum Mana, +39% to Lightning Resistance, 48% increased Life Regeneration Rate while moving, +34% to Fire Resistance]
-    runes: [+150 to maximum Life, +2% to Chaos Resistance for each Corrupted Item Equipped, Corrupting will always result in change]
+    runes: ["Atziri's Soul Core of Inoculation: +2% to Chaos Resistance for each Corrupted Item Equipped, Corrupting will always result in change", "2× Perfect Body Rune: +150 to maximum Life"]
     ladder:
       - name: Rare Boots
         pct: 96
@@ -95,7 +95,7 @@ gear:
         pct: 1
   helmet:
     unique: Constricting Command
-    runes: [+75 to maximum Life, Raven-Touched]
+    runes: ["Perfect Body Rune: +75 to maximum Life", "Raven-Touched Shard: Raven-Touched"]
     ladder:
       - name: Constricting Command
         pct: 75
@@ -108,7 +108,7 @@ gear:
   offhand:
     base: Tawhoan Tower Shield
     mods: [6% additional Physical Damage Reduction, +276 to Armour, 37% increased Armour, +3% to Maximum Lightning Resistance, +37% to Cold Resistance, +76 to Stun Threshold, 108% increased Armour]
-    runes: ["60% increased Armour, Evasion and Energy Shield"]
+    runes: ["3× Perfect Iron Rune: 60% increased Armour, Evasion and Energy Shield"]
     ladder:
       - name: Rare Shield
         pct: 95
@@ -122,7 +122,7 @@ gear:
     base: Ornate Plate
     implicits: [Regenerate 2.5% of maximum Life per second]
     mods: []
-    runes: [5% increased maximum Life, 12% increased Rarity of Items found, +13% to Chaos Resistance, Regenerate 1.5% of maximum Life per second]
+    runes: ["Soul Core of Jiquani: 5% increased maximum Life", "Rabbit Idol: 12% increased Rarity of Items found", "Soul Core of Tacati: +13% to Chaos Resistance", "Regenerate 1.5% of maximum Life per second"]
     ladder:
       - name: The Brass Dome
         pct: 29
@@ -149,7 +149,7 @@ gear:
     base: Disintegrating Maul
     implicits: ["Causes Enemies to Explode on Critical kill, for 10% of their Life as Physical Damage"]
     mods: [+5 to Level of all Melee Skills, Adds 1 to 343 Lightning Damage, 28% increased Attack Speed, 99% increased Damage against Enemies with Fully Broken Armour, Gain 33% of Damage as Extra Physical Damage, 29% increased Magnitude of Ailments you inflict]
-    runes: [Gain 13% of Damage as Extra Chaos Damage, 25% reduced Poison Duration, Targets can be affected by +1 of your Poisons at the same time, 25% increased Magnitude of Poison you inflict]
+    runes: ["Idol of Thruldana: 25% reduced Poison Duration, Targets can be affected by +1 of your Poisons at the same time", "Fenumus' Rune of Agony: Gain 13% of Damage as Extra Chaos Damage", "Soul Core of Tacati: 25% increased Magnitude of Poison you inflict"]
     ladder:
       - name: Sacred Flame
         pct: 44
@@ -175,7 +175,7 @@ gear:
   gloves:
     base: Gleaming Cuffs
     mods: [37% increased Armour and Energy Shield, Adds 10 to 20 Physical Damage to Attacks, +38 to maximum Life, +2 to Level of all Melee Skills, 16% increased Attack Speed, +32 to Dexterity, +132 to maximum Life]
-    runes: [8% increased Attack Speed, 20% increased Magnitude of Damaging Ailments you inflict]
+    runes: ["Idol of Sirrius: 8% increased Attack Speed", "Courtesan Mannan's Rune of Cruelty: 20% increased Magnitude of Damaging Ailments you inflict"]
     ladder:
       - name: Rare Gloves
         pct: 97

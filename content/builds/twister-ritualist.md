@@ -58,7 +58,7 @@ gear:
   body:
     base: Sleek Jacket
     mods: [Gain Deflection Rating equal to 26% of Evasion Rating, +160 to Evasion Rating, +48 to maximum Energy Shield, 109% increased Evasion and Energy Shield, +44% to Cold Resistance, +43% to Lightning Resistance, +50 to Evasion Rating, +15 to maximum Energy Shield, 40% increased Evasion and Energy Shield]
-    runes: ["40% increased Armour, Evasion and Energy Shield", Skills have 10% chance to not remove Charges but still count as consuming them]
+    runes: ["2× Perfect Iron Rune: 40% increased Armour, Evasion and Energy Shield", "Idol of Eramir: Skills have 10% chance to not remove Charges but still count as consuming them"]
     ladder:
       - name: Morior Invictus
         pct: 65
@@ -71,7 +71,7 @@ gear:
   weapon:
     base: Soaring Spear
     mods: [Adds 3 to 78 Lightning Damage, 80% increased Elemental Damage with Attacks, 28% increased Attack Speed, +29 to Strength, 20% increased effect of Socketed Augment Items, +340 to Accuracy Rating, 8% increased Attack Speed]
-    runes: [18% increased Attack Speed]
+    runes: ["3× Soul Core of Quipolatl: 18% increased Attack Speed"]
     ladder:
       - name: Rare Spear
         pct: 74
@@ -108,7 +108,7 @@ gear:
   helmet:
     base: Ancestral Tiara
     mods: [+40% to Cold Resistance, 100% increased Energy Shield, 17% increased Rarity of Items found, +22% to Chaos Resistance, +71 to maximum Energy Shield, 18% increased Rarity of Items found]
-    runes: ["20% increased Armour, Evasion and Energy Shield", Pain Attunement, Raven-Touched]
+    runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Pain Attunement", "Raven-Touched Shard: Raven-Touched"]
     ladder:
       - name: Rare Helmet
         pct: 86
@@ -120,7 +120,7 @@ gear:
         pct: 1
   boots:
     unique: Wondertrap
-    runes: [+44% to Fire Resistance]
+    runes: ["2× Perfect Desert Rune: +44% to Fire Resistance"]
     ladder:
       - name: Rare Boots
         pct: 77
@@ -155,7 +155,7 @@ gear:
   weapon2:
     base: Akoyan Spear
     mods: [+4.98% to Critical Hit Chance, Adds 93 to 146 Fire Damage, Adds 74 to 123 Cold Damage, +22% to Critical Damage Bonus, +4 to Level of all Projectile Skills, Adds 6 to 231 Lightning Damage]
-    runes: [40% increased Elemental Damage with Attacks, Gain 5% of Damage as Extra Damage of all Elements]
+    runes: ["Soul Core of Citaqualotl: 40% increased Elemental Damage with Attacks", "Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements"]
     ladder:
       - name: Rare Spear
         pct: 74
@@ -168,7 +168,7 @@ gear:
   gloves:
     base: Blacksteel Gauntlets
     mods: [39% increased Projectile Speed, Adds 21 to 33 Cold damage to Attacks, Adds 1 to 70 Lightning damage to Attacks, +2 to Level of all Projectile Skills, 15% increased Attack Speed, 29% increased Critical Damage Bonus]
-    runes: [15% chance when you gain a Frenzy Charge to gain an additional Frenzy Charge, Can roll Marksman modifiers]
+    runes: ["Idol of Kraityn: 15% chance when you gain a Frenzy Charge to gain an additional Frenzy Charge", "Kolr's Hunt: Can roll Marksman modifiers"]
     ladder:
       - name: Rare Gloves
         pct: 71
@@ -180,7 +180,7 @@ gear:
         pct: 1
   offhand2:
     unique: Sacred Flame
-    runes: [15% increased Spirit, +1 to Level of all Wind Skill Gems]
+    runes: ["Rabbit Idol: 15% increased Spirit", "Jiquani's Soul Core of Squalls: +1 to Level of all Wind Skill Gems"]
     ladder:
       - name: Svalinn
         pct: 3

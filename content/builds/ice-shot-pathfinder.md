@@ -56,7 +56,7 @@ gear:
   weapon:
     base: Warmonger Bow
     mods: [179% increased Physical Damage, Adds 35 to 57 Physical Damage, 100% increased Elemental Damage with Attacks, +200% Surpassing chance to fire an additional Arrow, +4.5% to Critical Hit Chance, +2 to Level of all Attack Skills, 25% chance to gain Onslaught on Killing Hits with this Weapon]
-    runes: [+1 Suffix Modifier allowed, Bow Attacks fire an additional Arrow, Gain 5% of Damage as Extra Damage of all Elements]
+    runes: ["Serle's Triumph: +1 Suffix Modifier allowed", "Countess Seske's Rune of Archery: Bow Attacks fire an additional Arrow", "Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements"]
     ladder:
       - name: Rare Bow
         pct: 95
@@ -68,7 +68,7 @@ gear:
         pct: 2
   body:
     unique: Morior Invictus
-    runes: [+30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield, 15% of Chaos Damage from Hits taken as Damage of a random Element, 10% increased Deflection Rating]
+    runes: ["Rune of Foundations: +30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield", "Emergent Possibility: 15% of Chaos Damage from Hits taken as Damage of a random Element", "Hawk Idol: 10% increased Deflection Rating"]
     ladder:
       - name: Rare Body Armour
         pct: 65
@@ -140,7 +140,7 @@ gear:
   boots:
     base: Daggerfoot Shoes
     mods: [23% increased Movement Speed while Sprinting, 35% increased Movement Speed, 90% increased Evasion and Energy Shield, +43% to Fire Resistance, 16% increased Rarity of Items found, 60% increased effect of Socketed Augment Items]
-    runes: [8% increased Movement Speed, Can roll Chronomancy modifiers]
+    runes: ["Farrul's Rune of the Chase: 8% increased Movement Speed", "Uhtred's Sidereus: Can roll Chronomancy modifiers"]
     ladder:
       - name: Rare Boots
         pct: 98
@@ -153,7 +153,7 @@ gear:
   helmet:
     base: Ancestral Tiara
     mods: [100% increased Energy Shield, 42% increased Energy Shield, +45 to maximum Life, 16% increased Rarity of Items found, 32% increased Critical Hit Chance, +40% to Lightning Resistance, +73 to maximum Energy Shield]
-    runes: [+50 to all Attributes, Raven-Touched]
+    runes: ["+50 to all Attributes", "Raven-Touched Shard: Raven-Touched"]
     ladder:
       - name: Rare Helmet
         pct: 97
@@ -179,7 +179,7 @@ gear:
   gloves:
     base: Secured Wraps
     mods: [Adds 1 to 57 Lightning damage to Attacks, Adds 28 to 44 Fire damage to Attacks, +2 to Level of all Projectile Skills, 39% increased Projectile Damage, +65% Surpassing chance to fire an additional Projectile, 26% increased Critical Damage Bonus]
-    runes: [8% increased Attack Speed, Can roll Marksman modifiers]
+    runes: ["Idol of Sirrius: 8% increased Attack Speed", "Kolr's Hunt: Can roll Marksman modifiers"]
     ladder:
       - name: Rare Gloves
         pct: 97
