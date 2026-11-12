@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { PriceTag } from "@/lib/prices";
 import type { TradeSearch } from "@/lib/trade";
 import { useTradeLevel } from "@/lib/trade-level";
@@ -114,7 +114,7 @@ export function GearInventory({
   slotLabels,
   weaponSetsLabel = "Weapon sets",
   weaponLabels = { title: "Weapons", set1: "Weapon Set I", set2: "Weapon Set II" },
-  labels = { runes: "Socketed", ladder: "On the ladder", craft: "Craft this item", trade: "Search on trade", tradeLevel: "My level" },
+  labels = { runes: "Socketed", ladder: "On the ladder", craft: "Craft this item", trade: "Search on trade", tradeLevel: "My level", close: "Close" },
   hint,
   priceLabels,
 }: {
@@ -125,7 +125,7 @@ export function GearInventory({
   /** Titles of the weapons row under the inventory. */
   weaponLabels?: { title: string; set1: string; set2: string };
   /** Section titles in the item panel. */
-  labels?: { runes: string; ladder: string; craft: string; trade: string; tradeLevel: string };
+  labels?: { runes: string; ladder: string; craft: string; trade: string; tradeLevel: string; close: string };
   hint: string;
   /** { divine, exalted, stageTotal, note } labels for the price chips. */
   priceLabels: { divine: string; exalted: string; stageTotal: string; note: string };
@@ -138,6 +138,12 @@ export function GearInventory({
   const hasSwap = bySlot.has("weapon2") || bySlot.has("offhand2");
   const [swapState, setSwap] = useState(false);
   const [level, changeLevel] = useTradeLevel();
+  // The item card opens in a modal <dialog> (Escape and a click on the backdrop close it).
+  const dialog = useRef<HTMLDialogElement>(null);
+  const open = (slot: GearSlot) => {
+    pick(slot);
+    dialog.current?.showModal();
+  };
   // Weapon set II is only shown where the stage has one.
   const swap = hasSwap && swapState;
   const shownSlot = (slot: GearSlot): GearSlot =>
@@ -188,8 +194,8 @@ export function GearInventory({
           <span className="text-xs text-faint">{priceLabels.note}</span>
         </p>
       )}
-      <div className="flex flex-col gap-4 md:flex-row md:items-start">
-        <div className="w-full max-w-sm shrink-0 self-center rounded-xl border border-line bg-[radial-gradient(ellipse_at_center,#1d1913_0%,#0c0a08_80%)] p-3 md:self-start">
+      <div>
+        <div className="mx-auto w-full max-w-md rounded-xl border border-line bg-[radial-gradient(ellipse_at_center,#1d1913_0%,#0c0a08_80%)] p-3">
           <div className="grid aspect-[8/7] grid-cols-8 grid-rows-7 gap-1.5">
             {ORDER.map((base) => {
               const slot = shownSlot(base);
@@ -200,9 +206,7 @@ export function GearInventory({
                   key={slot}
                   type="button"
                   disabled={!it}
-                  onMouseEnter={() => it && setSelected(slot)}
-                  onFocus={() => it && setSelected(slot)}
-                  onClick={() => it && setSelected(slot)}
+                  onClick={() => it && open(slot)}
                   aria-label={it ? `${slotLabels[slot]}: ${it.title}` : slotLabels[slot]}
                   className={`${PLACEMENT[slot]} relative flex items-center justify-center overflow-hidden rounded-md border bg-black/40 transition ${
                     !it
@@ -259,7 +263,7 @@ export function GearInventory({
                           <li key={it.slot}>
                             <button
                               type="button"
-                              onClick={() => pick(it.slot)}
+                              onClick={() => open(it.slot)}
                               className={`flex w-full items-center gap-2 rounded px-1 py-0.5 text-left text-xs hover:bg-black/30 ${
                                 current?.slot === it.slot ? "ring-1 ring-gold" : ""
                               }`}
@@ -282,8 +286,45 @@ export function GearInventory({
           )}
         </div>
 
+        <dialog
+          ref={dialog}
+          aria-label={current?.title}
+          onClick={(e) => e.target === e.currentTarget && dialog.current?.close()}
+          className="m-auto max-h-[90vh] w-[min(94vw,56rem)] overflow-y-auto rounded-xl bg-transparent p-0 text-ink backdrop:bg-black/70 backdrop:backdrop-blur-sm"
+        >
         {current && (
-          <div className="min-w-0 flex-1 rounded-xl border border-line-strong bg-surface shadow-lg shadow-black/40">
+          <div className="relative rounded-xl border border-line-strong bg-surface shadow-2xl shadow-black/60">
+            <button
+              type="button"
+              onClick={() => dialog.current?.close()}
+              aria-label={labels.close}
+              className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-md text-lg text-muted hover:bg-surface-2 hover:text-ink"
+            >
+              ×
+            </button>
+            <div className="md:flex">
+            {/* The item at full size, with its sockets, like the in-game item art. */}
+            <div
+              className={`flex flex-col items-center justify-center gap-3 rounded-t-xl border-b border-line p-6 md:w-64 md:shrink-0 md:rounded-l-xl md:rounded-tr-none md:border-b-0 md:border-r ${
+                current.kind === "unique"
+                  ? "bg-[radial-gradient(circle,rgba(201,132,74,0.22),transparent_70%)]"
+                  : "bg-[radial-gradient(circle,rgba(232,215,122,0.14),transparent_70%)]"
+              }`}
+            >
+              {current.icon ? (
+                <img src={current.icon} alt={current.title} className="max-h-72 w-full object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.8)]" />
+              ) : (
+                <span className={`font-display text-xl ${current.kind === "unique" ? "text-unique" : "text-[#e8d77a]"}`}>{current.title}</span>
+              )}
+              {current.runes.length > 0 && (
+                <span className="flex flex-wrap justify-center gap-1.5">
+                  {sockets(current.runes).map((r, i) => (
+                    <Socket key={i} rune={r} size="md" />
+                  ))}
+                </span>
+              )}
+            </div>
+            <div className="min-w-0 flex-1">
             <div
               className={`rounded-t-xl border-b px-4 py-3 text-center ${
                 current.kind === "unique" ? "border-unique/30 bg-unique/10" : "border-[#e8d77a]/25 bg-[#e8d77a]/5"
@@ -316,13 +357,8 @@ export function GearInventory({
               </ul>
               {current.runes.length > 0 && (
                 <div className="border-t border-line pt-2">
-                  <p className="flex items-center justify-center gap-1.5 text-xs uppercase tracking-wider text-faint">
+                  <p className="text-xs uppercase tracking-wider text-faint">
                     {labels.runes}
-                    <span className="inline-flex gap-0.5">
-                      {sockets(current.runes).map((r, i) => (
-                        <Socket key={i} rune={r} size="sm" />
-                      ))}
-                    </span>
                   </p>
                   <ul className="mt-2 space-y-1.5 text-left">
                     {current.runes.map((r, i) => (
@@ -403,8 +439,11 @@ export function GearInventory({
                 </div>
               )}
             </div>
+            </div>
+            </div>
           </div>
         )}
+        </dialog>
       </div>
       <p className="mt-2 text-xs text-faint">{hint}</p>
     </div>

@@ -162,6 +162,7 @@ export const en = {
       spirit: "Spirit gem",
     },
     socketed: "Socketed runes",
+    closeCard: "Close",
     lootFilter: {
       title: "Loot filter",
       intro: "An item filter that highlights what this build looks for: its uniques, rares on its bases (and high item level crafting bases) and rare weapons of its type.",
@@ -250,7 +251,7 @@ export const en = {
     ascendancyOrder: "Ascendancy order",
     metaTitle: "{title} Build Guide ({patch})",
     gearStages: { campaign: "Campaign", mapping: "Early maps", endgame: "Endgame", minmax: "Min-max" },
-    inventoryHint: "Hover or tap an item to see its modifiers. Rare items list the modifiers to look for.",
+    inventoryHint: "Click an item to open its card with its modifiers. Rare items list the modifiers to look for.",
     compareWith: "Compare with another build",
     leveling: "Leveling",
     levelingSub: "Skills and supports to use at each stage of the campaign, following the source guide's planner. Gems added at a step are highlighted.",

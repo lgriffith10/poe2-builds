@@ -164,6 +164,7 @@ export const fr: Dictionary = {
       spirit: "Gemme d'esprit",
     },
     socketed: "Runes serties",
+    closeCard: "Fermer",
     lootFilter: {
       title: "Filtre de loot",
       intro: "Un filtre d'objets qui met en avant ce que ce build cherche : ses uniques, les rares sur ses bases (et les bases de craft de haut niveau d'objet) et les armes rares de son type.",
@@ -252,7 +253,7 @@ export const fr: Dictionary = {
     ascendancyOrder: "Ordre d'ascendance",
     metaTitle: "Guide du build {title} ({patch})",
     gearStages: { campaign: "Campagne", mapping: "Premières cartes", endgame: "Endgame", minmax: "Min-max" },
-    inventoryHint: "Survolez ou touchez un objet pour voir ses modificateurs. Les objets rares listent les modificateurs à chercher.",
+    inventoryHint: "Cliquez sur un objet pour ouvrir sa fiche et ses modificateurs. Les objets rares listent les modificateurs à chercher.",
     compareWith: "Comparer avec un autre build",
     leveling: "Leveling",
     levelingSub: "Compétences et supports à utiliser à chaque étape de la campagne, d'après le planner du guide source. Les gemmes ajoutées à une étape sont mises en avant.",
