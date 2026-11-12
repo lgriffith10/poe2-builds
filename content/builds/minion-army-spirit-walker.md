@@ -554,6 +554,16 @@ The first levels use [[Twister]] with [[Whirling Slash]]. As soon as you find a 
 
 **Minions.** Cast [[Pain Offering]] on a [[Skeletal Warrior]] or [[Skeletal Sniper]] to boost the whole army, mark bosses with [[Sniper's Mark]] and let the minions work.
 
+## Companions
+
+Your strongest damage dealer is a beast you capture with [[Tame Beast]]: bring a rare beast low, use the skill on it, and it becomes a "Companion" skill gem that keeps the beast's rare modifiers. Turn your own minions off before you start, or they will kill the beast before you can tame it.
+
+**Main companion.** The Natural Order (second ascendancy) lets [[Tame Beast]] capture unique beast bosses. Once you also have the Easy Going notable and the Trusted Kinship keystone, tame the **Mighty Silverfist** in the **Jungle Ruins** (Act 3). In maps, replace it with **Zekoa, the Headcrusher** (Rupture and Riverside maps), ideally with several rare modifiers, "Extra Crits" first. Vaal City maps with rare tablets that add unique monsters are another way to find this boss type (the **Croilla Sergeant**).
+
+**Second companion.** During the campaign, [[Wolf Pack]] is the simple choice. After the campaign, go to the "Troubled Camp" in the **Infested Barrens**: one or two rare beasts spawn near the checkpoint. Use "Respawn at checkpoint" to reroll their modifiers until one has **Haste Aura** (not "Hasted"), tame it and support it with [[Loyalty]].
+
+Gemcutter's Prisms on both Companion gems lower the Spirit they reserve.
+
 ## Gear Priorities
 
 Minion levels and energy shield. Recommended jewel modifiers: minion critical damage and chance, increased maximum energy shield, presence area of effect and minion damage. [[Tyranny's Grip]] is the source guide's weapon.
