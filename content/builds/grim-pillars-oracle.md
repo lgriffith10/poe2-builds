@@ -169,18 +169,23 @@ gear:
   weapon:
     base: Attuned Wand
     mods: [+Level of all Spell Skills, Increased Spell Damage, Increased Cast Speed, Spell Critical Hit Chance, Gain Damage as Extra Lightning]
+    runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
   offhand:
     base: Shrine Sceptre
     mods: [Increased Spirit, +Maximum Mana]
+    runes: ["Rabbit Idol: 15% increased Spirit"]
   helmet:
     base: Cryptic Crown
     mods: [+Maximum Life, +Maximum Mana, Elemental Resistances, Chaos Resistance]
+    runes: ["Greater Storm Rune: +18% to Lightning Resistance"]
   body:
     base: Corvus Mantle
     mods: [+Maximum Life, +Spirit, Elemental Resistances, Chaos Resistance]
+    runes: ["Greater Desert Rune: +18% to Fire Resistance"]
   gloves:
     base: Adherent Cuffs
     mods: [+Maximum Life, +Maximum Mana, Elemental Resistances, Chaos Resistance]
+    runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
   boots:
     base: Cryptic Leggings
     mods: [Movement Speed, +Maximum Life, +Maximum Mana, Elemental Resistances]
@@ -199,13 +204,16 @@ gear:
   weapon2:
     base: Attuned Wand
     mods: [Increased Spell Damage, +Level of all Cold Spell Skills, Increased Cast Speed, Spell Critical Hit Chance, Gain Damage as Extra Lightning]
+    runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
   offhand2:
     base: Shrine Sceptre
     mods: [+Spirit, +Maximum Mana]
+    runes: ["Rabbit Idol: 15% increased Spirit"]
 gearStages:
   campaign:
     weapon:
       unique: "Lifesprig"
+      runes: ["Greater Storm Rune: Gain 10% of Damage as Extra Lightning Damage"]
     offhand:
       mods: [+Spirit]
     helmet:
@@ -236,18 +244,23 @@ gearStages:
     weapon:
       base: Attuned Wand
       mods: [Increased Spell Damage, +Level of all Spell Skills, Increased Cast Speed, Spell Critical Hit Chance, Gain Damage as Extra Lightning]
+      runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
     offhand:
       base: Shrine Sceptre
       mods: [+Spirit, +Maximum Mana]
+      runes: ["Rabbit Idol: 15% increased Spirit"]
     helmet:
       base: Cryptic Crown
       mods: [Cold Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Maximum Mana]
+      runes: ["Greater Storm Rune: +18% to Lightning Resistance"]
     body:
       base: Corvus Mantle
       mods: [Cold Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Spirit]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance"]
     gloves:
       base: Adherent Cuffs
       mods: [Fire Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Maximum Mana]
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
     boots:
       base: Cryptic Leggings
       mods: [Cold Resistance, Lightning Resistance, +Maximum Life, +Maximum Mana, Movement Speed]
@@ -267,18 +280,23 @@ gearStages:
     weapon:
       base: Attuned Wand
       mods: [Increased Spell Damage, +Level of all Cold Spell Skills, Increased Cast Speed, Spell Critical Hit Chance, Gain Damage as Extra Lightning]
+      runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
     offhand:
       base: Shrine Sceptre
       mods: [+Spirit, +Maximum Mana]
+      runes: ["Rabbit Idol: 15% increased Spirit"]
     helmet:
       base: Cryptic Crown
       mods: [Cold Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Maximum Mana]
+      runes: ["Greater Storm Rune: +18% to Lightning Resistance"]
     body:
       base: Corvus Mantle
       mods: [Cold Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Spirit]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance"]
     gloves:
       base: Adherent Cuffs
       mods: [Fire Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, +Maximum Mana]
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
     boots:
       base: Cryptic Leggings
       mods: [Cold Resistance, Lightning Resistance, +Maximum Life, +Maximum Mana, Movement Speed]
@@ -297,28 +315,36 @@ gearStages:
     weapon2:
       base: Attuned Wand
       mods: [+Level of all Cold Spell Skills, Gain Damage as Extra Cold, Increased Elemental Damage]
+      runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
     offhand2:
       base: Shrine Sceptre
       mods: [+Spirit, +Maximum Mana]
+      runes: ["Rabbit Idol: 15% increased Spirit"]
   minmax:
     weapon:
       base: Attuned Wand
       mods: [+Level of all Cold Spell Skills, Gain Damage as Extra Cold, Increased Elemental Damage]
+      runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
     offhand:
       base: Shrine Sceptre
       mods: [+Spirit, +Maximum Mana]
+      runes: ["Rabbit Idol: 15% increased Spirit"]
     helmet:
       base: Ancestral Tiara
       mods: [Cold Resistance, Lightning Resistance, Energy Shield, +Maximum Life]
+      runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
     body:
       base: Vile Robe
       mods: [Fire Resistance, Cold Resistance, Lightning Resistance, Energy Shield, +Spirit]
+      runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Craiceann's Rune of Recovery: 30% increased Energy Shield Recharge Rate"]
     gloves:
       base: Vaal Gloves
       mods: [Cold Resistance, Energy Shield, Adds Physical Damage to Attacks, Critical Damage Bonus]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       base: Sekhema Sandals
       mods: [Cold Resistance, Lightning Resistance, Energy Shield, Movement Speed]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Stellar Amulet
       mods: [Energy Shield, +Level of all Spell Skills, +Spirit]
@@ -333,9 +359,11 @@ gearStages:
     weapon2:
       base: Attuned Wand
       mods: [+Level of all Cold Spell Skills, Gain Damage as Extra Cold, Increased Elemental Damage]
+      runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
     offhand2:
       base: Shrine Sceptre
       mods: [+Spirit, +Maximum Mana]
+      runes: ["Rabbit Idol: 15% increased Spirit"]
 passives:
   attribute: str
   path:

@@ -148,21 +148,26 @@ gear:
   weapon:
     unique: Skysliver
     note: Weapon set 1 for Whirling Slash. A rare Akoyan Spear with physical damage and critical strike chance goes in set 2.
+    runes: ["Soul Core of Quipolatl: 5% increased Attack Speed"]
   offhand:
     unique: Guiding Palm of the Eye
   helmet:
     base: Freebooter Cap
     mods: [Evasion Rating, +Maximum Life, Deflection, Lightning Resistance]
+    runes: ["Raven-Touched Shard", "Perfect Glacial Rune: +22% to Cold Resistance", "Greater Desert Rune: +18% to Fire Resistance"]
   body:
     base: Slipstrike Vest
     mods: [Evasion Rating, +Maximum Life]
+    runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   gloves:
     base: Runeforged Polished Bracers
     mods: [Evasion Rating, Adds Physical Damage to Attacks, Adds Fire Damage to Attacks, Lightning Resistance]
+    runes: ["Kolr's Hunt: Can roll Marksman modifiers"]
   boots:
     base: Treerunner Shoes
     mods: [+Maximum Life, Evasion Rating, Fire Resistance]
     note: Movement speed is optional, Whirling Slash is your movement.
+    runes: ["Greater Desert Rune: +18% to Fire Resistance", "Greater Storm Rune: +18% to Lightning Resistance"]
   amulet:
     unique: Yoke of Suffering
   ring1:
@@ -173,6 +178,7 @@ gear:
     mods: [+Maximum Life, Adds Physical Damage to Attacks, +Strength, +Intelligence, Elemental Resistances]
   belt:
     unique: Darkness Enthroned
+    runes: ["Fox Idol", "Idol of Eramir"]
   weapon2:
     base: Akoyan Spear
     mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance]

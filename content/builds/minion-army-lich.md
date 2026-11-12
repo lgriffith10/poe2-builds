@@ -415,19 +415,24 @@ gear:
   weapon:
     base: Rattling Sceptre
     mods: [+Level of all Minion Skills, +Spirit, Increased Allies in presence Damage, Allies in Presence Attack Speed, Allies in Presence gain Added Physical Damage]
+    runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
   offhand:
     unique: "Prism Guardian"
   helmet:
     base: Runeforged Kamasan Tiara
     mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence, +Maximum Life]
+    runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills"]
   body:
     base: Sacramental Robe
     mods: [+Spirit, Energy Shield, Elemental Resistances, +Intelligence]
+    runes: ["2× Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Craiceann's Rune of Warding: 50% reduced effect of Curses on you"]
   gloves:
     base: Runeforged Vaal Gloves
     mods: [Energy Shield, Elemental Resistances, +Maximum Life, +Attributes]
+    runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
   boots:
     unique: "Bones of Ullr"
+    runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
   amulet:
     base: Amber Amulet
     mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Attributes]
@@ -442,27 +447,35 @@ gear:
   weapon2:
     base: Rattling Sceptre
     mods: [+Level of all Minion Skills, +Spirit, Increased Allies in presence Damage, Allies in Presence Attack Speed]
+    runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage", "Rabbit Idol: 15% increased Spirit"]
   offhand2:
     base: Sacred Focus
     mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+    runes: ["Iron Rune: 16% increased Physical Damage"]
 gearStages:
   campaign:
     weapon:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, +Spirit, Increased Allies in presence Damage, Allies in Presence Attack Speed, Allies in Presence gain Added Lightning Damage]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
     offhand:
       base: Emblem Crest Shield
       mods: [+Maximum Life, Block Chance, Elemental Resistances, Chaos Resistance]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     helmet:
       base: Twig Circlet
       mods: [+Level of all Minion Skills, Elemental Resistances, +Maximum Life, Energy Shield, +Intelligence]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     body:
       unique: "Enfolding Dawn"
+      runes: ["Glacial Rune: +14% to Cold Resistance", "Storm Rune: +14% to Lightning Resistance"]
     gloves:
       base: Torn Gloves
       mods: [Elemental Resistances, +Maximum Life, Energy Shield, +Attributes, Chaos Resistance]
+      runes: ["Storm Rune: +14% to Lightning Resistance"]
     boots:
       unique: "Bones of Ullr"
+      runes: ["Lesser Desert Rune: +10% to Fire Resistance"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, +Maximum Life, Chaos Resistance, +Attributes]
@@ -480,23 +493,30 @@ gearStages:
     offhand2:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit, Allies in Presence Attack Speed, Allies in Presence gain Added Lightning Damage]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
   mapping:
     weapon:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, +Spirit, Increased Allies in presence Damage, Allies in Presence gain Added Physical Damage, Allies in Presence gain Added Lightning Damage, Elemental Resistances]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
     offhand:
       base: Painted Crest Shield
       mods: [Block Chance, +Maximum Life, Chaos Resistance, Elemental Resistances, +Attributes]
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
     helmet:
       base: Kamasan Tiara
       mods: [+Level of all Minion Skills, Elemental Resistances, Energy Shield, +Maximum Life, Chaos Resistance, +Intelligence]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     body:
       unique: "Enfolding Dawn"
+      runes: ["Greater Desert Rune: +18% to Fire Resistance", "Greater Glacial Rune: +18% to Cold Resistance"]
     gloves:
       base: Runeforged Vaal Gloves
       mods: [Energy Shield, Elemental Resistances, Chaos Resistance, +Maximum Life, +Attributes]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     boots:
       unique: "Bones of Ullr"
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Maximum Life, +Attributes]
@@ -518,19 +538,24 @@ gearStages:
     weapon:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, +Spirit, Increased Allies in presence Damage, Allies in Presence Attack Speed, Allies in Presence gain Added Physical Damage]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
     offhand:
       unique: "Prism Guardian"
     helmet:
       base: Runeforged Kamasan Tiara
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence, +Maximum Life]
+      runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills"]
     body:
       base: Sacramental Robe
       mods: [+Spirit, Energy Shield, Elemental Resistances, +Intelligence]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield", "Craiceann's Rune of Warding: 50% reduced effect of Curses on you"]
     gloves:
       base: Runeforged Vaal Gloves
       mods: [Energy Shield, Elemental Resistances, +Maximum Life, +Attributes]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       unique: "Bones of Ullr"
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance", "Amanamu's Gaze: 1% increased Movement Speed per 15 Spirit, up to a maximum of 40%, Other Modifiers to Movement Speed except for Sprinting do not apply"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Attributes]
@@ -545,27 +570,35 @@ gearStages:
     weapon2:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, +Spirit, Increased Allies in presence Damage, Allies in Presence Attack Speed]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
     offhand2:
       base: Sacred Focus
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+      runes: ["Iron Rune: 16% increased Physical Damage"]
   minmax:
     weapon:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, +Spirit, Increased Allies in presence Damage, Allies in Presence Attack Speed, Allies in Presence gain Added Physical Damage]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage", "Rabbit Idol: 15% increased Spirit"]
     offhand:
       base: Sacred Focus
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+      runes: ["Perfect Iron Rune: 20% increased Physical Damage", "Soul Core of Tacati: 25% increased Magnitude of Poison you inflict"]
     helmet:
       base: Ancestral Tiara
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence, Chaos Resistance]
+      runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills", "Raven-Touched Shard"]
     body:
       base: Sacramental Robe
       mods: [+Spirit, Energy Shield, Elemental Resistances, +Intelligence]
+      runes: ["2× Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Craiceann's Rune of Warding: 50% reduced effect of Curses on you"]
     gloves:
       base: Runeforged Vaal Gloves
       mods: [Energy Shield, Elemental Resistances, Chaos Resistance, +Attributes, +Maximum Life]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       unique: "Bones of Ullr"
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Portent Amulet
       mods: [+Level of all Minion Skills, +Spirit, +Attributes, Elemental Resistances, Energy Shield]
@@ -579,6 +612,7 @@ gearStages:
     weapon2:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit, +Maximum Mana, Allies in Presence Attack Speed]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage", "Rabbit Idol: 15% increased Spirit"]
     offhand2:
       unique: Prism Guardian
 passives:

@@ -212,6 +212,7 @@ gear:
   weapon:
     base: Guardian Bow
     mods: [Increased Physical Damage, Adds Physical Damage, Adds Cold Damage, Increased Attack Speed, Critical Hit Chance, Additional Arrow]
+    runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
   offhand:
     unique: Cadiro's Gambit
     note: Random special arrows; a rare quiver with +Projectile Skill levels and Critical Damage is a fine alternative.
@@ -223,6 +224,7 @@ gear:
   gloves:
     base: Polished Bracers
     mods: [Deflection, Evasion Rating, Adds Cold Damage to Attacks, +Maximum Life]
+    runes: ["Idol of Sirrius: 8% increased Attack Speed"]
   boots:
     base: Drakeskin Boots
     mods: [Movement Speed, Evasion Rating, Deflection, +Maximum Life]
@@ -241,6 +243,7 @@ gear:
   weapon2:
     base: Obliterator Bow
     mods: [High Physical DPS, Critical Hit Chance, +Level of all Projectile Skills, Critical Damage Bonus]
+    runes: ["2× Perfect Iron Rune: 20% increased Physical Damage"]
   offhand2:
     base: Volant Quiver
     mods: [Adds Cold Damage to Attacks, Adds Physical Damage to Attacks, Attack Critical Hit Chance, Critical Damage Bonus, +Level of all Projectile Skills]
@@ -277,6 +280,7 @@ gearStages:
     weapon:
       base: Guardian Bow
       mods: [High Physical DPS, Increased Attack Speed, Critical Hit Chance, Additional Arrow]
+      runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
     offhand:
       unique: "Cadiro's Gambit"
     helmet:
@@ -287,6 +291,7 @@ gearStages:
     gloves:
       base: Polished Bracers
       mods: [Deflection, Evasion Rating, Adds Cold Damage to Attacks, +Maximum Life]
+      runes: ["Idol of Sirrius: 8% increased Attack Speed"]
     boots:
       base: Drakeskin Boots
       mods: [Movement Speed, Evasion Rating, Deflection, +Maximum Life]
@@ -306,6 +311,7 @@ gearStages:
     weapon:
       base: Warmonger Bow
       mods: [Increased Physical Damage, Adds Physical Damage, Adds Cold Damage, Critical Hit Chance, +Level of all Projectile Skills, Increased Attack Speed]
+      runes: ["Countess Seske's Rune of Archery: Bow Attacks fire an additional Arrow", "Perfect Iron Rune: 20% increased Physical Damage"]
     offhand:
       unique: "Cadiro's Gambit"
     helmet:
@@ -316,6 +322,7 @@ gearStages:
     gloves:
       base: Polished Bracers
       mods: [+Maximum Life, Evasion Rating, Deflection, Adds Physical Damage to Attacks, Critical Damage Bonus]
+      runes: ["Idol of Sirrius: 8% increased Attack Speed"]
     boots:
       base: Drakeskin Boots
       mods: [Movement Speed, +Maximum Life, Deflection, Evasion Rating]
@@ -334,6 +341,7 @@ gearStages:
     weapon2:
       base: Obliterator Bow
       mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance, Critical Damage Bonus, +Level of all Projectile Skills, Accuracy Rating]
+      runes: ["2× Perfect Iron Rune: 20% increased Physical Damage"]
     offhand2:
       base: Visceral Quiver
       mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, +Level of all Projectile Skills, Attack Critical Hit Chance, Critical Damage Bonus]

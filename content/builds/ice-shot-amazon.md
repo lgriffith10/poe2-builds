@@ -199,19 +199,24 @@ gear:
   weapon:
     base: Twin Bow
     mods: [Adds Physical Damage, Accuracy Rating, Critical Hit Chance, Increased Physical Damage, Critical Damage Bonus, Additional Arrow]
+    runes: ["2× Greater Vision Rune: +120 to Accuracy Rating"]
   offhand:
     unique: "Cadiro's Gambit"
   helmet:
     unique: "The Black Insignia"
+    runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   body:
     base: Sacramental Robe
     mods: [Energy Shield, +Maximum Life]
+    runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   gloves:
     base: Barbed Bracers
     mods: [Evasion Rating, Accuracy Rating]
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   boots:
     base: Dragonscale Boots
     mods: [Movement Speed, Evasion Rating]
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   amulet:
     base: Jade Amulet
     mods: [Energy Shield, +Maximum Life, +Level of all Projectile Skills]
@@ -235,15 +240,18 @@ gearStages:
     weapon:
       base: Twin Bow
       mods: [Adds Physical Damage, Critical Hit Chance, Increased Physical Damage]
+      runes: ["2× Iron Rune: 16% increased Physical Damage"]
     offhand:
       base: Two-Point Quiver
       mods: [Adds Physical Damage to Attacks, Attack Critical Hit Chance, Accuracy Rating]
     helmet:
       base: Oak Mask
       mods: [Evasion and Energy Shield, Critical Hit Chance, +Maximum Life, +Maximum Mana]
+      runes: ["Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     body:
       base: Wyrmscale Coat
       mods: [+Maximum Life, +Spirit]
+      runes: ["2× Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Hunting Bracers
       mods: [Evasion Rating, +Maximum Life, Accuracy Rating]
@@ -266,19 +274,24 @@ gearStages:
     weapon:
       base: Twin Bow
       mods: [Adds Physical Damage, Accuracy Rating, Critical Hit Chance, Increased Physical Damage, Critical Damage Bonus, Additional Arrow]
+      runes: ["2× Greater Vision Rune: +120 to Accuracy Rating"]
     offhand:
       unique: "Cadiro's Gambit"
     helmet:
       unique: "The Black Insignia"
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     body:
       base: Sacramental Robe
       mods: [Energy Shield, +Maximum Life]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Barbed Bracers
       mods: [Evasion Rating, Accuracy Rating]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     boots:
       base: Dragonscale Boots
       mods: [Movement Speed, Evasion Rating]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     amulet:
       base: Jade Amulet
       mods: [Energy Shield, +Maximum Life, +Level of all Projectile Skills]

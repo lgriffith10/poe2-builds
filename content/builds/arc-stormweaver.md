@@ -248,21 +248,27 @@ gear:
   weapon:
     base: Attuned Wand
     mods: [Increased Spell Damage, +Level of all Lightning Spell Skills, Gain Damage as Extra Lightning]
+    runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills", "Thane Girt's Rune of Wildness: 25% chance for Spell Skills to fire 2 additional Projectiles"]
   offhand:
     base: Sacred Focus
     mods: [Energy Shield, +Level of all Spell Skills, Lightning Resistance, +Maximum Mana]
+    runes: ["Soul Core of Citaqualotl: 40% increased Elemental Damage with Attacks"]
   helmet:
     base: Kamasan Tiara
     mods: [Energy Shield, Fire Resistance, Critical Hit Chance]
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   body:
     base: Havoc Raiment
     mods: [+Spirit, Energy Shield, Fire Resistance]
+    runes: ["3× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   gloves:
     base: Vaal Gloves
     mods: [+Maximum Mana, Energy Shield, Fire Resistance]
+    runes: ["Greater Mind Rune: +40 to maximum Mana"]
   boots:
     base: Sandsworn Sandals
     mods: [Movement Speed, +Maximum Mana, Cold Resistance, Lightning Resistance]
+    runes: ["Greater Mind Rune: +40 to maximum Mana"]
   amulet:
     base: Solar Amulet
     mods: [+Level of all Spell Skills, Increased Cast Speed, Grants a Passive Skill]
@@ -278,23 +284,29 @@ gear:
   weapon2:
     base: Chiming Staff
     mods: [Increased Cast Speed, +Level of all Spell Skills]
+    runes: ["2× Greater Inspiration Rune: 30% increased Mana Regeneration Rate"]
 gearStages:
   campaign:
     weapon:
       base: Voltaic Staff
       mods: [+Level of all Lightning Spell Skills, Increased Spell Damage, Increased Lightning Damage, Gain Damage as Extra Lightning]
+      runes: ["Greater Storm Rune: Gain 10% of Damage as Extra Lightning Damage", "Greater Glacial Rune: Gain 10% of Damage as Extra Cold Damage"]
     helmet:
       base: Vermeil Circlet
       mods: [Energy Shield]
+      runes: ["Mind Rune"]
     body:
       base: Altar Robe
       mods: [+Spirit, Energy Shield]
+      runes: ["2× Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Pauascale Gloves
       mods: [Energy Shield, Fire Resistance]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     boots:
       base: Flax Sandals
       mods: [Movement Speed, Lightning Resistance, Cold Resistance]
+      runes: ["Glacial Rune: +14% to Cold Resistance"]
     amulet:
       base: Solar Amulet
       mods: [+Level of all Spell Skills, Grants a Passive Skill]
@@ -314,21 +326,27 @@ gearStages:
     weapon:
       base: Attuned Wand
       mods: [Increased Spell Damage, +Level of all Lightning Spell Skills, Gain Damage as Extra Lightning]
+      runes: ["Greater Iron Rune: 30% increased Spell Damage"]
     offhand:
       base: Sacred Focus
       mods: [Energy Shield, +Level of all Spell Skills, Lightning Resistance, +Maximum Mana]
+      runes: ["Soul Core of Citaqualotl: 40% increased Elemental Damage with Attacks"]
     helmet:
       base: Kamasan Tiara
       mods: [Energy Shield, Fire Resistance, Critical Hit Chance]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     body:
       base: Havoc Raiment
       mods: [+Spirit, Energy Shield, Fire Resistance]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Vaal Gloves
       mods: [+Maximum Mana, Energy Shield, Fire Resistance]
+      runes: ["Greater Mind Rune: +40 to maximum Mana"]
     boots:
       base: Sandsworn Sandals
       mods: [Movement Speed, +Maximum Mana, Cold Resistance, Lightning Resistance]
+      runes: ["Greater Mind Rune: +40 to maximum Mana"]
     amulet:
       base: Solar Amulet
       mods: [+Level of all Spell Skills, Increased Cast Speed, Grants a Passive Skill]
@@ -344,25 +362,32 @@ gearStages:
     weapon2:
       base: Chiming Staff
       mods: [Increased Cast Speed, +Level of all Spell Skills]
+      runes: ["2× Greater Inspiration Rune: 30% increased Mana Regeneration Rate"]
   endgame:
     weapon:
       base: Attuned Wand
       mods: [Gain Damage as Extra Fire, Gain Damage as Extra Lightning, Increased Spell Damage, +Level of all Lightning Spell Skills, Spell Critical Hit Chance]
+      runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
     offhand:
       base: Tasalian Focus
       mods: [Lightning Resistance, +Maximum Mana, Energy Shield, Spell Critical Hit Chance, +Level of all Spell Skills]
+      runes: ["Soul Core of Citaqualotl: 40% increased Elemental Damage with Attacks"]
     helmet:
       base: Ancestral Tiara
       mods: [Energy Shield, Critical Hit Chance, Fire Resistance]
+      runes: ["Soul Core of Zalatl: 5% increased maximum Mana"]
     body:
       base: Havoc Raiment
       mods: [+Spirit, Energy Shield, +Intelligence, Fire Resistance]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Sirenscale Gloves
       mods: [+Maximum Mana, Energy Shield, +Intelligence, Fire Resistance, Cold Resistance]
+      runes: ["Kurgal's Gaze: 40% increased effect of Arcane Surge on you", "Thane Grannell's Rune of Mastery: 30% increased Magnitude of Non-Damaging Ailments you inflict"]
     boots:
       base: Sekhema Sandals
       mods: [Movement Speed, Energy Shield, +Intelligence, Cold Resistance]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Lunar Amulet
       mods: [+Maximum Mana, +Level of all Spell Skills, Critical Hit Chance, +All Attributes, Grants a Passive Skill]
@@ -378,24 +403,31 @@ gearStages:
     weapon2:
       base: Chiming Staff
       mods: [Increased Cast Speed, +Maximum Mana, +Level of all Spell Skills]
+      runes: ["2× Greater Inspiration Rune: 30% increased Mana Regeneration Rate"]
   minmax:
     weapon:
       base: Attuned Wand
       mods: [Gain Damage as Extra Fire, Gain Damage as Extra Lightning, Increased Spell Damage, +Level of all Lightning Spell Skills, Increased Cast Speed, Spell Critical Hit Chance]
+      runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills", "Thane Girt's Rune of Wildness: 25% chance for Spell Skills to fire 2 additional Projectiles"]
     offhand:
       base: Tasalian Focus
       mods: [Energy Shield, Increased Spell Damage, +Maximum Mana, Increased Cast Speed, Critical Damage Bonus, +Level of all Spell Skills]
+      runes: ["2× Greater Mind Rune: Leeches 4% of Physical Damage as Mana"]
     helmet:
       base: Ancestral Tiara
       mods: [Energy Shield, +Maximum Mana, Critical Hit Chance, +Intelligence]
+      runes: ["3× Soul Core of Zalatl: 5% increased maximum Mana"]
     body:
       unique: "Atziri's Splendour"
+      runes: ["4× Soul Core of Citaqualotl: +6% to all Elemental Resistances"]
     gloves:
       base: Sirenscale Gloves
       mods: [Energy Shield, +Maximum Mana, Critical Damage Bonus, Fire Resistance]
+      runes: ["Kurgal's Gaze: 40% increased effect of Arcane Surge on you", "Thane Grannell's Rune of Mastery: 30% increased Magnitude of Non-Damaging Ailments you inflict", "Fenumus' Rune of Spinning: 8% increased Cast Speed"]
     boots:
       base: Sekhema Sandals
       mods: [Movement Speed, Energy Shield, +Maximum Mana, +Intelligence, Cold Resistance, Lightning Resistance]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed", "Greater Mind Rune: +40 to maximum Mana"]
     amulet:
       base: Lunar Amulet
       mods: [+Maximum Mana, +Spirit, +Level of all Spell Skills, Critical Hit Chance, Increased Cast Speed]
@@ -410,6 +442,7 @@ gearStages:
     weapon2:
       base: Chiming Staff
       mods: [Increased Cast Speed, +Maximum Mana, +Level of all Spell Skills]
+      runes: ["2× Greater Inspiration Rune: 30% increased Mana Regeneration Rate"]
 passives:
   attribute: int
   path:

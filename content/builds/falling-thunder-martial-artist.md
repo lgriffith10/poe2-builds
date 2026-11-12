@@ -284,12 +284,15 @@ gear:
   weapon:
     base: Sinister Quarterstaff
     mods: [Adds Lightning Damage, Adds Cold Damage, Increased Physical Damage, Adds Physical Damage, Critical Hit Chance, +Level of all Melee Skills]
+    runes: ["2× Soul Core of Topotante: Attacks with this Weapon Penetrate 25% Elemental Resistances"]
   helmet:
     base: Faridun Mask
     mods: [Critical Hit Chance, Evasion and Energy Shield, +Maximum Life, Elemental Resistances]
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   body:
     base: Sleek Jacket
     mods: [Evasion and Energy Shield, Evasion Rating, Energy Shield, +Maximum Life, Elemental Resistances]
+    runes: ["2× Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
   gloves:
     base: Elegant Wraps
     mods: [Increased Attack Speed, Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, Critical Damage Bonus, Evasion Rating, Energy Shield]
@@ -315,12 +318,15 @@ gearStages:
     weapon:
       base: Waxing Quarterstaff
       mods: [Increased Physical Damage, Adds Physical Damage, Increased Attack Speed, +Level of all Melee Skills]
+      runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
     helmet:
       base: Pariah Mask
       mods: [+Maximum Life, Elemental Resistances]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     body:
       base: Itinerant Jacket
       mods: [Evasion and Energy Shield, +Maximum Life, Elemental Resistances]
+      runes: ["2× Lesser Iron Rune: 14% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Furtive Wraps
       mods: [Increased Attack Speed, Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, Evasion Rating, Energy Shield]
@@ -343,12 +349,15 @@ gearStages:
     weapon:
       base: Sinister Quarterstaff
       mods: [Adds Lightning Damage, Adds Cold Damage, Increased Physical Damage, Adds Physical Damage, Critical Hit Chance, +Level of all Melee Skills]
+      runes: ["2× Soul Core of Topotante: Attacks with this Weapon Penetrate 25% Elemental Resistances"]
     helmet:
       base: Faridun Mask
       mods: [Critical Hit Chance, Evasion and Energy Shield, +Maximum Life, Elemental Resistances]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     body:
       base: Sleek Jacket
       mods: [Evasion and Energy Shield, Evasion Rating, Energy Shield, +Maximum Life, Elemental Resistances]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Elegant Wraps
       mods: [Increased Attack Speed, Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, Critical Damage Bonus, Evasion Rating, Energy Shield]
@@ -370,18 +379,23 @@ gearStages:
     weapon:
       base: Sinister Quarterstaff
       mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance, Increased Attack Speed, Critical Damage Bonus]
+      runes: ["2× Soul Core of Topotante: Attacks with this Weapon Penetrate 25% Elemental Resistances"]
     helmet:
       base: Soaring Mask
       mods: [Critical Hit Chance, Evasion Rating, Energy Shield, Evasion and Energy Shield, Fire Resistance, Cold Resistance]
+      runes: ["Idol of Alira: 15% chance when you gain a Power Charge to gain an additional Power Charge"]
     body:
       base: Sleek Jacket
       mods: [Evasion Rating, Energy Shield, Evasion and Energy Shield, Deflection, Fire Resistance]
+      runes: ["2× Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Secured Wraps
       mods: [Adds Lightning Damage to Attacks, Adds Cold Damage to Attacks, Evasion Rating, Energy Shield, +Level of all Melee Skills, Critical Damage Bonus]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       base: Daggerfoot Shoes
       mods: [Lightning Resistance, Cold Resistance, Movement Speed, Evasion and Energy Shield, Deflection]
+      runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
     amulet:
       base: Gold Amulet
       mods: [Evasion Rating, Energy Shield, +Level of all Melee Skills, +All Attributes, Grants a Passive Skill]

@@ -232,16 +232,21 @@ gear:
   weapon:
     base: Fungal Talisman
     mods: [Adds Physical Damage, Increased Physical Damage, Gain Damage as Extra Physical, Increased Attack Speed, Critical Hit Chance, +Level of all Attack Skills]
+    runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
   helmet:
     base: Cryptic Crown
     mods: [Armour and Energy Shield, Armour, Energy Shield, Armour applies to Elemental Damage, Lightning Resistance]
+    runes: ["Idol of Eeshta: 15% increased Cost Efficiency", "Tzamoto's Soul Core of Ferocity: +4 to Maximum Rage"]
   body:
     unique: "Sacrosanctum"
+    runes: ["Craiceann's Rune of Warding: 50% reduced effect of Curses on you", "Fox Idol: Idols socketed in this item gain the benefits of their Bonded modifiers"]
   gloves:
     unique: "Sine Aequo"
+    runes: ["Idol of Sirrius: 8% increased Attack Speed", "Soul Core of Tacati: +13% to Chaos Resistance"]
   boots:
     base: Sekhema Sandals
     mods: [Movement Speed, Energy Shield, Fire Resistance]
+    runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed", "Estazunti's Soul Core of Convalescence: 15% increased speed of Recoup Effects"]
   amulet:
     base: Gold Amulet
     mods: [+Spirit, +Level of all Melee Skills, Energy Shield, Fire Resistance]
@@ -256,11 +261,13 @@ gear:
   weapon2:
     base: Fungal Talisman
     mods: [Increased Attack Speed, +Level of all Attack Skills]
+    runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
 gearStages:
   campaign:
     weapon:
       base: Frenzied Talisman
       mods: [Increased Physical Damage, Adds Physical Damage, Increased Attack Speed]
+      runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
     helmet:
       base: Warrior Greathelm
       mods: [+Maximum Life, Lightning Resistance, Cold Resistance]
@@ -289,16 +296,21 @@ gearStages:
     weapon:
       base: Fungal Talisman
       mods: [Adds Physical Damage, Increased Physical Damage, Gain Damage as Extra Physical, +Level of all Attack Skills, Increased Attack Speed]
+      runes: ["2× Iron Rune: 16% increased Physical Damage"]
     helmet:
       base: Imperial Greathelm
       mods: [+Maximum Life, Lightning Resistance, Fire Resistance, Chaos Resistance]
+      runes: ["Idol of Eeshta: 15% increased Cost Efficiency"]
     body:
       unique: "Cloak of Flame"
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance", "Greater Glacial Rune: +18% to Cold Resistance"]
     gloves:
       unique: "Sine Aequo"
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
     boots:
       base: Tasalian Greaves
       mods: [Movement Speed, +Maximum Life, Lightning Resistance, Fire Resistance, Chaos Resistance]
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
     amulet:
       unique: "Defiance of Destiny"
     ring1:
@@ -312,20 +324,26 @@ gearStages:
     weapon2:
       base: Fungal Talisman
       mods: [Increased Attack Speed, Increased Physical Damage, Adds Physical Damage]
+      runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
   minmax:
     weapon:
       base: Fungal Talisman
       mods: [Adds Physical Damage, Increased Physical Damage, Gain Damage as Extra Physical, Increased Attack Speed, Critical Hit Chance, +Level of all Attack Skills]
+      runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
     helmet:
       base: Cryptic Crown
       mods: [Armour and Energy Shield, Armour, Energy Shield, Armour applies to Elemental Damage, Lightning Resistance]
+      runes: ["Idol of Eeshta: 15% increased Cost Efficiency", "Tzamoto's Soul Core of Ferocity: +4 to Maximum Rage"]
     body:
       unique: "Sacrosanctum"
+      runes: ["Craiceann's Rune of Warding: 50% reduced effect of Curses on you", "Fox Idol: Idols socketed in this item gain the benefits of their Bonded modifiers"]
     gloves:
       unique: "Sine Aequo"
+      runes: ["Idol of Sirrius: 8% increased Attack Speed", "Soul Core of Tacati: +13% to Chaos Resistance"]
     boots:
       base: Sekhema Sandals
       mods: [Movement Speed, Energy Shield, Fire Resistance]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed", "Estazunti's Soul Core of Convalescence: 15% increased speed of Recoup Effects"]
     amulet:
       base: Gold Amulet
       mods: [+Spirit, +Level of all Melee Skills, Energy Shield, Fire Resistance]
@@ -340,6 +358,7 @@ gearStages:
     weapon2:
       base: Fungal Talisman
       mods: [Increased Attack Speed, +Level of all Attack Skills]
+      runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
 passives:
   attribute: str
   path:

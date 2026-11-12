@@ -172,19 +172,25 @@ gear:
   weapon:
     base: Siphoning Wand
     mods: [Increased Cast Speed, Spell Critical Hit Chance, Gain Damage as Extra Lightning, +Level of all Cold Spell Skills, Increased Spell Damage]
+    runes: ["Thane Girt's Rune of Wildness: 25% chance for Spell Skills to fire 2 additional Projectiles"]
   offhand:
     unique: "Palm of the Dreamer"
+    runes: ["Rabbit Idol: 15% increased Spirit"]
   helmet:
     base: Kamasan Tiara
     mods: [Energy Shield, Fire Resistance]
+    runes: ["Idol of Eeshta: 15% increased Cost Efficiency", "Bear Idol: 10% increased Area of Effect"]
   body:
     base: Sacramental Robe
     mods: [Energy Shield, Cold Resistance]
+    runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   gloves:
     unique: "Maligaro's Virtuosity"
+    runes: ["2× Greater Glacial Rune: +18% to Cold Resistance"]
   boots:
     base: Sandsworn Sandals
     mods: [Energy Shield, Movement Speed]
+    runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed", "Soul Core of Quipolatl: 15% reduced Slowing Potency of Debuffs on You", "Kurgal's Gaze: 15% increased Mana Cost Efficiency if you haven't Dodge Rolled Recently"]
   amulet:
     base: Solar Amulet
     mods: [Increased Cast Speed, +Level of all Spell Skills, Increased Spell Damage, +Spirit]
@@ -204,6 +210,7 @@ gearStages:
     weapon:
       base: Attuned Wand
       mods: [+Level of all Cold Spell Skills, Gain Damage as Extra Cold, Increased Spell Damage, Increased Cold Damage, Increased Cast Speed]
+      runes: ["Greater Glacial Rune: Gain 10% of Damage as Extra Cold Damage"]
     offhand:
       base: Magus Focus
       mods: [+Level of all Spell Skills, Increased Spell Damage, Energy Shield]
@@ -235,20 +242,26 @@ gearStages:
     weapon:
       base: Attuned Wand
       mods: [+Level of all Cold Spell Skills, Spell Critical Hit Chance, Gain Damage as Extra Cold, Increased Spell Damage]
+      runes: ["Greater Glacial Rune: Gain 10% of Damage as Extra Cold Damage"]
     offhand:
       base: Sacred Focus
       mods: [+Level of all Spell Skills, Spell Critical Hit Chance, Increased Spell Damage, Energy Shield]
+      runes: ["Greater Iron Rune: 18% increased Physical Damage"]
     helmet:
       base: Kamasan Tiara
       mods: [Energy Shield, Fire Resistance, Cold Resistance, Lightning Resistance]
+      runes: ["Idol of Eeshta: 15% increased Cost Efficiency", "Bear Idol: 10% increased Area of Effect"]
     body:
       base: Sacramental Robe
       mods: [Energy Shield, Fire Resistance, Cold Resistance, Lightning Resistance]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       unique: "Maligaro's Virtuosity"
+      runes: ["2× Greater Glacial Rune: +18% to Cold Resistance"]
     boots:
       base: Sandsworn Sandals
       mods: [Movement Speed, Energy Shield, Cold Resistance, Fire Resistance, Lightning Resistance, +Maximum Mana]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed", "Soul Core of Quipolatl: 15% reduced Slowing Potency of Debuffs on You", "Kurgal's Gaze: 15% increased Mana Cost Efficiency if you haven't Dodge Rolled Recently"]
     amulet:
       base: Solar Amulet
       mods: [+Spirit, +Level of all Spell Skills, Energy Shield, Fire Resistance]
@@ -264,19 +277,25 @@ gearStages:
     weapon:
       base: Siphoning Wand
       mods: [Increased Cast Speed, Spell Critical Hit Chance, Gain Damage as Extra Lightning, +Level of all Cold Spell Skills, Increased Spell Damage]
+      runes: ["Thane Girt's Rune of Wildness: 25% chance for Spell Skills to fire 2 additional Projectiles"]
     offhand:
       unique: "Palm of the Dreamer"
+      runes: ["Rabbit Idol: 15% increased Spirit"]
     helmet:
       base: Kamasan Tiara
       mods: [Energy Shield, Fire Resistance]
+      runes: ["Idol of Eeshta: 15% increased Cost Efficiency", "Bear Idol: 10% increased Area of Effect"]
     body:
       base: Sacramental Robe
       mods: [Energy Shield, Cold Resistance]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       unique: "Maligaro's Virtuosity"
+      runes: ["2× Greater Glacial Rune: +18% to Cold Resistance"]
     boots:
       base: Sandsworn Sandals
       mods: [Energy Shield, Movement Speed]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed", "Soul Core of Quipolatl: 15% reduced Slowing Potency of Debuffs on You", "Kurgal's Gaze: 15% increased Mana Cost Efficiency if you haven't Dodge Rolled Recently"]
     amulet:
       base: Solar Amulet
       mods: [Increased Cast Speed, +Level of all Spell Skills, Increased Spell Damage, +Spirit]

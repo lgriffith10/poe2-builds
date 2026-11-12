@@ -163,21 +163,27 @@ gear:
   weapon:
     base: Fortified Hammer
     mods: [Increased Physical Damage, Increased Attack Speed, Gain Damage as Extra Physical, +Level of all Attack Skills, Damage against Fully Broken Armour]
+    runes: ["2× Greater Rune of Alacrity: 8% increased Skill Speed"]
   offhand:
     base: Tawhoan Tower Shield
     mods: [Increased Armour, Armour applies to Elemental Damage, Stun Threshold, Resistances]
     note: Gamble for the highest Armour shield you can find when you unlock Shield Wall.
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   helmet:
     unique: Thrillsteel
+    runes: ["Tzamoto's Soul Core of Ferocity: +4 to Maximum Rage", "Greater Body Rune: +60 to maximum Life"]
   body:
     base: Warlord Cuirass
     mods: [Increased Armour, Armour applies to Elemental Damage, +Maximum Life, Elemental Resistances]
+    runes: ["3× Soul Core of Jiquani: 5% increased maximum Life"]
   gloves:
     base: Massive Mitts
     mods: [Increased Attack Speed, Increased Armour, Armour applies to Elemental Damage, +Maximum Life, +Level of all Melee Skills]
+    runes: ["Idol of Sirrius: 8% increased Attack Speed", "Greater Storm Rune: +18% to Lightning Resistance"]
   boots:
     base: Tasalian Greaves
     mods: [Movement Speed, +Maximum Life, Increased Armour, Armour applies to Elemental Damage]
+    runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
   amulet:
     base: Solar Amulet
     mods: [+Level of all Melee Skills, +Maximum Life, Increased Maximum Life, Elemental Resistances]
@@ -226,20 +232,26 @@ gearStages:
     weapon:
       base: Fortified Hammer
       mods: [Adds Fire Damage, Increased Attack Speed, Increased Physical Damage, Gain Damage as Extra Physical, +Level of all Attack Skills]
+      runes: ["2× Greater Rune of Alacrity: 8% increased Skill Speed"]
     offhand:
       base: Tawhoan Tower Shield
       mods: [Armour, Stun Threshold, Armour applies to Elemental Damage, Chaos Resistance]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     helmet:
       unique: "Thrillsteel"
+      runes: ["Tzamoto's Soul Core of Ferocity: +4 to Maximum Rage", "Greater Body Rune: +60 to maximum Life"]
     body:
       base: Warlord Cuirass
       mods: [Armour, Armour applies to Elemental Damage, +Maximum Life, Cold Resistance, Lightning Resistance]
+      runes: ["3× Soul Core of Jiquani: 5% increased maximum Life"]
     gloves:
       base: Massive Mitts
       mods: [Increased Attack Speed, Armour, Armour applies to Elemental Damage, Adds Lightning Damage to Attacks, +Maximum Life, Chaos Resistance]
+      runes: ["Idol of Sirrius: 8% increased Attack Speed", "Greater Storm Rune: +18% to Lightning Resistance"]
     boots:
       base: Tasalian Greaves
       mods: [Movement Speed, +Maximum Life, Armour, Armour applies to Elemental Damage, Fire Resistance, Lightning Resistance]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Solar Amulet
       mods: [Elemental Resistances, +Maximum Life, +Strength, +Level of all Melee Skills, Armour, Grants a Passive Skill]

@@ -198,6 +198,7 @@ gear:
   weapon:
     base: Akoyan Spear
     mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance, Increased Attack Speed]
+    runes: ["Ancient Rune of Prowess: 30% chance when you gain a Charge to gain an additional Charge", "Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements"]
   offhand:
     base: Shrine Sceptre
     mods: [+Spirit, +Strength, +Intelligence]

@@ -228,20 +228,26 @@ gear:
   weapon:
     base: Withered Wand
     mods: [+Level of all Chaos Spell Skills, Increased Spell Damage, Increased Chaos Damage, Increased Cast Speed]
+    runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills", "Thane Girt's Rune of Wildness: 25% chance for Spell Skills to fire 2 additional Projectiles"]
   offhand:
     base: Tasalian Focus
     mods: [+Level of all Spell Skills, Increased Spell Damage, Increased Chaos Damage, Increased Cast Speed]
+    runes: ["Atmohua's Soul Core of Retreat: 30% increased Energy Shield from Equipped Body Armour"]
   helmet:
     unique: Atziri's Disdain
+    runes: ["Idol of Egrin: Enemies you Curse take 6% increased Damage", "Tacati's Soul Core of Affliction: Enemies you Curse have -5% to Chaos Resistance"]
   body:
     base: Vile Robe
     mods: [Energy Shield, Increased Energy Shield, +Spirit, Elemental Resistances]
+    runes: ["4× Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
   gloves:
     base: Sirenscale Gloves
     mods: [Energy Shield, Increased Energy Shield, Elemental Resistances]
+    runes: ["3× Snake Idol: 8% increased Curse Magnitudes"]
   boots:
     base: Sekhema Sandals
     mods: [Movement Speed, Energy Shield, Increased Energy Shield, Elemental Resistances]
+    runes: ["Tecrod's Gaze: 10% increased Movement Speed when on Low Life", "Farrul's Rune of the Chase: 5% increased Movement Speed"]
   amulet:
     base: Solar Amulet
     mods: [+Level of all Spell Skills, Increased Cast Speed]
@@ -257,14 +263,17 @@ gear:
   weapon2:
     base: Chiming Staff
     mods: [+Level of all Spell Skills, Increased Cast Speed]
+    runes: ["2× Greater Inspiration Rune: 30% increased Mana Regeneration Rate"]
 gearStages:
   campaign:
     weapon:
       base: Withered Wand
       mods: [Gain Damage as Extra Lightning, Increased Spell Damage, Increased Chaos Damage, +Level of all Chaos Spell Skills, +Intelligence, Mana Regeneration]
+      runes: ["Lesser Iron Rune: 20% increased Spell Damage"]
     offhand:
       base: Crystal Focus
       mods: [Increased Spell Damage, +Maximum Mana, +Level of all Spell Skills, Increased Cast Speed, Fire Resistance]
+      runes: ["Lesser Storm Rune: Adds 1 to 10 Lightning Damage"]
     helmet:
       base: Sandsworn Tiara
       mods: [Energy Shield, +Maximum Life, Cold Resistance, Chaos Resistance]
@@ -274,6 +283,7 @@ gearStages:
     gloves:
       base: Stitched Gloves
       mods: [Energy Shield, Adds Physical Damage to Attacks, +Intelligence, Fire Resistance, Cold Resistance]
+      runes: ["Lesser Storm Rune: +10% to Lightning Resistance"]
     boots:
       base: Flax Sandals
       mods: [Movement Speed, Energy Shield, Cold Resistance, Stun Threshold]
@@ -296,20 +306,26 @@ gearStages:
     weapon:
       base: Withered Wand
       mods: [Increased Spell Damage, Increased Chaos Damage, +Level of all Chaos Spell Skills, Increased Cast Speed]
+      runes: ["Greater Iron Rune: 30% increased Spell Damage"]
     offhand:
       base: Tasalian Focus
       mods: [Increased Spell Damage, Increased Chaos Damage, +Level of all Spell Skills, Increased Cast Speed]
+      runes: ["Greater Desert Rune: Adds 13 to 16 Fire Damage"]
     helmet:
       unique: "Atziri's Disdain"
+      runes: ["Greater Storm Rune: +18% to Lightning Resistance"]
     body:
       base: Vile Robe
       mods: [Energy Shield, +Spirit, Cold Resistance]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Sirenscale Gloves
       mods: [Energy Shield, Fire Resistance]
+      runes: ["Snake Idol: 8% increased Curse Magnitudes"]
     boots:
       base: Sekhema Sandals
       mods: [Movement Speed, Energy Shield, Lightning Resistance]
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
     amulet:
       base: Solar Amulet
       mods: [+Level of all Spell Skills, Increased Cast Speed]
@@ -325,24 +341,31 @@ gearStages:
     weapon2:
       base: Chiming Staff
       mods: [+Level of all Spell Skills, Increased Cast Speed]
+      runes: ["2× Greater Inspiration Rune: 30% increased Mana Regeneration Rate"]
   endgame:
     weapon:
       base: Withered Wand
       mods: [Increased Spell Damage, Increased Chaos Damage, +Level of all Chaos Spell Skills, Increased Cast Speed]
+      runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
     offhand:
       base: Tasalian Focus
       mods: [Increased Spell Damage, Increased Chaos Damage, +Level of all Spell Skills, Increased Cast Speed, Fire Resistance]
+      runes: ["Atmohua's Soul Core of Retreat: 30% increased Energy Shield from Equipped Body Armour"]
     helmet:
       unique: "Atziri's Disdain"
+      runes: ["Idol of Egrin: Enemies you Curse take 6% increased Damage", "Tacati's Soul Core of Affliction: Enemies you Curse have -5% to Chaos Resistance"]
     body:
       base: Vile Robe
       mods: [Energy Shield, Fire Resistance, Cold Resistance, Chaos Resistance]
+      runes: ["3× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Sirenscale Gloves
       mods: [Energy Shield, Lightning Resistance]
+      runes: ["2× Snake Idol: 8% increased Curse Magnitudes"]
     boots:
       base: Sekhema Sandals
       mods: [Movement Speed, Energy Shield, Cold Resistance]
+      runes: ["Tecrod's Gaze: 10% increased Movement Speed when on Low Life", "Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Gold Amulet
       mods: [+Spirit, +Level of all Spell Skills, Increased Cast Speed, Grants a Passive Skill]
@@ -357,24 +380,31 @@ gearStages:
     weapon2:
       base: Chiming Staff
       mods: [+Maximum Mana, +Level of all Spell Skills, Increased Cast Speed]
+      runes: ["2× Greater Inspiration Rune: 30% increased Mana Regeneration Rate"]
   minmax:
     weapon:
       base: Withered Wand
       mods: [Increased Spell Damage, Increased Chaos Damage, +Maximum Mana, +Level of all Chaos Spell Skills, Increased Cast Speed]
+      runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills", "Thane Girt's Rune of Wildness: 25% chance for Spell Skills to fire 2 additional Projectiles"]
     offhand:
       base: Tasalian Focus
       mods: [Increased Spell Damage, Increased Chaos Damage, +Level of all Spell Skills, Increased Cast Speed, Fire Resistance]
+      runes: ["Atmohua's Soul Core of Retreat: 30% increased Energy Shield from Equipped Body Armour"]
     helmet:
       unique: "Atziri's Disdain"
+      runes: ["Idol of Egrin: Enemies you Curse take 6% increased Damage", "Tacati's Soul Core of Affliction: Enemies you Curse have -5% to Chaos Resistance"]
     body:
       base: Vile Robe
       mods: [Energy Shield, Fire Resistance, Cold Resistance, Chaos Resistance]
+      runes: ["4× Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Sirenscale Gloves
       mods: [Energy Shield, +Maximum Life, Chaos Resistance]
+      runes: ["3× Snake Idol: 8% increased Curse Magnitudes"]
     boots:
       base: Sekhema Sandals
       mods: [Movement Speed, Energy Shield, Cold Resistance]
+      runes: ["Tecrod's Gaze: 10% increased Movement Speed when on Low Life", "Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Gold Amulet
       mods: [Increased Spell Damage, Energy Shield, +Spirit, +Level of all Spell Skills, Increased Cast Speed, Grants a Passive Skill]
@@ -388,6 +418,7 @@ gearStages:
     weapon2:
       base: Chiming Staff
       mods: [+Maximum Mana, +Level of all Spell Skills, Increased Cast Speed]
+      runes: ["2× Greater Inspiration Rune: 30% increased Mana Regeneration Rate"]
 passives:
   attribute: int
   path:

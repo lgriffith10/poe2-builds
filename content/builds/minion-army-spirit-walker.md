@@ -350,21 +350,27 @@ rotations:
 gear:
   weapon:
     unique: "Tyranny's Grip"
+    runes: ["Greater Iron Rune: 18% increased Physical Damage"]
   offhand:
     base: Rattling Sceptre
     mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence Attack Speed, Allies in Presence gain Added Physical Damage, Critical Damage Bonus, +Spirit]
+    runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage", "Hawk Idol: Companions have 12% increased Attack Speed"]
   helmet:
     base: Runeforged Kamasan Tiara
     mods: [+Level of all Minion Skills, Elemental Resistances, Energy Shield, +Maximum Life, +Intelligence]
+    runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills"]
   body:
     base: Sleek Jacket
     mods: [Evasion and Energy Shield, Energy Shield, Evasion Rating, +Spirit, Elemental Resistances, +Intelligence]
+    runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Craiceann's Rune of Warding: 50% reduced effect of Curses on you"]
   gloves:
     base: Runeforged Vaal Gloves
     mods: [Energy Shield, Elemental Resistances, +Maximum Life, +Attributes]
+    runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
   boots:
     base: Luxurious Slippers
     mods: [Movement Speed, Energy Shield, Elemental Resistances, +Intelligence]
+    runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
   amulet:
     base: Amber Amulet
     mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Maximum Life, +Attributes]
@@ -379,28 +385,36 @@ gear:
     mods: [Elemental Resistances, +Strength, +Maximum Life, Armour, Minion Melee Splash]
   weapon2:
     unique: Trenchtimbre
+    runes: ["Greater Rune of Leadership: Minions gain 10% of their Physical Damage as Extra Lightning Damage"]
   offhand2:
     base: Rattling Sceptre
     mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Physical Damage, Allies in Presence Attack Speed]
+    runes: ["Hawk Idol: Companions have 12% increased Attack Speed"]
 gearStages:
   campaign:
     weapon:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Lightning Damage, Allies in Presence gain Added Physical Damage, Allies in Presence gain Added Cold Damage, Allies in Presence gain Added Fire Damage]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
     offhand:
       base: Emblem Crest Shield
       mods: [+Maximum Life, Block Chance, Elemental Resistances, Chaos Resistance]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     helmet:
       base: Runeforged Brimmed Helm
       mods: [+Level of all Minion Skills, Elemental Resistances, +Maximum Life, Energy Shield, +Intelligence]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     body:
       unique: "Enfolding Dawn"
+      runes: ["Glacial Rune: +14% to Cold Resistance", "Storm Rune: +14% to Lightning Resistance"]
     gloves:
       base: Runeforged Rope Cuffs
       mods: [Elemental Resistances, +Maximum Life, Energy Shield, +Attributes, Chaos Resistance]
+      runes: ["Storm Rune: +14% to Lightning Resistance"]
     boots:
       base: Runeforged Steelpoint Shoes
       mods: [Movement Speed, +Maximum Life, Elemental Resistances]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, +Maximum Life, Chaos Resistance, +Attributes]
@@ -415,27 +429,35 @@ gearStages:
       mods: [Elemental Resistances, +Maximum Life, Chaos Resistance, +Strength]
     weapon2:
       unique: Trenchtimbre
+      runes: ["Lesser Resolve Rune: +6 to Intelligence"]
     offhand2:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Lightning Damage, Allies in Presence Attack Speed]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
   mapping:
     weapon:
       unique: "Tyranny's Grip"
+      runes: ["Greater Iron Rune: 18% increased Physical Damage"]
     offhand:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence Attack Speed, Allies in Presence gain Added Physical Damage, Critical Damage Bonus, +Spirit]
+      runes: ["Hawk Idol: Companions have 12% increased Attack Speed"]
     helmet:
       base: Runeforged Kamasan Tiara
       mods: [+Level of all Minion Skills, Elemental Resistances, Energy Shield, +Maximum Life, +Intelligence]
+      runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills"]
     body:
       base: Sleek Jacket
       mods: [Evasion and Energy Shield, Energy Shield, Evasion Rating, +Spirit, Elemental Resistances, +Intelligence]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Runeforged Vaal Gloves
       mods: [Energy Shield, Elemental Resistances, +Maximum Life, +Attributes]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     boots:
       base: Luxurious Slippers
       mods: [Movement Speed, Energy Shield, Elemental Resistances, +Intelligence]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Maximum Life, +Attributes]
@@ -450,27 +472,35 @@ gearStages:
       mods: [Elemental Resistances, +Strength, +Maximum Life, Armour, Minion Melee Splash]
     weapon2:
       unique: Trenchtimbre
+      runes: ["Greater Rune of Leadership: Minions gain 10% of their Physical Damage as Extra Lightning Damage"]
     offhand2:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Physical Damage, Allies in Presence Attack Speed]
+      runes: ["Hawk Idol: Companions have 12% increased Attack Speed"]
   endgame:
     weapon:
       unique: "Trenchtimbre"
+      runes: ["2× Greater Rune of Leadership: Minions gain 10% of their Physical Damage as Extra Lightning Damage"]
     offhand:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Physical Damage, Allies in Presence Attack Speed, Critical Damage Bonus]
+      runes: ["Hawk Idol: Companions have 12% increased Attack Speed"]
     helmet:
       base: Runeforged Kamasan Tiara
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+      runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills"]
     body:
       base: Sleek Jacket
       mods: [Evasion and Energy Shield, Energy Shield, Evasion Rating, +Spirit, Deflection, Elemental Resistances]
+      runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Craiceann's Rune of Warding: 50% reduced effect of Curses on you"]
     gloves:
       base: Runeforged Vaal Gloves
       mods: [Energy Shield, Elemental Resistances, +Attributes]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       base: Luxurious Slippers
       mods: [Movement Speed, Energy Shield, Elemental Resistances]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Attributes]
@@ -485,21 +515,27 @@ gearStages:
   minmax:
     weapon:
       unique: "Trenchtimbre"
+      runes: ["3× Greater Rune of Leadership: Minions gain 10% of their Physical Damage as Extra Lightning Damage"]
     offhand:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Physical Damage, Allies in Presence Attack Speed, +Spirit]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage", "Hawk Idol: Companions have 12% increased Attack Speed"]
     helmet:
       base: Ancestral Tiara
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+      runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills", "Raven-Touched Shard"]
     body:
       base: Falconer's Jacket
       mods: [Evasion and Energy Shield, Energy Shield, Deflection, Elemental Resistances, +Spirit, +Intelligence]
+      runes: ["Craiceann's Rune of Warding: 50% reduced effect of Curses on you", "2× Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Runeforged Vaal Gloves
       mods: [Energy Shield, Elemental Resistances, +Attributes]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       base: Runeforged Sandsworn Sandals
       mods: [Movement Speed, Energy Shield, +Attributes]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed", "Legacy of Wanderlust"]
     amulet:
       base: Distorted Amulet
       mods: [+Level of all Minion Skills, +Spirit, Energy Shield, +Attributes, Elemental Resistances]
@@ -514,6 +550,7 @@ gearStages:
     weapon2:
       base: Grand Spear
       mods: [Increased Physical Damage, Adds Physical Damage, Accuracy Rating, Increased Attack Speed]
+      runes: ["2× Greater Rune of Leadership: Minions gain 10% of their Physical Damage as Extra Lightning Damage"]
 passives:
   attribute: str
   path:

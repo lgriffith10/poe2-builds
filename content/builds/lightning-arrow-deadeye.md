@@ -173,20 +173,24 @@ gear:
   weapon:
     base: Gemini Bow
     mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance, Additional Arrow, Adds Lightning Damage, Critical Damage Bonus]
+    runes: ["Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements", "Countess Seske's Rune of Archery: Bow Attacks fire an additional Arrow"]
   offhand:
     base: Visceral Quiver
     mods: [Adds Lightning Damage to Attacks, Adds Physical Damage to Attacks, +Level of all Projectile Skills, Attack Critical Hit Chance, Increased Attack Speed]
   helmet:
     base: Ancestral Tiara
     mods: [Energy Shield, +Intelligence, Elemental Resistances]
+    runes: ["Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
   body:
     base: Runemastered Primal Markings
     mods: [Evasion Rating, Energy Shield, Evasion and Energy Shield, Elemental Resistances, +Intelligence]
+    runes: ["Craiceann's Rune of Recovery: 30% increased Energy Shield Recharge Rate", "Atmohua's Soul Core of Retreat: 40% increased Energy Shield from Equipped Focus"]
   gloves:
     unique: "Hand of Wisdom and Action"
   boots:
     base: Daggerfoot Shoes
     mods: [Movement Speed, Energy Shield, +Intelligence, Elemental Resistances]
+    runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
   amulet:
     base: Solar Amulet
     mods: [+Spirit, +Level of all Projectile Skills, Energy Shield, Grants a Passive Skill, +Intelligence, Elemental Resistances]
@@ -203,21 +207,26 @@ gearStages:
     weapon:
       base: Dualstring Bow
       mods: [Adds Physical Damage, Increased Physical Damage, Adds Lightning Damage, Increased Attack Speed]
+      runes: ["2× Greater Storm Rune: Adds 1 to 30 Lightning Damage"]
     offhand:
       base: Volant Quiver
       mods: [Adds Lightning Damage to Attacks, Adds Physical Damage to Attacks, +Level of all Projectile Skills, Increased Attack Speed]
     helmet:
       base: Wrapped Cap
       mods: [Elemental Resistances, +Maximum Life, Chaos Resistance]
+      runes: ["Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     body:
       base: Slipstrike Vest
       mods: [+Maximum Life, Elemental Resistances, Evasion Rating]
+      runes: ["2× Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Stalking Bracers
       mods: [Adds Lightning Damage to Attacks, Increased Attack Speed, +Maximum Life, Chaos Resistance]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     boots:
       base: Sleek Boots
       mods: [Movement Speed, +Maximum Life, Elemental Resistances, Evasion Rating]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     amulet:
       base: Lunar Amulet
       mods: [+Level of all Projectile Skills, +Maximum Life, Elemental Resistances, Chaos Resistance]
@@ -234,20 +243,24 @@ gearStages:
     weapon:
       base: Gemini Bow
       mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance, Additional Arrow, Adds Lightning Damage, Critical Damage Bonus]
+      runes: ["Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements", "Countess Seske's Rune of Archery: Bow Attacks fire an additional Arrow"]
     offhand:
       base: Visceral Quiver
       mods: [Adds Lightning Damage to Attacks, Adds Physical Damage to Attacks, +Level of all Projectile Skills, Attack Critical Hit Chance, Increased Attack Speed]
     helmet:
       base: Ancestral Tiara
       mods: [Energy Shield, +Intelligence, Elemental Resistances]
+      runes: ["Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     body:
       base: Runemastered Primal Markings
       mods: [Evasion Rating, Energy Shield, Evasion and Energy Shield, Elemental Resistances, +Intelligence]
+      runes: ["Craiceann's Rune of Recovery: 30% increased Energy Shield Recharge Rate", "Atmohua's Soul Core of Retreat: 40% increased Energy Shield from Equipped Focus"]
     gloves:
       unique: "Hand of Wisdom and Action"
     boots:
       base: Daggerfoot Shoes
       mods: [Movement Speed, Energy Shield, +Intelligence, Elemental Resistances]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Solar Amulet
       mods: [+Spirit, +Level of all Projectile Skills, Energy Shield, Grants a Passive Skill, +Intelligence, Elemental Resistances]

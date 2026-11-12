@@ -157,18 +157,24 @@ gear:
   weapon:
     base: Dueling Wand
     mods: [Increased Cast Speed, Increased Spell Damage, Gain Damage as Extra Lightning, +Level of all Spell Skills, Increased Elemental Damage, Spell Critical Hit Chance]
+    runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills", "Fenumus' Rune of Agony: Gain 13% of Damage as Extra Chaos Damage"]
   offhand:
     unique: "Palm of the Dreamer"
+    runes: ["Greater Resolve Rune: +12 to Intelligence"]
   helmet:
     base: Ancestral Tiara
     mods: [Evasion and Energy Shield, Critical Hit Chance]
+    runes: ["Idol of Egrin: Enemies you Curse take 6% increased Damage"]
   body:
     unique: "Atziri's Splendour"
+    runes: ["6× Soul Core of Citaqualotl: +6% to all Elemental Resistances"]
   gloves:
     unique: "Maligaro's Virtuosity"
+    runes: ["Thane Grannell's Rune of Mastery: 30% increased Magnitude of Non-Damaging Ailments you inflict", "Fenumus' Rune of Spinning: 8% increased Cast Speed"]
   boots:
     base: Sekhema Sandals
     mods: [+Intelligence, Energy Shield, Movement Speed, Fire Resistance, Cold Resistance]
+    runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
   amulet:
     base: Gold Amulet
     mods: [Increased Cast Speed, +Level of all Spell Skills, Grants a Passive Skill]
@@ -184,16 +190,21 @@ gearStages:
     weapon:
       base: Galvanic Wand
       mods: [Spell Critical Hit Chance, Increased Spell Damage, Gain Damage as Extra Cold, Gain Damage as Extra Lightning, +Level of all Lightning Spell Skills]
+      runes: ["Greater Storm Rune: Gain 10% of Damage as Extra Lightning Damage"]
     offhand:
       unique: "Threaded Light"
+      runes: ["Greater Storm Rune: Adds 1 to 30 Lightning Damage"]
     helmet:
       unique: "Crown of the Victor"
+      runes: ["2× Greater Storm Rune: +18% to Lightning Resistance"]
     body:
       unique: "Enfolding Dawn"
+      runes: ["3× Greater Desert Rune: +18% to Fire Resistance"]
     gloves:
       unique: "Painter's Servant"
     boots:
       unique: "Wondertrap"
+      runes: ["Greater Storm Rune: +18% to Lightning Resistance"]
     amulet:
       unique: "Astramentis"
     belt:
@@ -206,19 +217,25 @@ gearStages:
     weapon:
       base: Dueling Wand
       mods: [Increased Cast Speed, Spell Critical Hit Chance, Increased Spell Damage, +Level of all Spell Skills, Increased Elemental Damage, Gain Damage as Extra Cold]
+      runes: ["Greater Glacial Rune: Gain 10% of Damage as Extra Cold Damage"]
     offhand:
       unique: "Guiding Palm of the Eye"
+      runes: ["Greater Robust Rune: +12 to Strength"]
     helmet:
       base: Kamasan Tiara
       mods: [Energy Shield, Cold Resistance, Lightning Resistance]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance"]
     body:
       base: Sleek Jacket
       mods: [Evasion and Energy Shield, Evasion Rating, Energy Shield, +Maximum Life, Fire Resistance, Lightning Resistance]
+      runes: ["2× Greater Desert Rune: +18% to Fire Resistance"]
     gloves:
       unique: "Maligaro's Virtuosity"
+      runes: ["Fenumus' Rune of Spinning: 8% increased Cast Speed"]
     boots:
       base: Sekhema Sandals
       mods: [+Intelligence, Energy Shield, Movement Speed, Cold Resistance]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Gold Amulet
       mods: [Increased Cast Speed, +Level of all Spell Skills, Grants a Passive Skill]
@@ -232,22 +249,29 @@ gearStages:
       mods: [+Strength, Fire Resistance, Lightning Resistance]
     weapon2:
       unique: The Whispering Ice
+      runes: ["2× Greater Stone Rune: Gain additional Stun Threshold equal to 14% of maximum Energy Shield"]
   minmax:
     weapon:
       base: Dueling Wand
       mods: [Increased Cast Speed, Increased Spell Damage, Gain Damage as Extra Lightning, +Level of all Spell Skills, Increased Elemental Damage, Spell Critical Hit Chance]
+      runes: ["Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills", "Fenumus' Rune of Agony: Gain 13% of Damage as Extra Chaos Damage"]
     offhand:
       unique: "Palm of the Dreamer"
+      runes: ["Greater Resolve Rune: +12 to Intelligence"]
     helmet:
       base: Ancestral Tiara
       mods: [Evasion and Energy Shield, Critical Hit Chance]
+      runes: ["Idol of Egrin: Enemies you Curse take 6% increased Damage"]
     body:
       unique: "Atziri's Splendour"
+      runes: ["6× Soul Core of Citaqualotl: +6% to all Elemental Resistances"]
     gloves:
       unique: "Maligaro's Virtuosity"
+      runes: ["Thane Grannell's Rune of Mastery: 30% increased Magnitude of Non-Damaging Ailments you inflict", "Fenumus' Rune of Spinning: 8% increased Cast Speed"]
     boots:
       base: Sekhema Sandals
       mods: [+Intelligence, Energy Shield, Movement Speed, Fire Resistance, Cold Resistance]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Gold Amulet
       mods: [Increased Cast Speed, +Level of all Spell Skills, Grants a Passive Skill]
@@ -260,6 +284,7 @@ gearStages:
       unique: "Headhunter"
     weapon2:
       unique: The Whispering Ice
+      runes: ["2× Greater Resolve Rune: +12 to Intelligence"]
 passives:
   attribute: int
   path:

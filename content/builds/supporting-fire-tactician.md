@@ -212,20 +212,26 @@ gear:
   weapon:
     base: Omen Sceptre
     mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit]
+    runes: ["Greater Robust Rune: +12 to Strength"]
   offhand:
     base: Royal Tower Shield
     mods: [Block Chance, +Maximum Life, Elemental Resistances]
+    runes: ["Greater Desert Rune: +18% to Fire Resistance"]
   helmet:
     base: Masked Greathelm
     mods: [+Level of all Minion Skills, +Maximum Life, Elemental Resistances]
+    runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
   body:
     unique: "Enfolding Dawn"
+    runes: ["Greater Desert Rune: +18% to Fire Resistance", "Greater Storm Rune: +18% to Lightning Resistance"]
   gloves:
     base: Ornate Mitts
     mods: [+Maximum Life, Elemental Resistances]
+    runes: ["Greater Desert Rune: +18% to Fire Resistance"]
   boots:
     base: Ornate Greaves
     mods: [Movement Speed, +Maximum Life, Elemental Resistances]
+    runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
   amulet:
     base: Solar Amulet
     mods: [+Level of all Minion Skills, +All Attributes, +Maximum Life]
@@ -242,6 +248,7 @@ gearStages:
     weapon:
       base: Shrine Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit]
+      runes: ["Robust Rune: +9 to Strength"]
     offhand:
       base: Rampart Tower Shield
       mods: [Block Chance, +Maximum Life, Elemental Resistances]
@@ -273,20 +280,26 @@ gearStages:
     weapon:
       base: Omen Sceptre
       mods: [Increased Allies in presence Damage, +Level of all Minion Skills, +Spirit]
+      runes: ["Greater Robust Rune: +12 to Strength"]
     offhand:
       base: Royal Tower Shield
       mods: [Fire Resistance, Lightning Resistance, Chaos Resistance, +Maximum Life, Block Chance]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance"]
     helmet:
       base: Masked Greathelm
       mods: [Lightning Resistance, +Maximum Life, +Level of all Minion Skills]
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
     body:
       unique: "Enfolding Dawn"
+      runes: ["Greater Desert Rune: +18% to Fire Resistance", "Greater Storm Rune: +18% to Lightning Resistance"]
     gloves:
       base: Ornate Mitts
       mods: [Fire Resistance, Cold Resistance, +Maximum Life]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance"]
     boots:
       base: Ornate Greaves
       mods: [Lightning Resistance, Chaos Resistance, +Maximum Life, Movement Speed]
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
     amulet:
       base: Solar Amulet
       mods: [+All Attributes, +Maximum Life, +Level of all Minion Skills]
@@ -301,20 +314,26 @@ gearStages:
   endgame:
     weapon:
       unique: "Chober Chaber"
+      runes: ["2× Greater Rune of Leadership: Minions gain 10% of their Physical Damage as Extra Lightning Damage"]
     offhand:
       base: Omen Sceptre
       mods: [+Level of all Minion Skills, +Spirit]
+      runes: ["Idol of Ralakesh: 40% increased Armour, Evasion and Energy Shield while your Companion is in your Presence"]
     helmet:
       base: Ancestral Tiara
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances]
+      runes: ["Raven-Touched Shard"]
     body:
       unique: "Morior Invictus"
+      runes: ["Craiceann's Rune of Warding: 50% reduced effect of Curses on you", "Craiceann's Rune of Recovery: 30% increased Energy Shield Recharge Rate", "Amanamu's Gaze: +2 to Armour per 1 Spirit", "Rune of Foundations: +30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield", "Fox Idol: Idols socketed in this item gain the benefits of their Bonded modifiers"]
     gloves:
       base: Sirenscale Gloves
       mods: [Energy Shield, Elemental Resistances]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       base: Sekhema Sandals
       mods: [Movement Speed, Energy Shield, Elemental Resistances]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Solar Amulet
       mods: [+Level of all Minion Skills, +Spirit, +All Attributes, +Strength, Energy Shield]
@@ -329,23 +348,30 @@ gearStages:
     weapon2:
       base: Spiny Talisman
       mods: [Critical Hit Chance, Increased Attack Speed, Accuracy Rating]
+      runes: ["2× Soul Core of Quipolatl: 5% increased Attack Speed"]
   minmax:
     weapon:
       unique: "Chober Chaber"
+      runes: ["2× Greater Rune of Leadership: Minions gain 10% of their Physical Damage as Extra Lightning Damage"]
     offhand:
       base: Omen Sceptre
       mods: [+Level of all Minion Skills, +Spirit]
+      runes: ["Idol of Ralakesh: 40% increased Armour, Evasion and Energy Shield while your Companion is in your Presence", "Xipocado's Soul Core of Dominion: Minions deal 40% increased Damage with Command Skills"]
     helmet:
       base: Ancestral Tiara
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+      runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Raven-Touched Shard"]
     body:
       unique: "Morior Invictus"
+      runes: ["Craiceann's Rune of Warding: 50% reduced effect of Curses on you", "Craiceann's Rune of Recovery: 30% increased Energy Shield Recharge Rate", "Rune of Foundations: +30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield", "Legacy of Foxshade", "Fox Idol: Idols socketed in this item gain the benefits of their Bonded modifiers"]
     gloves:
       base: Sirenscale Gloves
       mods: [Energy Shield, +Maximum Life, Elemental Resistances, +Intelligence]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       base: Sekhema Sandals
       mods: [Movement Speed, Energy Shield, Elemental Resistances, +Intelligence]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed", "Jiquani's Thesis: Increases and Reductions to Movement Speed also,  apply to Energy Shield Recharge Rate"]
     amulet:
       base: Solar Amulet
       mods: [+Level of all Minion Skills, +Spirit, +All Attributes, +Strength, Energy Shield]
@@ -359,6 +385,7 @@ gearStages:
     weapon2:
       base: Spiny Talisman
       mods: [Adds Cold Damage, Critical Hit Chance, Increased Attack Speed, Accuracy Rating]
+      runes: ["2× Soul Core of Quipolatl: 5% increased Attack Speed"]
 passives:
   attribute: int
   path:

@@ -178,21 +178,27 @@ rotations:
 gear:
   weapon:
     unique: "Trenchtimbre"
+    runes: ["Soul Core of Azcapa: +15 to Spirit"]
   offhand:
     base: Shrine Sceptre
     mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit, Minion Life]
+    runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
   helmet:
     base: Grinning Mask
     mods: [+Level of all Minion Skills, +Maximum Life, Elemental Resistances, Evasion and Energy Shield, Evasion Rating, Energy Shield]
+    runes: ["Greater Desert Rune: +18% to Fire Resistance"]
   body:
     base: Falconer's Jacket
     mods: [Evasion and Energy Shield, Evasion Rating, Energy Shield, +Maximum Life, Elemental Resistances]
+    runes: ["Craiceann's Rune of Warding: 50% reduced effect of Curses on you", "Soul Core of Ticaba: Hits against you have 50% reduced Critical Damage Bonus"]
   gloves:
     base: Vaal Wraps
     mods: [+Maximum Life, +Intelligence, Elemental Resistances, Evasion and Energy Shield]
+    runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
   boots:
     base: Quickslip Shoes
     mods: [Movement Speed, +Maximum Life, Elemental Resistances, Evasion and Energy Shield]
+    runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
   amulet:
     base: Gold Amulet
     mods: [+Level of all Minion Skills, +All Attributes, Energy Shield, +Maximum Life]
@@ -210,21 +216,27 @@ gearStages:
     weapon:
       base: Shrine Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Intelligence]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage", "Rune of the Hunt: Companions deal 30% increased Damage"]
     offhand:
       base: Array Buckler
       mods: [+Maximum Life, Elemental Resistances]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     helmet:
       base: Shaded Mask
       mods: [+Level of all Minion Skills, +Maximum Life, Elemental Resistances]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     body:
       base: Clandestine Jacket
       mods: [+Spirit, Evasion and Energy Shield, Evasion Rating, Energy Shield, Elemental Resistances]
+      runes: ["Glacial Rune: +14% to Cold Resistance", "Storm Rune: +14% to Lightning Resistance"]
     gloves:
       base: Furtive Wraps
       mods: [+Maximum Life, Elemental Resistances]
+      runes: ["Storm Rune: +14% to Lightning Resistance"]
     boots:
       base: Velour Shoes
       mods: [Movement Speed, Elemental Resistances]
+      runes: ["Glacial Rune: +14% to Cold Resistance"]
     amulet:
       base: Lapis Amulet
       mods: [+Level of all Minion Skills, +Maximum Life, +Dexterity]
@@ -240,21 +252,27 @@ gearStages:
   mapping:
     weapon:
       unique: "Trenchtimbre"
+      runes: ["Soul Core of Azcapa: +15 to Spirit"]
     offhand:
       base: Shrine Sceptre
       mods: [Increased Allies in presence Damage, +Level of all Minion Skills, +Spirit, Minion Life]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
     helmet:
       base: Death Mask
       mods: [Cold Resistance, +Maximum Life, +Level of all Minion Skills]
+      runes: ["Greater Storm Rune: +18% to Lightning Resistance"]
     body:
       base: Sleek Jacket
       mods: [Cold Resistance, Evasion Rating, Energy Shield, Evasion and Energy Shield, +Spirit]
+      runes: ["Iron Rune: 16% increased Armour, Evasion and Energy Shield", "Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Utility Wraps
       mods: [Lightning Resistance, Chaos Resistance, +Maximum Life]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance"]
     boots:
       base: Bladed Shoes
       mods: [+Intelligence, Fire Resistance, +Maximum Life, Movement Speed]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance"]
     amulet:
       base: Stellar Amulet
       mods: [+All Attributes, +Maximum Life, +Level of all Minion Skills]
@@ -268,25 +286,32 @@ gearStages:
       mods: [+Strength, Fire Resistance, Lightning Resistance, +Maximum Life]
     weapon2:
       unique: Saitha's Spear
+      runes: ["Greater Robust Rune: +12 to Strength"]
   endgame:
     weapon:
       base: Shrine Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit, Minion Life]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
     offhand:
       base: Tasalian Focus
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances]
+      runes: ["Greater Iron Rune: 18% increased Physical Damage"]
     helmet:
       base: Ancestral Tiara
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances]
+      runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills"]
     body:
       base: Falconer's Jacket
       mods: [+Spirit, Evasion and Energy Shield, Evasion Rating, Energy Shield, Critical Damage Bonus, +Intelligence]
+      runes: ["Craiceann's Rune of Warding: 50% reduced effect of Curses on you", "Soul Core of Ticaba: Hits against you have 50% reduced Critical Damage Bonus"]
     gloves:
       base: Secured Wraps
       mods: [Evasion and Energy Shield, Evasion Rating, Energy Shield, Elemental Resistances]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       base: Daggerfoot Shoes
       mods: [Movement Speed, Evasion and Energy Shield, Evasion Rating, Energy Shield, Elemental Resistances]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
     amulet:
       base: Gold Amulet
       mods: [+Level of all Minion Skills, +Spirit, Grants a Passive Skill, +All Attributes, Energy Shield]
@@ -300,28 +325,36 @@ gearStages:
       mods: [Minion Area of Effect, Minion Life, Elemental Resistances]
     weapon2:
       unique: Saitha's Spear
+      runes: ["Soul Core of Quipolatl: 5% increased Attack Speed"]
     offhand2:
       base: Tasalian Focus
       mods: []
+      runes: ["Greater Desert Rune: Adds 13 to 16 Fire Damage"]
   minmax:
     weapon:
       base: Shrine Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit, Minion Life]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage", "Rune of the Hunt: Companions deal 30% increased Damage"]
     offhand:
       base: Tasalian Focus
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances]
+      runes: ["2× Perfect Iron Rune: 20% increased Physical Damage"]
     helmet:
       base: Ancestral Tiara
       mods: [+Level of all Minion Skills, Energy Shield, +Intelligence]
+      runes: ["Idol of Egrin: Enemies you Curse take 6% increased Damage", "Raven-Touched Shard"]
     body:
       base: Sacrificial Regalia
       mods: [Deflection, Energy Shield, Evasion Rating, Critical Damage Bonus, Elemental Resistances]
+      runes: ["Craiceann's Rune of Warding: 50% reduced effect of Curses on you", "Soul Core of Ticaba: Hits against you have 50% reduced Critical Damage Bonus"]
     gloves:
       base: Secured Wraps
       mods: [Evasion and Energy Shield, Deflection, Evasion Rating, Energy Shield, Elemental Resistances]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       base: Daggerfoot Shoes
       mods: [Movement Speed, Deflection, Evasion and Energy Shield, Evasion Rating, Energy Shield, Elemental Resistances]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed", "Jiquani's Thesis: Increases and Reductions to Movement Speed also,  apply to Energy Shield Recharge Rate"]
     amulet:
       base: Gold Amulet
       mods: [+Level of all Minion Skills, +All Attributes, Energy Shield, Deflection, Elemental Resistances]
@@ -334,9 +367,11 @@ gearStages:
       unique: "Mageblood"
     weapon2:
       unique: Saitha's Spear
+      runes: ["Soul Core of Azcapa: +15 to Spirit", "Soul Core of Quipolatl: 5% increased Attack Speed"]
     offhand2:
       base: Tasalian Focus
       mods: [Energy Shield, Elemental Resistances]
+      runes: ["Perfect Glacial Rune: Adds 16 to 20 Cold Damage"]
 passives:
   attribute: dex
   path:

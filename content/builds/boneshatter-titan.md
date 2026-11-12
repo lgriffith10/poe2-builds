@@ -208,20 +208,26 @@ gear:
   weapon:
     base: Sacred Maul
     mods: [Increased Physical Damage, Adds Physical Damage, Accuracy Rating, Increased Attack Speed, +Level of all Melee Skills]
+    runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
   offhand:
     base: Tawhoan Tower Shield
     mods: [Armour, +Maximum Life, Armour applies to Elemental Damage]
+    runes: ["Greater Body Rune: +60 to maximum Life"]
   helmet:
     unique: "Thrillsteel"
+    runes: ["Greater Body Rune: +60 to maximum Life", "Tzamoto's Soul Core of Ferocity: +4 to Maximum Rage"]
   body:
     base: Abyssal Cuirass
     mods: [Armour, +Maximum Life, +Strength, Cold Resistance, Armour applies to Elemental Damage]
+    runes: ["2× Soul Core of Jiquani: 5% increased maximum Life"]
   gloves:
     base: Vaal Mitts
     mods: [Adds Lightning Damage to Attacks, Increased Attack Speed, +Maximum Life, Lightning Resistance, Armour applies to Elemental Damage]
+    runes: ["Idol of Sirrius: 8% increased Attack Speed"]
   boots:
     base: Vaal Greaves
     mods: [Movement Speed, Cold Resistance, Chaos Resistance, +Maximum Life, Armour applies to Elemental Damage]
+    runes: ["Greater Body Rune: +60 to maximum Life"]
   amulet:
     base: Amber Amulet
     mods: [+Level of all Melee Skills, +Maximum Life, Elemental Resistances, +Strength]
@@ -239,18 +245,23 @@ gearStages:
     weapon:
       base: Leaden Greathammer
       mods: [Adds Physical Damage, Increased Physical Damage, Increased Attack Speed]
+      runes: ["2× Lesser Iron Rune: 14% increased Physical Damage"]
     helmet:
       base: Warrior Greathelm
       mods: [Armour, +Strength, Cold Resistance]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     body:
       base: Vaal Cuirass
       mods: [+Maximum Life, Cold Resistance, Lightning Resistance, Armour]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     gloves:
       base: Moulded Mitts
       mods: [Increased Attack Speed, Adds Physical Damage to Attacks]
+      runes: ["Glacial Rune: +14% to Cold Resistance"]
     boots:
       base: Stone Greaves
       mods: [Movement Speed, +Maximum Life]
+      runes: ["Storm Rune: +14% to Lightning Resistance"]
     amulet:
       base: Jade Amulet
       mods: [+Level of all Melee Skills, +Intelligence, Elemental Resistances]
@@ -267,21 +278,27 @@ gearStages:
     weapon:
       base: Solemn Maul
       mods: [Adds Physical Damage, Increased Physical Damage, Increased Attack Speed]
+      runes: ["2× Iron Rune: 16% increased Physical Damage"]
     offhand:
       base: Glowering Crest Shield
       mods: [+Maximum Life, +Strength, Fire Resistance, Cold Resistance]
+      runes: ["Storm Rune: +14% to Lightning Resistance"]
     helmet:
       base: Guardian Greathelm
       mods: [Armour, +Maximum Life, +Strength, Fire Resistance]
+      runes: ["Glacial Rune: +14% to Cold Resistance"]
     body:
       base: Soldier Cuirass
       mods: [Armour, +Strength]
+      runes: ["2× Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Knightly Mitts
       mods: [Increased Attack Speed, Adds Physical Damage to Attacks, Mana Leech, Life Leech]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     boots:
       base: Bulwark Greaves
       mods: [Movement Speed, +Maximum Life, Armour]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Melee Skills, Elemental Resistances]
@@ -297,24 +314,31 @@ gearStages:
     weapon2:
       base: Solemn Maul
       mods: [Adds Physical Damage, Increased Physical Damage, Increased Attack Speed]
+      runes: ["2× Iron Rune: 16% increased Physical Damage"]
   endgame:
     weapon:
       base: Sacred Maul
       mods: [Increased Physical Damage, Adds Physical Damage, Accuracy Rating, Increased Attack Speed, +Level of all Melee Skills]
+      runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
     offhand:
       base: Tawhoan Tower Shield
       mods: [Armour, +Maximum Life, Armour applies to Elemental Damage]
+      runes: ["Greater Body Rune: +60 to maximum Life"]
     helmet:
       unique: "Thrillsteel"
+      runes: ["Greater Body Rune: +60 to maximum Life", "Tzamoto's Soul Core of Ferocity: +4 to Maximum Rage"]
     body:
       base: Abyssal Cuirass
       mods: [Armour, +Maximum Life, +Strength, Cold Resistance, Armour applies to Elemental Damage]
+      runes: ["2× Soul Core of Jiquani: 5% increased maximum Life"]
     gloves:
       base: Vaal Mitts
       mods: [Adds Lightning Damage to Attacks, Increased Attack Speed, +Maximum Life, Lightning Resistance, Armour applies to Elemental Damage]
+      runes: ["Idol of Sirrius: 8% increased Attack Speed"]
     boots:
       base: Vaal Greaves
       mods: [Movement Speed, Cold Resistance, Chaos Resistance, +Maximum Life, Armour applies to Elemental Damage]
+      runes: ["Greater Body Rune: +60 to maximum Life"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Melee Skills, +Maximum Life, Elemental Resistances, +Strength]
@@ -330,6 +354,7 @@ gearStages:
     weapon2:
       base: Sacred Maul
       mods: [Increased Physical Damage, Adds Physical Damage, Accuracy Rating, Increased Attack Speed, +Level of all Melee Skills]
+      runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
 passives:
   attribute: str
   path:

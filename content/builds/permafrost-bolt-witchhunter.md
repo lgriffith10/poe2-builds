@@ -156,18 +156,23 @@ gear:
   weapon:
     base: Desolate Crossbow
     mods: [Increased Physical Damage, Adds Physical Damage, Increased Attack Speed, +Level of all Projectile Skills, +Crossbow Bolts]
+    runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
   helmet:
     base: Freebooter Cap
     mods: [Evasion Rating, +Maximum Life, Deflection]
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   body:
     base: Corsair Coat
     mods: [Evasion Rating, +Maximum Life, Deflection]
+    runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   gloves:
     base: Polished Bracers
     mods: [Evasion Rating, +Maximum Life, Adds Cold Damage to Attacks]
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   boots:
     base: Drakeskin Boots
     mods: [Movement Speed, Evasion Rating, +Maximum Life, Deflection]
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   amulet:
     base: Bloodstone Amulet
     mods: [+Maximum Life, +Spirit, +Level of all Projectile Skills]
@@ -185,18 +190,23 @@ gearStages:
     weapon:
       base: Blackfire Crossbow
       mods: [Increased Physical Damage, Increased Attack Speed, Adds Physical Damage]
+      runes: ["2× Iron Rune: 16% increased Physical Damage"]
     helmet:
       base: Closed Helm
       mods: [Armour and Evasion, +Maximum Life]
+      runes: ["Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     body:
       base: Patchwork Vest
       mods: [+Maximum Life, Evasion Rating]
+      runes: ["2× Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Spined Bracers
       mods: [Evasion Rating, Adds Cold Damage to Attacks, +Maximum Life]
+      runes: ["Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     boots:
       base: Stacked Sabatons
       mods: [Deflection, Movement Speed, Lightning Resistance]
+      runes: ["Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     amulet:
       base: Bloodstone Amulet
       mods: [+All Attributes, Evasion Rating]
@@ -213,18 +223,23 @@ gearStages:
     weapon:
       base: Desolate Crossbow
       mods: [Increased Physical Damage, Adds Physical Damage, Increased Attack Speed, +Level of all Projectile Skills, +Crossbow Bolts]
+      runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
     helmet:
       base: Freebooter Cap
       mods: [Evasion Rating, +Maximum Life, Deflection]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     body:
       base: Corsair Coat
       mods: [Evasion Rating, +Maximum Life, Deflection]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Polished Bracers
       mods: [Evasion Rating, +Maximum Life, Adds Cold Damage to Attacks]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     boots:
       base: Drakeskin Boots
       mods: [Movement Speed, Evasion Rating, +Maximum Life, Deflection]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     amulet:
       base: Bloodstone Amulet
       mods: [+Maximum Life, +Spirit, +Level of all Projectile Skills]
@@ -241,16 +256,21 @@ gearStages:
     weapon:
       base: Desolate Crossbow
       mods: [Increased Physical Damage, Adds Physical Damage, +Level of all Projectile Skills, Increased Attack Speed, +Crossbow Bolts]
+      runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
     helmet:
       base: Freebooter Cap
       mods: [Evasion Rating, +Maximum Life, Deflection]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     body:
       unique: "Hyrri's Ire"
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       unique: "Sine Aequo"
+      runes: ["Idol of Sirrius: 8% increased Attack Speed"]
     boots:
       base: Drakeskin Boots
       mods: [Movement Speed, Evasion Rating, +Maximum Life, Deflection]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     amulet:
       unique: "Yoke of Suffering"
     ring1:

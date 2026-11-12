@@ -125,9 +125,11 @@ gear:
   weapon:
     base: Spiked Spear
     mods: [+Level of all Melee Skills, Accuracy Rating, Increased Physical Damage, Adds Physical Damage, Critical Damage Bonus, Critical Hit Chance]
+    runes: ["2× Greater Vision Rune: +120 to Accuracy Rating"]
   offhand:
     base: Desert Buckler
     mods: [Armour, Block Chance, Accuracy Rating]
+    runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   helmet:
     base: Freebooter Cap
     mods: [Energy Shield, Critical Hit Chance, +Maximum Life, Elemental Resistances]
@@ -137,9 +139,11 @@ gear:
   gloves:
     base: Polished Bracers
     mods: [Adds Physical Damage to Attacks, +Maximum Life, Accuracy Rating, +Level of all Melee Skills, Critical Damage Bonus, Increased Attack Speed]
+    runes: ["Wolf Idol: 15% increased Magnitude of Bleeding you inflict"]
   boots:
     base: Drakeskin Boots
     mods: [+Maximum Life, Movement Speed, Elemental Resistances]
+    runes: ["Glacial Rune: +14% to Cold Resistance"]
   amulet:
     base: Pearlescent Amulet
     mods: [+All Attributes, Grants a Passive Skill]
@@ -156,14 +160,18 @@ gearStages:
     weapon:
       base: Jagged Spear
       mods: [Adds Physical Damage, Increased Physical Damage, Accuracy Rating, Increased Attack Speed, +Level of all Melee Skills]
+      runes: ["Greater Iron Rune: 18% increased Physical Damage"]
     offhand:
       base: Painted Buckler
       mods: [+Dexterity, +Maximum Life, Elemental Resistances]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     helmet:
       unique: "Horns of Bynden"
+      runes: ["Lesser Glacial Rune: +10% to Cold Resistance"]
     body:
       base: Corsair Vest
       mods: [+Dexterity, +Maximum Life, +Spirit, Elemental Resistances]
+      runes: ["Desert Rune: +14% to Fire Resistance", "Lesser Storm Rune: +10% to Lightning Resistance"]
     gloves:
       base: Fine Bracers
       mods: [+Maximum Life, Elemental Resistances, +Level of all Melee Skills, Critical Damage Bonus, Increased Attack Speed, Adds Physical Damage to Attacks]
@@ -186,21 +194,27 @@ gearStages:
     weapon:
       base: Spiked Spear
       mods: [Accuracy Rating, Increased Physical Damage, Adds Physical Damage, Critical Damage Bonus, +Level of all Melee Skills, Increased Attack Speed]
+      runes: ["2× Greater Vision Rune: +120 to Accuracy Rating"]
     offhand:
       base: Ornate Buckler
       mods: [Armour, Block Chance, Accuracy Rating]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     helmet:
       base: Trapper Hood
       mods: [+Dexterity, +Strength, Accuracy Rating, +Maximum Life]
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
     body:
       base: Wyrmscale Coat
       mods: [+Dexterity, Evasion Rating, Elemental Resistances]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance", "Greater Storm Rune: +18% to Lightning Resistance"]
     gloves:
       base: Barbed Bracers
       mods: [+Strength, Adds Physical Damage to Attacks, Critical Damage Bonus, +Maximum Life, Elemental Resistances, +Level of all Melee Skills]
+      runes: ["Wolf Idol: 15% increased Magnitude of Bleeding you inflict"]
     boots:
       base: Dragonscale Boots
       mods: [+Maximum Life, Movement Speed, Elemental Resistances]
+      runes: ["Glacial Rune: +14% to Cold Resistance"]
     amulet:
       base: Solar Amulet
       mods: [Evasion Rating, +Maximum Life, Elemental Resistances, +Strength, +Dexterity, Critical Damage Bonus]
@@ -217,9 +231,11 @@ gearStages:
     weapon:
       base: Spiked Spear
       mods: [+Level of all Melee Skills, Accuracy Rating, Increased Physical Damage, Adds Physical Damage, Critical Damage Bonus, Critical Hit Chance]
+      runes: ["2× Greater Vision Rune: +120 to Accuracy Rating"]
     offhand:
       base: Desert Buckler
       mods: [Armour, Block Chance, Accuracy Rating]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     helmet:
       base: Freebooter Cap
       mods: [Energy Shield, Critical Hit Chance, +Maximum Life, Elemental Resistances]
@@ -229,9 +245,11 @@ gearStages:
     gloves:
       base: Polished Bracers
       mods: [Adds Physical Damage to Attacks, +Maximum Life, Accuracy Rating, +Level of all Melee Skills, Critical Damage Bonus, Increased Attack Speed]
+      runes: ["Wolf Idol: 15% increased Magnitude of Bleeding you inflict"]
     boots:
       base: Drakeskin Boots
       mods: [+Maximum Life, Movement Speed, Elemental Resistances]
+      runes: ["Glacial Rune: +14% to Cold Resistance"]
     amulet:
       base: Pearlescent Amulet
       mods: [+All Attributes, Grants a Passive Skill]

@@ -241,19 +241,24 @@ gear:
   weapon:
     base: Reaping Staff
     mods: [Gain Damage as Extra Lightning, +Level of all Physical Spell Skills, Increased Spell Damage, Increased Spell physical Damage, Gain Damage as Extra Cold, Gain Damage as Extra Fire]
+    runes: ["2× Greater Vision Rune: 24% increased Critical Hit Chance for Spells"]
   offhand:
     base: Leyline Focus
     mods: [+Level of all Spell Skills, Increased Cast Speed, Energy Shield, Increased Spell Damage, Increased Spell physical Damage]
+    runes: ["Greater Storm Rune: Adds 1 to 30 Lightning Damage"]
   helmet:
     base: Divine Crown
     mods: [+Intelligence, Armour and Energy Shield, Armour applies to Elemental Damage, Lightning Resistance]
+    runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
   body:
     base: Sacramental Robe
     mods: [Energy Shield, Cold Resistance, Lightning Resistance]
+    runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   gloves:
     unique: "Nightscale"
   boots:
     unique: "Bushwhack"
+    runes: ["2× Greater Desert Rune: +18% to Fire Resistance"]
   amulet:
     base: Lapis Amulet
     mods: [Increased Cast Speed, +Level of all Spell Skills, Energy Shield, Mana Regeneration]
@@ -269,27 +274,35 @@ gear:
   weapon2:
     base: Chiming Staff
     mods: [+Level of all Lightning Spell Skills, Increased Spell Damage, Spell Critical Hit Chance, Increased Cast Speed, Gain Damage as Extra Cold]
+    runes: ["2× Greater Vision Rune: 24% increased Critical Hit Chance for Spells"]
   offhand2:
     unique: Effigy of Cruelty
+    runes: ["Greater Storm Rune: Adds 1 to 30 Lightning Damage"]
 gearStages:
   campaign:
     weapon:
       base: Roaring Staff
       mods: [Mana Regeneration, Gain Damage as Extra Cold, +Level of all Physical Spell Skills, Increased Cast Speed, Increased Spell physical Damage]
+      runes: ["Greater Robust Rune: +12 to Strength", "Greater Adept Rune: +12 to Dexterity"]
     offhand:
       base: Runed Focus
       mods: [+Maximum Mana, +Level of all Spell Skills, Spell Critical Hit Chance, Increased Spell Damage, Energy Shield]
+      runes: ["Greater Desert Rune: Adds 13 to 16 Fire Damage"]
     helmet:
       base: Elite Greathelm
       mods: [Armour, Armour applies to Elemental Damage, +Maximum Mana, Cold Resistance]
+      runes: ["Lesser Desert Rune: +10% to Fire Resistance"]
     body:
       base: Occultist Mantle
       mods: [Armour and Energy Shield, Armour, Energy Shield, Armour applies to Elemental Damage, +Maximum Life, +Spirit]
+      runes: ["Greater Storm Rune: +18% to Lightning Resistance", "Greater Glacial Rune: +18% to Cold Resistance"]
     gloves:
       base: Gold Gloves
       mods: [Energy Shield, +Dexterity, +Maximum Life, Fire Resistance, Lightning Resistance]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance"]
     boots:
       unique: "Bushwhack"
+      runes: ["Greater Desert Rune: +18% to Fire Resistance"]
     amulet:
       unique: "Idol of Uldurn"
     ring1:
@@ -311,19 +324,24 @@ gearStages:
     weapon:
       base: Reaping Staff
       mods: [Gain Damage as Extra Lightning, +Level of all Physical Spell Skills, Increased Spell Damage, Increased Spell physical Damage, Gain Damage as Extra Cold, Gain Damage as Extra Fire]
+      runes: ["2× Greater Vision Rune: 24% increased Critical Hit Chance for Spells"]
     offhand:
       base: Leyline Focus
       mods: [+Level of all Spell Skills, Increased Cast Speed, Energy Shield, Increased Spell Damage, Increased Spell physical Damage]
+      runes: ["Greater Glacial Rune: Adds 9 to 15 Cold Damage"]
     helmet:
       base: Divine Crown
       mods: [+Intelligence, Armour and Energy Shield, Armour applies to Elemental Damage, Lightning Resistance]
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
     body:
       base: Sacramental Robe
       mods: [Energy Shield, Cold Resistance, Lightning Resistance]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       unique: "Nightscale"
     boots:
       unique: "Bushwhack"
+      runes: ["2× Greater Desert Rune: +18% to Fire Resistance"]
     amulet:
       base: Lapis Amulet
       mods: [Increased Cast Speed, +Level of all Spell Skills, Energy Shield, Mana Regeneration]
@@ -339,27 +357,35 @@ gearStages:
     weapon2:
       base: Chiming Staff
       mods: [+Level of all Lightning Spell Skills, Increased Spell Damage, Spell Critical Hit Chance, Increased Cast Speed, Gain Damage as Extra Cold]
+      runes: ["2× Greater Vision Rune: 24% increased Critical Hit Chance for Spells"]
     offhand2:
       unique: Effigy of Cruelty
+      runes: ["Lesser Desert Rune: Adds 4 to 6 Fire Damage"]
   endgame:
     weapon:
       base: Chiming Staff
       mods: [+Level of all Physical Spell Skills, Increased Spell Damage, Mana Regeneration, Gain Damage as Extra Cold, Gain Damage as Extra Fire, Increased Cast Speed]
+      runes: ["Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements", "Hedgewitch Assandra's Rune of Wisdom: +1 to Level of all Spell Skills"]
     offhand:
       base: Leyline Focus
       mods: [+Level of all Spell Skills, Energy Shield, Increased Cast Speed, Increased Spell physical Damage]
+      runes: ["Greater Storm Rune: Adds 1 to 30 Lightning Damage"]
     helmet:
       base: Kamasan Tiara
       mods: [Energy Shield, Fire Resistance, Lightning Resistance]
+      runes: ["Amanamu's Gaze: Remove a Damaging Ailment when you use a Command Skill"]
     body:
       base: Vile Robe
       mods: [Energy Shield, Cold Resistance, Fire Resistance]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Sirenscale Gloves
       mods: [Energy Shield, Critical Damage Bonus, Cold Resistance, Lightning Resistance]
+      runes: ["2× Greater Glacial Rune: +18% to Cold Resistance"]
     boots:
       base: Sekhema Sandals
       mods: [Movement Speed, Energy Shield, Fire Resistance]
+      runes: ["Greater Storm Rune: +18% to Lightning Resistance"]
     amulet:
       base: Lapis Amulet
       mods: [+Level of all Spell Skills, Increased Cast Speed, +Maximum Mana, +Intelligence, Increased Spell Damage, Energy Shield]
@@ -374,8 +400,10 @@ gearStages:
     weapon2:
       base: Chiming Staff
       mods: [+Level of all Lightning Spell Skills, Spell Critical Hit Chance, Gain Damage as Extra Cold, Increased Cast Speed, Increased Spell Damage, +Maximum Mana]
+      runes: ["2× Greater Vision Rune: 24% increased Critical Hit Chance for Spells"]
     offhand2:
       unique: Effigy of Cruelty
+      runes: ["Greater Storm Rune: Adds 1 to 30 Lightning Damage"]
 passives:
   attribute: str
   path:

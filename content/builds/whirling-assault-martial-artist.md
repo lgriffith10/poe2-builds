@@ -264,18 +264,23 @@ gear:
   weapon:
     base: Sinister Quarterstaff
     mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance, +Level of all Melee Skills, Increased Attack Speed]
+    runes: ["Farrul's Rune of the Hunt: 50% increased Attack Damage against Rare or Unique Enemies", "Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements"]
   helmet:
     base: Twilight Tiara
     mods: [Energy Shield, +Maximum Life, Critical Hit Chance, Elemental Resistances]
+    runes: ["Greater Desert Rune: +18% to Fire Resistance"]
   body:
     base: Sleek Jacket
     mods: [Evasion and Energy Shield, +Intelligence, Elemental Resistances]
+    runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   gloves:
     base: Baroque Gloves
     mods: [Adds Physical Damage to Attacks, Critical Damage Bonus, Increased Attack Speed, Energy Shield]
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   boots:
     base: Silverbuckled Shoes
     mods: [Movement Speed, Evasion and Energy Shield, +Dexterity, Elemental Resistances]
+    runes: ["Greater Adept Rune: +12 to Dexterity"]
   amulet:
     base: Stellar Amulet
     mods: [+Level of all Melee Skills, Increased Energy Shield, Critical Hit Chance]
@@ -290,20 +295,25 @@ gear:
     mods: [+Maximum Life, +Strength, Elemental Resistances]
   weapon2:
     unique: Amor Mandragora
+    runes: ["2× Soul Core of Quipolatl: 5% increased Attack Speed"]
 gearStages:
   campaign:
     helmet:
       base: Pariah Mask
       mods: [Evasion and Energy Shield, +Maximum Life, Cold Resistance]
+      runes: ["Storm Rune: +14% to Lightning Resistance"]
     body:
       base: Oiled Jacket
       mods: [Evasion Rating, Energy Shield, Evasion and Energy Shield, Lightning Resistance]
+      runes: ["2× Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Buckled Wraps
       mods: [Adds Cold Damage to Attacks, +Level of all Melee Skills]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     boots:
       base: Wayfarer Shoes
       mods: [Movement Speed, Cold Resistance, Lightning Resistance]
+      runes: ["Glacial Rune: +14% to Cold Resistance"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Melee Skills]
@@ -320,18 +330,23 @@ gearStages:
     weapon:
       base: Sinister Quarterstaff
       mods: [Increased Physical Damage, Adds Physical Damage, Critical Hit Chance]
+      runes: ["Farrul's Rune of the Hunt: 50% increased Attack Damage against Rare or Unique Enemies", "Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements"]
     helmet:
       base: Twilight Tiara
       mods: [Energy Shield, +Maximum Life, Critical Hit Chance, Fire Resistance]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance"]
     body:
       base: Sleek Jacket
       mods: [Evasion Rating, Energy Shield, Evasion and Energy Shield, +Intelligence, Fire Resistance, Cold Resistance]
+      runes: ["2× Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Baroque Gloves
       mods: [Energy Shield, Adds Physical Damage to Attacks, Critical Damage Bonus, Increased Attack Speed]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
     boots:
       base: Silverbuckled Shoes
       mods: [Movement Speed, Evasion and Energy Shield, +Dexterity, Cold Resistance]
+      runes: ["Greater Adept Rune: +12 to Dexterity"]
     amulet:
       base: Stellar Amulet
       mods: [Energy Shield, +Level of all Melee Skills, Critical Hit Chance, Grants a Passive Skill]
@@ -346,21 +361,27 @@ gearStages:
       mods: [+Maximum Life, +Strength, Fire Resistance, Lightning Resistance]
     weapon2:
       unique: Amor Mandragora
+      runes: ["2× Soul Core of Quipolatl: 5% increased Attack Speed"]
   endgame:
     weapon:
       base: Sinister Quarterstaff
       mods: [Increased Physical Damage, Adds Physical Damage, Adds Cold Damage, Critical Hit Chance, +Level of all Melee Skills]
+      runes: ["Farrul's Rune of the Hunt: 50% increased Attack Damage against Rare or Unique Enemies", "Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements"]
     helmet:
       base: Ancestral Tiara
       mods: [Energy Shield, +Maximum Mana, Critical Hit Chance, Cold Resistance]
+      runes: ["Tzamoto's Soul Core of Ferocity: +4 to Maximum Rage"]
     body:
       unique: "Forgotten Warden"
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield", "Rune of Foundations: +30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield"]
     gloves:
       base: Ornate Mitts
       mods: [Evasion and Energy Shield, Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, +Level of all Melee Skills, Critical Damage Bonus, Increased Attack Speed]
+      runes: ["Serle's Triumph: +1 Suffix Modifier allowed"]
     boots:
       base: Drakeskin Boots
       mods: [Movement Speed, Evasion Rating, Fire Resistance, Cold Resistance, Deflection]
+      runes: ["Soul Core of Citaqualotl: +6% to all Elemental Resistances"]
     amulet:
       base: Gold Amulet
       mods: [Energy Shield, +Level of all Melee Skills, Critical Hit Chance, Grants a Passive Skill]
@@ -374,21 +395,27 @@ gearStages:
       unique: "Headhunter"
     weapon2:
       unique: Amor Mandragora
+      runes: ["2× Soul Core of Quipolatl: 5% increased Attack Speed"]
   minmax:
     weapon:
       base: Razor Quarterstaff
       mods: [Increased Physical Damage, Adds Physical Damage, Accuracy Rating, Critical Hit Chance, Increased Attack Speed, +Level of all Melee Skills]
+      runes: ["Farrul's Rune of the Hunt: 50% increased Attack Damage against Rare or Unique Enemies", "Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements"]
     helmet:
       base: Ancestral Tiara
       mods: [Energy Shield, +Maximum Mana, Critical Hit Chance]
+      runes: ["Tzamoto's Soul Core of Ferocity: +4 to Maximum Rage", "Raven-Touched Shard"]
     body:
       unique: "Forgotten Warden"
+      runes: ["Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield", "Rune of Foundations: +30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield"]
     gloves:
       base: Secured Wraps
       mods: [Evasion and Energy Shield, Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, +Level of all Melee Skills, Critical Damage Bonus, Increased Attack Speed]
+      runes: ["Serle's Triumph: +1 Suffix Modifier allowed"]
     boots:
       base: Drakeskin Boots
       mods: [Movement Speed, Evasion Rating, Fire Resistance, Cold Resistance, Deflection]
+      runes: ["Soul Core of Citaqualotl: +6% to all Elemental Resistances"]
     amulet:
       base: Gold Amulet
       mods: [Energy Shield, +Level of all Melee Skills, Critical Hit Chance, Grants a Passive Skill]
@@ -402,6 +429,7 @@ gearStages:
       unique: "Headhunter"
     weapon2:
       unique: Amor Mandragora
+      runes: ["2× Soul Core of Quipolatl: 5% increased Attack Speed"]
 passives:
   attribute: dex
   path:

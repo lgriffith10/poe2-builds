@@ -298,19 +298,25 @@ gear:
   weapon:
     base: Rattling Sceptre
     mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit, +Attributes, Critical Damage Bonus]
+    runes: ["Warding Rune of Bodyguards", "Primate Idol: Allies in your Presence deal 40% increased Damage"]
   offhand:
     base: Sacred Focus
     mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+    runes: ["Perfect Iron Rune: 20% increased Physical Damage"]
   helmet:
     unique: "Alpha's Howl"
+    runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills", "Legacy of Greymake"]
   body:
     base: Sleek Jacket
     mods: [Evasion and Energy Shield, Energy Shield, Evasion Rating, +Spirit, Deflection, Elemental Resistances]
+    runes: ["2× Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
   gloves:
     base: Runeforged Elegant Wraps
     mods: [Evasion and Energy Shield, Energy Shield, Elemental Resistances, +Attributes, +Maximum Life]
+    runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
   boots:
     unique: "Bones of Ullr"
+    runes: ["Amanamu's Gaze: 1% increased Movement Speed per 15 Spirit, up to a maximum of 40%, Other Modifiers to Movement Speed except for Sprinting do not apply", "Soul Core of Topotante: 25% reduced Effect of Non-Damaging Ailments on you"]
   amulet:
     base: Amber Amulet
     mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Attributes, +Maximum Life]
@@ -330,19 +336,25 @@ gearStages:
     weapon:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit, Allies in Presence gain Added Fire Damage, Allies in Presence gain Added Cold Damage, Allies in Presence gain Added Lightning Damage]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
     offhand:
       base: Emblem Crest Shield
       mods: [+Maximum Life, Elemental Resistances, Block Chance]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     helmet:
       base: Runeforged Twig Circlet
       mods: [+Level of all Minion Skills, Elemental Resistances, +Maximum Life, +Attributes]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     body:
       unique: "Enfolding Dawn"
+      runes: ["Glacial Rune: +14% to Cold Resistance", "Storm Rune: +14% to Lightning Resistance"]
     gloves:
       base: Runeforged Torn Gloves
       mods: [Elemental Resistances, +Maximum Life, +Attributes]
+      runes: ["Storm Rune: +14% to Lightning Resistance"]
     boots:
       unique: "Bones of Ullr"
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, +Maximum Life, +Attributes]
@@ -357,25 +369,33 @@ gearStages:
       mods: [Elemental Resistances, +Maximum Life, +Strength]
     weapon2:
       unique: Trenchtimbre
+      runes: ["Lesser Resolve Rune: +6 to Intelligence"]
     offhand2:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Lightning Damage, Allies in Presence Attack Speed]
+      runes: ["Primate Idol: Allies in your Presence deal 40% increased Damage"]
   mapping:
     weapon:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit, +Attributes, Critical Damage Bonus]
+      runes: ["Warding Rune of Bodyguards"]
     offhand:
       base: Runeforged Vaal Crest Shield
       mods: [Elemental Resistances, +Attributes, +Maximum Life, Block Chance]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     helmet:
       unique: "Alpha's Howl"
+      runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills"]
     body:
       unique: "Enfolding Dawn"
+      runes: ["Greater Desert Rune: +18% to Fire Resistance", "Greater Storm Rune: +18% to Lightning Resistance"]
     gloves:
       base: Vaal Gloves
       mods: [Elemental Resistances, Energy Shield, +Maximum Life, +Attributes]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     boots:
       unique: "Bones of Ullr"
+      runes: ["Amanamu's Gaze: 1% increased Movement Speed per 15 Spirit, up to a maximum of 40%, Other Modifiers to Movement Speed except for Sprinting do not apply", "Soul Core of Tacati: +13% to Chaos Resistance"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Maximum Life, +Attributes]
@@ -390,26 +410,34 @@ gearStages:
       mods: [Elemental Resistances, +Strength, +Maximum Life]
     weapon2:
       unique: Trenchtimbre
+      runes: ["Greater Rune of Leadership: Minions gain 10% of their Physical Damage as Extra Lightning Damage"]
     offhand2:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, Allies in Presence gain Added Physical Damage, Allies in Presence Attack Speed]
+      runes: ["Hawk Idol: Companions have 12% increased Attack Speed"]
   endgame:
     weapon:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit, +Attributes, Critical Damage Bonus]
+      runes: ["Warding Rune of Bodyguards"]
     offhand:
       base: Sacred Focus
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances, +Intelligence]
+      runes: ["Perfect Iron Rune: 20% increased Physical Damage"]
     helmet:
       unique: "Alpha's Howl"
+      runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills"]
     body:
       base: Sleek Jacket
       mods: [Evasion and Energy Shield, Energy Shield, Evasion Rating, +Spirit, Deflection, Elemental Resistances]
+      runes: ["2× Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Runeforged Elegant Wraps
       mods: [Evasion and Energy Shield, Energy Shield, Elemental Resistances, +Attributes, +Maximum Life]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       unique: "Bones of Ullr"
+      runes: ["Amanamu's Gaze: 1% increased Movement Speed per 15 Spirit, up to a maximum of 40%, Other Modifiers to Movement Speed except for Sprinting do not apply", "Soul Core of Topotante: 25% reduced Effect of Non-Damaging Ailments on you"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Minion Skills, +Spirit, Elemental Resistances, Energy Shield, +Attributes, +Maximum Life]
@@ -428,19 +456,25 @@ gearStages:
     weapon:
       base: Rattling Sceptre
       mods: [+Level of all Minion Skills, Increased Allies in presence Damage, +Spirit, +Attributes]
+      runes: ["Warding Rune of Bodyguards", "Primate Idol: Allies in your Presence deal 40% increased Damage"]
     offhand:
       base: Runeforged Sacred Focus
       mods: [+Level of all Minion Skills, Energy Shield, Elemental Resistances]
+      runes: ["2× Perfect Iron Rune: 20% increased Physical Damage"]
     helmet:
       unique: "Alpha's Howl"
+      runes: ["Idol of Ralakesh: 8% increased Reservation Efficiency of Minion Skills", "Legacy of Greymake"]
     body:
       base: Sacrificial Regalia
       mods: [Evasion and Energy Shield, Energy Shield, +Spirit, Deflection, Elemental Resistances]
+      runes: ["2× Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
     gloves:
       base: Runeforged Elegant Wraps
       mods: [Evasion and Energy Shield, Energy Shield, Elemental Resistances, Deflection, +Attributes]
+      runes: ["Cadigan's Epiphany: Destroys all Augment Sockets on the item to create a Jewel Socket"]
     boots:
       unique: "Bones of Ullr"
+      runes: ["Amanamu's Gaze: 1% increased Movement Speed per 15 Spirit, up to a maximum of 40%, Other Modifiers to Movement Speed except for Sprinting do not apply", "Soul Core of Topotante: 25% reduced Effect of Non-Damaging Ailments on you"]
     amulet:
       base: Portent Amulet
       mods: [+Level of all Minion Skills, +Spirit, Energy Shield, +Attributes, Elemental Resistances]

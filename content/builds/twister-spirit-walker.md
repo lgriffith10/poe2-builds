@@ -212,6 +212,7 @@ gear:
   weapon:
     base: Akoyan Spear
     mods: [+Level of all Projectile Skills, Adds Cold Damage, Adds Physical Damage, Increased Attack Speed, Critical Hit Chance]
+    runes: ["Soul Core of Quipolatl: 5% increased Attack Speed"]
   offhand:
     base: Omen Sceptre
     note: For the extra Spirit. Upgrade to Sacred Flame later.
@@ -219,15 +220,19 @@ gear:
     base: Desert Cap
     mods: [Evasion Rating, +Maximum Life, Deflection]
     note: The Black Insignia is a strong late upgrade.
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   body:
     base: Slipstrike Vest
     mods: [Evasion Rating, +Maximum Life, Deflection]
+    runes: ["2× Perfect Iron Rune: 20% increased Armour, Evasion and Energy Shield"]
   gloves:
     base: Polished Bracers
     mods: [Evasion Rating, Deflection, Adds Cold Damage to Attacks, Increased Attack Speed]
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   boots:
     base: Drakeskin Boots
     mods: [Movement Speed, Evasion Rating, Deflection]
+    runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield"]
   amulet:
     base: Stellar Amulet
     mods: [+Spirit, +Level of all Projectile Skills, +Maximum Life, Critical Hit Chance]
@@ -244,6 +249,7 @@ gear:
   weapon2:
     base: Akoyan Spear
     mods: [High Physical DPS, Critical Hit Chance, +Level of all Projectile Skills, Critical Damage Bonus]
+    runes: ["Perfect Iron Rune: 20% increased Physical Damage"]
   offhand2:
     base: Omen Sceptre
     mods: []

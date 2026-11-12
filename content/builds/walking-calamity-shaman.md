@@ -197,17 +197,22 @@ gear:
   weapon:
     base: Maji Talisman
     mods: [Increased Physical Damage, Adds Physical Damage, Adds Cold Damage, Adds Lightning Damage, Adds Fire Damage, Critical Hit Chance]
+    runes: ["Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements", "Astrid's Creativity: Can have 1 additional Crafted Modifier"]
   helmet:
     base: Warmonger Greathelm
     mods: [Elemental Resistances, Armour applies to Elemental Damage, Armour, +Maximum Life, Chaos Resistance]
+    runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
   body:
     unique: "Cloak of Flame"
+    runes: ["Tecrod's Gaze: Regenerate 1.5% of maximum Life per second", "Soul Core of Tacati: +13% to Chaos Resistance"]
   gloves:
     base: Knightly Mitts
     mods: [Armour applies to Elemental Damage, +Maximum Life, Armour, Elemental Resistances]
+    runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
   boots:
     base: Ornate Greaves
     mods: [Movement Speed, Armour applies to Elemental Damage, Elemental Resistances, +Maximum Life, Armour]
+    runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
   amulet:
     unique: "Defiance of Destiny"
   ring1:
@@ -222,18 +227,23 @@ gearStages:
     weapon:
       base: Vicious Talisman
       mods: [Increased Physical Damage, Adds Physical Damage, Adds Lightning Damage, Adds Cold Damage, Adds Fire Damage, Increased Attack Speed]
+      runes: ["2× Iron Rune: 16% increased Physical Damage"]
     helmet:
       base: Warrior Greathelm
       mods: [+Maximum Life, Armour, Elemental Resistances, Armour applies to Elemental Damage]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     body:
       base: Vaal Cuirass
       mods: [+Maximum Life, Elemental Resistances, Armour, Armour applies to Elemental Damage]
+      runes: ["Desert Rune: +14% to Fire Resistance"]
     gloves:
       base: Moulded Mitts
       mods: [Increased Attack Speed, Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, Adds Fire Damage to Attacks, +Maximum Life, Elemental Resistances]
+      runes: ["Glacial Rune: +14% to Cold Resistance"]
     boots:
       base: Stone Greaves
       mods: [Movement Speed, +Maximum Life, Elemental Resistances, Armour applies to Elemental Damage, Armour]
+      runes: ["Storm Rune: +14% to Lightning Resistance"]
     amulet:
       base: Jade Amulet
       mods: [+Level of all Melee Skills, Elemental Resistances, +Maximum Life, Chaos Resistance]
@@ -250,17 +260,22 @@ gearStages:
     weapon:
       base: Wildwood Talisman
       mods: [Adds Fire Damage, Increased Physical Damage]
+      runes: ["2× Iron Rune: 16% increased Physical Damage"]
     helmet:
       base: Guardian Greathelm
       mods: [Armour, +Maximum Life, +Strength, Fire Resistance]
+      runes: ["Glacial Rune: +14% to Cold Resistance"]
     body:
       unique: "Cloak of Flame"
+      runes: ["Tecrod's Gaze: Regenerate 1.5% of maximum Life per second", "Soul Core of Tacati: +13% to Chaos Resistance"]
     gloves:
       base: Knightly Mitts
       mods: [Increased Attack Speed, Adds Physical Damage to Attacks, Mana Leech, Life Leech]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     boots:
       base: Bulwark Greaves
       mods: [Movement Speed, +Maximum Life, Armour]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     amulet:
       base: Amber Amulet
       mods: [+Level of all Melee Skills, Elemental Resistances]
@@ -276,17 +291,22 @@ gearStages:
     weapon:
       base: Maji Talisman
       mods: [Increased Physical Damage, Adds Physical Damage, Adds Cold Damage, Adds Lightning Damage, Adds Fire Damage, Critical Hit Chance]
+      runes: ["Saqawal's Rune of the Sky: Gain 5% of Damage as Extra Damage of all Elements", "Astrid's Creativity: Can have 1 additional Crafted Modifier"]
     helmet:
       base: Warmonger Greathelm
       mods: [Elemental Resistances, Armour applies to Elemental Damage, Armour, +Maximum Life, Chaos Resistance]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     body:
       unique: "Cloak of Flame"
+      runes: ["Tecrod's Gaze: Regenerate 1.5% of maximum Life per second", "Soul Core of Tacati: +13% to Chaos Resistance"]
     gloves:
       base: Knightly Mitts
       mods: [Armour applies to Elemental Damage, +Maximum Life, Armour, Elemental Resistances]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     boots:
       base: Ornate Greaves
       mods: [Movement Speed, Armour applies to Elemental Damage, Elemental Resistances, +Maximum Life, Armour]
+      runes: ["Soul Core of Tacati: +13% to Chaos Resistance"]
     amulet:
       unique: "Defiance of Destiny"
     ring1:

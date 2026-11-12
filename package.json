@@ -15,6 +15,7 @@
     "test:planner": "tsx scripts/test-planner.ts",
     "research:maxroll": "node scripts/research-maxroll.cjs",
     "draft:maxroll": "node scripts/draft-from-maxroll.cjs",
+    "runes:maxroll": "node scripts/runes-from-maxroll.cjs",
     "leveling:maxroll": "node scripts/leveling-from-maxroll.cjs",
     "ladder:sync": "node scripts/sync-ninja.mjs",
     "meta:history": "node scripts/sync-meta-history.mjs",
