@@ -46,6 +46,20 @@ Ajoutez de la qualité à [[Ice Shot]] dès que possible : dans cette version du
 
 Le build repose sur l'évasion et la déviation plutôt que sur la vie brute. [[Wind Dancer]] ajoute de l'évasion et repousse les attaquants au corps à corps, et [[Hyrri's Ire]] double votre évasion tant que vous n'avez pas été touché récemment. Privilégiez la déviation sur le casque, les gants et les bottes. Les dégâts sur la durée et les zones au sol ignorent complètement l'évasion : sortez-en et gardez vos résistances au maximum.
 
+## Progression en endgame
+
+**Premières cartes.**
+- Plafonnez d'abord les résistances et atteignez les prérequis d'attributs. Le plus d'évasion possible sur chaque pièce d'armure, et surtout de la vitesse de déplacement sur les bottes : selon le guide source, c'est la stat la plus importante de votre équipement.
+- Le carquois est une grosse source de dégâts : mettez-y un maximum de stats offensives.
+- Hyrri's Ire est une très bonne armure qui donne beaucoup d'évasion. La déflexion sur l'équipement s'appuie sur votre évasion.
+- Un arc à dégâts physiques est le plus gros gain de DPS ; les flèches supplémentaires aident au nettoyage. Dans le doute, améliorez l'arc.
+
+**Deux sets d'armes.** En endgame, utilisez deux arcs et deux carquois : Ice Shot sur le set principal, Snipe sur le second. Le set de nettoyage veut un arc avec des flèches supplémentaires et un Cadiro's Gambit, une fois que l'arc frappe assez fort. Le set cible unique ignore la vitesse d'attaque et les flèches : dégâts fixes, chance de critique et niveaux de gemmes, avec un carquois rare.
+
+**Joyaux.** Un Time-Lost Emerald à côté de Walker of the Wilds avec un bon jet de « increased effect of Notable Passive Skills in Radius », plus des dégâts d'attaque, du critique, des dégâts de projectiles, de l'évasion ou des rebonds sur le terrain. Des saphirs avec pénétration du froid, chance et dégâts critiques, dégâts de froid, ou vie et mana par ennemi tué.
+
+**Uniques d'endgame.** Headhunter pour les cartes, surtout pour farmer les rares dans les Breaches, Cadiro's Gambit pour le nettoyage, Garukhan's Resolve pour Snipe dès que possible, et Rakiata's Flow, très cher, le meilleur choix contre les ennemis résistants au froid.
+
 ## Priorités d'équipement
 
 L'arc est de loin l'objet le plus important : cherchez des dégâts physiques par seconde élevés, de la vitesse d'attaque et de la chance de coup critique, avec des dégâts de froid ajoutés et une flèche supplémentaire en bonus. Ensuite, une amulette avec de l'Esprit et +niveau des compétences de projectile, puis de la vie et des résistances sur le reste.

@@ -43,6 +43,21 @@ Au-delà de cinq totems, le guide source note que le gain diminue : les poser pr
 
 Le guide source traverse la campagne avec des compétences de plantes et des sorts élémentaires comme [[Volcano]] et [[Frost Bomb]], puis passe aux totems une fois la configuration en place.
 
+## Progression en endgame
+
+**Obtenir Grim Pillars dans Forbidden Rites.** L'événement retire Runes of Aldur et ne garde que les Expéditions : la gemme est plus difficile à trouver. Vos options : Plunderer's Point (quête de l'acte 4), ou les zones des Interludes avec une Expédition (Stones of Serle, Pools of Khatal, Glacial Tarn), qui ne peuvent pas être relancées. Sans chance, farmez les zones d'Expédition en bas de l'Atlas (en mer) ou achetez-la, et continuez avec la configuration des plantes en attendant.
+
+**Équipement en cartes.**
+- Gardez toutes les résistances à 75 % ou plus avec l'équipement et les runes ; un Void Flux peut remonter la résistance au chaos.
+- De la vie sur chaque pièce ; la mana et la régénération de mana font tourner les totems et les compétences utilitaires.
+- La baguette est votre plus gros gain de dégâts (plus de + niveaux, dégâts des sorts). Des anneaux avec vitesse d'incantation.
+- Faites l'onction de l'amulette avec un notable de l'arbre une fois la quête du Delirium terminée sur l'Atlas : maintenez Alt sur un passif pour voir les émotions nécessaires.
+- Configurez vos charmes contre l'étourdissement, le gel et les ralentissements. Si le jeu saccade, activez Dynamic Culling dans les options graphiques.
+
+**Respec en coups critiques.** À partir du niveau 80 avec Forced Outcome (troisième ascendance), ajoutez de la chance de critique des sorts sur la baguette et du bonus de dégâts critiques sur les joyaux, puis refaites l'arbre (les points de set d'armes changent un peu). Le guide source annonce jusqu'à deux fois plus de dégâts, de plus en plus avec l'équipement. À ce stade, vous devriez poser au moins quatre totems avec Ancestral Bond, cinq ou six avec un bon équipement.
+
+**Respec en bouclier d'énergie.** Elle coûte environ 30 % de dégâts pour une résistance environ trois fois plus grande : ne la faites que si vous avez des dégâts en trop et la plupart de ces éléments : un équipement à fort bouclier d'énergie (Rage Carapace, Agony Slippers, Phoenix Claw, Victory Star), plusieurs joyaux avec bouclier d'énergie maximum et recharge plus rapide, et une Darkness Enthroned avec « gains bonuses from socketed items as though it was a body armour », sertie de Craiceann's Rune of Recovery et d'une Rune of the Blossom. Restez sous 99 % d'effet des objets sertis, sinon la Rune of the Blossom ne donne pas d'Esprit.
+
 ## Priorités d'équipement
 
 +niveau de tous les sorts sur la baguette et l'amulette, de l'Esprit sur le sceptre, l'amulette et l'armure (chaque totem en a besoin), puis vie, mana et résistances. Le build fonctionne avec très peu d'équipement, ce qui en fait un excellent choix de début de ligue.

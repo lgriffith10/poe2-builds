@@ -35,6 +35,25 @@ La campagne se joue à l'arbalète jusqu'au niveau 36 :
 
 **Cible unique.** Appliquez [[Elemental Weakness]] et [[Frost Bomb]] au début du combat et maintenez-les pendant que votre armée travaille.
 
+## Progression en endgame
+
+**Cartes rouges.**
+- Trenchtimbre quand vous n'avez plus besoin des résistances du bouclier ; prenez un +2 dès que possible.
+- Un Omen Sceptre est la meilleure base ; Malice ajoute beaucoup de dégâts sur cible unique. « Surpassing Chance to gain a Puppet Master stack whenever you use a Command Skill » sur le sceptre libère beaucoup de points de passif.
+- Emergent Instinct augmente la régénération, et Supporting Fire le garde toujours actif.
+- Remplacez Enfolding Dawn quand vous avez assez d'Esprit sur l'amulette et l'armure.
+- Sur la ceinture, « Minions have Increased Area of Effect » et « Minions Deal Increased Damage with Command Skills » sont indispensables.
+- Lavianga's Spirits donne une récupération de mana régulière.
+- Le talisman pour Pounce demande chance de critique, vitesse d'attaque, précision et dégâts de froid ajoutés aux attaques, idéalement en préfixe (n'importe quel palier). Sans ce préfixe, sertissez une Glacial Rune à la place du Soul Core of Quipolatl.
+
+**Endgame.**
+- Le plus de bouclier d'énergie possible sur le casque, les gants et les bottes.
+- Chober Chaber remplace avantageusement Trenchtimbre grâce à Giant's Blood : prenez-en un corrompu avec +4 aux compétences de serviteurs et un faible prérequis d'Intelligence (80-85).
+- Morior Invictus : toutes les résistances élémentaires et tous les attributs sont indispensables ; la réduction du bonus de dégâts critiques subis est le meilleur troisième modificateur, sinon de l'Esprit ou des défenses globales. Avec seulement 4 emplacements, retirez la Craiceann's Rune of Recovery.
+- « Maximum Stacks of Puppet Master » sur le sceptre ajoute dégâts et vitesse. Un Raven-Touched Shard permet l'onction Gigantic Following sur le casque, et Cadigan's Epiphany ajoute un joyau dans les gants.
+
+**Min-max.** Mageblood avec Bismuth, Jade et Quicksilver, Gold en quatrième idéal. Bismuth permet d'échanger les résistances de l'équipement contre de l'Intelligence, ce qui libère les anneaux pour des modificateurs de serviteurs. Chober Chaber peut être corrompu deux fois avec des prérequis d'attributs réduits, et Jiquani's Thesis renforce la recharge du bouclier d'énergie avec Mageblood.
+
 ## Priorités d'équipement
 
 Bouclier d'énergie et modificateurs de serviteurs. Le guide source recommande des joyaux avec bouclier d'énergie maximum augmenté et début de recharge du bouclier d'énergie plus rapide, puis des modificateurs critiques pour les serviteurs. [[Enfolding Dawn]] et [[Meginord's Girdle]] sont ses choix d'uniques.

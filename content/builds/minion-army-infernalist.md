@@ -651,6 +651,25 @@ The rest of the army: [[Skeletal Warrior]] and [[Skeletal Brute]] in front, [[Sk
 
 Energy shield and block, with [[Convalescence]] for recovery. The minions draw most of the attention.
 
+## Endgame Progression
+
+**Early maps.**
+- Cap resistances and meet attribute requirements first, with + minion levels on sceptre, helmet and amulet, and increased Spirit or + Spirit on body armour, amulet and sceptre to summon more minions.
+- A Rattling Sceptre is best, but any Shrine Sceptre works: it gives resistances and runs Upwelling II, Strong Hearted, Cool Headed and Vitality II without extra Spirit. Put a Primate Talisman in it.
+- Energy shield on body armour, helmet, gloves and amulet, the helmet first. Energy shield recharge rate and faster start of recharge are good defensive modifiers.
+- Runeforge Enfolding Dawn. Bones of Ullr for more minions (reservation efficiency first; the Verisium Anvil adds 5% movement speed).
+- Instill Essence Infusion on the amulet. Talisman of Ralakesh in the helmet (Greater Iron Rune in a second socket). Fluxes balance resistances; once capped, Greater Iron Runes add energy shield and a Soul Core of Tacati helps chaos resistance.
+- With Refutation, Runeforge one or two armour pieces for Ward, picking the base that loses the least energy shield.
+
+**Mid (wasps).** A Sacramental or Vile Robe, Warlord Leader on the amulet, Prism Guardian, an Amanamu's Gaze in the boots at 360+ Spirit, and Idol of Egrin or Greater Iron Rune in a second helmet socket. One Evergrasping Ring for extra minion chaos damage if the rest of your gear covers resistances and attributes; Ventor's Gamble (Spirit) or a rare minion ring with resistances also work.
+
+**Late.** A high energy shield focus with +2 minion levels, Cadigan's Epiphany in the gloves and a Craiceann's Rune of Warding in the body armour.
+
+**Min-max (wasps).**
+- A belt with "Minions' Strikes have Melee Splash" and +2 minion levels, or Mageblood (Quicksilver, Gold, Bismuth), is required. With Mageblood, swap Amanamu's Gaze for a Farrul's Rune of the Chase to get Quicksilver's movement speed, and put Minion Splash II on the spectres instead of Rapid Attacks II.
+- Blood of Rage and The Soul Meridian are mandatory: anoint one on a Twisted or Distorted Amulet and get the other on a Megalomaniac. Right Hand of Darkness and Commanding Rage are also very useful.
+- Instill Zarokh's Gift on the helmet with a Raven-Touched Shard. Replace the Evergrasping Ring with rings that add minion critical chance and critical damage bonus.
+
 ## Gear Priorities
 
 +Level of all Minion Skills and spirit first. [[Bones of Ullr]] and an [[Evergrasping Ring]] are the source guide's endgame uniques, with [[Prism Guardian]] on the second weapon set.

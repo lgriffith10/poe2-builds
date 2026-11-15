@@ -230,6 +230,25 @@ The Gemling Legionnaire ascendancy makes the combo faster: Advanced Thaumaturgy 
 
 **Bossing.** Apply [[Sniper's Mark]], build three [[Whirling Slash]] stages, then repeat [[Barrage]] + [[Twister]] while keeping [[Berserk]] and [[Combat Frenzy]] up.
 
+## Endgame Progression
+
+**Weapon sets.** Set 1 makes Whirling Slash as fast as possible: rush Dance with Death on the tree and skip the off-hand. A Winged Spear from Act 2, with any early Essence of Haste, lasts until maps; Skysliver is the option if you have currency. Set 2 is for Twister damage: as much flat elemental damage as possible, attack speed does not matter there. Use a buckler early to Parry into Fangs of Frost (mostly Act 1), then a Spirit sceptre for more Spirit gems.
+
+**Early maps.**
+- The Taming is the single biggest upgrade: all three ground effects at once, more Twister damage and an easier rotation. If you cannot afford it yet, Berek's Grip, Berek's Pass or Berek's Respite work.
+- Yoke of Suffering is a strong damage amulet usable from low level and well into the endgame. Thrillsteel speeds up Whirling Slash while levelling.
+- Sceptre: Guiding Palm of the Eye for damage. Sacred Flame is more expensive and needs you out of enemies' presence, which does not combine well with Rakiata's Flow later.
+- Lavianga's Spirits in the mana flask slot, best with physical damage leeched as mana on gloves or a ring; it enables passives such as Stimulants for an even faster Whirling Slash.
+- You move with Whirling Slash, so boots can skip movement speed for evasion and life.
+
+**Endgame.**
+- Body armour: Loreweave with the Polcirkeln modifier supercharges clear with Herald of Ice and armour explosions, but frenzy charges get harder (Freeze support and Pressure Points help). If you struggle defensively, a pure evasion chest is much tankier for less damage. Perfidy can be instilled if it has the "Raven-touched" modifier.
+- Second spear: high physical damage with critical chance, critical damage bonus and + projectile levels. The Ordained is hard to replace for its critical chance.
+- Darkness Enthroned with the body armour modifier and a Fox Idol for gem quality. An Absent Amulet with Eternal Rage pairs with Berserk: instill Paragon (Ferocity, Isolation, Despair) for gem quality, and roll a Kurgal Preserved Collarbone suffix for up to 5% skill gem quality.
+- Evasion on boots, gloves and helmet. Boots can roll skill effect duration and chance not to consume charges (Uhtred's Sidereus), gloves projectile levels and projectile speed (Kolr's Hunt).
+
+**Min-max.** Mageblood with Silver, Jade and Diamond. Rite of Passage (Cat is best and most expensive). A Soaring Spear with attack speed and the Celestial Alloy prefix, filled with Soul Cores of Quipolatl, maximises Whirling Slash speed.
+
 ## Gear Priorities
 
 [[The Taming]] first, then [[Skysliver]] and a strong second spear. Evasion and Deflection on helmet, gloves and boots, and life everywhere. [[Yoke of Suffering]] and [[Guiding Palm of the Eye]] are strong damage pieces; [[Darkness Enthroned]] boosts socketed items.

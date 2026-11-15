@@ -418,6 +418,21 @@ Beyond five totems, the source guide notes diminishing returns: placing them tak
 
 The source guide levels through the campaign with plant skills and elemental spells such as [[Volcano]] and [[Frost Bomb]], then respecs into totems once the setup comes online.
 
+## Endgame Progression
+
+**Getting Grim Pillars in Forbidden Rites.** The event removes Runes of Aldur and leaves only Expeditions, so the gem is harder to find. Your options: Plunderer's Point (Act 4 questline), or the Interlude zones with an Expedition (Stones of Serle, Pools of Khatal, Glacial Tarn), which cannot be reset. If you are unlucky, farm the Expedition zones at the bottom of the Atlas (at sea) or buy one, and keep playing the plant setup meanwhile.
+
+**Gearing in maps.**
+- Keep all resistances at 75% or more with gear and runes; Void Flux can bring chaos resistance up.
+- Life on every piece; mana and mana regeneration keep totems and utility skills running.
+- The wand is your biggest damage upgrade (more + levels, spell damage). Rings with cast speed.
+- Instill the amulet with a notable from the passive tree once you have done the Delirium questline on the Atlas: hold Alt over a passive to see which emotions it costs.
+- Set up charms against stun, freeze and slows. If the game stutters, enable Dynamic Culling in the graphics options.
+
+**Critical strike respec.** From level 80 with Forced Outcome (third ascendancy), add critical chance for spells on the wand and critical damage bonus on jewels, then respec the tree (weapon set points change slightly). The source guide reports up to double damage, growing with gear. By then you should place at least four totems with Ancestral Bond, five or six with good gear.
+
+**Energy shield respec.** It costs about 30% damage for roughly three times the tankiness, so only do it when you have damage to spare and most of this: high energy shield gear (Rage Carapace, Agony Slippers, Phoenix Claw, Victory Star), several jewels with maximum energy shield and faster start of recharge, and a Darkness Enthroned with "gains bonuses from socketed items as though it was a body armour", holding Craiceann's Rune of Recovery and a Rune of the Blossom. Stay under 99% socketed item effect, or the Rune of the Blossom grants no Spirit.
+
 ## Gear Priorities
 
 +Level of all Spell Skills on the wand and amulet, Spirit on the sceptre, amulet and body armour (each totem needs it), then life, mana and resistances. The build works on very little gear, which is what makes it such a strong league starter.

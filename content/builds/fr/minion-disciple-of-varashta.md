@@ -36,6 +36,23 @@ Côté défense, le build repose sur le bouclier d'énergie : The Fourth Teachin
 
 **Contre les boss.** Avant le combat, maudissez avec [[Elemental Weakness]], lancez [[Pain Offering]] et posez les pièges de Ruzhan. Enchaînez ensuite [[Frost Bomb]] et les commandements de Kelari.
 
+## Progression en endgame
+
+**Premières cartes.**
+- Plafonnez d'abord les résistances et les attributs, avec + niveaux de serviteurs sur le sceptre, le casque et l'amulette, et de l'Esprit augmenté ou + Esprit sur l'armure, l'amulette et le sceptre pour invoquer plus de serviteurs.
+- Un Rattling Sceptre est le meilleur, mais tout Shrine Sceptre convient : il donne des résistances et fait tourner Upwelling II, Strong Hearted, Cool Headed et Vitality II sans Esprit supplémentaire. Sertissez-y un Xipocado's Soul Core of Dominion ou un Primate Talisman (meilleur si vous avez de la zone de présence augmentée).
+- Du bouclier d'énergie sur chaque pièce d'armure et l'amulette, l'armure et le casque en priorité. La vitesse d'incantation permet de lancer les compétences de commandement plus vite.
+- Onction Splintering Force sur l'amulette, puis remplacez Freezing Mark par Skeletal Storm Mage.
+- Passez Enfolding Dawn au Runeforge. Des Bones of Ullr pour plus de serviteurs (efficacité de réservation et vitesse ; l'enclume Verisium ajoute 5 % de vitesse). Talisman of Ralakesh dans le casque. Les Fluxes équilibrent les résistances ; une fois plafonnées, les Greater Iron Runes ajoutent du bouclier d'énergie et un Soul Core of Tacati aide la résistance au chaos.
+
+**Milieu de partie (Chaos Inoculation).**
+- Le maximum de bouclier d'énergie sur chaque pièce. Une Sacramental ou Vile Robe, passée au Runeforge pour plus de bouclier d'énergie et du Runic Ward. Une Farrul's Rune of the Chase dans les bottes, idéalement corrompues avec 3-5 % de vitesse en plus.
+- Un anneau rare avec « Minions Break Armour equal to #% of Physical damage dealt » : avec lui, faites l'onction Warlord Leader plutôt que Splintering Force. Un Evergrasping Ring pour des dégâts de chaos supplémentaires des serviteurs (son inconvénient ne compte plus avec CI), ou un anneau rare avec plusieurs modificateurs de serviteurs. Prism Guardian pour l'Esprit.
+
+**Fin de partie.** Onction Dominion sur l'amulette. Un focus à fort bouclier d'énergie avec +2 niveaux de serviteurs, des Bones of Ullr Runeforged avec 14-15 % de vitesse et 29-30 % d'efficacité de réservation, Lavianga's Spirits à la place de l'Ultimate Mana Flask, Cadigan's Epiphany dans les gants et une Craiceann's Rune of Warding dans l'armure.
+
+**Min-max.** Un Megalomaniac avec Warlord Leader, Zarokh's Gift sur le casque avec un Raven-Touched Shard. Powered by Verisium demande du Runic Ward sur les bottes, les gants et le casque ou l'armure : 120-150 environ suffisent, donc évitez de passer au Runeforge les objets qui perdent l'essentiel de leur bouclier d'énergie. Évitez « Minions have +#% to all Elemental Resistances ». Mageblood (Quicksilver, Gold, Bismuth) peut remplacer la ceinture +2 serviteurs ; avec Quicksilver, mettez une Farrul's Rune of the Chase dans les bottes pour la vitesse.
+
 ## Priorités d'équipement
 
 +niveau des compétences de serviteurs sur le sceptre, le casque et l'amulette en premier, puis bouclier d'énergie et résistances. [[Enfolding Dawn]] donne beaucoup d'Esprit pour l'armée, et [[Bones of Ullr]] ajoute de la vitesse de déplacement et de l'efficacité de réservation pour les serviteurs morts-vivants. Le guide source déconseille les modificateurs « Minions have +% to all Elemental Resistances » sur votre équipement pour cette configuration.

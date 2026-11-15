@@ -453,6 +453,21 @@ The Disciple of Varashta brings two Djinns. [[Ruzhan, the Blazing Sword]] adds f
 
 Early on you play a life and energy shield hybrid with armour. Later the source guide switches to Chaos Inoculation to stack energy shield, which works with the ascendancy's own defences. [[Blasphemy]] with [[Temporal Chains]] slows everything around you, and [[Convalescence]] adds recovery.
 
+## Endgame Progression
+
+**Early maps.**
+- Cap resistances and meet attribute requirements, then get as much energy shield as you can, as soon as you can.
+- A staff with + Physical or Spell gem levels and a focus with at least +1 to Spell Skills: the ascendancy node turns +1 into a full extra level, while +2 rounds down.
+- Optional uniques: Seed of Cataclysm for damage (but more annoying mana costs) and Nightscale for critical chance, once you have enough critical chance to offset its downside.
+- Then raise life and energy shield.
+
+**Higher tier maps.**
+- Switch to Chaos Inoculation: immunity to chaos damage and to bleeding. Most of your energy shield comes from gear, the body armour above all.
+- Amanamu's Gaze in the helmet as soon as you can: your command skill then removes Ignite, which otherwise stops your energy shield recharge.
+- Keep adding + Spell levels: Essence of the Breach on the amulet, and Breach rings with +1 to Spell Skills.
+
+**Chase items.** Headhunter and Mageblood are luxury; Ingenuity is the cheap alternative, with good rings. Rite of Passage and The Fall of the Axe are not required: Golden and Silver Charms with charge gain do the job meanwhile.
+
 ## Gear Priorities
 
 +Level of all Spell Skills and cast speed on the staff, then energy shield and resistances everywhere else. [[Bushwhack]] boots are a great early pick: your physical damage pins enemies in place. [[Idol of Uldurn]] is a good campaign amulet. The late Chaos Inoculation setup uses [[Headhunter]], which is optional and very expensive.

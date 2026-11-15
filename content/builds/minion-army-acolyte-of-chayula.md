@@ -525,6 +525,26 @@ You buff and debuff from the back line. [[Pain Offering]] makes the army hit har
 
 Energy shield and evasion on every armour slot. The minions themselves are your first layer: they draw attention and body-block. [[Refutation]] blocks attacks in dangerous moments, and [[Convalescence]] adds recovery for long fights.
 
+## Endgame Progression
+
+**Early maps.**
+- Cap resistances and meet attribute requirements first, with + minion levels on sceptre, helmet and amulet. A high "Allies in your Presence deal added attack Fire damage" roll on the sceptre is worth a lot: Choice of Power and Waking Dream scale it.
+- A Rattling Sceptre is best, but any Shrine Sceptre works: it gives resistances and runs Upwelling II, Strong Hearted, Cool Headed and Vitality II without extra Spirit.
+- Bones of Ullr to summon more minions (reservation efficiency and movement speed first; the Verisium Anvil adds 5% movement speed). Alpha's Howl for Spirit and double presence radius with Selfless Remnants and Waking Dream; if it is too expensive early, wear a +2 minion levels helmet.
+- Instill the amulet with Essence Infusion. Warding Rune of Bodyguards in the sceptre (Primate Idol in a second socket), Talisman of Ralakesh in the helmet. Fluxes balance resistances; once capped, use Greater Iron Runes for energy shield or a Soul Core of Tacati for chaos resistance.
+- With Refutation, Runeforge the boots and Enfolding Dawn for Ward, picking the base that loses the least energy shield.
+
+**Mid.**
+- A rare belt with "Minion strikes have melee splash" is essential.
+- Energy shield and evasion on body armour (Rambler or Sleek Jacket) and gloves, ideally with deflection. Runeforged Opulent, Gold or Elegant gloves (Vaal bases need a Runeforged Prism Guardian).
+- Instill Warlord Leader. Prism Guardian for Spirit, and an Alpha's Howl corrupted with +1 minion levels.
+- At 450+ Spirit, an Amanamu's Gaze in the boots; then only reservation efficiency matters on the Bones of Ullr. A Lavianga's Spirits mana flask, and minion rings (damage, attack and cast speed, resistances).
+- Wardbound Minions wants around +100 Ward from Runeforged boots and gloves, or the Prism Guardian too.
+
+**Late.** Two minion rings (twice corrupted with Spirit or an extra socket if affordable), a high energy shield focus with +2 minion levels, Cadigan's Epiphany in the gloves.
+
+**Min-max.** A Blood of the Warrior flask, Zarokh's Gift on the amulet, Sacrificial Regalia if you find the right modifiers, Legacy of Greymake on a corrupted Alpha's Howl, and a Primate Idol instead of the Warding Rune of Bodyguards. Mageblood (Quicksilver, Gold, Bismuth) can replace the belt; swap Amanamu's Gaze for a Farrul's Rune of the Chase to get Quicksilver's movement speed. Your Plague Harvester spectres then need Minion Splash II instead of Heft, Minion Mastery or Rapid Attacks II.
+
 ## Gear Priorities
 
 +Level of all Minion Skills on the weapon, helmet and amulet comes first, then spirit to run every minion. [[Bones of Ullr]] boots are a cheap upgrade from the campaign onward, and [[Enfolding Dawn]] is the source guide's body armour early on. For mapping, [[Alpha's Howl]] is the key unique of the build.

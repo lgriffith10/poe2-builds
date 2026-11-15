@@ -564,6 +564,23 @@ Defensively, the build is built on energy shield: The Fourth Teaching improves e
 
 **Bossing.** Before the fight, curse with [[Elemental Weakness]], cast [[Pain Offering]] and lay Ruzhan's traps. Then cycle [[Frost Bomb]] and Kelari's commands.
 
+## Endgame Progression
+
+**Early maps.**
+- Cap resistances and meet attribute requirements first, with + minion levels on sceptre, helmet and amulet, and increased Spirit or + Spirit on body armour, amulet and sceptre to summon more minions.
+- A Rattling Sceptre is best, but any Shrine Sceptre works: it gives resistances and runs Upwelling II, Strong Hearted, Cool Headed and Vitality II without extra Spirit. Socket a Xipocado's Soul Core of Dominion or a Primate Talisman (better with sources of increased presence area).
+- Energy shield on every armour piece and the amulet, body armour and helmet first. Cast speed helps you use command skills faster.
+- Instill Splintering Force on the amulet, then replace Freezing Mark with Skeletal Storm Mage.
+- Runeforge Enfolding Dawn. Bones of Ullr for more minions (reservation efficiency and movement speed; the Verisium Anvil adds 5% movement speed). Talisman of Ralakesh in the helmet. Fluxes balance resistances; once capped, Greater Iron Runes add energy shield and a Soul Core of Tacati helps chaos resistance.
+
+**Mid (Chaos Inoculation).**
+- Maximum energy shield on every piece. A Sacramental or Vile Robe, Runeforged for more energy shield and Runic Ward. A Farrul's Rune of the Chase in the boots, ideally corrupted with 3-5% extra movement speed.
+- A rare ring with "Minions Break Armour equal to #% of Physical damage dealt": with it, instill Warlord Leader instead of Splintering Force. One Evergrasping Ring for extra minion chaos damage (its drawback no longer matters with CI), or a rare ring with several minion modifiers. Prism Guardian for Spirit.
+
+**Late.** Instill Dominion on the amulet. A high energy shield focus with +2 minion levels, Runeforged Bones of Ullr with 14-15% movement speed and 29-30% reservation efficiency, Lavianga's Spirits instead of the Ultimate Mana Flask, Cadigan's Epiphany in the gloves and a Craiceann's Rune of Warding in the body armour.
+
+**Min-max.** A Megalomaniac with Warlord Leader, Zarokh's Gift on the helmet with a Raven-Touched Shard. Powered by Verisium needs Runic Ward on boots, gloves and the helmet or body armour: around 120-150 is enough, so avoid Runeforging items that lose most of their energy shield. Avoid "Minions have +#% to all Elemental Resistances". Mageblood (Quicksilver, Gold, Bismuth) can replace the +2 minion belt; with Quicksilver, put a Farrul's Rune of the Chase in the boots for the movement speed.
+
 ## Gear Priorities
 
 +Level of all Minion Skills on sceptre, helmet and amulet comes first, followed by energy shield and resistances. [[Enfolding Dawn]] gives a lot of Spirit for the army, and [[Bones of Ullr]] adds movement speed and reservation efficiency for undead minions. The source guide warns against "Minions have +% to all Elemental Resistances" modifiers on your gear for this setup.

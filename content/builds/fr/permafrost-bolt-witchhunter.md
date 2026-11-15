@@ -32,6 +32,18 @@ Vous pouvez maintenant tirer les deux à la suite sans recharger.
 
 **Contre les boss.** Appliquez [[Freezing Mark]], gelez le boss avec Permafrost Bolts, puis videz Fragmentation Rounds. [[Wind Dancer]] repousse les ennemis qui vous touchent.
 
+## Progression en endgame
+
+**Premières cartes.**
+- Plafonnez d'abord les résistances et les attributs.
+- Une arbalète avec le plus de dégâts fixes et de vitesse d'attaque possible.
+- Accumulez l'évasion : Obsessive Rituals base le bouclier de Sorcery Ward dessus. Ajoutez ensuite de la vie et encore de l'évasion jusqu'à être à l'aise en cartes rouges.
+
+**Uniques d'endgame.**
+- **Hyrri's Ire** est le meilleur objet et le plus important du build : il double votre évasion quand vous n'avez pas été touché depuis 4 secondes, et avec elle votre déflexion et le bouclier de Sorcery Ward. Plus votre évasion est haute, moins vous êtes touché et plus le bouclier reste actif.
+- **Yoke of Suffering** fait subir 80 % de dégâts en plus aux ennemis affectés par les quatre altérations élémentaires. Permafrost Bolt refroidit et gèle, Charged Mark électrocute les ennemis que vous gelez avec Freezing Mark, et Explosive Grenade enflamme sur cible unique. Faites l'onction Climate Change sur l'amulette pour des dégâts de feu en plus.
+- **Sine Aequo** améliore la durée du gel et les dégâts : les ennemis sont immobilisés quand la jauge atteint la moitié, ce qui double à peu près la durée de gel sur cible unique.
+
 ## FAQ
 
 **Comment améliorer mes défenses ?** Accumulez l'évasion. En plus d'éviter des coups, elle renforce vos autres couches : Deflect dépend de votre score d'évasion, le bouclier de [[Sorcery Ward]] dépend entièrement de votre évasion, et être moins touché permet à ce bouclier de se régénérer plus vite.

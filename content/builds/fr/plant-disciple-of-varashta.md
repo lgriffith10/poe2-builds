@@ -33,6 +33,21 @@ La Disciple of Varashta apporte deux Djinns. [[Ruzhan, the Blazing Sword]] ajout
 
 En début de partie, vous jouez un hybride vie et bouclier d'énergie avec de l'armure. Plus tard, le guide source passe en Chaos Inoculation pour empiler le bouclier d'énergie, ce qui fonctionne avec les défenses propres à l'ascendance. [[Blasphemy]] avec [[Temporal Chains]] ralentit tout autour de vous, et [[Convalescence]] ajoute de la récupération.
 
+## Progression en endgame
+
+**Premières cartes.**
+- Plafonnez les résistances et les attributs, puis prenez le plus de bouclier d'énergie possible, le plus tôt possible.
+- Un bâton avec + niveaux de gemmes physiques ou de sorts et un focus avec au moins +1 aux compétences de sort : le nœud d'ascendance transforme +1 en un niveau entier de plus, alors que +2 est arrondi à l'inférieur.
+- Uniques optionnels : Seed of Cataclysm pour les dégâts (mais des coûts de mana plus pénibles) et Nightscale pour la chance de critique, une fois que vous en avez assez pour compenser son inconvénient.
+- Augmentez ensuite la vie et le bouclier d'énergie.
+
+**Cartes de plus haut niveau.**
+- Passez en Chaos Inoculation : immunité aux dégâts de chaos et au saignement. L'essentiel de votre bouclier d'énergie vient de l'équipement, surtout de l'armure.
+- Amanamu's Gaze dans le casque dès que possible : votre compétence de commandement retire alors l'embrasement, qui sinon bloque la recharge du bouclier d'énergie.
+- Continuez d'ajouter des + niveaux de sorts : Essence of the Breach sur l'amulette, et des anneaux Breach avec +1 aux compétences de sort.
+
+**Objets de luxe.** Headhunter et Mageblood sont du luxe ; Ingenuity est l'alternative bon marché, avec de bons anneaux. Rite of Passage et The Fall of the Axe ne sont pas nécessaires : des Golden et Silver Charms avec gain de charges font le travail en attendant.
+
 ## Priorités d'équipement
 
 +Niveau de toutes les compétences de sort et vitesse d'incantation sur le bâton, puis bouclier d'énergie et résistances partout ailleurs. Les bottes [[Bushwhack]] sont un excellent choix au début : vos dégâts physiques immobilisent les ennemis. [[Idol of Uldurn]] est une bonne amulette de campagne. La configuration Chaos Inoculation de fin de partie utilise [[Headhunter]], optionnelle et très chère.

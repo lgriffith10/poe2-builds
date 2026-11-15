@@ -531,6 +531,25 @@ The permanent army is [[Skeletal Warrior]], [[Skeletal Storm Mage]], [[Skeletal 
 
 Energy shield and evasion, with Wolf Pack's damage reduction and [[Refutation]] to block in dangerous moments. [[Convalescence]] adds recovery.
 
+## Endgame Progression
+
+**Early maps.**
+- Cap resistances and meet attribute requirements first, with + minion levels on sceptre, helmet and amulet. A high "Allies in your Presence deal added attack damage" roll on the sceptre is worth a lot: Choice of Power and Waking Dream scale it.
+- A Rattling Sceptre is best, but any Shrine Sceptre works: it gives resistances and runs Upwelling II, Strong Hearted, Cool Headed and Vitality II without extra Spirit.
+- Bones of Ullr to summon more minions (reservation efficiency and movement speed first; the Verisium Anvil adds 5% movement speed). Alpha's Howl for Spirit and double presence radius with Selfless Remnants and Waking Dream; if it is too expensive early, wear a +2 minion levels helmet.
+- Instill the amulet with Essence Infusion. Warding Rune of Bodyguards in the sceptre (Primate Idol in a second socket), Talisman of Ralakesh in the helmet. Fluxes balance resistances; once capped, use Greater Iron Runes for energy shield or a Soul Core of Tacati for chaos resistance.
+- With Refutation and Wardbound Minions, Runeforge the boots and Enfolding Dawn for Ward, picking the base that loses the least energy shield.
+
+**Mid.**
+- Energy shield and evasion on body armour (Rambler or Sleek Jacket) and gloves, ideally with deflection. Runeforged Opulent, Gold or Elegant gloves (Vaal bases need a Runeforged Prism Guardian).
+- Instill Warlord Leader. Prism Guardian for Spirit, and an Alpha's Howl corrupted with +1 minion levels.
+- At 450+ Spirit, an Amanamu's Gaze in the boots for movement speed; then only reservation efficiency matters on the Bones of Ullr. A Lavianga's Spirits mana flask, and minion rings (damage, attack and cast speed, resistances).
+- Wardbound Minions wants around +100 Ward from Runeforged boots and gloves, or the Prism Guardian too.
+
+**Late.** A rare belt with "Minions have +#% Surpassing chance to fire an additional Projectile" is essential. Two minion rings (twice corrupted with Spirit or an extra socket if affordable), a high energy shield focus with +2 minion levels, Cadigan's Epiphany in the gloves.
+
+**Min-max.** Instill Zarokh's Gift on the amulet, Sacrificial Regalia if you find the right modifiers, Legacy of Greymake on a corrupted Alpha's Howl. With the extra minion levels, use a Runeforged Sacred Focus or a level 10 or lower Wardbound Minions for full uptime. Mageblood (Quicksilver, Gold, Bismuth) can replace the belt; swap Amanamu's Gaze for a Farrul's Rune of the Chase to get Quicksilver's movement speed.
+
 ## Gear Priorities
 
 +Level of all Minion Skills and spirit first. [[Alpha's Howl]] is the key helmet for mapping, with [[Bones of Ullr]] boots and [[Prism Guardian]] on the second weapon set.

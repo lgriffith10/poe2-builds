@@ -23,6 +23,27 @@ Strike Twice, Constant Gale et Storm's Recollection de la Stormweaver complèten
 
 **Contre les boss.** Maudissez avec [[Elemental Weakness]], posez [[Frost Bomb]], activez [[Mana Tempest]] et [[Sigil of Power]], puis alternez [[Orb of Storms]] et [[Arc]].
 
+## Progression en endgame
+
+**Après la campagne.** Passez chez les marchands et le marchand de paris pour remplacer les objets faibles, d'abord pour plafonner les résistances, ensuite pour plus de bouclier d'énergie. À court d'or ? Faites des cartes de bas niveau, ramassez les rares et utilisez des Orbes de Transmutation et d'Augmentation sur des bases normales ; en ligue d'échange, beaucoup d'améliorations coûtent quelques Orbes Exaltés.
+
+**Premières cartes.**
+- Une baguette avec + aux niveaux des compétences de foudre ou de sorts, dégâts de foudre ou de sorts augmentés et dégâts supplémentaires élémentaires. Un Voltaic Staff fonctionne encore, mais une bonne paire baguette et focus finit plus forte.
+- Une amulette avec + au niveau de toutes les compétences de sort, idéalement une Solar Amulet, avec l'onction Heavy Ammunition. Des anneaux avec vitesse d'incantation, mana et résistances.
+- Archmage demande +60 d'Esprit venant de l'amulette et de l'armure (+51 à 20 % de qualité). En attendant, utilisez Arctic Armour ou Convalescence pour survivre, ou Attrition pour les dégâts sur cible unique.
+- À partir de 6 000 de bouclier d'énergie, prenez Chaos Inoculation et laissez tomber la vie. Visez 100 % de rareté des objets tôt, et des bottes à 25-35 % de vitesse de déplacement.
+- Charmes : Thawing (gel), Dousing (embrasement), puis Golden pour la rareté ou Stone pour l'étourdissement.
+- Gemmes : équipez Archmage dès que possible et accumulez la mana pour ses dégâts. Passez Arc à 5 liens avec un Greater Jeweller's Orb et le reste à 4 liens.
+
+**Endgame.**
+- Arbiter's Ignition lié à Living Bomb génère l'Elemental Archon : Archon of the Storm n'est plus nécessaire. Arc à 6 liens avec un Perfect Jeweller's Orb, le reste à 5 liens.
+- Une baguette avec plus de niveaux, sertie de la Hedgewitch Assandra's Rune of Wisdom. L'amulette avec l'onction Lightning Rod, 20 % de qualité avec des Neural Catalysts.
+- Des anneaux avec de la mana grâce à la Perfect Essence of the Mind. Un casque avec 300+ de bouclier d'énergie, chance de critique, le modificateur désacralisé « increased effect of Arcane Surge on You » et un Soul Core of Zalatl.
+- From Nothing (Eldritch Battery) économise beaucoup de points de passif : priorité haute.
+- Lavianga's Spirits évite de spammer le flacon de mana, mais demande 30 %+ de chance de critique pour générer des Mana Remnants en continu.
+
+**Objectif final et min-max.** Des anneaux Breach pour la mana maximum, un focus avec + niveaux de sorts et mana, Headhunter pour le nettoyage et les attributs, un Megalomaniac avec des notables utiles (Frazzled, The Spring Hare, Calibration, Momentum), Dialla's Desire sur Archmage et Uhtred's Augury sur Mana Remnants. Le min-max passe à Atziri's Splendour et à des objets sanctifiés et corrompus. Le guide source présente cet équipement comme un objectif sur toute la ligue.
+
 ## Priorités d'équipement
 
 Le guide source finit par lier Arc à 6 avec un Perfect Jeweller's Orb et les autres compétences à 5. L'équipement vise les niveaux de sorts, la vitesse d'incantation et le bouclier d'énergie.

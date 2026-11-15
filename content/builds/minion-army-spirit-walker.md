@@ -595,12 +595,40 @@ The first levels use [[Twister]] with [[Whirling Slash]]. As soon as you find a 
 
 Your strongest damage dealer is a beast you capture with [[Tame Beast]]: bring a rare beast low, use the skill on it, and it becomes a "Companion" skill gem that keeps the beast's rare modifiers. Turn your own minions off before you start, or they will kill the beast before you can tame it.
 
-**Main companion.** The Natural Order (second ascendancy) lets [[Tame Beast]] capture unique beast bosses. Once you also have the Easy Going notable and the Trusted Kinship keystone, tame the **Mighty Silverfist** in the **Jungle Ruins** (Act 3). In maps, replace it with **Zekoa, the Headcrusher** (Rupture and Riverside maps), ideally with several rare modifiers, "Extra Crits" first. Vaal City maps with rare tablets that add unique monsters are another way to find this boss type (the **Croilla Sergeant**).
+**Main companion.** The Natural Order (second ascendancy) lets [[Tame Beast]] capture unique beast bosses. Once you also have the Easy Going notable and the Trusted Kinship keystone, tame the **Mighty Silverfist** in the **Jungle Ruins** (Act 3). In maps, replace it with **Zekoa, the Headcrusher** (Rupture and Riverside maps), ideally with several rare modifiers, "Extra Crits" first.
+
+**Getting a strong Zekoa.** Put one Cruel Hegemony and two different rare tablets with "Unique Monsters have 1 additional Rare Modifier" in the Map Device with the map: Zekoa then has at least three modifiers. Read them under its life bar before you tame it. Good modifiers, best first: Extra Crits, Extra Physical Damage Aura, Enraged, Hasted, and extra Fire, Cold, Lightning or Chaos damage. Vaal City maps take four rare tablets: pair the unique monster modifier with one that guarantees a unique Vaal boss, and look for the **Croilla Sergeant**, the same boss type as the Silverfist and Zekoa.
 
 **Second companion.** During the campaign, [[Wolf Pack]] is the simple choice. After the campaign, go to the "Troubled Camp" in the **Infested Barrens**: one or two rare beasts spawn near the checkpoint. Use "Respawn at checkpoint" to reroll their modifiers until one has **Haste Aura** (not "Hasted"), tame it and support it with [[Loyalty]].
 
-Gemcutter's Prisms on both Companion gems lower the Spirit they reserve.
+Gemcutter's Prisms on both Companion gems lower the Spirit they reserve. The [[Wild Protector]]'s support sockets come with your level: four at level 65, the last one at level 90.
+
+## Endgame Progression
+
+**Early maps.** Once you have The Catha's Balance, your companions use your weapon's damage: get a Runemastered [[Tyranny's Grip]] with as much physical damage as you can afford (buy one, or Runemaster it twice with Verisium Ore at Dannig's bench in Kingsmarch) and put a Greater Iron Rune in it. Instill your amulet with High Alert, or with Warlord Leader if you can afford it (allies in your presence deal 40% increased damage). Fluxes (Blazing, Chilling, Crackling, Void) turn one resistance into another to balance them.
+
+**Mid and late game.**
+- Get a rare belt with "Minion strikes have melee splash", then replace [[Minion Splash II]] with [[Rapid Attacks II]].
+- Move to a Runeforged +2 Trenchtimbre with two Greater Runes of Leadership.
+- Once you have Refutation, Runeforge one or two armour pieces for Ward, choosing the base that loses the least energy shield.
+- Instill Blood of Rage once you have a From Nothing jewel with the Bulwark keystone and a Blood of the Warrior life flask.
+- Replace the Haste Aura companion with [[Wolf Pack]] for clear speed, and support the main companion with [[Minion Mastery]]. [[Amanamu's Tithe]] on the [[Skeletal Warrior]] is optional when it is cheap.
+- Intelligence skill gems can stay at level 18 to lower attribute requirements.
+
+**Min-max.** Either a Spirit sceptre with a body armour carrying three defensive prefixes (the source guide's choice, more expensive), or a Spirit body armour with a sceptre rolling high elemental damage (more damage). Use a three-socket Runeforged +2 Trenchtimbre or, better and much more expensive, a very high damage Grand Spear. Blood of Rage and Gigantic Following are both required: anoint one on the amulet and get the other on a Megalomaniac. Instill the helmet with Zarokh's Gift using a Raven-Touched Shard.
 
 ## Gear Priorities
 
 Minion levels and energy shield. Recommended jewel modifiers: minion critical damage and chance, increased maximum energy shield, presence area of effect and minion damage. [[Tyranny's Grip]] is the source guide's weapon.
+
+## FAQ
+
+**I die more than I would like. What can I do?** Keep elemental resistances at 75% and chaos resistance at +60% or more (ignore chaos resistance once you have Chaos Inoculation), and wear the bases with the most energy shield.
+
+**Why Wild Protector as the first ascendancy rather than The Natural Order?** The Wild Protector clears much faster and is much tankier than the Crowbell or Rathbreaker bosses you could tame early: their skills slow their clear and they die easily.
+
+**Is the Haste Aura companion mandatory?** No. It is the better second companion but can take a while to find; during the campaign, [[Wolf Pack]] avoids that time sink.
+
+**How many minions of each type?** It depends on your Spirit. As a guide: in Act 2, 0-4 Skeletal Warriors, 1-5 Skeletal Snipers and the Wild Protector; in Acts 3-4, 0-2 Warriors, 1-4 Snipers, the Silverfist and Wolf Pack or the Haste Aura beast; in early maps, 0-2 Warriors, 1 Sniper, the Wild Protector, the tamed boss, the Haste Aura beast and 1-3 Skeletal Clerics. Mid and late setups drop the Sniper, and the min-max setup swaps the Haste Aura beast for Wolf Pack.
+
+**What should I avoid with Chaos Inoculation?** Any modifier saying "Damage taken bypasses Energy Shield", such as the Heavy Buffer notable. Also never use a mana flask with "Removes 15% of Mana Recovered from Life when used".

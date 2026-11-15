@@ -44,6 +44,25 @@ L'ascendance Lich porte les défenses. Eldritch Empowerment accorde plus de dég
 
 Accumulez du bouclier d'énergie sur chaque pièce d'armure et prenez les nœuds de recharge plus rapide du bouclier d'énergie dans l'arbre, pour qu'Eldritch Empowerment ne vous laisse jamais à découvert. [[Convalescence]] ajoute une couche défensive supplémentaire contre les boss.
 
+## Progression en endgame
+
+**Après la campagne.** Passez chez les marchands et le marchand de paris pour remplacer les objets faibles, en commençant par plafonner les résistances. À court d'or ? Faites des cartes de bas niveau, ramassez les rares et utilisez des Orbes de Transmutation et d'Augmentation sur des bases normales ; en ligue d'échange, beaucoup d'améliorations coûtent quelques Orbes Exaltés.
+
+**Premières cartes.**
+- Continuez d'améliorer votre équipement à bouclier d'énergie et atteignez 100 % de rareté des objets dès que possible.
+- Prenez Eternal Life et équipez Atziri's Disdain au plus vite : un gros gain de survie.
+- Des joyaux rares avec bouclier d'énergie maximum augmenté, dont au moins un avec « Recover % of Maximum Mana on Kill » pour la mana.
+- Convalescence et Ravenous Swarm demandent +50 d'Esprit au total sur l'amulette et l'armure. Si vous ne pouvez en garder qu'un, prenez Convalescence pour la survie ou Ravenous Swarm pour les dégâts sur cible unique.
+- En ligue d'échange : Ventor's Gamble (rareté et Esprit) et Ghostwrithe comme première armure.
+
+**Endgame.**
+- Plus de + niveaux à toutes les compétences, plus de bouclier d'énergie et de rareté, des bottes rapides, des gemmes de niveau 20-21 à 20 % de qualité.
+- Des bottes et des gants avec 100 % d'effet augmenté des objets sertis, avec deux emplacements pour un Talisman of Egrin et le Tacati's Soul Core of Affliction.
+- Ceinture : Ingenuity renforce vos anneaux (rareté, résistances, dégâts de chaos, vitesse d'incantation). Darkness Enthroned avec deux objets sertis est une alternative viable ; beaucoup d'objets sertis sont limités à un exemplaire.
+- Un Megalomaniac avec des notables utiles comme Spiral into Insanity ou Momentum.
+
+**Objectif final.** Olroth's Resolve pour la survie, un Atziri's Disdain corrompu avec 18 % de la vie maximum en bouclier d'énergie supplémentaire, Headhunter pour le nettoyage des cartes renforcées, Rite of Passage (Spirit of the Owl ou of the Stag), des joyaux à quatre modificateurs, un Prism of Belief avec +3 à Essence Drain et un Heart of the Well avec des dégâts de chaos supplémentaires ou de la vitesse. Un Snakepit dans l'emplacement d'anneau droit ajoute un rebond quand les résistances et la rareté le permettent.
+
 ## Priorités d'équipement
 
 +niveau des sorts de chaos sur la baguette et +niveau de tous les sorts sur le focus et l'amulette sont les principales améliorations de dégâts, avec la vitesse d'incantation. Tout le reste, c'est du bouclier d'énergie et des résistances. [[Atziri's Disdain]] est le casque choisi par le guide source.

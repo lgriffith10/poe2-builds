@@ -518,6 +518,25 @@ The source guide levels with Volcano raging spirits and Skeletal Snipers, then V
 
 The Lich stacks energy shield, energy shield recovery and block. Eternal Life with Soulless Form gives a large reduction in damage taken, and [[Wolf Pack]] minions supported by Loyalty soak hits in front of you.
 
+## Endgame Progression
+
+**Early maps.**
+- Cap resistances and meet attribute requirements first, with + minion levels on sceptre, helmet and amulet, and increased Spirit or + Spirit on body armour, amulet and sceptre to summon more minions.
+- A Rattling Sceptre is best, but any Shrine Sceptre works: it gives resistances and runs Upwelling II, Strong Hearted, Cool Headed and Vitality II without extra Spirit. Put a Primate Talisman in it.
+- Energy shield on every armour piece and the amulet, body armour and helmet first. Energy shield recharge rate and faster start of recharge are good defensive modifiers.
+- Runeforge Enfolding Dawn. Bones of Ullr for more minions (reservation efficiency first; the Verisium Anvil adds 5% movement speed).
+- Instill Essence Infusion on the amulet. Talisman of Ralakesh in the helmet (Greater Iron Rune in a second socket). Fluxes balance resistances; once capped, Greater Iron Runes add energy shield and a Soul Core of Tacati helps chaos resistance.
+
+**Mid.**
+- A Sacramental or Vile Robe, Runeforged for more energy shield and Runic Ward.
+- Instill Warlord Leader. Prism Guardian for Spirit; at 330+ Spirit, an Amanamu's Gaze in the boots for movement speed.
+- One Evergrasping Ring for extra minion chaos damage if the rest of your gear covers resistances and attributes, or a rare ring with several minion modifiers.
+- With Powered Zealot spectres, a Chiming Staff in weapon set 2 lets you pre-cast Sigil of Power before a boss.
+
+**Late.** Primate and/or Rabbit Talisman in the sceptre, Talisman of Egrin or Greater Iron Rune in a second helmet socket, a high energy shield focus with +2 minion levels (take Warding Fetish with a focus) or a corrupted Prism Guardian, Cadigan's Epiphany in the gloves and a Craiceann's Rune of Warding in the body armour.
+
+**Min-max.** Instill The Soul Meridian on the helmet with a Raven-Touched Shard and Zarokh's Gift on the amulet. Mageblood (Quicksilver, Gold, Silver or Bismuth) can replace the +2 minion belt; swap Amanamu's Gaze for a Farrul's Rune of the Chase to get Quicksilver's movement speed.
+
 ## Gear Priorities
 
 +Level of all Minion Skills on the sceptre, helmet and amulet comes first, then Spirit for more minions. A Rattling Sceptre is best. Enfolding Dawn and a pair of Bones of Ullr are cheap, common uniques the build uses; the Kalandra's Touch ring shown here is the min-max option.

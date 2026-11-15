@@ -361,6 +361,21 @@ Start with [[Frost Bomb]], [[Escape Shot]] to freeze and reposition, and [[Light
 
 **Bossing.** Place a [[Tornado Shot]] before the boss activates, shoot [[Ice Shot]] through it, apply [[Freezing Mark]], then [[Barrage]] and [[Snipe]] once the boss is frozen.
 
+## Endgame Progression
+
+**Early maps.**
+- First cap resistances and meet attribute requirements. As much evasion as possible on armour pieces, and above all movement speed on boots: the source guide calls it the most vital stat on your gear.
+- The quiver is a big damage source: stack offensive stats on it.
+- When you take Critical Strike, find a bow with a big accuracy roll. A physical damage bow with high accuracy is the largest DPS upgrade; extra arrows help clear. When in doubt, upgrade the bow.
+- Stalking Panther boosts evasion from helmet, gloves and boots and lets you wear an energy shield body armour: switch to a pure energy shield chest when you take it. Deflection on gear builds on your evasion.
+- A Sapphire with 2% mana gained on kill fixes mana while clearing.
+
+**Two weapon sets.** In the endgame, run two bows and two quivers: Ice Shot on the main set, Snipe on the second. The clear set wants a bow with extra arrows and a Cadiro's Gambit, once the bow hits hard enough. The single-target set ignores attack speed and arrows: flat damage, critical chance and gem levels, with a rare quiver.
+
+**Jewels.** A Time-Lost Emerald next to Struck Through with a good "increased effect of Notable Passive Skills in Radius" roll, plus attack damage, critical, projectile damage, evasion or terrain chain modifiers. Sapphires with cold penetration, critical chance and damage, cold damage, or life and mana on kill.
+
+**Endgame uniques.** The Black Insignia (movement speed, skill speed and evasion through Tailwind, as long as you avoid hits), Headhunter for mapping, especially when farming rares in Breaches, Cadiro's Gambit for clear, Garukhan's Resolve for Snipe as soon as possible, and Rakiata's Flow as a very expensive best-in-slot against cold-resistant enemies.
+
 ## Gear Priorities
 
 Bow damage and critical strike, then evasion and life. The source guide uses [[Cadiro's Gambit]] and [[The Black Insignia]].

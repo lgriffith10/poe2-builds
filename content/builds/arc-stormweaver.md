@@ -476,6 +476,27 @@ Stormweaver's Strike Twice, Constant Gale and Storm's Recollection complete the 
 
 **Bossing.** Curse with [[Elemental Weakness]], drop [[Frost Bomb]], activate [[Mana Tempest]] and [[Sigil of Power]], then alternate [[Orb of Storms]] and [[Arc]].
 
+## Endgame Progression
+
+**After the campaign.** Check vendors and the gambling vendor to replace weak items, first to cap resistances, then for more energy shield. Short on gold? Run low-tier maps, loot rares and use Transmutation and Augmentation Orbs on normal bases; in trade leagues, many upgrades cost a few Exalted Orbs each.
+
+**Early maps.**
+- A wand with + to Level of Lightning or Spell Skills, increased Lightning or Spell Damage and Damage as Extra Elemental. A Voltaic Staff still works, but a good wand and focus pair ends up stronger.
+- An amulet with + to Level of all Spell Skills, ideally a Solar Amulet, instilled with Heavy Ammunition. Rings with cast speed, mana and resistances.
+- Archmage needs +60 Spirit from amulet and body armour (+51 at 20% quality). Until then, run Arctic Armour or Convalescence for safety, or Attrition for single-target damage.
+- At 6,000+ energy shield, take Chaos Inoculation and drop life affixes. Aim for 100% increased item rarity early, and 25-35% movement speed boots.
+- Charms: Thawing (freeze), Dousing (ignite), then Golden for rarity or Stone for stun.
+- Gems: equip Archmage as soon as possible and stack mana for its damage. 5-link Arc with a Greater Jeweller's Orb and 4-link everything else.
+
+**Endgame.**
+- Arbiter's Ignition linked to Living Bomb generates Elemental Archon, so Archon of the Storm can go. 6-link Arc with a Perfect Jeweller's Orb, 5-link the rest.
+- Wand with more + levels, socketed with Hedgewitch Assandra's Rune of Wisdom. Amulet instilled with Lightning Rod, 20% quality from Neural Catalysts.
+- Rings with mana from Perfect Essence of the Mind. Helmet with 300+ energy shield, critical chance, the desecrated "increased effect of Arcane Surge on You" modifier and a Soul Core of Zalatl.
+- From Nothing (Eldritch Battery) saves many passive points: high priority.
+- Lavianga's Spirits removes mana flask spam, but needs 30%+ critical chance to keep generating Mana Remnants.
+
+**Aspirational and min-max.** Breach rings for maximum mana, a focus with + Spell levels and mana, Headhunter for clear and attributes, a Megalomaniac with useful notables (Frazzled, The Spring Hare, Calibration, Momentum), Dialla's Desire on Archmage and Uhtred's Augury on Mana Remnants. Min-max moves to Atziri's Splendour and sanctified, corrupted items. The source guide calls the aspirational set a league-long goal.
+
 ## Gear Priorities
 
 The source guide eventually six-links Arc with a Perfect Jeweller's Orb and five-links the other skills. Gear focuses on spell levels, cast speed and energy shield.

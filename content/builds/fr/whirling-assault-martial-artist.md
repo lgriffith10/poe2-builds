@@ -42,6 +42,19 @@ skillNotes:
 
 **Contre les boss.** Marquez le boss avec [[Hand of Chayula]], rafraîchissez [[Charged Staff]] et [[Rend]], ajoutez [[Tempest Bell]], puis canalisez [[Whirling Assault]] au corps à corps en esquivant les attaques annoncées. [[Ghost Dance]] et [[Wind Dancer]] vous aident à survivre aux échanges.
 
+## Progression en endgame
+
+**De la campagne aux premières cartes.** Les améliorations de base coûtent 1 à 2 Orbes Exaltés par emplacement. Prenez un Sinister Quarterstaff à hauts dégâts physiques, ou tout bâton avec une chance de critique similaire, pour 5 à 10 Orbes Exaltés, puis terminez le passage à Whirling Assault (nouvelles gemmes et or pour refaire l'arbre et l'ascendance).
+- Pour fabriquer le bâton vous-même, identifiez chaque bâton rare, utilisez des Orbes de Transmutation et d'Augmentation sur des bases normales, puis un Regal Orb ou une Greater Essence of Abrasion dès que vous obtenez un modificateur de dégâts physiques. L'échange est souvent plus rapide si vous commencez après le lancement de la ligue.
+- Les Uncut Skill Gems (niveau 14) et Uncut Support Gems (niveau 5) tombent plus souvent en cartes ; l'or est rarement un problème.
+- Les gants après Way of the Stonefist, dans cet ordre : bonus de dégâts critiques (qui devient chance de critique de base), vitesse d'attaque (qui devient Onslaught au toucher), dégâts physiques ou élémentaires fixes (qui deviennent dégâts supplémentaires), défenses en pourcentage (qui deviennent évasion et bouclier d'énergie globaux en plus).
+
+**Niveau 77+.** Des améliorations de 5 à 10 Orbes Exaltés par emplacement, un bâton avec + niveaux aux compétences de mêlée ou d'attaque et autant ou plus de DPS physique (10 à 50 Orbes Exaltés, ou 1 à 2 Orbes Divins), des gemmes brutes de niveau 17-18, et les troisième et quatrième ascendances. Avant ces épreuves, un Forgotten Warden pour la survie et des joyaux Time-Lost, les dégâts les plus rentables à ce stade malgré un coût de 1 à 3 Orbes Divins.
+
+**Des cartes avancées à l'endgame.** Un bâton à 550+ de DPS physique avec 15 %+ de chance de critique et + niveaux (beaucoup d'annonces affichent plus de DPS à cause des Greater Iron Runes), 150 % de rareté des objets, des bottes à 35 %+ de vitesse avec évasion et déflexion, un meilleur Forgotten Warden, des joyaux Time-Lost à grand rayon, près de 100 % de chance de critique sur Whirling Assault, et des gemmes de niveau 19-20 à 20 % de qualité.
+
+**Objectif final.** Le meilleur bâton possible avec de la vitesse d'attaque, une onction au Raven-Touched Shard sur le casque, Zarokh's Gift sur l'amulette, des joyaux Time-Lost à cinq modificateurs à 20 % de qualité, des gemmes de niveau 21 à 20-23 % de qualité. Esprits de Rite of Passage par priorité : Stag, Cat, Wolf, puis Owl et Bear.
+
 ## Priorités d'équipement
 
 Le bâton passe en premier : dégâts physiques, chance de coup critique, +niveau des compétences de corps à corps et vitesse d'attaque. Ensuite une amulette avec +niveau des compétences de corps à corps, des gants avec dégâts physiques ajoutés et dégâts critiques, et une armure hybride évasion/bouclier d'énergie avec des résistances.

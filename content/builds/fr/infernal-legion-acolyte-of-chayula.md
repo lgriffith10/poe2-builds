@@ -35,6 +35,28 @@ L'acte 1 est la partie la plus difficile. Nettoyez avec [[Frozen Locus]] que vou
 
 **Contre les boss.** Gardez [[Frost Bomb]] pour l'exposition, maudissez avec [[Blasphemy]], et restez proche pour que le compagnon et vos défenses restent actifs. [[Convalescence]] et [[Ghost Dance]] ajoutent des couches défensives.
 
+## Progression en endgame
+
+**Avant la respec en serviteurs.** Le build se respécialise vers le niveau 56 pour environ 39 000 pièces d'or : identifiez et vendez les rares pendant la campagne, et ne pariez pas ni n'achetez de rares chers aux marchands. Gardez l'équipement de serviteurs que vous trouvez (sceptres, casques avec + niveaux de serviteurs). Thrillsteel et Yoke of Suffering sont excellents si vous pouvez les acheter.
+
+**Premières cartes.**
+- Saitha's Spear dans le set d'armes 2 est bon marché et très fort. Achetez-en une qui a gardé « Aggravating any Bleeding with this Weapon also Aggravates all Ignites » et « (25-40)% chance to Aggravate Bleeding on Hit » : un embrasement aggravé inflige 100 % de dégâts en plus.
+- Un Trenchtimbre +1 niveau de serviteurs remplace la rondache rare (un +1 est bon marché). Blackflame est un anneau abordable, mais demande au moins 92 d'Esprit en plus sur l'équipement : Esprit augmenté sur le sceptre et + Esprit sur l'armure ou l'amulette.
+- Omen of Putrefaction permet d'obtenir tôt un casque +2 niveaux de serviteurs. Si les Shrine Sceptres sont chers, un Stoic, Wrath ou Omen Sceptre fait presque aussi bien.
+
+**Cartes rouges.**
+- Le bouclier d'énergie passe avant la vie, puis Chaos Inoculation : la vie et la résistance au chaos ne comptent plus. Gardez des bases évasion/bouclier d'énergie pour l'armure, les bottes et les gants.
+- Un Trenchtimbre +2 niveaux de serviteurs. Une ceinture et des anneaux avec des modificateurs de serviteurs venant de l'arbre Genesis, dès que possible ; sur la ceinture, la zone d'effet des serviteurs compte le plus.
+- Faites l'onction Warlord Leader sur l'amulette pour le rayon de présence et les dégâts. Les Greater Desert Runes comblent les manques de résistances.
+
+**Endgame.**
+- Le sceptre doit être un Shrine Sceptre Purity of Fire, sinon prenez Living Death. « Minions have increased Magnitude of Damaging Ailments » multiplie les dégâts : fabriquez-le avec un Prismatic Alloy, même avant la vie des serviteurs, et ajoutez-le aux anneaux par désacralisation avec un Altered Collarbone.
+- Gigantic Following en onction libère l'emplacement du soutien Hulking Minions. Rite of Passage : la variante Ox. Cadigan's Epiphany permet de mettre un joyau dans les gants.
+- Un focus Exposure renforce Frost Bomb et garde le bouclier d'énergie pendant le changement d'arme ; ajoutez-y de la résistance au feu pour compenser la perte de Purity of Fire. Clic droit sur l'icône de cadenas pour copier votre équipement pendant le changement d'arme.
+- Les Transcendent Limbs (zone de présence, déflexion, seuil d'étourdissement, évasion) ne coûtent rien tant que vous ne mourez pas, mais réapparaître à un checkpoint les retire : prenez-les seulement après avoir farmé votre compagnon idéal.
+
+**Min-max.** Mageblood avec Jade, Stibnite et Quicksilver (Gold si vos résistances restent à 95 % chacune pour l'Exposure, Bismuth sinon). « Gain Deflection equal to % of Evasion Rating » sur les gants, les bottes et l'armure plafonne la déflexion. Un Raven-Touched Shard ajoute un second notable en onction sur le casque, Jiquani's Thesis renforce la recharge du bouclier d'énergie avec Mageblood, et Sacrificial Regalia ajoute +1 aux gemmes corrompues. Les résistances élémentaires des serviteurs sur les anneaux aident dans le contenu très renforcé comme Expedition ; sinon, changer deux fois d'arme soigne les compagnons et retire leurs malus.
+
 ## FAQ
 
 **Où apprivoiser les deux compagnons ?** Capturez les deux bêtes avant la respécialisation du niveau 56. Dans les Interludes, quittez Khari Bazaar par la sortie nord-est puis dirigez-vous vers le nord-ouest jusqu'à un marchand situé près d'un point de passage : deux Plague Harvesters rares (ils ressemblent à des guêpes géantes) y apparaissent toujours, ne les tuez donc pas. Dans l'acte 3, le Troubled Camp des Infested Barrens possède un point de passage avec un Diretusk Boar rare. Chaque « Respawn at Checkpoint » relance leurs modificateurs de monstre : recommencez jusqu'à obtenir celui qu'il vous faut, puis apprivoisez la bête avec [[Tame Beast]].

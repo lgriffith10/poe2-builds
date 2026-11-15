@@ -29,6 +29,25 @@ L'armée permanente : [[Skeletal Warrior]] et [[Skeletal Brute]] devant, [[Skele
 
 Bouclier d'énergie, récupération de bouclier d'énergie et blocage. Reactive Growth et Avatar of Evolution réduisent les dégâts élémentaires et physiques subis, et [[Convalescence]] ajoute de la récupération.
 
+## Progression en endgame
+
+**Premières cartes.**
+- Plafonnez d'abord les résistances et les attributs, avec + niveaux de serviteurs sur le sceptre, le casque et l'amulette, et de l'Esprit augmenté ou + Esprit sur l'armure, l'amulette et le sceptre pour invoquer plus de serviteurs.
+- Un Rattling Sceptre est le meilleur, mais tout Shrine Sceptre convient : il donne des résistances et fait tourner Upwelling II, Strong Hearted, Cool Headed et Vitality II sans Esprit supplémentaire. Sertissez-y un Primate Talisman.
+- Du bouclier d'énergie sur chaque pièce d'armure et l'amulette, l'armure et le casque en priorité. La vitesse de recharge et la recharge plus rapide du bouclier d'énergie sont de bons modificateurs défensifs.
+- Passez Enfolding Dawn au Runeforge. Des Bones of Ullr pour plus de serviteurs (efficacité de réservation d'abord ; l'enclume Verisium ajoute 5 % de vitesse).
+- Onction Essence Infusion sur l'amulette. Talisman of Ralakesh dans le casque (Greater Iron Rune dans un second emplacement). Les Fluxes équilibrent les résistances ; une fois plafonnées, les Greater Iron Runes ajoutent du bouclier d'énergie et un Soul Core of Tacati aide la résistance au chaos.
+- Avec Refutation, passez une ou deux pièces d'armure au Runeforge pour gagner du Ward, en choisissant la base qui perd le moins de bouclier d'énergie.
+
+**Milieu de partie.** Une Sacramental ou Vile Robe avec une Craiceann's Rune of Recovery, Warlord Leader sur l'amulette, un Amanamu's Gaze dans les bottes à 360+ d'Esprit (une Warding Rune of Symbiosis dans des bottes à deux emplacements une fois les résistances plafonnées), et une Idol of the Sycophant dans le sceptre une fois Wisdom of the Maji obtenu (quatrième ascendance). Prism Guardian avec un Ox Idol, ou un focus à fort bouclier d'énergie avec +2 niveaux de serviteurs. Un Evergrasping Ring pour des dégâts de chaos supplémentaires des serviteurs si le reste de l'équipement couvre résistances et attributs ; Ventor's Gamble (Esprit) ou un anneau rare de serviteurs avec résistances fonctionnent aussi.
+
+**Fin de partie (guêpes).**
+- Une ceinture avec « Minions' Strikes have Melee Splash » est indispensable : elle libère l'emplacement de Minion Splash II sur les guêpes et les loups pour un autre soutien de dégâts.
+- Faites l'onction Blood of Rage (ou prenez-la sur un Megalomaniac) quand vous avez un From Nothing avec le keystone Bulwark ; si le Megalomaniac l'a déjà, faites l'onction The Soul Meridian.
+- Un focus à fort bouclier d'énergie avec +2 niveaux de serviteurs et une Ward Rune, Cadigan's Epiphany dans les gants, une Craiceann's Rune of Warding dans l'armure.
+
+**Min-max.** Onction Zarokh's Gift sur l'amulette, et The Soul Meridian ou Blood of Rage sur le casque avec un Raven-Touched Shard, selon votre Megalomaniac. Remplacez les Evergrasping Rings par des anneaux qui ajoutent chance et bonus de dégâts critiques aux serviteurs. Mageblood (Quicksilver, Gold, Bismuth) peut remplacer la ceinture +2 serviteurs : remplacez Amanamu's Gaze par une Farrul's Rune of the Chase pour profiter de la vitesse de Quicksilver, et remettez Minion Splash II sur Wolf Pack et les spectres à la place de Rapid Attacks II.
+
 ## Priorités d'équipement
 
 +Niveau de toutes les compétences de serviteur et esprit d'abord. [[Bones of Ullr]] et deux [[Evergrasping Ring]] sont les uniques d'endgame, avec [[Prism Guardian]] sur le second set d'armes.

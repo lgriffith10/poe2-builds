@@ -414,6 +414,28 @@ Act 1 is the hardest part. Clear with [[Frozen Locus]] detonated by the tip of [
 
 **Bossing.** Keep [[Frost Bomb]] down for exposure, curse with [[Blasphemy]], and stay close so the companion and your defences remain active. [[Convalescence]] and [[Ghost Dance]] add defensive layers.
 
+## Endgame Progression
+
+**Before the minion respec.** The build respecs around level 56 for roughly 39,000 gold: identify and sell rares during the campaign, and do not gamble or buy expensive rares from vendors. Keep minion gear (sceptres, helmets with + minion levels) you find along the way. Thrillsteel and Yoke of Suffering are great if you can afford them.
+
+**Early maps.**
+- Saitha's Spear in weapon set 2 is cheap and very strong. Buy one that kept "Aggravating any Bleeding with this Weapon also Aggravates all Ignites" and "(25-40)% chance to Aggravate Bleeding on Hit": aggravated ignites deal 100% more damage.
+- A +1 minion levels Trenchtimbre replaces the rare buckler (a +1 roll is cheap). Blackflame is an affordable ring, but needs at least 92 extra Spirit from gear: increased Spirit on the sceptre and + Spirit on body armour or amulet.
+- Omen of Putrefaction is an early way to a +2 minion levels helmet. If Shrine Sceptres are expensive, a Stoic, Wrath or Omen Sceptre is close enough.
+
+**Red maps.**
+- Energy shield over life, then Chaos Inoculation: life and chaos resistance stop mattering. Keep evasion/energy shield bases for body armour, boots and gloves.
+- A +2 minion levels Trenchtimbre. Belts and rings with minion modifiers from the Genesis Tree, as soon as you can afford them; on the belt, increased minion area of effect matters most.
+- Instill Warlord Leader on the amulet for presence radius and damage. Greater Desert Runes fill resistance gaps.
+
+**Endgame.**
+- The sceptre must be a Purity of Fire Shrine Sceptre, or allocate Living Death. "Minions have increased Magnitude of Damaging Ailments" is a damage multiplier: craft it with Prismatic Alloy, even before minion life, and desecrate it on rings with an Altered Collarbone.
+- Gigantic Following as an anoint frees the Hulking Minions support slot. Rite of Passage: the Ox variant. Cadigan's Epiphany puts a jewel in the gloves.
+- An Exposure focus scales Frost Bomb and keeps energy shield while swapping; add fire resistance to it to offset losing Purity of Fire. Right-click the lock icon to copy your gear over when weapon swapping.
+- Transcendent Limbs (presence area, deflection, stun threshold, evasion) cost nothing as long as you do not die, but respawning at a checkpoint removes them: get them only after farming your ideal companion.
+
+**Min-max.** Mageblood with Jade, Stibnite and Quicksilver (Gold if your resistances stay overcapped at 95% each for Exposure, Bismuth if they do not). "Gain Deflection equal to % of Evasion Rating" on gloves, boots and body armour caps deflection. A Raven-Touched Shard adds a second instilled notable on the helmet, Jiquani's Thesis boosts energy shield recharge with Mageblood, and Sacrificial Regalia adds +1 to corrupted gems. Minion elemental resistances on rings help in very juiced content such as Expedition; otherwise, swapping weapons twice heals the companions and clears their debuffs.
+
 ## FAQ
 
 **Where do I tame the two companions?** Capture both beasts before the level 56 respec. In the Interludes, leave Khari Bazaar by its north-east exit and head north-west until you reach a merchant next to a checkpoint: two rare Plague Harvesters (they look like giant wasps) always spawn there, so do not kill them. In Act 3, the Troubled Camp in the Infested Barrens has a checkpoint with a rare Diretusk Boar. Each "Respawn at Checkpoint" rerolls their monster modifiers, so repeat it until you get the one you want, then tame it with [[Tame Beast]].

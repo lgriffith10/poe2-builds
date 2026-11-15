@@ -27,6 +27,21 @@ Commencez avec [[Frost Bomb]], [[Escape Shot]] pour geler et vous repositionner,
 
 **Contre les boss.** Placez un [[Tornado Shot]] avant que le boss ne s'active, tirez [[Ice Shot]] à travers, appliquez [[Freezing Mark]], puis [[Barrage]] et [[Snipe]] une fois le boss gelé.
 
+## Progression en endgame
+
+**Premières cartes.**
+- Plafonnez d'abord les résistances et atteignez les prérequis d'attributs. Le plus d'évasion possible sur les pièces d'armure, et surtout de la vitesse de déplacement sur les bottes : selon le guide source, c'est la stat la plus importante de votre équipement.
+- Le carquois est une grosse source de dégâts : mettez-y un maximum de stats offensives.
+- Quand vous prenez Critical Strike, trouvez un arc avec beaucoup de précision. Un arc à dégâts physiques avec une forte précision est le plus gros gain de DPS ; les flèches supplémentaires aident au nettoyage. Dans le doute, améliorez l'arc.
+- Stalking Panther augmente l'évasion du casque, des gants et des bottes et permet de porter une armure à bouclier d'énergie : passez à une armure en bouclier d'énergie pur en le prenant. La déflexion sur l'équipement s'appuie sur votre évasion.
+- Un saphir avec 2 % de mana gagnée par ennemi tué règle la mana pendant le nettoyage.
+
+**Deux sets d'armes.** En endgame, utilisez deux arcs et deux carquois : Ice Shot sur le set principal, Snipe sur le second. Le set de nettoyage veut un arc avec des flèches supplémentaires et un Cadiro's Gambit, une fois que l'arc frappe assez fort. Le set cible unique ignore la vitesse d'attaque et les flèches : dégâts fixes, chance de critique et niveaux de gemmes, avec un carquois rare.
+
+**Joyaux.** Un Time-Lost Emerald à côté de Struck Through avec un bon jet de « increased effect of Notable Passive Skills in Radius », plus des dégâts d'attaque, du critique, des dégâts de projectiles, de l'évasion ou des rebonds sur le terrain. Des saphirs avec pénétration du froid, chance et dégâts critiques, dégâts de froid, ou vie et mana par ennemi tué.
+
+**Uniques d'endgame.** The Black Insignia (vitesse de déplacement, vitesse des compétences et évasion grâce à Tailwind, tant que vous évitez les coups), Headhunter pour les cartes, surtout pour farmer les rares dans les Breaches, Cadiro's Gambit pour le nettoyage, Garukhan's Resolve pour Snipe dès que possible, et Rakiata's Flow, très cher, le meilleur choix contre les ennemis résistants au froid.
+
 ## Priorités d'équipement
 
 Dégâts de l'arc et coups critiques, puis évasion et vie. Le guide source utilise [[Cadiro's Gambit]] et [[The Black Insignia]].

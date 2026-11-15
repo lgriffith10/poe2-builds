@@ -465,6 +465,22 @@ Clear with [[Frozen Locus]] and [[Herald of Ice]], detonating the Locus crystal 
 3. Wait out the boss's short damage reduction window at the start of the fight, then spend charges on [[Falling Thunder]].
 4. Cull enemies with [[Devour]] or [[Killing Palm]] to trigger Thrill of the Kill.
 
+## Endgame Progression
+
+**End of the campaign.** Hollow Palm Technique carries you from level 16, so you never need to upgrade a weapon: save your Blacksmith's Whetstones, Artificer's Orbs and Orbs of Alchemy. In the interludes Hollow Palm falls behind, so craft a Waxing Quarterstaff at level 54 with that hoard.
+
+**Early maps: offence.**
+- A Sinister Quarterstaff with critical hit chance: your damage comes from one Falling Thunder hit, and a non-crit means building Power Charges again. An elemental damage staff is better at this stage, because Whirling Assault has no conversion of its own.
+- The gloves are a huge source of power for the Martial Artist. Look for flat attack damage (becomes Damage as Extra), critical damage bonus (becomes flat critical chance, also available from an Essence of Hysteria), attack speed (becomes Onslaught chance) and flat defences (become energy shield and evasion per level).
+- Flat damage on rings, + to Melee Skill levels on the amulet, critical chance on helmet and amulet. Use Greater Jeweller's Orbs for extra support sockets.
+- Instill the amulet with a damage notable: Tainted Strike, Vulgar Methods or Overwhelming Strike.
+
+**Early maps: defence.** High evasion and energy shield on hybrid bases, high life on boots, body armour and helmet, percent evasion and energy shield on the amulet. Shavronne's Satchel with an instant recovery Ultimate Life Flask handles energy shield recovery.
+
+**Jewels.** Sapphires with critical chance, maximum energy shield and area of effect. A Time-Lost Sapphire fits next to the Dizzying Hits cluster: buy one where notables grant critical chance or critical damage. A Prism of Belief with + levels to Falling Thunder is the unique option.
+
+**Chaos Inoculation and endgame.** Switching to CI is simple: swap life modifiers for evasion and energy shield, add defensive modifiers to the amulet and respec into ailment and stun threshold based on energy shield. At that point Whirling Assault only builds combo, so move to a high physical damage quarterstaff with critical chance. Then aim for more energy shield, evasion and rarity, 35% movement speed boots, 3+ modifier jewels, level 20+ gems at 20% quality 6-linked with a Perfect Jeweller's Orb, and top rolls of melee levels and flat elemental damage.
+
 ## Gear Priorities
 
 Quarterstaff damage and critical strike first, then hybrid evasion and energy shield armour. [[Shavronne's Satchel]] is the source guide's belt.

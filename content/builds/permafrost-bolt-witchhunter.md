@@ -336,6 +336,18 @@ You can now fire both in sequence without reloading.
 
 **Bossing.** Apply [[Freezing Mark]], freeze the boss with Permafrost Bolts, then unload Fragmentation Rounds. [[Wind Dancer]] knocks back enemies that hit you.
 
+## Endgame Progression
+
+**Early maps.**
+- Cap resistances and meet attribute requirements first.
+- A crossbow with as much flat damage and attack speed as possible.
+- Stack evasion: Obsessive Rituals bases the Sorcery Ward shield on it. Then add life and more evasion until red maps feel safe.
+
+**Endgame uniques.**
+- **Hyrri's Ire** is the best-in-slot and most important item: it doubles your evasion when you have not been hit in the last 4 seconds, and with it your deflection and the Sorcery Ward shield. The higher your evasion, the less often you get hit and the more often the shield stays up.
+- **Yoke of Suffering** gives enemies 80% increased damage taken when they suffer all four elemental ailments. Permafrost Bolt chills and freezes, Charged Mark shocks enemies you freeze with Freezing Mark, and Explosive Grenade ignites on single target. Instill Climate Change on the amulet for extra fire damage.
+- **Sine Aequo** improves freeze uptime and damage: enemies are immobilised when the bar reaches half, roughly doubling freeze uptime on single targets.
+
 ## FAQ
 
 **How do I improve my defences?** Stack evasion. Besides avoiding hits, it scales your other layers: Deflect is based on your evasion rating, the [[Sorcery Ward]] shield depends entirely on your evasion, and being hit less lets that shield regenerate faster.

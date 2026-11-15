@@ -45,6 +45,19 @@ Le Spirit Walker ajoute un compagnon permanent avec [[Wild Protector]] et la com
 
 Comme la plupart des builds de Huntress, les défenses viennent de l'évasion et de la déviation sur chaque pièce d'armure, plus [[Wind Dancer]]. Gardez vos résistances au maximum et évitez les effets au sol.
 
+## Progression en endgame
+
+**Sets d'armes.** Le set d'armes 1 veut toujours le plus de vitesse d'attaque pour Whirling Slash. Le set 2 veut le plus de préfixes de dégâts fixes, pas le plus gros DPS affiché (que la vitesse d'attaque gonfle) : idéalement trois préfixes de dégâts fixes, de préférence physiques et de froid, avec beaucoup de chance de critique en suffixe. Les + niveaux aux compétences de projectile sont aussi très forts. Un Omen Sceptre dans le set 2 dès que possible ajoute Malice pour la chance de critique (il tombe dans les zones de niveau 16+).
+
+**Premières cartes.**
+- L'évasion et la déflexion sur l'armure, les gants, les bottes et le casque sont essentielles à vos défenses.
+- Un charme Valako's Roar est courant et bon marché, et ajoute de la génération de Frenzy Charges.
+
+**Uniques d'endgame.**
+- **The Taming** est très cher mais donne à vos Twisters les trois effets au sol au lieu d'un seul : vous n'avez plus à créer les effets au sol vous-même et l'emplacement de soutien de Frost Nexus se libère.
+- **The Sacred Flame** ajoute beaucoup de dégâts de feu supplémentaires, et fait compter la plus basse résistance d'un ennemi pour toutes ses résistances élémentaires. Les monstres n'ont souvent qu'une ou deux résistances : cela supprime en grande partie le besoin de pénétration.
+- **Lavianga's Spirits** entretient la mana et garde Stimulants et Imbibed Power toujours actifs ; l'arbre « aspirational » du guide source prévoit des changements quand vous l'obtenez.
+
 ## Priorités d'équipement
 
 La lance compte le plus : +niveau des compétences de projectile, dégâts de froid et physiques ajoutés, vitesse d'attaque et chance de coup critique. Viennent ensuite une amulette avec de l'Esprit et des niveaux de projectile, puis de la vie, de l'évasion et de la déviation sur l'armure. Les améliorations de fin de progression du guide source comprennent [[The Black Insignia]], [[The Taming]] et [[Sacred Flame]].

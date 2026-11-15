@@ -664,6 +664,22 @@ The permanent army: [[Skeletal Warrior]] and [[Skeletal Brute]] in front, [[Skel
 
 Stack energy shield, energy shield recovery and block. Soulless Form and Eternal Life work with Heavy Buffer to reduce the damage you take while you have energy shield. [[Convalescence]] adds recovery in long fights.
 
+## Endgame Progression
+
+**Early maps.**
+- Cap resistances and meet attribute requirements first, with + minion levels on sceptre, helmet and amulet, and increased Spirit or + Spirit on body armour, amulet and sceptre to summon more minions.
+- A Rattling Sceptre is best, but any Shrine Sceptre works: it gives resistances and runs Upwelling II, Strong Hearted, Cool Headed and Vitality II without extra Spirit. Put a Primate Talisman in it.
+- Energy shield on every armour piece and the amulet, the helmet first. Energy shield recharge rate and faster start of recharge are good defensive modifiers.
+- Runeforge Enfolding Dawn. Bones of Ullr for more minions (reservation efficiency first; the Verisium Anvil adds 5% movement speed).
+- Instill Essence Infusion on the amulet. Talisman of Ralakesh in the helmet (Greater Iron Rune in a second socket). Fluxes balance resistances; once capped, Greater Iron Runes add energy shield and a Soul Core of Tacati helps chaos resistance.
+- With Refutation, Runeforge one or two armour pieces for Ward, picking the base that loses the least energy shield.
+
+**Mid.** A Sacramental or Vile Robe, Warlord Leader on the amulet, an Amanamu's Gaze in the boots at 360+ Spirit, and Idol of Egrin or Greater Iron Rune in a second helmet socket. Use Prism Guardian or a high energy shield focus with +2 minion levels (take Warding Fetish with a focus). One Evergrasping Ring for extra minion chaos damage if the rest of your gear covers resistances and attributes; Ventor's Gamble (Spirit) or a rare minion ring with resistances also work.
+
+**Late (wasps).** A belt with "Minions' Strikes have Melee Splash" is essential: it frees the Minion Splash II slot on wasps and wolves for another damage support. Cadigan's Epiphany in the gloves and a Craiceann's Rune of Warding in the body armour.
+
+**Min-max.** Instill Zarokh's Gift on the amulet, and The Soul Meridian or Blood of Rage on the helmet with a Raven-Touched Shard, depending on your Megalomaniac. Replace the Evergrasping Ring with rings that add minion critical chance and critical damage bonus. Mageblood (Quicksilver, Gold, Bismuth) can replace the +2 minion belt: swap Amanamu's Gaze for a Farrul's Rune of the Chase to get Quicksilver's movement speed, and put Minion Splash II back on Wolf Pack and the spectres instead of Rapid Attacks II.
+
 ## Gear Priorities
 
 +Level of all Minion Skills and spirit on the sceptre, helmet and amulet. [[Prism Guardian]] is the shield of choice, with [[Bones of Ullr]] boots and an [[Evergrasping Ring]]. [[Enfolding Dawn]] is the source guide's campaign body armour.

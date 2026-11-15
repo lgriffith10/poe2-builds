@@ -479,6 +479,19 @@ passives:
 
 **Bossing.** Mark the boss with [[Hand of Chayula]], refresh [[Charged Staff]] and [[Rend]], add [[Tempest Bell]], then channel [[Whirling Assault]] in melee range while dodging telegraphed attacks. [[Ghost Dance]] and [[Wind Dancer]] help you survive the exchanges.
 
+## Endgame Progression
+
+**From the campaign to early maps.** Basic gear upgrades cost 1 to 2 Exalted Orbs per slot. Get a high physical damage Sinister Quarterstaff, or any staff with similar critical chance, for 5 to 10 Exalted Orbs, then finish the swap to Whirling Assault (new gems and gold to respec the tree and ascendancy).
+- To make the staff yourself, identify every rare quarterstaff, use Transmutation and Augmentation Orbs on normal bases, then a Regal Orb or a Greater Essence of Abrasion once you hit a physical damage modifier. Trade is often fastest if you start after launch day.
+- Uncut Skill Gems (level 14) and Uncut Support Gems (level 5) drop more often in maps; gold is rarely a bottleneck.
+- Gloves after Way of the Stonefist, in this order: critical damage bonus (becomes base critical chance), attack speed (becomes Onslaught on hit), flat physical or elemental damage (becomes damage as extra), percent defences (become more global evasion and energy shield).
+
+**Level 77+.** Gear upgrades of 5 to 10 Exalted Orbs per slot, a staff with + levels to Melee or Attack Skills and similar or higher physical DPS (10 to 50 Exalted Orbs, or 1 to 2 Divine Orbs), level 17-18 uncut gems, and the third and fourth ascendancies. Before those trials, a Forgotten Warden for survivability and Time-Lost jewels, the most efficient damage at this stage despite costing 1 to 3 Divine Orbs.
+
+**Late maps to endgame.** A 550+ physical DPS staff with 15%+ critical chance and + levels (many listings show higher DPS because of Greater Iron Runes), 150% increased item rarity, 35%+ movement speed boots with evasion and deflection, a better Forgotten Warden, large-radius Time-Lost jewels, close to 100% critical chance on Whirling Assault, and level 19-20 gems at 20% quality.
+
+**Aspirational.** The best staff you can afford with attack speed, a Raven-Touched Shard instill on the helmet, Zarokh's Gift on the amulet, five-mod Time-Lost jewels at 20% quality, level 21 gems at 20-23% quality. Rite of Passage spirits by priority: Stag, Cat, Wolf, then Owl and Bear.
+
 ## Gear Priorities
 
 The quarterstaff comes first: physical damage, critical strike chance, +Level of all Melee Skills and attack speed. Then an amulet with +Level of all Melee Skills, gloves with added physical damage and critical damage, and hybrid evasion/energy shield armour with resistances.

@@ -431,6 +431,25 @@ The campaign is played with a crossbow until level 36:
 
 **Single target.** Apply [[Elemental Weakness]] and [[Frost Bomb]] at the start of the fight and keep them up while your army works.
 
+## Endgame Progression
+
+**Red maps.**
+- Trenchtimbre once you no longer need the resistances on your shield; get a +2 when you can.
+- An Omen Sceptre is the best base; Malice adds a lot of single-target damage. "Surpassing Chance to gain a Puppet Master stack whenever you use a Command Skill" on the sceptre frees many passive points.
+- Emergent Instinct boosts regeneration, and Supporting Fire keeps it always active.
+- Replace Enfolding Dawn once you have enough Spirit on amulet and body armour.
+- On the belt, "Minions have Increased Area of Effect" and "Minions Deal Increased Damage with Command Skills" are must-haves.
+- Lavianga's Spirits gives steady mana recovery.
+- The talisman for Pounce needs critical chance, attack speed, accuracy and added cold damage to attacks, ideally as a prefix (any tier). Without the prefix, socket a Glacial Rune instead of the Soul Core of Quipolatl.
+
+**Endgame.**
+- As much energy shield as possible on helmet, gloves and boots.
+- Chober Chaber is a strict upgrade over Trenchtimbre thanks to Giant's Blood: get a corrupted one with +4 to minion skills and a low (80-85) Intelligence requirement.
+- Morior Invictus: all elemental resistances and all attributes are essential; reduced critical damage bonus against you is the best third modifier, otherwise Spirit or global defences. With only 4 sockets, drop the Craiceann's Rune of Recovery.
+- "Maximum Stacks of Puppet Master" on the sceptre adds damage and speed. A Raven-Touched Shard instills Gigantic Following on the helmet, and Cadigan's Epiphany adds a jewel in the gloves.
+
+**Min-max.** Mageblood with Bismuth, Jade and Quicksilver, Gold as an ideal fourth. Bismuth lets you trade resistances on gear for Intelligence, which frees the rings for minion modifiers. Chober Chaber can be double-corrupted with reduced attribute requirements, and Jiquani's Thesis boosts energy shield recharge with Mageblood.
+
 ## Gear Priorities
 
 Energy shield and minion modifiers. The source guide recommends jewels with increased maximum energy shield and faster start of energy shield recharge, then minion critical modifiers. [[Enfolding Dawn]] and [[Meginord's Girdle]] are its unique picks.

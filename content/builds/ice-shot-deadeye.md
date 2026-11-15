@@ -401,6 +401,20 @@ Add quality to [[Ice Shot]] as early as you can: in this version of the game, qu
 
 The build relies on Evasion and Deflection rather than raw life. [[Wind Dancer]] adds evasion and knocks back melee attackers, and [[Hyrri's Ire]] doubles your evasion while you have not been hit recently. Prioritise Deflection on helmet, gloves and boots. Damage over time and ground degens bypass evasion entirely, so step out of them and keep your resistances capped.
 
+## Endgame Progression
+
+**Early maps.**
+- First cap resistances and meet attribute requirements. As much evasion as possible on every armour piece, and above all movement speed on boots: the source guide calls it the most vital stat on your gear.
+- The quiver is a big damage source: stack offensive stats on it.
+- Hyrri's Ire is a strong body armour with a large evasion boost. Deflection on gear builds on your evasion.
+- A physical damage bow is the largest DPS upgrade; extra arrows help clear. When in doubt, upgrade the bow.
+
+**Two weapon sets.** In the endgame, run two bows and two quivers: Ice Shot on the main set, Snipe on the second. The clear set wants a bow with extra arrows and a Cadiro's Gambit, once the bow hits hard enough. The single-target set ignores attack speed and arrows: flat damage, critical chance and gem levels, with a rare quiver.
+
+**Jewels.** A Time-Lost Emerald next to Walker of the Wilds with a good "increased effect of Notable Passive Skills in Radius" roll, plus attack damage, critical, projectile damage, evasion or terrain chain modifiers. Sapphires with cold penetration, critical chance and damage, cold damage, or life and mana on kill.
+
+**Endgame uniques.** Headhunter for mapping, especially when farming rares in Breaches, Cadiro's Gambit for clear, Garukhan's Resolve for Snipe as soon as possible, and Rakiata's Flow as a very expensive best-in-slot against cold-resistant enemies.
+
 ## Gear Priorities
 
 Your bow is by far the most important item: look for high physical damage per second, attack speed and critical strike chance, with added cold damage and an additional arrow as bonuses. After that, an amulet with Spirit and +Level of all Projectile Skills, then life and resistances on the remaining slots.

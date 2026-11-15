@@ -45,6 +45,25 @@ L'ascendance Gemling Legionnaire accélère le combo : Advanced Thaumaturgy donn
 
 **Contre les boss.** Appliquez [[Sniper's Mark]], accumulez trois étapes de [[Whirling Slash]], puis répétez [[Barrage]] + [[Twister]] en gardant [[Berserk]] et [[Combat Frenzy]] actifs.
 
+## Progression en endgame
+
+**Sets d'armes.** Le set 1 rend Whirling Slash le plus rapide possible : foncez sur Dance with Death dans l'arbre et n'utilisez pas de main secondaire. Une Winged Spear dès l'acte 2, avec une Essence of Haste trouvée tôt, tient jusqu'aux cartes ; Skysliver est l'option si vous avez de la monnaie. Le set 2 sert aux dégâts de Twister : le plus de dégâts élémentaires fixes possible, la vitesse d'attaque n'y compte pas. Utilisez une rondache au début pour parer et lancer Fangs of Frost (surtout à l'acte 1), puis un sceptre d'Esprit pour plus de gemmes d'Esprit.
+
+**Premières cartes.**
+- The Taming est le plus gros gain du build : les trois effets au sol à la fois, plus de dégâts de Twister et une rotation plus simple. Si vous ne pouvez pas encore l'acheter, Berek's Grip, Berek's Pass ou Berek's Respite fonctionnent.
+- Yoke of Suffering est une amulette de dégâts utilisable dès les bas niveaux et loin dans l'endgame. Thrillsteel accélère Whirling Slash pendant la montée en niveau.
+- Sceptre : Guiding Palm of the Eye pour les dégâts. Sacred Flame est plus cher et demande d'être hors de la présence des ennemis, ce qui se combine mal avec Rakiata's Flow plus tard.
+- Lavianga's Spirits dans l'emplacement du flacon de mana, idéalement avec des dégâts physiques volés en mana sur les gants ou un anneau ; il active des passifs comme Stimulants pour un Whirling Slash encore plus rapide.
+- Vous vous déplacez avec Whirling Slash : les bottes peuvent laisser tomber la vitesse de déplacement pour l'évasion et la vie.
+
+**Endgame.**
+- Armure : Loreweave avec le modificateur Polcirkeln décuple le nettoyage avec Herald of Ice et les explosions d'armure, mais les Frenzy Charges deviennent plus dures à obtenir (le soutien Freeze et Pressure Points aident). Si vous manquez de défense, une armure en évasion pure est bien plus solide pour moins de dégâts. Perfidy peut recevoir une onction s'il a le modificateur « Raven-touched ».
+- Seconde lance : beaucoup de dégâts physiques avec chance de critique, bonus de dégâts critiques et + niveaux de projectiles. The Ordained est difficile à remplacer pour sa chance de critique.
+- Darkness Enthroned avec le modificateur d'armure et un Fox Idol pour la qualité des gemmes. Une Absent Amulet avec Eternal Rage va avec Berserk : faites l'onction Paragon (Ferocity, Isolation, Despair) pour la qualité des gemmes, et ajoutez un suffixe Kurgal avec un Preserved Collarbone pour jusqu'à 5 % de qualité des gemmes.
+- De l'évasion sur les bottes, les gants et le casque. Les bottes peuvent avoir durée des compétences et chance de ne pas consommer de charges (Uhtred's Sidereus), les gants des niveaux et de la vitesse de projectiles (Kolr's Hunt).
+
+**Min-max.** Mageblood avec Silver, Jade et Diamond. Rite of Passage (Cat est le meilleur et le plus cher). Une Soaring Spear avec vitesse d'attaque et le préfixe Celestial Alloy, remplie de Soul Cores of Quipolatl, maximise la vitesse de Whirling Slash.
+
 ## Priorités d'équipement
 
 [[The Taming]] d'abord, puis [[Skysliver]] et une bonne deuxième lance. De l'évasion et de la déviation sur le casque, les gants et les bottes, et de la vie partout. [[Yoke of Suffering]] et [[Guiding Palm of the Eye]] sont de bonnes pièces de dégâts ; [[Darkness Enthroned]] renforce les objets sertis.

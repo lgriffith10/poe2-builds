@@ -466,6 +466,25 @@ The Lich ascendancy carries the defences. Eldritch Empowerment grants more damag
 
 Stack energy shield on every armour slot and take the faster energy shield recharge nodes on the tree so Eldritch Empowerment never leaves you exposed. [[Convalescence]] adds an extra defensive layer for bosses.
 
+## Endgame Progression
+
+**After the campaign.** Check vendors and the gambling vendor to replace weak items, starting with capped resistances. Short on gold? Run low-tier maps, loot rares and use Transmutation and Augmentation Orbs on normal bases; in trade leagues, many upgrades cost a few Exalted Orbs each.
+
+**Early maps.**
+- Keep upgrading energy shield gear and reach 100% increased item rarity as soon as you can.
+- Take Eternal Life and equip Atziri's Disdain as soon as possible: a large survivability boost.
+- Rare jewels with increased maximum energy shield, and at least one with "Recover % of Maximum Mana on Kill" for mana sustain.
+- Convalescence and Ravenous Swarm need +50 Spirit in total from amulet and body armour. If you can only run one, pick Convalescence for safety or Ravenous Swarm for single-target damage.
+- Trade options: Ventor's Gamble (rarity and Spirit) and Ghostwrithe as a starter body armour.
+
+**Endgame.**
+- More + levels to all skills, more energy shield and rarity, fast boots, level 20-21 gems at 20% quality.
+- Boots and gloves with 100% increased effect of socketed items, using two sockets for a Talisman of Egrin and Tacati's Soul Core of Affliction.
+- Belt: Ingenuity boosts your rings (rarity, resistances, chaos damage, cast speed). Darkness Enthroned with two socketables is a viable alternative; many socketables are limited to one each.
+- A Megalomaniac with useful notables such as Spiral into Insanity or Momentum.
+
+**Aspirational.** Olroth's Resolve for survivability, a corrupted Atziri's Disdain with 18% of maximum life as extra energy shield, Headhunter for clear speed in juiced maps, Rite of Passage (Spirit of the Owl or of the Stag), four-mod jewels, a Prism of Belief with +3 to Essence Drain and a Heart of the Well with extra chaos damage or speed. A Snakepit in the right ring slot adds a chain once resistances and rarity allow it.
+
 ## Gear Priorities
 
 +Level of all Chaos Spell Skills on the wand and +Level of all Spell Skills on the focus and amulet are the main damage upgrades, along with cast speed. Everything else is energy shield and resistances. [[Atziri's Disdain]] is the source guide's helmet of choice.

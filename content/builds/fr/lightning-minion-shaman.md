@@ -29,6 +29,24 @@ Dès le premier interlude, des spectres Powered Zealot prennent en charge les d�
 
 Bouclier d'énergie, récupération de bouclier d'énergie et blocage, puis Chaos Inoculation en endgame. Reactive Growth et Avatar of Evolution réduisent les dégâts élémentaires et physiques subis, et [[Wolf Pack]] avec [[Loyalty]] réduit encore les dégâts des coups.
 
+## Progression en endgame
+
+**Premières cartes.**
+- Plafonnez d'abord les résistances et les attributs, avec + niveaux de serviteurs sur le sceptre, le casque et l'amulette, et de l'Esprit augmenté ou + Esprit sur l'armure, l'amulette et le sceptre pour invoquer plus de serviteurs.
+- Un Rattling Sceptre est le meilleur, mais tout Shrine Sceptre convient : il donne des résistances et fait tourner Upwelling II, Strong Hearted, Cool Headed et Vitality II sans Esprit supplémentaire. Sertissez-y un Primate Talisman.
+- Du bouclier d'énergie sur chaque pièce d'armure et l'amulette, l'armure et le casque en priorité. La vitesse de recharge et la recharge plus rapide du bouclier d'énergie sont de bons modificateurs défensifs.
+- Passez Enfolding Dawn au Runeforge. Des Bones of Ullr pour plus de serviteurs (efficacité de réservation d'abord ; l'enclume Verisium ajoute 5 % de vitesse).
+- Onction Essence Infusion sur l'amulette. Talisman of Ralakesh dans le casque (Greater Iron Rune dans un second emplacement). Les Fluxes équilibrent les résistances ; une fois plafonnées, les Greater Iron Runes ajoutent du bouclier d'énergie et un Soul Core of Tacati aide la résistance au chaos.
+
+**Milieu de partie (Chaos Inoculation).**
+- Le maximum de bouclier d'énergie sur chaque pièce. Une Sacramental ou Vile Robe, passée au Runeforge pour plus de bouclier d'énergie et du Runic Ward, avec une Craiceann's Rune of Recovery pour la récupération et les seuils d'altérations et d'étourdissement.
+- Onction Warlord Leader. Prism Guardian pour l'Esprit avec un Ox Idol, une Warding Rune of Symbiosis dans des bottes à deux emplacements, et un Amanamu's Gaze dans les bottes à 360+ d'Esprit.
+- Un Evergrasping Ring pour des dégâts de chaos supplémentaires des serviteurs (son inconvénient ne compte plus avec CI) si le reste de l'équipement couvre résistances et attributs, ou un anneau rare avec plusieurs modificateurs de serviteurs.
+
+**Fin de partie.** Primate Talisman et/ou Idol of the Sycophant dans le sceptre, un focus à fort bouclier d'énergie avec +2 niveaux de serviteurs, deux Evergrasping Rings, Cadigan's Epiphany dans les gants et une Craiceann's Rune of Warding dans l'armure. Avec les spectres Powered Zealot, un Chiming Staff dans le set d'armes 2 permet de lancer Sigil of Power avant un boss.
+
+**Min-max.** Onction The Soul Meridian sur le casque avec un Raven-Touched Shard et Zarokh's Gift sur l'amulette. Mageblood (Quicksilver, Gold, Silver ou Bismuth) peut remplacer la ceinture +2 serviteurs ; remplacez Amanamu's Gaze par une Farrul's Rune of the Chase pour profiter de la vitesse de Quicksilver.
+
 ## Priorités d'équipement
 
 +Niveau de toutes les compétences de serviteur et esprit d'abord. [[Bones of Ullr]] et deux [[Evergrasping Ring]] sont les uniques d'endgame du guide source, avec [[Prism Guardian]] sur le second set d'armes. [[Enfolding Dawn]] est une très bonne armure de campagne.

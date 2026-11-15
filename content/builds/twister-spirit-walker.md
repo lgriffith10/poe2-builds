@@ -296,6 +296,19 @@ Spirit Walker adds a permanent companion through [[Wild Protector]] and the [[Vi
 
 Like most Huntress builds, defences come from Evasion and Deflection on every armour slot, plus [[Wind Dancer]]. Keep resistances capped and avoid standing in ground effects.
 
+## Endgame Progression
+
+**Weapon sets.** Weapon set 1 always wants the most attack speed for Whirling Slash. Weapon set 2 wants the most flat damage prefixes, not the highest displayed DPS (which attack speed inflates): ideally three flat damage prefixes, preferably physical and cold, with high critical chance as a suffix. + levels to Projectile Skills are also very strong. An Omen Sceptre in set 2 as soon as possible adds Malice for critical chance (it drops in level 16+ zones).
+
+**Early maps.**
+- Evasion and deflection on body armour, gloves, boots and helmet are critical to your defences.
+- A Valako's Roar charm is cheap and common, and adds frenzy charge generation.
+
+**Endgame uniques.**
+- **The Taming** is very expensive but gives your Twisters all three ground effects instead of one, so you no longer create ground effects yourself and Frost Nexus's support slot is free.
+- **The Sacred Flame** adds a large chunk of damage as extra fire, and makes an enemy's lowest resistance count for all its elemental resistances. Monsters often have only one or two resistances, so this largely removes the need for penetration.
+- **Lavianga's Spirits** keeps mana flowing and keeps Stimulants and Imbibed Power always active; the source guide's aspirational tree has swaps for when you get it.
+
 ## Gear Priorities
 
 The spear matters most: +Level of all Projectile Skills, added cold and physical damage, attack speed and critical strike chance. An amulet with Spirit and projectile levels comes next, then life, evasion and Deflection on armour. Later upgrades from the source guide's aspirational setup include [[The Black Insignia]], [[The Taming]] and [[Sacred Flame]].

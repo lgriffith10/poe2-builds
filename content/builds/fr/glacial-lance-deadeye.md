@@ -26,6 +26,23 @@ Le guide source commence avec [[Twister]] et [[Whirling Slash]] : Whirling Slash
 
 **Contre les boss.** Posez [[War Banner]], appliquez vos marques, puis combinez [[Barrage]] et Glacial Lance. Restez en mouvement : le build n'est pas fait pour rester face aux boss.
 
+## Progression en endgame
+
+**Premières cartes.**
+- **Idol of Eramir** dans le sceptre est votre première priorité de dégâts en arrivant aux cartes : elle double à peu près la génération de charges. Si elle est chère, ne la gâchez pas sur un mauvais sceptre.
+- Le sceptre permet d'utiliser plus de gemmes d'Esprit et le Mirage Archer du début. Un Omen Sceptre ajoute de la chance de critique contre les boss ; un Shrine Sceptre avec Purity of Ice facilite ensuite le passage à Guiding Palm of the Eye et permet de sertir gratuitement des soutiens d'Esprit comme Vitality II et Cannibalism II. Il faut 240 d'Esprit entre l'amulette et le sceptre : 40 % d'Esprit augmenté suffit sur un sceptre rare, et avec Guiding Palm of the Eye il faut 40 d'Esprit sur l'amulette.
+- Évasion, bouclier d'énergie et déflexion sur toutes les pièces d'armure ; un casque en bouclier d'énergie pur pour Subterfuge Mask dès que vous y arrivez dans l'arbre. Les runes comblent les manques d'attributs et de résistances.
+- Un charme Valako's Roar est courant et bon marché, et ajoute de la génération de Frenzy Charges.
+
+**Arme d'endgame.** Les coups critiques font évoluer le build, mais la lance est la clé. Les Akoyan Spears tombent dans les zones de niveau 78 et sont la meilleure base : ramassez-les toutes, utilisez des Orbes de Transmutation et d'Augmentation pour chercher de bons modificateurs, puis dès que vous en avez deux bons, une Essence et un Preserved Jawbone la portent à quatre.
+
+**Fin de l'endgame.**
+- Le sceptre Sacred Flame est un gros gain de dégâts.
+- Uhtred's Chalice fonctionne avec Mana Remnants pour garder la mana pleine (priorité basse).
+- Rite of Passage avec Spirit of the Wolf ajoute de la puissance et propage Herald of Ice et les explosions d'armure grâce au bris d'armure.
+- The Fall of the Axe empêche les ralentissements et donne Onslaught.
+- Headhunter fonctionne, mais le build brille avec Mageblood. Vitesse de déplacement, vitesse d'attaque et évasion rendent même les cartes les plus dures rapides à nettoyer.
+
 ## Priorités d'équipement
 
 Dégâts de la lance, coups critiques et niveaux de projectile d'abord, puis évasion, déviation et vie sur l'armure.

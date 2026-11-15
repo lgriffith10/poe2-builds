@@ -516,6 +516,24 @@ From the first interlude, Powered Zealot spectres take over the damage, and Ragi
 
 Energy shield, energy shield recovery and block, then Chaos Inoculation in the endgame. Reactive Growth and Avatar of Evolution lower the elemental and physical damage you take, and [[Wolf Pack]] with [[Loyalty]] reduces damage from hits further.
 
+## Endgame Progression
+
+**Early maps.**
+- Cap resistances and meet attribute requirements first, with + minion levels on sceptre, helmet and amulet, and increased Spirit or + Spirit on body armour, amulet and sceptre to summon more minions.
+- A Rattling Sceptre is best, but any Shrine Sceptre works: it gives resistances and runs Upwelling II, Strong Hearted, Cool Headed and Vitality II without extra Spirit. Put a Primate Talisman in it.
+- Energy shield on every armour piece and the amulet, body armour and helmet first. Energy shield recharge rate and faster start of recharge are good defensive modifiers.
+- Runeforge Enfolding Dawn. Bones of Ullr for more minions (reservation efficiency first; the Verisium Anvil adds 5% movement speed).
+- Instill Essence Infusion on the amulet. Talisman of Ralakesh in the helmet (Greater Iron Rune in a second socket). Fluxes balance resistances; once capped, Greater Iron Runes add energy shield and a Soul Core of Tacati helps chaos resistance.
+
+**Mid (Chaos Inoculation).**
+- Maximum energy shield on every piece. A Sacramental or Vile Robe, Runeforged for more energy shield and Runic Ward, with a Craiceann's Rune of Recovery for recovery, ailment and stun threshold.
+- Instill Warlord Leader. Prism Guardian for Spirit with an Ox Idol, a Warding Rune of Symbiosis in two-socket boots, and an Amanamu's Gaze in the boots at 360+ Spirit.
+- One Evergrasping Ring for extra minion chaos damage (its drawback no longer matters with CI) if the rest of your gear covers resistances and attributes, or a rare ring with several minion modifiers.
+
+**Late.** Primate Talisman and/or Idol of the Sycophant in the sceptre, a high energy shield focus with +2 minion levels, two Evergrasping Rings, Cadigan's Epiphany in the gloves and a Craiceann's Rune of Warding in the body armour. With Powered Zealot spectres, a Chiming Staff in weapon set 2 lets you pre-cast Sigil of Power before a boss.
+
+**Min-max.** Instill The Soul Meridian on the helmet with a Raven-Touched Shard and Zarokh's Gift on the amulet. Mageblood (Quicksilver, Gold, Silver or Bismuth) can replace the +2 minion belt; swap Amanamu's Gaze for a Farrul's Rune of the Chase to get Quicksilver's movement speed.
+
 ## Gear Priorities
 
 +Level of all Minion Skills and spirit first. [[Bones of Ullr]] and two [[Evergrasping Ring]]s are the source guide's endgame uniques, with [[Prism Guardian]] on the second weapon set. [[Enfolding Dawn]] is a strong campaign body armour.

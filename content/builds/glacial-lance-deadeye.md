@@ -276,6 +276,23 @@ The source guide starts with [[Twister]] and [[Whirling Slash]]: Whirling Slash 
 
 **Bossing.** Drop [[War Banner]], apply your marks, then combine [[Barrage]] with Glacial Lance. Keep moving: the build is not designed to stand in front of bosses.
 
+## Endgame Progression
+
+**Early maps.**
+- **Idol of Eramir** in the sceptre is your first damage priority once you reach maps: it roughly doubles charge generation. If it is expensive, do not waste it on a bad sceptre.
+- The sceptre lets you run more Spirit gems and the early Mirage Archer setup. An Omen Sceptre adds critical chance for bosses; a Shrine Sceptre with Purity of Ice later eases the move to Guiding Palm of the Eye and lets you socket Spirit supports such as Vitality II and Cannibalism II for free. You need 240 Spirit between amulet and sceptre: a 40% increased Spirit roll covers it on a rare sceptre, and with Guiding Palm of the Eye you need 40 Spirit on the amulet.
+- Evasion, energy shield and deflection on every armour piece; a pure energy shield helmet for Subterfuge Mask once you path to it. Runes fix attribute and resistance gaps.
+- A Valako's Roar charm is cheap and common, and adds Frenzy Charge generation.
+
+**Endgame weapon.** Critical strikes scale the build, but the spear is key. Akoyan Spears drop in level 78 zones and are the best base: pick them all up, use Transmutation and Augmentation Orbs to look for good modifiers, then once you have two good ones, an Essence and a Preserved Jawbone take it to four.
+
+**Late endgame.**
+- The Sacred Flame sceptre is a big damage boost.
+- Uhtred's Chalice works with Mana Remnants to keep your mana full (low priority).
+- Rite of Passage with Spirit of the Wolf adds power and spreads Herald of Ice and armour explosions through armour break.
+- The Fall of the Axe prevents slows and grants Onslaught.
+- Headhunter works, but the build shines with Mageblood. Movement speed, attack speed and evasion make the hardest maps fast to clear.
+
 ## Gear Priorities
 
 Spear damage, critical strike and projectile levels first, then evasion, Deflection and life on armour.
