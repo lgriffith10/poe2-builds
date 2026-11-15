@@ -3,243 +3,360 @@ title: Poisonburst Arrow Acolyte of Chayula
 class: Monk
 ascendancy: Acolyte of Chayula
 author: Exile Codex
-updated: 2026-11-08
-patch: 0.5.5
+updated: 2026-11-15
+patch: "0.5.5"
 source:
-  title: "Forbidden Rites ladder: Acolyte of Chayula using Poisonburst Arrow"
-  author: NurgleTeo (poe.ninja)
-  url: https://poe.ninja/poe2/builds/forbiddenrites/character/%D0%9C%D0%B5%D0%BD%D1%82%D0%B0%D1%81-5124/NurgleTeo
-  updated: 2026-10-17
-origin: ladder
-summary: "Monk archer who stacks poison with Poisonburst Arrow, empowered by Archon of Chayula and Toxic Growth."
-tags: [ranged, bow, poison, chaos]
-damage: Chaos
+  title: "Poisonburst Arrow Acolyte of Chayula Build Guide"
+  author: "goratha (Maxroll)"
+  url: https://maxroll.gg/poe2/build-guides/poisonburst-arrow-acolyte-of-chayula-build-guide
+  updated: 2026-11-04
+summary: "Acolyte of Chayula whose Poisonburst Arrows set off chains of poison, bleed and chaos explosions, then awakens into the Archon of Chayula and its chaos tornadoes."
+tags: [bow, poison, chaos, damage over time, evasion, energy shield]
+damage: Chaos / Physical
 playstyle: Ranged attack
-difficulty: easy
-budget: high
+difficulty: medium
+budget: low
+tiers:
+  starter: D
 pros:
-  - "Poisonburst Arrow does almost all the damage"
-  - "Supports are nearly identical across players"
-  - "Poison clouds clear packs on their own"
+  - "Chain reactions of explosions for clear"
+  - "Choice of Power roughly triples damage"
+  - "Easy chaos resistance with Chayula's Gift"
 cons:
-  - "Poison takes a moment to kill"
-  - "The reference gear includes Headhunter"
-  - "Archon of Chayula adds a buff to manage"
+  - "Weak single target before Toxic Growth"
+  - "Archon of Chayula has a 20-second lockout"
 skills:
-  - gem: Poisonburst Arrow
-    supports: [Garukhan's Resolve, Bursting Plague, Execute III, Deadly Poison II, Tacati's Ire]
-  - gem: Archon of Chayula
-    supports: [Prolonged Duration II, Execute III, Withering Touch, Rageforged II, Vorana's Siege]
-  - gem: Repulsion
-    supports: [Living Lightning II, Bleed III, Ritualistic Curse, Magnified Area II]
-    note: Socketed in Blasphemy
-  - gem: Blasphemy
-    supports: []
-    note: Holds Repulsion
-  - gem: Gas Arrow
-    supports: [Prolonged Duration II, Encroaching Ground, Persistent Ground III, Deadly Poison II, Escalating Poison]
-  - gem: Herald of Plague
-    supports: [Atziri's Communion, Chaos Mastery, Cool Headed, Strong Hearted, Direstrike II]
-  - gem: Wind Dancer
-    supports: [Blind II, Magnified Area II, Knockback, Maim, Punch Through]
-  - gem: Herald of Blood
-    supports: [Magnified Area II, Poison III, Bleed III, Bursting Plague, Admixture]
-  - gem: Toxic Growth
-    supports: [Deadly Poison II, Concentrated Area, Long Fuse II, Escalating Poison, Execute III]
-  - gem: Into the Breach
+  - gem: "Archon of Chayula"
+    supports: [Prolonged Duration II, Magnified Area II, Poison III, Withering Touch, Corrosion]
+  - gem: "Into the Breach"
     supports: [Harmonic Remnants II, Remnant Potency III, Khatal's Rejuvenation]
-  - gem: Ghost Dance
-    supports: [Cooldown Recovery II, Direstrike I]
-  - gem: Eternal Rage
-    supports: []
-  - gem: Cackling Companions
-    supports: []
+  - gem: "Poisonburst Arrow"
+    supports: [Bleed III, Bursting Plague, Escalating Poison, Deadly Poison II, Fork]
+  - gem: "Wind Dancer"
+    supports: [Rage II, Maim, Blind II, Life Leech III]
+  - gem: "Herald of Plague"
+    supports: [Chaos Mastery]
+  - gem: "Plague Bearer"
+    supports: [Chaos Mastery, Astral Projection, Deadly Poison II, Exploit Weakness, Magnified Area II]
+  - gem: "Blasphemy"
+    supports: [Repulsion, Magnified Area II, Bleed III, Living Lightning II]
+  - gem: "Herald of Blood"
+    supports: [Poison III, Bursting Plague, Bleed III, Magnified Area II, Admixture]
+  - gem: "Ghost Dance"
+    supports: [Cooldown Recovery II]
+  - gem: "Toxic Growth"
+    supports: [Concentrated Area, Escalating Poison, Deadly Poison II, Long Fuse II, Arakaali's Lust]
+  - gem: "Vine Arrow"
+    supports: [Prolonged Duration II, Deliberation, Swift Affliction II, Magnified Area II, Stoicism II]
+gemPriority:
+  skills:
+    - label: ""
+      gems: [Poisonburst Arrow, Vine Arrow, Contagion, Toxic Growth]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Blood]
+    - label: "Act Ii"
+      gems: [Plague Bearer]
+    - label: "Act Iii"
+      gems: [Herald of Plague]
+    - label: "Act Iv"
+      gems: [Blasphemy]
+  supports:
+    - label: "Poisonburst"
+      gems: [Bleed I, Bursting Plague]
+    - label: "Toxic Growth"
+      gems: [Concentrated Area, Escalating Poison, Deadly Poison I]
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Campaign"
+        skills:
+          - gem: "Into the Breach"
+            supports: [Harmonic Remnants II, Remnant Potency III]
+          - gem: "Herald of Plague"
+          - gem: "Toxic Growth"
+            supports: [Concentrated Area, Escalating Poison, Deadly Poison II, Long Fuse I]
+          - gem: "Pounce"
+          - gem: "Vine Arrow"
+            supports: [Prolonged Duration I, Swift Affliction I, Deliberation]
+          - gem: "Poisonburst Arrow"
+            supports: [Bleed II, Bursting Plague, Escalating Poison]
+          - gem: "Wind Dancer"
+          - gem: "Plague Bearer"
+            supports: [Magnified Area I, Chaos Mastery]
+          - gem: "Herald of Blood"
+            supports: [Poison II, Bursting Plague, Bleed I]
+          - gem: "Blasphemy"
+            supports: [Repulsion, Magnified Area I, Living Lightning]
+      - name: "Early Maps"
+        skills:
+          - gem: "Archon of Chayula"
+            supports: [Prolonged Duration II, Magnified Area II, Poison III, Withering Touch, Corrosion]
+          - gem: "Into the Breach"
+            supports: [Harmonic Remnants II, Remnant Potency III, Khatal's Rejuvenation]
+          - gem: "Poisonburst Arrow"
+            supports: [Bleed III, Bursting Plague, Escalating Poison, Deadly Poison II, Fork]
+          - gem: "Wind Dancer"
+            supports: [Rage II, Maim, Blind II, Life Leech III]
+          - gem: "Herald of Plague"
+            supports: [Chaos Mastery]
+          - gem: "Plague Bearer"
+            supports: [Chaos Mastery, Astral Projection, Deadly Poison II, Exploit Weakness, Magnified Area II]
+          - gem: "Blasphemy"
+            supports: [Repulsion, Magnified Area II, Bleed III, Living Lightning II]
+          - gem: "Herald of Blood"
+            supports: [Poison III, Bursting Plague, Bleed III, Magnified Area II, Admixture]
+          - gem: "Ghost Dance"
+            supports: [Cooldown Recovery II]
+          - gem: "Toxic Growth"
+            supports: [Concentrated Area, Escalating Poison, Deadly Poison II, Long Fuse II, Arakaali's Lust]
+          - gem: "Vine Arrow"
+            supports: [Prolonged Duration II, Deliberation, Swift Affliction II, Magnified Area II, Stoicism II]
+    rotations:
+      - name: "Clear"
+        steps:
+          - gem: "Poisonburst Arrow"
+            count: 5
+            label: "Poisonburst Until 100% Plaguebearer"
+          - gem: "Plague Bearer"
+            label: "Use Active At 100%"
+      - name: "Single Target"
+        steps:
+          - gem: "Toxic Growth"
+          - gem: "Poisonburst Arrow"
+          - gem: "Plague Bearer"
+rotations:
+  - name: "Clear"
+    steps:
+      - gem: "Poisonburst Arrow"
+      - gem: "Plague Bearer"
+        label: "Use Active At 100%"
+      - gem: "Archon of Chayula"
+  - name: "Single Target"
+    steps:
+      - gem: "Archon of Chayula"
+      - gem: "Vine Arrow"
+        count: 2
+      - gem: "Toxic Growth"
+      - gem: "Plague Bearer"
+      - gem: "Toxic Growth"
 gear:
-  ring1:
-    base: Breach Ring
-    implicits: [+20% to Maximum Quality]
-    mods: [+16% to all Elemental Resistances, Adds 43 to 59 Fire damage to Attacks, Adds 4 to 113 Lightning damage to Attacks, +25% to Chaos Resistance, Adds 28 to 51 Physical Damage to Attacks, 12% increased Attack Speed]
-    ladder:
-      - name: Rare Ring
-        pct: 99
-      - name: Kalandra's Touch
-        pct: 16
-      - name: Original Sin
-        pct: 1
-      - name: Icefang Orbit
-        pct: 1
-  ring2:
-    unique: Kalandra's Touch
-    ladder:
-      - name: Rare Ring
-        pct: 99
-      - name: Kalandra's Touch
-        pct: 16
-      - name: Original Sin
-        pct: 1
-      - name: Icefang Orbit
-        pct: 1
-  body:
-    unique: Morior Invictus
-    runes: ["Rune of Foundations: +30 to Armour, +30 to Evasion Rating, +10 to maximum Energy Shield", "Rabbit Idol: 12% increased Rarity of Items found", "Hawk Idol: 10% increased Deflection Rating"]
-    ladder:
-      - name: Rare Body Armour
-        pct: 67
-      - name: Morior Invictus
-        pct: 29
-      - name: The Brass Dome
-        pct: 1
-      - name: Cospri's Will
-        pct: 1
   weapon:
     base: Obliterator Bow
-    implicits: [50% reduced Projectile Range]
-    mods: [+4.93% to Critical Hit Chance, 204% increased Physical Damage, +139 to Accuracy Rating, +17% to Critical Damage Bonus, Adds 30 to 52 Physical Damage, +2 to Level of all Attack Skills]
+    mods: [Increased Physical Damage, Adds Physical Damage, Chance to Fire Additional Projectiles, Onslaught on Kill]
     runes: ["Idol of Thruldana: 25% reduced Poison Duration, Targets can be affected by +1 of your Poisons at the same time", "Countess Seske's Rune of Archery: Bow Attacks fire an additional Arrow"]
-    ladder:
-      - name: Rare Bow
-        pct: 79
-      - name: Hysseg's Claw
-        pct: 34
-      - name: Voltaxic Rift
-        pct: 17
-      - name: Amor Mandragora
-        pct: 10
-  helmet:
-    base: Kamasan Tiara
-    mods: [+73 to maximum Energy Shield, 139% increased Energy Shield, +34 to maximum Mana, +45% to Fire Resistance, +41% to Cold Resistance, +44% to Lightning Resistance]
-    runes: ["2× Perfect Iron Rune: 40% increased Armour, Evasion and Energy Shield"]
-    ladder:
-      - name: Rare Helmet
-        pct: 91
-      - name: Alpha's Howl
-        pct: 5
-      - name: Decree of Acuity
-        pct: 1
-      - name: Vestige of Darkness
-        pct: 1
   offhand:
     base: Primed Quiver
-    implicits: [7% increased Attack Speed]
-    mods: [Adds 16 to 27 Physical Damage to Attacks, 44% increased Damage with Bow Skills, +1 to Level of all Projectile Skills, 31% increased Critical Hit Chance for Attacks, 39% increased Critical Damage Bonus for Attack Damage, Increases and Reductions to Projectile Speed also apply to Damage with Bows]
-    ladder:
-      - name: Rare Quiver
-        pct: 89
-      - name: Cadiro's Gambit
-        pct: 10
-      - name: Murkshaft
-        pct: 1
-      - name: Drillneck
-        pct: 0
+    mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, +Dexterity, Life on Kill, Chance to Fire Additional Projectiles]
+  helmet:
+    base: Sorcerous Tiara
+    mods: [Energy Shield, +Maximum Life, Fire Resistance, Lightning Resistance, Archon Duration]
+    runes: ["Rune of Reach: Remnants you create have 15% increased effect"]
+  body:
+    base: Corsair Coat
+    mods: [Evasion Rating, +Spirit, +Dexterity, Fire Resistance, Deflection]
+    runes: ["Greater Desert Rune: +18% to Fire Resistance", "Greater Storm Rune: +18% to Lightning Resistance", "Craiceann's Rune of Warding: 50% reduced effect of Curses on you"]
   gloves:
-    base: Secured Wraps
-    mods: [+2 to Level of all Projectile Skills, Adds 19 to 31 Physical Damage to Attacks, 40% increased Projectile Speed, 29% increased Projectile Damage, 16% increased Attack Speed, 25% increased Critical Damage Bonus]
-    runes: ["Idol of Sirrius: 8% increased Attack Speed", "Kolr's Hunt: Can roll Marksman modifiers"]
-    ladder:
-      - name: Rare Gloves
-        pct: 89
-      - name: Hateforge
-        pct: 5
-      - name: Maligaro's Virtuosity
-        pct: 1
-      - name: Plaguefinger
-        pct: 1
+    base: Stalking Bracers
+    mods: [Adds Fire Damage to Attacks, Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, Increased Attack Speed, Cold Resistance, Deflection]
+    runes: ["Courtesan Mannan's Rune of Cruelty: 20% increased Magnitude of Damaging Ailments you inflict"]
+  boots:
+    base: Charmed Shoes
+    mods: [Movement Speed, Evasion Rating, Energy Shield, Evasion and Energy Shield, +Spirit, Deflection]
+    runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
+  amulet:
+    base: Bloodstone Amulet
+    mods: [Evasion Rating, +Spirit, +All Attributes, +Strength, Grants a Passive Skill, Remnant Effect]
+  ring1:
+    base: Ruby Ring
+    mods: [Adds Physical Damage to Attacks, Fire Resistance, Cold Resistance, Remnant Effect]
+  ring2:
+    base: Sapphire Ring
+    mods: [Adds Physical Damage to Attacks, +Maximum Life, Increased Attack Speed, +Intelligence, Lightning Resistance, Remnant Effect]
+  belt:
+    base: Long Belt
+    mods: [+Maximum Life, Cold Resistance, Lightning Resistance]
   weapon2:
     unique: Hysseg's Claw
-    ladder:
-      - name: Rare Bow
-        pct: 79
-      - name: Hysseg's Claw
-        pct: 34
-      - name: Voltaxic Rift
-        pct: 17
-      - name: Amor Mandragora
-        pct: 10
-  boots:
-    base: Daggerfoot Shoes
-    mods: [Gain Deflection Rating equal to 23% of Evasion Rating, 35% increased Movement Speed, 100% increased Evasion and Energy Shield, +76 to Evasion Rating, +24 to maximum Energy Shield, 60% increased effect of Socketed Augment Items, +12 to Spirit]
-    runes: ["Soul Core of Citaqualotl: +9% to all Elemental Resistances", "Tecrod's Gaze: 16% increased Movement Speed when on Low Life"]
-    ladder:
-      - name: Rare Boots
-        pct: 94
-      - name: Atziri's Step
-        pct: 4
-      - name: Decree of Flight
-        pct: 1
-      - name: Corpsewade
-        pct: 0
-  belt:
-    unique: Headhunter
-    ladder:
-      - name: Rare Belt
-        pct: 35
-      - name: Mageblood
-        pct: 29
-      - name: Headhunter
-        pct: 28
-      - name: Darkness Enthroned
-        pct: 4
-  amulet:
-    base: Absent Amulet
-    implicits: [-1 Prefix Modifier allowed, -1 Suffix Modifier allowed]
-    mods: [+50 to Spirit, +3 to Level of all Projectile Skills, +5% to Quality of all Skills, "40% increased Global Armour, Evasion and Energy Shield"]
-    ladder:
-      - name: Rare Amulet
-        pct: 99
-      - name: Astramentis
-        pct: 1
-      - name: Beacon of Azis
-        pct: 0
-      - name: Idol of Uldurn
-        pct: 0
+gearStages:
+  campaign:
+    weapon:
+      unique: "Splinterheart"
+      runes: ["2× Greater Iron Rune: 18% increased Physical Damage"]
+    offhand:
+      base: Toxic Quiver
+      mods: [Adds Fire Damage to Attacks, Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, Mana on Kill]
+    helmet:
+      base: Leatherbound Hood
+      mods: [Evasion Rating, +Maximum Life, Lightning Resistance]
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
+    body:
+      base: Ascetic Garb
+      mods: [Evasion Rating, Energy Shield, Evasion and Energy Shield, +Maximum Life, +Spirit, Fire Resistance]
+      runes: ["Greater Iron Rune: 18% increased Armour, Evasion and Energy Shield", "Iron Rune: 16% increased Armour, Evasion and Energy Shield"]
+    gloves:
+      base: Buckled Wraps
+      mods: [Evasion and Energy Shield, Adds Physical Damage to Attacks, Adds Lightning Damage to Attacks, +Dexterity, Cold Resistance, Mana on Kill]
+      runes: ["Lesser Desert Rune: +10% to Fire Resistance"]
+    boots:
+      base: Runeforged Feathered Sandals
+      mods: [Movement Speed, Energy Shield, +Maximum Life, Lightning Resistance]
+      runes: ["Greater Glacial Rune: +18% to Cold Resistance"]
+    amulet:
+      base: Jade Amulet
+      mods: [+Maximum Life, +Spirit]
+    ring1:
+      base: Sapphire Ring
+      mods: [Adds Physical Damage to Attacks, Adds Lightning Damage to Attacks, Evasion Rating, +Dexterity, +Intelligence, Fire Resistance]
+    ring2:
+      unique: "Blackheart"
+    belt:
+      base: Wide Belt
+      mods: [+Maximum Life, +Strength, Cold Resistance, Lightning Resistance]
+    weapon2:
+      unique: Amor Mandragora
+  mapping:
+    weapon:
+      base: Obliterator Bow
+      mods: [Increased Physical Damage, Adds Physical Damage, Chance to Fire Additional Projectiles, Onslaught on Kill]
+      runes: ["Countess Seske's Rune of Archery: Bow Attacks fire an additional Arrow", "Idol of Thruldana: 25% reduced Poison Duration, Targets can be affected by +1 of your Poisons at the same time"]
+    offhand:
+      base: Primed Quiver
+      mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, +Dexterity, Life on Kill, Chance to Fire Additional Projectiles]
+    helmet:
+      base: Sorcerous Tiara
+      mods: [Energy Shield, +Maximum Life, Fire Resistance, Lightning Resistance, Archon Duration]
+      runes: ["Rune of Reach: Remnants you create have 15% increased effect"]
+    body:
+      base: Corsair Coat
+      mods: [Evasion Rating, +Spirit, +Dexterity, Fire Resistance, Deflection]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance", "Craiceann's Rune of Warding: 50% reduced effect of Curses on you"]
+    gloves:
+      base: Stalking Bracers
+      mods: [Adds Fire Damage to Attacks, Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, Increased Attack Speed, Cold Resistance, Deflection]
+      runes: ["Courtesan Mannan's Rune of Cruelty: 20% increased Magnitude of Damaging Ailments you inflict"]
+    boots:
+      base: Charmed Shoes
+      mods: [Movement Speed, Evasion Rating, Energy Shield, Evasion and Energy Shield, +Spirit, Deflection]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
+    amulet:
+      base: Bloodstone Amulet
+      mods: [Evasion Rating, +Spirit, +All Attributes, +Strength, Grants a Passive Skill, Remnant Effect]
+    ring1:
+      base: Ruby Ring
+      mods: [Adds Physical Damage to Attacks, Fire Resistance, Cold Resistance, Remnant Effect]
+    ring2:
+      base: Sapphire Ring
+      mods: [Adds Physical Damage to Attacks, +Maximum Life, Increased Attack Speed, +Intelligence, Lightning Resistance, Remnant Effect]
+    belt:
+      base: Long Belt
+      mods: [+Maximum Life, Cold Resistance, Lightning Resistance]
+    weapon2:
+      unique: Hysseg's Claw
+  minmax:
+    weapon:
+      base: Obliterator Bow
+      mods: [Increased Physical Damage, Adds Physical Damage, Accuracy Rating, Critical Hit Chance, Critical Damage Bonus, Onslaught on Kill]
+      runes: ["Idol of Thruldana: 25% reduced Poison Duration, Targets can be affected by +1 of your Poisons at the same time", "Countess Seske's Rune of Archery: Bow Attacks fire an additional Arrow"]
+    offhand:
+      base: Primed Quiver
+      mods: [Adds Physical Damage to Attacks, Adds Lightning Damage to Attacks, Increased Damage with Bow Skills, Attack Critical Hit Chance, Critical Damage Bonus, Increased Attack Speed]
+    helmet:
+      base: Ancestral Tiara
+      mods: [Energy Shield, +Maximum Life, Critical Hit Chance, Lightning Resistance, Archon Duration]
+      runes: ["Rune of Reach: Remnants you create have 15% increased effect", "Raven-Touched Shard"]
+    body:
+      base: Corsair Coat
+      mods: [Evasion Rating, +Spirit, Chaos Resistance, Deflection]
+      runes: ["Greater Desert Rune: +18% to Fire Resistance", "Greater Storm Rune: +18% to Lightning Resistance", "Craiceann's Rune of Warding: 50% reduced effect of Curses on you"]
+    gloves:
+      base: Polished Bracers
+      mods: [Adds Physical Damage to Attacks, Adds Cold Damage to Attacks, Adds Lightning Damage to Attacks, Critical Damage Bonus, Increased Attack Speed, Deflection]
+      runes: ["Courtesan Mannan's Rune of Cruelty: 20% increased Magnitude of Damaging Ailments you inflict", "Fenumus' Rune of Draining: 20% increased Withered Magnitude"]
+    boots:
+      base: Charmed Shoes
+      mods: [Movement Speed, Evasion Rating, Energy Shield, Evasion and Energy Shield, +Spirit, Deflection]
+      runes: ["Farrul's Rune of the Chase: 5% increased Movement Speed"]
+    amulet:
+      base: Absent Amulet
+      mods: [+Spirit, +Level of all Projectile Skills, Critical Hit Chance, Grants a Passive Skill, Remnant Effect]
+    ring1:
+      base: Ruby Ring
+      mods: [Adds Physical Damage to Attacks, Adds Lightning Damage to Attacks, Fire Resistance, Cold Resistance, Chaos Resistance, Remnant Effect]
+    ring2:
+      base: Sapphire Ring
+      mods: [Adds Physical Damage to Attacks, +Maximum Life, Increased Attack Speed, +Intelligence, Lightning Resistance, Remnant Effect]
+    belt:
+      unique: "Mageblood"
+    weapon2:
+      unique: Hysseg's Claw
 passives:
-  attribute: dex
+  attribute: str
   path:
     - "Flow Like Water"
-    - "Crashing Wave"
     - "Mindful Awareness"
     - "Step Like Mist"
-    - "Killer Instinct"
-    - "For the Jugular"
-    - "True Strike"
+    - "Flow State"
     - "Subterfuge Mask"
-    - "Spectral Ward"
-    - "Throatseeker"
+    - "Crippling Toxins"
     - "Escape Velocity"
-    - "Careful Assassin"
+    - "Tenfold Attacks"
+    - "Kite Runner"
+    - "First Teachings of the Keeper"
     - "Escalating Toxins"
-    - "Pure Chaos"
-    - "Cooked"
     - "Toxic Tolerance"
-    - "Heartbreaking"
-    - "Heartstopping"
-    - "Enhanced Reflexes"
-    - "Struck Through"
-    - "Craving Slaughter"
-    - "Wrapped Quiver"
-  ascendancy: [Archon of Chayula, Waking Dream, Lucid Dreaming, Chayula's Gift]
-  weaponSet1: [Lasting Toxins, Building Toxins, Stacking Toxins, Stylebender, Moment of Truth, Leeching Toxins]
-  weaponSet2: [Remnant Attraction, Vigorous Remnants, Empowering Remnants]
+    - "First Principle of the Hollow"
+    - "The Hollowkeeper"
+    - "Shimmering"
+    - "Quick Fingers"
+    - "Spectral Ward"
+    - "Catlike Agility"
+    - "Blur"
+  ascendancy: [Chayula's Gift, Waking Dream, Lucid Dreaming]
+  weaponSet1: [Blinding Strike, Lasting Toxins, Stacking Toxins, Master Fletching, Killer Instinct, Leeching Toxins, Building Toxins]
+  weaponSet2: [Empowering Remnants, Remnant Attraction]
 ---
-
 ## How It Works
 
-This page is drawn from the poe.ninja ladder rather than a written guide. [[Poisonburst Arrow]] bursts into poison on impact; almost every player links it with **Deadly Poison II (98%) and Bursting Plague (97%)**, with Tacati's Ire (55%) as the most common addition.
+[[Poisonburst Arrow]] starts the chain reaction: [[Herald of Blood]], [[Herald of Plague]] and Repulsion turn poisoned and bleeding enemies into a cascade of explosions. Bursting Plague can bleed, so it chains itself with Herald of Blood. [[Toxic Growth]] is the single-target skill, and [[Plague Bearer]] blows up its pustules in one use.
 
-Toxic Growth (92%), [[Archon of Chayula]] (88%) and [[Herald of Blood]] (87%) complete the setup on most characters. This character also uses [[Gas Arrow]] and [[Herald of Plague]].
+The Acolyte's Waking Dream spawns flame remnants around you: purple flames give 7% of damage as extra chaos, red and blue ones leech life and mana. Lucid Dreaming's Choice of Power adds damage as chaos and triples the build's damage. Chayula's Gift doubles your chaos resistance sources and adds +10% maximum chaos resistance. The last point, Archon of Chayula, gives 20% more physical and chaos damage and summons Chaos Tornadoes that Wither enemies and detonate Toxic Growth almost instantly; it needs Glory (gained within a second of attacking) and has a 20-second lockout after it ends. It unlocks after killing Tul and Esh in the endgame Breach questline.
 
-## Ascendancy and Key Passives
+Defences are evasion, energy shield and deflection.
 
-Waking Dream (99%), Choice of Power and Lucid Dreaming (98%), Chayula's Gift (96%) and Archon of Chayula (89%).
+## Leveling
 
-## Gear
+Poisonburst Arrow works from level 1 but lacks single target without flat damage on gear: Explosive Grenade or Twister are alternatives until level 14. Link Bleed I and Bursting Plague to Poisonburst Arrow, use Contagion early in Act 1, and link Herald of Blood (your first Spirit gem) to Poison I, Bursting Plague and Bleed I; keep it low level if attributes are tight. [[Vine Arrow]] takes damage supports. At level 14, [[Toxic Growth]] with Concentrated Area for easier overlaps. Plague Bearer is the second Spirit gem and Herald of Plague the third; Blasphemy and Repulsion once you have Spirit on gear and enough Intelligence (Repulsion scales with flat damage on quiver, rings and gloves, not the weapon).
 
-Nascent Hope (59%) and Hysseg's Claw (34%) are the most common uniques. This character wears [[Morior Invictus]], [[Kalandra's Touch]] and [[Headhunter]], which are endgame luxuries rather than requirements.
+Gear: flat damage on rings, gloves and quiver. Splinterheart is a great early bow that can be runeforged (with Medved's Crest of the Circle) at level 40 and lasts into maps. Watch for + attributes, and Spirit on chest and amulet for Blasphemy and Repulsion.
+
+## Playstyle
+
+**Mapping.** Spam Poisonburst Arrow and use Plague Bearer's active once it reaches 100%. Early on, weave in Vine Arrow and Toxic Growth for magic packs.
+
+**Bossing.** Use Archon of Chayula whenever it is up, cast Vine Arrow a few times, then Toxic Growth every other attack: it overrides its own pustules if they do not explode fast enough, so only recast after they pop. Use Plague Bearer between. With very high damage you can spam Toxic Growth while Archon is active.
+
+## Endgame Progression
+
+**Early maps.**
+- A high evasion body armour and a high energy shield helmet, for Subterfuge Mask and later Spectral Ward. Keep stacking flat damage on gloves, rings and quiver; a Primed Quiver is ideal for attack speed.
+- + Projectile levels anywhere (amulet, bow, quiver, "Marksman" gloves) add a lot of damage. More Spirit lets you run [[Ghost Dance]] instead of Pounce for recovery (its cost drops with quality).
+- A cheap amulet anoint: Serrated Edges for damage, or Beastial Skin defensively until you take it on the tree.
+- Support Waking Dream with Remnant Potency III and Harmonic Remnants II, plus Khatal's Rejuvenation for Ghost Dance cooldown. Fork on Poisonburst Arrow for clear. Living Lightning II on Blasphemy and Repulsion to trigger it. Prolonged Duration II on Archon of Chayula for longer tornadoes, and Poison III to detonate Toxic Growth. Arakaali's Lust is a cheap, strong boost for Toxic Growth, especially at +5 poisons.
+
+**Endgame.**
+- Craft the helmet with Cyclonic Alloy for better Archon uptime. Remnant effect on rings and amulet (Omen of the Liege with a Preserved Collarbone, an Amanamu prefix) and a Rune of Reach in the helmet make the purple flames much stronger.
+- In the bow, an Idol of Thruldana (+1 poison cap) and Countess Seske's Rune of Archery (an extra arrow); aim for 100% surpassing chance of an additional arrow for a third.
+- Craiceann's Rune of Warding with The Hollowkeeper makes you immune to curses. Replace Repulsion with Despair for single-target bosses.
+
+**Min-max.** Move from non-crit to crit: 50% critical chance on helmet, quiver and amulet for Garukhan's Resolve on Toxic Growth. A bow with high physical damage, critical chance and Onslaught on Kill. An Absent Amulet with Eternal Rage (enables Tacati's Ire on Plague Bearer) with Spirit and + Projectile levels; Dominion as an instill keeps Archon always active at reduced effect. Vorana's Siege on Plague Bearer, Her Declaration on Ghost Dance. Mageblood (Diamond flask if under 50% crit), Headhunter, and Rite of Passage (Cat, or Serpent as a cheaper option).
+
+## Gear Priorities
+
+Flat damage on rings, gloves and quiver and the bow's damage, + Projectile levels, then evasion and energy shield, Spirit for the heralds and auras, and remnant effect for Waking Dream.
 
 ## FAQ
 
-**Do I have to level with Poisonburst Arrow?** No. [[Poisonburst Arrow]] lacks single target damage until you get [[Toxic Growth]]. It works with levelling gear and is doable without, but grenades or [[Twister]] make Act 1 easier.
+**What is weapon set 2 "snapshotting"?** Entering a zone while on weapon set 2, which holds the remnant nodes, keeps those nodes active for the whole zone. If you enter on weapon set 1 by mistake, relog or re-enter the zone. The source guide notes this may be fixed; remnant pickup range on gear or passives is the fallback.
 
-**How does remnant snapshotting work?** Weapon set 2 holds the remnant nodes (Remnant Attraction, Vigorous Remnants, Empowering Remnants). Entering a zone while on set 2 applies those nodes for the whole zone, even after you swap back to set 1. If you enter a zone or map on set 1 by mistake, log out and back in or re-enter the zone. It adds a lot of damage; if it ever gets changed, remnant pickup range on gear or passives makes up for it.
-
-**Why is my single target damage low?** Keep [[Concentrated Area]] on [[Toxic Growth]], otherwise the pustules overlap much worse. Cast Toxic Growth once and only recast it after the first pustules explode, since a new cast destroys the old ones; with very high damage you can spam it during [[Archon of Chayula]]. Above all, stack flat damage on rings, quiver and gloves and as much damage as possible on the bow: that is where the damage comes from.
+**Why is my single target weak?** Use Concentrated Area on Toxic Growth, only recast Toxic Growth after the first pustules explode, and get as much flat damage on rings, quiver and gloves and damage on the bow as possible.
