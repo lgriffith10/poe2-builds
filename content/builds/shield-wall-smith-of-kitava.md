@@ -22,8 +22,8 @@ pros:
   - Shield, armour and Scavenged Plating make it sturdy
   - Bleed and poison keep ticking while you reposition
 cons:
-  - "Drawn from a level 98 ladder character: its gear (Headhunter, Constricting Command) is expensive"
-  - "No written source guide: no campaign route or detailed rotation"
+  - "Drawn from a level 98 ladder character: Headhunter and Mageblood are expensive"
+  - "No written source guide: the campaign comes from a Maxroll leveling guide for another build"
   - Damage over time builds kill a little slower than big hits on bosses
 skills:
   - gem: Shield Wall
@@ -55,6 +55,85 @@ skills:
     supports: [Chaos Mastery]
   - gem: Berserk
     supports: [Vitality II]
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Boneshatter, Shockwave Totem, Perfect Strike, Infernal Cry, Frost Bomb]
+    - label: "Act Ii"
+      gems: [Leap Slam, Forge Hammer]
+    - label: "Act Iii"
+      gems: [Hammer of the Gods, Earthshatter, Seismic Cry]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Ash]
+    - label: "Act Iii"
+      gems: [Scavenged Plating]
+  supports:
+    - label: "ACT I (Rapid Twice)"
+      gems: [Impact Shockwave, Concentrated Area, Rapid Attacks I, Magnified Area I, Overabundance I, Window of Opportunity I]
+    - label: "Act Ii"
+      gems: [Execute I, Brink I, Rapid Attacks I, Fist of War I, Crater]
+    - label: "Act Iii+"
+      gems: [Branching Fissures I, Fist of War II, Execute II, Urgent Totems II, Cannibalism I, Rapid Attacks II]
+levelingSource:
+  title: "Boneshatter Titan Build Guide"
+  url: https://maxroll.gg/poe2/build-guides/boneshatter-titan-leveling-guide
+leveling:
+  - steps:
+      - name: "Act 1"
+        skills:
+          - gem: "Mace Strike"
+            supports: [Concentrated Area, Rapid Attacks I]
+          - gem: "Boneshatter"
+            supports: [Impact Shockwave, Magnified Area I]
+          - gem: "Rolling Slam"
+            supports: [Rapid Attacks I]
+          - gem: "Shockwave Totem"
+            supports: [Overabundance I, Execute I]
+          - gem: "Infernal Cry"
+          - gem: "Perfect Strike"
+            supports: [Rapid Attacks I, Window of Opportunity I]
+          - gem: "Herald of Ash"
+          - gem: "Frost Bomb"
+      - name: "Act 2"
+        skills:
+          - gem: "Mace Strike"
+            supports: [Concentrated Area, Rapid Attacks I]
+          - gem: "Boneshatter"
+            supports: [Impact Shockwave, Magnified Area I]
+          - gem: "Rolling Slam"
+            supports: [Rapid Attacks I]
+          - gem: "Forge Hammer"
+            supports: [Fist of War I, Execute I]
+          - gem: "Shockwave Totem"
+            supports: [Overabundance I, Execute I]
+          - gem: "Infernal Cry"
+            supports: [Raging Cry]
+          - gem: "Leap Slam"
+            supports: [Brink I, Crater]
+          - gem: "Herald of Ash"
+      - name: "Act 3+"
+        skills:
+          - gem: "Mace Strike"
+            supports: [Rapid Attacks I, Armour Break I, Armour Demolisher I]
+          - gem: "Boneshatter"
+            supports: [Impact Shockwave, Magnified Area I]
+          - gem: "Forge Hammer"
+            supports: [Fist of War II, Execute II, Branching Fissures I]
+          - gem: "Shockwave Totem"
+            supports: [Overabundance I, Urgent Totems III]
+          - gem: "Infernal Cry"
+            supports: [Raging Cry]
+          - gem: "Leap Slam"
+            supports: [Brink I, Crater, Rapid Attacks II]
+          - gem: "Herald of Ash"
+            supports: [Cannibalism I]
+          - gem: "Scavenged Plating"
+            supports: [Prolonged Duration I]
+          - gem: "Hammer of the Gods"
+            supports: [Fist of War I, Heavy Swing]
+          - gem: "Seismic Cry"
+            supports: [Raging Cry]
 gear:
   belt:
     unique: Headhunter
@@ -217,14 +296,49 @@ passives:
 
 ## How It Works
 
-This page is drawn from the poe.ninja ladder rather than a written guide. Out of 1,241 Smith of Kitava characters, 617 use [[Shield Wall]], which makes it the ascendancy's most common main skill. The character shown here links it with Bleed III, Poison III, Heft, Close Combat II and the lineage support Atalui's Bloodletting, so its damage comes from **bleeding and poison** stacked on enemies.
+This page is drawn from the poe.ninja ladder rather than a written guide: 637 Smith of Kitava characters use [[Shield Wall]], and the reference character is level 98. Links vary more than on most builds: Heft (35%), Close Combat II (33%), Bleed III (29%), Poison III (19%) and Atalui's Bloodletting (18%) are the common ones. The reference character goes for bleeding and poison, which keep ticking while you reposition.
 
-[[Herald of Blood]] with Bursting Plague turns poisoned enemies into explosions for clearing. Most of these players also run warcries: Infernal Cry (74%) and [[Fortifying Cry]] (60%), plus [[Resonating Shield]] (53%) as a second shield skill.
+[[Herald of Blood]] with Bursting Plague makes poisoned enemies explode, [[Resonating Shield]] (53%) is a channelled shield attack, and [[Fortifying Cry]] (59%) adds Guard and stronger hits. [[Infernal Cry]] (73%) and Detonate Dead (43%) are other common picks. [[Scavenged Plating]], [[Magma Barrier]] and [[Raise Shield]] stack armour and block.
 
-## Ascendancy and Key Passives
+The Smith of Kitava ascendancy reforges your body armour:
+- **Coal Stoker (94%)**: fire resistance modifiers also give cold and lightning resistance at half value.
+- **Smith's Masterwork (59%)**: only a normal (white) body armour, but +200 armour per connected notable you allocate.
+- **Heatproofing (51%)**: the body armour makes you unaffected by damaging ailments.
+- The reference character also takes Internal Layer (no critical damage bonus against you), Leather Bindings (3% life regeneration per second), Flowing Metal (half your armour also applies to elemental damage) and Tribute to Utula (30% more Spirit).
 
-The Smith of Kitava's forge notables are nearly universal in this group: Coal Stoker (93%), Smith's Masterwork (60%), Forged in Flame (53%) and Heatproofing (51%). Blood Magic shows up on 46% of characters.
+## Leveling
 
-## Gear
+No ladder character shows a campaign, so the leveling steps on this page come from Maxroll's Boneshatter Titan leveling guide, a Warrior route with maces, Boneshatter and Shockwave Totem. The tree and ascendancy above are endgame choices: follow the leveling guide's tree during the campaign.
 
-The uniques that come up most in this group are Constricting Command (75%), Heart of the Well (66%), Rite of Passage (46%) and The Fall of the Axe (45%). The character's gear is high-end; for a budget start, focus on a shield with as much armour as possible, life and capped resistances, and add the uniques later.
+Pick up a shield and move to Shield Wall once you have it with Bleed and Poison supports. Take Coal Stoker first to make resistances easy, then Smith's Masterwork once you can wear a normal body armour, and Heatproofing.
+
+## Playstyle
+
+**Mapping.** Raise Shield Wall into packs, let bleeding and poison tick, and let Herald of Blood's explosions spread the kills. [[Leap Slam]] moves you between packs.
+
+**Bossing.** Fortifying Cry and [[Berserk]], then Shield Wall and Resonating Shield on the boss while the damage over time builds up. Raise Shield blocks heavy hits.
+
+## Endgame Progression
+
+**First maps.**
+- Constricting Command (74%) is cheap and adds life, attributes and life regeneration.
+- A tower shield with block chance and armour, and armour gear with life on every slot.
+- Fire resistance is the priority with Coal Stoker: it covers half of cold and lightning too.
+
+**Endgame.**
+- Heart of the Well (65%) is the common jewel, Rite of Passage (47%) and The Fall of the Axe (43%) the common charms.
+- [[Sacred Flame]] (41%), Against the Darkness (39%) and [[Nebuloch]] (39%) are frequent upgrades.
+- Blood Magic (45%) removes mana: skills cost life instead.
+- [[Headhunter]] and [[Mageblood]] (42%) are luxuries; the reference character wears Headhunter.
+
+## Gear Priorities
+
+Life, armour and block on the shield and armour pieces, fire resistance first thanks to Coal Stoker, then added physical damage and bleed or poison chance. Movement speed on boots.
+
+## FAQ
+
+**Bleed or poison?** Both appear: the reference character uses both. Pick one if your gear leans one way, and link Herald of Blood accordingly.
+
+**Why a white body armour?** Smith's Masterwork only allows a normal body armour, in exchange for a lot of armour from notables.
+
+**Why are links so different between players?** Shield Wall is played in several ways (bleed, poison, Detonate Dead); this page follows the reference character.

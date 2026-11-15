@@ -22,7 +22,7 @@ pros:
   - "Comet and other spells trigger on critical hits"
   - "Strong ascendancy with Phased Form and Quicksand Hourglass"
 cons:
-  - "Small sample: 239 ladder characters"
+  - "Small sample: 258 ladder characters"
   - "The trigger setup takes some understanding"
   - "The reference gear includes Mageblood"
 skills:
@@ -79,6 +79,91 @@ skills:
     supports: []
   - gem: Raise Shield
     supports: []
+gemPriority:
+  skills:
+    - label: "Start"
+      gems: [Spark, Flame Wall, Frost Bomb]
+    - label: "Act I"
+      gems: [Ice Nova, Frost Darts, Snap]
+    - label: "Act Ii"
+      gems: [Elemental Weakness]
+    - label: "Act III"
+      gems: [Frost Wall]
+    - label: "Maps"
+      gems: [Comet]
+  spirit:
+    - label: "Act I"
+      gems: [Withering Presence, Arctic Armour]
+    - label: "Act III"
+      gems: [Siphon Elements]
+    - label: "Maps"
+      gems: [Cast on Elemental Ailment]
+    - label: "160 Spirit"
+      gems: [Cast on Elemental Ailment, Siphon Elements, Convalescence]
+  supports:
+    - label: "Act I"
+      gems: [Controlled Destruction, Spell Cascade, Rapid Casting I, Overabundance I]
+    - label: "Act Ii"
+      gems: [Spell Echo, Rising Tempest, Magnified Area I, Heightened Curse, Prolonged Duration I, Fortress I]
+    - label: "Act III"
+      gems: [Astral Projection, Icicle, Harmonic Remnants II]
+    - label: "Act Iv"
+      gems: [Considered Casting, Potent Exposure, Cooldown Recovery II, Elemental Focus]
+    - label: "Maps"
+      gems: [Boundless Energy II, Efficiency II, Rising Tempest, Focused Curse]
+levelingSource:
+  title: "Ice Nova Snap Stormweaver Build Guide"
+  url: https://maxroll.gg/poe2/build-guides/cold-snap-frostbolt-stormweaver-leveling-guide
+leveling:
+  - steps:
+      - name: "Level 3 Swap"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Controlled Destruction, Magnified Area I]
+          - gem: "Frost Darts"
+          - gem: "Frost Bomb"
+          - gem: "Flame Wall"
+      - name: "Act 1"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Controlled Destruction, Magnified Area I]
+          - gem: "Frost Darts"
+            supports: [Controlled Destruction, Rapid Casting I]
+          - gem: "Frost Bomb"
+            supports: [Overabundance I, Spell Cascade]
+          - gem: "Flame Wall"
+          - gem: "Snap"
+          - gem: "Arctic Armour"
+      - name: "Act 2"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Magnified Area I, Controlled Destruction]
+          - gem: "Frost Darts"
+            supports: [Controlled Destruction, Considered Casting]
+          - gem: "Snap"
+            supports: [Rising Tempest, Magnified Area I]
+          - gem: "Frost Bomb"
+            supports: [Spell Echo, Overabundance I]
+          - gem: "Elemental Weakness"
+            supports: [Heightened Curse, Prolonged Duration II]
+          - gem: "Arctic Armour"
+      - name: "Act 3"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Astral Projection, Rising Tempest, Magnified Area II]
+          - gem: "Frost Darts"
+            supports: [Controlled Destruction, Considered Casting, Cold Penetration]
+          - gem: "Snap"
+            supports: [Magnified Area II, Elemental Focus, Cooldown Recovery I]
+          - gem: "Frost Wall"
+            supports: [Icicle, Spell Cascade, Cooldown Recovery I]
+          - gem: "Frost Bomb"
+            supports: [Spell Echo, Overabundance I]
+          - gem: "Elemental Weakness"
+            supports: [Heightened Curse, Prolonged Duration II]
+          - gem: "Siphon Elements"
+            supports: [Harmonic Remnants II]
+          - gem: "Arctic Armour"
 gear:
   gloves:
     base: Opulent Gloves
@@ -254,14 +339,50 @@ passives:
 
 ## How It Works
 
-This page is drawn from the poe.ninja ladder rather than a written guide. [[Frostbolt]] fires a slow cold projectile; players link it with **Sione's Temper (84%), Vilenta's Propulsion (81%) and Trickster's Shard (69%)**.
+This page is drawn from the poe.ninja ladder rather than a written guide: 258 Chronomancer characters use [[Frostbolt]], and the reference character is level 97. Frostbolt is the spell you aim; players link it with **Sione's Temper (84%)**, which builds up to a burst of extra projectiles in a circle, **Vilenta's Propulsion (83%)**, which applies cast speed to projectile speed, and **Trickster's Shard (69%)**, which creates a Fractured Mimic that casts the spell too.
 
-[[Frost Wall]] (86%), [[Comet]] (78%) and [[Frost Bomb]] (71%) round out most setups. This character triggers [[Comet]], [[Living Bomb]] and [[Grim Pillars]] through [[Cast on Critical]], and [[Spark]] through [[Spellslinger]].
+The rest of the damage is triggered. Frostbolt's critical hits fire [[Cast on Critical]], which holds [[Comet]] (80% of these players) and [[Living Bomb]], and a second Cast on Critical with [[Grim Pillars]]. [[Spellslinger]] casts [[Spark]] and [[Powered by Verisium]] on its own. [[Frost Wall]] (86%), [[Frost Bomb]] (71%) and [[Elemental Weakness]] (65%) are the common boss tools.
 
-## Ascendancy and Key Passives
+The Chronomancer ascendancy:
+- **Unbound Encore** grants [[Time Snap]], which resets your skill cooldowns.
+- **Quicksand Hourglass (86%)** grants Sands of Time.
+- **Now and Again (82%)** gives cascadable spells a 20% chance to Echo and repeatable spells a 20% chance to Repeat.
+- **Ultimate Command** grants [[Time Freeze]], which stops enemies in place.
+- **Phased Form (90%)** is the most common pick, although the reference character skips it: you take 30% less damage, then 30% of each hit four seconds later.
 
-Phased Form (91%), Quicksand Hourglass (86%), Now and Again (82%) and Footprints in the Sand (56%).
+## Leveling
 
-## Gear
+No ladder character shows a campaign, so the leveling steps on this page come from Maxroll's Cold Snap and Frostbolt Stormweaver leveling guide, a Sorceress route with Ice Nova, Frost Darts and Snap. The tree and ascendancy above are endgame choices: follow the leveling guide's tree during the campaign.
 
-[[Snakepit]] (78%) and Maligaro's Virtuosity (53%) are the most common uniques. This character wears [[Snakepit]], [[Reverie]], [[Alpha's Howl]], [[Sacred Flame]] and [[Crest of Ardura]] on the second weapon set; [[Mageblood]] is an endgame luxury.
+Frostbolt is in the leveling route already. Add Cast on Critical with Comet once you have critical chance and enough Spirit. Take Phased Form or Unbound Encore first, then Quicksand Hourglass and Now and Again.
+
+## Playstyle
+
+**Mapping.** Fire Frostbolt into packs: Sione's Temper's bursts and the triggered Comets clear the screen while Spellslinger fires Spark on its own.
+
+**Bossing.** Frost Wall to keep the boss in place, Frost Bomb and Elemental Weakness to lower resistances, then Frostbolt so its critical hits trigger Comet and Grim Pillars. Time Freeze holds the boss still, and Time Snap gives your cooldowns back for a second round.
+
+## Endgame Progression
+
+**First maps.**
+- Cheap and common uniques: [[Snakepit]] (78%, spell damage, cast speed and forking or chaining depending on the ring slot), [[Maligaro's Virtuosity]] (53%, a fixed 250% critical damage bonus) and Lavianga's Spirits (50%).
+- Critical chance on the weapon and focus: the Cast on Critical triggers depend on it.
+- Energy shield or evasion gear with capped resistances.
+
+**Endgame.**
+- Heart of the Well (68%) is the common jewel, Nascent Hope (63%), Rite of Passage (39%) and The Fall of the Axe (26%) the common charms.
+- The reference character wears [[Alpha's Howl]], [[Crest of Ardura]], [[Reverie]] and [[Sacred Flame]].
+- Whispers of Doom (21%) lets you apply an additional curse, and Chaos Inoculation (20%) is a minority choice.
+- [[Mageblood]] (36%) is a luxury, worn by the reference character but not required.
+
+## Gear Priorities
+
+Critical chance, + to spell skill levels and cast speed, then energy shield and capped resistances. Spirit for Archmage, Trinity and the meta gems, and movement speed on boots.
+
+## FAQ
+
+**Why do my Comets stop falling?** Cast on Critical needs critical hits from Frostbolt. More critical chance on gear, Pinpoint-style supports or Maligaro's Virtuosity fix it.
+
+**Should I take Phased Form?** 90% of these players do. It smooths out big hits; the reference character takes Now and Again instead for more damage.
+
+**What does Trickster's Shard do?** It creates a Fractured Mimic that casts Frostbolt with you, adding projectiles on top of Sione's Temper.

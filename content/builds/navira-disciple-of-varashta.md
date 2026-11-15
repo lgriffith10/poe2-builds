@@ -18,7 +18,7 @@ playstyle: Minions
 difficulty: easy
 budget: high
 pros:
-  - "Very popular: 5,617 ladder characters use Navira"
+  - "Very popular: 5,551 ladder characters use Navira"
   - "One main damage source, so few buttons to press"
   - "Links are nearly identical between players"
 cons:
@@ -60,6 +60,91 @@ skills:
     supports: [Last Gasp]
   - gem: Malice
     supports: []
+gemPriority:
+  skills:
+    - label: "Start"
+      gems: [Spark, Flame Wall, Frost Bomb]
+    - label: "Act I"
+      gems: [Ice Nova, Frost Darts, Snap]
+    - label: "Act Ii"
+      gems: [Elemental Weakness]
+    - label: "Act III"
+      gems: [Frost Wall]
+    - label: "Maps"
+      gems: [Comet]
+  spirit:
+    - label: "Act I"
+      gems: [Withering Presence, Arctic Armour]
+    - label: "Act III"
+      gems: [Siphon Elements]
+    - label: "Maps"
+      gems: [Cast on Elemental Ailment]
+    - label: "160 Spirit"
+      gems: [Cast on Elemental Ailment, Siphon Elements, Convalescence]
+  supports:
+    - label: "Act I"
+      gems: [Controlled Destruction, Spell Cascade, Rapid Casting I, Overabundance I]
+    - label: "Act Ii"
+      gems: [Spell Echo, Rising Tempest, Magnified Area I, Heightened Curse, Prolonged Duration I, Fortress I]
+    - label: "Act III"
+      gems: [Astral Projection, Icicle, Harmonic Remnants II]
+    - label: "Act Iv"
+      gems: [Considered Casting, Potent Exposure, Cooldown Recovery II, Elemental Focus]
+    - label: "Maps"
+      gems: [Boundless Energy II, Efficiency II, Rising Tempest, Focused Curse]
+levelingSource:
+  title: "Ice Nova Snap Stormweaver Build Guide"
+  url: https://maxroll.gg/poe2/build-guides/cold-snap-frostbolt-stormweaver-leveling-guide
+leveling:
+  - steps:
+      - name: "Level 3 Swap"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Controlled Destruction, Magnified Area I]
+          - gem: "Frost Darts"
+          - gem: "Frost Bomb"
+          - gem: "Flame Wall"
+      - name: "Act 1"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Controlled Destruction, Magnified Area I]
+          - gem: "Frost Darts"
+            supports: [Controlled Destruction, Rapid Casting I]
+          - gem: "Frost Bomb"
+            supports: [Overabundance I, Spell Cascade]
+          - gem: "Flame Wall"
+          - gem: "Snap"
+          - gem: "Arctic Armour"
+      - name: "Act 2"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Magnified Area I, Controlled Destruction]
+          - gem: "Frost Darts"
+            supports: [Controlled Destruction, Considered Casting]
+          - gem: "Snap"
+            supports: [Rising Tempest, Magnified Area I]
+          - gem: "Frost Bomb"
+            supports: [Spell Echo, Overabundance I]
+          - gem: "Elemental Weakness"
+            supports: [Heightened Curse, Prolonged Duration II]
+          - gem: "Arctic Armour"
+      - name: "Act 3"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Astral Projection, Rising Tempest, Magnified Area II]
+          - gem: "Frost Darts"
+            supports: [Controlled Destruction, Considered Casting, Cold Penetration]
+          - gem: "Snap"
+            supports: [Magnified Area II, Elemental Focus, Cooldown Recovery I]
+          - gem: "Frost Wall"
+            supports: [Icicle, Spell Cascade, Cooldown Recovery I]
+          - gem: "Frost Bomb"
+            supports: [Spell Echo, Overabundance I]
+          - gem: "Elemental Weakness"
+            supports: [Heightened Curse, Prolonged Duration II]
+          - gem: "Siphon Elements"
+            supports: [Harmonic Remnants II]
+          - gem: "Arctic Armour"
 gear:
   boots:
     base: Sekhema Sandals
@@ -232,14 +317,49 @@ passives:
 
 ## How It Works
 
-This page is drawn from the poe.ninja ladder rather than a written guide. [[Navira, the Last Mirage]] is a Djinn that fights at your side and casts cold commands; almost every player links it with **Muster (99%), Frost Nexus (94%), Bidding II (89%) and Encroaching Ground (86%)**. [[Kelari, the Tainted Sands]] is the second Djinn and is used by 99% of these players.
+This page is drawn from the poe.ninja ladder rather than a written guide: 5,551 Disciple of Varashta characters use [[Navira, the Last Mirage]], and the reference character is level 100. Navira is a Djinn that fights for you with cold damage. Her links barely change between players: **Muster (99%), Frost Nexus (94%), Bidding II (89%) and Encroaching Ground (86%)**, with Rakiata's Flow (25%) as an option. [[Kelari, the Tainted Sands]] (99%) is the second Djinn, linked the same way.
 
-Around them, this character adds [[Wolf Pack]], [[Skeletal Reaver]] and other skeletons for extra bodies, and curses with [[Despair]] through [[Cast on Minion Death]] and [[Enfeeble]] through [[Blasphemy]]. Ice Nova (63%) and Pain Offering (23%) are common alternatives on other characters.
+The rest supports the Djinns. [[Wolf Pack]] (69%) adds more minions, [[Despair]] in [[Cast on Minion Death]] curses enemies when a minion dies, and [[Blasphemy]] with [[Enfeeble]] weakens them. The reference character also keeps [[Skeletal Reaver]], [[Skeletal Arsonist]] and other skeletons with Last Gasp, and [[Purity of Ice]] for cold resistance.
 
-## Ascendancy and Key Passives
+The Disciple of Varashta ascendancy:
+- **Barya of Navira (96%)** and **Barya of Kelari (98%)** grant the two Djinns.
+- **Kelari's Deception (98%)** and **Navira's Fracturing (91%)** grant their extra skills.
+- **The Fourth Teaching (91%)** shortens energy shield recharge delay by one second, with faster recharge on low energy shield.
+- **Sacred Rituals (43%)** adds 60% of your current energy shield to armour against physical hits.
 
-Barya of Kelari and Kelari's Deception (98%), Barya of Navira (96%), Navira's Fracturing and The Fourth Teaching (91%) are near-universal. Chaos Inoculation is taken by 84% of the group.
+## Leveling
 
-## Gear
+No ladder character shows a campaign, so the leveling steps on this page come from Maxroll's Cold Snap and Frostbolt Stormweaver leveling guide, a Sorceress route with Ice Nova, Frost Darts and Snap. Our [Frostbolt Comet Disciple of Varashta](/builds/frostbolt-comet-disciple-of-varashta) guide uses the same ascendancy. The tree and ascendancy above are endgame choices: follow the leveling guide's tree during the campaign.
 
-The reference character is level 100. Nascent Hope (56%), From Nothing (48%) and [[Evergrasping Ring]] (47%) are the most common uniques; this character wears [[The Mutable Star]] for energy shield recharge. [[Mageblood]] and [[Kalandra's Touch]] are endgame luxuries seen on many ladder characters, whatever their build.
+Take Barya of Navira as soon as you reach the ascendancy and move your damage over to her, then Barya of Kelari. Chaos Inoculation (84%) is a later respec, once energy shield carries your defences.
+
+## Playstyle
+
+**Mapping.** Navira and Kelari clear on their own; move through the map and let them fight. Wolf Pack and the skeletons spread the damage.
+
+**Bossing.** Curse the boss with Blasphemy and let Cast on Minion Death add Despair as minions fall. Use the Djinns' extra skills on the boss and stay at range: energy shield recharge is your main defence.
+
+## Endgame Progression
+
+**First maps.**
+- A sceptre or focus with + to minion skill levels and Spirit, energy shield gear and capped resistances.
+- Evergrasping Ring (47%) is cheap and gives allies in your Presence extra chaos damage.
+- Keep your energy shield high before taking Chaos Inoculation.
+
+**Endgame.**
+- Nascent Hope (56%), Rite of Passage (42%) and Beira's Anguish (35%) are the common charms, From Nothing (47%) the common jewel, and Lavianga's Spirits (41%) the common flask.
+- [[The Mutable Star]] is the reference character's body armour: energy shield recharge rate and armour based on current energy shield.
+- [[Kalandra's Touch]] (24%) copies your other ring.
+- [[Mageblood]] (31%) is a luxury, worn by the reference character but not required.
+
+## Gear Priorities
+
+Energy shield, + to minion skill levels and Spirit, then capped resistances. Minion damage and allies' damage in your Presence on rings and amulet, and movement speed on boots.
+
+## FAQ
+
+**Why do so few players change Navira's links?** Muster, Frost Nexus and Bidding II are on almost every setup: they are simply the strongest supports for her.
+
+**Do I need Chaos Inoculation?** 84% of these players take it. It suits the build, since the defences are energy shield based, but respec only once your energy shield is high enough.
+
+**Is it worth running skeletons?** The reference character does, with Last Gasp. They give Cast on Minion Death bodies to trigger Despair, and extra targets for enemies.

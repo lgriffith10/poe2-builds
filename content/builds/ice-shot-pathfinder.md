@@ -52,6 +52,127 @@ skills:
     supports: [Knockback, Blind II, Magnified Area I]
   - gem: Ghost Dance
     supports: [Cooldown Recovery II]
+levelingSource:
+  title: "Lightning Arrow Deadeye Leveling Build Guide"
+  url: https://maxroll.gg/poe2/build-guides/lightning-arrow-deadeye-leveling-build-guide
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Act 1"
+        skills:
+          - gem: "Lightning Arrow"
+            supports: [Chain I, Rapid Attacks I]
+          - gem: "Lightning Rod"
+            supports: [Elemental Armament I, Multishot I]
+          - gem: "Frost Bomb"
+          - gem: "Herald of Thunder"
+            supports: [Elemental Armament I, Concentrated Area]
+          - gem: "Barrage"
+            supports: [Rapid Casting I]
+          - gem: "Freezing Salvo"
+            supports: [Hourglass]
+      - name: "Act 2"
+        skills:
+          - gem: "Lightning Arrow"
+            supports: [Chain II, Rapid Attacks I]
+          - gem: "Lightning Rod"
+            supports: [Elemental Armament II, Multishot II]
+          - gem: "Frost Bomb"
+          - gem: "Herald of Thunder"
+            supports: [Elemental Armament I, Concentrated Area]
+          - gem: "Barrage"
+            supports: [Rapid Casting I]
+          - gem: "Freezing Salvo"
+            supports: [Hourglass, Innervate]
+          - gem: "Voltaic Mark"
+            supports: [Prolonged Duration I, Mark for Death]
+      - name: "Act 3"
+        skills:
+          - gem: "Lightning Arrow"
+            supports: [Chain II, Rapid Attacks I, Charged Shots I]
+          - gem: "Lightning Rod"
+            supports: [Elemental Armament II, Multishot II, Concentrated Area]
+          - gem: "Frost Bomb"
+          - gem: "Herald of Thunder"
+            supports: [Elemental Armament II, Concentrated Area, Elemental Focus]
+          - gem: "Barrage"
+            supports: [Rapid Casting I, Cooldown Recovery I]
+          - gem: "Freezing Salvo"
+            supports: [Hourglass, Innervate]
+          - gem: "Voltaic Mark"
+            supports: [Prolonged Duration I, Mark for Death]
+          - gem: "Wind Dancer"
+            supports: [Blind I]
+          - gem: "Tornado Shot"
+            supports: [Overabundance I, Maim]
+      - name: "Act 4"
+        skills:
+          - gem: "Lightning Arrow"
+            supports: [Chain II, Rapid Attacks II, Charged Shots I]
+          - gem: "Lightning Rod"
+            supports: [Elemental Armament II, Multishot II, Concentrated Area]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure, Rapid Casting II]
+          - gem: "Herald of Thunder"
+            supports: [Elemental Armament II, Concentrated Area, Elemental Focus]
+          - gem: "Barrage"
+            supports: [Rapid Casting II, Cooldown Recovery II]
+          - gem: "Freezing Salvo"
+            supports: [Hourglass, Innervate]
+          - gem: "Voltaic Mark"
+            supports: [Prolonged Duration I, Mark for Death]
+          - gem: "Wind Dancer"
+            supports: [Blind I]
+          - gem: "Tornado Shot"
+            supports: [Overabundance II, Maim, Prolonged Duration II]
+      - name: "Act 5 / End of Campaign"
+        skills:
+          - gem: "Lightning Arrow"
+            supports: [Chain III, Rapid Attacks II, Charged Shots I]
+          - gem: "Lightning Rod"
+            supports: [Elemental Armament II, Multishot II, Concentrated Area]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure, Rapid Casting II]
+          - gem: "Herald of Thunder"
+            supports: [Elemental Armament II, Concentrated Area, Elemental Focus]
+          - gem: "Barrage"
+            supports: [Rapid Casting II, Cooldown Recovery II, Second Wind III]
+          - gem: "Freezing Salvo"
+            supports: [Hourglass, Innervate]
+          - gem: "Voltaic Mark"
+            supports: [Prolonged Duration II, Mark for Death II]
+          - gem: "Wind Dancer"
+            supports: [Blind II, Cannibalism I]
+          - gem: "Tornado Shot"
+            supports: [Overabundance II, Maim, Prolonged Duration II]
+    rotations:
+      - name: "Basic Single Target"
+        steps:
+          - gem: "Lightning Rod"
+            label: "Stack Max Rods"
+          - gem: "Lightning Arrow"
+            label: "Fire LA into Rods"
+      - name: "Advanced Single Target"
+        steps:
+          - gem: "Lightning Rod"
+            label: "Before the Boss Spawns"
+          - gem: "Frost Bomb"
+          - gem: "Tornado Shot"
+          - gem: "Voltaic Mark"
+            label: "As the Boss Spawns"
+          - gem: "Freezing Salvo"
+          - gem: "Barrage"
+            label: "Spam LA into LR/TS"
+          - gem: "Lightning Arrow"
+      - name: "Quick Single Target"
+        steps:
+          - gem: "Barrage"
+            label: "Quickly Stack Rods"
+          - gem: "Lightning Rod"
+          - gem: "Frost Bomb"
+          - gem: "Barrage"
+            label: "Spam LA into LR/TS"
+          - gem: "Lightning Arrow"
 gear:
   weapon:
     base: Warmonger Bow
@@ -221,14 +342,49 @@ passives:
 
 ## How It Works
 
-This page is drawn from the poe.ninja ladder rather than a written guide. [[Ice Shot]] fires a cold arrow that shatters into shards; players link it with **Elemental Armament II (98%), Cooldown Recovery II (92%) and Rapid Attacks II (78%)**. This character sockets it in [[Mirage Deadeye]], which adds mirages firing alongside you.
+This page is drawn from the poe.ninja ladder rather than a written guide: 835 Pathfinder characters use [[Ice Shot]], and the reference character is level 100. Ice Shot fires a cold arrow; players link it with **Elemental Armament II (98%), Cooldown Recovery II (92%) and Rapid Attacks II (78%)**, and half of them add Deliberation (50%). The reference character sockets it in [[Mirage Deadeye]], so a mirage fires Ice Shot with you.
 
-[[Tornado Shot]] (91%) and [[Herald of Ice]] (79%) are the usual clear companions, with [[Barrage]] (57%) and [[Freezing Mark]] (47%) on many characters. This one marks targets with [[Freezing Mark]] through [[Pounce]].
+Clear comes from [[Tornado Shot]] (90%) and [[Herald of Ice]] (80%), which shatters frozen enemies. [[Barrage]] (56%) is the usual boss tool, and [[Freezing Mark]] (47%) is linked to [[Pounce]] on the reference character. [[Cadiro's Gambit]] (83%) is the one unique almost everyone shares: each arrow becomes one of six special arrows.
 
-## Ascendancy and Key Passives
+The Pathfinder ascendancy is about movement:
+- **Path Seeker (99%)** is taken by almost everyone.
+- **Relentless Pursuit (96%)**: your speed is unaffected by slows.
+- **Traveller's Wisdom (89%)** lets attribute passives give 5% increased damage, defences or cost efficiency instead.
+- **Running Assault (77%)**: no heavy stun while sprinting, and 30% less movement speed penalty from using skills while moving.
 
-Path Seeker (99%), Relentless Pursuit (96%), Traveller's Wisdom (90%), Path of the Sorceress (88%) and Running Assault (77%).
+## Leveling
 
-## Gear
+No ladder character shows a campaign, so the leveling steps on this page come from Maxroll's Lightning Arrow Deadeye leveling guide, a Ranger bow route with Lightning Arrow, Lightning Rod and Barrage. The tree and ascendancy above are endgame choices: follow the leveling guide's tree during the campaign.
 
-[[Cadiro's Gambit]] is worn by 83% of these players. This character also wears [[Morior Invictus]] and [[Mageblood]], which are endgame luxuries rather than requirements.
+Swap to Ice Shot and Tornado Shot once you have them with Elemental Armament II, and add Herald of Ice for clear. Take Path Seeker and Relentless Pursuit first, then Traveller's Wisdom and Running Assault.
+
+## Playstyle
+
+**Mapping.** Fire Tornado Shot and Ice Shot ahead of you while moving; Herald of Ice shatters frozen packs. Running Assault lets you keep moving while you shoot.
+
+**Bossing.** Apply Freezing Mark, then Barrage and Ice Shot while the mirage adds its own shots. Stay mobile: Relentless Pursuit keeps you fast even when slowed, and [[Ghost Dance]] and [[Wind Dancer]] add defence.
+
+## Endgame Progression
+
+**First maps.**
+- A bow with high physical or cold damage and + to projectile skill levels carries the damage. [[Cadiro's Gambit]] (83%) is the quiver almost everyone uses.
+- Evasion gear with capped resistances, and added cold damage to attacks on rings and gloves.
+- Lavianga's Spirits (62%) is the common flask, and cheap.
+
+**Endgame.**
+- Heart of the Well (89%) is the common jewel, Rite of Passage (81%) and Nascent Hope (70%) the common charms.
+- Against the Darkness (48%) and [[Kalandra's Touch]] (46%) are frequent upgrades.
+- The reference character wears [[Morior Invictus]] and keeps [[Hysseg's Claw]] on weapon set 2.
+- [[Mageblood]] (50%) is a luxury, worn by the reference character but not required.
+
+## Gear Priorities
+
+Bow damage and + to projectile skill levels, then evasion and capped resistances. Added cold damage to attacks on rings and gloves, accuracy, and movement speed on boots.
+
+## FAQ
+
+**Which quiver should I use?** Cadiro's Gambit: 83% of these players use it.
+
+**How do I clear faster?** Tornado Shot and Herald of Ice do most of the clear; Ice Shot is the heavy hitter for rares and bosses.
+
+**Why Cooldown Recovery II on Ice Shot?** 92% of these players link it, so the mirage and the main skill come back faster.

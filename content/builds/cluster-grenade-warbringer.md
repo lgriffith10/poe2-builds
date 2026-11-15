@@ -23,7 +23,7 @@ pros:
   - Ancestral Spirits and Encase in Jade add help and protection
 cons:
   - "Drawn from a level 98 ladder character: Mageblood is out of reach for most players"
-  - "No written source guide: no campaign route or detailed rotation"
+  - "No written source guide: the campaign comes from a Maxroll leveling guide for another build"
   - Grenades need a moment to land, which takes practice on moving bosses
 skills:
   - gem: Cluster Grenade
@@ -51,6 +51,85 @@ skills:
     supports: []
   - gem: Eternal Rage
     supports: []
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Boneshatter, Shockwave Totem, Perfect Strike, Infernal Cry, Frost Bomb]
+    - label: "Act Ii"
+      gems: [Leap Slam, Forge Hammer]
+    - label: "Act Iii"
+      gems: [Hammer of the Gods, Earthshatter, Seismic Cry]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Ash]
+    - label: "Act Iii"
+      gems: [Scavenged Plating]
+  supports:
+    - label: "ACT I (Rapid Twice)"
+      gems: [Impact Shockwave, Concentrated Area, Rapid Attacks I, Magnified Area I, Overabundance I, Window of Opportunity I]
+    - label: "Act Ii"
+      gems: [Execute I, Brink I, Rapid Attacks I, Fist of War I, Crater]
+    - label: "Act Iii+"
+      gems: [Branching Fissures I, Fist of War II, Execute II, Urgent Totems II, Cannibalism I, Rapid Attacks II]
+levelingSource:
+  title: "Boneshatter Titan Build Guide"
+  url: https://maxroll.gg/poe2/build-guides/boneshatter-titan-leveling-guide
+leveling:
+  - steps:
+      - name: "Act 1"
+        skills:
+          - gem: "Mace Strike"
+            supports: [Concentrated Area, Rapid Attacks I]
+          - gem: "Boneshatter"
+            supports: [Impact Shockwave, Magnified Area I]
+          - gem: "Rolling Slam"
+            supports: [Rapid Attacks I]
+          - gem: "Shockwave Totem"
+            supports: [Overabundance I, Execute I]
+          - gem: "Infernal Cry"
+          - gem: "Perfect Strike"
+            supports: [Rapid Attacks I, Window of Opportunity I]
+          - gem: "Herald of Ash"
+          - gem: "Frost Bomb"
+      - name: "Act 2"
+        skills:
+          - gem: "Mace Strike"
+            supports: [Concentrated Area, Rapid Attacks I]
+          - gem: "Boneshatter"
+            supports: [Impact Shockwave, Magnified Area I]
+          - gem: "Rolling Slam"
+            supports: [Rapid Attacks I]
+          - gem: "Forge Hammer"
+            supports: [Fist of War I, Execute I]
+          - gem: "Shockwave Totem"
+            supports: [Overabundance I, Execute I]
+          - gem: "Infernal Cry"
+            supports: [Raging Cry]
+          - gem: "Leap Slam"
+            supports: [Brink I, Crater]
+          - gem: "Herald of Ash"
+      - name: "Act 3+"
+        skills:
+          - gem: "Mace Strike"
+            supports: [Rapid Attacks I, Armour Break I, Armour Demolisher I]
+          - gem: "Boneshatter"
+            supports: [Impact Shockwave, Magnified Area I]
+          - gem: "Forge Hammer"
+            supports: [Fist of War II, Execute II, Branching Fissures I]
+          - gem: "Shockwave Totem"
+            supports: [Overabundance I, Urgent Totems III]
+          - gem: "Infernal Cry"
+            supports: [Raging Cry]
+          - gem: "Leap Slam"
+            supports: [Brink I, Crater, Rapid Attacks II]
+          - gem: "Herald of Ash"
+            supports: [Cannibalism I]
+          - gem: "Scavenged Plating"
+            supports: [Prolonged Duration I]
+          - gem: "Hammer of the Gods"
+            supports: [Fist of War I, Heavy Swing]
+          - gem: "Seismic Cry"
+            supports: [Raging Cry]
 gear:
   gloves:
     base: Blacksteel Gauntlets
@@ -200,14 +279,50 @@ passives:
 
 ## How It Works
 
-This page is drawn from the poe.ninja ladder rather than a written guide. 298 of the 888 Warbringer characters on the ladder use [[Cluster Grenade]], and they agree on almost everything: **Multishot II and Payload are on 99%** of them and Fire Attunement on 90%. The character shown fires it from [[Mortar Cannon]].
+This page is drawn from the poe.ninja ladder rather than a written guide: 293 Warbringer characters use [[Cluster Grenade]], and the reference character is level 98. They agree on almost everything: **Multishot II and Payload are on 99%** of them and Fire Attunement on 89%. Payload gives each grenade a chance to go off again, at the cost of a longer cooldown, and Multishot II fires more of them.
 
-[[Voltaic Grenade]] (91%) adds lightning damage and shocks, and many players also throw Oil Grenade (38%). The Warbringer side comes from its ascendancy: [[Ancestral Spirits]] is used by 96% of this group, and [[Encase in Jade]] protects you.
+The reference character puts Cluster Grenade in [[Mortar Cannon]], a totem that fires the socketed grenade for you. [[Voltaic Grenade]] (90%) adds lightning damage and shocks, and Oil Grenade (38%) is a common third grenade. [[Crossbow Shot]] fills the gaps between cooldowns.
 
-## Ascendancy and Key Passives
+The Warbringer ascendancy turns totems into defence and help:
+- **Answered Call (100%)** gives one more totem and triggers [[Ancestral Spirits]] every time you summon one.
+- **Wooden Wall (97%)** takes 20% of the damage from hits from your nearest totem's life before yours.
+- **Jade Heritage (89%)** builds Jade stacks every second and grants [[Encase in Jade]], an emergency defensive spell.
+- **Anvil's Weight (89%)** breaks armour equal to 10% of hit damage, so the physical part of the grenades hits harder.
 
-Answered Call is taken by every character in this group, with Wooden Wall (96%), Jade Heritage (91%) and Anvil's Weight (89%). Blood Magic appears on 95% of them.
+Blood Magic (95%) removes mana: skills cost life instead, so life on gear and the leech or recovery on the tree matter more.
 
-## Gear
+## Leveling
 
-A Siege Crossbow carries the damage. The most common uniques are Fireflower (74%), Heart of the Well (68%), From Nothing (50%) and Rite of Passage (48%). The character's Mageblood is a luxury: capped resistances, life and a strong crossbow come first.
+No ladder character shows a campaign, so the leveling steps on this page come from Maxroll's Boneshatter Titan leveling guide, a Warrior route with maces, Boneshatter and Shockwave Totem. The tree and ascendancy above are endgame choices: follow the leveling guide's tree during the campaign.
+
+Pick up a crossbow and switch to grenades once you have Cluster Grenade and a good crossbow. Take Answered Call and Wooden Wall first: the totem soaks damage as soon as Mortar Cannon is down. Blood Magic is easier once you have enough life and life recovery.
+
+## Playstyle
+
+**Mapping.** Drop Mortar Cannon ahead of you, fire Cluster Grenade and Voltaic Grenade into packs, and keep moving: the totem and Ancestral Spirits finish what is left.
+
+**Bossing.** Place Mortar Cannon close to the boss so Wooden Wall keeps working, then alternate Cluster Grenade and Voltaic Grenade as their cooldowns come back. Grenades take a moment to land: aim where the boss will be. Cast Encase in Jade before big hits and keep [[Time of Need]] for emergencies.
+
+## Endgame Progression
+
+**First maps.**
+- A Siege Crossbow with high physical damage and + to projectile skill levels carries the damage.
+- Fireflower (74%) is cheap and adds levels to fire skills, but you take 100 fire damage each time you ignite: keep fire resistance capped.
+- Rings and gloves with added physical and fire damage to attacks, life and resistances. Armour body armour with Spirit.
+
+**Endgame.**
+- Heart of the Well (66%), From Nothing (51%) and Prism of Belief (36%) are the common jewels, Rite of Passage (48%) and Forsaken Bangle (20%) the common charms.
+- Iron Reflexes (47%) is a frequent keystone for evasion and armour gear.
+- [[Mageblood]] (32%) is a luxury, worn by the reference character but not required.
+
+## Gear Priorities
+
+A strong crossbow first, then life (Blood Magic pays costs with it), capped resistances and armour. Added physical and fire damage to attacks on rings and gloves, Spirit on the body armour, and movement speed on boots.
+
+## FAQ
+
+**Why do my skills cost life?** Blood Magic (95%) converts mana costs to life costs. Life leech, life regeneration and Time of Need cover it.
+
+**Where do Ancestral Spirits come from?** Answered Call triggers them each time you summon a totem, so placing Mortar Cannon often keeps them coming.
+
+**Why does my totem die fast?** Wooden Wall sends 20% of the hits you take to it. Give it room, and summon a new one when it falls.

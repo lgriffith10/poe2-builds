@@ -5,6 +5,9 @@
 // Rewrites the `leveling:`, `rotations:` and `gemPriority:` blocks of the front matter and leaves everything else untouched.
 //
 // Usage: node scripts/leveling-from-maxroll.cjs [slug...]   (no slug = every guide whose source is maxroll.gg)
+//        node scripts/leveling-from-maxroll.cjs <slug>=<Maxroll leveling guide URL>...
+//   The second form is for guides without a Maxroll source (ladder builds): their campaign leveling and gem priority
+//   come from a Maxroll leveling guide of the same class, credited as `levelingSource`; endgame rotations are left out.
 // Run `npm run data:sync` first.
 /* eslint-disable @typescript-eslint/no-require-imports -- plain CommonJS dev script */
 const fs = require("fs");
@@ -214,12 +217,29 @@ async function loadGuide(url) {
 }
 
 (async () => {
-  const wanted = process.argv.slice(2);
+  const args = process.argv.slice(2);
+  const borrowed = new Map(args.filter((a) => a.includes("=")).map((a) => [a.slice(0, a.indexOf("=")), a.slice(a.indexOf("=") + 1)]));
+  const wanted = args.map((a) => a.split("=")[0]);
   const files = fs
     .readdirSync(DIR)
     .filter((f) => f.endsWith(".md"))
     .filter((f) => !wanted.length || wanted.includes(f.replace(/\.md$/, "")));
   for (const f of files) {
+    const lvUrl = borrowed.get(f.replace(/\.md$/, ""));
+    if (lvUrl) {
+      const lv = await loadGuide(lvUrl);
+      if (!lv) {
+        console.log(`! ${f}: no planner on ${lvUrl}`);
+        continue;
+      }
+      const warnings = [];
+      const paths = leveling(lv.planner, (w) => warnings.push(w));
+      const priority = gemPriority(lv.planner);
+      rewrite(DIR + f, yaml(paths, [], paths.length ? { title: lv.title, url: lvUrl } : null, priority));
+      console.log(`✓ ${f}: leveling [${paths.map((p) => `${p.name ?? "campaign"}: ${p.steps.length}`).join(", ") || "none"}] from ${lvUrl}`);
+      for (const w of [...new Set(warnings)]) console.log(`    note: ${w}`);
+      continue;
+    }
     const url = fs.readFileSync(DIR + f, "utf8").match(/^\s+url:\s*"?(https:\/\/maxroll\.gg\/[^\s"]+)/m)?.[1];
     if (!url) {
       console.log(`- ${f}: no Maxroll source, skipped`);

@@ -18,7 +18,7 @@ playstyle: Caster
 difficulty: easy
 budget: high
 pros:
-  - "Very popular: 9,763 ladder characters use Flameblast"
+  - "Very popular: 9,458 ladder characters use Flameblast"
   - "One skill does nearly all the damage"
   - "Supports are nearly identical across players"
 cons:
@@ -68,6 +68,109 @@ skills:
     supports: []
   - gem: Incendiary Shot
     supports: []
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Explosive Grenade, Frost Bomb, Contagion, Flash Grenade, Pounce, Gas Grenade]
+    - label: "Act Ii"
+      gems: [Oil Grenade]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Ash]
+    - label: "Ash + Banner OR Blasphemy Temporal Chains"
+      gems: [War Banner, Blasphemy]
+  supports:
+    - label: "Act I"
+      gems: [Multishot I, Magnified Area I, Execute I]
+    - label: "Act Ii-Iii"
+      gems: [Multishot II, Short Fuse I, Persistent Ground I, Elemental Armament II, Magnified Area II]
+levelingSource:
+  title: "Flameblast Oil Grenade Gemling Build Guide"
+  url: https://maxroll.gg/poe2/build-guides/flameblast-oil-grenade-gemling-build-guide
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Act 1"
+        skills:
+          - gem: "Explosive Grenade"
+            supports: [Multishot I, Magnified Area I]
+          - gem: "Flash Grenade"
+            supports: [Multishot I, Magnified Area I]
+          - gem: "Fragmentation Rounds"
+          - gem: "Frost Bomb"
+          - gem: "Crossbow Shot"
+            supports: [Multishot I, Execute I]
+          - gem: "Contagion"
+          - gem: "Pounce"
+          - gem: "Gas Grenade"
+            supports: [Multishot I, Magnified Area I]
+          - gem: "Herald of Ash"
+      - name: "Act 2"
+        skills:
+          - gem: "Explosive Grenade"
+            supports: [Multishot II, Magnified Area I]
+          - gem: "Oil Grenade"
+            supports: [Multishot II, Volt]
+          - gem: "Flash Grenade"
+            supports: [Multishot I, Magnified Area I]
+          - gem: "Pounce"
+          - gem: "Gas Grenade"
+            supports: [Multishot II, Magnified Area I]
+          - gem: "Herald of Ash"
+          - gem: "Frost Bomb"
+          - gem: "Supporting Fire"
+            supports: [Bidding I, Lightning Attunement]
+      - name: "Act 3"
+        skills:
+          - gem: "Explosive Grenade"
+            supports: [Multishot II, Elemental Armament II, Short Fuse I]
+          - gem: "Oil Grenade"
+            supports: [Multishot II, Volt, Deliberation]
+          - gem: "Flash Grenade"
+            supports: [Multishot I, Magnified Area I]
+          - gem: "Pounce"
+          - gem: "Gas Grenade"
+            supports: [Multishot II, Magnified Area I, Elemental Armament II]
+          - gem: "Herald of Ash"
+          - gem: "Frost Bomb"
+          - gem: "Supporting Fire"
+            supports: [Bidding I, Lightning Attunement]
+    rotations:
+      - name: "Clear"
+        steps:
+          - gem: "Flash Grenade"
+            label: "(Stun enemies)"
+          - gem: "Explosive Grenade"
+            label: "Predict where enemies will be"
+          - gem: "Fragmentation Rounds"
+            label: "Finish stragglers or shoot new grenade"
+          - gem: "Explosive Grenade"
+          - gem: "Gas Grenade"
+            label: "Alternate between Grenades once unlocked"
+          - gem: "Cluster Grenade"
+      - name: "Misc."
+        steps:
+          - gem: "Supporting Fire"
+            label: "Freely use, better on larger packs"
+          - gem: "Pounce"
+            label: "For mobility"
+          - gem: "Contagion"
+            label: "For first few levels"
+      - name: "Single Target"
+        steps:
+          - gem: "Frost Bomb"
+            label: "Use right before Boss becomes targetable"
+          - gem: "Supporting Fire"
+          - gem: "Oil Grenade"
+            label: "For slow + Exposure"
+          - gem: "Explosive Grenade"
+            label: "Boom"
+          - gem: "Gas Grenade"
+          - gem: "Cluster Grenade"
+          - gem: "Crossbow Shot"
+            label: "Use in Act 1 when Grenade recharging"
+          - gem: "Frost Bomb"
+            label: "Maintain 25% Exposure"
 gear:
   amulet:
     base: Gold Amulet
@@ -215,20 +318,50 @@ passives:
 
 ## How It Works
 
-This page is drawn from the poe.ninja ladder rather than a written guide. [[Flameblast]] builds up while you channel and erupts in a large fire explosion; players link it with **Considered Casting (94%), Searing Flame II (91%) and Concentrated Area (90%)**, then Burgeon II (69%) and Controlled Destruction (67%).
+This page is drawn from the poe.ninja ladder rather than a written guide: 9,458 Gemling Legionnaire characters use [[Flameblast]], and the reference character is level 100. You channel Flameblast to build up stages, then release it for a large fire explosion. Players link it with **Considered Casting (94%), Searing Flame II (91%) and Concentrated Area (90%)**, then Burgeon II (69%) and Controlled Destruction (67%). Our [Flameblast Oil Grenade Gemling](/builds/flameblast-oil-grenade-gemling) guide, from Maxroll, plays the same skill.
 
-[[Oil Grenade]] (82%) covers enemies in oil before the blast, and many players add Tornado (76%) or [[Elemental Weakness]] (48%). This character also uses [[Sigil of Power]], [[Despair]] through [[Blasphemy]] and [[Refutation]] through [[Cast on Dodge]].
+[[Oil Grenade]] (82%) soaks enemies in oil before you channel, [[Despair]] in [[Blasphemy]] curses them, and [[Sigil of Power]] boosts spell damage while you stand in it. [[Contagion]] in [[Cast on Elemental Ailment]] spreads to nearby enemies, and [[Refutation]] in [[Cast on Dodge]] blocks damage when you dodge roll. [[Arctic Armour]] and [[Wind Dancer]] add defence while you stand still.
 
-## Ascendancy and Key Passives
+The Gemling Legionnaire ascendancy is about gems:
+- **Essence of Virtue (100%)** grants [[Virtuous Barrier]].
+- **Advanced Thaumaturgy (100%)** gives socketed skills an additional effect from gem quality: quality your main gems.
+- **Implanted Gems (96%)** and **Gem Studded (91%)**: Gem Studded rewards the most common support colour, for example 30% less skill cost with mostly blue supports.
+- Neurological Implants (90%) is also taken by almost everyone.
 
-Essence of Virtue and Advanced Thaumaturgy (100%), Implanted Gems (96%), Gem Studded (91%) and Neurological Implants (90%).
+## Leveling
 
-## Gear
+No ladder character shows a campaign, so the leveling steps on this page come from Maxroll's Flameblast Oil Grenade Gemling guide, the same skill on the same ascendancy. The tree and ascendancy above are endgame choices: follow that guide's tree during the campaign.
 
-Rite of Passage (60%), Lavianga's Spirits (59%) and Mageblood (55%) are the most common uniques. This character wears [[Decree of Acuity]], [[Atziri's Step]] and [[Blackflame]]; [[Mageblood]] and [[Morior Invictus]] are endgame luxuries.
+Take Essence of Virtue and Advanced Thaumaturgy first, then Implanted Gems and Gem Studded. Put your first Gemcutter's Prisms into Flameblast to benefit from Advanced Thaumaturgy.
+
+## Playstyle
+
+**Mapping.** Throw Oil Grenade into the pack, channel Flameblast for a few stages and release. Concentrated Area keeps the blast tight, so aim at the centre of the pack.
+
+**Bossing.** Place Sigil of Power, curse with Despair, throw Oil Grenade, then channel Flameblast to full stages. Dodge roll out of big attacks: Cast on Dodge triggers Refutation and you can channel again right after.
+
+## Endgame Progression
+
+**First maps.**
+- A staff with + to fire spell levels and cast speed carries the damage. The reference character also keeps a Siege Crossbow on weapon set 2 for the grenades.
+- Capped resistances, life and armour or evasion gear: you stand still while channelling.
+- Lavianga's Spirits (58%) is the common flask, and cheap.
+
+**Endgame.**
+- Rite of Passage (59%), Nascent Hope (53%) and The Fall of the Axe (24%) are the common charms, Heart of the Well (28%) the common jewel.
+- [[Morior Invictus]] (31%) as the body armour, and [[Kalandra's Touch]] (26%) on a ring.
+- The reference character adds [[Decree of Acuity]], [[Atziri's Step]] for deflection and [[Blackflame]], whose chaos ignites stack with Flameblast.
+- Blackflame Covenant (22%) is a common keystone.
+- [[Mageblood]] (55%) is a luxury, worn by the reference character but not required.
+
+## Gear Priorities
+
++ to fire spell levels and cast speed on the staff and amulet, then life, capped resistances and armour or evasion. Gem quality on your main skills for Advanced Thaumaturgy, and movement speed on boots.
 
 ## FAQ
 
-**Why does my Flameblast deal no damage?** Restrict [[Flameblast]] to weapon set 1, the staff set. If it can also be used on the other set, you are effectively casting it without your weapon.
+**Why am I dying while channelling?** You stand still while building stages. Release earlier, dodge roll (Refutation triggers) and keep Arctic Armour and Wind Dancer up.
 
-**How do I fit all my Spirit buffs?** Restrict [[Cast on Dodge]] to weapon set 2, the crossbow set. For more Spirit, get it on your amulet and body armour, and up to +30 on the crossbow with two Soul Cores of Azcapa. Quality on [[Blasphemy]] also lowers its reservation.
+**What is Gem Studded?** It rewards the colour your supports have most of. Count your support colours and pick the bonus you want.
+
+**What is the difference with the Maxroll Flameblast guide?** That guide is written and includes gear stages; this page shows what ladder players use at level 100.

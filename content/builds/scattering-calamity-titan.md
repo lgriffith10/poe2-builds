@@ -63,6 +63,85 @@ skills:
     supports: [Harmonic Remnants II, Remnant Potency I, Cannibalism I]
   - gem: Remnants of Kalguur
     supports: [Harmonic Remnants II, Remnant Potency I]
+gemPriority:
+  skills:
+    - label: "Act I"
+      gems: [Boneshatter, Shockwave Totem, Perfect Strike, Infernal Cry, Frost Bomb]
+    - label: "Act Ii"
+      gems: [Leap Slam, Forge Hammer]
+    - label: "Act Iii"
+      gems: [Hammer of the Gods, Earthshatter, Seismic Cry]
+  spirit:
+    - label: "Act I"
+      gems: [Herald of Ash]
+    - label: "Act Iii"
+      gems: [Scavenged Plating]
+  supports:
+    - label: "ACT I (Rapid Twice)"
+      gems: [Impact Shockwave, Concentrated Area, Rapid Attacks I, Magnified Area I, Overabundance I, Window of Opportunity I]
+    - label: "Act Ii"
+      gems: [Execute I, Brink I, Rapid Attacks I, Fist of War I, Crater]
+    - label: "Act Iii+"
+      gems: [Branching Fissures I, Fist of War II, Execute II, Urgent Totems II, Cannibalism I, Rapid Attacks II]
+levelingSource:
+  title: "Boneshatter Titan Build Guide"
+  url: https://maxroll.gg/poe2/build-guides/boneshatter-titan-leveling-guide
+leveling:
+  - steps:
+      - name: "Act 1"
+        skills:
+          - gem: "Mace Strike"
+            supports: [Concentrated Area, Rapid Attacks I]
+          - gem: "Boneshatter"
+            supports: [Impact Shockwave, Magnified Area I]
+          - gem: "Rolling Slam"
+            supports: [Rapid Attacks I]
+          - gem: "Shockwave Totem"
+            supports: [Overabundance I, Execute I]
+          - gem: "Infernal Cry"
+          - gem: "Perfect Strike"
+            supports: [Rapid Attacks I, Window of Opportunity I]
+          - gem: "Herald of Ash"
+          - gem: "Frost Bomb"
+      - name: "Act 2"
+        skills:
+          - gem: "Mace Strike"
+            supports: [Concentrated Area, Rapid Attacks I]
+          - gem: "Boneshatter"
+            supports: [Impact Shockwave, Magnified Area I]
+          - gem: "Rolling Slam"
+            supports: [Rapid Attacks I]
+          - gem: "Forge Hammer"
+            supports: [Fist of War I, Execute I]
+          - gem: "Shockwave Totem"
+            supports: [Overabundance I, Execute I]
+          - gem: "Infernal Cry"
+            supports: [Raging Cry]
+          - gem: "Leap Slam"
+            supports: [Brink I, Crater]
+          - gem: "Herald of Ash"
+      - name: "Act 3+"
+        skills:
+          - gem: "Mace Strike"
+            supports: [Rapid Attacks I, Armour Break I, Armour Demolisher I]
+          - gem: "Boneshatter"
+            supports: [Impact Shockwave, Magnified Area I]
+          - gem: "Forge Hammer"
+            supports: [Fist of War II, Execute II, Branching Fissures I]
+          - gem: "Shockwave Totem"
+            supports: [Overabundance I, Urgent Totems III]
+          - gem: "Infernal Cry"
+            supports: [Raging Cry]
+          - gem: "Leap Slam"
+            supports: [Brink I, Crater, Rapid Attacks II]
+          - gem: "Herald of Ash"
+            supports: [Cannibalism I]
+          - gem: "Scavenged Plating"
+            supports: [Prolonged Duration I]
+          - gem: "Hammer of the Gods"
+            supports: [Fist of War I, Heavy Swing]
+          - gem: "Seismic Cry"
+            supports: [Raging Cry]
 gear:
   amulet:
     base: Absent Amulet
@@ -218,14 +297,49 @@ passives:
 
 ## How It Works
 
-This page is drawn from the poe.ninja ladder rather than a written guide. [[His Scattering Calamity]] is granted by the unique staff [[The Unborn Lich]], worn by all 541 Titans in this group. Its most common links are **Zenith II (91%), Sione's Temper (79%), Rakiata's Flow (66%) and Esh's Radiance (61%)**.
+This page is drawn from the poe.ninja ladder rather than a written guide: 529 Titan characters use [[His Scattering Calamity]], and the reference character is level 99. It is a lightning spell granted by the unique staff [[The Unborn Lich]], which every one of these players wields (100%). Players link it with **Zenith II (90%), Sione's Temper (79%), Rakiata's Flow (66%) and Esh's Radiance (61%)**, with Execute III on about half. Zenith II deals more damage while you are above 90% of your maximum mana.
 
-The rest of the setup supports that one skill: [[Mana Tempest]] (67%) and [[Sigil of Power]] (66%) boost spell damage, and this character also triggers [[Comet]] and [[Arc]] through [[Cast on Critical]].
+[[Comet]] (49%), [[Arc]] (64%) and [[Powered by Verisium]] (62%) sit in [[Cast on Critical]], so critical hits trigger them. [[Mana Tempest]] (66%) and [[Sigil of Power]] (66%) boost your spells, and [[Temporal Chains]] in [[Blasphemy]] slows enemies.
 
-## Ascendancy and Key Passives
+Defence is built on mana:
+- **Eldritch Battery (93%)** converts all your energy shield to mana, but doubles mana costs.
+- **Mind Over Matter (91%)** takes all damage from mana before life, with 50% less mana recovery rate.
+- **Mysterious Lineage (92%)** gives 15% more maximum life, and **Hulking Form (100%)** 50% increased effect of small passives.
+- **Crushing Impacts (75%)** makes your hits Crushing Blows, with 25% more damage against heavily stunned enemies. Colossal Capacity (100%) adds inventory space.
 
-Colossal Capacity and Hulking Form (100%), Mysterious Lineage (93%) and Crushing Impacts (76%) on the ascendancy. Eldritch Battery (94%) and Mind Over Matter (91%) turn your large mana pool into a defence.
+## Leveling
 
-## Gear
+No ladder character shows a campaign, so the leveling steps on this page come from Maxroll's Boneshatter Titan leveling guide, a melee Warrior route. This build only becomes a caster once you equip The Unborn Lich, and the tree above is a caster tree: follow the leveling guide's tree during the campaign, then respec.
 
-[[The Unborn Lich]] is mandatory. Kalandra's Touch (75%) and [[Headhunter]] (43%) are common on the ladder; this character wears [[Morior Invictus]] and [[Mageblood]], which are endgame luxuries rather than requirements of the build.
+The Unborn Lich is very cheap: buy it once you are ready to switch, along with gear that gives mana and energy shield. Take Mysterious Lineage and Hulking Form first, then Crushing Impacts. Eldritch Battery and Mind Over Matter come with the respec.
+
+## Playstyle
+
+**Mapping.** Cast His Scattering Calamity into packs; Sione's Temper builds up to bursts of extra projectiles, and critical hits trigger Arc and Comet for clear.
+
+**Bossing.** Place Sigil of Power, curse with Blasphemy, use Mana Tempest, then keep casting His Scattering Calamity while your mana stays above 90% for Zenith II. Critical hits keep Comet and Powered by Verisium firing.
+
+## Endgame Progression
+
+**First maps.**
+- [[The Unborn Lich]] (100%) is required and cheap.
+- Maximum mana and energy shield on every slot: Eldritch Battery turns energy shield into mana, and Mind Over Matter makes mana your first life pool.
+- Cast speed, critical chance and capped resistances.
+
+**Endgame.**
+- Heart of the Well (89%) is the common jewel, Rite of Passage (73%) and Nascent Hope (65%) the common charms.
+- [[Kalandra's Touch]] (75%) copies your best ring, and [[Morior Invictus]] (42%) is the common body armour.
+- [[Headhunter]] (41%) for clear speed.
+- [[Mageblood]] (40%) is a luxury, worn by the reference character but not required.
+
+## Gear Priorities
+
+Maximum mana and energy shield, then + to spell skill levels, cast speed and critical chance. Capped resistances, mana regeneration, and movement speed on boots.
+
+## FAQ
+
+**Why a Titan for a caster?** Mysterious Lineage and Hulking Form give a lot of life and passive value, which the mana-based defences build on.
+
+**Why is my mana always empty?** Eldritch Battery doubles mana costs and Mind Over Matter takes hits from mana. Get more maximum mana and regeneration; Mana Remnants and Siphon Elements help too.
+
+**Do I need The Unborn Lich?** Yes: His Scattering Calamity is the staff's skill.

@@ -23,7 +23,7 @@ pros:
   - "Lich energy shield defences"
 cons:
   - "Unusual weapon choice for a Witch"
-  - "Small sample: 302 ladder characters"
+  - "Small sample: 300 ladder characters"
   - "The reference gear includes Headhunter"
 skills:
   - gem: Twister
@@ -54,6 +54,157 @@ skills:
     supports: [Minion Mastery]
   - gem: Charge Regulation
     supports: [Uruk's Smelting]
+levelingSource:
+  title: "Essence Drain Lich Leveling Build Guide"
+  url: https://maxroll.gg/poe2/build-guides/essence-drain-lich-leveling-build-guide
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Level 2: Clearfell"
+        skills:
+          - gem: "Chaos Bolt"
+          - gem: "Skeletal Sniper"
+          - gem: "Flame Wall"
+          - gem: "Unearth"
+      - name: "Level 3: Defeat Devourer"
+        skills:
+          - gem: "Chaos Bolt"
+          - gem: "Contagion"
+          - gem: "Skeletal Sniper"
+            supports: [Fire Attunement]
+          - gem: "Flame Wall"
+          - gem: "Unearth"
+      - name: "Level 3 to 5"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Chain I]
+          - gem: "Contagion"
+            supports: [Zenith I]
+          - gem: "Skeletal Sniper"
+            supports: [Fire Attunement]
+          - gem: "Flame Wall"
+          - gem: "Unearth"
+      - name: "Level 6 to 14"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Unleash]
+          - gem: "Contagion"
+            supports: [Rapid Casting I]
+          - gem: "Essence Drain"
+            supports: [Chain I, Zenith I]
+          - gem: "Skeletal Sniper"
+            supports: [Fire Attunement]
+          - gem: "Flame Wall"
+      - name: "Act 1"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Unleash]
+          - gem: "Essence Drain"
+            supports: [Chain I, Zenith I]
+          - gem: "Contagion"
+            supports: [Rapid Casting I, Magnified Area I]
+          - gem: "Withering Presence"
+            supports: [Prolonged Duration I]
+      - name: "Act 2"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Considered Casting, Unleash]
+          - gem: "Essence Drain"
+            supports: [Chain II, Zenith I]
+          - gem: "Contagion"
+            supports: [Rapid Casting I, Magnified Area I]
+          - gem: "Withering Presence"
+            supports: [Prolonged Duration I]
+          - gem: "Temporal Chains"
+            supports: [Slow Potency]
+          - gem: "Sigil of Power"
+            supports: [Magnified Area I, Prolonged Duration I]
+      - name: "Act 3"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Considered Casting, Unleash]
+          - gem: "Essence Drain"
+            supports: [Chain II, Zenith II, Swift Affliction II]
+          - gem: "Contagion"
+            supports: [Rapid Casting I, Magnified Area I, Unleash]
+          - gem: "Despair"
+            supports: [Decaying Hex, Heightened Curse]
+          - gem: "Dark Effigy"
+            supports: [Withering Touch, Poison II]
+          - gem: "Blasphemy"
+            supports: [Temporal Chains, Slow Potency]
+          - gem: "Sigil of Power"
+            supports: [Magnified Area I, Prolonged Duration I]
+      - name: "Act 4"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Considered Casting, Unleash]
+          - gem: "Essence Drain"
+            supports: [Chain II, Zenith II, Swift Affliction II]
+          - gem: "Contagion"
+            supports: [Rapid Casting I, Magnified Area I, Unleash]
+          - gem: "Despair"
+            supports: [Decaying Hex, Heightened Curse, Prolonged Duration II]
+          - gem: "Dark Effigy"
+            supports: [Withering Touch, Poison II, Urgent Totems II]
+          - gem: "Blasphemy"
+            supports: [Temporal Chains, Slow Potency, Magnified Area II]
+          - gem: "Sigil of Power"
+            supports: [Magnified Area I, Prolonged Duration I]
+      - name: "Act 5 / End of Campaign"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Chaos Mastery, Unleash]
+          - gem: "Essence Drain"
+            supports: [Chain III, Zenith II, Swift Affliction II, Considered Casting]
+          - gem: "Contagion"
+            supports: [Rapid Casting III, Magnified Area II, Unleash]
+          - gem: "Despair"
+            supports: [Decaying Hex, Heightened Curse, Prolonged Duration II]
+          - gem: "Dark Effigy"
+            supports: [Withering Touch, Poison II, Urgent Totems III]
+          - gem: "Blasphemy"
+            supports: [Temporal Chains, Slow Potency, Magnified Area II]
+          - gem: "Withering Presence"
+            supports: [Prolonged Duration II, Chaos Mastery]
+          - gem: "Sigil of Power"
+            supports: [Magnified Area II, Prolonged Duration II, Rapid Casting II]
+      - name: "Optional Late Campaign"
+        skills:
+          - gem: "Chaos Bolt"
+            supports: [Chaos Mastery, Unleash]
+          - gem: "Essence Drain"
+            supports: [Chain III, Zenith II, Swift Affliction II, Considered Casting]
+          - gem: "Contagion"
+            supports: [Rapid Casting III, Magnified Area II, Unleash]
+          - gem: "Despair"
+            supports: [Decaying Hex, Heightened Curse, Prolonged Duration II]
+          - gem: "Dark Effigy"
+            supports: [Withering Touch, Poison II, Urgent Totems III]
+          - gem: "Blasphemy"
+            supports: [Temporal Chains, Slow Potency, Magnified Area II]
+          - gem: "Withering Presence"
+            supports: [Prolonged Duration II, Chaos Mastery]
+          - gem: "Sigil of Power"
+            supports: [Magnified Area II, Prolonged Duration II, Rapid Casting II]
+          - gem: "Convalescence"
+            supports: [Cooldown Recovery II, Second Wind III, Rapid Casting III]
+    rotations:
+      - name: "Clear"
+        steps:
+          - gem: "Contagion"
+          - gem: "Essence Drain"
+      - name: "Single Target"
+        steps:
+          - gem: "Sigil of Power"
+            label: "Before the Boss Spawns"
+          - gem: "Despair"
+          - gem: "Dark Effigy"
+          - gem: "Essence Drain"
+            label: "Apply DoTs"
+          - gem: "Contagion"
+          - gem: "Chaos Bolt"
+            label: "Max Wither"
 gear:
   body:
     unique: Morior Invictus
@@ -218,14 +369,49 @@ passives:
 
 ## How It Works
 
-This page is drawn from the poe.ninja ladder rather than a written guide. [[Twister]] sends tornadoes through packs; nearly every player links it with **Projectile Acceleration III (99%)**, then Rakiata's Flow (52%) and Elemental Armament II (50%).
+This page is drawn from the poe.ninja ladder rather than a written guide: 300 Abyssal Lich characters use [[Twister]], the Huntress's wind spear skill, and the reference character is level 98. Twister sends tornadoes through packs; players link it with **Projectile Acceleration III (99%)**, then Rakiata's Flow (53%) and Elemental Armament II (49%). [[Whirling Slash]] (97%) and [[Barrage]] (93%) feed it, and [[Herald of Thunder]] (35%) adds clear.
 
-[[Whirling Slash]] (96%) and [[Barrage]] (93%) support it on almost every character, and [[Herald of Thunder]] (35%) is a common addition. [[The Taming]] (98%) lets wind skills be boosted by several elemental ground surfaces.
+**[[The Taming]] (98%)** is the unique that defines the build: more damage for each type of elemental ailment on the enemy, and wind skills can be boosted by several elemental ground surfaces at once. [[Sacred Flame]] (79%) adds fire damage for you and your allies, and makes enemies resist elemental damage based on their lowest resistance.
 
-## Ascendancy and Key Passives
+The Abyssal Lich ascendancy:
+- **Necromantic Conduit (100%)**: you and allies in your Presence have Unholy Might while you are not on low mana, but you lose 5% of maximum mana per second.
+- **Crystalline Phylactery (97%)** holds a basic jewel with doubled effect. Skills cost 50% more mana if you have no energy shield.
+- **Soulless Form (47%)** regenerates mana from your maximum life, and **Eternal Life (42%)** stops your life changing while you have energy shield.
+- Dance with Death (85%) and Resonance (75%) are the common keystones; Chaos Inoculation (39%) is a minority choice.
 
-Necromantic Conduit (100%) and Crystalline Phylactery (97%), with Soulless Form (49%) and Eternal Life (44%). Dance with Death (84%) and Resonance (74%) are the common keystones; this character adds Chaos Inoculation (38% of the group).
+## Leveling
 
-## Gear
+No ladder character shows a campaign, so the leveling steps on this page come from Maxroll's Essence Drain Lich leveling guide, a Witch caster route with Chaos Bolt, Skeletal Snipers and Essence Drain. Twister is an attack with spears, so you will switch to it later: follow the leveling guide's tree during the campaign, then respec.
 
-[[The Taming]], Lavianga's Spirits (83%) and Sacred Flame (78%) are the most common uniques. This character also wears [[Alpha's Howl]], [[Morior Invictus]] and [[Headhunter]]; the last two are endgame luxuries.
+Switch once you have a good spear, Twister, Whirling Slash and The Taming, which is the first unique to buy. Take Necromantic Conduit and Crystalline Phylactery first, then Soulless Form or Eternal Life.
+
+## Playstyle
+
+**Mapping.** Throw Twister into packs and use Whirling Slash to give it more to work with; the tornadoes travel through the pack on their own. Elemental ground surfaces boost them further with The Taming.
+
+**Bossing.** Use Barrage, then Twister and Whirling Slash close to the boss so several tornadoes hit at once. Keep your mana above the low threshold for Unholy Might.
+
+## Endgame Progression
+
+**First maps.**
+- [[The Taming]] (98%) first: it is the core of the damage.
+- A spear with elemental damage and + to projectile skill levels. Lavianga's Spirits (83%) is the common flask, and cheap.
+- Energy shield gear with capped resistances, and a basic jewel with good modifiers in Crystalline Phylactery.
+
+**Endgame.**
+- [[Sacred Flame]] (79%) in the off-hand, The Ordained (50%) is also common.
+- Heart of the Well (65%) is the common jewel, Nascent Hope (63%) and Rite of Passage (62%) the common charms.
+- The reference character wears [[Morior Invictus]], [[Alpha's Howl]] and [[Palm of the Dreamer]] on weapon set 2.
+- [[Headhunter]] and [[Mageblood]] (49%) are luxuries; the reference character wears Headhunter.
+
+## Gear Priorities
+
+Spear damage and + to projectile skill levels, then energy shield, mana and capped resistances. Ailment chance helps The Taming, and movement speed on boots.
+
+## FAQ
+
+**Why a Witch with a spear?** The Abyssal Lich's Unholy Might and Crystalline Phylactery suit Twister well, and The Taming does the rest.
+
+**Why does my mana drain?** Necromantic Conduit costs 5% of maximum mana per second. Soulless Form or mana regeneration on gear keeps it up.
+
+**Do I need Chaos Inoculation?** Only 39% of these players take it; most rely on energy shield with Eternal Life instead.

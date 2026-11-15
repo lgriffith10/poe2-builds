@@ -527,7 +527,7 @@ const cache = (store.__buildCacheV15 ??= { files: new Map(), lists: new Map() })
 const mtime = (p: string) => (fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0);
 
 /** Ladder builds (drawn from poe.ninja) are hidden from the site for now: their data is less reliable than the written guides. */
-export const SHOW_LADDER_BUILDS = false;
+export const SHOW_LADDER_BUILDS = true;
 
 /** Builds shown on the site; `all` also returns hidden ones (validation). */
 export function getBuilds(lang: Locale = DEFAULT_LOCALE, all = false): Build[] {

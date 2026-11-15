@@ -23,7 +23,7 @@ pros:
   - "Links are consistent across players"
 cons:
   - "Hard to control where you land"
-  - "Small sample: 104 ladder characters"
+  - "Small sample: 107 ladder characters"
   - "The reference gear includes Mageblood"
 skills:
   - gem: Flicker Strike
@@ -54,6 +54,170 @@ skills:
     supports: [Prolonged Duration II, Lightning Mastery]
   - gem: Chaos Bolt
     supports: []
+levelingSource:
+  title: "Storm Wave Monk Leveling Build Guide"
+  url: https://maxroll.gg/poe2/build-guides/storm-wave-monk-leveling-build-guide
+leveling:
+  - name: "Campaign"
+    steps:
+      - name: "Level 2: Clearfell"
+        skills:
+          - gem: "Quarterstaff Strike"
+          - gem: "Glacial Cascade"
+          - gem: "Frost Bomb"
+      - name: "Level 2: Defeat Areagne"
+        skills:
+          - gem: "Quarterstaff Strike"
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area]
+          - gem: "Frost Bomb"
+      - name: "Level 3 to 5"
+        skills:
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Rage I]
+          - gem: "Frozen Locus"
+          - gem: "Frost Bomb"
+      - name: "Level 6 to 13"
+        skills:
+          - gem: "Pounce"
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Rage I]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite I]
+          - gem: "Frost Bomb"
+          - gem: "Herald of Ice"
+      - name: "Act 1"
+        skills:
+          - gem: "Pounce"
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Rage I]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite I, Elemental Armament I]
+          - gem: "Frost Bomb"
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I]
+      - name: "Level 22 (Storm Wave)"
+        skills:
+          - gem: "Pounce"
+            supports: [Freezing Mark]
+          - gem: "Storm Wave"
+            supports: [Rage I, Elemental Armament II]
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite I, Elemental Armament II]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Elemental Armament I]
+          - gem: "Wave of Frost"
+            supports: [Deep Freeze, Ice Bite I]
+      - name: "Act 2"
+        skills:
+          - gem: "Pounce"
+          - gem: "Storm Wave"
+            supports: [Rage I, Elemental Armament II, Innervate]
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite I, Elemental Armament II]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Elemental Armament I]
+          - gem: "Hand of Chayula"
+            supports: [Freezing Mark, Elemental Weakness]
+          - gem: "Wave of Frost"
+            supports: [Deep Freeze, Ice Bite I]
+      - name: "Act 3"
+        skills:
+          - gem: "Pounce"
+          - gem: "Storm Wave"
+            supports: [Rage I, Elemental Armament II, Branching Fissures I]
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite II, Elemental Armament II, Innervate]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Elemental Armament II]
+          - gem: "Herald of Thunder"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Hand of Chayula"
+            supports: [Freezing Mark, Elemental Weakness]
+          - gem: "Wave of Frost"
+            supports: [Deep Freeze, Ice Bite II]
+      - name: "Act 4"
+        skills:
+          - gem: "Pounce"
+            supports: [Cooldown Recovery II]
+          - gem: "Storm Wave"
+            supports: [Rage II, Elemental Armament II, Branching Fissures I]
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Elemental Armament II, Elemental Focus]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite II, Elemental Armament II, Innervate]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area I, Elemental Armament II]
+          - gem: "Herald of Thunder"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Hand of Chayula"
+            supports: [Freezing Mark, Elemental Weakness]
+          - gem: "Wave of Frost"
+            supports: [Deep Freeze, Ice Bite II]
+      - name: "Act 5 / End of Campaign"
+        skills:
+          - gem: "Pounce"
+            supports: [Cooldown Recovery II]
+          - gem: "Storm Wave"
+            supports: [Rage II, Elemental Armament II, Branching Fissures I]
+          - gem: "Glacial Cascade"
+            supports: [Concentrated Area, Elemental Armament II, Elemental Focus]
+          - gem: "Frozen Locus"
+            supports: [Ice Bite II, Elemental Armament II, Innervate]
+          - gem: "Frost Bomb"
+            supports: [Potent Exposure]
+          - gem: "Herald of Ice"
+            supports: [Magnified Area II, Elemental Armament II, Elemental Focus]
+          - gem: "Herald of Thunder"
+            supports: [Concentrated Area, Elemental Armament II]
+          - gem: "Hand of Chayula"
+            supports: [Freezing Mark, Elemental Weakness]
+          - gem: "Wave of Frost"
+            supports: [Deep Freeze, Ice Bite II]
+    rotations:
+      - name: "Early Clear"
+        steps:
+          - gem: "Frozen Locus"
+          - gem: "Glacial Cascade"
+      - name: "Early Single Target"
+        steps:
+          - gem: "Frost Bomb"
+            label: "As the Boss Spawns"
+          - gem: "Frozen Locus"
+            label: "Build Freeze"
+          - gem: "Glacial Cascade"
+          - gem: "Glacial Cascade"
+            label: "Consume Freeze"
+      - name: "L22+ Clear"
+        steps:
+          - gem: "Frozen Locus"
+          - gem: "Storm Wave"
+      - name: "L22+ Single Target"
+        steps:
+          - gem: "Hand of Chayula"
+            label: "As the Boss Spawns"
+          - gem: "Frost Bomb"
+          - gem: "Frozen Locus"
+            label: "Build Freeze"
+          - gem: "Storm Wave"
+          - gem: "Wave of Frost"
+            label: "Freeze Enemies"
+          - gem: "Glacial Cascade"
+            label: "Consume Freeze"
 gear:
   body:
     unique: Morior Invictus
@@ -222,14 +386,49 @@ passives:
 
 ## How It Works
 
-This page is drawn from the poe.ninja ladder rather than a written guide. [[Flicker Strike]] teleports you to an enemy and strikes it, then repeats on the next one. Players link it with **Close Combat II (84%), Concentrated Area (81%) and Hit and Run (63%)**.
+This page is drawn from the poe.ninja ladder rather than a written guide: only 107 Invoker characters use [[Flicker Strike]], so the sample is small. The reference character is level 95. Flicker Strike teleports you to an enemy and hits it, so moving and attacking are the same button. Players link it with **Close Combat II and Concentrated Area (81% each)** and Hit and Run (65%); the reference character adds Rigwald's Ferocity.
 
-[[Charged Staff]] (94%) adds lightning to your strikes, and most players run [[Whirling Assault]] (79%), Profane Ritual (77%) and [[Herald of Thunder]] (69%). This character also uses [[Falling Thunder]] and triggers [[Profane Ritual]] with [[Cast on Critical]].
+[[Charged Staff]] (93%) adds lightning to your staff attacks, and [[Herald of Thunder]] (68%) explodes packs. [[Profane Ritual]] (77%) is socketed in [[Cast on Critical]], so your critical hits trigger it on their own. [[Whirling Assault]] (77%) and [[Falling Thunder]] (57%) are the usual second attacks for bosses.
 
-## Ascendancy and Key Passives
+The Invoker ascendancy:
+- **Lead me through Grace... (91%)** gives Spirit from the energy shield and evasion of your body armour, instead of from other gear.
+- **I am the Thunder... (76%)** adds 10% of damage as extra lightning, and shocks can create Shocked Ground.
+- **I am the Blizzard... (62%)** adds 10% of damage as extra cold, and freezes create Chilled Ground.
+- Sunder my Enemies... (78%) is very common too; the reference character takes the three above.
 
-Lead me through Grace... (90%), Sunder my Enemies... (80%), I am the Thunder... (73%) and I am the Blizzard... (63%). Chaos Inoculation is taken by 41% of the group.
+## Leveling
 
-## Gear
+No ladder character shows a campaign, so the leveling steps on this page come from Maxroll's Storm Wave Monk leveling guide, a quarterstaff route with Glacial Cascade, Storm Wave and the heralds. The tree and ascendancy above are endgame choices: follow the leveling guide's tree during the campaign.
 
-Nascent Hope (52%) and Beira's Anguish (26%) are common. This character wears [[Morior Invictus]], [[Kalandra's Touch]] and [[Mageblood]], which are endgame luxuries rather than requirements.
+Flicker Strike comes later than the leveling skills: switch once you have it with Close Combat II and Charged Staff. Take Lead me through Grace... early, since it changes where your Spirit comes from, then I am the Thunder... and I am the Blizzard.... Chaos Inoculation (45%) is a later respec.
+
+## Playstyle
+
+**Mapping.** Hold Flicker Strike: you jump from enemy to enemy while Herald of Thunder and Profane Ritual clear around you. Stop pressing or dodge roll to pick your next target.
+
+**Bossing.** Keep Charged Staff up, then use Whirling Assault or Falling Thunder on the boss, and Flicker Strike to reposition out of danger. [[Wind Dancer]] adds evasion while you fight.
+
+## Endgame Progression
+
+**First maps.**
+- A quarterstaff with cold and lightning damage and critical chance, + to melee skill levels on the amulet.
+- A body armour with high energy shield and evasion: Lead me through Grace... turns it into Spirit.
+- Capped resistances, evasion and energy shield on the rest of the gear.
+
+**Endgame.**
+- Heart of the Well (64%) is the common jewel, Nascent Hope (54%), Rite of Passage (40%), The Fall of the Axe (34%) and Beira's Anguish (24%) the common charms, and Lavianga's Spirits (41%) the common flask.
+- [[Morior Invictus]] (35%) as the body armour, which pairs well with Lead me through Grace....
+- [[Kalandra's Touch]] on a ring copies your other ring.
+- [[Mageblood]] (43%) is a luxury, worn by the reference character but not required.
+
+## Gear Priorities
+
+Elemental damage and critical chance on the quarterstaff, a high defence body armour for Spirit, then + to melee skill levels, capped resistances, evasion and energy shield. Movement speed on boots.
+
+## FAQ
+
+**Why is my Spirit so low?** Lead me through Grace... stops other gear from giving Spirit: it all comes from your body armour's energy shield and evasion. Upgrade the body armour.
+
+**Is this build well tested?** Only 107 ladder characters use it, far fewer than the Martial Artist version. The links are consistent, though.
+
+**How do I control where Flicker Strike goes?** It picks a nearby enemy. Stop pressing to stay put, and dodge roll out of anything dangerous.

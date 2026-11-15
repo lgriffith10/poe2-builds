@@ -63,6 +63,91 @@ skills:
     supports: [Excise, Rapid Casting III]
   - gem: Raise Shield
     supports: []
+gemPriority:
+  skills:
+    - label: "Start"
+      gems: [Spark, Flame Wall, Frost Bomb]
+    - label: "Act I"
+      gems: [Ice Nova, Frost Darts, Snap]
+    - label: "Act Ii"
+      gems: [Elemental Weakness]
+    - label: "Act III"
+      gems: [Frost Wall]
+    - label: "Maps"
+      gems: [Comet]
+  spirit:
+    - label: "Act I"
+      gems: [Withering Presence, Arctic Armour]
+    - label: "Act III"
+      gems: [Siphon Elements]
+    - label: "Maps"
+      gems: [Cast on Elemental Ailment]
+    - label: "160 Spirit"
+      gems: [Cast on Elemental Ailment, Siphon Elements, Convalescence]
+  supports:
+    - label: "Act I"
+      gems: [Controlled Destruction, Spell Cascade, Rapid Casting I, Overabundance I]
+    - label: "Act Ii"
+      gems: [Spell Echo, Rising Tempest, Magnified Area I, Heightened Curse, Prolonged Duration I, Fortress I]
+    - label: "Act III"
+      gems: [Astral Projection, Icicle, Harmonic Remnants II]
+    - label: "Act Iv"
+      gems: [Considered Casting, Potent Exposure, Cooldown Recovery II, Elemental Focus]
+    - label: "Maps"
+      gems: [Boundless Energy II, Efficiency II, Rising Tempest, Focused Curse]
+levelingSource:
+  title: "Ice Nova Snap Stormweaver Build Guide"
+  url: https://maxroll.gg/poe2/build-guides/cold-snap-frostbolt-stormweaver-leveling-guide
+leveling:
+  - steps:
+      - name: "Level 3 Swap"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Controlled Destruction, Magnified Area I]
+          - gem: "Frost Darts"
+          - gem: "Frost Bomb"
+          - gem: "Flame Wall"
+      - name: "Act 1"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Controlled Destruction, Magnified Area I]
+          - gem: "Frost Darts"
+            supports: [Controlled Destruction, Rapid Casting I]
+          - gem: "Frost Bomb"
+            supports: [Overabundance I, Spell Cascade]
+          - gem: "Flame Wall"
+          - gem: "Snap"
+          - gem: "Arctic Armour"
+      - name: "Act 2"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Magnified Area I, Controlled Destruction]
+          - gem: "Frost Darts"
+            supports: [Controlled Destruction, Considered Casting]
+          - gem: "Snap"
+            supports: [Rising Tempest, Magnified Area I]
+          - gem: "Frost Bomb"
+            supports: [Spell Echo, Overabundance I]
+          - gem: "Elemental Weakness"
+            supports: [Heightened Curse, Prolonged Duration II]
+          - gem: "Arctic Armour"
+      - name: "Act 3"
+        skills:
+          - gem: "Ice Nova"
+            supports: [Astral Projection, Rising Tempest, Magnified Area II]
+          - gem: "Frost Darts"
+            supports: [Controlled Destruction, Considered Casting, Cold Penetration]
+          - gem: "Snap"
+            supports: [Magnified Area II, Elemental Focus, Cooldown Recovery I]
+          - gem: "Frost Wall"
+            supports: [Icicle, Spell Cascade, Cooldown Recovery I]
+          - gem: "Frost Bomb"
+            supports: [Spell Echo, Overabundance I]
+          - gem: "Elemental Weakness"
+            supports: [Heightened Curse, Prolonged Duration II]
+          - gem: "Siphon Elements"
+            supports: [Harmonic Remnants II]
+          - gem: "Arctic Armour"
 gear:
   ring1:
     unique: Doedre's Damning
@@ -237,14 +322,50 @@ passives:
 
 ## How It Works
 
-This page is drawn from the poe.ninja ladder rather than a written guide. [[Ice Nova]] releases a ring of cold around you; **Magnified Area II (97%)** is on nearly every setup, with Cold Mastery (66%) and Runic Extraction (62%) the next most common links.
+This page is drawn from the poe.ninja ladder rather than a written guide: 617 Chronomancer characters use [[Ice Nova]], and the reference character is level 98. Ice Nova blasts a ring of cold around you; **Magnified Area II is on 98%** of these setups, with Cold Mastery (66%), Runic Extraction (61%), Ice Bite II and Pinpoint Critical (46% each). Ice Bite II infuses your damage with cold after a freeze, and Runic Extraction drops Verisium remnants from kills.
 
-Most players add [[Comet]] (89%), [[Frost Bomb]] (87%) and [[Frost Wall]] (86%) for bosses, and [[Elemental Weakness]] (63%). This character also uses [[Time Snap]] and [[Time Freeze]] from the Chronomancer's toolkit.
+The boss kit is shared by most players: [[Comet]] (90%), [[Frost Bomb]] (87%), [[Frost Wall]] (86%), [[Powered by Verisium]] (67%) and [[Elemental Weakness]] (63%). The reference character adds [[Eye of Winter]], [[Freezing Mark]], [[Sigil of Power]] and two more curses through [[Blasphemy]].
 
-## Ascendancy and Key Passives
+The Chronomancer ascendancy:
+- **Quicksand Hourglass (95%)** grants Sands of Time.
+- **Phased Form (92%)**: you take 30% less damage, then 30% of each hit four seconds later.
+- **Unbound Encore** grants [[Time Snap]], which resets your skill cooldowns: with Second Wind III and Uhtred's Rite it feeds the cooldown-heavy boss kit.
+- **Ultimate Command** grants [[Time Freeze]], which stops enemies in place.
+- Now and Again (88%) and Apex of the Moment (79%) are also very common.
 
-Quicksand Hourglass (95%), Phased Form (93%), Now and Again (88%) and Apex of the Moment (79%). Whispers of Doom (61%) lets you apply an extra curse.
+## Leveling
 
-## Gear
+No ladder character shows a campaign, so the leveling steps on this page come from Maxroll's Cold Snap and Frostbolt Stormweaver leveling guide, which already levels with Ice Nova from the start. The tree and ascendancy above are endgame choices: follow the leveling guide's tree during the campaign.
 
-Olroth's Resolve (54%) and Alpha's Howl (39%) are common. This character wears [[Doedre's Damning]] for an additional curse and [[Maligaro's Virtuosity]] for critical hit chance; [[Mageblood]] is an endgame luxury.
+Keep Ice Nova as the main skill and add Frost Bomb, Frost Wall and Comet as they unlock. Take Phased Form and Quicksand Hourglass first, then Time Snap and Time Freeze.
+
+## Playstyle
+
+**Mapping.** Run into packs and cast Ice Nova; Magnified Area II makes the ring large enough to clear most of the screen. Frost Bomb and Comet handle tougher rares.
+
+**Bossing.** Elemental Weakness and Freezing Mark, Frost Wall and Frost Bomb, then Comet and Ice Nova close to the boss. Time Freeze holds it still, and Time Snap resets your cooldowns for a second round. Raise Shield blocks heavy hits.
+
+## Endgame Progression
+
+**First maps.**
+- Critical chance on the weapon and focus, + to spell skill levels and cast speed.
+- Energy shield or evasion gear with capped resistances: Ice Nova keeps you close to enemies.
+- Cheap uniques used by the reference character: [[Doedre's Damning]] for an extra curse and [[Arvil's Wheel]] for skill duration.
+
+**Endgame.**
+- Heart of the Well (68%) is the common jewel. Olroth's Resolve (54%) is the common flask, and The Fall of the Axe (48%), Rite of Passage (48%) and Nascent Hope (44%) the common charms.
+- [[Alpha's Howl]] (38%) for Spirit, and [[Headhunter]] (25%) for clear speed.
+- Whispers of Doom (60%) lets you apply an additional curse.
+- [[Mageblood]] (31%) is a luxury, worn by the reference character but not required.
+
+## Gear Priorities
+
++ to spell skill levels and critical chance, then cast speed, energy shield and capped resistances. Cooldown recovery helps the boss kit, Spirit runs the meta gems and Blasphemy, and movement speed on boots.
+
+## FAQ
+
+**Why is Ice Nova so small?** Magnified Area II is on 98% of these setups for a reason: without it the ring only covers the space around you.
+
+**Do I need all the boss spells?** No: Comet, Frost Bomb and Frost Wall are the core; the curses and Eye of Winter come once you have the Spirit and sockets.
+
+**What does Phased Form change?** You take 30% less damage up front, then 30% of each hit four seconds later. Keep recovering life or energy shield after big hits.
