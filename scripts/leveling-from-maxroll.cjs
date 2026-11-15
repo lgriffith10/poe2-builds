@@ -8,6 +8,7 @@
 // Run `npm run data:sync` first.
 /* eslint-disable @typescript-eslint/no-require-imports -- plain CommonJS dev script */
 const fs = require("fs");
+const { guidePlanner } = require("./maxroll-planner.cjs");
 const path = require("path");
 
 const P = path.resolve(__dirname, "..") + "/";
@@ -200,14 +201,13 @@ function rewrite(file, block) {
 }
 
 async function loadGuide(url) {
-  const html = await (await fetch(url)).text();
-  const id = html.match(/maxroll\.gg\/poe2\/planner\/([a-z0-9]+)/)?.[1];
-  if (!id) return null;
-  const j = await (await fetch(`https://planners.maxroll.gg/profiles/poe2/${id}`)).json();
+  const found = await guidePlanner(url);
+  const html = found.html;
+  if (!found.data) return null;
   const link = html.match(/href="((?:https:\/\/maxroll\.gg)?\/poe2\/build-guides\/[a-z0-9-]+-leveling-guide)"/)?.[1];
   const title = html.match(/<title>([^<]*?) - Path of Exile 2/)?.[1] ?? url;
   return {
-    planner: JSON.parse(j.data),
+    planner: found.data,
     title,
     levelingUrl: link && link !== url.replace("https://maxroll.gg", "") ? new URL(link, "https://maxroll.gg").href : null,
   };

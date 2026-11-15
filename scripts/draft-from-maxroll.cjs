@@ -5,6 +5,7 @@
 //   guide-slug is the last part of https://maxroll.gg/poe2/build-guides/<guide-slug>
 /* eslint-disable @typescript-eslint/no-require-imports -- plain CommonJS dev script */
 const fs = require("fs");
+const { guidePlanner } = require("./maxroll-planner.cjs");
 const path = require("path");
 
 const P = path.resolve(__dirname, "..") + "/";
@@ -66,7 +67,7 @@ const STAT_LABELS = [
   [/^base_cast_speed_\+%$/, "Increased Cast Speed"],
   [/^spell_damage_\+%$/, "Increased Spell Damage"],
   [/^(\w+)_damage_\+%$/, (m) => `Increased ${cap(m[1].replace(/_/g, " "))} Damage`],
-  [/^additional_strength$/, "+Strength"],
+  [/^additional_strength$|pseudo_total_strength/, "+Strength"],
   [/^additional_dexterity$/, "+Dexterity"],
   [/^additional_intelligence$/, "+Intelligence"],
   [/^additional_all_attributes$/, "+All Attributes"],
@@ -89,6 +90,45 @@ const STAT_LABELS = [
   [/mana_regeneration_rate/, "Mana Regeneration"],
   [/accuracy_rating/, "Accuracy Rating"],
   [/^local_charm_slots$/, "Charm Slots"],
+  [/^minion_hit_damage_immobilisation_multiplier_\+%$/, "Minion Immobilisation Buildup"],
+  [/^chance_%_to_gain_archon_of_nature_on_overgrowing_plant$/, "Archon of Nature on Overgrowing Plant"],
+  [/^spell_damage_\+%_with_spells_that_cost_life$/, "Spell Damage with Spells that Cost Life"],
+  [/^base_life_cost_efficiency_\+%$/, "Life Cost Efficiency"],
+  [/^base_mana_cost_efficiency_\+%$|^base_spell_mana_cost_efficiency_\+%$/, "Mana Cost Efficiency"],
+  [/^base_life_regeneration_rate_per_minute$/, "Life Regeneration"],
+  [/^local_socketed_items_effect_\+%$/, "Increased Effect of Socketed Items"],
+  [/^damage_taken_goes_to_mana_%$/, "Damage Taken from Mana before Life"],
+  [/^base_armour_%_applies_to_chaos_damage$/, "Armour applies to Chaos Damage"],
+  [/^base_ignite_effect_\+%$/, "Ignite Magnitude"],
+  [/^damaging_ailments_deal_damage_\+%_faster$/, "Faster Damaging Ailments"],
+  [/^grenade_skill_%_chance_to_explode_twice$/, "Grenades Explode Twice"],
+  [/^flask_mana_recovery_rate_\+%$/, "Mana Flask Recovery"],
+  [/^additional_base_critical_strike_chance$/, "Base Critical Hit Chance"],
+  [/^base_slow_potency_\+%$/, "Slow Effect"],
+  [/^all_skill_gem_quality_\+$/, "Quality of all Skill Gems"],
+  [/^minion_base_damaging_ailment_effect_\+%$/, "Minion Damaging Ailment Magnitude"],
+  [/^minion_movement_speed_\+%$/, "Minion Movement Speed"],
+  [/^exposure_effect_\+%$/, "Exposure Effect"],
+  [/^elemental_damage_with_attack_skills_\+%$/, "Increased Elemental Damage with Attacks"],
+  [/^base_onlsaught_on_hit_%_chance$/, "Onslaught on Hit"],
+  [/^add_power_charge_on_critical_strike_%$/, "Power Charge on Critical Hit"],
+  [/^additional_combo_gain_chance_%$/, "Additional Combo Gain"],
+  [/^base_mana_gained_on_enemy_death$/, "Mana on Kill"],
+  [/^base_life_gained_on_enemy_death$/, "Life on Kill"],
+  [/^local_chance_to_gain_onslaught_on_killing_blow_%$/, "Onslaught on Kill"],
+  [/^projectile_attacks_%_chance_to_fire_|^chance_to_fire_/, "Chance to Fire Additional Projectiles"],
+  [/^archon_duration_\+%$/, "Archon Duration"],
+  [/^remnant_effect_\+%$/, "Remnant Effect"],
+  [/^damage_\+%_with_bow_skills$/, "Increased Damage with Bow Skills"],
+  [/^base_projectile_speed_\+%$/, "Projectile Speed"],
+  [/^all_damage_can_poison$/, "All Damage can Poison"],
+  [/^base_chance_to_poison_on_hit_%$/, "Poison Chance"],
+  [/^base_spell_cooldown_speed_\+%$/, "Spell Cooldown Recovery"],
+  [/^additional_dexterity_and_intelligence$/, "+Dexterity and Intelligence"],
+  [/^additional_maximum_infusion_stacks$/, "Maximum Infusion Stacks"],
+  [/pseudo_total_all_elemental_resistances/, "Elemental Resistances"],
+  [/^weapon_filters\.crit$/, "Critical Hit Chance"],
+  [/armour_filters\.es$/, "Energy Shield"],
   [/^base_item_found_rarity_\+%$/, null], // rarity is a farming stat, leave it out
 ];
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -113,10 +153,19 @@ const STAGE_RULES = [
   ["mapping", /early|map|mid|red/i, "first"],
 ];
 function printStages(d, gearFor, mapArg) {
-  const variants = [];
+  // Variants with the same name in several profiles (or no name: "Default", "Set 1", "") hold different gear:
+  // those are labelled "<profile> / <variant>". Identical copies are kept once.
+  const all = [];
   for (const p of d.profiles)
-    for (const v of p.equipment.variants)
-      if (!variants.some((x) => x.name === v.name) && Object.values(v.items ?? {}).some((id) => d.items[id])) variants.push(v);
+    for (const v of p.equipment.variants) {
+      const sig = JSON.stringify(v.items ?? {});
+      if (Object.values(v.items ?? {}).some((id) => d.items[id]) && !all.some((x) => (x.v.name ?? "") === (v.name ?? "") && x.sig === sig))
+        all.push({ p, v, sig });
+    }
+  const variants = all.map(({ p, v, sig }) => {
+    const shared = all.some((x) => (x.v.name ?? "") === (v.name ?? "") && x.sig !== sig);
+    return { ...v, name: shared || !v.name ? `${p.name} / ${v.name ?? ""}`.trim() : v.name };
+  });
   const explicit = Object.fromEntries((mapArg || "").split(",").filter(Boolean).map((kv) => kv.split("=").map((x) => x.trim())));
   const picked = {};
   if (Object.keys(explicit).length) {
@@ -127,7 +176,7 @@ function printStages(d, gearFor, mapArg) {
     }
   } else {
     for (const v of variants) {
-      const rule = STAGE_RULES.find(([, re]) => re.test(v.name.replace(/\s*\{[^}]*\}\s*$/, "")));
+      const rule = STAGE_RULES.find(([, re]) => re.test((v.name ?? "").replace(/\s*\{[^}]*\}\s*$/, "")));
       if (!rule) continue;
       if (rule[2] === "last" || !picked[rule[0]]) picked[rule[0]] = v;
     }
@@ -151,18 +200,17 @@ function printStages(d, gearFor, mapArg) {
   // --tree <name>: passive tree variant to use (default: the longest one of the profile).
   const treeIdx = args.indexOf("--tree");
   const treeArg = treeIdx >= 0 ? args[treeIdx + 1] : null;
-  const valueIdx = new Set([mapIdx + 1, treeIdx + 1].filter((i) => i > 0));
+  const valueIdx = new Set([mapIdx + 1, treeIdx + 1, args.indexOf("--step") + 1].filter((i) => i > 0));
   const [slug, wanted] = args.filter((a, i) => !a.startsWith("--") && !valueIdx.has(i));
   const url = `https://maxroll.gg/poe2/build-guides/${slug}`;
-  const html = await (await fetch(url)).text();
-  const plannerId = html.match(/maxroll\.gg\/poe2\/planner\/([a-z0-9]+)/)?.[1];
-  if (!plannerId) throw new Error(`No planner found on ${url}`);
+  const found = await guidePlanner(url);
+  const html = found.html;
+  if (!found.data) throw new Error(`No planner found on ${url}`);
   const title = html.match(/<title>([^<]*?) - Path of Exile 2/)?.[1]?.replace(/ Build Guide.*$/, "") ?? slug;
   const author = html.match(/"author"\s*:\s*\{[^}]*"name"\s*:\s*"([^"]+)"/)?.[1] ?? "Maxroll";
   const updated = html.match(/"dateModified"\s*:\s*"([^"T]+)/)?.[1];
 
-  const j = await (await fetch(`https://planners.maxroll.gg/profiles/poe2/${plannerId}`)).json();
-  const d = JSON.parse(j.data);
+  const d = found.data;
   const profile =
     d.profiles.find((p) => p.name === wanted) ??
     d.profiles.find((p) => /map|endgame/i.test(p.name) && !/aspir|min.?max|\+/i.test(p.name)) ??
@@ -206,7 +254,13 @@ function printStages(d, gearFor, mapArg) {
   const attribute = ["str", "dex", "int"][attrCounts.indexOf(Math.max(...attrCounts))];
 
   // Skills of the matching step (or the last one).
-  const step = profile.skills.steps.find((s) => s.name === pv.name) ?? profile.skills.steps.at(-1);
+  // --step <name>: skill step to use (default: the one named like the tree, else the last step with skills).
+  const stepIdx = args.indexOf("--step");
+  const stepArg = stepIdx >= 0 ? args[stepIdx + 1] : null;
+  const step =
+    profile.skills.steps.find((s) => s.name === (stepArg ?? pv.name)) ??
+    [...profile.skills.steps].reverse().find((s) => s.skills?.length) ??
+    profile.skills.steps.at(-1);
   const skills = [];
   for (const s of step.skills) {
     const names = s.gems.map((g) => gemName(g.id)).filter(knownGem);

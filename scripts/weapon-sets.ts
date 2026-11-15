@@ -10,6 +10,7 @@
 // Usage: npm run builds:weapon-sets -- [slug...]   (no slug: every guide sourced from Maxroll or poe.ninja)
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
+import { guidePlanner } from "./maxroll-planner.cjs";
 import YAML, { parseDocument } from "yaml";
 import { character, snapshot } from "./ninja-lib.mjs";
 import { getClass, tree } from "@/lib/data";
@@ -83,15 +84,9 @@ function readVariant(v: Variant) {
 }
 
 async function plannerVariants(guideUrl: string) {
-  const html = await (
-    await fetch(guideUrl, { headers: { "User-Agent": "Mozilla/5.0" } })
-  ).text();
-  const id = html.match(/maxroll\.gg\/poe2\/planner\/([a-z0-9]+)/)?.[1];
-  if (!id) return null;
-  const j = await (
-    await fetch(`https://planners.maxroll.gg/profiles/poe2/${id}`)
-  ).json();
-  const data = JSON.parse(j.data) as { profiles: Profile[] };
+  const found = await guidePlanner(guideUrl);
+  if (!found.data) return null;
+  const data = found.data as { profiles: Profile[] };
   return data.profiles.flatMap((p) =>
     p.passives.variants.map((v) => ({ profile: p, ...readVariant(v) })),
   );

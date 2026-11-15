@@ -2,7 +2,9 @@
 // usage: node scripts/runes-from-maxroll.cjs [slug...]   (default: every guide whose source is a Maxroll build guide)
 // Pieces are matched by base type (or the unique's base) in the planner's equipment variants, preferring the
 // variant that fits the stage (campaign, mapping, endgame...). Existing `runes:` lines are left as they are.
+/* eslint-disable @typescript-eslint/no-require-imports -- plain CommonJS dev script */
 const fs = require("fs");
+const { guidePlanner } = require("./maxroll-planner.cjs");
 const yaml = require("js-yaml");
 
 const P = __dirname + "/../";
@@ -55,11 +57,9 @@ function matches(it, piece) {
 }
 
 async function planner(url) {
-  const html = await (await fetch(url)).text();
-  const id = html.match(/maxroll\.gg\/poe2\/planner\/([a-z0-9]+)/)?.[1];
-  if (!id) throw new Error(`no planner on ${url}`);
-  const j = await (await fetch(`https://planners.maxroll.gg/profiles/poe2/${id}`)).json();
-  return JSON.parse(j.data);
+  const found = await guidePlanner(url);
+  if (!found.data) throw new Error(`no planner on ${url}`);
+  return found.data;
 }
 
 /** Line index range [start, end) of the YAML block `key:` found at `indent` after line `from`, before `until`. */

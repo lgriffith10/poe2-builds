@@ -10,6 +10,7 @@
 // Variant names are Maxroll's labels; `stage` is our classification (leveling, mapping, endgame, minmax).
 // Usage: npm run trees:maxroll -- [slug...]   (no slug: every guide whose source is maxroll.gg)
 import fs from "node:fs";
+import { guidePlanner } from "./maxroll-planner.cjs";
 import matter from "gray-matter";
 import { getClass, tree } from "@/lib/data";
 import { createGraph, isAllocatable, pruneDisconnected, roots } from "@/lib/tree";
@@ -90,11 +91,9 @@ function stage(profile: string, variant: string): TreeVariantFile["stage"] {
 }
 
 async function planner(url: string) {
-  const html = await (await fetch(url, { headers: { "User-Agent": "Mozilla/5.0" } })).text();
-  const id = html.match(/maxroll\.gg\/poe2\/planner\/([a-z0-9]+)/)?.[1];
-  if (!id) return null;
-  const j = await (await fetch(`https://planners.maxroll.gg/profiles/poe2/${id}`)).json();
-  return { id, profiles: (JSON.parse(j.data) as { profiles: Profile[] }).profiles };
+  const found = await guidePlanner(url);
+  if (!found.data) return null;
+  return { id: found.id as string, profiles: (found.data as { profiles: Profile[] }).profiles };
 }
 
 (async () => {
