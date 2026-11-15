@@ -2,12 +2,14 @@
 title: "Ascendancy Trials: Unlock All 8 Points"
 summary: "Where the Trials of Ascendancy are, the fastest order to get all eight ascendancy points, and how to survive the Trial of the Sekhemas and the Trial of Chaos."
 order: 2
-updated: 2026-11-08
+updated: 2026-11-14
 sources:
   - title: "Trials of Ascendancy (Maxroll)"
     url: https://maxroll.gg/poe2/getting-started/trials-of-ascendancy
   - title: "Comprehensive League Start Leveling Guide (Maxroll)"
     url: https://maxroll.gg/poe2/getting-started/comprehensive-league-start-leveling-guide
+  - title: "Inscribed Ultimatum and Djinn Barya (poe2wiki)"
+    url: https://www.poe2wiki.net/wiki/Ascension_Trials
 ---
 
 Your ascendancy is the biggest power spike of a build: most guides on this site list their ascendancy notables in the order you should take them. You unlock the class and its points by completing Trials of Ascendancy, two points at a time.
@@ -20,10 +22,12 @@ Your ascendancy is the biggest power spike of a build: most guides on this site 
 | --- | --- | --- |
 | 1-2 (ascend) | Trial of the Sekhemas, Act 2 | Balbala's Barya, from the campaign quest |
 | 3-4 | Trial of Chaos, Act 3 | Chimeral Inscribed Ultimatum, from the boss Xyclucian, the Chimera |
-| 5-6 | Sekhemas with 3 floors, **or** Chaos with 10 rounds | Djinn Barya level 60+, **or** Inscribed Ultimatum level 65+ |
-| 7-8 | Sekhemas with 4 floors and its pinnacle boss, **or** Chaos with 10 rounds and the locked boss | Djinn Barya level 75+, **or** Inscribed Ultimatum level 65+ with all three Fate fragments |
+| 5-6 | Sekhemas with 3 floors, **or** Chaos with 10 rounds | Djinn Barya level 60+, **or** Inscribed Ultimatum level 75+ |
+| 7-8 | Sekhemas with 4 floors and its pinnacle boss, **or** Chaos with 10 rounds and the locked boss | Djinn Barya level 75+, **or** Inscribed Ultimatum level 75+ with all three Fate fragments |
 
 The endgame keys drop in maps (and level 60+ Baryas can already drop near the end of the campaign). You can also buy them from other players.
+
+> **The key's level sets how far it goes.** A Djinn Barya has 1 floor up to level 44, 2 floors at 45-59, 3 floors at 60-74 and 4 floors at 75+. An Inscribed Ultimatum has 4 rounds up to level 59, 7 rounds at 60-74 and 10 rounds at 75+. Hover the key before you use or buy it: it shows its number of trials, and says so when completing it will not grant more Ascendancy points.
 
 > **Should you ascend in Act 2?** Almost always. Waiting for a later trial means playing without your ascendancy for a long time. If your build struggles, gain a few levels and better gear first, but still do it in Act 2.
 

@@ -13,10 +13,12 @@ Votre ascendance est le plus gros gain de puissance d'un build : la plupart des 
 | --- | --- | --- |
 | 1-2 (ascension) | Trial of the Sekhemas, acte 2 | Balbala's Barya, obtenue par la quête de campagne |
 | 3-4 | Trial of Chaos, acte 3 | Chimeral Inscribed Ultimatum, lâchée par le boss Xyclucian, the Chimera |
-| 5-6 | Sekhemas sur 3 étages, **ou** Chaos sur 10 manches | Djinn Barya niveau 60+, **ou** Inscribed Ultimatum niveau 65+ |
-| 7-8 | Sekhemas sur 4 étages avec son boss ultime, **ou** Chaos sur 10 manches avec le boss verrouillé | Djinn Barya niveau 75+, **ou** Inscribed Ultimatum niveau 65+ avec les trois fragments Fate |
+| 5-6 | Sekhemas sur 3 étages, **ou** Chaos sur 10 manches | Djinn Barya niveau 60+, **ou** Inscribed Ultimatum niveau 75+ |
+| 7-8 | Sekhemas sur 4 étages avec son boss ultime, **ou** Chaos sur 10 manches avec le boss verrouillé | Djinn Barya niveau 75+, **ou** Inscribed Ultimatum niveau 75+ avec les trois fragments Fate |
 
 Les clés d'endgame tombent dans les cartes (et les Baryas de niveau 60+ peuvent déjà tomber en fin de campagne). Vous pouvez aussi les acheter à d'autres joueurs.
+
+> **Le niveau de la clé fixe sa longueur.** Une Djinn Barya a 1 étage jusqu'au niveau 44, 2 étages de 45 à 59, 3 étages de 60 à 74 et 4 étages à partir de 75. Une Inscribed Ultimatum a 4 manches jusqu'au niveau 59, 7 manches de 60 à 74 et 10 manches à partir de 75. Survolez la clé avant de l'utiliser ou de l'acheter : elle affiche son nombre d'épreuves, et précise quand la terminer ne donnera pas de points d'ascendance supplémentaires.
 
 > **Faut-il monter en ascendance à l'acte 2 ?** Presque toujours. Attendre une épreuve plus tardive, c'est jouer longtemps sans son ascendance. Si votre build peine, prenez quelques niveaux et un meilleur équipement d'abord, mais faites-le quand même à l'acte 2.
 
