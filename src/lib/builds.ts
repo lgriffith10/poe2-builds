@@ -526,7 +526,16 @@ const cache = (store.__buildCacheV15 ??= { files: new Map(), lists: new Map() })
 
 const mtime = (p: string) => (fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0);
 
-export function getBuilds(lang: Locale = DEFAULT_LOCALE): Build[] {
+/** Ladder builds (drawn from poe.ninja) are hidden from the site for now: their data is less reliable than the written guides. */
+export const SHOW_LADDER_BUILDS = false;
+
+/** Builds shown on the site; `all` also returns hidden ones (validation). */
+export function getBuilds(lang: Locale = DEFAULT_LOCALE, all = false): Build[] {
+  const list = getAllBuilds(lang);
+  return all || SHOW_LADDER_BUILDS ? list : list.filter((b) => b.origin !== "ladder");
+}
+
+function getAllBuilds(lang: Locale): Build[] {
   const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".md"));
   // A guide is re-parsed when its file or its trees file (content/builds/trees) changes.
   const stamps = files.map(

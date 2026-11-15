@@ -9,7 +9,7 @@ import { tree } from "@/lib/data";
 import { MAX_ASCENDANCY_POINTS, MAX_PASSIVE_POINTS, MAX_WEAPON_SET_POINTS } from "@/lib/tree";
 
 let warnings = 0;
-for (const b of getBuilds()) {
+for (const b of getBuilds(DEFAULT_LOCALE, true)) {
   const asc = b.planner.nodes.filter((id) => tree.nodes[id].a && tree.nodes[id].t !== "ascStart").length;
   const sets = Object.values(b.planner.weaponSets ?? {});
   const set1 = sets.filter((s) => s === 1).length;
@@ -23,7 +23,7 @@ for (const b of getBuilds()) {
 }
 // Translations: each locale must parse, and every guide should have one.
 for (const lang of LOCALES.filter((l) => l !== DEFAULT_LOCALE)) {
-  const builds = getBuilds(lang);
+  const builds = getBuilds(lang, true);
   const missing = fs
     .readdirSync(path.join("content", "builds"))
     .filter((f) => f.endsWith(".md") && !fs.existsSync(path.join("content", "builds", lang, f)));
