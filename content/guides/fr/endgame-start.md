@@ -63,4 +63,4 @@ Une fois la Fortress terminée, spécialisez-vous. Chaque mécanique a ses Table
 2. Gardez celle que votre build gère bien et qui vous plaît.
 3. Cumulez ses Tablets et ses passifs d'Atlas pour augmenter ses récompenses.
 
-Vendez ce que vous n'utilisez pas (voir [l'échange](/guides/leveling-and-gearing#lechange)), et dépensez la monnaie dans les améliorations des onglets Endgame et Min-max de l'équipement de votre guide de build.
+Pour savoir ce que rapporte chaque mécanique et comment transformer le butin en monnaie, voir [Que farmer](/guides/farming-and-currency). Vendez ce que vous n'utilisez pas (voir [l'échange](/guides/leveling-and-gearing#lechange)), et dépensez la monnaie dans les améliorations des onglets Endgame et Min-max de l'équipement de votre guide de build.

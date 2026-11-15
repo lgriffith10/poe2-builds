@@ -72,4 +72,4 @@ Once the Fortress is done, specialise. Each mechanic has its own Tablets, reward
 2. Keep the one your build handles well and that you enjoy.
 3. Stack its Tablets and Atlas passives to grow its rewards.
 
-Sell what you don't use (see [trading](/guides/leveling-and-gearing#trading)), and spend the currency on the upgrades listed in your build guide's Endgame and Min-max gear tabs.
+For what each mechanic rewards and how to turn loot into currency, see [What to Farm](/guides/farming-and-currency). Sell what you don't use (see [trading](/guides/leveling-and-gearing#trading)), and spend the currency on the upgrades listed in your build guide's Endgame and Min-max gear tabs.
