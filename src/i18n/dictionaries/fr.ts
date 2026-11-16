@@ -189,6 +189,7 @@ export const fr: Dictionary = {
     craftThis: "Crafter cet objet",
     tradeSearch: "Chercher sur le trade",
     tradeLevel: "Mon niveau",
+    modPriority: { priority: "Par priorité", required: "exigée sur le trade", anyOf: "au moins une sur le trade" },
     ladderSlot: "Porté par les joueurs du ladder sur ce build",
     treeVariants: "Arbres par étape",
     treeVariantsHint: "L'arbre du guide est notre arbre recommandé. Les autres viennent nœud pour nœud du planner du guide source : les arbres de leveling utilisent les points disponibles à cette étape, passez-y quand vous l'atteignez et remboursez ce qui est listé.",

@@ -29,6 +29,8 @@ export interface InventoryItem {
   icon: string | null;
   implicits: string[];
   mods: string[];
+  /** Rares from a written guide: `mods` are listed by priority, most important first. */
+  ranked: boolean;
   /** Socketed runes, soul cores and idols. */
   runes: SocketedRune[];
   /** Ladder popularity for this slot among characters of the build (% of characters). */
@@ -68,7 +70,7 @@ export function Price({ tag, alt }: { tag: PriceTag; alt: string }) {
 function tradeUrl(t: TradeSearch, level: number | null) {
   const query = t.query as { filters?: object };
   const q = level ? { ...query, filters: { ...query.filters, req_filters: { filters: { lvl: { max: level } } } } } : query;
-  return `https://www.pathofexile.com/trade2/search/poe2/${encodeURIComponent(t.league)}?q=${encodeURIComponent(JSON.stringify({ query: q, sort: { price: "asc" } }))}`;
+  return `https://www.pathofexile.com/trade2/search/poe2/${encodeURIComponent(t.league)}?q=${encodeURIComponent(JSON.stringify({ query: q, sort: t.sort ?? { price: "asc" } }))}`;
 }
 
 /** One socket per augment (a named rune repeated `count` times), at most 6. */
@@ -114,7 +116,17 @@ export function GearInventory({
   slotLabels,
   weaponSetsLabel = "Weapon sets",
   weaponLabels = { title: "Weapons", set1: "Weapon Set I", set2: "Weapon Set II" },
-  labels = { runes: "Socketed", ladder: "On the ladder", craft: "Craft this item", trade: "Search on trade", tradeLevel: "My level", close: "Close" },
+  labels = {
+    runes: "Socketed",
+    ladder: "On the ladder",
+    craft: "Craft this item",
+    trade: "Search on trade",
+    tradeLevel: "My level",
+    close: "Close",
+    priority: "By priority",
+    required: "required on trade",
+    anyOf: "at least one on trade",
+  },
   hint,
   priceLabels,
 }: {
@@ -125,7 +137,17 @@ export function GearInventory({
   /** Titles of the weapons row under the inventory. */
   weaponLabels?: { title: string; set1: string; set2: string };
   /** Section titles in the item panel. */
-  labels?: { runes: string; ladder: string; craft: string; trade: string; tradeLevel: string; close: string };
+  labels?: {
+    runes: string;
+    ladder: string;
+    craft: string;
+    trade: string;
+    tradeLevel: string;
+    close: string;
+    priority: string;
+    required: string;
+    anyOf: string;
+  };
   hint: string;
   /** { divine, exalted, stageTotal, note } labels for the price chips. */
   priceLabels: { divine: string; exalted: string; stageTotal: string; note: string };
@@ -350,11 +372,45 @@ export function GearInventory({
                   ))}
                 </ul>
               )}
-              <ul className={`space-y-0.5 ${current.kind === "unique" ? "text-[#8fb6f0]" : "text-ink"}`}>
-                {current.mods.map((m, i) => (
-                  <li key={i}>{m}</li>
-                ))}
-              </ul>
+              {current.ranked && current.mods.length > 1 ? (
+                <div>
+                  <ol className="space-y-0.5 text-left text-ink">
+                    {current.mods.map((m, i) => {
+                      const role = current.trade?.roles[i] ?? null;
+                      return (
+                        <li key={i} className="flex items-baseline gap-2">
+                          <span className="w-4 shrink-0 text-right text-xs font-semibold tabular-nums text-gold">{i + 1}</span>
+                          <span className="min-w-0 flex-1">{m}</span>
+                          {role && (
+                            <span
+                              title={role === "required" ? labels.required : labels.anyOf}
+                              aria-label={role === "required" ? labels.required : labels.anyOf}
+                              className={`shrink-0 text-xs ${role === "required" ? "text-gold" : "text-faint"}`}
+                            >
+                              {role === "required" ? "◆" : "◇"}
+                            </span>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                  <p className="mt-1.5 text-[11px] text-faint">
+                    {labels.priority}
+                    {current.trade && current.trade.roles.some(Boolean) && (
+                      <>
+                        {" · "}
+                        <span className="text-gold">◆</span> {labels.required} · ◇ {labels.anyOf}
+                      </>
+                    )}
+                  </p>
+                </div>
+              ) : (
+                <ul className={`space-y-0.5 ${current.kind === "unique" ? "text-[#8fb6f0]" : "text-ink"}`}>
+                  {current.mods.map((m, i) => (
+                    <li key={i}>{m}</li>
+                  ))}
+                </ul>
+              )}
               {current.runes.length > 0 && (
                 <div className="border-t border-line pt-2">
                   <p className="text-xs uppercase tracking-wider text-faint">

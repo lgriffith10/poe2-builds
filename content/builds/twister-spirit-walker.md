@@ -211,7 +211,7 @@ rotations:
 gear:
   weapon:
     base: Akoyan Spear
-    mods: [+Level of all Projectile Skills, Adds Cold Damage, Adds Physical Damage, Increased Attack Speed, Critical Hit Chance]
+    mods: [Increased Attack Speed, +Level of all Projectile Skills, Adds Cold Damage, Adds Physical Damage, Critical Hit Chance]
     runes: ["Soul Core of Quipolatl: 5% increased Attack Speed"]
   offhand:
     base: Omen Sceptre
@@ -248,7 +248,7 @@ gear:
     mods: [+Maximum Life, Elemental Resistances]
   weapon2:
     base: Akoyan Spear
-    mods: [High Physical DPS, Critical Hit Chance, +Level of all Projectile Skills, Critical Damage Bonus]
+    mods: [Adds Physical Damage, Adds Cold Damage, +Level of all Projectile Skills, Critical Hit Chance, Critical Damage Bonus]
     runes: ["Perfect Iron Rune: 20% increased Physical Damage"]
   offhand2:
     base: Omen Sceptre

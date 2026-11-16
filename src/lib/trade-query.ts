@@ -75,6 +75,62 @@ const MANUAL: [RegExp, string][] = [
   [/^Additional Arrow$/, "explicit.stat_3885405204"],
 ];
 
+/** Guide labels that read better raw than through modLabel: matched on the label itself. */
+const RAW: Record<string, string> = {
+  "Spell Critical Hit Chance": "explicit.stat_737908626",
+  "Attack Critical Hit Chance": "explicit.stat_2194114101",
+  "Life Regeneration": "explicit.stat_3325883026",
+  "Mana Cost Efficiency": "explicit.stat_4101445926",
+  "Life Cost Efficiency": "explicit.stat_310945763",
+  "Projectile Speed": "explicit.stat_3759663284",
+  "Quality of all Skill Gems": "explicit.stat_3655769732",
+  "Ignite Magnitude": "explicit.stat_3791899485",
+  "Faster Damaging Ailments": "explicit.stat_538241406",
+  "Minion Movement Speed": "explicit.stat_174664100",
+  "Minion Damaging Ailment Magnitude": "explicit.stat_953593695",
+  "Minion Immobilisation Buildup": "explicit.stat_1485480327",
+  "Increased Damage with Command Skills": "explicit.stat_3742865955",
+  "Presence Area": "explicit.stat_101878827",
+  "Exposure Effect": "explicit.stat_2074866941",
+  "Power Charge on Critical Hit": "explicit.stat_3814876985",
+  "Damage against Fully Broken Armour": "explicit.stat_2301718443",
+  "Skill Speed": "explicit.stat_970213192",
+  "Mana on Kill": "explicit.stat_1368271171",
+  "Life on Kill": "explicit.stat_3695891184",
+  "Onslaught on Kill": "explicit.stat_1195849808",
+  "Archon Duration": "explicit.stat_2158617060",
+  "Spell Damage with Spells that Cost Life": "explicit.stat_1373860425",
+  "Damage Taken from Mana before Life": "explicit.stat_458438597",
+  "Maximum Infusion Stacks": "explicit.stat_4097212302",
+  "Additional Combo Gain": "explicit.stat_4258524206",
+};
+
+/**
+ * On martial weapons these stats are local: the trade site lists them apart from the global ones found on jewellery
+ * ("+#% to Critical Hit Chance" on a spear, "#% increased Critical Hit Chance" on an amulet).
+ */
+const LOCAL: [RegExp, string][] = [
+  [/^#% increased Attack Speed$/, "explicit.stat_210067635"],
+  [/^#% increased Critical Hit Chance$/, "explicit.stat_518292764"],
+  [/^#% increased Critical Damage Bonus$/, "explicit.stat_2694482655"],
+  [/^\+# to Accuracy Rating$/, "explicit.stat_691932474"],
+];
+/** Weapon classes whose damage, speed and critical modifiers are local (caster weapons use spell modifiers). */
+const CASTER_WEAPONS = new Set(["weapon.wand", "weapon.sceptre", "weapon.staff"]);
+
+/** Whether a base is a martial weapon, whose damage, speed and critical modifiers are local. */
+export function isLocalWeapon(baseName: string | undefined): boolean {
+  const base = baseName ? getBase(baseName) : undefined;
+  const category = base && CLASS_CATEGORY[base.class];
+  return !!category && category.startsWith("weapon.") && !CASTER_WEAPONS.has(category);
+}
+
+/** Maxroll's "physical DPS" planner filter: no stat to require, so the search is sorted by physical DPS instead. */
+export const HIGH_PDPS = "High Physical DPS";
+
+/** How a guide's modifier is used by the trade search: required, one of the rest, or not searchable. */
+export type TradeRole = "required" | "any" | null;
+
 /** Defence words in guide labels: the base already decides them, so they become "has this defence" filters. */
 const DEFENCE_LABEL = /^(Armour|Evasion Rating|Energy Shield|Evasion and Energy Shield|Armour and (Evasion|Energy Shield))$/;
 
@@ -99,8 +155,10 @@ export class TradeQueries {
   }
 
   /** Trade stat id for a guide modifier label, or null when the trade site has no clear match. */
-  statId(label: string): string | null {
+  statId(label: string, local = false): string | null {
+    if (RAW[label]) return RAW[label];
     const l = modLabel(label).replace(/\d+(?:\.\d+)?/g, "#");
+    if (local) for (const [re, id] of LOCAL) if (re.test(l)) return id;
     // Pseudo ids are lower case ("pseudo_total_fire_resistance").
     for (const [re, id] of MANUAL) if (re.test(l)) return l.replace(re, id).toLowerCase();
     return this.byText.get(norm(l)) ?? null;
@@ -113,44 +171,63 @@ export class TradeQueries {
 
   /**
    * Search for a gear piece. Uniques: by name. Rares: the item category, the base's defence type, the first two
-   * stats the guide asks for, and at least one of the others. `ordered` is false for ladder characters, whose
+   * stats the guide asks for, and at least one of the others. Guides list a slot's stats by priority, so `roles`
+   * tells, for each listed stat, how the search uses it. `ordered` is false for ladder characters, whose
    * modifiers are not listed by importance: half of them are asked for, in any order.
    */
-  query(slot: GearSlot, piece: GearPiece, ordered: boolean, grantedSkills: string[] = []): object | null {
+  query(
+    slot: GearSlot,
+    piece: GearPiece,
+    ordered: boolean,
+    grantedSkills: string[] = [],
+  ): { query: object; roles: TradeRole[]; sort?: Record<string, string> } | null {
     const status = { option: "available" };
     if (piece.unique) {
       const u = getUnique(piece.unique);
       if (!u) return null;
-      return { status, name: u.name, type: u.base, filters: { type_filters: { filters: { rarity: { option: "unique" } } } } };
+      return { query: { status, name: u.name, type: u.base, filters: { type_filters: { filters: { rarity: { option: "unique" } } } } }, roles: [] };
     }
     const base = piece.base ? getBase(piece.base) : undefined;
     const category = (base && CLASS_CATEGORY[base.class]) ?? SLOT_CATEGORY[slot];
     if (!category) return null;
-    const ids = [...new Set((piece.mods ?? []).filter((m) => !DEFENCE_LABEL.test(m)).map((m) => this.statId(m)).filter((x): x is string => !!x))];
-    if (!ids.length) return null;
+    const local = category.startsWith("weapon.") && !CASTER_WEAPONS.has(category);
+    const mods = piece.mods ?? [];
+    // One stat id per listed modifier (null: defence word, physical DPS or no trade stat); duplicates count once.
+    const seen = new Set<string>();
+    const idOf = mods.map((m) => {
+      const id = DEFENCE_LABEL.test(m) || m === HIGH_PDPS ? null : this.statId(m, local);
+      if (!id || seen.has(id)) return null;
+      seen.add(id);
+      return id;
+    });
+    const ids = idOf.filter((x): x is string => !!x);
+    const sort = local && mods.includes(HIGH_PDPS) ? { pdps: "desc" } : undefined;
+    if (!ids.length && !sort) return null;
     const filter = (id: string) => ({ id });
     // Skills the build takes from this item: the item must grant them (the level is left to the player to compare).
     const skillIds = grantedSkills.map((s) => this.grantedSkill(s)?.[1]).filter((x): x is string => !!x);
-    const stats = !ordered
-      ? [
-          ...(skillIds.length ? [{ type: "and", filters: skillIds.map(filter) }] : []),
-          { type: "count", value: { min: Math.ceil(ids.length / 2) }, filters: ids.map(filter) },
-        ]
-      : [
-          { type: "and", filters: [...skillIds, ...ids.slice(0, 2)].map(filter) },
-          ...(ids.length > 2 ? [{ type: "count", value: { min: 1 }, filters: ids.slice(2).map(filter) }] : []),
-        ];
+    const required = ordered ? ids.slice(0, 2) : [];
+    const rest = ordered ? ids.slice(2) : ids;
+    const stats = [
+      ...(skillIds.length || required.length ? [{ type: "and", filters: [...skillIds, ...required].map(filter) }] : []),
+      ...(rest.length ? [{ type: "count", value: { min: ordered ? 1 : Math.ceil(rest.length / 2) }, filters: rest.map(filter) }] : []),
+    ];
+    const roles: TradeRole[] = idOf.map((id) => (!id ? null : required.includes(id) ? "required" : "any"));
     const defence: Record<string, { min: number }> = {};
     const props = base?.props ?? {};
     if (props.armour) defence.ar = { min: 1 };
     if (props.evasion) defence.ev = { min: 1 };
     if (props.energy_shield) defence.es = { min: 1 };
     return {
-      status,
-      stats,
-      filters: {
-        type_filters: { filters: { category: { option: category }, rarity: { option: "nonunique" } } },
-        ...(Object.keys(defence).length && category.startsWith("armour.") ? { equipment_filters: { filters: defence } } : {}),
+      roles,
+      sort,
+      query: {
+        status,
+        stats,
+        filters: {
+          type_filters: { filters: { category: { option: category }, rarity: { option: "nonunique" } } },
+          ...(Object.keys(defence).length && category.startsWith("armour.") ? { equipment_filters: { filters: defence } } : {}),
+        },
       },
     };
   }

@@ -24,8 +24,12 @@ const RULES: [RegExp, string | ((...m: string[]) => string)][] = [
   [/^Minion Life$/, "Minions have #% increased maximum Life"],
 ];
 
-export function modLabel(label: string): string {
+/** Martial weapons roll critical stats as flat additions to their own base values ("+5.2% to Critical Hit Chance"). */
+const LOCAL_RULES: [RegExp, string][] = [[/^(Critical Hit Chance|Critical Damage Bonus)$/, "+#% to $1"]];
+
+export function modLabel(label: string, localWeapon = false): string {
   if (/\d/.test(label)) return label;
+  if (localWeapon) for (const [re, to] of LOCAL_RULES) if (re.test(label)) return label.replace(re, to);
   for (const [re, to] of RULES) {
     if (re.test(label)) return typeof to === "string" ? label.replace(re, to) : label.replace(re, to as (...m: string[]) => string);
   }

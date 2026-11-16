@@ -14,6 +14,7 @@ import { localePath, type Locale } from "@/i18n/config";
 import { Crafter } from "./craft";
 import { encodeCraft, groupsForLines } from "./craft-share";
 import { grantedSkillLine, tradeSearch } from "./trade";
+import { isLocalWeapon } from "./trade-query";
 
 let crafter: Crafter | null = null;
 /** Link to the crafting simulator with this rare's base and its listed modifiers as goals (null when not craftable). */
@@ -66,6 +67,7 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           icon: unique.icon,
           implicits: unique.implicits,
           mods: unique.mods,
+          ranked: false,
           runes: (piece.runes ?? []).map((r) => socketed(r, lang)),
           ladder: piece.ladder ?? [],
           grants: null,
@@ -83,10 +85,11 @@ export function inventoryItems(gear: GearSet, t: Dictionary, reference?: GearSet
           base: base?.name ?? null,
           icon: base?.icon ?? null,
           implicits: piece.implicits ?? [],
-          mods: (piece.mods ?? []).map(modLabel),
+          mods: (piece.mods ?? []).map((m) => modLabel(m, isLocalWeapon(base?.name))),
+          ranked: ordered,
           trade: tradeSearch(slot, piece, ordered, usedGrants(base?.name, skills)),
           grantsUsed: usedGrants(base?.name, skills).map(grantedSkillLine),
-          craft: craftLink(base?.name, (piece.mods ?? []).map(modLabel), lang),
+          craft: craftLink(base?.name, (piece.mods ?? []).map((m) => modLabel(m, isLocalWeapon(base?.name))), lang),
           runes: (piece.runes ?? []).map((r) => socketed(r, lang)),
           ladder: piece.ladder ?? [],
           price: null,

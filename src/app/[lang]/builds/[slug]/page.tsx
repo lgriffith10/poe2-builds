@@ -382,7 +382,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               slotLabels={tr.slots}
               weaponSetsLabel={tr.tree.weaponSets}
               weaponLabels={{ title: tr.build.weapons, set1: tr.tree.weaponSet1, set2: tr.tree.weaponSet2 }}
-              labels={{ runes: tr.build.socketed, ladder: tr.build.ladderSlot, craft: tr.build.craftThis, trade: tr.build.tradeSearch, tradeLevel: tr.build.tradeLevel, close: tr.build.closeCard }}
+              labels={{ runes: tr.build.socketed, ladder: tr.build.ladderSlot, craft: tr.build.craftThis, trade: tr.build.tradeSearch, tradeLevel: tr.build.tradeLevel, close: tr.build.closeCard, ...tr.build.modPriority }}
               hint={`${tr.build.inventoryHint} ${tr.build.modHint}`}
               priceLabels={{
                 divine: "Divine Orb",

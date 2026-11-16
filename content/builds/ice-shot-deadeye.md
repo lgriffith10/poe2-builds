@@ -242,7 +242,7 @@ gear:
     mods: [+Maximum Life, Elemental Resistances]
   weapon2:
     base: Obliterator Bow
-    mods: [High Physical DPS, Critical Hit Chance, +Level of all Projectile Skills, Critical Damage Bonus]
+    mods: [Adds Physical Damage, Adds Cold Damage, +Level of all Projectile Skills, Critical Hit Chance, Critical Damage Bonus]
     runes: ["2× Perfect Iron Rune: 20% increased Physical Damage"]
   offhand2:
     base: Volant Quiver
