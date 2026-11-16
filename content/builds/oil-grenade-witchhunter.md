@@ -369,6 +369,13 @@ passives:
     - "Feel no Pain"
     - "Remorseless"
   ascendancy: [Zealous Inquisition, Pitiless Killer, Ceremonial Ablution]
+farming:
+  clear: 3
+  single: 2
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [evasion]
 ---
 ## How It Works
 

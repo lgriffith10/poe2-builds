@@ -513,6 +513,13 @@ passives:
     - "Mind Over Matter"
     - "Inner Faith"
   ascendancy: [Waking Dream, Chayula's Gift]
+farming:
+  clear: 3
+  single: 3
+  tank: 3
+  speed: 2
+  style: minion
+  traits: [es]
 ---
 
 ## How It Works

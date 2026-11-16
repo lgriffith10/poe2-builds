@@ -545,6 +545,13 @@ passives:
     - Crystalline Flesh
     - Insightfulness
   ascendancy: [Barya of Kelari, Kelari's Deception, Barya of Ruzhan, Ruzhan's Trap, The Fourth Teaching, Sacred Rituals]
+farming:
+  clear: 2
+  single: 3
+  tank: 3
+  speed: 1
+  style: minion
+  traits: [es]
 ---
 
 ## How It Works

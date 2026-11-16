@@ -10,6 +10,8 @@ pros:
 cons:
   - "Les dégâts dépendent d'un bonus à maintenir"
   - "Écran chargé et peu d'esquive"
+farmingNotes:
+  breach: "Avant Mageblood ou Headhunter, une ceinture de l'arbre Genesis avec récupération des temps de recharge des sorts raccourcit Blink."
 ---
 
 ## Fonctionnement

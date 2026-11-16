@@ -415,6 +415,13 @@ passives:
   ascendancy: [Instruments of Power, The Fourth Teaching, Sacred Rituals, Baryanic Leylines]
   weaponSet1: [Endless Blizzard, Glaciation, Careful Assassin, Controlling Magic, Turn the Clock Forward, Echoing Frost, Echoing Flames, Echoing Thunder]
   weaponSet2: [Stripped Defences, Lingering Whispers, Master of Hexes, Overexposure]
+farming:
+  clear: 3
+  single: 3
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [es, ci]
 ---
 ## How It Works
 

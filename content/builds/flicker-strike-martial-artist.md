@@ -357,6 +357,13 @@ passives:
     - "Pressure Points"
     - "Cooked"
   ascendancy: [Runic Meridians, Way of the Stonefist, Martial Adept, Martial Master]
+farming:
+  clear: 3
+  single: 2
+  tank: 2
+  speed: 3
+  style: melee
+  traits: [es, ci]
 ---
 
 ## How It Works

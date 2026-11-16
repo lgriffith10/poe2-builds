@@ -304,6 +304,13 @@ passives:
   ascendancy: [Ancestral Empowerment, Hulking Form, Earthbreaker, Colossal Capacity]
   weaponSet1: [Brutal, Bond of the Wolf, Sturdy Metal, Relentless, Mass Hysteria, Blurred Motion]
   weaponSet2: [Acceleration, Split the Earth, Crushing Verdict, Channelled Heritage, Guided Hand, Bloodthirsty]
+farming:
+  clear: 3
+  single: 2
+  tank: 3
+  speed: 1
+  style: melee
+  traits: [armour, physical]
 ---
 
 ## How It Works

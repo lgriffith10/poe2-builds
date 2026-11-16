@@ -9,6 +9,7 @@ import { renderItemCards } from "./item-cards";
 import { currencyHref, currencyTip, getCurrency } from "./currency";
 import { allocateTargets, allocateWeaponSetTargets, createGraph, findNodeByName, isAllocatable, pruneDisconnected, roots } from "./tree";
 import { encodeBuild } from "./build-code";
+import { MECHANICS, parseFarming, type FarmingProfile, type MechanicId } from "./farming";
 import { DEFAULT_LOCALE, localePath, type Locale } from "@/i18n/config";
 import {
   DIFFICULTIES,
@@ -101,6 +102,10 @@ export interface Build {
   treeVariants: TreeVariant[];
   /** Planner the alternative trees come from. */
   treeVariantsSource: string | null;
+  /** How the build fares in each endgame mechanic (see farming.ts); null when not filled in yet. */
+  farming: FarmingProfile | null;
+  /** Translated hand-written farming notes, by mechanic. */
+  farmingNotes: Partial<Record<MechanicId, string>>;
   html: string;
   toc: { id: string; text: string }[];
 }
@@ -408,6 +413,13 @@ function parseBuild(file: string): { build: Build; markdown: string } {
     return !n.a && n.t !== "start" && !sets.weaponSets[id];
   }).length;
 
+  let farming: FarmingProfile | null = null;
+  if (fm.farming !== undefined) {
+    const parsed = parseFarming(fm.farming);
+    if (typeof parsed === "string") fail(parsed);
+    farming = parsed as FarmingProfile;
+  }
+
   const { html, toc } = renderBody(content, file);
   const updated = fm.updated instanceof Date ? fm.updated.toISOString().slice(0, 10) : String(fm.updated ?? "");
 
@@ -458,6 +470,8 @@ function parseBuild(file: string): { build: Build; markdown: string } {
     plannerCode: encodeBuild(planner),
     pointsUsed,
     ...readTreeVariants(file, cls, ascendancy),
+    farming,
+    farmingNotes: {},
     html,
     toc,
   };
@@ -477,7 +491,7 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
   }
   const { data: tr, content } = matter(fs.readFileSync(trPath, "utf8"));
   const where = `${lang}/${file}`;
-  const known = ["summary", "pros", "cons", "tags", "damage", "playstyle", "skillNotes", "gearNotes"];
+  const known = ["summary", "pros", "cons", "tags", "damage", "playstyle", "skillNotes", "gearNotes", "farmingNotes"];
   for (const key of Object.keys(tr)) {
     if (!known.includes(key)) throw new BuildError(where, `Unknown translation field "${key}"`);
   }
@@ -493,6 +507,11 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
   for (const slot of Object.keys(tr.gearNotes ?? {})) {
     if (!b.gear[slot as GearSlot]) throw new BuildError(where, `gearNotes: no "${slot}" slot in this guide`);
   }
+  for (const [id, note] of Object.entries(tr.farmingNotes ?? {})) {
+    if (!(MECHANICS as readonly string[]).includes(id)) throw new BuildError(where, `farmingNotes: unknown mechanic "${id}"`);
+    if (!b.farming?.notes[id as MechanicId]) throw new BuildError(where, `farmingNotes.${id}: the English guide has no farming note to translate`);
+    if (typeof note !== "string") throw new BuildError(where, `farmingNotes.${id} is not text`);
+  }
   const { html, toc } = renderBody(content.trim() ? content : base.markdown, where, lang);
   return {
     ...b,
@@ -506,6 +525,7 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
     gear: Object.fromEntries(
       Object.entries(b.gear).map(([slot, piece]) => [slot, { ...piece, note: tr.gearNotes?.[slot] ?? piece?.note }]),
     ),
+    farmingNotes: tr.farmingNotes ?? {},
     html,
     toc,
   };
@@ -516,13 +536,13 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
 // The cache lives on globalThis to survive dev module reloads.
 type Parsed = { build: Build; markdown: string };
 const store = globalThis as typeof globalThis & {
-  __buildCacheV15?: {
+  __buildCacheV16?: {
     files: Map<string, { stamp: string; parsed: Parsed }>;
     lists: Map<Locale, { key: string; list: Build[] }>;
   };
 };
 // Versioned key: a dev server still holding a cache in an older shape (hot reload keeps globalThis) gets a fresh one.
-const cache = (store.__buildCacheV15 ??= { files: new Map(), lists: new Map() });
+const cache = (store.__buildCacheV16 ??= { files: new Map(), lists: new Map() });
 
 const mtime = (p: string) => (fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0);
 

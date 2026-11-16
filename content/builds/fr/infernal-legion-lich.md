@@ -10,6 +10,8 @@ pros:
 cons:
   - "Pas de zone sur tout l'écran : il faut rester proche"
   - "Demande des compagnons apprivoisés précis"
+farmingNotes:
+  ritual: "Le guide source choisit Chaos Inoculation en partie parce que l'immunité au chaos est précieuse dans un contenu comme le Ritual."
 ---
 
 ## Fonctionnement

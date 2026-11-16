@@ -314,6 +314,13 @@ passives:
   ascendancy: [Essence of Virtue, Advanced Thaumaturgy, Gem Studded, Implanted Gems]
   weaponSet1: [Arsonist, Flamekeeper, Searing Heat, Deterioration]
   weaponSet2: [Distracting Presence, Cluster Bombs, Utility Ordnance, Multitasking, Primal Growth, Swift Flight]
+farming:
+  clear: 2
+  single: 3
+  tank: 2
+  speed: 1
+  style: ranged
+  traits: [stationary]
 ---
 
 ## How It Works

@@ -10,6 +10,8 @@ pros:
 cons:
   - "Corps à corps : certaines attaques de boss tuent en un coup, à apprendre"
   - "Demande beaucoup de régénération de mana"
+farmingNotes:
+  abyss: "Le guide source prévient que l'Abyss est l'un des contenus les plus durs pour la mêlée : montez la résistance au chaos à 75 % et préparez Shavronne's Satchel pour soigner plus vite que ses rares ne frappent."
 ---
 
 ## Fonctionnement

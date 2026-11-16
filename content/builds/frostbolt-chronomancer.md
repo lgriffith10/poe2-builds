@@ -335,6 +335,13 @@ passives:
   ascendancy: [Unbound Encore, Quicksand Hourglass, Now and Again, Ultimate Command]
   weaponSet1: [Critical Overload, For the Jugular, Evocational Practitioner, Turn the Clock Forward]
   weaponSet2: [Preservation, Lingering Horror, Devoted Protector, Grounded in the Earth]
+farming:
+  clear: 3
+  single: 3
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [es]
 ---
 
 ## How It Works

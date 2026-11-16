@@ -456,6 +456,13 @@ passives:
     - "The Hollowkeeper"
     - "Shimmering"
   ascendancy: [Hollow Focus Technique, Way of the Stonefist, Runic Meridians, Way of the Mountain]
+farming:
+  clear: 3
+  single: 3
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [es, evasion]
 ---
 ## How It Works
 

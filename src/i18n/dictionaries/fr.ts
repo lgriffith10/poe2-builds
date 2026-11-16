@@ -163,6 +163,13 @@ export const fr: Dictionary = {
       gem: "Gemme de compétence",
       spirit: "Gemme d'esprit",
     },
+    farming: {
+      title: "Farming en endgame",
+      sub: "Les huit mécaniques d'endgame classées pour ce build, de la plus adaptée à la moins adaptée, selon son nettoyage, ses dégâts sur boss, sa robustesse et sa mobilité.",
+      fit: { great: "Très adaptée", good: "Adaptée", fair: "Moyenne", poor: "Peu adaptée" },
+      guide: "Ce qu'elle rapporte et comment en profiter",
+      intro: "Commencez par les deux premières et cumulez leurs Tablets et passifs d'Atlas. Une place plus basse ne veut pas dire que la mécanique est impossible : le build en tire moins, ou demande plus d'équipement pour elle.",
+    },
     socketed: "Runes serties",
     closeCard: "Fermer",
     lootFilter: {

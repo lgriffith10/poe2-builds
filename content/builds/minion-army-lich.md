@@ -644,6 +644,13 @@ passives:
     - "Warding Fetish"
     - "Illuminated Crown"
   ascendancy: [Soulless Form, Necromantic Conduit, Eternal Life, Crystalline Phylactery]
+farming:
+  clear: 2
+  single: 3
+  tank: 3
+  speed: 1
+  style: minion
+  traits: [es, block]
 ---
 
 ## How It Works

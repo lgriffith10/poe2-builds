@@ -6,6 +6,8 @@ import { BuildTreeViewer } from "@/components/build-tree-viewer";
 import { FavoriteButton } from "@/components/favorite-button";
 import { GearInventory } from "@/components/gear-inventory";
 import { LootFilterPanel } from "@/components/loot-filter-panel";
+import { FarmingRanking } from "@/components/farming-ranking";
+import { rankMechanics } from "@/lib/farming";
 import { StatPriority } from "@/components/stat-priority";
 import { statPriority } from "@/lib/stat-priority";
 import { filterTargets, lootFilter } from "@/lib/loot-filter";
@@ -82,6 +84,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
   const sources = skillSources(build);
   const sourceLabel = (src: SkillSource) => fmt(tr.build.skillFrom[src.kind], { from: "from" in src ? src.from : "" });
   const popularity = ladderPopularity(build);
+  const farming = build.farming && rankMechanics(build.farming, lang, build.farmingNotes);
 
   const gemView = (name: string): RotationGem => {
     const { id, icon, color } = getGem(name)!;
@@ -129,6 +132,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
     { id: "stats", text: tr.build.statPriority.title },
     { id: "gear", text: tr.common.gear },
     { id: "passives", text: tr.common.passiveTree },
+    ...(farming ? [{ id: "farming", text: tr.build.farming.title }] : []),
     ...build.toc.filter((t) => t.id !== "overview").map((t) => ({ ...t, id: `guide-${t.id}` })),
   ];
   // Prefix guide heading ids so they never collide with the fixed sections above.
@@ -430,6 +434,13 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               </div>
             </div>
           </section>
+
+          {farming && (
+            <section id="farming" className="scroll-mt-24">
+              <SectionTitle sub={tr.build.farming.sub}>{tr.build.farming.title}</SectionTitle>
+              <FarmingRanking ranking={farming} labels={tr.build.farming} path={path} />
+            </section>
+          )}
 
           <section className="prose-guide" dangerouslySetInnerHTML={{ __html: html }} />
         </TipScope>

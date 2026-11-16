@@ -10,6 +10,8 @@ pros:
 cons:
   - "Cible unique faible avant Toxic Growth"
   - "Archon of Chayula a un temps de blocage de 20 secondes"
+farmingNotes:
+  breach: "Archon of Chayula, le dernier notable d'ascendance, se débloque après avoir tué Tul et Esh dans la quête de Breach."
 ---
 
 ## Fonctionnement

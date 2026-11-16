@@ -472,6 +472,15 @@ passives:
   ascendancy: [Druidic Champion, Furious Wellspring, Reactive Growth, Avatar of Evolution]
   weaponSet1: [Reverberation, Overexposure, Radial Force]
   weaponSet2: [Piercing Claw, Swift Claw, Spirit of the Wolf, Frozen Claw, Blood of the Wolf, Hide of the Bear, Molten Claw, Spirit of the Bear]
+farming:
+  clear: 3
+  single: 2
+  tank: 3
+  speed: 1
+  style: melee
+  traits: [armour]
+  notes:
+    abyss: "The source guide warns that Abyss is some of the hardest content for melee builds: cap chaos resistance at 75% and set up Shavronne's Satchel to outheal its Rares."
 ---
 ## How It Works
 

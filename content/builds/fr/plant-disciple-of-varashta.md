@@ -11,6 +11,8 @@ cons:
   - "L'écran devient très chargé"
   - "Le passage en Chaos Inoculation en fin de partie demande un respec"
   - "Plusieurs sorts à enchaîner contre les boss"
+farmingNotes:
+  breach: "Les anneaux Breach avec +1 aux compétences de sort sont l'un des moyens d'ajouter des niveaux de sort au build."
 ---
 
 ## Fonctionnement

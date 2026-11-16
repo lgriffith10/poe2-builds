@@ -358,6 +358,13 @@ passives:
     - "Heartstopping"
     - "Cooked"
   ascendancy: [Pyromantic Pact, Loyal Hellhound, Bringer of Flame, Grinning Immolation]
+farming:
+  clear: 3
+  single: 3
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [es, ci]
 ---
 
 ## How It Works

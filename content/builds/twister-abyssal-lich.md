@@ -365,6 +365,13 @@ passives:
   ascendancy: [Crystalline Phylactery, Necromantic Conduit, Eternal Life, Soulless Form]
   weaponSet1: [Tenfold Attacks, Flow State, Acceleration, Deep Trance, Flow Like Water, Chakra of Thought, Stimulants]
   weaponSet2: [Heartstopping, Javelin, Careful Assassin, For the Jugular]
+farming:
+  clear: 3
+  single: 2
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [es]
 ---
 
 ## How It Works

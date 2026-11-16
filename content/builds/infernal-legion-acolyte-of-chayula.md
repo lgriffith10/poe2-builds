@@ -393,6 +393,13 @@ passives:
   ascendancy: [Waking Dream, Chayula's Gift]
   weaponSet1: [Dead can Dance, Vile Mending, Lord of Horrors, Right Hand of Darkness, Living Death, Unspoken Bond]
   weaponSet2: [Arcane Remnants, Vigorous Remnants, Empowering Remnants, Remnant Attraction]
+farming:
+  clear: 2
+  single: 2
+  tank: 3
+  speed: 1
+  style: minion
+  traits: [es, dot, close]
 ---
 ## How It Works
 

@@ -291,6 +291,13 @@ passives:
     - "Thousand Cuts"
     - "Inevitable Rupture"
   ascendancy: [Critical Strike, Penetrate, Predatory Instinct, In for the Kill]
+farming:
+  clear: 2
+  single: 3
+  tank: 1
+  speed: 3
+  style: melee
+  traits: [physical, dot, evasion]
 ---
 ## How It Works
 

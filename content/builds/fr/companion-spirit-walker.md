@@ -10,6 +10,8 @@ pros:
 cons:
   - "Montée en niveau aux grenades jusqu'à l'acte 3"
   - "Apprivoiser un bon boss demande un peu de chasse"
+farmingNotes:
+  ritual: "Lancer le Rite of the Nameless sur Riverside ou Rupture place Silverfist, le singe à apprivoiser, dans chaque rituel final : dangereux, mais un moyen de trouver un compagnon plus fort."
 ---
 
 ## Fonctionnement

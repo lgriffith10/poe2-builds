@@ -9,6 +9,8 @@ pros:
   - Grosse réserve de bouclier d'énergie
 cons:
   - Style de jeu « ne pas se faire toucher »
+farmingNotes:
+  breach: "Les anneaux Breach avec du mana maximum font partie de l'équipement visé par le build."
 ---
 
 ## Fonctionnement

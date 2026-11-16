@@ -5,6 +5,7 @@ import path from "node:path";
 import { DEFAULT_LOCALE, LOCALES } from "@/i18n/config";
 import { getBuilds } from "@/lib/builds";
 import { getGuides } from "@/lib/guides";
+import { FARMING_GUIDE, MECHANIC_INFO } from "@/lib/farming";
 import { tree } from "@/lib/data";
 import { MAX_ASCENDANCY_POINTS, MAX_PASSIVE_POINTS, MAX_WEAPON_SET_POINTS } from "@/lib/tree";
 
@@ -18,6 +19,20 @@ for (const b of getBuilds(DEFAULT_LOCALE, true)) {
   console.log(`✓ ${b.slug}: ${b.pointsUsed}/${MAX_PASSIVE_POINTS} passive, ${asc}/${MAX_ASCENDANCY_POINTS} ascendancy${setInfo}${b.treeVariants.length ? `, ${b.treeVariants.length} source trees` : ""}`);
   if (b.pointsUsed > MAX_PASSIVE_POINTS || asc > MAX_ASCENDANCY_POINTS || set1 > MAX_WEAPON_SET_POINTS || set2 > MAX_WEAPON_SET_POINTS) {
     console.warn(`  ⚠ ${b.slug} exceeds the point budget`);
+    warnings++;
+  }
+  if (!b.farming) {
+    console.warn(`  ⚠ ${b.slug} has no farming profile: its endgame mechanics are not ranked (see src/lib/farming.ts)`);
+    warnings++;
+  }
+}
+// The build pages link each mechanic to its section of the farming guide.
+for (const lang of LOCALES) {
+  const guide = getGuides(lang).find((g) => `/guides/${g.slug}` === FARMING_GUIDE);
+  const broken = Object.values(MECHANIC_INFO).filter((m) => !guide?.html.includes(`id="${m.anchor}"`));
+  console.log(`✓ farming guide (${lang}): ${8 - broken.length}/8 mechanic sections`);
+  for (const m of broken) {
+    console.warn(`  ⚠ ${lang}: no #${m.anchor} section in ${FARMING_GUIDE} for ${m.name}`);
     warnings++;
   }
 }

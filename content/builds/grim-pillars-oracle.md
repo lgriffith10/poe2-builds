@@ -391,6 +391,15 @@ passives:
   ascendancy: [The Unseen Path, The Lesser Harm, Forced Outcome, Unnamed Heartwood]
   weaponSet1: [Ancestral Alacrity, Supportive Ancestors, Ancestral Reach, Ancestral Conduits, Stormcharged, Rustle of the Leaves, Mighty Trunk]
   weaponSet2: [Radial Force, Splitting Ground, Touch the Arcane, Erraticism, Casting Cascade, Overzealous]
+farming:
+  clear: 3
+  single: 3
+  tank: 2
+  speed: 1
+  style: totem
+  traits: []
+  notes:
+    delirium: "Even if you farm something else, finish the Delirium questline: it unlocks instilling a passive notable on your amulet."
 ---
 
 ## How It Works

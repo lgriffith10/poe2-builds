@@ -385,6 +385,13 @@ passives:
     - "Aftershocks"
     - "Defender's Resolve"
   ascendancy: [Colossal Capacity, Hulking Form, Stone Skin, Mysterious Lineage]
+farming:
+  clear: 2
+  single: 2
+  tank: 3
+  speed: 1
+  style: melee
+  traits: [armour, physical]
 ---
 ## How It Works
 

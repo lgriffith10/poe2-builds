@@ -288,6 +288,13 @@ passives:
   ascendancy: [Anvil's Weight, Jade Heritage, Imploding Impacts, Warcaller's Bellow]
   weaponSet1: [Unyielding, Sand in the Eyes, The Molten One's Gift, Mass Hysteria]
   weaponSet2: [Admonisher, Escalation, Vocal Empowerment, Cacophony, Roaring Cries, Inherited Strength]
+farming:
+  clear: 2
+  single: 2
+  tank: 3
+  speed: 1
+  style: melee
+  traits: [armour, block, physical]
 ---
 
 ## How It Works

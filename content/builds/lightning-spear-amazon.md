@@ -422,6 +422,13 @@ passives:
     - "Deadly Force"
     - "Killer Instinct"
   ascendancy: [Critical Strike, Penetrate, Predatory Instinct, In for the Kill]
+farming:
+  clear: 3
+  single: 3
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [evasion]
 ---
 ## How It Works
 

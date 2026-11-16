@@ -404,6 +404,13 @@ passives:
   ascendancy: [The Unseen Path, Entwined Realities, The Lesser Harm, Forced Outcome]
   weaponSet1: [Desensitisation, Comradery, Cower Before the First Ones, Glaciation, Endless Blizzard, Turn the Clock Forward]
   weaponSet2: [Master of Hexes, Lingering Whispers, Stripped Defences, Fated End]
+farming:
+  clear: 3
+  single: 3
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [es, ci]
 ---
 ## How It Works
 

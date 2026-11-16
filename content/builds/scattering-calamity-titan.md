@@ -293,6 +293,13 @@ passives:
   ascendancy: [Mysterious Lineage, Hulking Form, Crushing Impacts, Colossal Capacity]
   weaponSet1: [Turn the Clock Back, Turn the Clock Forward, Forthcoming, Careful Assassin, Throatseeker, Near at Hand]
   weaponSet2: [Preservation, Effervescent, Casting Cascade, Overzealous, Final Barrage, Reverberation]
+farming:
+  clear: 3
+  single: 2
+  tank: 3
+  speed: 1
+  style: ranged
+  traits: [armour]
 ---
 
 ## How It Works

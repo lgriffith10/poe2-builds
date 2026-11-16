@@ -321,6 +321,13 @@ passives:
   ascendancy: [Relentless Pursuit, Running Assault, Path Seeker, Traveller's Wisdom]
   weaponSet1: [Preservation, Controlling Magic, Careful Assassin, Effervescent, Evocational Practitioner, Critical Exploit]
   weaponSet2: [Forthcoming, Roil, Stripped Defences, Secrets of the Orb, Overexposure]
+farming:
+  clear: 3
+  single: 3
+  tank: 2
+  speed: 3
+  style: ranged
+  traits: [es, ci]
 ---
 ## How It Works
 

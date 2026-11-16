@@ -233,6 +233,17 @@ passives:
   ascendancy: [Essence of Virtue, Advanced Thaumaturgy, Implanted Gems, Gem Studded]
   weaponSet1: [Careful Assassin, Critical Exploit, Blessing of the Moon]
   weaponSet2: [Lust for Power]
+farming:
+  clear: 3
+  single: 3
+  tank: 3
+  speed: 3
+  style: ranged
+  traits: [es, ci]
+  adjust:
+    breach: 1
+  notes:
+    breach: "Before Mageblood or Headhunter, a Genesis Tree belt with spell cooldown recovery shortens Blink."
 ---
 ## How It Works
 

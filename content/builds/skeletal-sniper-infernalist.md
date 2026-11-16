@@ -549,6 +549,13 @@ passives:
     - "Hallowed"
     - "Ancient Aegis"
   ascendancy: [Loyal Hellhound, Altered Flesh, Beidat's Will, Beidat's Hand]
+farming:
+  clear: 3
+  single: 2
+  tank: 2
+  speed: 1
+  style: minion
+  traits: [dot]
 ---
 ## How It Works
 

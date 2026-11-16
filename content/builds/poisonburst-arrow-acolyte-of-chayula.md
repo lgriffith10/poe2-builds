@@ -315,6 +315,17 @@ passives:
   ascendancy: [Chayula's Gift, Waking Dream, Lucid Dreaming]
   weaponSet1: [Blinding Strike, Lasting Toxins, Stacking Toxins, Master Fletching, Killer Instinct, Leeching Toxins, Building Toxins]
   weaponSet2: [Empowering Remnants, Remnant Attraction]
+farming:
+  clear: 3
+  single: 1
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [evasion, es, dot]
+  adjust:
+    breach: 1
+  notes:
+    breach: "Archon of Chayula, the last ascendancy notable, unlocks after killing Tul and Esh in the Breach questline."
 ---
 ## How It Works
 

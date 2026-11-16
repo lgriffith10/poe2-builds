@@ -663,6 +663,13 @@ passives:
     - "Warlord Leader"
     - "Warlord Berserker"
   ascendancy: [Sacred Flow, Reactive Growth, Avatar of Evolution, Wisdom of the Maji]
+farming:
+  clear: 2
+  single: 3
+  tank: 3
+  speed: 1
+  style: minion
+  traits: [es, block]
 ---
 
 ## How It Works

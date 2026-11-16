@@ -338,6 +338,13 @@ passives:
   ascendancy: [Path Seeker, Relentless Pursuit, Traveller's Wisdom, Running Assault]
   weaponSet1: [Maiming Strike, Catalysis, Coming Calamity, Stupefy, Dizzying Hits, Throatseeker, Deadly Force, Moment of Truth]
   weaponSet2: [Marked for Sickness, Marked Agility, Frazzled, Marathon Runner, The Noble Wolf]
+farming:
+  clear: 3
+  single: 2
+  tank: 1
+  speed: 3
+  style: ranged
+  traits: [evasion]
 ---
 
 ## How It Works

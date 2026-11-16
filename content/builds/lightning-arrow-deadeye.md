@@ -305,6 +305,17 @@ passives:
     - "Step Like Mist"
     - "Mystic Stance"
   ascendancy: [Gathering Winds, Endless Munitions, Mirage Deadeye]
+farming:
+  clear: 3
+  single: 2
+  tank: 1
+  speed: 3
+  style: ranged
+  traits: [evasion]
+  adjust:
+    breach: 1
+  notes:
+    breach: "With pierce, one arrow chains its beams several times: that is what makes the build so fast in dense maps and Breaches."
 ---
 ## How It Works
 

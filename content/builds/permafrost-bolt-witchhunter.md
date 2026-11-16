@@ -315,6 +315,13 @@ passives:
   ascendancy: [Pitiless Killer, "Judge, Jury, and Executioner", Obsessive Rituals, Ceremonial Ablution]
   weaponSet1: [Adrenaline Rush, The Spring Hare]
   weaponSet2: [Grenadier, Cluster Bombs]
+farming:
+  clear: 2
+  single: 2
+  tank: 2
+  speed: 1
+  style: ranged
+  traits: []
 ---
 ## How It Works
 

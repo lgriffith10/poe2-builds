@@ -430,6 +430,17 @@ passives:
   ascendancy: [Rupture the Soul, Crystalline Phylactery, Necromantic Conduit, Blackened Heart]
   weaponSet1: [Inspiring Ally, Easy Going, Unspoken Bond, Right Hand of Darkness, Lord of Horrors, Necrotised Flesh]
   weaponSet2: [Overexposure, Stripped Defences, Acceleration, Preservation, Efficient Contraptions, Careful Assassin]
+farming:
+  clear: 2
+  single: 2
+  tank: 3
+  speed: 1
+  style: minion
+  traits: [es, ci, evasion, dot, close]
+  adjust:
+    ritual: 1
+  notes:
+    ritual: "The source guide picks Chaos Inoculation partly because chaos immunity is huge in content like Ritual."
 ---
 ## How It Works
 

@@ -431,6 +431,17 @@ passives:
     - "Melding"
     - "Critical Exploit"
   ascendancy: [Barya of Kelari, Barya of Ruzhan, Instruments of Power]
+farming:
+  clear: 3
+  single: 3
+  tank: 2
+  speed: 1
+  style: ranged
+  traits: [es]
+  adjust:
+    breach: 1
+  notes:
+    breach: "Breach rings with +1 to Spell Skills are one of the ways the build keeps adding spell levels."
 ---
 
 ## How It Works

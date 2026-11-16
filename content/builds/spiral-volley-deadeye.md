@@ -390,6 +390,13 @@ passives:
   ascendancy: [Gathering Winds, Endless Munitions, Called Shots]
   weaponSet1: [Harness the Elements, Primal Sundering, Catalysis]
   weaponSet2: [Material Solidification, First Approach]
+farming:
+  clear: 3
+  single: 3
+  tank: 1
+  speed: 3
+  style: ranged
+  traits: [evasion]
 ---
 ## How It Works
 

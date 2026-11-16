@@ -298,6 +298,13 @@ passives:
   ascendancy: [Way of the Mountain, Way of the Stonefist, Runic Meridians, Hollow Focus Technique]
   weaponSet1: [Moment of Truth, Harness the Elements, Dizzying Sweep, Resolute Reach, Frantic Reach, Throatseeker, Careful Assassin]
   weaponSet2: [Shimmering, Agile Sprinter, Marathon Runner, Mending Deflection]
+farming:
+  clear: 3
+  single: 2
+  tank: 1
+  speed: 2
+  style: melee
+  traits: [evasion]
 ---
 ## How It Works
 

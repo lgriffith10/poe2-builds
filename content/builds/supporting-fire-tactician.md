@@ -409,6 +409,13 @@ passives:
     - "Beef"
     - "Tides of Change"
   ascendancy: [Unleash Hell!, A Solid Plan, Polish That Gear, "Stay Light, Use Cover"]
+farming:
+  clear: 3
+  single: 2
+  tank: 2
+  speed: 2
+  style: minion
+  traits: [es]
 ---
 ## How It Works
 

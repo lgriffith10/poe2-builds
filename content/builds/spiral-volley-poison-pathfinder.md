@@ -348,6 +348,13 @@ passives:
     - "Resonance"
     - "Frenetic"
   ascendancy: [Relentless Pursuit, Running Assault, Overwhelming Toxicity]
+farming:
+  clear: 3
+  single: 2
+  tank: 1
+  speed: 3
+  style: ranged
+  traits: [evasion, dot]
 ---
 ## How It Works
 

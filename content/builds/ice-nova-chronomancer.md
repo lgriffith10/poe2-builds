@@ -318,6 +318,13 @@ passives:
   ascendancy: [Unbound Encore, Quicksand Hourglass, Phased Form, Ultimate Command]
   weaponSet1: [Turn the Clock Forward, Controlling Magic, Careful Assassin, Climate Change, Stripped Defences, Overexposure, Stormbreaker]
   weaponSet2: [Harsh Winter, Preservation, Lingering Horror, Devoted Protector, Grounded in the Earth, Chronomancy]
+farming:
+  clear: 3
+  single: 2
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [es, close]
 ---
 
 ## How It Works

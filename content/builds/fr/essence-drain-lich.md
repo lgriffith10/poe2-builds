@@ -21,6 +21,8 @@ skillNotes:
   Ravenous Swarm: Dégâts sur la durée supplémentaires
   Withering Presence: Aura
   Convalescence: Sort défensif
+farmingNotes:
+  abyss: "Les monstres de l'Abyss demandent Convalescence si vous jouez agressif ; sinon, lancez vos sorts à distance au lieu de plonger dans les packs."
 ---
 
 ## Fonctionnement

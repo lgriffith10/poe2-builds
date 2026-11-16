@@ -505,6 +505,13 @@ passives:
     - "Entropic Incarnation"
     - "Inner Faith"
   ascendancy: [Waking Dream, Chayula's Gift]
+farming:
+  clear: 2
+  single: 3
+  tank: 3
+  speed: 1
+  style: minion
+  traits: [es, evasion]
 ---
 
 ## How It Works

@@ -161,6 +161,13 @@ export const en = {
       gem: "Skill gem",
       spirit: "Spirit gem",
     },
+    farming: {
+      title: "Endgame farming",
+      sub: "The eight endgame mechanics ranked for this build, best fit first, from how it clears, kills bosses, survives and moves.",
+      fit: { great: "Great fit", good: "Good fit", fair: "Fair fit", poor: "Poor fit" },
+      guide: "What it gives and how to profit",
+      intro: "Start with the top two and stack their Tablets and Atlas passives. A lower place does not mean you cannot run a mechanic, only that this build gets less out of it or needs more gear for it.",
+    },
     socketed: "Socketed runes",
     closeCard: "Close",
     lootFilter: {

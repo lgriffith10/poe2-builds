@@ -463,6 +463,17 @@ passives:
     - "Everlasting Infusions"
     - "Empowering Infusions"
   ascendancy: [Strike Twice, Constant Gale, Storm's Recollection]
+farming:
+  clear: 3
+  single: 3
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [es]
+  adjust:
+    breach: 1
+  notes:
+    breach: "Breach rings with maximum mana are part of the build's aspirational gear."
 ---
 ## How It Works
 

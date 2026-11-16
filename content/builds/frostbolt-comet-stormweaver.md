@@ -340,6 +340,13 @@ passives:
   ascendancy: [Constant Gale, Force of Will, Strike Twice, Refracted Infusion]
   weaponSet1: [Thin Ice, Heavy Frost, Careful Assassin, Controlling Magic, Inescapable Cold, Endless Blizzard, Critical Exploit, Harsh Winter, Alternating Current]
   weaponSet2: [Preservation, Lingering Whispers, Master of Hexes, Overexposure]
+farming:
+  clear: 3
+  single: 3
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [es, ci]
 ---
 ## How It Works
 

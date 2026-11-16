@@ -382,6 +382,13 @@ passives:
   ascendancy: [I am the Thunder..., Lead me through Grace..., I am the Blizzard...]
   weaponSet1: [Rapid Recharge, Soul Bloom, Essence Infusion, Chakra of Breathing]
   weaponSet2: [Stupefy, Dizzying Hits, True Strike, Careful Assassin, Whirling Assault, Martial Artistry, Concussive Attack]
+farming:
+  clear: 3
+  single: 2
+  tank: 1
+  speed: 3
+  style: melee
+  traits: [physical]
 ---
 
 ## How It Works

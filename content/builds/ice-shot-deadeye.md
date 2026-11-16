@@ -378,6 +378,17 @@ passives:
     - Frenetic
     - Deep Freeze
   ascendancy: [Gathering Winds, Called Shots, Bullseye]
+farming:
+  clear: 3
+  single: 2
+  tank: 1
+  speed: 3
+  style: ranged
+  traits: [evasion]
+  adjust:
+    breach: 1
+  notes:
+    breach: "The source guide suggests Headhunter for mapping, especially when farming Rares in Breaches."
 ---
 
 ## How It Works

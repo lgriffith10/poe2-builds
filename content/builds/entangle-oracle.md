@@ -362,6 +362,13 @@ passives:
   ascendancy: [The Unseen Path, Entwined Realities, The Lesser Harm, Forced Outcome]
   weaponSet1: [Deadly Thorns, Calculated Hunter, Wasting Casts, Cut to the Bone, Blood Tearing]
   weaponSet2: [Power Conduction]
+farming:
+  clear: 3
+  single: 1
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: []
 ---
 ## How It Works
 

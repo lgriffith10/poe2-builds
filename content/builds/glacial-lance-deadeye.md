@@ -261,6 +261,13 @@ passives:
     - "The Fabled Stag"
     - "Pocket Sand"
   ascendancy: [Mirage Deadeye, Gathering Winds, Called Shots, Avidity]
+farming:
+  clear: 3
+  single: 2
+  tank: 1
+  speed: 3
+  style: ranged
+  traits: [evasion]
 ---
 ## How It Works
 

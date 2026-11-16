@@ -351,6 +351,13 @@ passives:
     - "Direct Approach"
     - "Chronomancy"
   ascendancy: [Druidic Champion, Furious Wellspring, Reactive Growth, Avatar of Evolution]
+farming:
+  clear: 3
+  single: 3
+  tank: 3
+  speed: 1
+  style: melee
+  traits: [armour]
 ---
 ## How It Works
 

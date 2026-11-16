@@ -386,6 +386,13 @@ passives:
     - "Enhanced Barrier"
   ascendancy: [The Lesser Harm, Forced Outcome, The Unseen Path, Entwined Realities]
   weaponSet1: [Cruel Fate, Stormcharged]
+farming:
+  clear: 2
+  single: 3
+  tank: 2
+  speed: 2
+  style: melee
+  traits: []
 ---
 ## How It Works
 

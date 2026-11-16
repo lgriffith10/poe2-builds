@@ -278,6 +278,13 @@ passives:
   ascendancy: [Primal Bounty, Wild Protector, Vivid Stampede, Sacred Unity]
   weaponSet1: [Agile Succession, Precision Salvo, Versatile Arms]
   weaponSet2: [Disorientation, Forces of Nature, Blinding Strike]
+farming:
+  clear: 3
+  single: 2
+  tank: 1
+  speed: 2
+  style: ranged
+  traits: [evasion]
 ---
 
 ## How It Works

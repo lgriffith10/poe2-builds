@@ -459,6 +459,13 @@ passives:
     - Chakra of Rhythm
     - Beastial Skin
   ascendancy: [Hollow Focus Technique, Way of the Stonefist, Runic Meridians, Way of the Mountain]
+farming:
+  clear: 3
+  single: 2
+  tank: 2
+  speed: 3
+  style: melee
+  traits: [evasion, es]
 ---
 
 ## How It Works

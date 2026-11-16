@@ -275,6 +275,13 @@ passives:
     - "Ancestral Alacrity"
     - "Ancient Aegis"
   ascendancy: [Jade Heritage, Answered Call, Wooden Wall, Anvil's Weight]
+farming:
+  clear: 3
+  single: 2
+  tank: 2
+  speed: 2
+  style: ranged
+  traits: [armour]
 ---
 
 ## How It Works

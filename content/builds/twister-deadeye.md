@@ -419,6 +419,13 @@ passives:
   ascendancy: [Gathering Winds, Avidity, Thrilling Chase, Called Shots]
   weaponSet1: [Tenfold Attacks, Flow State, Flow Like Water, Acceleration, Agile Succession, Precision Salvo]
   weaponSet2: [Catapult, Harness the Elements, Hail, Precise Point, Kite Runner]
+farming:
+  clear: 3
+  single: 2
+  tank: 1
+  speed: 3
+  style: ranged
+  traits: [evasion]
 ---
 ## How It Works
 

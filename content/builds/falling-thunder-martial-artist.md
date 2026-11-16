@@ -443,6 +443,13 @@ passives:
     - "Echoing Flames"
     - "Life from Death"
   ascendancy: [Hollow Focus Technique, Runic Meridians, Way of the Stonefist]
+farming:
+  clear: 3
+  single: 3
+  tank: 1
+  speed: 2
+  style: melee
+  traits: []
 ---
 ## How It Works
 

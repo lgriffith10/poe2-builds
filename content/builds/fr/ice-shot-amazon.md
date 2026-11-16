@@ -11,6 +11,8 @@ pros:
 cons:
   - Ne peut pas encaisser de face
   - Le timing de Snipe demande de l'entraînement
+farmingNotes:
+  breach: "Le guide source conseille Headhunter pour les cartes, surtout pour farmer les rares des Breaches."
 ---
 
 ## Fonctionnement

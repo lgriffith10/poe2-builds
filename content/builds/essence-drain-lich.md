@@ -443,6 +443,17 @@ passives:
     - Preservation
     - Practiced Signs
   ascendancy: [Eldritch Empowerment, Soulless Form, Eternal Life, Crystalline Phylactery]
+farming:
+  clear: 3
+  single: 2
+  tank: 3
+  speed: 2
+  style: ranged
+  traits: [es, dot]
+  adjust:
+    abyss: -1
+  notes:
+    abyss: "Abyss monsters call for Convalescence if you play aggressively; otherwise cast from a distance instead of rolling into packs."
 ---
 
 ## How It Works

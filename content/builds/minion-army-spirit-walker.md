@@ -578,6 +578,13 @@ passives:
     - "Shimmering"
     - "Immaterial"
   ascendancy: [Wild Protector, The Natural Order, The Catha's Balance]
+farming:
+  clear: 2
+  single: 3
+  tank: 3
+  speed: 1
+  style: minion
+  traits: [es, ci]
 ---
 ## How It Works
 

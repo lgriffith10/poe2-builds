@@ -313,6 +313,13 @@ passives:
     - "Shredding Force"
     - "Right Hand of Darkness"
   ascendancy: [Navira's Fracturing, Barya of Kelari, Kelari's Deception, Barya of Navira, The Fourth Teaching, Sacred Rituals]
+farming:
+  clear: 2
+  single: 3
+  tank: 2
+  speed: 1
+  style: minion
+  traits: [es, ci]
 ---
 
 ## How It Works

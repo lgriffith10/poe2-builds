@@ -10,6 +10,9 @@ pros:
 cons:
   - "Montée en niveau en Tactician et respec au niveau 52"
   - "Règles d'équipement strictes : aucun dégât de feu fixe nulle part"
+farmingNotes:
+  ritual: "Un seul tapis d'huile bien placé, avec assez de durée, tue les monstres du Ritual à mesure qu'ils reviennent."
+  delirium: "La même astuce du tapis d'huile fonctionne dans le Simulacrum, où les monstres arrivent par vagues."
 ---
 
 ## Fonctionnement

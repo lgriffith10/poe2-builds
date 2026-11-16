@@ -351,6 +351,13 @@ passives:
   ascendancy: [Hollow Form Technique, Hollow Focus Technique, Way of the Stonefist, Runic Meridians]
   weaponSet1: [Disciplined Training, Lingering Horror, Preservation, Thin Ice, Harsh Winter]
   weaponSet2: [Heartstopping, Struck Through, Heartbreaking, Dizzying Hits, Stupefy, Concussive Attack, Moment of Truth]
+farming:
+  clear: 3
+  single: 2
+  tank: 2
+  speed: 2
+  style: melee
+  traits: [evasion, es, ci]
 ---
 ## How It Works
 

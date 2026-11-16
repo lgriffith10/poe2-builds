@@ -16,6 +16,8 @@ skillNotes:
   Frost Bomb: Exposition pour les boss
   Elemental Weakness: Malédiction
   Purity of Fire: Aura
+farmingNotes:
+  delirium: "Même si vous farmez autre chose, terminez la quête de Delirium : elle débloque l'infusion d'un notable passif sur votre amulette."
 ---
 
 ## Fonctionnement

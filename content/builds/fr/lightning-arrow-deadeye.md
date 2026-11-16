@@ -22,6 +22,8 @@ skillNotes:
   Tornado Shot: À placer sur les boss, puis tirez à travers
   Voltaic Mark: Chocs plus puissants contre les boss
   Rhoa Mount: Aucune pénalité de vitesse en tirant
+farmingNotes:
+  breach: "Avec la perforation, une flèche enchaîne ses arcs plusieurs fois : c'est ce qui rend le build si rapide dans les cartes denses et les Breaches."
 ---
 
 ## Fonctionnement

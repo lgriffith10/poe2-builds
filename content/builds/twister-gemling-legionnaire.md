@@ -209,6 +209,13 @@ passives:
   ascendancy: [Essence of Virtue, Advanced Thaumaturgy, Gem Studded, Integrated Efficiency]
   weaponSet1: [Stimulants, Roll and Strike, Precise Point, Versatile Arms, Bond of the Wolf]
   weaponSet2: [Prolonged Assault, Coming Calamity, Material Solidification, Maiming Strike, Javelin, Crystal Elixir, The Frenzied Bear]
+farming:
+  clear: 3
+  single: 2
+  tank: 2
+  speed: 3
+  style: ranged
+  traits: []
 ---
 
 ## How It Works

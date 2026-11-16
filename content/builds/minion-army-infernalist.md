@@ -631,6 +631,13 @@ passives:
     - "Grip of Evil"
     - "Illuminated Crown"
   ascendancy: [Loyal Hellhound, Altered Flesh, Beidat's Will, Beidat's Hand]
+farming:
+  clear: 1
+  single: 3
+  tank: 2
+  speed: 1
+  style: minion
+  traits: [es]
 ---
 
 ## How It Works

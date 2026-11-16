@@ -380,6 +380,19 @@ passives:
   ascendancy: [Essence of Virtue, Advanced Thaumaturgy, Gem Studded]
   weaponSet1: [Arsonist, Searing Heat, Fast Acting Toxins, Deterioration, Steady Footing]
   weaponSet2: [Volatile Grenades, Grenadier, Cluster Bombs, Utility Ordnance, Multitasking]
+farming:
+  clear: 3
+  single: 2
+  tank: 2
+  speed: 3
+  style: ranged
+  traits: [dot]
+  adjust:
+    ritual: 2
+    delirium: 1
+  notes:
+    ritual: "One well-placed oil carpet with enough duration kills Ritual monsters as they come back."
+    delirium: "The same oil carpet trick works in the Simulacrum, where monsters spawn in waves."
 ---
 ## How It Works
 

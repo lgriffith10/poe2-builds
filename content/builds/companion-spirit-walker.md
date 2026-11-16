@@ -321,6 +321,17 @@ passives:
     - "Tempered Defences"
     - "Warlord Leader"
   ascendancy: [Wild Protector, The Catha's Balance, The Natural Order, Idolatry]
+farming:
+  clear: 2
+  single: 2
+  tank: 2
+  speed: 2
+  style: minion
+  traits: []
+  adjust:
+    ritual: 1
+  notes:
+    ritual: "Starting the Rite of the Nameless on Riverside or Rupture puts Silverfist, the monkey boss to tame, in each final ritual: dangerous, but a way to find a stronger companion."
 ---
 ## How It Works
 

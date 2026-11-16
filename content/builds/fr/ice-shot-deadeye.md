@@ -23,6 +23,8 @@ skillNotes:
   Rhoa Mount: Vitesse de déplacement sur monture en carte
 gearNotes:
   offhand: "Flèches spéciales aléatoires ; un carquois rare avec +niveau des compétences de projectile et dégâts critiques est une bonne alternative."
+farmingNotes:
+  breach: "Le guide source conseille Headhunter pour les cartes, surtout pour farmer les rares des Breaches."
 ---
 
 ## Fonctionnement

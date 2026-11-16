@@ -368,6 +368,13 @@ passives:
   ascendancy: [Intricate Sigils, Mystic Attunement, Unfurled Finger, Corrupted Lifeforce]
   weaponSet1: [Falcon Dive, Precision Salvo, Versatile Arms, Stimulants]
   weaponSet2: [Immortal Thirst, Killer Instinct, Dizzying Hits, Stupefy, Throatseeker, Cooked]
+farming:
+  clear: 3
+  single: 2
+  tank: 1
+  speed: 2
+  style: ranged
+  traits: []
 ---
 
 ## How It Works

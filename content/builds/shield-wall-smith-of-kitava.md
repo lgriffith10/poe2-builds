@@ -292,6 +292,13 @@ passives:
   ascendancy: [Internal Layer, Leather Bindings, Smith's Masterwork, Flowing Metal, Tribute to Utula, Heatproofing, Coal Stoker]
   weaponSet1: [In the Thick of It, Ignore Pain, Pile On, Favourable Odds, Unyielding, Punctured Lung]
   weaponSet2: [Last Stand, Lasting Toxins, Fast Acting Toxins, Deterioration, Stacking Toxins]
+farming:
+  clear: 2
+  single: 2
+  tank: 3
+  speed: 1
+  style: melee
+  traits: [armour, block, dot]
 ---
 
 ## How It Works
