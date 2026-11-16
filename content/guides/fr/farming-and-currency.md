@@ -1,6 +1,6 @@
 ---
 title: "Que farmer : mécaniques d'endgame et gagner de la monnaie"
-summary: "Ce que rapporte chaque mécanique d'endgame et à quoi sert son butin, comment en tirer de la monnaie, comment en choisir une pour votre build, et les habitudes simples qui transforment vos cartes en Orbes Exaltés et Divins."
+summary: "Ce que rapporte chaque mécanique d'endgame et à quoi sert son butin, comment en tirer de la monnaie, son sous-arbre atlas et sa stratégie de farm, comment en choisir une pour votre build, et les habitudes simples qui transforment vos cartes en Orbes Exaltés et Divins."
 ---
 
 Une fois votre build stable en cartes, la question devient : qu'en faire ? Ce guide présente ce que donne chaque mécanique, comment choisir, et comment transformer le butin en monnaie. Si vous n'avez pas encore terminé la Precursor Fortress, commencez par [Débuter l'endgame](/guides/endgame-start#choisir-une-mecanique-de-ligue).
@@ -24,6 +24,21 @@ De plus petites rencontres enrichissent chaque carte : les coffres (Strongboxes,
 
 > **Laquelle convient à mon build ?** Chaque guide de build du site classe les huit mécaniques ci-dessous pour ce build, dans sa section **Farming en endgame**, avec les raisons de chaque place.
 
+## L'arbre atlas et la stratégie de farm
+
+L'arbre de passifs de l'Atlas a deux parties. L'**arbre principal** est commun à toutes les mécaniques, et ses points viennent de la Precursor Fortress. Six mécaniques ont aussi leur propre **sous-arbre**, avec des points à part qui se gagnent en progressant dans la mécanique : les cartes autour de Caer Tarth pour Ritual, chaque carte embrumée terminée pour Delirium, les cartes le long des failles abyssales pour Abyss, et la cité de Lira Vaal pour le Vaal Temple (son sous-arbre s'appelle Fate of the Vaal). Breach et Expedition ont aussi le leur. Les deux épreuves n'en ont pas : leur progression se fait ailleurs.
+
+**Les nœuds de l'arbre principal utiles à tout farm.** Quoi que vous farmiez, vous l'ajoutez à vos cartes avec les Precursor Tablets de la mécanique. Les nœuds de tablettes en haut de l'arbre principal servent donc à toutes les stratégies :
+
+- **Specialised Seeker** : les tablettes donnent aussi 10 % de rareté des objets lâchés par les monstres de leur mécanique.
+- **Partial Translation** et **Reverse Transcription** : les tablettes peuvent passer rares et ont un modificateur de plus.
+- **Enigmatic Intensification** et **Controlled Climates** : les modificateurs des Waystones et des tablettes sont plus forts pour chaque tablette sur la carte. D'après Maxroll, ils augmentent aussi le taux de Waystones.
+- **Propagating Secrets** et **Curiously Durable Stone** : plus de tablettes trouvées, et une chance de ne pas consommer de charge.
+
+**La boucle de farm.** Trouvez sur l'Atlas une zone avec plusieurs Towers proches et des cartes pas encore terminées. Avant d'utiliser vos tablettes, tentez les cartes dont le layout vous déplaît : ouvrir un portail avec une Waystone de tier 1 suffit. Une carte tentée ne peut plus recevoir la mécanique de la tablette, qui tombe donc sur les bons layouts. Utilisez ensuite vos tablettes dans les Towers et lancez vos meilleures Waystones sur les cartes touchées.
+
+**Lire les arbres ci-dessous.** Chaque mécanique affiche son sous-arbre, tracé d'après les données du jeu. Les numéros donnent l'ordre dans lequel prendre les notables à mesure que les points arrivent, et le chemin doré montre les petits nœuds à traverser. Survolez un nœud pour voir son effet exact. Les **keystones** (anneaux en pointillés) demandent de choisir une option : la flèche dans la liste indique laquelle prendre. Les ordres de Ritual et Delirium viennent des guides Maxroll. Les quatre autres sont notre lecture de l'arbre, construite autour de la stratégie de monnaie décrite pour chaque mécanique.
+
 ## Mécanique par mécanique
 
 Pour chaque mécanique : comment elle se joue, à quoi sert son butin, comment la transformer en Orbes Exaltés et Divins, et quel type de build y excelle.
@@ -46,6 +61,42 @@ Pour chaque mécanique : comment elle se joue, à quoi sert son butin, comment l
 - Utilisez l'arbre Genesis pour viser les bijoux recherchés (anneaux de sbires ou de sorts, bases exclusives) et vendez les bons tirages. Catalyser un bon anneau avant de le mettre en vente augmente son prix.
 - Les gemmes Lineage et les uniques de Xesht sont les gros lots.
 
+**Stratégie de farm et arbre atlas.** Breach rapporte surtout par ses rares : prenez d'abord les nœuds qui ajoutent des rares et gardent les Breaches ouvertes plus longtemps. Faites ensuite de l'arbre Genesis une source de monnaie : réglez Breeding Program sur les Lavish Wombgifts, qui donnent de la monnaie à l'éclosion, et mettez les points Genesis supplémentaires dans la matrice Currency. Les nœuds de Vruun viennent après, pour le jackpot des Lineage Supports. Gardez les nœuds de Hive pour la fin, sauf si vous jouez sbires ou totems : ils se plaisent à défendre Ailith depuis une position fixe.
+
+```atlas
+tree: Breach
+order:
+  - node: Breeding Program
+    choice: Lavish Wombgifts
+    note: "Les Lavish Wombgifts donnent de la monnaie. Si vous craftez des bijoux, prenez plutôt les Signet (anneaux), Ornate (amulettes) ou Banded (ceintures)."
+  - node: Moment of Risk
+    note: "Deux rares de plus par Breach, et les Wombgifts peuvent tomber un niveau plus haut."
+  - node: Shape the Chains
+    choice: 15% increased Pack Size
+    note: "Pour les builds de nettoyage. Ceux qui font fondre les rares peuvent prendre l'autre option : des rares plus coriaces et plus rentables, dans des packs plus petits."
+  - node: Reality Wound
+    note: "Dix secondes de plus pour tuer avant que la Breach ne se referme."
+  - Diverse Control
+  - node: Growing Wealth
+    note: "Cinq points de plus dans la matrice Currency, qui va avec les Lavish Wombgifts."
+  - node: Frantic Invasion
+    note: "Vruun, Marshal of Xesht, apparaît deux fois plus souvent."
+  - node: Study the Chains
+    note: "Vruun lâche plus souvent des Lineage Supports : le jackpot."
+  - Flesh Flower
+  - Essence Transference
+  - Exquisite Design
+  - Swelling Hives
+  - Provoke the Swarm
+  - node: Sole Purpose
+    choice: 50% increased number of skills created
+    note: "Plus de compétences d'Ailith, c'est plus de monstres à tuer. Prenez l'option de dégâts si les Hives vous posent problème."
+  - Reactive Hiveseeding
+  - node: Tear Open the Rift
+    choice: Add a Modifier to one revealed Map
+    note: "L'autre option coûte une Breachstone de plus à chaque fois."
+```
+
 **Idéal pour** les builds au nettoyage rapide et large, capables de suivre des essaims qui arrivent de tous les côtés. Les builds de sbires et de totems brillent dans les Hives, où l'on combat depuis un point fixe.
 
 ### Ritual
@@ -63,6 +114,39 @@ Le Tribute se dépense de quatre façons : prendre un objet, le **différer** (p
 - Ne prenez que les uniques que vous utiliserez ou vendrez : le reste du Tribute vaut plus en offrandes au King.
 - An Audience with the King, la tête du King et les Call of the Shadows se vendent si vous ne voulez pas combattre.
 - Le Ritual profite du nombre de monstres dans la carte : taille des packs sur les Waystones et les Tablets, Distilled Emotions, et Delirium, dont les monstres (boss compris) sont aussi ressuscités par les autels.
+
+**Stratégie de farm et arbre atlas.** Voici l'ordre de Maxroll. Commencez par les nœuds qui rendent les monstres ressuscités plus souvent magiques ou rares et qui ajoutent un boss à certains autels. Prenez ensuite la jauge du King et les nœuds du Rite of the Nameless : Hour of the Nameless permet au Rite de proposer un [[Mageblood]]. Viennent ensuite Traveller's Woe et Spreading Darkness, qui orientent les uniques, puis les nœuds de Tribute et de relance en dernier. Maxroll laisse Royal Lenience de côté. En carte, ajoutez de la taille de pack partout où vous le pouvez (Waystones, tablettes, Distilled Emotions) et lancez Delirium en parallèle, puisque les autels ressuscitent tout ce qui est mort dans le cercle.
+
+```atlas
+tree: Ritual
+order:
+  - node: Reborn in Shadow
+    note: "Les monstres ressuscités sont plus souvent magiques et rares."
+  - node: Bring Forth the Unseen
+    note: "15 % des autels invoquent un boss de plus."
+  - node: Royal Tithe
+    note: "La jauge du King se remplit plus vite."
+  - node: Hour of the Nameless
+    note: "Le Rite of the Nameless peut proposer des uniques de valeur comme Mageblood."
+  - Ongoing Chants
+  - Umbral Gathering
+  - node: Traveller's Woe
+    choice: Tainted
+    note: "Avec Spreading Darkness, les Rituals Tainted favorisent ceintures, charmes et flacons : le choix de Maxroll pour chasser Headhunter et Mageblood."
+  - Spreading Darkness
+  - node: Mysterious Rites
+    note: "Les Queen's Rituals : plus d'Omens et une Idole spéciale."
+  - From the Mists
+  - node: Invigorated Sacrifices
+    choice: 10% increased number of Favours
+    note: "Plus d'objets au choix. Quand vous avez trop d'objets reportés à payer, passez à une option qui réduit la pénalité de Tribute."
+  - Tempting Offers
+  - Prayer and Pledge
+  - Patient Devotion
+  - Magnanimous Offerings
+  - Between Two Worlds
+  - Ancient Enmities
+```
 
 **Idéal pour** les builds à gros dégâts de zone qui ont les défenses pour tenir leur position : le cercle vous enferme. Les sbires, les totems et les compétences canalisées y sont à leur aise, car rester immobile ne coûte rien.
 
@@ -85,6 +169,34 @@ La quête commence au Withered Willow. Chaque carte autour compte dès que vous 
 - Regardez les amulettes du Loathsome Mire : deux bons notables sur une même amulette se vendent bien.
 - Mettez vos propres Paranoia sur vos Waystones : plus de rares, c'est plus de monnaie par carte.
 
+**Stratégie de farm et arbre atlas.** Les priorités de Maxroll : « You can't scare me anymore! » pour les émotions Potent, « Is this about me... or you? » pour les Simulacrum Splinters, « I see your true nature now! » pour un Map Boss de plus et davantage de Grand Mirrors, et Recurring Nightmares réglé sur la propagation régulière. Son planner les atteint en passant par les nœuds intermédiaires, puis complète le reste. En carte, propagez vite le brouillard : quand un Grand Mirror apparaît, cherchez « Grand Mirror » sur l'Atlas et lancez cette carte. Montez la zone à 100 % de délire, faites le Simulacrum, puis recommencez. Mettez trois Liquid Paranoia sur vos meilleures Waystones pour avoir plus de rares.
+
+```atlas
+tree: Delirium
+order:
+  - node: You can't just wake up from this one.
+    note: "Le brouillard dure 30 % plus longtemps, et les Simulacrums proposent un choix bonus entre les vagues."
+  - Come on! Face me!
+  - node: You can't scare me anymore!
+    note: "Les monstres uniques peuvent lâcher des émotions Potent, qui valent cher."
+  - There's nowhere to hide...
+  - You thought you were free?
+  - node: Is this about me... or you?
+    note: "Les monstres de Delirium des cartes de niveau 75+ lâchent des Simulacrum Splinters."
+  - node: Recurring Nightmares
+    choice: Delirium Fog spreads to +4 additional Maps
+    note: "L'option régulière. L'autre ajoute plutôt 30 % de délire aux cartes embrumées."
+  - The mirrors... the mirrors!
+  - node: I see your true nature now!
+    note: "Un boss de plus dans l'arène du Map Boss, ou un Grand Mirror garanti."
+  - Is that the best you've got?!
+  - I know your childhood fears...
+  - Get out of my head!
+  - These demons are all your own...
+  - Are you sure you want to do that?
+  - I'm not alone anymore!
+```
+
 **Idéal pour** les builds rapides au bon nettoyage, qui suivent le brouillard, avec assez de défenses pour les dernières vagues du Simulacrum. Les builds lents ou canalisés peinent.
 
 ### Expedition
@@ -101,6 +213,35 @@ Les Ruins of Kingsmarch, sur la côte au sud-est du départ de l'Atlas, mènent 
 - Vendez Logbooks, Sagas, Alloys, Fluxes et Verisium en lot.
 - Dans une Grand Expedition sans bon Remnant, faites sauter un explosif près du départ et passez à la suite : elle ne vaut pas le temps passé.
 - Les coffres rares et les monstres runiques des cartes normales donnent aussi des Logbooks : déterrez-les en chemin.
+
+**Stratégie de farm et arbre atlas.** L'argent d'Expedition vient des Remnants : en avoir plus, avec plus de modificateurs runiques, et plus de butin par modificateur. Prenez d'abord Expanding Territory pour le Remnant supplémentaire, puis Gaining Traction et Calculated Investment, qui transforment chaque modificateur en butin plus abondant et meilleur. Les Logbooks viennent ensuite, puis les nœuds d'explosifs et de Grand Expedition. Double or Nothing fait monter les enjeux : ne prenez son modificateur supplémentaire que si votre build survit aux Remnants dangereux. Cultivate the Sea, un choix de biome pour les cartes océan, est laissé de côté. En carte, faites les cartes Ocean et les Grand Expeditions, et déterrez chaque monstre runique en chemin : ils lâchent des Logbooks.
+
+```atlas
+tree: Expedition
+order:
+  - node: Expanding Territory
+    choice: 10% chance for an additional Verisium Remnant Encounter
+  - node: Gaining Traction
+    note: "Chaque Remnant terminé dans la zone augmente la rareté des monstres de 50 %."
+  - node: Calculated Investment
+    choice: 1% increased Quantity of Items per Runic Modifier
+  - node: Steady Development
+    choice: Remnant
+  - node: Sown Seeds
+    note: "Plus de Logbooks sur les monstres runiques."
+  - Face the Past
+  - node: Strategic Advantage
+    choice: Explosives only wait for 50% of Monsters to be slain
+    note: "Des runs plus rapides."
+  - node: The Quest Continues
+    note: "Les Grand Expeditions ont jusqu'à trois modificateurs et un niveau de zone de plus."
+  - node: Double or Nothing
+    choice: 25% chance to add an additional Runic Modifier
+    note: "Plus de danger, plus de butin. Prenez l'option qui n'ajoute aucun modificateur runique si les Remnants vous tuent déjà."
+  - node: Feeling Lucky?
+    note: "Farrow vend du Liquid Verisium."
+  - Buried Ambition
+```
 
 **Idéal pour** les builds aux défenses solides et aux bons dégâts sur les rares : les meilleures récompenses viennent avec les Remnants les plus dangereux. Les builds qui adorent les gros packs peuvent tout laisser se déterrer, puis tout nettoyer d'un coup.
 
@@ -120,6 +261,44 @@ Les Ruins of Kingsmarch, sur la côte au sud-est du départ de l'Atlas, mènent 
 - Vendez les Omens, surtout les Omens of Abyssal Echoes : les joueurs en utilisent sur chaque désacralisation coûteuse.
 - Désacralisez vous-même de bonnes bases et vendez le résultat quand vous obtenez un modificateur fort.
 - Les exilés Lichborn lâchent le joyau recherché Heart of the Well ; la Kulemak's Invitation se vend aux chasseurs de boss.
+
+**Stratégie de farm et arbre atlas.** Abyss rapporte par le volume et par les rares aux modificateurs abyssaux. Commencez par les nœuds de puits (plus de puits par Abyss), puis Lord of the Pit pour des Abyss supplémentaires et Sprawling Rupture pour plus de monstres. Unholy Influence et Armaments of Evil rendent les rares abyssaux plus mortels et plus rentables : prenez-les quand votre build les encaisse. La branche de Rotting Bones oriente le butin : os Ancient, Omens et coffres de monnaie d'Ulaman. Les nœuds d'Abyssal Depths et d'Overrun viennent en dernier. En carte, suivez d'abord les failles qui partent du Well of Souls, puisque ces cartes rapportent vos points Abyss.
+
+```atlas
+tree: Abyss
+order:
+  - node: From Below
+    note: "Un puits de plus par Abyss."
+  - node: Dark Depths
+    note: "Des chances d'avoir deux à quatre puits en plus."
+  - node: Ghastly Relics
+    note: "Les grands coffres abyssaux deviennent des Abyssal Strongboxes."
+  - node: Lord of the Pit
+    choice: Abysses have a 20% chance to contain an additional Abyss
+    note: "L'option qui renforce les monstres abyssaux à chaque puits fermé convient aux builds qui tuent tout."
+  - node: Sprawling Rupture
+    note: "25 % de monstres en plus."
+  - node: Unholy Influence
+    note: "Deux fois plus de modificateurs abyssaux et Lichborn : plus de danger, meilleur butin."
+  - Armaments of Evil
+  - node: Strange Aversions
+    note: "Des coffres par faction : Ulaman peut avoir des coffres de monnaie."
+  - node: Rotting Bones
+    note: "Plus d'os Ancient, ceux qui valent cher."
+  - node: Vile Treasures
+    choice: Omens
+    note: "Les Omens of Abyssal Echoes se vendent à chaque désacralisation coûteuse. Les Lineage Supports sont l'option jackpot."
+  - node: Balance of Power
+    choice: Ulaman
+    note: "Avec Strange Aversions, les Abyss d'Ulaman peuvent contenir des coffres de monnaie."
+  - Abyssal Ire
+  - Close to the Surface
+  - Stir the Swarm
+  - Endless War
+  - Dark Bloodlines
+  - Shadow of Undeath
+  - Blessing of the Source
+```
 
 **Idéal pour** les builds au nettoyage rapide qui tuent aussi vite les rares : les puits sont des hordes de monstres, mais l'argent est dans les rares à modificateurs abyssaux.
 
@@ -141,6 +320,37 @@ Les Ruins of Kingsmarch, sur la côte au sud-est du départ de l'Atlas, mènent 
 - Vendez ce que donnent les chambres fortes : gemmes Lineage, uniques, Tablets et Soul Cores.
 - La double corruption est un pari : utilisez-la sur des objets que vous pouvez perdre, ou sur des uniques bon marché qui prennent de la valeur avec le bon résultat.
 
+**Stratégie de farm et arbre atlas.** Le temple rapporte quand une longue chaîne de salles améliorées survit d'un run à l'autre. Les premiers nœuds vont donc aux Medallions, puisque celui de Juatalotli verrouille les salles, et à la puissance des salles, jusqu'aux salles de tier 4. Prenez ensuite le coffre d'Atziri et la duplication de la monnaie du temple, puis les salles restreintes. Les nœuds de balises ne changent que les Vaal Beacons de vos cartes : prenez-les en dernier, ou plus tôt si vous récoltez beaucoup de cristaux en carte.
+
+```atlas
+tree: Incursion
+order:
+  - node: Stolen Authority
+    note: "35 % de Medallions en plus."
+  - node: The Lost Architect
+    note: "Les monstres uniques du temple peuvent lâcher le Medallion de Zantipi."
+  - Training and Preparation
+  - Power Relays
+  - Efficient Arteries
+  - Xipocado's Machinations
+  - node: Transcendent Progress
+    note: "Les salles peuvent monter au tier 4."
+  - Bloodrite Vestments
+  - node: Riches of the Empire
+    note: "La monnaie du temple peut être dupliquée."
+  - node: Atziri's Assets
+    choice: Temple Currency
+    note: "Ou un Medallion tant que vous construisez votre plateau."
+  - Protected Treasures
+  - Expanded Designs
+  - Secrets of the Ancients
+  - Royal Prerogative
+  - Offerings to the Queen
+  - Military Reinforcements
+  - Patrolling Legions
+  - Loyal Gatekeepers
+```
+
 **Idéal pour** les builds solides qui tuent à la fois les packs et les boss : les salles améliorées renforcent les monstres partout, et l'Architecte et Atziri sont de vrais combats de boss. C'est aussi la mécanique qui demande le plus de planification.
 
 ### Trial of the Sekhemas
@@ -160,6 +370,8 @@ Les Ruins of Kingsmarch, sur la côte au sud-est du départ de l'Atlas, mènent 
 - Les reliques avec résistance d'Honneur et quantité de reliques augmentée se vendent cher ; gardez les autres sur votre autel.
 - Les Djinn Barya se vendent aux joueurs qui ont besoin de leurs points d'ascendance, tout comme les passages d'épreuve.
 
+**Stratégie de farm.** L'épreuve n'a pas de sous-arbre atlas : votre progression, c'est l'autel des reliques. Construisez-le vers 75 % de résistance d'Honour et plus de clés, puis lancez des Djinn Barya au plus haut niveau que vous terminez sans risque. Ouvrez d'abord les salles de clés, puis les coffres Spectrum et Time-Lost avant tout le reste, et vendez les Barya dont vous ne vous servirez pas.
+
 **Idéal pour** les builds qui évitent les coups : personnages à distance, sbires et totems qui tiennent les ennemis à l'écart, avec une grosse réserve de vie ou de bouclier d'énergie. Les builds de mêlée perdent leur Honneur bien plus vite.
 
 ### Trial of Chaos
@@ -178,6 +390,8 @@ Les Ruins of Kingsmarch, sur la côte au sud-est du départ de l'Atlas, mènent 
 - Arrêtez le run quand vous tenez une récompense précieuse (un core d'Azcapa ou de Quipolatl, un Orbe Divin) et que les modificateurs suivants semblent dangereux.
 - Wager of the Future, en fin de run, double la taille des piles de monnaie encore proposées : l'un des meilleurs paris. Lethal Rare Monsters ajoute des rares, donc du butin, si vous les gérez.
 - Les Fates se vendent cher : à moins de vouloir les uniques du Trialmaster, les vendre est le profit le plus régulier.
+
+**Stratégie de farm.** Pas de sous-arbre atlas non plus : l'épreuve dépend des modificateurs que vous acceptez. Lancez des Ultimatums issus de cartes de niveau 75+ pour avoir les dix manches. Construisez chaque run autour des modificateurs que votre build ignore, et arrêtez-vous dès que vous tenez une récompense de valeur et que les choix suivants paraissent dangereux. Vendez les Fates, sauf si vous farmez vous-même le Trialmaster.
 
 **Idéal pour** les builds solides aux bons dégâts sur boss : trois des dix manches sont des combats de boss, et les modificateurs s'accumulent d'une manche à l'autre.
 

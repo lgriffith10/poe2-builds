@@ -25,6 +25,7 @@
     "data:refresh": "node scripts/sync-ninja.mjs && node scripts/sync-prices.mjs && node scripts/sync-meta-history.mjs && node scripts/check-sources.mjs",
     "craft:data": "node scripts/craft-data.mjs",
     "currency:data": "node scripts/currency-data.mjs",
+    "atlas:data": "node scripts/atlas-data.mjs",
     "skills:granted": "node scripts/granted-skills.mjs",
     "draft:ninja": "node scripts/draft-from-ninja.mjs",
     "trade:stats": "node scripts/trade-stats.mjs",

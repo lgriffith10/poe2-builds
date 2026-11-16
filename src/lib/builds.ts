@@ -6,6 +6,7 @@ import { marked } from "marked";
 import { classes, getBase, getClass, getGem, getUnique, tree } from "./data";
 import { gemTip, tipAttr, uniqueTip } from "./tips";
 import { renderItemCards } from "./item-cards";
+import { renderAtlasTree } from "./atlas-tree";
 import { currencyHref, currencyTip, getCurrency } from "./currency";
 import { allocateTargets, allocateWeaponSetTargets, createGraph, findNodeByName, isAllocatable, pruneDisconnected, roots } from "./tree";
 import { encodeBuild } from "./build-code";
@@ -153,9 +154,10 @@ export function renderBody(markdown: string, file: string, lang: Locale = DEFAUL
     if (depth === 2) toc.push({ id, text });
     return `<h${depth} id="${id}">${marked.Parser.parseInline(tokens)}</h${depth}>`;
   };
-  // ```items blocks become item illustrations (see item-cards.ts).
+  // ```items blocks become item illustrations (see item-cards.ts), ```atlas blocks Atlas sub-trees (atlas-tree.ts).
   const code = renderer.code.bind(renderer);
-  renderer.code = (token) => (token.lang === "items" ? renderItemCards(token.text, file) : code(token));
+  renderer.code = (token) =>
+    token.lang === "items" ? renderItemCards(token.text, file) : token.lang === "atlas" ? renderAtlasTree(token.text, file) : code(token);
   const html = (marked.parse(linkReferences(markdown, file), { renderer, async: false }) as string)
     // Site-relative links follow the page language.
     .replace(/href="(\/[^"]*)"/g, (_, href: string) => `href="${localePath(lang, href)}"`);

@@ -1,6 +1,6 @@
 ---
 title: "What to Farm: Endgame Mechanics and Making Currency"
-summary: "What each endgame mechanic rewards and what its loot is for, how to make currency with it, how to pick one for your build, and the simple habits that turn your maps into Exalted and Divine Orbs."
+summary: "What each endgame mechanic rewards and what its loot is for, how to make currency with it, its Atlas sub-tree and farming strategy, how to pick one for your build, and the simple habits that turn your maps into Exalted and Divine Orbs."
 order: 6
 updated: 2026-11-16
 sources:
@@ -24,6 +24,14 @@ sources:
     url: https://maxroll.gg/poe2/resources/trial-of-the-sekhemas
   - title: "Trial of Chaos (Maxroll)"
     url: https://maxroll.gg/poe2/resources/trial-of-chaos
+  - title: "Rolling Waystones and Precursor Tablets (Maxroll)"
+    url: https://maxroll.gg/poe2/resources/rolling-waystones-and-precursor-tablets
+  - title: "Citadel Farming (Maxroll)"
+    url: https://maxroll.gg/poe2/resources/citadel-farming
+  - title: "Atlas passive tree data (RePoE)"
+    url: https://repoe-fork.github.io/poe2/passive_skill_trees/Atlas.json
+  - title: "Atlas keystone options (PoE2DB)"
+    url: https://poe2db.tw/us/Shape_the_Chains
 ---
 
 Once your build is stable in maps, the question becomes what to do with them. This guide covers what each mechanic gives, how to choose, and how to turn loot into currency. If you have not finished the Precursor Fortress yet, start with [Starting the Endgame](/guides/endgame-start#picking-a-league-mechanic).
@@ -47,6 +55,21 @@ Smaller encounters add to every map: Strongboxes (craftable for more loot), Esse
 
 > **Which one suits my build?** Every build guide on this site ranks the eight mechanics below for that build, in its **Endgame Farming** section, with the reasons behind each place.
 
+## The Atlas Tree and Farming Strategy
+
+The Atlas passive tree has two parts. The **main tree** is shared by every mechanic, and its points come from the Precursor Fortress. Six mechanics also have their own **sub-tree** with separate points, earned as you progress that mechanic: the maps around Caer Tarth for Ritual, every foggy map completed for Delirium, the maps along the Abyssal cracks for Abyss, and the Lira Vaal city for the Vaal Temple (its sub-tree is Fate of the Vaal). Breach and Expedition have sub-trees too. The two trials have none: their progression lives elsewhere.
+
+**Main tree nodes for any farm.** Whatever you farm, you bring it to your maps with that mechanic's Precursor Tablets, so the Tablet nodes at the top of the main tree pay off for every strategy:
+
+- **Specialised Seeker**: Tablets also give 10% increased rarity of items dropped by monsters from their mechanic.
+- **Partial Translation** and **Reverse Transcription**: Tablets can be upgraded to Rare and get one more modifier.
+- **Enigmatic Intensification** and **Controlled Climates**: stronger Waystone and Tablet modifiers for each Tablet on the map. Maxroll notes that they also raise the Waystone drop rate.
+- **Propagating Secrets** and **Curiously Durable Stone**: more Tablets found, and a chance not to use up a Tablet charge.
+
+**The farming loop.** Find a spot on the Atlas with several Towers close together and maps you have not completed yet. Before using your Tablets, attempt the maps with layouts you dislike: a tier 1 Waystone opening a portal is enough, and an attempted map can no longer receive the Tablet's mechanic, so it lands on the good layouts. Then use your Tablets in the Towers and run your best Waystones on the affected maps.
+
+**How to read the trees below.** Each mechanic shows its sub-tree, drawn from the game data. The numbers give the order to take the notables in as your points come in, and the gold path marks the small nodes you need on the way. Hover a node for its exact effect. **Keystones** (dashed rings) make you pick one option, and the arrow next to them in the list gives the pick. The Ritual and Delirium orders come from the Maxroll guides. The other four are our own reading of the tree, built around the currency strategy described for each mechanic.
+
 ## Mechanic by Mechanic
 
 For each mechanic: how it plays, what its loot is for, how to turn it into Exalted and Divine Orbs, and what kind of build does it best.
@@ -69,6 +92,42 @@ For each mechanic: how it plays, what its loot is for, how to turn it into Exalt
 - Use the Genesis Tree to target sought-after jewellery (minion or caster rings, the exclusive bases) and sell the good rolls. Catalysing a good ring before listing it raises its price.
 - Lineage Support gems and Xesht's uniques are the jackpots.
 
+**Farming strategy and Atlas tree.** Breach pays out in Rares, so take the nodes that add Rares and keep Breaches open longer first. Then turn the Genesis Tree into a source of currency: set Breeding Program to Lavish Wombgifts, which hatch into currency, and put the extra Genesis points into the Currency womb. Vruun's nodes come next, for the Lineage Support jackpot. Leave the Hive nodes for last unless you play minions or totems, which do well defending Ailith from a fixed spot.
+
+```atlas
+tree: Breach
+order:
+  - node: Breeding Program
+    choice: Lavish Wombgifts
+    note: "Lavish Wombgifts hatch currency. If you craft jewellery, pick the Signet (rings), Ornate (amulets) or Banded (belts) ones instead."
+  - node: Moment of Risk
+    note: "Two more Rares per Breach, and Wombgifts can drop one level higher."
+  - node: Shape the Chains
+    choice: 15% increased Pack Size
+    note: "For clear builds. Builds that melt Rares can take the other option: tougher, more rewarding Rares in smaller packs."
+  - node: Reality Wound
+    note: "Ten more seconds of killing before the Breach collapses."
+  - Diverse Control
+  - node: Growing Wealth
+    note: "Five more points in the Currency womb, which goes with Lavish Wombgifts."
+  - node: Frantic Invasion
+    note: "Vruun, Marshal of Xesht, appears twice as often."
+  - node: Study the Chains
+    note: "Vruun drops Lineage Supports more often: the jackpot."
+  - Flesh Flower
+  - Essence Transference
+  - Exquisite Design
+  - Swelling Hives
+  - Provoke the Swarm
+  - node: Sole Purpose
+    choice: 50% increased number of skills created
+    note: "More of Ailith's skills means more monsters to kill. Take the damage option if Hives are a struggle."
+  - Reactive Hiveseeding
+  - node: Tear Open the Rift
+    choice: Add a Modifier to one revealed Map
+    note: "The other option costs an extra Breachstone each time."
+```
+
 **Best for** builds with fast, wide clear that keep up with swarms coming from every side. Minion and totem builds do well in Hives, where you fight from a fixed spot.
 
 ### Ritual
@@ -86,6 +145,39 @@ You can spend Tribute four ways: take an item, **defer** it (pay a little to loc
 - Only take uniques you can use or sell: the rest of the Tribute is worth more as offerings to the King.
 - An Audience with the King, the Head of the King and Call of the Shadows can all be sold if you do not want to fight.
 - Ritual scales with the number of monsters in the map: pack size on Waystones and Tablets, Distilled Emotions, and Delirium, whose monsters (including its bosses) are revived by the altars too.
+
+**Farming strategy and Atlas tree.** This is Maxroll's order. Start with the nodes that make revived monsters Magic or Rare more often and add a boss to some altars. Then take the King's bar and the Rite of the Nameless nodes: Hour of the Nameless is what lets the Rite offer a [[Mageblood]]. Next come Traveller's Woe and Spreading Darkness, which steer unique drops, and the Tribute and reroll nodes come last. Maxroll leaves Royal Lenience out. In maps, add pack size wherever you can (Waystones, Tablets, Distilled Emotions) and run Delirium alongside, since the altars revive everything that died in the circle.
+
+```atlas
+tree: Ritual
+order:
+  - node: Reborn in Shadow
+    note: "Revived monsters are more often Magic and Rare."
+  - node: Bring Forth the Unseen
+    note: "15% of altars summon an extra boss."
+  - node: Royal Tithe
+    note: "The King's bar fills faster."
+  - node: Hour of the Nameless
+    note: "The Rite of the Nameless can offer valuable uniques such as Mageblood."
+  - Ongoing Chants
+  - Umbral Gathering
+  - node: Traveller's Woe
+    choice: Tainted
+    note: "With Spreading Darkness, Tainted Rituals favour belts, charms and flasks: Maxroll's pick for hunting Headhunter and Mageblood."
+  - Spreading Darkness
+  - node: Mysterious Rites
+    note: "Queen's Rituals: more Omens and a special Idol."
+  - From the Mists
+  - node: Invigorated Sacrifices
+    choice: 10% increased number of Favours
+    note: "More items to choose from. When you have too many deferred items to pay for, switch to an option that reduces the Tribute penalty."
+  - Tempting Offers
+  - Prayer and Pledge
+  - Patient Devotion
+  - Magnanimous Offerings
+  - Between Two Worlds
+  - Ancient Enmities
+```
 
 **Best for** builds with big area damage and the defences to hold their ground: the circle locks you in. Minions, totems and channelled skills are at home here, since standing still costs nothing.
 
@@ -108,6 +200,34 @@ The questline starts at the Withered Willow. Each map around it counts once you 
 - Check the Loathsome Mire amulets: two good notables on one amulet sell well.
 - Spend your own Paranoia on Waystones: more Rares means more currency from every map.
 
+**Farming strategy and Atlas tree.** Maxroll's priorities are "You can't scare me anymore!" for Potent emotions, "Is this about me... or you?" for Simulacrum Splinters, "I see your true nature now!" for an extra Map Boss and more Grand Mirrors, and Recurring Nightmares set to the steady spread. Its planner reaches them through the nodes in between, then fills in the rest. In maps, spread the fog fast: when a Grand Mirror spawns, search "Grand Mirror" on the Atlas and run that map. Push the area to 100% deliriousness, run the Simulacrum, then start again. Put three Liquid Paranoia on your best Waystones for more Rares.
+
+```atlas
+tree: Delirium
+order:
+  - node: You can't just wake up from this one.
+    note: "The fog lasts 30% longer, and Simulacrums offer a bonus pick between waves."
+  - Come on! Face me!
+  - node: You can't scare me anymore!
+    note: "Unique monsters can drop Potent emotions, which are expensive."
+  - There's nowhere to hide...
+  - You thought you were free?
+  - node: Is this about me... or you?
+    note: "Delirium monsters in level 75+ maps drop Simulacrum Splinters."
+  - node: Recurring Nightmares
+    choice: Delirium Fog spreads to +4 additional Maps
+    note: "The steady option. The other one adds 30% deliriousness to foggy maps instead."
+  - The mirrors... the mirrors!
+  - node: I see your true nature now!
+    note: "An extra boss in the Map Boss arena, or a guaranteed Grand Mirror."
+  - Is that the best you've got?!
+  - I know your childhood fears...
+  - Get out of my head!
+  - These demons are all your own...
+  - Are you sure you want to do that?
+  - I'm not alone anymore!
+```
+
 **Best for** fast builds with strong clear that keep pace with the fog, and enough defences for the late Simulacrum waves. Slow or channelled builds struggle.
 
 ### Expedition
@@ -124,6 +244,35 @@ The Ruins of Kingsmarch, on the coast south-east of the Atlas start, lead to the
 - Sell Logbooks, Sagas, Alloys, Fluxes and Verisium in bulk.
 - In a Grand Expedition without a good Remnant, detonate one explosive near the start and move on: it is not worth the time.
 - Rare chests and Runic monsters in normal maps also drop Logbooks: unearth them on the way.
+
+**Farming strategy and Atlas tree.** Expedition money comes from Remnants: more of them, more Runic modifiers on them, and more loot for each modifier. Take Expanding Territory for the extra Remnant first, then Gaining Traction and Calculated Investment, which turn every modifier into more and better loot. Logbooks come next, then the explosive and Grand Expedition nodes. Double or Nothing raises the stakes: take its extra modifier only if your build survives dangerous Remnants. Cultivate the Sea, a biome choice for ocean maps, is left out. In maps, run Ocean maps and Grand Expeditions and unearth every Runic monster on the way: they drop Logbooks.
+
+```atlas
+tree: Expedition
+order:
+  - node: Expanding Territory
+    choice: 10% chance for an additional Verisium Remnant Encounter
+  - node: Gaining Traction
+    note: "Each Remnant completed in the area raises monster rarity by 50%."
+  - node: Calculated Investment
+    choice: 1% increased Quantity of Items per Runic Modifier
+  - node: Steady Development
+    choice: Remnant
+  - node: Sown Seeds
+    note: "More Logbooks from Runic monsters."
+  - Face the Past
+  - node: Strategic Advantage
+    choice: Explosives only wait for 50% of Monsters to be slain
+    note: "Faster runs."
+  - node: The Quest Continues
+    note: "Grand Expeditions get up to three modifiers and one more area level."
+  - node: Double or Nothing
+    choice: 25% chance to add an additional Runic Modifier
+    note: "More danger, more loot. Pick the option that adds no Runic modifiers if Remnants already kill you."
+  - node: Feeling Lucky?
+    note: "Farrow sells Liquid Verisium."
+  - Buried Ambition
+```
 
 **Best for** builds with solid defences and good damage on Rares: the best rewards come with the most dangerous Remnants. Builds that love large packs can let everything unearth first, then clear it in one go.
 
@@ -143,6 +292,44 @@ The Ruins of Kingsmarch, on the coast south-east of the Atlas start, lead to the
 - Sell the Omens, especially Omens of Abyssal Echoes: players use them on every expensive desecration.
 - Desecrate good bases yourself and sell the result when you hit a strong modifier.
 - Lichborn exiles drop the sought-after Heart of the Well jewel; Kulemak's Invitation sells to bossers.
+
+**Farming strategy and Atlas tree.** Abyss pays in volume and in Rares with Abyssal modifiers. Start with the pit nodes (more pits per Abyss), then Lord of the Pit for extra Abysses and Sprawling Rupture for more monsters. Unholy Influence and Armaments of Evil make Abyssal Rares deadlier and richer, so take them once your build handles them. The branch through Rotting Bones steers the loot: Ancient bones, Omens, and Ulaman's currency chests. Abyssal Depths and Overrun nodes come last. In maps, follow the cracks out of the Well of Souls first, since those maps earn your Abyss points.
+
+```atlas
+tree: Abyss
+order:
+  - node: From Below
+    note: "One more pit per Abyss."
+  - node: Dark Depths
+    note: "Chances for two to four extra pits."
+  - node: Ghastly Relics
+    note: "Large Abyssal chests become Abyssal Strongboxes."
+  - node: Lord of the Pit
+    choice: Abysses have a 20% chance to contain an additional Abyss
+    note: "The option that makes Abyssal monsters stronger with each closed pit suits builds that kill everything."
+  - node: Sprawling Rupture
+    note: "25% more monsters."
+  - node: Unholy Influence
+    note: "Twice as many Abyssal and Lichborn modifiers: more danger, better loot."
+  - Armaments of Evil
+  - node: Strange Aversions
+    note: "Faction chests: Ulaman may have currency chests."
+  - node: Rotting Bones
+    note: "More Ancient bones, the valuable ones."
+  - node: Vile Treasures
+    choice: Omens
+    note: "Omens of Abyssal Echoes sell on every expensive desecration. Lineage Supports are the jackpot option."
+  - node: Balance of Power
+    choice: Ulaman
+    note: "With Strange Aversions, Ulaman's Abysses can hold currency chests."
+  - Abyssal Ire
+  - Close to the Surface
+  - Stir the Swarm
+  - Endless War
+  - Dark Bloodlines
+  - Shadow of Undeath
+  - Blessing of the Source
+```
 
 **Best for** builds with fast clear that also kill Rares quickly: pits are hordes of monsters, but the money is in the Rares with Abyssal modifiers.
 
@@ -164,6 +351,37 @@ The Ruins of Kingsmarch, on the coast south-east of the Atlas start, lead to the
 - Sell what the vaults give: Lineage Support gems, uniques, Tablets and Soul Cores.
 - Double corruption is a gamble: use it on items you can afford to lose, or on cheap uniques that become valuable with the right outcome.
 
+**Farming strategy and Atlas tree.** The temple pays when a long chain of upgraded rooms survives from run to run. So the first nodes go to Medallions, since Juatalotli's is what locks rooms, and to room strength, up to tier 4 rooms. Then take Atziri's vault and the duplication of Temple currency, then the restricted rooms. The beacon nodes only change Vaal Beacons in your maps: take them last, or earlier if you collect a lot of crystals in maps.
+
+```atlas
+tree: Incursion
+order:
+  - node: Stolen Authority
+    note: "35% more Medallions."
+  - node: The Lost Architect
+    note: "Unique temple monsters can drop Zantipi's Medallion."
+  - Training and Preparation
+  - Power Relays
+  - Efficient Arteries
+  - Xipocado's Machinations
+  - node: Transcendent Progress
+    note: "Rooms can reach tier 4."
+  - Bloodrite Vestments
+  - node: Riches of the Empire
+    note: "Temple currency can be duplicated."
+  - node: Atziri's Assets
+    choice: Temple Currency
+    note: "Or a Medallion while you are still building your board."
+  - Protected Treasures
+  - Expanded Designs
+  - Secrets of the Ancients
+  - Royal Prerogative
+  - Offerings to the Queen
+  - Military Reinforcements
+  - Patrolling Legions
+  - Loyal Gatekeepers
+```
+
 **Best for** sturdy builds that kill both packs and bosses: upgraded rooms raise monster power across the board, and the Architect and Atziri are real boss fights. It also asks for planning more than any other mechanic.
 
 ### Trial of the Sekhemas
@@ -183,6 +401,8 @@ The Ruins of Kingsmarch, on the coast south-east of the Atlas start, lead to the
 - Relics with Honour resistance and increased relic quantity sell for a lot; keep the rest on your altar.
 - Djinn Barya sell to players who need their ascendancy points, and so do trial carries.
 
+**Farming strategy.** The trial has no Atlas sub-tree: your progression is the Relic altar. Build it towards 75% Honour resistance and more keys, then run Djinn Barya at the highest level you clear reliably. Open Key rooms first and the Spectrum and Time-Lost chests before anything else, and sell the Barya you will not use.
+
 **Best for** builds that avoid getting hit: ranged characters, minions and totems that keep enemies off you, with a large life or energy shield pool. Melee builds lose Honour much faster.
 
 ### Trial of Chaos
@@ -201,6 +421,8 @@ The Ruins of Kingsmarch, on the coast south-east of the Atlas start, lead to the
 - Stop the run when you hold a valuable reward (an Azcapa or Quipolatl core, a Divine Orb) and the next modifiers look dangerous.
 - Wager of the Future, late in a run, doubles the stack size of the currency still on offer: one of the best wagers. Lethal Rare Monsters adds Rares, and so loot, if you can handle them.
 - Fates sell for a lot: unless you want the Trialmaster's uniques, selling them is the steadier profit.
+
+**Farming strategy.** No Atlas sub-tree either: the trial depends on the modifiers you accept. Run Ultimatums from level 75+ maps so you get all ten rounds. Build every run around the modifiers your build ignores, and stop as soon as you hold a valuable reward and the next choices look dangerous. Sell the Fates unless you farm the Trialmaster yourself.
 
 **Best for** sturdy builds with strong boss damage: three of the ten rounds are boss fights, and the modifiers stack up round after round.
 

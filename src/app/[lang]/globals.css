@@ -293,6 +293,55 @@ body {
 @media (max-width: 640px) {
   .prose-guide .item-card { max-width: none; }
 }
+/* Guides: a mechanic's Atlas sub-tree (```atlas blocks, lib/atlas-tree.ts) */
+.prose-guide .atlas-tree {
+  margin: 1.25rem 0;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 10px;
+  background: var(--color-surface);
+  padding: 0.75rem;
+}
+.prose-guide .atlas-tree svg {
+  display: block;
+  width: 100%;
+  max-height: 34rem;
+  margin: 0 auto;
+}
+.atlas-tree .at-edges path { fill: none; stroke: var(--color-line-strong); }
+.atlas-tree .at-edges path.on { stroke: var(--color-gold-soft); }
+.atlas-tree circle { fill: var(--color-surface-2); stroke: var(--color-faint); }
+.atlas-tree .at-root circle { fill: var(--color-gold-soft); stroke: var(--color-gold); }
+.atlas-tree .on circle { stroke: var(--color-gold); }
+.atlas-tree .at-small.on circle { fill: var(--color-gold-soft); }
+.atlas-tree .at-notable.on circle, .atlas-tree .at-keystone.on circle { fill: #2a2012; }
+.atlas-tree text {
+  fill: var(--color-gold);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.atlas-tree g:hover circle { stroke: var(--color-ink); }
+.prose-guide .atlas-order {
+  margin: 0.75rem 0 0;
+  padding-left: 1.75rem;
+  columns: 2 20rem;
+  column-gap: 1.5rem;
+  font-size: 0.85rem;
+}
+.prose-guide .atlas-order li { break-inside: avoid; margin: 0 0 0.5rem; }
+.prose-guide .atlas-order li::marker { color: var(--color-gold); font-weight: 700; }
+.atlas-order .at-name { color: var(--color-ink); font-weight: 600; }
+.atlas-order .at-tag {
+  border: 1px solid var(--color-gold-soft);
+  border-radius: 999px;
+  padding: 0 0.4rem;
+  color: var(--color-gold);
+  font-size: 0.7rem;
+}
+.atlas-order .at-choice { color: var(--color-gold); }
+.atlas-order .at-note { display: block; color: var(--color-muted); }
+.atlas-order .at-stats { display: block; color: var(--color-faint); font-size: 0.78rem; }
 /* Crafting simulator: the item tooltip pulses after each craft */
 @keyframes craftflash {
   0% { box-shadow: 0 0 0 0 rgb(212 166 79 / 0.55); transform: scale(0.985); }
