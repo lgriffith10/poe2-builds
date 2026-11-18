@@ -24,6 +24,10 @@ export const en = {
     weapons: "Weapons",
     toggleMenu: "Toggle menu",
     language: "Language",
+    groups: { builds: "Builds", guides: "Guides", tools: "Tools", database: "Database" },
+    allBuilds: "All builds",
+    allGuides: "All guides",
+    overview: "Overview",
   },
   footer: {
     disclaimer:
@@ -102,6 +106,8 @@ export const en = {
       database: "Gems, uniques, bases, ascendancies and currency.",
       compare: "Two builds side by side: tree, gems and gear.",
       character: "Import a Path of Building code and read your character.",
+      farming: "Atlas strategies per mechanic, with the builds that farm them best.",
+      weapons: "Paste two weapons and see which one deals more damage.",
     },
     bestTitle: "Best builds right now",
     bestSub: "Top of each tier list category.",

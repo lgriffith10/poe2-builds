@@ -25,6 +25,10 @@ export const fr: Dictionary = {
     weapons: "Armes",
     toggleMenu: "Ouvrir le menu",
     language: "Langue",
+    groups: { builds: "Builds", guides: "Guides", tools: "Outils", database: "Base de données" },
+    allBuilds: "Tous les builds",
+    allGuides: "Tous les guides",
+    overview: "Vue d'ensemble",
   },
   footer: {
     disclaimer:
@@ -104,6 +108,8 @@ export const fr: Dictionary = {
       database: "Gemmes, uniques, bases, ascendances et monnaies.",
       compare: "Deux builds côte à côte : arbre, gemmes et équipement.",
       character: "Importez un code Path of Building et lisez votre personnage.",
+      farming: "Stratégies d'Atlas par mécanique, avec les builds qui les farment le mieux.",
+      weapons: "Collez deux armes et voyez laquelle fait le plus de dégâts.",
     },
     bestTitle: "Les meilleurs builds du moment",
     bestSub: "Le haut de chaque catégorie de la tier list.",
