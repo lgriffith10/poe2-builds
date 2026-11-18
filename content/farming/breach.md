@@ -14,6 +14,10 @@ demands:
   single: 1
   tank: 2
   speed: 3
+loot:
+  exchange: ["Breach"]
+  items: ["Breachlord Sac", "Xesht's Reliquary Key", "Xoph's Pyre", "Tul's Stillness", "Tul's Avalanche", "Esh's Radiance", "Esh's Prowess", "Uul-Netol's Embrace", "Breachlord's Amalgam", "Breachlord's Rift"]
+  uniques: ["Skin of the Loyal", "Xoph's Blood", "Choir of the Storm", "The Pandemonius", "Hand of Wisdom and Action", "Beyond Reach"]
 updated: 2026-11-18
 sources:
   - title: "Breach (Maxroll)"

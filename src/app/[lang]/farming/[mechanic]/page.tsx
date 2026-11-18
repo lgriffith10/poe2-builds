@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MechanicTierBoard } from "@/components/mechanic-tier-board";
+import { LootTierBoard } from "@/components/loot-tier-board";
 import { RefTooltips } from "@/components/ref-tooltips";
 import { DemandMeters } from "@/components/demand-meters";
 import { articleLd, breadcrumbLd, JsonLd } from "@/components/json-ld";
 import { fmt, getDictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
 import { MECHANICS, MECHANIC_INFO, mechanicHref } from "@/lib/farming";
-import { getMechanics, isMechanic, mechanicTierList } from "@/lib/mechanics";
+import { getMechanics, isMechanic, mechanicLoot, mechanicTierList } from "@/lib/mechanics";
 import { SITE_NAME } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -43,7 +44,13 @@ export default async function MechanicPage({ params }: PageProps<"/[lang]/farmin
   const entries = mechanicTierList(mechanic, lang).map(({ build, tier, reasons }) => ({ build, tier, reasons }));
   const top = entries.filter((e) => e.tier === "S").slice(0, 5);
   const tierId = "tier-list";
-  const toc = [{ id: tierId, text: fmt(tr.tierTitle, { name: m.title }) }, ...m.toc];
+  const lootId = "loot";
+  const loot = mechanicLoot(m.id, lang);
+  const toc = [
+    { id: tierId, text: fmt(tr.tierTitle, { name: m.title }) },
+    ...(loot ? [{ id: lootId, text: fmt(tr.lootTitle, { name: m.title }) }] : []),
+    ...m.toc,
+  ];
 
   return (
     <article>
@@ -118,6 +125,11 @@ export default async function MechanicPage({ params }: PageProps<"/[lang]/farmin
               <a href={`#${tierId}`} className="text-gold hover:underline">
                 {fmt(tr.tierTitle, { name: m.title })} ↓
               </a>
+              {loot && (
+                <a href={`#${lootId}`} className="text-gold hover:underline">
+                  {fmt(tr.lootTitle, { name: m.title })} ↓
+                </a>
+              )}
             </div>
           )}
         </div>
@@ -142,6 +154,15 @@ export default async function MechanicPage({ params }: PageProps<"/[lang]/farmin
             <MechanicTierBoard entries={entries} noBuilds={tr.noBuilds} />
             <p className="mt-3 text-xs text-faint">{tr.tierMethod}</p>
           </section>
+
+          {loot && (
+            <section id={lootId} className="mt-12 scroll-mt-24">
+              <h2 className="font-display text-2xl font-semibold text-gold">{fmt(tr.lootTitle, { name: m.title })}</h2>
+              <p className="mt-1 mb-4 max-w-3xl text-sm text-muted">{fmt(tr.lootSub, { league: loot.league, date: loot.fetchedAt })}</p>
+              <LootTierBoard entries={loot.entries} />
+              <p className="mt-3 text-xs text-faint">{tr.lootMethod}</p>
+            </section>
+          )}
 
           <div className="mt-12 max-w-3xl">
             <RefTooltips className="prose-guide" html={m.html} />

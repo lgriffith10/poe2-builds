@@ -13,6 +13,10 @@ demands:
   single: 3
   tank: 2
   speed: 2
+loot:
+  exchange: ["Abyss"]
+  items: ["Omen of Abyssal Echoes", "Omen of Light", "Omen of Sinistral Necromancy", "Omen of Dextral Necromancy", "Kulemak's Invitation", "Kurgal's Leash", "Amanamu's Tithe", "Tecrod's Revenge", "Kulemak's Dominion"]
+  uniques: ["Darkness Enthroned", "Undying Hate", "Heart of the Well"]
 updated: 2026-11-18
 sources:
   - title: "Abyss (Maxroll)"

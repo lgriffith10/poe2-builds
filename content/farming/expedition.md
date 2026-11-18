@@ -13,6 +13,9 @@ demands:
   single: 3
   tank: 3
   speed: 1
+loot:
+  exchange: ["Expedition"]
+  items: ["Olroth's Reliquary Key", "Shattered Triskelion", "The Triskelion Reforged", "Medved's Felling", "Vorana's Siege", "Uhtred's Exodus", "Uhtred's Augury", "Uhtred's Omen", "Uhtred's Rite", "Uhtred's Constellation", "Olroth's Conviction", "Olroth's Hubris", "Styrn's Ferocity", "Styrn's Mountain"]
 updated: 2026-11-18
 sources:
   - title: "Expedition (Maxroll)"

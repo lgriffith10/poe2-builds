@@ -13,6 +13,10 @@ demands:
   single: 2
   tank: 2
   speed: 3
+loot:
+  exchange: ["Delirium"]
+  items: ["Simulacrum", "Simulacrum Splinter", "Raven's Reflection", "Tangmazu's Reliquary Key"]
+  uniques: ["Veilpiercer", "Sadist's Mercy", "The Auspex", "Horror's Flight", "The Raven's Flock", "Split Personality"]
 updated: 2026-11-18
 sources:
   - title: "Delirium (Maxroll)"

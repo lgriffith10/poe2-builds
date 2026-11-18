@@ -1,0 +1,1662 @@
+{
+ "source": "poe.ninja",
+ "league": "Forbidden Rites",
+ "fetchedAt": "2026-11-18",
+ "exalted": 505,
+ "mechanics": {
+  "abyss": [
+   {
+    "name": "Kurgal's Gaze",
+    "kind": "exchange",
+    "div": 35.9,
+    "volume": 77.7,
+    "icon": "/img/currency/kurgalsgaze.webp"
+   },
+   {
+    "name": "Preserved Cranium",
+    "kind": "exchange",
+    "div": 24.6,
+    "volume": 5010,
+    "icon": "/img/currency/preservedcranium.webp"
+   },
+   {
+    "name": "Omen of Light",
+    "kind": "exchange",
+    "div": 10.3,
+    "volume": 10800,
+    "icon": "/img/currency/omenonannulremoveabyssmod.webp"
+   },
+   {
+    "name": "Amanamu's Tithe",
+    "kind": "exchange",
+    "div": 9.43,
+    "volume": 69.2,
+    "icon": "/img/gems/amanamus-tithe.webp"
+   },
+   {
+    "name": "Ancient Jawbone",
+    "kind": "exchange",
+    "div": 9.03,
+    "volume": 1650,
+    "icon": "/img/currency/ancientjawbone.webp"
+   },
+   {
+    "name": "Tecrod's Gaze",
+    "kind": "exchange",
+    "div": 7.71,
+    "volume": 45,
+    "icon": "/img/currency/tecrodsgaze.webp"
+   },
+   {
+    "name": "Ancient Collarbone",
+    "kind": "exchange",
+    "div": 6.36,
+    "volume": 987,
+    "icon": "/img/currency/ancientclavicle.webp"
+   },
+   {
+    "name": "Altered Collarbone",
+    "kind": "exchange",
+    "div": 5.63,
+    "volume": 214,
+    "icon": "/img/currency/breachdesecration.webp"
+   },
+   {
+    "name": "Ancient Rib",
+    "kind": "exchange",
+    "div": 4.84,
+    "volume": 758,
+    "icon": "/img/currency/ancientribs.webp"
+   },
+   {
+    "name": "Kulemak's Invitation",
+    "kind": "exchange",
+    "div": 4.82,
+    "volume": 804,
+    "icon": "/img/loot/kulemak-s-invitation.png"
+   },
+   {
+    "name": "Tecrod's Revenge",
+    "kind": "exchange",
+    "div": 4,
+    "volume": 8.67,
+    "icon": "/img/gems/tecrods-revenge.webp"
+   },
+   {
+    "name": "Amanamu's Gaze",
+    "kind": "exchange",
+    "div": 2.07,
+    "volume": 4.83,
+    "icon": "/img/currency/amanamusgaze.webp"
+   },
+   {
+    "name": "Undying Hate",
+    "kind": "unique",
+    "div": 2,
+    "listings": 3349,
+    "icon": "/img/uniques/undying-hate.webp"
+   },
+   {
+    "name": "Ulaman's Gaze",
+    "kind": "exchange",
+    "div": 1,
+    "volume": 0.333,
+    "icon": "/img/currency/ulamansgaze.webp"
+   },
+   {
+    "name": "Heart of the Well",
+    "kind": "unique",
+    "div": 0.19,
+    "listings": 10000,
+    "icon": "/img/loot/heart-of-the-well.png"
+   },
+   {
+    "name": "Kurgal's Leash",
+    "kind": "exchange",
+    "div": 0.175,
+    "volume": 0.555,
+    "icon": "/img/gems/kurgals-leash.webp"
+   },
+   {
+    "name": "Preserved Collarbone",
+    "kind": "exchange",
+    "div": 0.0913,
+    "volume": 23.8,
+    "icon": "/img/currency/preservedcalvicle.webp"
+   },
+   {
+    "name": "Omen of Abyssal Echoes",
+    "kind": "exchange",
+    "div": 0.0896,
+    "volume": 100,
+    "icon": "/img/currency/omenonabyssrerolloptions.webp"
+   },
+   {
+    "name": "Kulemak's Dominion",
+    "kind": "exchange",
+    "div": 0.0386,
+    "volume": 0.0129,
+    "icon": "/img/gems/kulemaks-dominion.webp"
+   },
+   {
+    "name": "Omen of Dextral Necromancy",
+    "kind": "exchange",
+    "div": 0.0182,
+    "volume": 1.67,
+    "icon": "/img/currency/omenonabyssaddsuffixes.webp"
+   },
+   {
+    "name": "Preserved Jawbone",
+    "kind": "exchange",
+    "div": 0.015,
+    "volume": 2.53,
+    "icon": "/img/currency/preservedjawbone.webp"
+   },
+   {
+    "name": "Preserved Rib",
+    "kind": "exchange",
+    "div": 0.0113,
+    "volume": 2.74,
+    "icon": "/img/currency/preservedribs.webp"
+   },
+   {
+    "name": "Gnawed Collarbone",
+    "kind": "exchange",
+    "div": 0.00755,
+    "volume": 0.034,
+    "icon": "/img/currency/gnawedclavicle.webp"
+   },
+   {
+    "name": "Omen of Sinistral Necromancy",
+    "kind": "exchange",
+    "div": 0.0055,
+    "volume": 0.674,
+    "icon": "/img/currency/omenonabyssaddprefixes.webp"
+   },
+   {
+    "name": "Gnawed Rib",
+    "kind": "exchange",
+    "div": 0.00462,
+    "volume": 0.0254,
+    "icon": "/img/currency/gnawedribs.webp"
+   },
+   {
+    "name": "Darkness Enthroned",
+    "kind": "unique",
+    "div": 0.00226,
+    "listings": 10000,
+    "icon": "/img/uniques/darkness-enthroned.webp"
+   },
+   {
+    "name": "Gnawed Jawbone",
+    "kind": "exchange",
+    "div": 0.00225,
+    "volume": 0.00825,
+    "icon": "/img/currency/gnawedjawbone.webp"
+   }
+  ],
+  "breach": [
+   {
+    "name": "Uul-Netol's Embrace",
+    "kind": "exchange",
+    "div": 968,
+    "volume": 2420,
+    "icon": "/img/gems/uul-netols-embrace.webp"
+   },
+   {
+    "name": "Tul's Stillness",
+    "kind": "exchange",
+    "div": 196,
+    "volume": 719,
+    "icon": "/img/gems/tuls-stillness.webp"
+   },
+   {
+    "name": "Esh's Radiance",
+    "kind": "exchange",
+    "div": 94.5,
+    "volume": 410,
+    "icon": "/img/gems/eshs-radiance.webp"
+   },
+   {
+    "name": "Xoph's Pyre",
+    "kind": "exchange",
+    "div": 85.5,
+    "volume": 157,
+    "icon": "/img/gems/xophs-pyre.webp"
+   },
+   {
+    "name": "Breachlord's Amalgam",
+    "kind": "exchange",
+    "div": 42.5,
+    "volume": 156,
+    "icon": "/img/loot/breachlord-s-amalgam.png"
+   },
+   {
+    "name": "Breachlord's Rift",
+    "kind": "exchange",
+    "div": 38.1,
+    "volume": 44.5,
+    "icon": "/img/loot/breachlord-s-rift.png"
+   },
+   {
+    "name": "Breachlord Sac",
+    "kind": "exchange",
+    "div": 19.6,
+    "volume": 799,
+    "icon": "/img/loot/breachlord-sac.png"
+   },
+   {
+    "name": "Refined Sibilant Catalyst",
+    "kind": "exchange",
+    "div": 14.8,
+    "volume": 1520,
+    "icon": "/img/currency/jewelcatalystcaster.webp"
+   },
+   {
+    "name": "Refined Reaver Catalyst",
+    "kind": "exchange",
+    "div": 9.7,
+    "volume": 1120,
+    "icon": "/img/currency/jewelcatalystattack.webp"
+   },
+   {
+    "name": "Xesht's Reliquary Key",
+    "kind": "exchange",
+    "div": 9,
+    "volume": 3,
+    "icon": "/img/loot/xesht-s-reliquary-key.png"
+   },
+   {
+    "name": "Breachstone",
+    "kind": "exchange",
+    "div": 4.28,
+    "volume": 209,
+    "icon": "/img/loot/breachstone.png"
+   },
+   {
+    "name": "Skin of the Loyal",
+    "kind": "unique",
+    "div": 4,
+    "listings": 95,
+    "icon": "/img/uniques/skin-of-the-loyal.webp"
+   },
+   {
+    "name": "Esh's Prowess",
+    "kind": "exchange",
+    "div": 3,
+    "volume": 4,
+    "icon": "/img/loot/esh-s-prowess.png"
+   },
+   {
+    "name": "Refined Necrotic Catalyst",
+    "kind": "exchange",
+    "div": 2.74,
+    "volume": 123,
+    "icon": "/img/currency/jewelcatalystnecrotic.webp"
+   },
+   {
+    "name": "Choir of the Storm",
+    "kind": "unique",
+    "div": 1.32,
+    "listings": 757,
+    "icon": "/img/uniques/choir-of-the-storm.webp"
+   },
+   {
+    "name": "Tul's Avalanche",
+    "kind": "exchange",
+    "div": 1.19,
+    "volume": 0.395,
+    "icon": "/img/loot/tul-s-avalanche.png"
+   },
+   {
+    "name": "Refined Xoph's Catalyst",
+    "kind": "exchange",
+    "div": 0.741,
+    "volume": 35.7,
+    "icon": "/img/currency/jewelcatalystfire.webp"
+   },
+   {
+    "name": "Reaver Catalyst",
+    "kind": "exchange",
+    "div": 0.685,
+    "volume": 335,
+    "icon": "/img/currency/breachcatalystattack.webp"
+   },
+   {
+    "name": "Hand of Wisdom and Action",
+    "kind": "unique",
+    "div": 0.655,
+    "listings": 377,
+    "icon": "/img/uniques/hand-of-wisdom-and-action.webp"
+   },
+   {
+    "name": "Refined Chayula's Catalyst",
+    "kind": "exchange",
+    "div": 0.653,
+    "volume": 7.83,
+    "icon": "/img/currency/jewelcatalystchaos.webp"
+   },
+   {
+    "name": "Sibilant Catalyst",
+    "kind": "exchange",
+    "div": 0.572,
+    "volume": 251,
+    "icon": "/img/currency/breachcatalystcaster.webp"
+   },
+   {
+    "name": "Refined Carapace Catalyst",
+    "kind": "exchange",
+    "div": 0.534,
+    "volume": 31.3,
+    "icon": "/img/currency/jewelcatalystdefences.webp"
+   },
+   {
+    "name": "Refined Tul's Catalyst",
+    "kind": "exchange",
+    "div": 0.512,
+    "volume": 14.5,
+    "icon": "/img/currency/jewelcatalystcold.webp"
+   },
+   {
+    "name": "Refined Esh's Catalyst",
+    "kind": "exchange",
+    "div": 0.498,
+    "volume": 26.5,
+    "icon": "/img/currency/jewelcatalystlightning.webp"
+   },
+   {
+    "name": "Refined Skittering Catalyst",
+    "kind": "exchange",
+    "div": 0.434,
+    "volume": 3.83,
+    "icon": "/img/currency/jewelcatalystspeed.webp"
+   },
+   {
+    "name": "Refined Uul-Netol's Catalyst",
+    "kind": "exchange",
+    "div": 0.408,
+    "volume": 43.2,
+    "icon": "/img/currency/jewelcatalystphysical.webp"
+   },
+   {
+    "name": "Refined Neural Catalyst",
+    "kind": "exchange",
+    "div": 0.382,
+    "volume": 11.3,
+    "icon": "/img/currency/jewelcatalystmana.webp"
+   },
+   {
+    "name": "Refined Adaptive Catalyst",
+    "kind": "exchange",
+    "div": 0.376,
+    "volume": 9.83,
+    "icon": "/img/currency/jewelcatalystattribute.webp"
+   },
+   {
+    "name": "Refined Flesh Catalyst",
+    "kind": "exchange",
+    "div": 0.363,
+    "volume": 7.51,
+    "icon": "/img/currency/jewelcatalystlife.webp"
+   },
+   {
+    "name": "Skittering Catalyst",
+    "kind": "exchange",
+    "div": 0.155,
+    "volume": 32.8,
+    "icon": "/img/currency/breachcatalystspeed.webp"
+   },
+   {
+    "name": "Esh's Catalyst",
+    "kind": "exchange",
+    "div": 0.0544,
+    "volume": 16.8,
+    "icon": "/img/currency/breachcatalystlightning.webp"
+   },
+   {
+    "name": "Necrotic Catalyst",
+    "kind": "exchange",
+    "div": 0.0537,
+    "volume": 5.5,
+    "icon": "/img/currency/breachcatalystnecrotic.webp"
+   },
+   {
+    "name": "Xoph's Catalyst",
+    "kind": "exchange",
+    "div": 0.0537,
+    "volume": 14.3,
+    "icon": "/img/currency/breachcatalystfire.webp"
+   },
+   {
+    "name": "Tul's Catalyst",
+    "kind": "exchange",
+    "div": 0.0519,
+    "volume": 8.93,
+    "icon": "/img/currency/breachcatalystcold.webp"
+   },
+   {
+    "name": "Chayula's Catalyst",
+    "kind": "exchange",
+    "div": 0.0385,
+    "volume": 8.38,
+    "icon": "/img/currency/breachcatalystchaos.webp"
+   },
+   {
+    "name": "Xoph's Blood",
+    "kind": "unique",
+    "div": 0.0246,
+    "listings": 1766,
+    "icon": "/img/uniques/xophs-blood.webp"
+   },
+   {
+    "name": "The Pandemonius",
+    "kind": "unique",
+    "div": 0.0226,
+    "listings": 1137,
+    "icon": "/img/uniques/the-pandemonius.webp"
+   },
+   {
+    "name": "Neural Catalyst",
+    "kind": "exchange",
+    "div": 0.0159,
+    "volume": 3.33,
+    "icon": "/img/currency/breachcatalystmana.webp"
+   },
+   {
+    "name": "Adaptive Catalyst",
+    "kind": "exchange",
+    "div": 0.0128,
+    "volume": 6.23,
+    "icon": "/img/currency/breachcatalystattribute.webp"
+   },
+   {
+    "name": "Carapace Catalyst",
+    "kind": "exchange",
+    "div": 0.0127,
+    "volume": 1.5,
+    "icon": "/img/currency/breachcatalystdefences.webp"
+   },
+   {
+    "name": "Breach Splinter",
+    "kind": "exchange",
+    "div": 0.0112,
+    "volume": 51.3,
+    "icon": "/img/loot/breach-splinter.png"
+   },
+   {
+    "name": "Uul-Netol's Catalyst",
+    "kind": "exchange",
+    "div": 0.00965,
+    "volume": 0.593,
+    "icon": "/img/currency/breachcatalystphysical.webp"
+   },
+   {
+    "name": "Flesh Catalyst",
+    "kind": "exchange",
+    "div": 0.0055,
+    "volume": 0.474,
+    "icon": "/img/currency/breachcatalystlife.webp"
+   },
+   {
+    "name": "Beyond Reach",
+    "kind": "unique",
+    "div": 0.00204,
+    "listings": 741,
+    "icon": "/img/uniques/beyond-reach.webp"
+   }
+  ],
+  "chaos": [
+   {
+    "name": "The Trialmaster's Reliquary Key",
+    "kind": "exchange",
+    "div": 239,
+    "volume": 79.5,
+    "icon": "/img/loot/the-trialmaster-s-reliquary-key.png"
+   },
+   {
+    "name": "Victorious Fate",
+    "kind": "exchange",
+    "div": 8.95,
+    "volume": 603,
+    "icon": "/img/loot/victorious-fate.png"
+   },
+   {
+    "name": "Cowardly Fate",
+    "kind": "exchange",
+    "div": 8.41,
+    "volume": 1240,
+    "icon": "/img/loot/cowardly-fate.png"
+   },
+   {
+    "name": "Deadly Fate",
+    "kind": "exchange",
+    "div": 7.89,
+    "volume": 1600,
+    "icon": "/img/loot/deadly-fate.png"
+   },
+   {
+    "name": "Soul Core of Azcapa",
+    "kind": "exchange",
+    "div": 1.1,
+    "volume": 5.33,
+    "icon": "/img/currency/greatersoulcorewealthrarity.webp"
+   },
+   {
+    "name": "Hateforge",
+    "kind": "unique",
+    "div": 0.975,
+    "listings": 624,
+    "icon": "/img/uniques/hateforge.webp"
+   },
+   {
+    "name": "Soul Core of Quipolatl",
+    "kind": "exchange",
+    "div": 0.63,
+    "volume": 4.73,
+    "icon": "/img/currency/greatersoulcorespeed.webp"
+   },
+   {
+    "name": "Chaos Orb",
+    "kind": "exchange",
+    "div": 0.0948,
+    "volume": 15100,
+    "icon": "/img/currency/currencyrerollrare.webp"
+   },
+   {
+    "name": "Vaal Orb",
+    "kind": "exchange",
+    "div": 0.0184,
+    "volume": 550,
+    "icon": "/img/currency/currencyvaal.webp"
+   },
+   {
+    "name": "Glimpse of Chaos",
+    "kind": "unique",
+    "div": 0.0102,
+    "listings": 1560,
+    "icon": "/img/uniques/glimpse-of-chaos.webp"
+   },
+   {
+    "name": "Zerphi's Genesis",
+    "kind": "unique",
+    "div": 0.00226,
+    "listings": 2109,
+    "icon": "/img/uniques/zerphis-genesis.webp"
+   }
+  ],
+  "delirium": [
+   {
+    "name": "Tangmazu's Reliquary Key",
+    "kind": "exchange",
+    "div": 29.8,
+    "volume": 29.8,
+    "icon": "/img/loot/tangmazu-s-reliquary-key.png"
+   },
+   {
+    "name": "Ancient Potent Liquid Contempt",
+    "kind": "exchange",
+    "div": 12.2,
+    "volume": 402,
+    "icon": "/img/currency/timelessuniquebeastemotion.webp"
+   },
+   {
+    "name": "Potent Liquid Ferocity",
+    "kind": "exchange",
+    "div": 7.83,
+    "volume": 591,
+    "icon": "/img/currency/uniqueconstructsemotion.webp"
+   },
+   {
+    "name": "Simulacrum",
+    "kind": "exchange",
+    "div": 3.57,
+    "volume": 1510,
+    "icon": "/img/loot/simulacrum.png"
+   },
+   {
+    "name": "Potent Liquid Contempt",
+    "kind": "exchange",
+    "div": 2.81,
+    "volume": 280,
+    "icon": "/img/currency/uniquebeastemotion.webp"
+   },
+   {
+    "name": "Concentrated Liquid Isolation",
+    "kind": "exchange",
+    "div": 0.774,
+    "volume": 15.5,
+    "icon": "/img/currency/concentrateddistilledisolation.webp"
+   },
+   {
+    "name": "Ancient Concentrated Liquid Suffering",
+    "kind": "exchange",
+    "div": 0.727,
+    "volume": 0.727,
+    "icon": "/img/currency/timelostconcentrateddistilledsuffering.webp"
+   },
+   {
+    "name": "Raven's Reflection",
+    "kind": "exchange",
+    "div": 0.631,
+    "volume": 294,
+    "icon": null
+   },
+   {
+    "name": "Ancient Potent Liquid Ferocity",
+    "kind": "exchange",
+    "div": 0.5,
+    "volume": 0.333,
+    "icon": "/img/currency/timlessuniqueconstructsemotion.webp"
+   },
+   {
+    "name": "Ancient Potent Liquid Melancholy",
+    "kind": "exchange",
+    "div": 0.262,
+    "volume": 6.51,
+    "icon": "/img/currency/timelessuniquehumansemotion.webp"
+   },
+   {
+    "name": "Horror's Flight",
+    "kind": "unique",
+    "div": 0.243,
+    "listings": 2363,
+    "icon": "/img/uniques/horrors-flight.webp"
+   },
+   {
+    "name": "Concentrated Liquid Suffering",
+    "kind": "exchange",
+    "div": 0.205,
+    "volume": 2.74,
+    "icon": "/img/currency/concentrateddistilledsuffering.webp"
+   },
+   {
+    "name": "The Raven's Flock",
+    "kind": "unique",
+    "div": 0.0821,
+    "listings": 2022,
+    "icon": "/img/uniques/the-ravens-flock.webp"
+   },
+   {
+    "name": "Ancient Concentrated Liquid Isolation",
+    "kind": "exchange",
+    "div": 0.0799,
+    "volume": 0.133,
+    "icon": "/img/currency/timelostconcentrateddistilledisolation.webp"
+   },
+   {
+    "name": "Ancient Liquid Disgust",
+    "kind": "exchange",
+    "div": 0.0476,
+    "volume": 0.333,
+    "icon": "/img/currency/timelostdistilleddisgust.webp"
+   },
+   {
+    "name": "Diluted Liquid Greed",
+    "kind": "exchange",
+    "div": 0.0465,
+    "volume": 0.333,
+    "icon": "/img/currency/diluteddistilledgreed.webp"
+   },
+   {
+    "name": "Concentrated Liquid Fear",
+    "kind": "exchange",
+    "div": 0.028,
+    "volume": 0.476,
+    "icon": "/img/currency/concentrateddistilledfear.webp"
+   },
+   {
+    "name": "Veilpiercer",
+    "kind": "unique",
+    "div": 0.0202,
+    "listings": 2881,
+    "icon": "/img/uniques/veilpiercer.webp"
+   },
+   {
+    "name": "Ancient Diluted Liquid Greed",
+    "kind": "exchange",
+    "div": 0.0159,
+    "volume": 0.167,
+    "icon": "/img/currency/timelostdiluteddistilledgreed.webp"
+   },
+   {
+    "name": "Potent Liquid Melancholy",
+    "kind": "exchange",
+    "div": 0.015,
+    "volume": 0.604,
+    "icon": "/img/currency/uniquehumansemotion.webp"
+   },
+   {
+    "name": "Ancient Diluted Liquid Ire",
+    "kind": "exchange",
+    "div": 0.0149,
+    "volume": 0.167,
+    "icon": "/img/currency/timelostdiluteddistilledire.webp"
+   },
+   {
+    "name": "Ancient Liquid Envy",
+    "kind": "exchange",
+    "div": 0.0127,
+    "volume": 0.0106,
+    "icon": "/img/currency/timelostdistilledenvy.webp"
+   },
+   {
+    "name": "Simulacrum Splinter",
+    "kind": "exchange",
+    "div": 0.0113,
+    "volume": 5.36,
+    "icon": "/img/loot/simulacrum-splinter.png"
+   },
+   {
+    "name": "Liquid Disgust",
+    "kind": "exchange",
+    "div": 0.00662,
+    "volume": 0.064,
+    "icon": "/img/currency/distilleddisgust.webp"
+   },
+   {
+    "name": "Sadist's Mercy",
+    "kind": "unique",
+    "div": 0.00662,
+    "listings": 6263,
+    "icon": "/img/uniques/sadists-mercy.webp"
+   },
+   {
+    "name": "Liquid Despair",
+    "kind": "exchange",
+    "div": 0.00636,
+    "volume": 0.35,
+    "icon": "/img/currency/distilleddespair.webp"
+   },
+   {
+    "name": "Liquid Paranoia",
+    "kind": "exchange",
+    "div": 0.00594,
+    "volume": 0.0168,
+    "icon": "/img/currency/distilledparanoia.webp"
+   },
+   {
+    "name": "Ancient Concentrated Liquid Fear",
+    "kind": "exchange",
+    "div": 0.00417,
+    "volume": 0.0396,
+    "icon": "/img/currency/timelostconcentrateddistilledfear.webp"
+   },
+   {
+    "name": "The Auspex",
+    "kind": "unique",
+    "div": 0.00408,
+    "listings": 1501,
+    "icon": "/img/uniques/the-auspex.webp"
+   },
+   {
+    "name": "Ancient Liquid Despair",
+    "kind": "exchange",
+    "div": 0.00203,
+    "volume": 0.0284,
+    "icon": "/img/currency/timelostdistilleddespair.webp"
+   },
+   {
+    "name": "Ancient Liquid Paranoia",
+    "kind": "exchange",
+    "div": 0.00198,
+    "volume": 0.132,
+    "icon": "/img/currency/timelostdistilledparanoia.webp"
+   },
+   {
+    "name": "Diluted Liquid Ire",
+    "kind": "exchange",
+    "div": 0.0014,
+    "volume": 0.681,
+    "icon": "/img/currency/diluteddistilledire.webp"
+   },
+   {
+    "name": "Diluted Liquid Guilt",
+    "kind": "exchange",
+    "div": 0.00086,
+    "volume": 0.00989,
+    "icon": "/img/currency/diluteddistilledguilt.webp"
+   },
+   {
+    "name": "Liquid Envy",
+    "kind": "exchange",
+    "div": 0.000532,
+    "volume": 0.0165,
+    "icon": "/img/currency/distilledenvy.webp"
+   },
+   {
+    "name": "Ancient Diluted Liquid Guilt",
+    "kind": "exchange",
+    "div": 0.000132,
+    "volume": 0.00033,
+    "icon": "/img/currency/timelostdiluteddistilledguilt.webp"
+   }
+  ],
+  "expedition": [
+   {
+    "name": "Uhtred's Exodus",
+    "kind": "exchange",
+    "div": 464,
+    "volume": 696,
+    "icon": "/img/gems/uhtreds-exodus.webp"
+   },
+   {
+    "name": "Uhtred's Augury",
+    "kind": "exchange",
+    "div": 139,
+    "volume": 973,
+    "icon": "/img/gems/uhtreds-augury.webp"
+   },
+   {
+    "name": "Perfect Flux",
+    "kind": "exchange",
+    "div": 66.9,
+    "volume": 725,
+    "icon": "/img/loot/perfect-flux.png"
+   },
+   {
+    "name": "Vorana's Siege",
+    "kind": "exchange",
+    "div": 52.1,
+    "volume": 591,
+    "icon": "/img/loot/vorana-s-siege.png"
+   },
+   {
+    "name": "Olroth's Conviction",
+    "kind": "exchange",
+    "div": 15.2,
+    "volume": 86.2,
+    "icon": "/img/loot/olroth-s-conviction.png"
+   },
+   {
+    "name": "Uhtred's Omen",
+    "kind": "exchange",
+    "div": 12.6,
+    "volume": 137,
+    "icon": "/img/gems/uhtreds-omen.webp"
+   },
+   {
+    "name": "Olroth's Reliquary Key",
+    "kind": "exchange",
+    "div": 9,
+    "volume": 1.5,
+    "icon": "/img/loot/olroth-s-reliquary-key.png"
+   },
+   {
+    "name": "Styrn's Ferocity",
+    "kind": "exchange",
+    "div": 2.67,
+    "volume": 1.33,
+    "icon": "/img/loot/styrn-s-ferocity.png"
+   },
+   {
+    "name": "Styrn's Mountain",
+    "kind": "exchange",
+    "div": 2.67,
+    "volume": 1.33,
+    "icon": "/img/loot/styrn-s-mountain.png"
+   },
+   {
+    "name": "Uhtred's Saga",
+    "kind": "exchange",
+    "div": 1.89,
+    "volume": 140,
+    "icon": "/img/loot/uhtred-s-saga.png"
+   },
+   {
+    "name": "Thaumaturgic Flux (Level 20)",
+    "kind": "exchange",
+    "div": 1.75,
+    "volume": 1.17,
+    "icon": "/img/loot/thaumaturgic-flux-level-20.png"
+   },
+   {
+    "name": "Thaumaturgic Flux (Level 16)",
+    "kind": "exchange",
+    "div": 1,
+    "volume": 0.167,
+    "icon": "/img/loot/thaumaturgic-flux-level-16.png"
+   },
+   {
+    "name": "Thaumaturgic Flux (Level 17)",
+    "kind": "exchange",
+    "div": 1,
+    "volume": 0.167,
+    "icon": "/img/loot/thaumaturgic-flux-level-17.png"
+   },
+   {
+    "name": "Medved's Felling",
+    "kind": "exchange",
+    "div": 0.948,
+    "volume": 1.11,
+    "icon": "/img/loot/medved-s-felling.png"
+   },
+   {
+    "name": "Thaumaturgic Flux (Level 13)",
+    "kind": "exchange",
+    "div": 0.474,
+    "volume": 0.079,
+    "icon": "/img/loot/thaumaturgic-flux-level-13.png"
+   },
+   {
+    "name": "Uhtred's Constellation",
+    "kind": "exchange",
+    "div": 0.379,
+    "volume": 1.83,
+    "icon": "/img/loot/uhtred-s-constellation.png"
+   },
+   {
+    "name": "Uhtred's Rite",
+    "kind": "exchange",
+    "div": 0.351,
+    "volume": 0.585,
+    "icon": "/img/loot/uhtred-s-rite.png"
+   },
+   {
+    "name": "Olroth's Saga",
+    "kind": "exchange",
+    "div": 0.345,
+    "volume": 13.1,
+    "icon": "/img/loot/olroth-s-saga.png"
+   },
+   {
+    "name": "Expedition Logbook",
+    "kind": "exchange",
+    "div": 0.329,
+    "volume": 94.2,
+    "icon": "/img/loot/expedition-logbook.png"
+   },
+   {
+    "name": "Blazing Flux",
+    "kind": "exchange",
+    "div": 0.26,
+    "volume": 6.83,
+    "icon": "/img/loot/blazing-flux.png"
+   },
+   {
+    "name": "Shattered Triskelion",
+    "kind": "exchange",
+    "div": 0.258,
+    "volume": 4,
+    "icon": null
+   },
+   {
+    "name": "The Triskelion Reforged",
+    "kind": "exchange",
+    "div": 0.251,
+    "volume": 0.711,
+    "icon": null
+   },
+   {
+    "name": "Thaumaturgic Flux (Level 15)",
+    "kind": "exchange",
+    "div": 0.247,
+    "volume": 0.0412,
+    "icon": "/img/loot/thaumaturgic-flux-level-15.png"
+   },
+   {
+    "name": "Crackling Flux",
+    "kind": "exchange",
+    "div": 0.226,
+    "volume": 3.83,
+    "icon": "/img/loot/crackling-flux.png"
+   },
+   {
+    "name": "Chilling Flux",
+    "kind": "exchange",
+    "div": 0.196,
+    "volume": 2.91,
+    "icon": "/img/loot/chilling-flux.png"
+   },
+   {
+    "name": "Thaumaturgic Flux (Level 18)",
+    "kind": "exchange",
+    "div": 0.19,
+    "volume": 0.0948,
+    "icon": "/img/loot/thaumaturgic-flux-level-18.png"
+   },
+   {
+    "name": "Void Flux",
+    "kind": "exchange",
+    "div": 0.186,
+    "volume": 1.45,
+    "icon": "/img/loot/void-flux.png"
+   },
+   {
+    "name": "Medved's Saga",
+    "kind": "exchange",
+    "div": 0.171,
+    "volume": 3.76,
+    "icon": "/img/loot/medved-s-saga.png"
+   },
+   {
+    "name": "Vorana's Saga",
+    "kind": "exchange",
+    "div": 0.146,
+    "volume": 1.44,
+    "icon": "/img/loot/vorana-s-saga.png"
+   },
+   {
+    "name": "Olroth's Hubris",
+    "kind": "exchange",
+    "div": 0.0673,
+    "volume": 0.0112,
+    "icon": "/img/loot/olroth-s-hubris.png"
+   },
+   {
+    "name": "Thaumaturgic Flux (Level 19)",
+    "kind": "exchange",
+    "div": 0.0198,
+    "volume": 0.00989,
+    "icon": "/img/loot/thaumaturgic-flux-level-19.png"
+   }
+  ],
+  "ritual": [
+   {
+    "name": "Omen of Sinistral Annulment",
+    "kind": "exchange",
+    "div": 22.2,
+    "volume": 2430,
+    "icon": "/img/currency/voodooomens2purple.webp"
+   },
+   {
+    "name": "Omen of Sinistral Erasure",
+    "kind": "exchange",
+    "div": 22.1,
+    "volume": 2350,
+    "icon": "/img/currency/voodooomens2dark.webp"
+   },
+   {
+    "name": "Omen of Whittling",
+    "kind": "exchange",
+    "div": 15,
+    "volume": 11700,
+    "icon": "/img/currency/voodooomens1dark.webp"
+   },
+   {
+    "name": "Omen of Dextral Annulment",
+    "kind": "exchange",
+    "div": 14.2,
+    "volume": 2020,
+    "icon": "/img/currency/voodooomens3purple.webp"
+   },
+   {
+    "name": "Omen of Dextral Erasure",
+    "kind": "exchange",
+    "div": 13.8,
+    "volume": 2530,
+    "icon": "/img/currency/voodooomens3dark.webp"
+   },
+   {
+    "name": "Omen of Chance",
+    "kind": "exchange",
+    "div": 11.8,
+    "volume": 205,
+    "icon": "/img/currency/omenonchancenotdestroy.webp"
+   },
+   {
+    "name": "Omen of Sanctification",
+    "kind": "exchange",
+    "div": 2.5,
+    "volume": 113,
+    "icon": "/img/currency/omenondivinesanctify.webp"
+   },
+   {
+    "name": "Head of the King",
+    "kind": "exchange",
+    "div": 2.01,
+    "volume": 328,
+    "icon": "/img/loot/head-of-the-king.png"
+   },
+   {
+    "name": "Omen of Secret Compartments",
+    "kind": "exchange",
+    "div": 1.61,
+    "volume": 65,
+    "icon": "/img/currency/voodooomens4dark.webp"
+   },
+   {
+    "name": "Omen of Answered Prayers",
+    "kind": "exchange",
+    "div": 1.54,
+    "volume": 35.5,
+    "icon": "/img/currency/voodooomens4blue.webp"
+   },
+   {
+    "name": "Omen of the Hunt",
+    "kind": "exchange",
+    "div": 1.52,
+    "volume": 30.7,
+    "icon": "/img/currency/voodooomens4green.webp"
+   },
+   {
+    "name": "Omen of Reinforcements",
+    "kind": "exchange",
+    "div": 1.42,
+    "volume": 15.7,
+    "icon": "/img/currency/voodooomens4purple.webp"
+   },
+   {
+    "name": "Omen of Chaotic Quantity",
+    "kind": "exchange",
+    "div": 0.876,
+    "volume": 921,
+    "icon": "/img/currency/omenonchaosmappacksize.webp"
+   },
+   {
+    "name": "Omen of the Blessed",
+    "kind": "exchange",
+    "div": 0.797,
+    "volume": 41.8,
+    "icon": "/img/currency/omenondivinererollimplicits.webp"
+   },
+   {
+    "name": "Omen of Chaotic Rarity",
+    "kind": "exchange",
+    "div": 0.533,
+    "volume": 474,
+    "icon": "/img/currency/omenonchaosmapitemrarity.webp"
+   },
+   {
+    "name": "Omen of Dextral Crystallisation",
+    "kind": "exchange",
+    "div": 0.47,
+    "volume": 61.3,
+    "icon": "/img/currency/omenonperfectessencesuffix.webp"
+   },
+   {
+    "name": "Call of the Shadows",
+    "kind": "exchange",
+    "div": 0.43,
+    "volume": 466,
+    "icon": "/img/loot/call-of-the-shadows.png"
+   },
+   {
+    "name": "Omen of Chaotic Effectiveness",
+    "kind": "exchange",
+    "div": 0.384,
+    "volume": 222,
+    "icon": "/img/currency/omenonchaosmapmonstereffectiveness.webp"
+   },
+   {
+    "name": "Omen of Sinistral Crystallisation",
+    "kind": "exchange",
+    "div": 0.314,
+    "volume": 64.5,
+    "icon": "/img/currency/omenonperfectessenceprefix.webp"
+   },
+   {
+    "name": "Omen of Amelioration",
+    "kind": "exchange",
+    "div": 0.129,
+    "volume": 32.8,
+    "icon": "/img/currency/voodooomens3blue.webp"
+   },
+   {
+    "name": "Omen of Sinistral Exaltation",
+    "kind": "exchange",
+    "div": 0.116,
+    "volume": 35.3,
+    "icon": "/img/currency/voodooomens2yellow.webp"
+   },
+   {
+    "name": "Omen of Bartering",
+    "kind": "exchange",
+    "div": 0.105,
+    "volume": 198,
+    "icon": "/img/currency/omensellvendorrandomise.webp"
+   },
+   {
+    "name": "Sacred Bloom",
+    "kind": "exchange",
+    "div": 0.0965,
+    "volume": 17.2,
+    "icon": "/img/loot/sacred-bloom.png"
+   },
+   {
+    "name": "Omen of Chaotic Monsters",
+    "kind": "exchange",
+    "div": 0.0875,
+    "volume": 35.3,
+    "icon": "/img/currency/omenonchaosmapitemquantity.webp"
+   },
+   {
+    "name": "Omen of Catalysing Exaltation",
+    "kind": "exchange",
+    "div": 0.0553,
+    "volume": 4.83,
+    "icon": "/img/currency/omenonexaltconsumequality.webp"
+   },
+   {
+    "name": "Omen of Dextral Exaltation",
+    "kind": "exchange",
+    "div": 0.0538,
+    "volume": 11.7,
+    "icon": "/img/currency/voodooomens3yellow.webp"
+   },
+   {
+    "name": "Omen of the Ancients",
+    "kind": "exchange",
+    "div": 0.0371,
+    "volume": 2.28,
+    "icon": "/img/currency/omenonchanceancientorb.webp"
+   },
+   {
+    "name": "An Audience with the King",
+    "kind": "exchange",
+    "div": 0.028,
+    "volume": 2.22,
+    "icon": "/img/loot/an-audience-with-the-king.png"
+   },
+   {
+    "name": "Omen of Gambling",
+    "kind": "exchange",
+    "div": 0.0161,
+    "volume": 2,
+    "icon": "/img/currency/omengamblenogoldcost.webp"
+   },
+   {
+    "name": "Omen of Greater Exaltation",
+    "kind": "exchange",
+    "div": 0.0151,
+    "volume": 3.13,
+    "icon": "/img/currency/voodooomens1yellow.webp"
+   },
+   {
+    "name": "Omen of the Blackblooded",
+    "kind": "exchange",
+    "div": 0.0105,
+    "volume": 0.0632,
+    "icon": "/img/currency/omenonabyssguarenteedlichtypemod3.webp"
+   },
+   {
+    "name": "Omen of Refreshment",
+    "kind": "exchange",
+    "div": 0.00745,
+    "volume": 0.101,
+    "icon": "/img/currency/voodooomens1blue.webp"
+   },
+   {
+    "name": "Omen of Resurgence",
+    "kind": "exchange",
+    "div": 0.00665,
+    "volume": 0.88,
+    "icon": "/img/currency/voodooomens2blue.webp"
+   },
+   {
+    "name": "Omen of the Sovereign",
+    "kind": "exchange",
+    "div": 0.000107,
+    "volume": 0.00198,
+    "icon": "/img/currency/omenonabyssguarenteedlichtypemod1.webp"
+   },
+   {
+    "name": "Omen of the Liege",
+    "kind": "exchange",
+    "div": 0.000087,
+    "volume": 0.00132,
+    "icon": "/img/currency/omenonabyssguarenteedlichtypemod2.webp"
+   }
+  ],
+  "sekhemas": [
+   {
+    "name": "Zarokh's Revolt",
+    "kind": "exchange",
+    "div": 1,
+    "volume": 0.333,
+    "icon": "/img/gems/zarokhs-revolt.webp"
+   },
+   {
+    "name": "Grand Spectrum",
+    "kind": "unique",
+    "div": 1,
+    "listings": 94,
+    "icon": "/img/uniques/grand-spectrum.webp"
+   },
+   {
+    "name": "Zarokh's Refrain",
+    "kind": "exchange",
+    "div": 0.667,
+    "volume": 1,
+    "icon": "/img/gems/zarokhs-refrain.webp"
+   }
+  ],
+  "temple": [
+   {
+    "name": "Jiquani's Thesis",
+    "kind": "exchange",
+    "div": 215,
+    "volume": 251,
+    "icon": "/img/currency/soulcoresoul.webp"
+   },
+   {
+    "name": "Raven-Touched Shard",
+    "kind": "exchange",
+    "div": 190,
+    "volume": 2750,
+    "icon": "/img/currency/deliriumendgamesocketable.webp"
+   },
+   {
+    "name": "Guatelitzi's Thesis",
+    "kind": "exchange",
+    "div": 48,
+    "volume": 8,
+    "icon": "/img/currency/soulcoreblood.webp"
+   },
+   {
+    "name": "Quipolatl's Thesis",
+    "kind": "exchange",
+    "div": 6,
+    "volume": 3,
+    "icon": "/img/currency/soulcorescience.webp"
+   },
+   {
+    "name": "Atziri's Soul Core of Devotion",
+    "kind": "exchange",
+    "div": 5.42,
+    "volume": 29.8,
+    "icon": "/img/currency/soulcorespecialhelmet.webp"
+   },
+   {
+    "name": "Jiquani's Soul Core of Abundance",
+    "kind": "exchange",
+    "div": 4,
+    "volume": 2.67,
+    "icon": "/img/currency/raresoulcoreplants.webp"
+   },
+   {
+    "name": "Atziri's Soul Core of Alacrity",
+    "kind": "exchange",
+    "div": 2.6,
+    "volume": 2.17,
+    "icon": "/img/currency/soulcorespecialgloves.webp"
+   },
+   {
+    "name": "Xopec's Soul Core of Power",
+    "kind": "exchange",
+    "div": 2.42,
+    "volume": 4.83,
+    "icon": "/img/currency/newsoulcorepowercharge.webp"
+   },
+   {
+    "name": "Jiquani's Soul Core of Malediction",
+    "kind": "exchange",
+    "div": 2,
+    "volume": 0.333,
+    "icon": "/img/currency/raresoulcorecurses.webp"
+   },
+   {
+    "name": "Jiquani's Soul Core of Squalls",
+    "kind": "exchange",
+    "div": 2,
+    "volume": 1.67,
+    "icon": "/img/currency/raresoulcorewind.webp"
+   },
+   {
+    "name": "Opiloti's Soul Core of Assault",
+    "kind": "exchange",
+    "div": 1.66,
+    "volume": 0.553,
+    "icon": "/img/currency/newsoulcorefrenzycharge.webp"
+   },
+   {
+    "name": "Tzamoto's Soul Core of Ferocity",
+    "kind": "exchange",
+    "div": 1.49,
+    "volume": 2.48,
+    "icon": "/img/currency/newsoulcorerage.webp"
+   },
+   {
+    "name": "Jiquani's Soul Core of Rippling",
+    "kind": "exchange",
+    "div": 1.24,
+    "volume": 1.66,
+    "icon": "/img/currency/raresoulcorenovas.webp"
+   },
+   {
+    "name": "Jiquani's Soul Core of Quaking",
+    "kind": "exchange",
+    "div": 1,
+    "volume": 0.167,
+    "icon": "/img/currency/raresoulcoreslams.webp"
+   },
+   {
+    "name": "Jiquani's Soul Core of Rallying",
+    "kind": "exchange",
+    "div": 1,
+    "volume": 0.333,
+    "icon": "/img/currency/raresoulcorewarcries.webp"
+   },
+   {
+    "name": "Guatelitzi's Soul Core of Endurance",
+    "kind": "exchange",
+    "div": 1,
+    "volume": 0.167,
+    "icon": "/img/currency/newsoulcoreendurancecharge.webp"
+   },
+   {
+    "name": "Jiquani's Soul Core of Severing",
+    "kind": "exchange",
+    "div": 1,
+    "volume": 1,
+    "icon": "/img/currency/raresoulcorestrikes.webp"
+   },
+   {
+    "name": "Citaqualotl's Thesis",
+    "kind": "exchange",
+    "div": 0.948,
+    "volume": 0.158,
+    "icon": "/img/currency/soulcoresacrifice.webp"
+   },
+   {
+    "name": "Atziri's Soul Core of Inoculation",
+    "kind": "exchange",
+    "div": 0.875,
+    "volume": 1.17,
+    "icon": "/img/currency/soulcorespecialboots.webp"
+   },
+   {
+    "name": "Zalatl's Soul Core of Insulation",
+    "kind": "exchange",
+    "div": 0.8,
+    "volume": 1.33,
+    "icon": "/img/currency/newsoulcorelightning.webp"
+   },
+   {
+    "name": "Quipolatl's Soul Core of Flow",
+    "kind": "exchange",
+    "div": 0.772,
+    "volume": 1.8,
+    "icon": "/img/currency/newsoulcoretimecooldown.webp"
+   },
+   {
+    "name": "Atmohua's Soul Core of Retreat",
+    "kind": "exchange",
+    "div": 0.571,
+    "volume": 0.667,
+    "icon": "/img/currency/newsoulcoreenergyshield.webp"
+   },
+   {
+    "name": "Atziri's Soul Core of Vitality",
+    "kind": "exchange",
+    "div": 0.495,
+    "volume": 0.743,
+    "icon": "/img/currency/soulcorespecialbodyarmour.webp"
+   },
+   {
+    "name": "Jiquani's Soul Core of Munitions",
+    "kind": "exchange",
+    "div": 0.433,
+    "volume": 0.289,
+    "icon": "/img/currency/raresoulcoregrenades.webp"
+   },
+   {
+    "name": "Soul Core of Citaqualotl",
+    "kind": "exchange",
+    "div": 0.363,
+    "volume": 4.66,
+    "icon": "/img/currency/greatersoulcoreelementalresist.webp"
+   },
+   {
+    "name": "Soul Core of Tzamoto",
+    "kind": "exchange",
+    "div": 0.333,
+    "volume": 0.333,
+    "icon": "/img/currency/greatersoulcorecold.webp"
+   },
+   {
+    "name": "Topotante's Soul Core of Dampening",
+    "kind": "exchange",
+    "div": 0.263,
+    "volume": 0.395,
+    "icon": "/img/currency/newsoulcorefire.webp"
+   },
+   {
+    "name": "Soul Core of Cholotl",
+    "kind": "exchange",
+    "div": 0.216,
+    "volume": 0.324,
+    "icon": "/img/currency/greatersoulcoredex.webp"
+   },
+   {
+    "name": "Xipocado's Soul Core of Dominion",
+    "kind": "exchange",
+    "div": 0.19,
+    "volume": 0.443,
+    "icon": "/img/currency/newsoulcoreminion.webp"
+   },
+   {
+    "name": "Soul Core of Zantipi",
+    "kind": "exchange",
+    "div": 0.18,
+    "volume": 0.15,
+    "icon": "/img/currency/greatersoulcoreint.webp"
+   },
+   {
+    "name": "Soul Core of Zalatl",
+    "kind": "exchange",
+    "div": 0.171,
+    "volume": 0.427,
+    "icon": "/img/currency/greatersoulcoremana.webp"
+   },
+   {
+    "name": "Jiquani's Soul Core of Radiance",
+    "kind": "exchange",
+    "div": 0.158,
+    "volume": 0.079,
+    "icon": "/img/currency/raresoulcoreheralds.webp"
+   },
+   {
+    "name": "Hayoxi's Soul Core of Heatproofing",
+    "kind": "exchange",
+    "div": 0.142,
+    "volume": 0.142,
+    "icon": "/img/currency/newsoulcoreice.webp"
+   },
+   {
+    "name": "Jiquani's Soul Core of Thundering",
+    "kind": "exchange",
+    "div": 0.119,
+    "volume": 0.0396,
+    "icon": "/img/currency/raresoulcorestorms.webp"
+   },
+   {
+    "name": "Uromoti's Soul Core of Attenuation",
+    "kind": "exchange",
+    "div": 0.0989,
+    "volume": 0.0165,
+    "icon": "/img/currency/newsoulcorecurses2.webp"
+   },
+   {
+    "name": "Jiquani's Soul Core of Targeting",
+    "kind": "exchange",
+    "div": 0.0948,
+    "volume": 0.0158,
+    "icon": "/img/loot/jiquani-s-soul-core-of-targeting.png"
+   },
+   {
+    "name": "Soul Core of Tacati",
+    "kind": "exchange",
+    "div": 0.0935,
+    "volume": 1.65,
+    "icon": "/img/currency/greatersoulcorechaos.webp"
+   },
+   {
+    "name": "Soul Core of Puhuarte",
+    "kind": "exchange",
+    "div": 0.0759,
+    "volume": 0.0632,
+    "icon": "/img/currency/greatersoulcorefire.webp"
+   },
+   {
+    "name": "Soul Core of Atmohua",
+    "kind": "exchange",
+    "div": 0.0604,
+    "volume": 0.0805,
+    "icon": "/img/currency/greatersoulcorestrength.webp"
+   },
+   {
+    "name": "Soul Core of Jiquani",
+    "kind": "exchange",
+    "div": 0.055,
+    "volume": 0.183,
+    "icon": "/img/currency/greatersoulcorelife.webp"
+   },
+   {
+    "name": "Citaqualotl's Soul Core of Foulness",
+    "kind": "exchange",
+    "div": 0.0346,
+    "volume": 0.0115,
+    "icon": "/img/currency/newsoulcorechaos2.webp"
+   },
+   {
+    "name": "Soul Core of Ticaba",
+    "kind": "exchange",
+    "div": 0.0328,
+    "volume": 0.0548,
+    "icon": "/img/currency/greatersoulcorecrit.webp"
+   },
+   {
+    "name": "Cholotl's Soul Core of War",
+    "kind": "exchange",
+    "div": 0.0297,
+    "volume": 0.00495,
+    "icon": "/img/currency/newsoulcoreprojectile.webp"
+   },
+   {
+    "name": "Estazunti's Soul Core of Convalescence",
+    "kind": "exchange",
+    "div": 0.0198,
+    "volume": 0.0165,
+    "icon": "/img/currency/newsoulcoretimeslow.webp"
+   },
+   {
+    "name": "Tacati's Soul Core of Affliction",
+    "kind": "exchange",
+    "div": 0.0178,
+    "volume": 0.00297,
+    "icon": "/img/currency/newsoulcorechaos1.webp"
+   },
+   {
+    "name": "Soul Core of Xopec",
+    "kind": "exchange",
+    "div": 0.0158,
+    "volume": 0.00264,
+    "icon": "/img/currency/greatersoulcorelightning.webp"
+   },
+   {
+    "name": "Soul Core of Topotante",
+    "kind": "exchange",
+    "div": 0.00222,
+    "volume": 0.0152,
+    "icon": "/img/currency/greatersoulcoretrielement.webp"
+   },
+   {
+    "name": "Soul Core of Opiloti",
+    "kind": "exchange",
+    "div": 0.00198,
+    "volume": 0.00462,
+    "icon": "/img/currency/greatersoulcorephysical.webp"
+   }
+  ]
+ }
+}

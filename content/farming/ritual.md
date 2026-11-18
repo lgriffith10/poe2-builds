@@ -13,6 +13,10 @@ demands:
   single: 2
   tank: 3
   speed: 1
+loot:
+  exchange: ["Ritual"]
+  items: ["Call of the Shadows"]
+  exclude: ["Omen of Abyssal Echoes", "Omen of Light", "Omen of Sinistral Necromancy", "Omen of Dextral Necromancy", "Omen of Putrefaction"]
 updated: 2026-11-18
 sources:
   - title: "Ritual (Maxroll)"

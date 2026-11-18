@@ -7,6 +7,9 @@ import { getBuilds, renderBody } from "./builds";
 import { summarize, type BuildSummary } from "./build-summary";
 import { MECHANICS, mechanicTier, rankMechanics, type MechanicId } from "./farming";
 import type { Tier } from "./types";
+import lootJson from "@/data/generated/mechanic-loot.json";
+import { getGem, getUnique } from "./data";
+import { currencyHref, getCurrency } from "./currency";
 
 /**
  * Endgame mechanic pages (/farming/<id>): content/farming/<id>.md, translated in content/farming/<lang>/<id>.md
@@ -90,4 +93,58 @@ export function mechanicTierList(id: MechanicId, lang: Locale = DEFAULT_LOCALE):
       return { build: summarize(b), score: fit.score, tier: mechanicTier(fit.score), reasons: fit.reasons };
     })
     .sort((a, b) => b.score - a.score || a.build.title.localeCompare(b.build.title));
+}
+
+// --- Loot tier lists (scripts/sync-loot.mjs → src/data/generated/mechanic-loot.json) -------------------------------
+
+interface LootRow {
+  name: string;
+  kind: "exchange" | "unique";
+  div: number;
+  volume?: number;
+  listings?: number;
+  icon: string | null;
+}
+const loot = lootJson as unknown as { league: string; fetchedAt: string; exalted: number; mechanics: Record<string, LootRow[]> };
+
+/** Price bounds of each loot tier, in Divine Orbs (S: 20+, A: 2+, B: 0.2+, C: 0.02+, D: below). */
+export const LOOT_TIERS: [Tier, number][] = [["S", 20], ["A", 2], ["B", 0.2], ["C", 0.02], ["D", 0]];
+/** Below this, a price rests on a handful of trades: Divine Orbs traded per day on the exchange, or unique listings. */
+const MIN_VOLUME = 1;
+const MIN_LISTINGS = 10;
+
+export interface LootEntry {
+  name: string;
+  icon: string | null;
+  href: string | null;
+  /** "12 div" or "45 ex". */
+  price: { amount: string; unit: "divine" | "exalted" };
+  tier: Tier;
+  /** False when too little of it trades for the price to be trusted. */
+  liquid: boolean;
+}
+
+/** One mechanic's loot, most valuable first, with its tier; null without price data. */
+export function mechanicLoot(id: MechanicId, lang: Locale = DEFAULT_LOCALE): { entries: LootEntry[]; fetchedAt: string; league: string } | null {
+  const rows = loot.mechanics[id];
+  if (!rows?.length) return null;
+  const nf = (n: number, digits: number) => n.toLocaleString(lang === "fr" ? "fr-FR" : "en-US", { maximumFractionDigits: digits });
+  const entries = rows.map((r): LootEntry => {
+    const gem = getGem(r.name);
+    const unique = getUnique(r.name);
+    const currency = getCurrency(r.name);
+    const href = currency ? currencyHref(currency) : unique ? `/database/uniques#${unique.id}` : gem ? `/database/gems#${gem.id}` : null;
+    const ex = r.div * loot.exalted;
+    const price: LootEntry["price"] =
+      r.div >= 1 ? { amount: nf(r.div, r.div < 10 ? 1 : 0), unit: "divine" } : { amount: ex < 1 ? "< 1" : nf(ex, 0), unit: "exalted" };
+    return {
+      name: r.name,
+      icon: r.icon,
+      href,
+      price,
+      tier: LOOT_TIERS.find(([, min]) => r.div >= min)![0],
+      liquid: r.kind === "exchange" ? (r.volume ?? 0) >= MIN_VOLUME : (r.listings ?? 0) >= MIN_LISTINGS,
+    };
+  });
+  return { entries, fetchedAt: loot.fetchedAt, league: loot.league };
 }

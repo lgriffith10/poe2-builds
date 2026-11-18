@@ -13,6 +13,9 @@ demands:
   single: 3
   tank: 3
   speed: 1
+loot:
+  items: ["Cowardly Fate", "Deadly Fate", "Victorious Fate", "The Trialmaster's Reliquary Key", "Chaos Orb", "Vaal Orb", "Soul Core of Azcapa", "Soul Core of Quipolatl"]
+  uniques: ["Glimpse of Chaos", "Zerphi's Genesis", "Hateforge", "The Adorned"]
 updated: 2026-11-18
 sources:
   - title: "Trial of Chaos (Maxroll)"

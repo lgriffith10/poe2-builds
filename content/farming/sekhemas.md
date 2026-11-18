@@ -13,6 +13,9 @@ demands:
   single: 2
   tank: 3
   speed: 2
+loot:
+  items: ["Zarokh's Revolt", "Zarokh's Refrain"]
+  uniques: ["Grand Spectrum"]
 updated: 2026-11-18
 sources:
   - title: "Trial of the Sekhemas (Maxroll)"

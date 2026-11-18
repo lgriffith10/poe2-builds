@@ -14,6 +14,9 @@ demands:
   single: 3
   tank: 3
   speed: 1
+loot:
+  exchange: ["SoulCores"]
+  exclude: ["Soul Core of Azcapa", "Soul Core of Quipolatl"]
 updated: 2026-11-18
 sources:
   - title: "Vaal Temple Basics (Maxroll)"
