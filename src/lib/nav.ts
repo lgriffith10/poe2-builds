@@ -6,6 +6,7 @@ export const NAV: { href: string; key: keyof Dictionary["nav"] }[] = [
   { href: "/tier-list", key: "tierList" },
   { href: "/meta", key: "meta" },
   { href: "/guides", key: "guides" },
+  { href: "/farming", key: "farming" },
   { href: "/planner", key: "planner" },
   { href: "/craft", key: "craft" },
   { href: "/weapons", key: "weapons" },

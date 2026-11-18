@@ -51,6 +51,7 @@ export function BuildCard({ build, category = DEFAULT_CATEGORY }: { build: Build
         <Pill>{fmt(t.common.budget, { v: t.levels[build.budget] })}</Pill>
         {build.sample && <Pill tone="warn">{t.common.sample}</Pill>}
         {build.origin === "ladder" && <Pill>{t.common.ladderBuild}</Pill>}
+        {build.origin === "creator" && <Pill>{t.common.creatorBuild}</Pill>}
       </div>
       </Link>
       <div className="absolute right-4 top-4">

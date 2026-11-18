@@ -3,25 +3,29 @@
  *
  * Each build carries a small `farming` profile in its front matter (how well it clears, kills single targets,
  * survives and moves, how it fights and what defends it). Every mechanic has rules describing what it asks of a
- * character, taken from the mechanic guides (content/guides/farming-and-currency.md and its Maxroll sources):
+ * character, taken from the mechanic pages (content/farming/*.md and their Maxroll sources):
  * a rule that matches the profile adds or removes points and gives the reason shown on the build page.
  */
 import type { Locale } from "@/i18n/config";
+import type { Tier } from "./types";
 
 export const MECHANICS = ["breach", "ritual", "delirium", "expedition", "abyss", "temple", "sekhemas", "chaos"] as const;
 export type MechanicId = (typeof MECHANICS)[number];
 
-/** Display name, and the heading id of its section in the farming guide (same in every language). */
-export const MECHANIC_INFO: Record<MechanicId, { name: string; anchor: string }> = {
-  breach: { name: "Breach", anchor: "breach" },
-  ritual: { name: "Ritual", anchor: "ritual" },
-  delirium: { name: "Delirium", anchor: "delirium" },
-  expedition: { name: "Expedition", anchor: "expedition" },
-  abyss: { name: "Abyss", anchor: "abyss" },
-  temple: { name: "Vaal Temple", anchor: "vaal-temple" },
-  sekhemas: { name: "Trial of the Sekhemas", anchor: "trial-of-the-sekhemas" },
-  chaos: { name: "Trial of Chaos", anchor: "trial-of-chaos" },
+/** Display name and page (/farming/<slug>, content/farming/<id>.md) of each mechanic. */
+export const MECHANIC_INFO: Record<MechanicId, { name: string; slug: string }> = {
+  breach: { name: "Breach", slug: "breach" },
+  ritual: { name: "Ritual", slug: "ritual" },
+  delirium: { name: "Delirium", slug: "delirium" },
+  expedition: { name: "Expedition", slug: "expedition" },
+  abyss: { name: "Abyss", slug: "abyss" },
+  temple: { name: "Vaal Temple", slug: "temple" },
+  sekhemas: { name: "Trial of the Sekhemas", slug: "sekhemas" },
+  chaos: { name: "Trial of Chaos", slug: "chaos" },
 };
+/** Page of one mechanic. */
+export const mechanicHref = (id: MechanicId) => `/farming/${MECHANIC_INFO[id].slug}`;
+/** General farming guide (what to farm, selling habits). */
 export const FARMING_GUIDE = "/guides/farming-and-currency";
 
 export const FARMING_STYLES = ["melee", "ranged", "minion", "totem"] as const;
@@ -168,6 +172,9 @@ const PRIMARY: Record<MechanicId, (p: FarmingProfile) => number> = {
   sekhemas: (p) => p.tank,
   chaos: (p) => p.single,
 };
+
+/** Place in a mechanic's tier list (lib/mechanics.ts): S matches a "great" fit, D a "poor" one. */
+export const mechanicTier = (score: number): Tier => (score >= 4 ? "S" : score === 3 ? "A" : score === 2 ? "B" : score >= 0 ? "C" : "D");
 
 const fitOf = (score: number): Fit => (score >= 4 ? "great" : score >= 2 ? "good" : score >= 0 ? "fair" : "poor");
 

@@ -12,6 +12,9 @@ export function generateStaticParams() {
   return getGuides().map((g) => ({ slug: g.slug }));
 }
 
+// Prerendered (generateStaticParams): no loading shell needed, so the dev "instant navigation" check is off.
+export const instant = false;
+
 export async function generateMetadata({ params }: PageProps<"/[lang]/guides/[slug]">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const { slug } = await params;

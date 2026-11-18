@@ -40,9 +40,14 @@ export function isAllocatable(node: TreeNode, cls: ClassInfo, ascendancy: string
   return true;
 }
 
-/** Root nodes of a build: the class start, plus the ascendancy start when one is chosen. */
-export function roots(graph: TreeGraph, cls: ClassInfo, ascendancy: string | null): number[] {
+/**
+ * Root nodes of a build: the class start, plus the ascendancy start when one is chosen.
+ * `startFrom`: another class whose starting point the build may also allocate from (an item modifier,
+ * "Can Allocate Passive Skills from the <Class>'s starting point").
+ */
+export function roots(graph: TreeGraph, cls: ClassInfo, ascendancy: string | null, startFrom?: ClassInfo | null): number[] {
   const out = [cls.start];
+  if (startFrom && startFrom.start !== cls.start) out.push(startFrom.start);
   if (ascendancy) {
     for (const [id, node] of Object.entries(graph.data.nodes)) {
       if (node.t === "ascStart" && belongsToAscendancy(node, ascendancy)) out.push(Number(id));
@@ -232,8 +237,9 @@ export function allocateTargets(
   cls: ClassInfo,
   ascendancy: string | null,
   targets: number[],
+  startFrom?: ClassInfo | null,
 ): { allocated: Set<number>; unreachable: number[]; steps: AllocationStep[] } {
-  const rootIds = roots(graph, cls, ascendancy);
+  const rootIds = roots(graph, cls, ascendancy, startFrom);
   const allocated = new Set<number>(rootIds);
   const unreachable: number[] = [];
   const steps: AllocationStep[] = [];

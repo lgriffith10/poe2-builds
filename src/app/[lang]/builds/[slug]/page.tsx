@@ -224,13 +224,13 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
           )}
           {build.source && (
             <p className="mt-6 rounded-lg border border-line bg-surface px-4 py-3 text-sm text-muted">
-              {build.origin === "ladder" ? tr.build.drawnFrom : tr.build.basedOn}{" "}
+              {build.origin === "guide" ? tr.build.basedOn : tr.build.drawnFrom}{" "}
               <a href={build.source.url} className="font-semibold text-gold underline-offset-2 hover:underline" rel="noopener">
                 {build.source.title}
               </a>{" "}
               {tr.build.by} {build.source.author}
               {build.source.updated && ` ${fmt(tr.build.updatedParen, { date: build.source.updated })}`}.{" "}
-              {build.origin === "ladder" ? tr.build.ladderNote : tr.build.sourceNote}
+              {build.origin === "ladder" ? tr.build.ladderNote : build.origin === "creator" ? tr.build.creatorNote : tr.build.sourceNote}
             </p>
           )}
         </div>
@@ -406,6 +406,11 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
 
           <section id="passives" className="scroll-mt-24">
             <SectionTitle sub={fmt(tr.build.pointsAllocated, { n: build.pointsUsed })}>{tr.common.passiveTree}</SectionTitle>
+            {build.startFrom && (
+              <p className="mb-4 rounded-lg border border-line bg-surface px-4 py-3 text-sm text-muted">
+                {fmt(tr.build.startFromNote, { cls: build.startFrom })}
+              </p>
+            )}
             <BuildTreeViewer
               planner={build.planner}
               code={build.plannerCode}

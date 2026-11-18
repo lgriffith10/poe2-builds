@@ -28,6 +28,7 @@
     "atlas:data": "node scripts/atlas-data.mjs",
     "skills:granted": "node scripts/granted-skills.mjs",
     "draft:ninja": "node scripts/draft-from-ninja.mjs",
+    "draft:pob": "node scripts/draft-from-pob.mjs",
     "trade:stats": "node scripts/trade-stats.mjs",
     "trees:maxroll": "tsx --conditions=react-server scripts/trees-from-maxroll.ts",
     "preview": "next build && next start"

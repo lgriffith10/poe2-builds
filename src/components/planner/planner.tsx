@@ -81,7 +81,9 @@ function PlannerInner({ tree, initial }: { tree: TreeData; initial: PlannerState
 
   const cls = tree.classes[classIndex];
   const ascendancy = ascIndex >= 0 ? cls.ascendancies[ascIndex]?.name ?? null : null;
-  const rootIds = useMemo(() => roots(graph, cls, ascendancy), [graph, cls, ascendancy]);
+  // Another class's start in the allocation (an item lets the build allocate from it) is a root too.
+  const otherStart = tree.classes.find((k) => k.start !== cls.start && allocated.has(k.start)) ?? null;
+  const rootIds = useMemo(() => roots(graph, cls, ascendancy, otherStart), [graph, cls, ascendancy, otherStart]);
 
   const state: PlannerState = useMemo(
     () => ({

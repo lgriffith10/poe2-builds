@@ -5,7 +5,8 @@ import path from "node:path";
 import { DEFAULT_LOCALE, LOCALES } from "@/i18n/config";
 import { getBuilds } from "@/lib/builds";
 import { getGuides } from "@/lib/guides";
-import { FARMING_GUIDE, MECHANIC_INFO } from "@/lib/farming";
+import { MECHANICS } from "@/lib/farming";
+import { getMechanics } from "@/lib/mechanics";
 import { tree } from "@/lib/data";
 import { MAX_ASCENDANCY_POINTS, MAX_PASSIVE_POINTS, MAX_WEAPON_SET_POINTS } from "@/lib/tree";
 
@@ -26,13 +27,14 @@ for (const b of getBuilds(DEFAULT_LOCALE, true)) {
     warnings++;
   }
 }
-// The build pages link each mechanic to its section of the farming guide.
+// The build pages link each mechanic to its page (/farming/<id>): every page must parse in every locale.
 for (const lang of LOCALES) {
-  const guide = getGuides(lang).find((g) => `/guides/${g.slug}` === FARMING_GUIDE);
-  const broken = Object.values(MECHANIC_INFO).filter((m) => !guide?.html.includes(`id="${m.anchor}"`));
-  console.log(`✓ farming guide (${lang}): ${8 - broken.length}/8 mechanic sections`);
-  for (const m of broken) {
-    console.warn(`  ⚠ ${lang}: no #${m.anchor} section in ${FARMING_GUIDE} for ${m.name}`);
+  const pages = getMechanics(lang);
+  const untranslated =
+    lang === DEFAULT_LOCALE ? [] : MECHANICS.filter((id) => !fs.existsSync(path.join("content", "farming", lang, `${id}.md`)));
+  console.log(`✓ mechanic pages (${lang}): ${pages.length - untranslated.length}/${MECHANICS.length}`);
+  for (const id of untranslated) {
+    console.warn(`  ⚠ missing translation content/farming/${lang}/${id}.md (falls back to English)`);
     warnings++;
   }
 }

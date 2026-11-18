@@ -7,6 +7,7 @@ import { classes, getBase, getClass, getGem, getUnique, tree } from "./data";
 import { gemTip, tipAttr, uniqueTip } from "./tips";
 import { renderItemCards } from "./item-cards";
 import { renderAtlasTree } from "./atlas-tree";
+import { renderFlow, renderLoot } from "./diagrams";
 import { currencyHref, currencyTip, getCurrency } from "./currency";
 import { allocateTargets, allocateWeaponSetTargets, createGraph, findNodeByName, isAllocatable, pruneDisconnected, roots } from "./tree";
 import { encodeBuild } from "./build-code";
@@ -56,8 +57,11 @@ export interface Build {
   updated: string;
   summary: string;
   sample: boolean;
-  /** "guide": based on a written guide; "ladder": drawn from a ladder character and ladder statistics. */
-  origin: "guide" | "ladder";
+  /**
+   * "guide": based on a written guide; "ladder": drawn from a ladder character and ladder statistics;
+   * "creator": drawn from a content creator's published Path of Building (video or stream build).
+   */
+  origin: "guide" | "ladder" | "creator";
   /** Game patch the guide was written for, e.g. "0.5.5". */
   patch: string;
   /** Guide this build is based on, credited on the page. */
@@ -91,6 +95,8 @@ export interface Build {
   gearStages: Partial<Record<GearStage, GearSet>>;
   ascendancyOrder: string[];
   keyPassives: string[];
+  /** Other class whose starting point the tree also grows from (item modifier), or null. */
+  startFrom: string | null;
   /**
    * Main-tree progression in the order the guide takes its key passives (shared tree, then each weapon set):
    * each step is a notable and the nodes its path adds.
@@ -154,10 +160,19 @@ export function renderBody(markdown: string, file: string, lang: Locale = DEFAUL
     if (depth === 2) toc.push({ id, text });
     return `<h${depth} id="${id}">${marked.Parser.parseInline(tokens)}</h${depth}>`;
   };
-  // ```items blocks become item illustrations (see item-cards.ts), ```atlas blocks Atlas sub-trees (atlas-tree.ts).
+  // ```items blocks become item illustrations (see item-cards.ts), ```atlas blocks Atlas sub-trees (atlas-tree.ts),
+  // ```flow and ```loot blocks diagrams (diagrams.ts).
   const code = renderer.code.bind(renderer);
   renderer.code = (token) =>
-    token.lang === "items" ? renderItemCards(token.text, file) : token.lang === "atlas" ? renderAtlasTree(token.text, file) : code(token);
+    token.lang === "items"
+      ? renderItemCards(token.text, file)
+      : token.lang === "atlas"
+        ? renderAtlasTree(token.text, file)
+        : token.lang === "flow"
+          ? renderFlow(token.text, file)
+          : token.lang === "loot"
+            ? renderLoot(token.text, file, lang)
+            : code(token);
   const html = (marked.parse(linkReferences(markdown, file), { renderer, async: false }) as string)
     // Site-relative links follow the page language.
     .replace(/href="(\/[^"]*)"/g, (_, href: string) => `href="${localePath(lang, href)}"`);
@@ -168,9 +183,18 @@ const TREES_DIR = path.join(CONTENT_DIR, "trees");
 const treesFile = (file: string) => path.join(TREES_DIR, file.replace(/\.md$/, ".json"));
 const KEY_TYPES = new Set(["notable", "keystone"]);
 
+/** `startFrom: <Class>`: the other class whose starting point the tree also grows from (see `roots`). */
+function startClass(name: unknown, cls: { name: string }, fail: (msg: string) => never) {
+  if (name === undefined || name === null) return null;
+  const other = tree.classes.find((k) => k.name === name);
+  if (!other || other.name === cls.name) fail(`Invalid startFrom "${String(name)}"`);
+  return other!;
+}
+
 interface TreeVariantFile {
   name: string;
   stage: TreeStage;
+  startFrom?: string;
   level?: number;
   nodes: number[];
   attributes?: Record<string, number>;
@@ -187,7 +211,6 @@ function readTreeVariants(
   if (!fs.existsSync(p)) return { treeVariants: [], treeVariantsSource: null };
   const where = `trees/${path.basename(p)}`;
   const data = JSON.parse(fs.readFileSync(p, "utf8")) as { planner?: string; trees: TreeVariantFile[] };
-  const rootIds = roots(graph, cls, ascendancy);
   const name = (id: number) => tree.nodes[id].n.trim();
   const out: TreeVariant[] = [];
   for (const v of data.trees) {
@@ -199,6 +222,7 @@ function readTreeVariants(
     if (bad.length) fail(`nodes ${bad.join(", ")} are unknown or not allowed for ${cls.name}/${ascendancy}`);
     const weaponSets = Object.fromEntries(Object.entries(v.weaponSets ?? {}).map(([id, set]) => [Number(id), set]));
     const attributes = Object.fromEntries(Object.entries(v.attributes ?? {}).map(([id, a]) => [Number(id), a]));
+    const rootIds = roots(graph, cls, ascendancy, startClass(v.startFrom, cls, fail));
     const nodes = [...rootIds, ...v.nodes];
     const connected = pruneDisconnected(graph, new Set(nodes), rootIds);
 
@@ -377,7 +401,8 @@ function parseBuild(file: string): { build: Build; markdown: string } {
   const keyPassives: string[] = fm.passives?.path ?? [];
   const ascendancyOrder: string[] = fm.passives?.ascendancy ?? [];
   const targets = [...keyPassives, ...ascendancyOrder].map(resolve);
-  const { allocated: shared, unreachable, steps: sharedSteps } = allocateTargets(graph, cls, ascendancy, targets);
+  const startFrom = startClass(fm.passives?.startFrom, cls, fail);
+  const { allocated: shared, unreachable, steps: sharedSteps } = allocateTargets(graph, cls, ascendancy, targets, startFrom);
   if (unreachable.length) fail(`Unreachable passives: ${unreachable.map((id) => tree.nodes[id].n).join(", ")}`);
   // Weapon-set passives: notables taken with each weapon set's own points, pathed from the shared tree.
   const setTargets = {
@@ -434,7 +459,7 @@ function parseBuild(file: string): { build: Build; markdown: string } {
     updated,
     summary: fm.summary ?? "",
     sample: Boolean(fm.sample),
-    origin: fm.origin === "ladder" ? "ladder" : fm.origin === undefined || fm.origin === "guide" ? "guide" : fail(`Invalid origin "${fm.origin}"`),
+    origin: fm.origin === "ladder" || fm.origin === "creator" ? fm.origin : fm.origin === undefined || fm.origin === "guide" ? "guide" : fail(`Invalid origin "${fm.origin}"`),
     patch: String(fm.patch ?? ""),
     source: fm.source
       ? {
@@ -467,6 +492,7 @@ function parseBuild(file: string): { build: Build; markdown: string } {
     gearStages,
     ascendancyOrder,
     keyPassives,
+    startFrom: startFrom?.name ?? null,
     passiveSteps,
     planner,
     plannerCode: encodeBuild(planner),
@@ -538,13 +564,13 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
 // The cache lives on globalThis to survive dev module reloads.
 type Parsed = { build: Build; markdown: string };
 const store = globalThis as typeof globalThis & {
-  __buildCacheV16?: {
+  __buildCacheV17?: {
     files: Map<string, { stamp: string; parsed: Parsed }>;
     lists: Map<Locale, { key: string; list: Build[] }>;
   };
 };
 // Versioned key: a dev server still holding a cache in an older shape (hot reload keeps globalThis) gets a fresh one.
-const cache = (store.__buildCacheV16 ??= { files: new Map(), lists: new Map() });
+const cache = (store.__buildCacheV17 ??= { files: new Map(), lists: new Map() });
 
 const mtime = (p: string) => (fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0);
 
