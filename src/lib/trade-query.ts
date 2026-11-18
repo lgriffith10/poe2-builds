@@ -5,40 +5,11 @@
 import { getBase, getUnique } from "./data";
 import { modLabel } from "./mod-labels";
 import type { GearPiece, GearSlot } from "./types";
+import { CASTER_WEAPONS, CLASS_CATEGORY } from "./trade-categories";
 
 /** [text, id] pairs from the trade site's stat list (src/data/generated/trade-stats.json, `npm run trade:stats`). */
 export type TradeStat = [string, string];
 
-const CLASS_CATEGORY: Record<string, string> = {
-  Bow: "weapon.bow",
-  Crossbow: "weapon.crossbow",
-  Claw: "weapon.claw",
-  Dagger: "weapon.dagger",
-  Flail: "weapon.flail",
-  Spear: "weapon.spear",
-  Talisman: "weapon.talisman",
-  Wand: "weapon.wand",
-  Sceptre: "weapon.sceptre",
-  Staff: "weapon.staff",
-  Warstaff: "weapon.warstaff",
-  "One Hand Axe": "weapon.oneaxe",
-  "One Hand Mace": "weapon.onemace",
-  "One Hand Sword": "weapon.onesword",
-  "Two Hand Axe": "weapon.twoaxe",
-  "Two Hand Mace": "weapon.twomace",
-  "Two Hand Sword": "weapon.twosword",
-  Quiver: "armour.quiver",
-  Shield: "armour.shield",
-  Buckler: "armour.buckler",
-  Focus: "armour.focus",
-  Helmet: "armour.helmet",
-  "Body Armour": "armour.chest",
-  Gloves: "armour.gloves",
-  Boots: "armour.boots",
-  Amulet: "accessory.amulet",
-  Ring: "accessory.ring",
-  Belt: "accessory.belt",
-};
 
 const SLOT_CATEGORY: Partial<Record<GearSlot, string>> = {
   helmet: "armour.helmet",
@@ -115,8 +86,6 @@ const LOCAL: [RegExp, string][] = [
   [/^#% increased Critical Damage Bonus$/, "explicit.stat_2694482655"],
   [/^\+# to Accuracy Rating$/, "explicit.stat_691932474"],
 ];
-/** Weapon classes whose damage, speed and critical modifiers are local (caster weapons use spell modifiers). */
-const CASTER_WEAPONS = new Set(["weapon.wand", "weapon.sceptre", "weapon.staff"]);
 
 /** Whether a base is a martial weapon, whose damage, speed and critical modifiers are local. */
 export function isLocalWeapon(baseName: string | undefined): boolean {

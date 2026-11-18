@@ -21,6 +21,7 @@ import {
 } from "@/lib/craft";
 import { frenchModText, parseItemText } from "@/lib/craft-import";
 import { decodeCraft, encodeCraft } from "@/lib/craft-share";
+import { PriceCheck, type UniquePrices } from "./price-check";
 
 type Tc = ReturnType<typeof useI18n>["t"]["craft"];
 type Fmt = ReturnType<typeof useI18n>["fmt"];
@@ -154,7 +155,11 @@ function Pips({ used, max, label }: { used: number; max: number; label: string }
 
 // --- main ---------------------------------------------------------------------------------------
 
-export function CraftSim({ wiki = {}, prices = {} }: { wiki?: CraftWiki; prices?: Record<string, number> } = {}) {
+export function CraftSim({
+  wiki = {},
+  prices = {},
+  market,
+}: { wiki?: CraftWiki; prices?: Record<string, number>; market?: { league: string; uniques: UniquePrices } } = {}) {
   const { t, fmt, lang } = useI18n();
   const [data, setData] = useState<CraftData | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -171,12 +176,26 @@ export function CraftSim({ wiki = {}, prices = {} }: { wiki?: CraftWiki; prices?
     );
   return (
     <WikiContext.Provider value={wiki}>
-      <Workbench data={data} t={t.craft} fmt={fmt} french={lang === "fr"} prices={prices} />
+      <Workbench data={data} t={t.craft} fmt={fmt} french={lang === "fr"} prices={prices} market={market} />
     </WikiContext.Provider>
   );
 }
 
-function Workbench({ data, t, fmt, french, prices }: { data: CraftData; t: Tc; fmt: Fmt; french: boolean; prices: Record<string, number> }) {
+function Workbench({
+  data,
+  t,
+  fmt,
+  french,
+  prices,
+  market,
+}: {
+  data: CraftData;
+  t: Tc;
+  fmt: Fmt;
+  french: boolean;
+  prices: Record<string, number>;
+  market?: { league: string; uniques: UniquePrices };
+}) {
   const c = useMemo(() => new Crafter(data), [data]);
   // A shared link (#c=…) opens on its item and goals; the workbench only mounts in the browser, once data is loaded.
   const [shared] = useState(() => (window.location.hash.startsWith("#c=") ? decodeCraft(new Crafter(data), window.location.hash.slice(3)) : null));
@@ -959,6 +978,18 @@ function Workbench({ data, t, fmt, french, prices }: { data: CraftData; t: Tc; f
           <p className="mt-3 text-[11px] leading-relaxed text-faint">{t.planDisclaimer}</p>
         </div>
       </div>
+      {market && (
+        <PriceCheck
+          c={c}
+          simItem={item}
+          league={market.league}
+          uniques={market.uniques}
+          exaltedPerDivine={exaltedPerDivine}
+          t={t}
+          fmt={fmt}
+          baseName={baseName}
+        />
+      )}
     </div>
   );
 }

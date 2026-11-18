@@ -50,7 +50,7 @@ export default async function CraftPage({ params }: PageProps<"/[lang]/craft">) 
             {t.craft.help.link} →
           </Link>
         </details>
-        <CraftSim wiki={craftWiki()} prices={craftPrices()} />
+        <CraftSim wiki={craftWiki()} prices={craftPrices()} market={{ league: prices.league, uniques: prices.uniques }} />
       </div>
     </>
   );

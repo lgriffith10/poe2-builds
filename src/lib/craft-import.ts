@@ -49,7 +49,7 @@ const REDUCED_FR: [RegExp, string][] = [
 ];
 
 /** A French mod line in English, or null when the stat is unknown. */
-function translateLine(c: Crafter, line: string): string | null {
+export function translateLine(c: Crafter, line: string): string | null {
   const stats = c.data.fr?.stats;
   if (!stats) return null;
   const text = normalize(line);
