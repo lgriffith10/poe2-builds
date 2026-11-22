@@ -14,6 +14,10 @@ import { filterTargets, lootFilter } from "@/lib/loot-filter";
 import { localePath } from "@/i18n/config";
 import { absoluteUrl } from "@/lib/site";
 import { LevelingTimeline, type TimelinePath } from "@/components/leveling-timeline";
+import { PlayView, type PlayGearStage } from "@/components/play-view";
+import { BuildTabs } from "@/components/build-tabs";
+import { classStyle } from "@/lib/classes";
+import { GemCheck, SkillGroupDone, SkillsProgress } from "@/components/gem-checklist";
 import { RotationStrip, type RotationGem, type RotationView } from "@/components/rotation-strip";
 import { stepFr } from "@/lib/step-labels";
 import { ClassEmblem, GemIcon, Pill, SectionTitle, TierBadge } from "@/components/ui";
@@ -125,16 +129,35 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
     };
   });
 
-  const sections = [
-    { id: "overview", text: tr.common.overview },
+  const tabs = [
+    { id: "overview", text: tr.build.guideTab },
     { id: "skills", text: tr.common.skills },
     ...(leveling.length ? [{ id: "leveling", text: tr.build.leveling }] : []),
-    { id: "stats", text: tr.build.statPriority.title },
     { id: "gear", text: tr.common.gear },
     { id: "passives", text: tr.common.passiveTree },
     ...(farming ? [{ id: "farming", text: tr.build.farming.title }] : []),
-    ...build.toc.filter((t) => t.id !== "overview").map((t) => ({ ...t, id: `guide-${t.id}` })),
   ];
+  const guideToc = build.toc.filter((t) => t.id !== "overview").map((t) => ({ ...t, id: `guide-${t.id}` }));
+  const statStages = statPriority(inventory.stages, build.origin === "guide");
+  const playStage = (i: number): PlayGearStage => ({
+    id: inventory.stages[i].id,
+    label: inventory.stages[i].label || tr.common.gear,
+    items: inventory.stages[i].items.map((it) => ({ slotLabel: it.slotLabel, title: it.title, kind: it.kind, icon: it.icon })),
+    stats: statStages[i] ?? null,
+  });
+  const campaignIndex = inventory.stages.findIndex((s) => s.id === "campaign");
+  const playGear = inventory.stages
+    .map((_, i) => i)
+    .filter((i) => !(leveling.length && i === campaignIndex))
+    .map(playStage);
+  const playLinks = [
+    ...(leveling.length ? [{ id: "leveling", text: tr.build.leveling }] : []),
+    { id: "gear", text: tr.common.gear },
+    { id: "loot-filter", text: tr.build.lootFilter.title },
+    { id: "stats", text: tr.build.statPriority.title },
+    ...(farming ? [{ id: "farming", text: tr.build.farming.title }] : []),
+  ];
+
   // Prefix guide heading ids so they never collide with the fixed sections above.
   const html = build.html.replace(/<h([23]) id="/g, '<h$1 id="guide-');
 
@@ -155,8 +178,14 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
           ]),
         ]}
       />
-      <header className="border-b border-line">
-        <div className="mx-auto max-w-7xl px-4 py-8">
+      <header className="relative overflow-hidden border-b border-line">
+        {/* The class colour lights the header from behind the emblem. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{ background: `radial-gradient(700px 320px at 8% 30%, ${classStyle(build.className).color}26, transparent 70%)` }}
+        />
+        <div className="relative mx-auto max-w-7xl px-4 pb-6 pt-5">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <Link href={path("/builds")} className="text-sm text-muted hover:text-gold">
               {tr.build.allBuilds}
@@ -165,74 +194,99 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               <FavoriteButton slug={build.slug} title={build.title} labeled />
               <Link
                 href={path(`/compare?a=${build.slug}`)}
-              className="rounded-lg border border-gold-soft px-3 py-1 text-sm text-gold hover:bg-gold/10"
-            >
-                {tr.build.compareWith} →
+                className="rounded-lg border border-line px-3 py-1 text-sm text-muted hover:border-gold-soft hover:text-gold"
+              >
+                {tr.build.compareWith}
               </Link>
             </div>
           </div>
-          <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-center">
-            <ClassEmblem name={build.className} size={72} />
-            <div className="flex-1">
-              <h1 className="font-display text-3xl font-bold tracking-wide sm:text-4xl">{build.title}</h1>
-              <p className="mt-1 text-muted">
-                {build.ascendancy} · {build.className}
-                {build.patch && ` · ${fmt(tr.build.patch, { v: build.patch })}`} ·{" "}
-                {fmt(tr.build.updatedBy, { date: build.updated, author: build.author })}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {build.tags.map((t) => (
-                  <Pill key={t}>{t}</Pill>
-                ))}
-                <Pill tone="gold">{fmt(tr.common.difficulty, { v: tr.levels[build.difficulty] })}</Pill>
-                <Pill tone="gold">{fmt(tr.common.budget, { v: tr.levels[build.budget] })}</Pill>
+
+          <div className="mt-5 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+            <div className="flex gap-5">
+              <span className="hidden sm:block">
+                <ClassEmblem name={build.className} size={84} />
+              </span>
+              <div className="min-w-0">
+                <h1 className="font-display text-3xl font-bold tracking-wide sm:text-[2.6rem] sm:leading-tight">{build.title}</h1>
+                <p className="mt-1 text-muted">
+                  <span className="text-ink">{build.ascendancy}</span>, {build.className}
+                  <span className="text-faint">
+                    {" "}
+                    — {build.patch && `${fmt(tr.build.patch, { v: build.patch })}, `}
+                    {fmt(tr.build.updatedBy, { date: build.updated, author: build.author })}
+                  </span>
+                </p>
+                {/* The build's identity is its skills: the main ones, as the game shows them. */}
+                <ul className="mt-4 flex flex-wrap items-center gap-2">
+                  {build.skills.slice(0, 5).map((s, i) => {
+                    const g = getGem(s.gem)!;
+                    return (
+                      <li key={s.gem}>
+                        <Link
+                          href={path(`/database/gems#${g.id}`)}
+                          data-tip={gemTip(g.name)}
+                          className={`flex items-center gap-2 rounded-lg border bg-surface/80 p-1 text-sm sm:pr-3 ${i === 0 ? "pr-3" : ""} hover:border-gold-soft ${i === 0 ? "border-gold-soft font-semibold text-ink" : "border-line text-muted"}`}
+                        >
+                          <GemIcon gem={g} size={i === 0 ? 34 : 28} />
+                          <span className={i === 0 ? undefined : "sr-only sm:not-sr-only"}>{g.name}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </div>
-            <div className="flex gap-4">
+
+            <dl className="flex gap-3 md:justify-end">
               {TIER_CATEGORIES.map((c) => {
                 const r = build.ratings[c];
                 return r ? (
-                  <div key={c} className="flex flex-col items-center gap-1">
-                    <TierBadge
-                      tier={r.tier}
-                      size="lg"
-                      estimated={r.estimated}
-                      title={r.estimated ? fmt(tr.common.estimatedTier, { tier: r.tier }) : undefined}
-                    />
-                    <span className="text-xs uppercase tracking-wider text-faint">{tr.categories[c]}</span>
-                    {r.estimated && <span className="-mt-1 text-[10px] text-faint">{tr.common.estimated}</span>}
+                  <div key={c} className="flex w-20 flex-col items-center gap-1.5 text-center">
+                    <dd>
+                      <TierBadge
+                        tier={r.tier}
+                        size="lg"
+                        estimated={r.estimated}
+                        title={r.estimated ? fmt(tr.common.estimatedTier, { tier: r.tier }) : undefined}
+                      />
+                    </dd>
+                    <dt className="text-xs leading-tight text-muted">
+                      {tr.categories[c]}
+                      {r.estimated && <span className="block text-[10px] text-faint">{tr.common.estimated}</span>}
+                    </dt>
                   </div>
                 ) : null;
               })}
-            </div>
+            </dl>
+          </div>
+
+          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+            <Pill tone="gold">{fmt(tr.common.difficulty, { v: tr.levels[build.difficulty] })}</Pill>
+            <Pill tone="gold">{fmt(tr.common.budget, { v: tr.levels[build.budget] })}</Pill>
+            {popularity && (
+              <span className="text-muted">
+                {popularity.skill
+                  ? fmt(tr.ladderMeta.popularity, {
+                      p: pctText(popularity.skill.share, lang),
+                      asc: build.ascendancy,
+                      skill: popularity.skill.name,
+                    })
+                  : fmt(tr.ladderMeta.popularityAsc, { p: pctText(popularity.ascendancyShare, lang), asc: build.ascendancy })}{" "}
+                <Link href={path("/meta")} className="text-gold hover:underline">
+                  {tr.nav.meta}
+                </Link>
+              </span>
+            )}
           </div>
           {build.sample && (
-            <p className="mt-6 rounded-lg border border-amber-700/50 bg-amber-900/15 px-4 py-3 text-sm text-amber-200">
+            <p className="mt-4 rounded-lg border border-amber-700/50 bg-amber-900/15 px-4 py-3 text-sm text-amber-200">
               {tr.build.sampleNotice}
             </p>
           )}
-          {popularity && (
-            <p className="mt-4 text-sm text-muted">
-              <span className="mr-2 rounded border border-line px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-faint">
-                {tr.ladderMeta.title}
-              </span>
-              {popularity.skill
-                ? fmt(tr.ladderMeta.popularity, {
-                    p: pctText(popularity.skill.share, lang),
-                    asc: build.ascendancy,
-                    skill: popularity.skill.name,
-                  })
-                : fmt(tr.ladderMeta.popularityAsc, { p: pctText(popularity.ascendancyShare, lang), asc: build.ascendancy })}{" "}
-              ·{" "}
-              <Link href={path("/meta")} className="text-gold hover:underline">
-                {tr.nav.meta} →
-              </Link>
-            </p>
-          )}
           {build.source && (
-            <p className="mt-6 rounded-lg border border-line bg-surface px-4 py-3 text-sm text-muted">
+            <p className="mt-4 max-w-4xl text-xs leading-relaxed text-faint">
               {build.origin === "guide" ? tr.build.basedOn : tr.build.drawnFrom}{" "}
-              <a href={build.source.url} className="font-semibold text-gold underline-offset-2 hover:underline" rel="noopener">
+              <a href={build.source.url} className="text-gold-soft underline-offset-2 hover:text-gold hover:underline" rel="noopener">
                 {build.source.title}
               </a>{" "}
               {tr.build.by} {build.source.author}
@@ -243,39 +297,61 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
         </div>
       </header>
 
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-8 lg:grid-cols-[200px_1fr]">
-        <nav className="hidden lg:block">
-          <ul className="sticky top-24 space-y-1 border-l border-line text-sm">
-            {sections.map((s) => (
-              <li key={s.id}>
-                <a href={`#${s.id}`} className="-ml-px block border-l border-transparent py-1 pl-4 text-muted hover:border-gold hover:text-ink">
-                  {s.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <TipScope className="min-w-0 space-y-14">
-          <section id="overview" className="scroll-mt-24">
-            <SectionTitle>{tr.common.overview}</SectionTitle>
+      <div className="mx-auto max-w-7xl px-4 pb-20">
+        <TipScope className="min-w-0">
+          <PlayView
+            slug={build.slug}
+            title={build.title}
+            leveling={leveling}
+            skills={build.skills.map((s) => ({ gem: gemView(s.gem), supports: s.supports.map(gemView) }))}
+            rotations={build.rotations.map((r) => rotationView(r))}
+            gear={playGear}
+            campaign={leveling.length && campaignIndex >= 0 ? playStage(campaignIndex) : null}
+            ascendancy={ascNotables.map((n) => ({ name: n.n, stats: n.s ?? [] }))}
+            links={playLinks}
+            plannerHref={path(`/planner#${build.plannerCode}`)}
+            tree={{
+              planner: build.planner,
+              code: build.plannerCode,
+              steps: build.passiveSteps,
+              variants: build.treeVariants,
+              variantsSource: build.treeVariantsSource,
+            }}
+          />
+          <BuildTabs tabs={tabs}>
+          <section id="overview" data-panel="overview" className="scroll-mt-32">
             <p className="text-lg leading-relaxed">{build.summary}</p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <ProsCons title={tr.build.strengths} items={build.pros} tone="pro" />
               <ProsCons title={tr.build.weaknesses} items={build.cons} tone="con" />
             </div>
+            {guideToc.length > 0 && (
+              <nav aria-label={tr.build.guideContents} className="mt-10 flex flex-wrap gap-x-5 gap-y-2 border-y border-line py-3 text-sm">
+                {guideToc.map((x) => (
+                  <a key={x.id} href={`#${x.id}`} className="text-muted hover:text-gold">
+                    {x.text}
+                  </a>
+                ))}
+              </nav>
+            )}
+            <div className="prose-guide mt-8" dangerouslySetInnerHTML={{ __html: html }} />
           </section>
 
-          <section id="skills" className="scroll-mt-24">
+          <section id="skills" data-panel="skills" className="scroll-mt-32">
             <SectionTitle sub={tr.build.skillsSub}>{tr.common.skills}</SectionTitle>
             <p className="-mt-3 mb-4 text-xs text-faint">{tr.build.skillFromHint}</p>
-            <div className="space-y-3">
+            <SkillsProgress slug={build.slug} gems={build.skills.flatMap((s) => [s.gem, ...s.supports])} />
+            <div className="grid gap-3 lg:grid-cols-2">
               {build.skills.map((s) => {
                 const gem = getGem(s.gem)!;
+                const src = sources.get(s.gem)!;
                 return (
-                  <div key={s.gem} className="rounded-xl border border-line bg-surface p-4">
-                    <div className="flex items-center gap-3">
-                      <GemIcon gem={gem} size={48} />
+                  <div key={s.gem} className="rounded-xl border border-line bg-surface p-3">
+                    <div className="flex items-start gap-3">
+                      <span className="mt-3">
+                        <GemCheck slug={build.slug} gem={gem.name} />
+                      </span>
+                      <GemIcon gem={gem} size={44} />
                       <div className="min-w-0 flex-1">
                         <Link
                           href={path(`/database/gems#${gem.id}`)}
@@ -284,41 +360,42 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                         >
                           {gem.name}
                         </Link>
-                        {s.note && <p className="text-sm text-muted">{s.note}</p>}
+                        <div className="mt-1 flex flex-wrap items-center gap-1.5">
+                          <SourceChip source={src} label={sourceLabel(src)} />
+                          {s.weaponSet && (
+                            <span
+                              className="whitespace-nowrap rounded-full border px-2 py-0.5 text-xs"
+                              style={{ color: WEAPON_SET_COLORS[s.weaponSet].light, borderColor: WEAPON_SET_COLORS[s.weaponSet].main }}
+                              title={tr.build.weaponSetSkillHint}
+                            >
+                              {s.weaponSet === 1 ? tr.tree.weaponSet1 : tr.tree.weaponSet2}
+                            </span>
+                          )}
+                          <SkillGroupDone slug={build.slug} gems={[s.gem, ...s.supports]} />
+                          {s.level && (
+                            <span className="whitespace-nowrap rounded-full border border-sky-400/60 px-2 py-0.5 text-xs text-sky-300" title={tr.build.gemLevelHint}>
+                              {fmt(tr.build.gemLevel, { level: s.level })}
+                            </span>
+                          )}
+                        </div>
+                        {s.note && <p className="mt-1.5 text-sm text-muted">{s.note}</p>}
                       </div>
-                      {s.level && (
-                        <span
-                          className="whitespace-nowrap rounded-md border border-sky-400/60 px-2 py-0.5 text-xs font-semibold text-sky-300"
-                          title={tr.build.gemLevelHint}
-                        >
-                          {fmt(tr.build.gemLevel, { level: s.level })}
-                        </span>
-                      )}
-                      {s.weaponSet && (
-                        <span
-                          className="whitespace-nowrap rounded-md border px-2 py-0.5 text-xs font-semibold"
-                          style={{ color: WEAPON_SET_COLORS[s.weaponSet].light, borderColor: WEAPON_SET_COLORS[s.weaponSet].main }}
-                          title={tr.build.weaponSetSkillHint}
-                        >
-                          {s.weaponSet === 1 ? tr.tree.weaponSet1 : tr.tree.weaponSet2}
-                        </span>
-                      )}
-                      <SourceChip source={sources.get(s.gem)!} label={sourceLabel(sources.get(s.gem)!)} />
                     </div>
                     {s.supports.length > 0 && (
-                      <div className="mt-3 flex flex-wrap gap-2">
+                      <div className="mt-3 flex flex-wrap gap-1.5 border-t border-line pt-3">
                         {s.supports.map((name) => {
                           const sup = getGem(name)!;
                           return (
-                            <Link
+                            <span
                               key={name}
-                              href={path(`/database/gems#${sup.id}`)}
-                              data-tip={gemTip(sup.name)}
-                              className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 py-1 pl-1 pr-3 text-sm hover:border-line-strong"
+                              className="flex items-center gap-1 rounded-md border border-line bg-surface-2 py-0.5 pl-1 pr-2 text-xs text-muted"
                             >
-                              <GemIcon gem={sup} size={28} />
-                              {sup.name}
-                            </Link>
+                              <GemCheck slug={build.slug} gem={sup.name} size="sm" />
+                              <Link href={path(`/database/gems#${sup.id}`)} data-tip={gemTip(sup.name)} className="flex items-center gap-1.5 hover:text-ink">
+                                <GemIcon gem={sup} size={22} />
+                                {sup.name}
+                              </Link>
+                            </span>
                           );
                         })}
                       </div>
@@ -341,7 +418,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
           </section>
 
           {leveling.length > 0 && (
-            <section id="leveling" className="scroll-mt-24">
+            <section id="leveling" data-panel="leveling" className="scroll-mt-32">
               <SectionTitle
                 sub={
                   <>
@@ -373,15 +450,15 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
             </section>
           )}
 
-          <section id="stats" className="scroll-mt-24">
+          <section id="stats" data-panel="gear" className="scroll-mt-32">
             <SectionTitle sub={tr.build.statPriority.sub}>{tr.build.statPriority.title}</SectionTitle>
-            <StatPriority stages={statPriority(inventory.stages, build.origin === "guide")} initialStage={inventory.initial}
+            <StatPriority stages={statStages} initialStage={inventory.initial}
               ordered={build.origin === "guide"}
               labels={tr.build.statPriority}
              />
           </section>
 
-          <section id="gear" className="scroll-mt-24">
+          <section id="gear" data-panel="gear" className="mt-14 scroll-mt-32">
             <SectionTitle sub={tr.build.gearSub}>{tr.common.gear}</SectionTitle>
             <GearInventory
               stages={inventory.stages}
@@ -398,7 +475,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                 note: fmt(tr.build.priceNote, { league: prices.league, date: prices.fetchedAt }),
               }}
             />
-            <h3 id="loot-filter" className="mt-6 scroll-mt-24 font-semibold">{tr.build.lootFilter.title}</h3>
+            <h3 id="loot-filter" className="mt-6 scroll-mt-32 font-semibold">{tr.build.lootFilter.title}</h3>
             <div className="mt-2">
               <LootFilterPanel
                 {...lootFilter(build, absoluteUrl(localePath(lang, `/builds/${build.slug}`)))}
@@ -411,7 +488,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
             </div>
           </section>
 
-          <section id="passives" className="scroll-mt-24">
+          <section id="passives" data-panel="passives" className="scroll-mt-32">
             <SectionTitle sub={fmt(tr.build.pointsAllocated, { n: build.pointsUsed })}>{tr.common.passiveTree}</SectionTitle>
             {build.startFrom && (
               <p className="mb-4 rounded-lg border border-line bg-surface px-4 py-3 text-sm text-muted">
@@ -448,13 +525,13 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
           </section>
 
           {farming && (
-            <section id="farming" className="scroll-mt-24">
+            <section id="farming" data-panel="farming" className="scroll-mt-32">
               <SectionTitle sub={tr.build.farming.sub}>{tr.build.farming.title}</SectionTitle>
               <FarmingRanking ranking={farming} labels={tr.build.farming} path={path} />
             </section>
           )}
 
-          <section className="prose-guide" dangerouslySetInnerHTML={{ __html: html }} />
+          </BuildTabs>
         </TipScope>
       </div>
     </article>
@@ -488,7 +565,7 @@ const SOURCE_ICON: Record<SkillSource["kind"], string> = { weapon: "⚔", item: 
 
 function SourceChip({ source, label }: { source: SkillSource; label: string }) {
   return (
-    <span className={`shrink-0 self-start rounded-full border px-2.5 py-0.5 text-xs ${SOURCE_STYLE[source.kind]}`}>
+    <span className={`shrink-0 rounded-full border px-2 py-0.5 text-xs ${SOURCE_STYLE[source.kind]}`}>
       <span aria-hidden className="mr-1">
         {SOURCE_ICON[source.kind]}
       </span>

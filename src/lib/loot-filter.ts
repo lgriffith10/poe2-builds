@@ -65,6 +65,87 @@ export function filterTargets(build: Build) {
   return { bases: [...bases], weaponClasses: [...weaponClasses], uniqueBases: [...uniqueBases], uniques: [...uniques] };
 }
 
+type Rgba = [number, number, number, number];
+/** How one kind of build rule looks in game; shared by the .filter and the preview on the page. */
+export interface FilterStyle {
+  size: number;
+  text: Rgba;
+  border: Rgba;
+  background: Rgba;
+  /** Light beam colour (PlayEffect); `temp` beams only flash when the item drops. */
+  beam: string;
+  temp?: boolean;
+  icon: { size: 0 | 1 | 2; color: string; shape: string };
+  sound?: [number, number];
+}
+export type FilterRuleKind = "unique" | "rare" | "craft" | "weapon";
+
+/** Loud on purpose: solid backgrounds, beams and minimap icons so the build's drops can't be missed. */
+export const FILTER_STYLES: Record<FilterRuleKind, FilterStyle> = {
+  unique: {
+    size: 45,
+    text: [255, 255, 255, 255],
+    border: [255, 255, 255, 255],
+    background: [200, 90, 20, 255],
+    beam: "Orange",
+    icon: { size: 0, color: "Orange", shape: "Star" },
+    sound: [1, 300],
+  },
+  rare: {
+    size: 45,
+    text: [255, 255, 255, 255],
+    border: [255, 255, 255, 255],
+    background: [0, 110, 190, 255],
+    beam: "Cyan",
+    icon: { size: 0, color: "Cyan", shape: "Diamond" },
+    sound: [2, 300],
+  },
+  craft: {
+    size: 42,
+    text: [190, 240, 255, 255],
+    border: [80, 200, 255, 255],
+    background: [10, 45, 70, 240],
+    beam: "Cyan",
+    temp: true,
+    icon: { size: 1, color: "Cyan", shape: "Circle" },
+  },
+  weapon: {
+    size: 42,
+    text: [255, 255, 119, 255],
+    border: [255, 220, 60, 255],
+    background: [60, 45, 0, 240],
+    beam: "Yellow",
+    temp: true,
+    icon: { size: 1, color: "Yellow", shape: "Triangle" },
+    sound: [3, 200],
+  },
+};
+
+const rgba = (c: Rgba) => c.join(" ");
+function styleLines(s: FilterStyle): string[] {
+  return [
+    `\tSetFontSize ${s.size}`,
+    `\tSetTextColor ${rgba(s.text)}`,
+    `\tSetBorderColor ${rgba(s.border)}`,
+    `\tSetBackgroundColor ${rgba(s.background)}`,
+    ...(s.sound ? [`\tPlayAlertSound ${s.sound[0]} ${s.sound[1]}`] : []),
+    `\tPlayEffect ${s.beam}${s.temp ? " Temp" : ""}`,
+    `\tMinimapIcon ${s.icon.size} ${s.icon.color} ${s.icon.shape}`,
+  ];
+}
+
+/** One preview row per rule the build actually has, with a real item name as the sample. */
+export function filterPreview(build: Build): { kind: FilterRuleKind; sample: string; style: FilterStyle }[] {
+  const t = filterTargets(build);
+  const rows: { kind: FilterRuleKind; sample: string | undefined }[] = [
+    { kind: "unique", sample: t.uniques[0] },
+    { kind: "rare", sample: t.bases[0] },
+    { kind: "craft", sample: t.bases[0] },
+    { kind: "weapon", sample: t.weaponClasses[0] },
+  ];
+  return rows.filter((r) => r.sample).map((r) => ({ kind: r.kind, sample: r.sample!, style: FILTER_STYLES[r.kind] }));
+}
+
 function buildRules(build: Build, url: string): string {
   const t = filterTargets(build);
   const out: string[] = [`# ===== Exile Codex: ${build.title} =====`, `# ${url}`, ""];
@@ -74,13 +155,7 @@ function buildRules(build: Build, url: string): string {
       "Show",
       "\tRarity Unique",
       `\tBaseType == ${quote(t.uniqueBases)}`,
-      "\tSetFontSize 45",
-      "\tSetTextColor 175 96 37 255",
-      "\tSetBorderColor 255 210 120 255",
-      "\tSetBackgroundColor 53 13 13 255",
-      "\tPlayAlertSound 1 300",
-      "\tPlayEffect Orange",
-      "\tMinimapIcon 0 Orange Star",
+      ...styleLines(FILTER_STYLES.unique),
       "",
     );
   if (t.bases.length)
@@ -89,22 +164,14 @@ function buildRules(build: Build, url: string): string {
       "Show",
       "\tRarity Rare",
       `\tBaseType == ${quote(t.bases)}`,
-      "\tSetFontSize 42",
-      "\tSetTextColor 255 255 119 255",
-      "\tSetBorderColor 80 200 255 255",
-      "\tSetBackgroundColor 20 40 60 230",
-      "\tPlayAlertSound 2 250",
-      "\tPlayEffect Cyan",
-      "\tMinimapIcon 1 Cyan Diamond",
+      ...styleLines(FILTER_STYLES.rare),
       "",
       "# Crafting bases (normal and magic, high item level)",
       "Show",
       "\tRarity Normal Magic",
       "\tItemLevel >= 75",
       `\tBaseType == ${quote(t.bases)}`,
-      "\tSetFontSize 38",
-      "\tSetBorderColor 80 200 255 160",
-      "\tMinimapIcon 2 Cyan Diamond",
+      ...styleLines(FILTER_STYLES.craft),
       "",
     );
   if (t.weaponClasses.length)
@@ -113,9 +180,7 @@ function buildRules(build: Build, url: string): string {
       "Show",
       "\tRarity Rare",
       `\tClass == ${quote(t.weaponClasses)}`,
-      "\tSetFontSize 38",
-      "\tSetTextColor 255 255 119 255",
-      "\tSetBorderColor 80 200 255 180",
+      ...styleLines(FILTER_STYLES.weapon),
       "",
     );
   return out.join("\n");
@@ -158,6 +223,7 @@ export interface LootFilter {
   /** Standalone filters. */
   soft: string;
   strict: string;
+  preview: ReturnType<typeof filterPreview>;
 }
 
 export function lootFilter(build: Build, url: string): LootFilter {
@@ -168,5 +234,6 @@ export function lootFilter(build: Build, url: string): LootFilter {
     snippet: rules,
     soft: head + rules + "\n" + genericRules(false),
     strict: head + rules + "\n" + genericRules(true),
+    preview: filterPreview(build),
   };
 }

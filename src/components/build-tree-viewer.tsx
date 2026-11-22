@@ -21,16 +21,22 @@ export function BuildTreeViewer({
   steps: guideSteps = [],
   variants = [],
   variantsSource = null,
+  initialVariant = -1,
+  compact = false,
 }: {
   planner: PlannerState;
   code: string;
   steps?: PassiveStep[];
   variants?: TreeVariant[];
   variantsSource?: string | null;
+  /** Tree shown first: -1 = the guide tree, else an index in `variants`. */
+  initialVariant?: number;
+  /** Fills its container's height: a select for the trees, a one-line progression, no step list (in-game view). */
+  compact?: boolean;
 }) {
   const { t, fmt, path } = useI18n();
   /** -1 = the guide tree, else an index in `variants`. */
-  const [variantIndex, setVariantIndex] = useState(-1);
+  const [variantIndex, setVariantIndex] = useState(initialVariant);
   const variant = variants[variantIndex] ?? null;
   // A source tree keeps the guide's skills and gear; the guide tree's weapon sets must not leak into it.
   const planner = useMemo<PlannerState>(
@@ -99,8 +105,30 @@ export function BuildTreeViewer({
   };
 
   return (
-    <div ref={wrapRef}>
-      {variants.length > 0 && (
+    <div ref={wrapRef} className={compact ? "flex h-full min-h-0 flex-col" : undefined}>
+      {compact && variants.length > 0 && (
+        <select
+          value={variantIndex}
+          onChange={(e) => pickVariant(Number(e.target.value))}
+          aria-label={t.build.treeVariants}
+          className="mb-2 w-full rounded-lg border border-line bg-surface px-2 py-1.5 text-sm"
+        >
+          <option value={-1}>{t.build.guideTree}</option>
+          {TREE_STAGES.filter((st) => variants.some((x) => x.stage === st)).map((st) => (
+            <optgroup key={st} label={t.build.treeStages[st]}>
+              {variants.map((x, i) =>
+                x.stage === st ? (
+                  <option key={i} value={i}>
+                    {x.name}
+                    {x.level ? ` (${x.level}+)` : ""}
+                  </option>
+                ) : null,
+              )}
+            </optgroup>
+          ))}
+        </select>
+      )}
+      {!compact && variants.length > 0 && (
         <TreeVariantPicker
           variants={variants}
           current={variantIndex}
@@ -162,15 +190,15 @@ export function BuildTreeViewer({
           attributes={planner.attributes}
           markers={view === "main" ? markers : undefined}
           highlight={view === "main" ? highlight : undefined}
-          className="h-[520px]"
+          className={compact ? "min-h-0 flex-1" : "h-[520px]"}
         />
       ) : (
-        <div className="flex h-[520px] items-center justify-center rounded-xl border border-line text-muted">
+        <div className={`flex items-center justify-center rounded-xl border border-line text-muted ${compact ? "min-h-0 flex-1" : "h-[520px]"}`}>
           {t.common.loadingTree}
         </div>
       )}
       {steps.length > 0 && view === "main" && (
-        <div className="mt-3 rounded-xl border border-line bg-surface p-3">
+        <div className={compact ? "mt-2 rounded-lg border border-line bg-surface px-3 py-2" : "mt-3 rounded-xl border border-line bg-surface p-3"}>
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-sm font-semibold">{t.build.progression}</span>
             <button
@@ -207,8 +235,8 @@ export function BuildTreeViewer({
               {current && <b className="ml-1.5 text-ink">{current.name}</b>}
             </span>
           </div>
-          <p className="mt-1 text-xs text-faint">{t.build.progressionHint}</p>
-          <ol className="mt-3 grid gap-1.5 sm:grid-cols-2">
+          {!compact && <p className="mt-1 text-xs text-faint">{t.build.progressionHint}</p>}
+          <ol className={compact ? "hidden" : "mt-3 grid gap-1.5 sm:grid-cols-2"}>
             {visibleSteps.map((st) => {
               const reached = st.index <= stepCount;
               return (

@@ -23,4 +23,8 @@ const FR_WORDS: [RegExp, string][] = [
   [/\bAscendancy\b/gi, "Ascendance"],
   [/\b(\d)(st|nd|rd|th)\b/g, "$1e"],
 ];
-export const stepFr = (s: string) => FR_WORDS.reduce((acc, [re, to]) => acc.replace(re, to), s);
+/** Labels start with a capital even when the translated phrase comes first ("Early Maps" -> "Début des maps"). */
+export const stepFr = (s: string) => {
+  const out = FR_WORDS.reduce((acc, [re, to]) => acc.replace(re, to), s);
+  return out.charAt(0).toUpperCase() + out.slice(1);
+};

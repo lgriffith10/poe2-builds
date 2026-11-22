@@ -40,7 +40,7 @@ const subscribe = (notify: () => void) => {
   };
 };
 
-function useObtained(storageKey: string) {
+export function useObtained(storageKey: string) {
   const key = `exile-codex:leveling:${storageKey}`;
   const raw = useSyncExternalStore(subscribe, () => readStore(key), () => "[]");
   const obtained = useMemo(() => {
@@ -68,7 +68,7 @@ function useObtained(storageKey: string) {
   return { obtained, toggle, reset: () => save(new Set()) };
 }
 
-function Check({ on, label, onClick, size = "md" }: { on: boolean; label: string; onClick: () => void; size?: "sm" | "md" }) {
+export function Check({ on, label, onClick, size = "md" }: { on: boolean; label: string; onClick: () => void; size?: "sm" | "md" }) {
   return (
     <button
       type="button"
@@ -90,12 +90,14 @@ export function LevelingTimeline({ paths, storageKey }: { paths: TimelinePath[];
   const { obtained, toggle, reset } = useObtained(storageKey);
   const root = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
+  const [stepIdx, setStepIdx] = useState(0);
   const current = paths[active] ?? paths[0];
   const label = (s: string) => (lang === "fr" ? stepFr(s) : s);
   const pathName = (i: number) => label(paths[i].name ?? `${t.build.levelingPath} ${i + 1}`);
   const last = paths.length - 1;
   const open = (i: number, scroll = false) => {
     setActive(i);
+    setStepIdx(0);
     if (scroll) root.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -133,16 +135,6 @@ export function LevelingTimeline({ paths, storageKey }: { paths: TimelinePath[];
           .
         </p>
       )}
-      {current.rotations.length > 0 && (
-        <div className="mb-5">
-          <h3 className="mb-2 text-sm font-semibold uppercase tracking-wider text-faint">{t.build.campaignRotations}</h3>
-          <div className="grid gap-3 lg:grid-cols-2">
-            {current.rotations.map((r) => (
-              <RotationStrip key={r.name} rotation={{ ...r, name: label(r.name), steps: r.steps.map((st) => ({ ...st, label: st.label && label(st.label) })) }} gemsHref={path("/database/gems")} />
-            ))}
-          </div>
-        </div>
-      )}
       {(() => {
         const all = [...new Set(current.steps.flatMap((st) => st.skills.flatMap((k) => [k.gem.name, ...k.supports.map((x) => x.name)])))];
         const done = all.filter((n) => obtained.has(n)).length;
@@ -162,18 +154,55 @@ export function LevelingTimeline({ paths, storageKey }: { paths: TimelinePath[];
           </div>
         );
       })()}
-      <ol className="relative space-y-4 border-l border-line pl-6">
-        {current.steps.map((step, i) => {
+      {(() => {
+        const progress = current.steps.map((step) => {
           const names = [...new Set(step.skills.flatMap((k) => [k.gem.name, ...k.supports.map((x) => x.name)]))];
           const got = names.filter((n) => obtained.has(n)).length;
-          const complete = names.length > 0 && got === names.length;
-          return (
-          <li key={`${active}-${i}`} className="relative">
-            <span
-              className={`absolute -left-[31px] top-3 flex h-3.5 w-3.5 items-center justify-center rounded-full border bg-bg ${complete ? "border-emerald-400" : "border-gold-soft"}`}
-            >
-              <span className={`h-1.5 w-1.5 rounded-full ${complete ? "bg-emerald-400" : "bg-gold"}`} />
-            </span>
+          return { names, got, complete: names.length > 0 && got === names.length };
+        });
+        const i = Math.min(stepIdx, current.steps.length - 1);
+        const step = current.steps[i];
+        const { names, got, complete } = progress[i];
+        const arrow = "h-9 w-9 shrink-0 rounded-lg border border-line text-muted hover:border-gold-soft hover:text-gold disabled:opacity-30";
+        return (
+          <>
+            {/* The route as a rail: one stop per step, ticked steps in green, the open one in gold. */}
+            <div className="mb-4 flex items-center gap-2">
+              <button type="button" onClick={() => setStepIdx(i - 1)} disabled={i === 0} aria-label={t.build.previousStep} className={arrow}>
+                ‹
+              </button>
+              <ol className="flex min-w-0 flex-1 gap-1 overflow-x-auto py-1 [scrollbar-width:none]">
+                {current.steps.map((st, k) => (
+                  <li key={k} className="shrink-0">
+                    <button
+                      type="button"
+                      onClick={() => setStepIdx(k)}
+                      aria-current={k === i ? "step" : undefined}
+                      className={`flex items-center gap-1.5 whitespace-nowrap rounded-md px-2.5 py-1.5 text-sm transition-colors ${
+                        k === i
+                          ? "bg-gold font-semibold text-black"
+                          : progress[k].complete
+                            ? "text-emerald-300 hover:bg-surface-2"
+                            : "text-muted hover:bg-surface-2 hover:text-ink"
+                      }`}
+                    >
+                      {progress[k].complete && k !== i && <span aria-hidden>✓</span>}
+                      {label(st.name)}
+                    </button>
+                  </li>
+                ))}
+              </ol>
+              <button
+                type="button"
+                onClick={() => setStepIdx(i + 1)}
+                disabled={i === current.steps.length - 1}
+                aria-label={t.build.nextStep}
+                className={arrow}
+              >
+                ›
+              </button>
+            </div>
+            <div key={`${active}-${i}`}>
             <div className={`rounded-xl border bg-surface p-4 ${complete ? "border-emerald-500/40" : "border-line"}`}>
               <div className="flex items-center justify-between gap-3">
                 <h3 className="font-display text-base font-semibold text-gold">{label(step.name)}</h3>
@@ -213,7 +242,7 @@ export function LevelingTimeline({ paths, storageKey }: { paths: TimelinePath[];
               </ul>
               {step.rotations.length > 0 && (
                 <div className="mt-4 space-y-2 border-t border-line pt-3">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-faint">{t.build.rotation}</p>
+                  <p className="text-sm font-semibold text-ink">{t.build.rotation}</p>
                   {step.rotations.map((r) => (
                     <RotationStrip
                       key={r.name}
@@ -224,10 +253,20 @@ export function LevelingTimeline({ paths, storageKey }: { paths: TimelinePath[];
                 </div>
               )}
             </div>
-          </li>
-          );
-        })}
-      </ol>
+            </div>
+          </>
+        );
+      })()}
+      {current.rotations.length > 0 && (
+        <div className="mt-6">
+          <h3 className="mb-2 font-semibold">{t.build.campaignRotations}</h3>
+          <div className="grid gap-3 lg:grid-cols-2">
+            {current.rotations.map((r) => (
+              <RotationStrip key={r.name} rotation={{ ...r, name: label(r.name), steps: r.steps.map((st) => ({ ...st, label: st.label && label(st.label) })) }} gemsHref={path("/database/gems")} />
+            ))}
+          </div>
+        </div>
+      )}
       {active < last && (
         <button
           type="button"
