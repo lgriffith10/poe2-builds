@@ -10,12 +10,32 @@ const TIER_BG: Record<Tier, string> = {
   D: "bg-tier-d",
 };
 
-export function TierBadge({ tier, size = "md" }: { tier: Tier; size?: "sm" | "md" | "lg" }) {
-  const dims = { sm: "h-6 w-6 text-xs", md: "h-8 w-8 text-sm", lg: "h-14 w-14 text-2xl" }[size];
+/** Estimated tiers: outlined and dashed in the tier colour instead of filled. */
+const TIER_ESTIMATED: Record<Tier, string> = {
+  S: "border-tier-s text-tier-s bg-tier-s/15",
+  A: "border-tier-a text-tier-a bg-tier-a/15",
+  B: "border-tier-b text-tier-b bg-tier-b/15",
+  C: "border-tier-c text-tier-c bg-tier-c/15",
+  D: "border-tier-d text-tier-d bg-tier-d/15",
+};
+
+export function TierBadge({
+  tier,
+  size = "md",
+  estimated = false,
+  title,
+}: {
+  tier: Tier;
+  size?: "xs" | "sm" | "md" | "lg";
+  estimated?: boolean;
+  title?: string;
+}) {
+  const dims = { xs: "h-5 w-5 text-[11px]", sm: "h-6 w-6 text-xs", md: "h-8 w-8 text-sm", lg: "h-14 w-14 text-2xl" }[size];
+  const look = estimated ? `${TIER_ESTIMATED[tier]} border-2 border-dashed` : `${TIER_BG[tier]} text-black/80`;
   return (
     <span
-      className={`${TIER_BG[tier]} ${dims} inline-flex shrink-0 items-center justify-center rounded-md font-display font-bold text-black/80`}
-      title={`${tier} tier`}
+      className={`${look} ${dims} inline-flex shrink-0 items-center justify-center rounded-md font-display font-bold`}
+      title={title ?? `${tier} tier`}
     >
       {tier}
     </span>

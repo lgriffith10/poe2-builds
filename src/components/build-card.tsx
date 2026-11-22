@@ -4,13 +4,14 @@ import Link from "next/link";
 import { useI18n } from "@/i18n/client";
 import type { BuildSummary } from "@/lib/build-summary";
 import { classStyle } from "@/lib/classes";
-import { DEFAULT_CATEGORY, type TierCategory } from "@/lib/types";
+import { DEFAULT_CATEGORY, TIER_CATEGORIES, type TierCategory } from "@/lib/types";
 import { FavoriteButton } from "./favorite-button";
 import { ClassEmblem, DifficultyBadge, GemIcon, Pill, TierBadge } from "./ui";
 
 export function BuildCard({ build, category = DEFAULT_CATEGORY }: { build: BuildSummary; category?: TierCategory }) {
   const { t, fmt, path } = useI18n();
-  const tier = build.tiers[category];
+  const rating = build.ratings[category];
+  const tierTitle = (tier: string, estimated: boolean) => (estimated ? fmt(t.common.estimatedTier, { tier }) : `${tier} tier`);
   const { color } = classStyle(build.className);
   return (
     <div className="relative flex">
@@ -27,7 +28,7 @@ export function BuildCard({ build, category = DEFAULT_CATEGORY }: { build: Build
             {build.ascendancy} · {build.className}
           </p>
         </div>
-        {tier && <TierBadge tier={tier} />}
+        {rating && <TierBadge tier={rating.tier} estimated={rating.estimated} title={tierTitle(rating.tier, rating.estimated)} />}
       </div>
       <p className="line-clamp-2 px-4 text-sm text-muted">{build.summary}</p>
       <div className="mt-auto flex items-center gap-1.5 px-4 pt-4">
@@ -35,6 +36,17 @@ export function BuildCard({ build, category = DEFAULT_CATEGORY }: { build: Build
           <GemIcon key={s.name} gem={s} size={32} />
         ))}
         {build.skills.length > 7 && <span className="text-xs text-faint">+{build.skills.length - 7}</span>}
+      </div>
+      <div className="flex flex-wrap gap-x-3 gap-y-1 px-4 pt-3">
+        {TIER_CATEGORIES.map((c) => {
+          const r = build.ratings[c];
+          return r ? (
+            <span key={c} className="flex items-center gap-1.5 text-xs text-muted">
+              <TierBadge tier={r.tier} size="xs" estimated={r.estimated} title={tierTitle(r.tier, r.estimated)} />
+              {t.categories[c]}
+            </span>
+          ) : null;
+        })}
       </div>
       {build.source && (
         <p className="px-4 pt-3 text-xs text-faint">

@@ -189,14 +189,21 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               </div>
             </div>
             <div className="flex gap-4">
-              {TIER_CATEGORIES.map((c) =>
-                build.tiers[c] ? (
+              {TIER_CATEGORIES.map((c) => {
+                const r = build.ratings[c];
+                return r ? (
                   <div key={c} className="flex flex-col items-center gap-1">
-                    <TierBadge tier={build.tiers[c]!} size="lg" />
+                    <TierBadge
+                      tier={r.tier}
+                      size="lg"
+                      estimated={r.estimated}
+                      title={r.estimated ? fmt(tr.common.estimatedTier, { tier: r.tier }) : undefined}
+                    />
                     <span className="text-xs uppercase tracking-wider text-faint">{tr.categories[c]}</span>
+                    {r.estimated && <span className="-mt-1 text-[10px] text-faint">{tr.common.estimated}</span>}
                   </div>
-                ) : null,
-              )}
+                ) : null;
+              })}
             </div>
           </div>
           {build.sample && (

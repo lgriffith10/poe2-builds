@@ -138,8 +138,12 @@ async function CompareBody({ params, searchParams }: Pick<PageProps<"/[lang]/com
       <div className="flex gap-3">
         {TIER_CATEGORIES.map((c) => (
           <div key={c} className="flex flex-col items-center gap-1">
-            {x.tiers[c] ? (
-              <TierBadge tier={x.tiers[c]!} />
+            {x.ratings[c] ? (
+              <TierBadge
+                tier={x.ratings[c].tier}
+                estimated={x.ratings[c].estimated}
+                title={x.ratings[c].estimated ? fmt(t.common.estimatedTier, { tier: x.ratings[c].tier }) : undefined}
+              />
             ) : (
               <span className="flex h-8 w-8 items-center justify-center rounded-md border border-line text-faint">–</span>
             )}

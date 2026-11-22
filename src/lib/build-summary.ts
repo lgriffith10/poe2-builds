@@ -12,6 +12,7 @@ export interface BuildSummary {
   summary: string;
   tags: string[];
   tiers: Build["tiers"];
+  ratings: Build["ratings"];
   tierChanges: Build["tierChanges"];
   difficulty: Build["difficulty"];
   budget: Build["budget"];
@@ -55,6 +56,7 @@ export function summarize(b: Build): BuildSummary {
     summary: b.summary,
     tags: b.tags,
     tiers: b.tiers,
+    ratings: b.ratings,
     tierChanges: b.tierChanges,
     difficulty: b.difficulty,
     budget: b.budget,

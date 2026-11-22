@@ -17,11 +17,11 @@ const CHANGE_STYLE: Record<TierChange, string> = {
 };
 
 export function TierBoard({ builds, category }: { builds: BuildSummary[]; category: TierCategory }) {
-  const { t, path } = useI18n();
+  const { t, fmt, path } = useI18n();
   const [cls, setCls] = useState<string | null>(null);
   const [damage, setDamage] = useState<string | null>(null);
 
-  const ranked = builds.filter((b) => b.tiers[category]);
+  const ranked = builds.filter((b) => b.ratings[category]);
   const classes = useMemo(() => [...new Set(ranked.map((b) => b.className))].sort(), [ranked]);
   const damages = useMemo(() => [...new Set(ranked.flatMap((b) => damageTypes(b.damage)))].sort(), [ranked]);
   const visible = ranked
@@ -67,7 +67,10 @@ export function TierBoard({ builds, category }: { builds: BuildSummary[]; catego
 
       <div className="space-y-3">
         {TIERS.map((tier) => {
-          const inTier = visible.filter((b) => b.tiers[category] === tier);
+          // Sourced tiers first, then estimated ones.
+          const inTier = visible
+            .filter((b) => b.ratings[category]?.tier === tier)
+            .sort((a, b) => Number(a.ratings[category]!.estimated) - Number(b.ratings[category]!.estimated));
           return (
             <div key={tier} className="flex gap-3 rounded-xl border border-line bg-surface p-3">
               <TierBadge tier={tier} size="lg" />
@@ -75,11 +78,15 @@ export function TierBoard({ builds, category }: { builds: BuildSummary[]; catego
                 {inTier.length === 0 && <p className="self-center px-2 text-sm text-faint">{t.tierList.noBuilds}</p>}
                 {inTier.map((b) => {
                   const change = b.tierChanges[category];
+                  const estimated = b.ratings[category]!.estimated;
                   return (
                     <Link
                       key={b.slug}
                       href={path(`/builds/${b.slug}`)}
-                      className="flex items-center gap-3 rounded-lg border border-line bg-surface-2 p-2 hover:border-gold-soft"
+                      title={estimated ? fmt(t.common.estimatedTier, { tier }) : undefined}
+                      className={`flex items-center gap-3 rounded-lg border bg-surface-2 p-2 hover:border-gold-soft ${
+                        estimated ? "border-dashed border-line-strong" : "border-line"
+                      }`}
                     >
                       <ClassEmblem name={b.className} size={36} />
                       <div className="min-w-0 flex-1">
@@ -88,6 +95,11 @@ export function TierBoard({ builds, category }: { builds: BuildSummary[]; catego
                           {b.ascendancy} · {b.damage}
                         </p>
                       </div>
+                      {estimated && (
+                        <span className="shrink-0 rounded border border-dashed border-line-strong px-1.5 py-0.5 text-[10px] uppercase text-faint">
+                          {t.common.estimated}
+                        </span>
+                      )}
                       {change && (
                         <span className={`shrink-0 rounded border px-1.5 py-0.5 text-[10px] font-semibold uppercase ${CHANGE_STYLE[change]}`}>
                           {t.tierList.changes[change]}
@@ -103,6 +115,7 @@ export function TierBoard({ builds, category }: { builds: BuildSummary[]; catego
         })}
       </div>
       <p className="mt-4 text-xs text-faint">{t.tierList.method[category]}</p>
+      <p className="mt-1 text-xs text-faint">{t.tierList.estimatedNote}</p>
     </div>
   );
 }

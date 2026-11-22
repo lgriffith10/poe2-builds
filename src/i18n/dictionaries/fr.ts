@@ -55,6 +55,8 @@ export const fr: Dictionary = {
     allClasses: "Toutes les classes",
     results: "{n} résultats",
     showMore: "Afficher plus ({n} restants)",
+    estimated: "Estimé",
+    estimatedTier: "Tier {tier}, estimé : le guide source ne donne pas de tier ici, celui-ci vient du nettoyage, des dégâts mono-cible, des défenses et du budget du build.",
   },
   levels: {
     easy: "facile",
@@ -145,12 +147,14 @@ export const fr: Dictionary = {
     filterDamage: "Dégâts",
     allDamage: "Tous les types de dégâts",
     changes: { new: "Nouveau", up: "Monte", down: "Descend" },
+    estimatedNote:
+      "Les badges en pointillés sont des estimations : le build n'a pas de tier sourcé ici, il est placé d'après son nettoyage, ses dégâts mono-cible, ses défenses et son budget (calibré sur les tiers sourcés, A au maximum).",
     method: {
-      starter: "Les tiers Début de ligue suivent la League Starter Build Tier List de Maxroll. Les badges Nouveau / Monte / Descend viennent de l'historique de cette liste.",
+      starter: "Les tiers Début de ligue suivent la League Starter Build Tier List de Maxroll ; les builds absents de cette liste reçoivent un tier estimé. Les badges Nouveau / Monte / Descend viennent de l'historique de cette liste.",
       endgame:
-        "Les tiers Endgame viennent des notes sur 5 du guide source : (2 × vitesse de nettoyage + défense) / 3, arrondi (5 = S … 1 = D). Les guides sans note ne sont pas classés ici.",
+        "Les tiers Endgame viennent des notes sur 5 du guide source : (2 × vitesse de nettoyage + défense) / 3, arrondi (5 = S … 1 = D). Les builds sans tier sourcé reçoivent un tier estimé.",
       bossing:
-        "Les tiers Boss viennent des notes sur 5 du guide source : (2 × boss + défense) / 3, arrondi (5 = S … 1 = D). Les guides sans note ne sont pas classés ici.",
+        "Les tiers Boss viennent des notes sur 5 du guide source : (2 × boss + défense) / 3, arrondi (5 = S … 1 = D). Les builds sans tier sourcé reçoivent un tier estimé.",
     },
   },
   build: {

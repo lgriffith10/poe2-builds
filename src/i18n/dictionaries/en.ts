@@ -54,6 +54,8 @@ export const en = {
     allClasses: "All classes",
     results: "{n} results",
     showMore: "Show more ({n} remaining)",
+    estimated: "Estimated",
+    estimatedTier: "{tier} tier, estimated: the source guide gives no tier here, so this one comes from the build's clear, single target, defences and budget.",
   },
   levels: {
     easy: "easy",
@@ -143,12 +145,14 @@ export const en = {
     filterDamage: "Damage",
     allDamage: "All damage types",
     changes: { new: "New", up: "Up", down: "Down" },
+    estimatedNote:
+      "Dashed badges are estimates: the build has no tier from its source here, so it is placed from its clear, single target, defences and budget (calibrated on the sourced tiers, at most A).",
     method: {
-      starter: "League Start tiers follow Maxroll's League Starter Build Tier List. New / Up / Down badges come from that list's changelog.",
+      starter: "League Start tiers follow Maxroll's League Starter Build Tier List; builds missing from it get an estimated tier. New / Up / Down badges come from that list's changelog.",
       endgame:
-        "Endgame tiers come from the source guide's own ratings out of 5: (2 x clear speed + defence) / 3, rounded (5 = S … 1 = D). Guides without ratings are not ranked here.",
+        "Endgame tiers come from the source guide's own ratings out of 5: (2 x clear speed + defence) / 3, rounded (5 = S … 1 = D). Builds without a sourced tier get an estimated one.",
       bossing:
-        "Bossing tiers come from the source guide's own ratings out of 5: (2 x bossing + defence) / 3, rounded (5 = S … 1 = D). Guides without ratings are not ranked here.",
+        "Bossing tiers come from the source guide's own ratings out of 5: (2 x bossing + defence) / 3, rounded (5 = S … 1 = D). Builds without a sourced tier get an estimated one.",
     },
   },
   build: {

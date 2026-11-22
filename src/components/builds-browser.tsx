@@ -64,8 +64,9 @@ export function BuildsBrowser({ builds, classes }: { builds: BuildSummary[]; cla
     const matchesSource = (b: BuildSummary) =>
       !source || (b.source?.site === site && (kind === "site" || b.source.author === author));
     const rank = (b: BuildSummary) => {
-      const t = b.tiers[category];
-      return t ? TIERS.indexOf(t) : TIERS.length;
+      // Sourced tiers before estimated ones of the same letter.
+      const r = b.ratings[category];
+      return r ? TIERS.indexOf(r.tier) * 2 + (r.estimated ? 1 : 0) : TIERS.length * 2;
     };
     return list
       .filter((b) => !onlyFavorites || favorites.has(b.slug))

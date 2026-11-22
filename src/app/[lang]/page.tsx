@@ -358,9 +358,9 @@ function FeaturedBuild({
       </div>
       <div className="mt-5 flex justify-center gap-4">
         {TIER_CATEGORIES.map((c) =>
-          build.tiers[c] ? (
+          build.ratings[c] ? (
             <div key={c} className="flex flex-col items-center gap-1">
-              <TierBadge tier={build.tiers[c]!} />
+              <TierBadge tier={build.ratings[c].tier} estimated={build.ratings[c].estimated} />
               <span className="text-[11px] text-muted">{tierLabels[c]}</span>
             </div>
           ) : null,

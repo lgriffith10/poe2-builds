@@ -11,6 +11,7 @@ import { renderFlow, renderLoot } from "./diagrams";
 import { currencyHref, currencyTip, getCurrency } from "./currency";
 import { allocateTargets, allocateWeaponSetTargets, createGraph, findNodeByName, isAllocatable, pruneDisconnected, roots } from "./tree";
 import { encodeBuild } from "./build-code";
+import { buildRatings, type Ratings } from "./ratings";
 import { MECHANICS, parseFarming, type FarmingProfile, type MechanicId } from "./farming";
 import { DEFAULT_LOCALE, localePath, type Locale } from "@/i18n/config";
 import {
@@ -76,7 +77,10 @@ export interface Build {
   playstyle: string;
   difficulty: Difficulty;
   budget: "low" | "medium" | "high";
+  /** Tiers from the source guide's tier list (or derived from its ratings). */
   tiers: Partial<Record<TierCategory, Tier>>;
+  /** Note in every category: the sourced tier, or one estimated from the farming profile (see ratings.ts). */
+  ratings: Partial<Ratings>;
   /** Movement since the previous version of the source tier list, when the source says so. */
   tierChanges: Partial<Record<TierCategory, TierChange>>;
   pros: string[];
@@ -478,6 +482,7 @@ function parseBuild(file: string): { build: Build; markdown: string } {
       : fail(`Invalid difficulty "${fm.difficulty}" (expected ${DIFFICULTIES.join(", ")})`),
     budget: fm.budget ?? "medium",
     tiers,
+    ratings: buildRatings(tiers, farming, fm.budget ?? "medium"),
     tierChanges,
     pros: fm.pros ?? [],
     cons: fm.cons ?? [],
@@ -564,13 +569,13 @@ function localizeBuild(file: string, base: { build: Build; markdown: string }, l
 // The cache lives on globalThis to survive dev module reloads.
 type Parsed = { build: Build; markdown: string };
 const store = globalThis as typeof globalThis & {
-  __buildCacheV17?: {
+  __buildCacheV18?: {
     files: Map<string, { stamp: string; parsed: Parsed }>;
     lists: Map<Locale, { key: string; list: Build[] }>;
   };
 };
 // Versioned key: a dev server still holding a cache in an older shape (hot reload keeps globalThis) gets a fresh one.
-const cache = (store.__buildCacheV17 ??= { files: new Map(), lists: new Map() });
+const cache = (store.__buildCacheV18 ??= { files: new Map(), lists: new Map() });
 
 const mtime = (p: string) => (fs.existsSync(p) ? fs.statSync(p).mtimeMs : 0);
 
