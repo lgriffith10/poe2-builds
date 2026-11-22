@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cinzel, Inter } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { NavProgress } from "@/components/nav-progress";
 import type { SearchEntry } from "@/components/search-dialog";
 import { getBuilds } from "@/lib/builds";
 import { getGuides } from "@/lib/guides";
@@ -57,6 +58,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     <html lang={lang} className={`${inter.variable} ${cinzel.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         <I18nProvider lang={lang} t={t}>
+          <NavProgress />
           <SiteHeader search={search} />
           <main className="flex-1">{children}</main>
           <SiteFooter lang={lang} />

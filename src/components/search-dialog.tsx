@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { startNavProgress } from "./nav-progress";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useI18n } from "@/i18n/client";
 import type { Gem } from "@/lib/types";
@@ -110,6 +111,7 @@ export function SearchDialog({ entries }: { entries: SearchEntry[] }) {
     if (!r) return;
     setOpen(false);
     setQuery("");
+    if (new URL(r.href, location.href).pathname !== location.pathname) startNavProgress();
     router.push(r.href);
   };
   const onKeyDown = (e: React.KeyboardEvent) => {

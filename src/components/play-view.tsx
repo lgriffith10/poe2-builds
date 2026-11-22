@@ -9,6 +9,7 @@ import type { StatPriorityStage } from "@/lib/stat-priority";
 import type { PassiveStep, PlannerState, TreeVariant } from "@/lib/types";
 import { BuildTreeViewer } from "./build-tree-viewer";
 import { supportKey } from "@/lib/gem-checklist";
+import { CAMPAIGN_REWARDS, CAMPAIGN_REWARDS_SOURCE, stepParts, type CampaignPart, type RewardKind } from "@/lib/campaign-rewards";
 import { Check, useObtained, type TimelineGem, type TimelinePath } from "./leveling-timeline";
 import { TipScope } from "./ref-tooltips";
 import type { RotationGem, RotationView } from "./rotation-strip";
@@ -19,6 +20,7 @@ import type { TradeSearch } from "@/lib/trade";
 import { useTradeLevel } from "@/lib/trade-level";
 
 export interface PlayGearItem {
+  slot: string;
   slotLabel: string;
   title: string;
   kind: "unique" | "rare";
@@ -273,6 +275,7 @@ function Panel({
   }, [at, go, close]);
 
   const step = stop?.kind === "step" ? route?.steps[stop.index] : undefined;
+  const parts = useMemo(() => stepParts((route?.steps ?? []).map((s) => s.name)), [route]);
   const gearStage = stop?.kind === "gear" ? gear[stop.index] : campaign;
   const treeVariant = variantFor(stop, step?.name, stop?.kind === "gear" ? gear[stop.index]?.id : undefined, tree.variants);
   const stepRotations = step ? [...step.rotations, ...(stop!.index === 0 ? route!.rotations : [])] : rotations;
@@ -345,7 +348,10 @@ function Panel({
           <div className="min-h-0 flex-1 overflow-y-auto p-4">
             {tab === "gems" &&
               (step ? (
-                <StepGems step={step} next={route!.steps[stop!.index + 1]} obtained={obtained} toggle={toggle} />
+                <>
+                  <StepGems step={step} next={route!.steps[stop!.index + 1]} obtained={obtained} toggle={toggle} />
+                  <CampaignRewards slug={slug} parts={parts[stop!.index] ?? []} />
+                </>
               ) : (
                 <FinalGems skills={skills} />
               ))}
@@ -356,7 +362,7 @@ function Panel({
                 ))}
               </div>
             )}
-            {tab === "gear" && <GearTab stage={gearStage ?? null} />}
+            {tab === "gear" && <GearTab slug={slug} stage={gearStage ?? null} />}
             {tab === "more" && (
               <More ascendancy={ascendancy} links={links} plannerHref={plannerHref} close={close} />
             )}
@@ -564,9 +570,11 @@ function MiniRotation({ rotation, label }: { rotation: RotationView; label: (s: 
   );
 }
 
-function GearTab({ stage }: { stage: PlayGearStage | null }) {
-  const { t } = useI18n();
+function GearTab({ slug, stage }: { slug: string; stage: PlayGearStage | null }) {
+  const { t, fmt } = useI18n();
   const tp = t.build.play;
+  // Own store, so "untick all" on the gem checklist leaves the gear alone.
+  const { obtained, toggle } = useObtained(`gear:${slug}`);
   if (!stage) return <p className="text-sm text-muted">{tp.noGear}</p>;
   const stats = stage.stats;
   return (
@@ -593,10 +601,15 @@ function GearTab({ stage }: { stage: PlayGearStage | null }) {
       )}
       {stage.items.length > 0 && (
         <>
-          <Heading>{tp.gearList}</Heading>
+          <div className="flex items-baseline justify-between gap-2">
+            <Heading>{tp.gearList}</Heading>
+            <span className="text-xs tabular-nums text-faint">
+              {fmt(tp.gearCount, { n: stage.items.filter((i) => obtained.has(gearKey(i))).length, total: stage.items.length })}
+            </span>
+          </div>
           <ul className="space-y-1">
             {stage.items.map((i, n) => (
-              <GearRow key={`${stage.id}-${n}`} item={i} />
+              <GearRow key={`${stage.id}-${n}`} item={i} on={obtained.has(gearKey(i))} toggle={() => toggle(gearKey(i))} />
             ))}
           </ul>
         </>
@@ -605,25 +618,37 @@ function GearTab({ stage }: { stage: PlayGearStage | null }) {
   );
 }
 
+/** Slot and item: an item kept from one stage to the next stays ticked. */
+const gearKey = (i: PlayGearItem) => `${i.slot}:${i.title}`;
+
 /** One slot of the gear list: name on one line, and what to look for once opened. */
-function GearRow({ item: i }: { item: PlayGearItem }) {
-  const { t, lang } = useI18n();
+function GearRow({ item: i, on, toggle }: { item: PlayGearItem; on: boolean; toggle: () => void }) {
+  const { t, lang, fmt } = useI18n();
+  const check = <Check on={on} label={fmt(t.build.play.gearToggle, { item: i.title })} onClick={toggle} />;
   const [level] = useTradeLevel();
   const hasDetails = i.mods.length > 0 || i.grantsUsed.length > 0 || i.runes.length > 0 || i.note || i.trade;
   const head = (
     <>
       {i.icon ? <img src={i.icon} alt="" width={28} height={28} className="h-7 w-7 shrink-0 object-contain" /> : <span className="h-7 w-7 shrink-0" />}
-      <span className="min-w-0 flex-1">
+      <span className={`min-w-0 flex-1 ${on ? "opacity-50" : ""}`}>
         <span className="block text-[11px] leading-tight text-faint">{i.slotLabel}</span>
         <span className={`block truncate text-sm ${i.kind === "unique" ? "text-unique" : "text-[#e8d47a]"}`}>{i.title}</span>
       </span>
       {i.price && <Price tag={i.price} alt={i.price.unit === "divine" ? "Divine Orb" : "Exalted Orb"} />}
     </>
   );
-  if (!hasDetails) return <li className="flex items-center gap-2 rounded-lg px-1.5 py-1">{head}</li>;
+  if (!hasDetails)
+    return (
+      <li className="flex items-center gap-2 rounded-lg px-1.5 py-1">
+        {check}
+        {head}
+      </li>
+    );
   return (
-    <li>
-      <details className="group rounded-lg border border-transparent open:border-line open:bg-surface">
+    <li className="flex items-start gap-1">
+      {/* The box sits outside the summary so ticking does not open the details. */}
+      <span className="pt-2.5 pl-1.5">{check}</span>
+      <details className="group min-w-0 flex-1 rounded-lg border border-transparent open:border-line open:bg-surface">
         <summary className="flex cursor-pointer list-none items-center gap-2 rounded-lg px-1.5 py-1 hover:bg-surface-2 [&::-webkit-details-marker]:hidden">
           {head}
           <span aria-hidden className="shrink-0 text-xs text-faint transition-transform group-open:rotate-90">
@@ -677,6 +702,69 @@ function GearRow({ item: i }: { item: PlayGearItem }) {
         </div>
       </details>
     </li>
+  );
+}
+
+const KIND_COLOR: Record<RewardKind, string> = {
+  points: "text-gold",
+  spirit: "text-[#c9a7f5]",
+  res: "text-[#8fb6f0]",
+  life: "text-red-300",
+  choice: "text-sky-300",
+  ascend: "text-emerald-300",
+};
+
+/** Permanent campaign bonuses of the acts a leveling step covers, each ticked once taken. */
+function CampaignRewards({ slug, parts }: { slug: string; parts: CampaignPart[] }) {
+  const { t, fmt, lang } = useI18n();
+  const tp = t.build.play;
+  const { obtained, toggle } = useObtained(`campaign:${slug}`);
+  const rewards = CAMPAIGN_REWARDS.filter((r) => parts.includes(r.part));
+  if (!rewards.length) return null;
+  const done = rewards.filter((r) => obtained.has(r.id)).length;
+  return (
+    <section className="mt-5 border-t border-line pt-4">
+      <div className="flex items-baseline justify-between gap-2">
+        <Heading>{tp.rewards}</Heading>
+        <span className={`text-xs tabular-nums ${done === rewards.length ? "text-emerald-300" : "text-faint"}`}>
+          {fmt(tp.rewardsCount, { n: done, total: rewards.length })}
+        </span>
+      </div>
+      <p className="-mt-1 mb-3 text-xs text-faint">{tp.rewardsHint}</p>
+      {parts.map((part) => {
+        const list = rewards.filter((r) => r.part === part);
+        if (!list.length) return null;
+        return (
+          <div key={part} className="mb-3">
+            {parts.length > 1 && (
+              <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-faint">
+                {part === 5 ? tp.interludes : fmt(tp.act, { n: part })}
+              </p>
+            )}
+            <ul className="space-y-2">
+              {list.map((r) => {
+                const on = obtained.has(r.id);
+                return (
+                  <li key={r.id} className="flex items-start gap-2">
+                    <span className="pt-0.5">
+                      <Check on={on} label={fmt(tp.rewardToggle, { reward: r.reward[lang] })} onClick={() => toggle(r.id)} size="sm" />
+                    </span>
+                    <span className={`min-w-0 text-sm ${on ? "opacity-50" : ""}`}>
+                      <span className={`font-semibold ${KIND_COLOR[r.kind]}`}>{r.reward[lang]}</span>
+                      <span className="text-faint"> · {r.zone}</span>
+                      <span className="block text-xs text-muted">{r.how[lang]}</span>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        );
+      })}
+      <a href={CAMPAIGN_REWARDS_SOURCE} target="_blank" rel="noopener noreferrer" className="text-xs text-faint hover:text-gold">
+        {tp.rewardsSource} ↗
+      </a>
+    </section>
   );
 }
 

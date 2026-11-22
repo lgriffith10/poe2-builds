@@ -144,6 +144,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
     id: inventory.stages[i].id,
     label: inventory.stages[i].label || tr.common.gear,
     items: inventory.stages[i].items.map((it) => ({
+      slot: it.slot,
       slotLabel: it.slotLabel,
       title: it.title,
       kind: it.kind,
