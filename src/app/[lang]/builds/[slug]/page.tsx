@@ -18,6 +18,7 @@ import { PlayView, type PlayGearStage } from "@/components/play-view";
 import { BuildTabs } from "@/components/build-tabs";
 import { classStyle } from "@/lib/classes";
 import { GemCheck, SkillGroupDone, SkillsProgress } from "@/components/gem-checklist";
+import { supportKey } from "@/lib/gem-checklist";
 import { RotationStrip, type RotationGem, type RotationView } from "@/components/rotation-strip";
 import { stepFr } from "@/lib/step-labels";
 import { ClassEmblem, GemIcon, Pill, SectionTitle, TierBadge } from "@/components/ui";
@@ -142,7 +143,19 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
   const playStage = (i: number): PlayGearStage => ({
     id: inventory.stages[i].id,
     label: inventory.stages[i].label || tr.common.gear,
-    items: inventory.stages[i].items.map((it) => ({ slotLabel: it.slotLabel, title: it.title, kind: it.kind, icon: it.icon })),
+    items: inventory.stages[i].items.map((it) => ({
+      slotLabel: it.slotLabel,
+      title: it.title,
+      kind: it.kind,
+      icon: it.icon,
+      mods: it.mods,
+      ranked: it.ranked,
+      grantsUsed: it.grantsUsed,
+      runes: it.runes.map((r) => ({ count: r.count, name: r.name, effect: r.effect, icon: r.icon })),
+      note: it.note,
+      trade: it.trade,
+      price: it.price,
+    })),
     stats: statStages[i] ?? null,
   });
   const campaignIndex = inventory.stages.findIndex((s) => s.id === "campaign");
@@ -340,7 +353,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
           <section id="skills" data-panel="skills" className="scroll-mt-32">
             <SectionTitle sub={tr.build.skillsSub}>{tr.common.skills}</SectionTitle>
             <p className="-mt-3 mb-4 text-xs text-faint">{tr.build.skillFromHint}</p>
-            <SkillsProgress slug={build.slug} gems={build.skills.flatMap((s) => [s.gem, ...s.supports])} />
+            <SkillsProgress slug={build.slug} gems={build.skills.flatMap((s) => [s.gem, ...s.supports.map((x) => supportKey(s.gem, x))])} />
             <div className="grid gap-3 lg:grid-cols-2">
               {build.skills.map((s) => {
                 const gem = getGem(s.gem)!;
@@ -371,7 +384,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                               {s.weaponSet === 1 ? tr.tree.weaponSet1 : tr.tree.weaponSet2}
                             </span>
                           )}
-                          <SkillGroupDone slug={build.slug} gems={[s.gem, ...s.supports]} />
+                          <SkillGroupDone slug={build.slug} gems={[s.gem, ...s.supports.map((x) => supportKey(s.gem, x))]} />
                           {s.level && (
                             <span className="whitespace-nowrap rounded-full border border-sky-400/60 px-2 py-0.5 text-xs text-sky-300" title={tr.build.gemLevelHint}>
                               {fmt(tr.build.gemLevel, { level: s.level })}
@@ -390,7 +403,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                               key={name}
                               className="flex items-center gap-1 rounded-md border border-line bg-surface-2 py-0.5 pl-1 pr-2 text-xs text-muted"
                             >
-                              <GemCheck slug={build.slug} gem={sup.name} size="sm" />
+                              <GemCheck slug={build.slug} gem={sup.name} skill={s.gem} size="sm" />
                               <Link href={path(`/database/gems#${sup.id}`)} data-tip={gemTip(sup.name)} className="flex items-center gap-1.5 hover:text-ink">
                                 <GemIcon gem={sup} size={22} />
                                 {sup.name}

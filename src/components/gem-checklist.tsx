@@ -1,16 +1,20 @@
 "use client";
 
 import { useI18n } from "@/i18n/client";
+import { supportKey } from "@/lib/gem-checklist";
 import { Check, useObtained } from "./leveling-timeline";
 
 // Ticks for the build page's skill section. Same per-build store as the leveling checklist, so a gem ticked in one
-// place is ticked everywhere on the page.
+// place is ticked everywhere on the page. Supports are keyed per skill: ticking one under a skill leaves it unticked
+// under the others.
 
 /** One gem's "obtained" box. */
-export function GemCheck({ slug, gem, size = "md" }: { slug: string; gem: string; size?: "sm" | "md" }) {
+export function GemCheck({ slug, gem, skill, size = "md" }: { slug: string; gem: string; skill?: string; size?: "sm" | "md" }) {
   const { t, fmt } = useI18n();
   const { obtained, toggle } = useObtained(slug);
-  return <Check on={obtained.has(gem)} label={fmt(t.build.checklistToggle, { gem })} onClick={() => toggle(gem)} size={size} />;
+  // A support is ticked under its skill only (see supportKey).
+  const key = skill ? supportKey(skill, gem) : gem;
+  return <Check on={obtained.has(key)} label={fmt(t.build.checklistToggle, { gem })} onClick={() => toggle(key)} size={size} />;
 }
 
 /** "Complete" badge of a skill group, once the skill and all its supports are ticked. */

@@ -67,7 +67,7 @@ export function Price({ tag, alt }: { tag: PriceTag; alt: string }) {
 }
 
 /** Link to the trade site with the search prefilled; the level, when given, caps the required level. */
-function tradeUrl(t: TradeSearch, level: number | null) {
+export function tradeUrl(t: TradeSearch, level: number | null) {
   const query = t.query as { filters?: object };
   const q = level ? { ...query, filters: { ...query.filters, req_filters: { filters: { lvl: { max: level } } } } } : query;
   return `https://www.pathofexile.com/trade2/search/poe2/${encodeURIComponent(t.league)}?q=${encodeURIComponent(JSON.stringify({ query: q, sort: t.sort ?? { price: "asc" } }))}`;

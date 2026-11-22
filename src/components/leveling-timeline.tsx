@@ -1,5 +1,6 @@
 "use client";
 
+import { supportKey } from "@/lib/gem-checklist";
 import Link from "next/link";
 import { useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useI18n } from "@/i18n/client";
@@ -136,7 +137,7 @@ export function LevelingTimeline({ paths, storageKey }: { paths: TimelinePath[];
         </p>
       )}
       {(() => {
-        const all = [...new Set(current.steps.flatMap((st) => st.skills.flatMap((k) => [k.gem.name, ...k.supports.map((x) => x.name)])))];
+        const all = [...new Set(current.steps.flatMap((st) => st.skills.flatMap((k) => [k.gem.name, ...k.supports.map((x) => supportKey(k.gem.name, x.name))])))];
         const done = all.filter((n) => obtained.has(n)).length;
         return (
           <div className="mb-5 flex flex-wrap items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3 text-sm">
@@ -156,7 +157,7 @@ export function LevelingTimeline({ paths, storageKey }: { paths: TimelinePath[];
       })()}
       {(() => {
         const progress = current.steps.map((step) => {
-          const names = [...new Set(step.skills.flatMap((k) => [k.gem.name, ...k.supports.map((x) => x.name)]))];
+          const names = [...new Set(step.skills.flatMap((k) => [k.gem.name, ...k.supports.map((x) => supportKey(k.gem.name, x.name))]))];
           const got = names.filter((n) => obtained.has(n)).length;
           return { names, got, complete: names.length > 0 && got === names.length };
         });
@@ -227,10 +228,10 @@ export function LevelingTimeline({ paths, storageKey }: { paths: TimelinePath[];
                       <span
                         key={s.name}
                         className={`flex items-center gap-1 rounded-md border bg-surface-2 py-0.5 pl-1 pr-2 text-xs ${
-                          obtained.has(s.name) ? "border-emerald-500/40 text-muted" : s.isNew ? "border-gold-soft text-ink" : "border-line text-muted"
+                          obtained.has(supportKey(gem.name, s.name)) ? "border-emerald-500/40 text-muted" : s.isNew ? "border-gold-soft text-ink" : "border-line text-muted"
                         }`}
                       >
-                        <Check on={obtained.has(s.name)} label={fmt(t.build.checklistToggle, { gem: s.name })} onClick={() => toggle(s.name)} size="sm" />
+                        <Check on={obtained.has(supportKey(gem.name, s.name))} label={fmt(t.build.checklistToggle, { gem: s.name })} onClick={() => toggle(supportKey(gem.name, s.name))} size="sm" />
                         <Link href={path(`/database/gems#${s.id}`)} data-tip={s.tip} className="flex items-center gap-1.5 hover:text-ink">
                           <GemIcon gem={s} size={20} />
                           {s.name}

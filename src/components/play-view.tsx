@@ -8,15 +8,36 @@ import { stepFr } from "@/lib/step-labels";
 import type { StatPriorityStage } from "@/lib/stat-priority";
 import type { PassiveStep, PlannerState, TreeVariant } from "@/lib/types";
 import { BuildTreeViewer } from "./build-tree-viewer";
+import { supportKey } from "@/lib/gem-checklist";
 import { Check, useObtained, type TimelineGem, type TimelinePath } from "./leveling-timeline";
 import { TipScope } from "./ref-tooltips";
 import type { RotationGem, RotationView } from "./rotation-strip";
 import { GemIcon } from "./ui";
+import { Price, tradeUrl } from "./gear-inventory";
+import type { PriceTag } from "@/lib/prices";
+import type { TradeSearch } from "@/lib/trade";
+import { useTradeLevel } from "@/lib/trade-level";
+
+export interface PlayGearItem {
+  slotLabel: string;
+  title: string;
+  kind: "unique" | "rare";
+  icon: string | null;
+  /** Rares: modifiers to look for (by priority when `ranked`); uniques: the item's modifiers. */
+  mods: string[];
+  ranked: boolean;
+  /** Skills the build takes from this rare's base ("Grants Skill: Level # …"). */
+  grantsUsed: string[];
+  runes: { count: number; name: string | null; effect: string; icon: string | null }[];
+  note: string | null;
+  trade: TradeSearch | null;
+  price: PriceTag | null;
+}
 
 export interface PlayGearStage {
   id: string;
   label: string;
-  items: { slotLabel: string; title: string; kind: "unique" | "rare"; icon: string | null }[];
+  items: PlayGearItem[];
   stats: StatPriorityStage | null;
 }
 
@@ -466,7 +487,7 @@ function StepGems({
               <div className="mt-1.5 flex flex-wrap gap-1 pl-7">
                 {supports.map((s) => (
                   <SupportChip key={s.name} gem={s}>
-                    <Check on={obtained.has(s.name)} label={fmt(t.build.checklistToggle, { gem: s.name })} onClick={() => toggle(s.name)} size="sm" />
+                    <Check on={obtained.has(supportKey(gem.name, s.name))} label={fmt(t.build.checklistToggle, { gem: s.name })} onClick={() => toggle(supportKey(gem.name, s.name))} size="sm" />
                   </SupportChip>
                 ))}
               </div>
@@ -573,18 +594,89 @@ function GearTab({ stage }: { stage: PlayGearStage | null }) {
       {stage.items.length > 0 && (
         <>
           <Heading>{tp.gearList}</Heading>
-          <ul className="space-y-1.5">
+          <ul className="space-y-1">
             {stage.items.map((i, n) => (
-              <li key={n} className="flex items-center gap-2 text-sm">
-                {i.icon ? <img src={i.icon} alt="" width={24} height={24} className="h-6 w-6 object-contain" /> : <span className="h-6 w-6" />}
-                <span className="w-20 shrink-0 truncate text-xs text-faint">{i.slotLabel}</span>
-                <span className={`min-w-0 truncate ${i.kind === "unique" ? "text-unique" : "text-[#e8d47a]"}`}>{i.title}</span>
-              </li>
+              <GearRow key={`${stage.id}-${n}`} item={i} />
             ))}
           </ul>
         </>
       )}
     </>
+  );
+}
+
+/** One slot of the gear list: name on one line, and what to look for once opened. */
+function GearRow({ item: i }: { item: PlayGearItem }) {
+  const { t, lang } = useI18n();
+  const [level] = useTradeLevel();
+  const hasDetails = i.mods.length > 0 || i.grantsUsed.length > 0 || i.runes.length > 0 || i.note || i.trade;
+  const head = (
+    <>
+      {i.icon ? <img src={i.icon} alt="" width={28} height={28} className="h-7 w-7 shrink-0 object-contain" /> : <span className="h-7 w-7 shrink-0" />}
+      <span className="min-w-0 flex-1">
+        <span className="block text-[11px] leading-tight text-faint">{i.slotLabel}</span>
+        <span className={`block truncate text-sm ${i.kind === "unique" ? "text-unique" : "text-[#e8d47a]"}`}>{i.title}</span>
+      </span>
+      {i.price && <Price tag={i.price} alt={i.price.unit === "divine" ? "Divine Orb" : "Exalted Orb"} />}
+    </>
+  );
+  if (!hasDetails) return <li className="flex items-center gap-2 rounded-lg px-1.5 py-1">{head}</li>;
+  return (
+    <li>
+      <details className="group rounded-lg border border-transparent open:border-line open:bg-surface">
+        <summary className="flex cursor-pointer list-none items-center gap-2 rounded-lg px-1.5 py-1 hover:bg-surface-2 [&::-webkit-details-marker]:hidden">
+          {head}
+          <span aria-hidden className="shrink-0 text-xs text-faint transition-transform group-open:rotate-90">
+            ›
+          </span>
+        </summary>
+        <div className="space-y-2 px-2.5 pb-2.5 pt-1 text-sm">
+          {i.grantsUsed.length > 0 && (
+            <ul className="space-y-0.5 text-xs text-[#8fb6f0]">
+              {i.grantsUsed.map((g) => (
+                <li key={g}>{g}</li>
+              ))}
+            </ul>
+          )}
+          {i.mods.length > 0 &&
+            (i.ranked ? (
+              <StatList stats={i.mods} />
+            ) : (
+              <ul className="space-y-0.5 text-[#8fb6f0]">
+                {i.mods.map((m) => (
+                  <li key={m}>{m}</li>
+                ))}
+              </ul>
+            ))}
+          {i.runes.length > 0 && (
+            <ul className="space-y-1 border-t border-line pt-2 text-xs">
+              {i.runes.map((r, k) => (
+                <li key={k} className="flex items-center gap-1.5">
+                  {r.icon ? <img src={r.icon} alt="" width={18} height={18} className="h-[18px] w-[18px] object-contain" /> : <span className="h-[18px] w-[18px]" />}
+                  <span className="text-muted">
+                    {r.count > 1 && `${r.count}× `}
+                    {r.name && <span className="text-ink">{r.name}</span>}
+                    {r.name && r.effect && (lang === "fr" ? " : " : ": ")}
+                    {r.effect}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {i.note && <p className="border-t border-line pt-2 text-xs text-muted">{i.note}</p>}
+          {i.trade && (
+            <a
+              href={tradeUrl(i.trade, level)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 rounded-md border border-gold-soft px-2 py-0.5 text-xs text-gold hover:bg-surface-2"
+            >
+              ⇄ {t.build.tradeSearch} ↗
+            </a>
+          )}
+        </div>
+      </details>
+    </li>
   );
 }
 
