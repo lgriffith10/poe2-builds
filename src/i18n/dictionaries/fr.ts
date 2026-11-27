@@ -87,6 +87,17 @@ export const fr: Dictionary = {
     intro:
       "Des guides de builds pour chaque classe et ascendance, classés pour le début de ligue, les cartes en endgame et les boss. Ouvrez n'importe quel build dans le planner pour ajuster son arbre passif.",
   },
+  beginner: {
+    title: "Vous débutez ? Commencez par ceux-là",
+    sub: "Des builds faciles à jouer et peu chers à équiper : peu de touches à enchaîner, pas de longue préparation contre les boss, et un équipement qu'on trouve ou achète pour pas cher.",
+    guide: "Guide du débutant",
+    badge: "Débutant",
+    badgeTitle: "Recommandé pour débuter : facile à jouer et peu cher à équiper",
+    filter: "Pour débuter uniquement",
+    noUnique: "Aucun unique requis",
+    oneUnique: "{n} unique en endgame",
+    uniques: "{n} uniques en endgame",
+  },
   home: {
     kicker: "Path of Exile 2 · {league} · Patch {v}",
     title: "Votre codex pour Path of Exile 2",

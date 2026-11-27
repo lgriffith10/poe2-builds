@@ -85,6 +85,17 @@ export const en = {
     intro:
       "Build guides for every class and ascendancy, ranked for league start, endgame mapping and bossing. Open any build in the planner to tweak its passive tree.",
   },
+  beginner: {
+    title: "New to the game? Start here",
+    sub: "Builds that are easy to play and cheap to gear: few buttons to press, no long setup against bosses, and gear you find or buy for little.",
+    guide: "Beginner's guide",
+    badge: "Beginner",
+    badgeTitle: "Recommended for new players: easy to play and cheap to gear",
+    filter: "Beginner-friendly only",
+    noUnique: "No unique needed",
+    oneUnique: "{n} unique in endgame",
+    uniques: "{n} uniques in endgame",
+  },
   home: {
     kicker: "Path of Exile 2 · {league} · Patch {v}",
     title: "Your codex for Path of Exile 2",

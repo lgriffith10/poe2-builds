@@ -20,13 +20,15 @@ export function TierBoard({ builds, category }: { builds: BuildSummary[]; catego
   const { t, fmt, path } = useI18n();
   const [cls, setCls] = useState<string | null>(null);
   const [damage, setDamage] = useState<string | null>(null);
+  const [beginner, setBeginner] = useState(false);
 
   const ranked = builds.filter((b) => b.ratings[category]);
   const classes = useMemo(() => [...new Set(ranked.map((b) => b.className))].sort(), [ranked]);
   const damages = useMemo(() => [...new Set(ranked.flatMap((b) => damageTypes(b.damage)))].sort(), [ranked]);
   const visible = ranked
     .filter((b) => !cls || b.className === cls)
-    .filter((b) => !damage || damageTypes(b.damage).includes(damage));
+    .filter((b) => !damage || damageTypes(b.damage).includes(damage))
+    .filter((b) => !beginner || b.beginner);
 
   const chip = (active: boolean) =>
     `rounded-lg border px-3 py-1.5 text-sm ${active ? "border-gold-soft bg-surface-2 text-gold" : "border-line text-muted hover:text-ink"}`;
@@ -51,6 +53,20 @@ export function TierBoard({ builds, category }: { builds: BuildSummary[]; catego
               {c}
             </button>
           ))}
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="w-24" />
+          <button
+            type="button"
+            aria-pressed={beginner}
+            onClick={() => setBeginner(!beginner)}
+            className={`rounded-lg border px-3 py-1.5 text-sm ${
+              beginner ? "border-emerald-500/60 bg-emerald-500/10 text-emerald-300" : "border-line text-muted hover:text-ink"
+            }`}
+          >
+            {beginner ? "✓ " : ""}
+            {t.beginner.filter}
+          </button>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <span className="w-24 text-xs uppercase tracking-wider text-faint">{t.tierList.filterDamage}</span>
@@ -95,6 +111,14 @@ export function TierBoard({ builds, category }: { builds: BuildSummary[]; catego
                           {b.ascendancy} · {b.damage}
                         </p>
                       </div>
+                      {b.beginner && (
+                        <span
+                          title={t.beginner.badgeTitle}
+                          className="shrink-0 rounded border border-emerald-500/50 bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-emerald-300"
+                        >
+                          {t.beginner.badge}
+                        </span>
+                      )}
                       {estimated && (
                         <span className="shrink-0 rounded border border-dashed border-line-strong px-1.5 py-0.5 text-[10px] uppercase text-faint">
                           {t.common.estimated}

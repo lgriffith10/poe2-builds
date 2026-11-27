@@ -3,6 +3,7 @@ import { getBuilds } from "@/lib/builds";
 import { summarize } from "@/lib/build-summary";
 import { fmt, getDictionary, localePath, type Locale } from "@/i18n";
 import { TIER_CATEGORIES, type TierCategory } from "@/lib/types";
+import { BeginnerPicks } from "./beginner-picks";
 import { TierBoard } from "./tier-board";
 import { PageHeader } from "./ui";
 
@@ -25,6 +26,9 @@ export function TierListPage({ category, lang }: { category: TierCategory; lang:
           ))}
         </div>
       </PageHeader>
+      <div className="mx-auto max-w-7xl px-4 pt-8">
+        <BeginnerPicks lang={lang} />
+      </div>
       <TierBoard builds={builds} category={category} />
     </>
   );

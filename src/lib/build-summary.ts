@@ -1,5 +1,6 @@
 import "server-only";
 import type { Build } from "./builds";
+import { isBeginnerPick } from "./beginner";
 import { getGem } from "./data";
 import type { Gem } from "./types";
 
@@ -19,6 +20,8 @@ export interface BuildSummary {
   damage: string;
   playstyle: string;
   sample: boolean;
+  /** Recommended to new players (see beginner.ts). */
+  beginner: boolean;
   origin: Build["origin"];
   updated: string;
   skills: Pick<Gem, "name" | "icon" | "color">[];
@@ -63,6 +66,7 @@ export function summarize(b: Build): BuildSummary {
     damage: b.damage,
     playstyle: b.playstyle,
     sample: b.sample,
+    beginner: isBeginnerPick(b.slug),
     origin: b.origin,
     updated: b.updated,
     skills: b.skills.map((s) => {

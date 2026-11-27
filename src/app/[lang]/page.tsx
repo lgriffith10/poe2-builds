@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { BeginnerPicks } from "@/components/beginner-picks";
 import { BuildCard } from "@/components/build-card";
 import { GAME, JsonLd, PUBLISHER } from "@/components/json-ld";
 import { ClassEmblem, GemIcon, TierBadge } from "@/components/ui";
@@ -145,6 +146,11 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
             tierLabels={t.categories}
           />
         </div>
+      </section>
+
+      {/* Builds for new players, right under the hero */}
+      <section className="mx-auto max-w-7xl px-4 pt-10 sm:pt-12">
+        <BeginnerPicks lang={lang} />
       </section>
 
       {/* Tools */}
