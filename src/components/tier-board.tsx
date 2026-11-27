@@ -90,7 +90,7 @@ export function TierBoard({ builds, category }: { builds: BuildSummary[]; catego
           return (
             <div key={tier} className="flex gap-3 rounded-xl border border-line bg-surface p-3">
               <TierBadge tier={tier} size="lg" />
-              <div className="grid flex-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid min-w-0 flex-1 grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
                 {inTier.length === 0 && <p className="self-center px-2 text-sm text-faint">{t.tierList.noBuilds}</p>}
                 {inTier.map((b) => {
                   const change = b.tierChanges[category];

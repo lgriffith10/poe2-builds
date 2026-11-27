@@ -116,7 +116,7 @@ function Tile({
       {/* Padding (not margin) under the card keeps the hover alive while the pointer moves up to the wiki link. */}
       <span
         role="tooltip"
-        className="pointer-events-none invisible absolute bottom-full left-1/2 z-30 w-64 -translate-x-1/2 pb-2 opacity-0 transition group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100"
+        className="absolute bottom-full left-1/2 z-30 hidden w-64 -translate-x-1/2 pb-2 group-hover:block"
       >
         <span className="block rounded-lg border border-line-strong bg-surface p-2.5 text-left text-xs shadow-xl shadow-black/60">
           <span className="block font-semibold text-[#c9b37e]">{label}</span>

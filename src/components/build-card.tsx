@@ -14,10 +14,10 @@ export function BuildCard({ build, category = DEFAULT_CATEGORY }: { build: Build
   const tierTitle = (tier: string, estimated: boolean) => (estimated ? fmt(t.common.estimatedTier, { tier }) : `${tier} tier`);
   const { color } = classStyle(build.className);
   return (
-    <div className="relative flex">
+    <div className="relative flex min-w-0">
       <Link
         href={path(`/builds/${build.slug}`)}
-        className="group relative flex w-full flex-col overflow-hidden rounded-xl border border-line bg-surface transition hover:border-line-strong hover:bg-surface-2"
+        className="group relative flex w-full min-w-0 flex-col overflow-hidden rounded-xl border border-line bg-surface transition hover:border-line-strong hover:bg-surface-2"
     >
       <span className="absolute inset-x-0 top-0 h-0.5" style={{ background: `linear-gradient(90deg, ${color}, transparent)` }} />
       <div className="flex items-start gap-3 p-4 pr-14">

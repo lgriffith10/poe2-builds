@@ -63,7 +63,7 @@ export function LootTierBoard({ entries }: { entries: LootEntry[] }) {
         return (
           <div key={tier} className="flex gap-3 rounded-xl border border-line bg-surface p-3">
             <TierBadge tier={tier} size="lg" />
-            <div className="grid flex-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid min-w-0 flex-1 grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
               {folded ? showButton(tier, inTier.length) : inTier.map((e) => <LootChip key={e.name} e={e} />)}
             </div>
           </div>
