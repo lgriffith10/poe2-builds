@@ -326,6 +326,8 @@ export const en = {
       next: "Next",
       skills: "Skills to run",
       nextStep: "Coming next",
+      inFinal: "Kept in the final setup",
+      notInFinal: "Leveling only",
       nothingNew: "No new gems at the next step.",
       stats: "Stats to look for",
       otherSlots: "Other rare items",

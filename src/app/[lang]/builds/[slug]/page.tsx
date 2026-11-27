@@ -41,6 +41,7 @@ import { TIER_CATEGORIES, type SkillRotation } from "@/lib/types";
 import { fmt, getDictionary, type Dictionary } from "@/i18n";
 import { alternates, pageI18n, resolveLang } from "@/i18n/server";
 import { WEAPON_SET_COLORS } from "@/lib/weapon-sets";
+import { SourceChip } from "@/components/skill-source-chip";
 import { articleLd, breadcrumbLd, JsonLd } from "@/components/json-ld";
 import { SITE_NAME } from "@/lib/site";
 
@@ -328,7 +329,23 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
             slug={build.slug}
             title={build.title}
             leveling={leveling}
-            skills={build.skills.map((s) => ({ gem: gemView(s.gem), supports: s.supports.map(gemView) }))}
+            gemInfo={Object.fromEntries(
+              [...new Set(build.leveling.flatMap((p) => p.steps.flatMap((st) => st.skills.map((k) => k.gem))))].flatMap((name) => {
+                const g = getGem(name);
+                return g ? [[name, { tags: g.tags.filter((x) => !ATTRIBUTE_TAGS.has(x)), tier: g.tier }]] : [];
+              }),
+            )}
+            skills={build.skills.map((s) => {
+              const src = sources.get(s.gem)!;
+              return {
+                gem: gemView(s.gem),
+                supports: s.supports.map(gemView),
+                source: { kind: src.kind, label: sourceLabel(src) },
+                weaponSet: s.weaponSet ?? null,
+                level: s.level ?? null,
+                note: s.note ?? null,
+              };
+            })}
             rotations={build.rotations.map((r) => rotationView(r))}
             gear={playGear}
             campaign={leveling.length && campaignIndex >= 0 ? playStage(campaignIndex) : null}
@@ -386,7 +403,7 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
                           {gem.name}
                         </Link>
                         <div className="mt-1 flex flex-wrap items-center gap-1.5">
-                          <SourceChip source={src} label={sourceLabel(src)} />
+                          <SourceChip kind={src.kind} label={sourceLabel(src)} />
                           {s.weaponSet && (
                             <span
                               className="whitespace-nowrap rounded-full border px-2 py-0.5 text-xs"
@@ -579,26 +596,7 @@ function ProsCons({ title, items, tone }: { title: string; items: string[]; tone
   );
 }
 
-const SOURCE_STYLE: Record<SkillSource["kind"], string> = {
-  weapon: "border-amber-600/50 bg-amber-500/10 text-amber-200",
-  item: "border-unique/50 bg-unique/10 text-unique",
-  ascendancy: "border-violet-500/50 bg-violet-500/10 text-violet-200",
-  gem: "border-line-strong text-muted",
-  spirit: "border-teal-500/40 bg-teal-500/10 text-teal-200",
-};
-const SOURCE_ICON: Record<SkillSource["kind"], string> = { weapon: "⚔", item: "◈", ascendancy: "✦", gem: "◆", spirit: "◇" };
-
-function SourceChip({ source, label }: { source: SkillSource; label: string }) {
-  return (
-    <span className={`shrink-0 rounded-full border px-2 py-0.5 text-xs ${SOURCE_STYLE[source.kind]}`}>
-      <span aria-hidden className="mr-1">
-        {SOURCE_ICON[source.kind]}
-      </span>
-      {label}
-    </span>
-  );
-}
-
+const ATTRIBUTE_TAGS = new Set(["strength", "dexterity", "intelligence"]);
 const ROMAN: Record<string, number> = { i: 1, ii: 2, iii: 3, iv: 4 };
 /** Act number in a step or rotation name ("Act 2", "Act1 Step 3", "ACT I"), or null. */
 function actOf(name: string): number | null {

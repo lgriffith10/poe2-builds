@@ -6,7 +6,7 @@ import { createPortal } from "react-dom";
 import { useI18n } from "@/i18n/client";
 import { stepFr } from "@/lib/step-labels";
 import type { StatPriorityStage } from "@/lib/stat-priority";
-import type { PassiveStep, PlannerState, TreeVariant } from "@/lib/types";
+import type { PassiveStep, PlannerState, TreeVariant, WeaponSet } from "@/lib/types";
 import { BuildTreeViewer } from "./build-tree-viewer";
 import { CampaignTimer } from "./campaign-timer";
 import { supportKey } from "@/lib/gem-checklist";
@@ -15,6 +15,8 @@ import { Check, useObtained, type TimelineGem, type TimelinePath } from "./level
 import { TipScope } from "./ref-tooltips";
 import type { RotationGem, RotationView } from "./rotation-strip";
 import { GemIcon } from "./ui";
+import { SourceChip, type SkillSourceKind } from "./skill-source-chip";
+import { WEAPON_SET_COLORS } from "@/lib/weapon-sets";
 import { Price, tradeUrl } from "./gear-inventory";
 import type { PriceTag } from "@/lib/prices";
 import type { TradeSearch } from "@/lib/trade";
@@ -44,11 +46,29 @@ export interface PlayGearStage {
   stats: StatPriorityStage | null;
 }
 
+/** A skill of the final setup, with what the guide's skill section says about it. */
+export interface PlaySkill {
+  gem: RotationGem;
+  supports: RotationGem[];
+  source: { kind: SkillSourceKind; label: string };
+  weaponSet: WeaponSet | null;
+  /** Gem level to keep the skill at (not higher). */
+  level: number | null;
+  note: string | null;
+}
+
+/** Game data for a skill gem of the leveling steps. */
+export interface PlayGemInfo {
+  tags: string[];
+  tier: number;
+}
+
 export interface PlayViewProps {
   slug: string;
   title: string;
   leveling: TimelinePath[];
-  skills: { gem: RotationGem; supports: RotationGem[] }[];
+  gemInfo: Record<string, PlayGemInfo>;
+  skills: PlaySkill[];
   rotations: RotationView[];
   /** Gear stages after the campaign (maps, endgame, min-max); the campaign one is shown with the leveling steps. */
   gear: PlayGearStage[];
@@ -225,6 +245,7 @@ function Panel({
   slug,
   title,
   leveling,
+  gemInfo,
   skills,
   rotations,
   gear,
@@ -351,11 +372,11 @@ function Panel({
             {tab === "gems" &&
               (step ? (
                 <>
-                  <StepGems step={step} next={route!.steps[stop!.index + 1]} obtained={obtained} toggle={toggle} />
+                  <StepGems step={step} next={route!.steps[stop!.index + 1]} obtained={obtained} toggle={toggle} info={gemInfo} finals={skills} />
                   <CampaignRewards slug={slug} parts={parts[stop!.index] ?? []} />
                 </>
               ) : (
-                <FinalGems skills={skills} />
+                <FinalGems skills={skills} obtained={obtained} toggle={toggle} />
               ))}
             {tab === "gems" && stepRotations.length > 0 && (
               <div className="mt-5 space-y-3 border-t border-line pt-4">
@@ -458,16 +479,22 @@ function SupportChip({ gem, children }: { gem: RotationGem; children?: ReactNode
   );
 }
 
+const tagLabel = (tag: string) => tag.charAt(0).toUpperCase() + tag.slice(1);
+
 function StepGems({
   step,
   next,
   obtained,
   toggle,
+  info,
+  finals,
 }: {
   step: TimelinePath["steps"][number];
   next: TimelinePath["steps"][number] | undefined;
   obtained: Set<string>;
   toggle: (name: string) => void;
+  info: Record<string, PlayGemInfo>;
+  finals: PlaySkill[];
 }) {
   const { t, fmt, path } = useI18n();
   const tp = t.build.play;
@@ -476,32 +503,81 @@ function StepGems({
     : [];
   return (
     <>
-      <ul className="space-y-3">
-        {step.skills.map(({ gem, supports }) => (
-          <li key={gem.name}>
-            <div className="flex items-center gap-2">
-              <Check on={obtained.has(gem.name)} label={fmt(t.build.checklistToggle, { gem: gem.name })} onClick={() => toggle(gem.name)} />
-              <Link
-                href={path(`/database/gems#${gem.id}`)}
-                data-tip={gem.tip}
-                className={`flex min-w-0 items-center gap-2 font-semibold hover:text-gold ${obtained.has(gem.name) ? "opacity-50" : ""}`}
-              >
-                <GemIcon gem={gem} size={30} />
-                <span className="truncate">{gem.name}</span>
-              </Link>
-              {gem.isNew && <span className="shrink-0 rounded-full bg-gold/15 px-1.5 text-[10px] font-semibold text-gold">{t.build.newGem}</span>}
-            </div>
-            {supports.length > 0 && (
-              <div className="mt-1.5 flex flex-wrap gap-1 pl-7">
-                {supports.map((s) => (
-                  <SupportChip key={s.name} gem={s}>
-                    <Check on={obtained.has(supportKey(gem.name, s.name))} label={fmt(t.build.checklistToggle, { gem: s.name })} onClick={() => toggle(supportKey(gem.name, s.name))} size="sm" />
-                  </SupportChip>
-                ))}
+      <ul className="space-y-2.5">
+        {step.skills.map(({ gem, supports }) => {
+          const data = info[gem.name];
+          const final = finals.find((f) => f.gem.name === gem.name);
+          const keys = [gem.name, ...supports.map((s) => supportKey(gem.name, s.name))];
+          const complete = keys.every((k) => obtained.has(k));
+          return (
+            <li key={gem.name} className={`rounded-lg border bg-surface-2/40 p-2.5 ${complete ? "border-emerald-500/40" : "border-line"}`}>
+              <div className="flex items-start gap-2">
+                <span className="mt-2">
+                  <Check on={obtained.has(gem.name)} label={fmt(t.build.checklistToggle, { gem: gem.name })} onClick={() => toggle(gem.name)} />
+                </span>
+                <GemIcon gem={gem} size={34} />
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                    <Link
+                      href={path(`/database/gems#${gem.id}`)}
+                      data-tip={gem.tip}
+                      className={`font-semibold hover:text-gold ${obtained.has(gem.name) ? "opacity-60" : ""}`}
+                    >
+                      {gem.name}
+                    </Link>
+                    {gem.isNew && <span className="shrink-0 rounded-full bg-gold/15 px-1.5 text-[10px] font-semibold text-gold">{t.build.newGem}</span>}
+                    {complete && <span className="shrink-0 text-xs font-semibold text-emerald-300">✓ {t.build.skillGroupDone}</span>}
+                  </div>
+                  <div className="mt-1 flex flex-wrap items-center gap-1">
+                    {final && final.source.kind !== "gem" && <SourceChip kind={final.source.kind} label={final.source.label} />}
+                    {final?.level && (
+                      <span className="whitespace-nowrap rounded-full border border-sky-400/60 px-2 py-0.5 text-xs text-sky-300" title={t.build.gemLevelHint}>
+                        {fmt(t.build.gemLevel, { level: final.level })}
+                      </span>
+                    )}
+                    {final?.weaponSet && (
+                      <span
+                        className="whitespace-nowrap rounded-full border px-2 py-0.5 text-xs"
+                        style={{ color: WEAPON_SET_COLORS[final.weaponSet].light, borderColor: WEAPON_SET_COLORS[final.weaponSet].main }}
+                        title={t.build.weaponSetSkillHint}
+                      >
+                        {final.weaponSet === 1 ? t.tree.weaponSet1 : t.tree.weaponSet2}
+                      </span>
+                    )}
+                    {data && data.tier > 0 && (
+                      <span className="whitespace-nowrap rounded-full border border-line-strong px-2 py-0.5 text-xs text-muted">Tier {data.tier}</span>
+                    )}
+                    <span
+                      className={`whitespace-nowrap rounded-full border px-2 py-0.5 text-xs ${
+                        final ? "border-emerald-500/50 text-emerald-300" : "border-line text-faint"
+                      }`}
+                    >
+                      {final ? tp.inFinal : tp.notInFinal}
+                    </span>
+                  </div>
+                  {data && data.tags.length > 0 && (
+                    <p className="mt-1 text-[11px] leading-snug text-faint">{data.tags.map(tagLabel).join(" · ")}</p>
+                  )}
+                  {final?.note && <p className="mt-1 text-xs leading-relaxed text-ink/90">{final.note}</p>}
+                </div>
               </div>
-            )}
-          </li>
-        ))}
+              {supports.length > 0 && (
+                <div className="mt-2 flex flex-wrap gap-1 border-t border-line pt-2">
+                  {supports.map((s) => (
+                    <SupportChip key={s.name} gem={s}>
+                      <Check
+                        on={obtained.has(supportKey(gem.name, s.name))}
+                        label={fmt(t.build.checklistToggle, { gem: s.name })}
+                        onClick={() => toggle(supportKey(gem.name, s.name))}
+                        size="sm"
+                      />
+                    </SupportChip>
+                  ))}
+                </div>
+              )}
+            </li>
+          );
+        })}
       </ul>
       {next && (
         <div className="mt-5 border-t border-line pt-4">
@@ -521,26 +597,80 @@ function StepGems({
   );
 }
 
-function FinalGems({ skills }: { skills: PlayViewProps["skills"] }) {
-  const { path } = useI18n();
+function FinalGems({ skills, obtained, toggle }: { skills: PlaySkill[]; obtained: Set<string>; toggle: (name: string) => void }) {
+  const { t, fmt, path } = useI18n();
+  const keys = [...new Set(skills.flatMap(({ gem, supports }) => [gem.name, ...supports.map((s) => supportKey(gem.name, s.name))]))];
+  const done = keys.filter((k) => obtained.has(k)).length;
   return (
-    <ul className="space-y-3">
-      {skills.map(({ gem, supports }) => (
-        <li key={gem.name}>
-          <Link href={path(`/database/gems#${gem.id}`)} data-tip={gem.tip} className="flex items-center gap-2 font-semibold hover:text-gold">
-            <GemIcon gem={gem} size={30} />
-            {gem.name}
-          </Link>
-          {supports.length > 0 && (
-            <div className="mt-1.5 flex flex-wrap gap-1 pl-8">
-              {supports.map((s) => (
-                <SupportChip key={s.name} gem={s} />
-              ))}
-            </div>
-          )}
-        </li>
-      ))}
-    </ul>
+    <>
+      <div className="mb-3 flex items-center gap-2 text-xs">
+        <span className="h-1.5 w-24 overflow-hidden rounded-full bg-line">
+          <span className="block h-full rounded-full bg-emerald-400/80 transition-all" style={{ width: `${(100 * done) / Math.max(1, keys.length)}%` }} />
+        </span>
+        <span className="tabular-nums text-muted">{fmt(t.build.checklistCount, { n: done, total: keys.length })}</span>
+      </div>
+      <ul className="space-y-2.5">
+        {skills.map(({ gem, supports, source, weaponSet, level, note }) => {
+          const complete = [gem.name, ...supports.map((s) => supportKey(gem.name, s.name))].every((k) => obtained.has(k));
+          return (
+            <li key={gem.name} className={`rounded-lg border bg-surface-2/40 p-2.5 ${complete ? "border-emerald-500/40" : "border-line"}`}>
+              <div className="flex items-start gap-2">
+                <span className="mt-2">
+                  <Check on={obtained.has(gem.name)} label={fmt(t.build.checklistToggle, { gem: gem.name })} onClick={() => toggle(gem.name)} />
+                </span>
+                <GemIcon gem={gem} size={34} />
+                <div className="min-w-0 flex-1">
+                  <Link
+                    href={path(`/database/gems#${gem.id}`)}
+                    data-tip={gem.tip}
+                    className={`font-semibold hover:text-gold ${obtained.has(gem.name) ? "opacity-60" : ""}`}
+                  >
+                    {gem.name}
+                  </Link>
+                  <div className="mt-1 flex flex-wrap items-center gap-1">
+                    <SourceChip kind={source.kind} label={source.label} />
+                    {weaponSet && (
+                      <span
+                        className="whitespace-nowrap rounded-full border px-2 py-0.5 text-xs"
+                        style={{ color: WEAPON_SET_COLORS[weaponSet].light, borderColor: WEAPON_SET_COLORS[weaponSet].main }}
+                        title={t.build.weaponSetSkillHint}
+                      >
+                        {weaponSet === 1 ? t.tree.weaponSet1 : t.tree.weaponSet2}
+                      </span>
+                    )}
+                    {level && (
+                      <span className="whitespace-nowrap rounded-full border border-sky-400/60 px-2 py-0.5 text-xs text-sky-300" title={t.build.gemLevelHint}>
+                        {fmt(t.build.gemLevel, { level })}
+                      </span>
+                    )}
+                    {complete && (
+                      <span className="whitespace-nowrap rounded-full border border-emerald-400/60 bg-emerald-500/10 px-2 py-0.5 text-xs font-semibold text-emerald-300">
+                        ✓ {t.build.skillGroupDone}
+                      </span>
+                    )}
+                  </div>
+                  {note && <p className="mt-1.5 text-xs leading-relaxed text-muted">{note}</p>}
+                </div>
+              </div>
+              {supports.length > 0 && (
+                <div className="mt-2 flex flex-wrap gap-1 border-t border-line pt-2">
+                  {supports.map((s) => (
+                    <SupportChip key={s.name} gem={s}>
+                      <Check
+                        on={obtained.has(supportKey(gem.name, s.name))}
+                        label={fmt(t.build.checklistToggle, { gem: s.name })}
+                        onClick={() => toggle(supportKey(gem.name, s.name))}
+                        size="sm"
+                      />
+                    </SupportChip>
+                  ))}
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </>
   );
 }
 

@@ -328,6 +328,8 @@ export const fr: Dictionary = {
       next: "Suivant",
       skills: "Compétences à jouer",
       nextStep: "À l'étape suivante",
+      inFinal: "Gardée dans le build final",
+      notInFinal: "Leveling uniquement",
       nothingNew: "Pas de nouvelle gemme à l'étape suivante.",
       stats: "Stats à chercher",
       otherSlots: "Autres objets rares",
