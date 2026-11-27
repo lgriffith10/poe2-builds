@@ -16,6 +16,9 @@ import { absoluteUrl } from "@/lib/site";
 import { LevelingTimeline, type TimelinePath } from "@/components/leveling-timeline";
 import { PlayView, type PlayGearStage } from "@/components/play-view";
 import { BuildTabs } from "@/components/build-tabs";
+import { ReleaseBanner } from "@/components/release-banner";
+import { beforeRelease, patch as releasePatch, releaseMoment } from "@/lib/release";
+import { buildChanges } from "@/lib/release-builds";
 import { classStyle } from "@/lib/classes";
 import { GemCheck, SkillGroupDone, SkillsProgress } from "@/components/gem-checklist";
 import { supportKey } from "@/lib/gem-checklist";
@@ -292,6 +295,14 @@ export default async function BuildPage({ params }: PageProps<"/[lang]/builds/[s
               </span>
             )}
           </div>
+          {beforeRelease(build.patch) && (
+            <ReleaseBanner
+              patch={build.patch}
+              releaseAt={releaseMoment().toISOString()}
+              published={releasePatch.published}
+              changed={[...new Set(buildChanges(build).map((c) => c.name))]}
+            />
+          )}
           {build.sample && (
             <p className="mt-4 rounded-lg border border-amber-700/50 bg-amber-900/15 px-4 py-3 text-sm text-amber-200">
               {tr.build.sampleNotice}

@@ -29,6 +29,8 @@ const ICONS: Record<string, ReactNode> = {
     </>
   ),
   atlasPlanner: <path d="M4 8l8-3 8 3 8-3v19l-8 3-8-3-8 3zM12 5v19M20 8v19" />,
+  release: <path d="M16 3l3.5 8.5L28 12l-6.5 5.5L23.5 27 16 22l-7.5 5 2-9.5L4 12l8.5-.5z" />,
+  leagueStart: <path d="M7 28V4m0 2h16l-3 5 3 5H7M11 22h0" />,
   glossary: <path d="M7 4h15l4 4v20H7zM22 4v4h4M11 13h11M11 18h11M11 23h7" />,
   quiz: (
     <>

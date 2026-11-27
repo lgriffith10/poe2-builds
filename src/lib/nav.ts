@@ -29,6 +29,8 @@ export const NAV_GROUPS: NavGroup[] = [
     key: "guides",
     items: [
       { href: "/guides", key: "guides", menuLabel: "allGuides" },
+      { href: "/release", key: "release" },
+      { href: "/league-start", key: "leagueStart" },
       { href: "/farming", key: "farming" },
       { href: "/farming/planner", key: "atlasPlanner" },
       { href: "/glossary", key: "glossary" },

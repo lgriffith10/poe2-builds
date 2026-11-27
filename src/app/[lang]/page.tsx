@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BeginnerPicks } from "@/components/beginner-picks";
+import { ReleaseCountdown } from "@/components/release-countdown";
+import { RELEASE, releaseMoment } from "@/lib/release";
 import { BuildCard } from "@/components/build-card";
 import { GAME, JsonLd, PUBLISHER } from "@/components/json-ld";
 import { ClassEmblem, GemIcon, TierBadge } from "@/components/ui";
@@ -147,6 +149,27 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
           />
         </div>
       </section>
+
+      {/* 1.0 launch (the countdown turns into "Out now" on the day): remove a few weeks after the release. */}
+      {(
+        <section className="mx-auto max-w-7xl px-4 pt-8">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-xl border border-gold-soft/60 bg-gold/5 px-5 py-4">
+            <ReleaseCountdown at={releaseMoment().toISOString()} exact={!!RELEASE.launchAt} className="font-display text-2xl font-bold text-gold" />
+            <div className="min-w-0 flex-1">
+              <p className="font-semibold">{t.release.homeTitle}</p>
+              <p className="text-sm text-muted">{t.release.homeText}</p>
+            </div>
+            <div className="flex flex-wrap gap-2 text-sm">
+              <Link href={path("/league-start")} className="poe-button">
+                {t.leagueStart.title}
+              </Link>
+              <Link href={path("/release")} className="rounded-md border border-line-strong px-4 py-2 font-semibold hover:border-gold-soft hover:text-gold">
+                {t.release.bannerLink}
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Builds for new players, right under the hero */}
       <section className="mx-auto max-w-7xl px-4 pt-10 sm:pt-12">
