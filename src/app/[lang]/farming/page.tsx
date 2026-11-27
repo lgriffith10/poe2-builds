@@ -26,6 +26,9 @@ export default async function FarmingPage({ params }: PageProps<"/[lang]/farming
             {tr.generalLink}
           </Link>
         </p>
+        <Link href={path("/farming/planner")} className="poe-button mt-4 inline-block">
+          {t.atlasPlanner.title} →
+        </Link>
       </PageHeader>
       <div className="mx-auto grid max-w-7xl gap-4 px-4 py-8 md:grid-cols-2">
         {mechanics.map((m) => {

@@ -28,6 +28,7 @@ const ICONS: Record<string, ReactNode> = {
       <path d="M7 9v6c0 2.2 4 4 9 4s9-1.8 9-4V9M7 15v6c0 2.2 4 4 9 4s9-1.8 9-4v-6" />
     </>
   ),
+  atlasPlanner: <path d="M4 8l8-3 8 3 8-3v19l-8 3-8-3-8 3zM12 5v19M20 8v19" />,
   glossary: <path d="M7 4h15l4 4v20H7zM22 4v4h4M11 13h11M11 18h11M11 23h7" />,
   quiz: (
     <>
