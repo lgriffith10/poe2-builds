@@ -22,6 +22,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: "/tier-list", key: "tierList" },
       { href: "/meta", key: "meta" },
       { href: "/compare", key: "compare" },
+      { href: "/quiz", key: "quiz" },
     ],
   },
   {

@@ -22,6 +22,12 @@ const ICONS: Record<string, ReactNode> = {
       <path d="M6 7v18c0 2 4.5 3.5 10 3.5S26 27 26 25V7M6 16c0 2 4.5 3.5 10 3.5S26 18 26 16" />
     </>
   ),
+  quiz: (
+    <>
+      <circle cx="16" cy="16" r="12" />
+      <path d="M12 12.5a4 4 0 1 1 5.5 3.7c-1 .4-1.5 1.2-1.5 2.3v1M16 23.5v.5" />
+    </>
+  ),
   compare: <path d="M16 4v24M6 10h6M6 16h6M6 22h6M20 10h6m-6 6h6m-6 6h6" />,
   character: (
     <>

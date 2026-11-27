@@ -24,9 +24,14 @@ export function BeginnerPicks({ lang }: { lang: Locale }) {
           <h2 className="font-display text-2xl font-semibold text-emerald-300">{tb.title}</h2>
           <p className="mt-1 max-w-3xl text-sm text-muted">{tb.sub}</p>
         </div>
-        <Link href={path("/guides/leveling-and-gearing")} className="text-sm text-gold hover:underline">
-          {tb.guide} →
-        </Link>
+        <div className="flex flex-col items-start gap-1 text-sm sm:items-end">
+          <Link href={path("/quiz")} className="text-gold hover:underline">
+            {tb.quiz} →
+          </Link>
+          <Link href={path("/guides/leveling-and-gearing")} className="text-muted hover:text-gold">
+            {tb.guide} →
+          </Link>
+        </div>
       </div>
       <div className="grid gap-3 md:grid-cols-3">
         {picks.map(({ build: b, why }) => {
