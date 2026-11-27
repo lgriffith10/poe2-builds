@@ -39,6 +39,7 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: "/planner", key: "planner" },
       { href: "/craft", key: "craft" },
       { href: "/weapons", key: "weapons" },
+      { href: "/loot-value", key: "lootValue" },
       { href: "/character", key: "character" },
     ],
   },
