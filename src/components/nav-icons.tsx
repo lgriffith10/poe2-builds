@@ -22,6 +22,7 @@ const ICONS: Record<string, ReactNode> = {
       <path d="M6 7v18c0 2 4.5 3.5 10 3.5S26 27 26 25V7M6 16c0 2 4.5 3.5 10 3.5S26 18 26 16" />
     </>
   ),
+  glossary: <path d="M7 4h15l4 4v20H7zM22 4v4h4M11 13h11M11 18h11M11 23h7" />,
   quiz: (
     <>
       <circle cx="16" cy="16" r="12" />

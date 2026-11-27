@@ -96,6 +96,13 @@ body {
 .prose-guide a.ref-currency {
   color: #c9b37e;
 }
+/* Game terms linked to the glossary: discreet, the text keeps its colour. */
+.prose-guide a.ref-term {
+  font-weight: inherit;
+  color: inherit;
+  text-decoration-color: var(--color-gold-soft);
+  cursor: help;
+}
 .prose-guide code {
   background: var(--color-surface-2);
   padding: 0.1rem 0.35rem;

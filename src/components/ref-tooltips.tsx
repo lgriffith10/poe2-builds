@@ -90,11 +90,26 @@ export function TipScope({ children, className }: { children: ReactNode; classNa
             <GemCard gem={tip.data} />
           ) : tip.data.kind === "unique" ? (
             <UniqueCard item={tip.data} />
+          ) : tip.data.kind === "term" ? (
+            <TermCard term={tip.data} />
           ) : (
             <CurrencyCard item={tip.data} />
           )}
         </div>
       )}
+    </>
+  );
+}
+
+function TermCard({ term }: { term: Extract<RefTip, { kind: "term" }> }) {
+  return (
+    <>
+      <div className="poe-tip-head">
+        <span className="poe-tip-name">{term.name}</span>
+      </div>
+      <div className="poe-tip-body">
+        <p className="poe-tip-desc text-left">{term.text}</p>
+      </div>
     </>
   );
 }

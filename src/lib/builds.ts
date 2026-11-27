@@ -13,6 +13,7 @@ import { allocateTargets, allocateWeaponSetTargets, createGraph, findNodeByName,
 import { encodeBuild } from "./build-code";
 import { buildRatings, type Ratings } from "./ratings";
 import { MECHANICS, parseFarming, type FarmingProfile, type MechanicId } from "./farming";
+import { linkGlossary, type GlossaryTerm } from "./glossary";
 import { DEFAULT_LOCALE, localePath, type Locale } from "@/i18n/config";
 import {
   DIFFICULTIES,
@@ -35,6 +36,7 @@ import {
   type TierChange,
   TREE_STAGES,
   type PassiveStep,
+  type RefTip,
   type TreeStage,
   type TreeVariant,
 } from "./types";
@@ -177,7 +179,10 @@ export function renderBody(markdown: string, file: string, lang: Locale = DEFAUL
           : token.lang === "loot"
             ? renderLoot(token.text, file, lang)
             : code(token);
-  const html = (marked.parse(linkReferences(markdown, file), { renderer, async: false }) as string)
+  const parsed = marked.parse(linkReferences(markdown, file), { renderer, async: false }) as string;
+  // First mention of each game term: link to the glossary with a hover card.
+  const termTip = (g: GlossaryTerm) => tipAttr(JSON.stringify({ kind: "term", name: g.name[lang], text: g.text[lang] } satisfies RefTip));
+  const html = linkGlossary(parsed, lang, termTip)
     // Site-relative links follow the page language.
     .replace(/href="(\/[^"]*)"/g, (_, href: string) => `href="${localePath(lang, href)}"`);
   return { html, toc };

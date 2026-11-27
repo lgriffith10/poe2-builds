@@ -19,6 +19,7 @@ export const fr: Dictionary = {
     character: "Mon personnage",
     compare: "Comparer",
     quiz: "Trouver un build",
+    glossary: "Lexique",
     guides: "Guides",
     farming: "Farming",
     meta: "Méta",
@@ -88,6 +89,12 @@ export const fr: Dictionary = {
     intro:
       "Des guides de builds pour chaque classe et ascendance, classés pour le début de ligue, les cartes en endgame et les boss. Ouvrez n'importe quel build dans le planner pour ajuster son arbre passif.",
   },
+  glossary: {
+    title: "Lexique",
+    intro: "Les mots de Path of Exile 2 expliqués simplement. Dans les guides, la première mention de chaque terme est soulignée : survolez-la pour lire sa définition.",
+    groups: { defence: "Défenses", resource: "Ressources", damage: "Dégâts et altérations", items: "Objets et gemmes", endgame: "Endgame" },
+    note: "Définitions rédigées pour ce site et vérifiées sur le wiki de Path of Exile 2 (poe2wiki.net).",
+  },
   quiz: {
     title: "Quel build pour moi ?",
     intro: "Cinq questions sur votre façon de jouer. Les builds sont classés d'après leurs vraies données : style, difficulté, longueur de la rotation, budget, uniques et place dans les tier lists.",
@@ -150,6 +157,7 @@ export const fr: Dictionary = {
       database: "Gemmes, uniques, bases, ascendances et monnaies.",
       compare: "Deux builds côte à côte : arbre, gemmes et équipement.",
       quiz: "Cinq questions pour trouver un build qui vous ressemble.",
+      glossary: "Les mots du jeu expliqués : Esprit, Deflection, altérations, waystones…",
       character: "Importez un code Path of Building et lisez votre personnage.",
       farming: "Stratégies d'Atlas par mécanique, avec les builds qui les farment le mieux.",
       weapons: "Collez deux armes et voyez laquelle fait le plus de dégâts.",

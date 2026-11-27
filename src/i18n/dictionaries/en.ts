@@ -18,6 +18,7 @@ export const en = {
     character: "My Character",
     compare: "Compare",
     quiz: "Build finder",
+    glossary: "Glossary",
     guides: "Guides",
     farming: "Farming",
     meta: "Meta",
@@ -86,6 +87,12 @@ export const en = {
     intro:
       "Build guides for every class and ascendancy, ranked for league start, endgame mapping and bossing. Open any build in the planner to tweak its passive tree.",
   },
+  glossary: {
+    title: "Glossary",
+    intro: "The words of Path of Exile 2 explained simply. In the guides, the first mention of each term is underlined: hover it to read its definition.",
+    groups: { defence: "Defences", resource: "Resources", damage: "Damage and ailments", items: "Items and gems", endgame: "Endgame" },
+    note: "Definitions written for this site and checked against the Path of Exile 2 wiki (poe2wiki.net).",
+  },
   quiz: {
     title: "Which build for me?",
     intro: "Five questions about how you want to play. The builds are scored on their real data: playstyle, difficulty, length of the rotation, budget, uniques and tier list placement.",
@@ -148,6 +155,7 @@ export const en = {
       database: "Gems, uniques, bases, ascendancies and currency.",
       compare: "Two builds side by side: tree, gems and gear.",
       quiz: "Five questions to find a build that suits how you play.",
+      glossary: "The game's words explained: Spirit, Deflection, ailments, waystones…",
       character: "Import a Path of Building code and read your character.",
       farming: "Atlas strategies per mechanic, with the builds that farm them best.",
       weapons: "Paste two weapons and see which one deals more damage.",

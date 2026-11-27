@@ -84,7 +84,8 @@ export interface GemDetails {
 export type RefTip =
   | ({ kind: "gem" } & Pick<Gem, "name" | "icon" | "color" | "type" | "tier" | "tags" | "text"> & GemDetails)
   | ({ kind: "unique" } & Pick<UniqueItem, "name" | "icon" | "base" | "category" | "level" | "implicits" | "mods">)
-  | ({ kind: "currency" } & Pick<CurrencyItem, "name" | "icon" | "description" | "directions" | "essence" | "socket">);
+  | ({ kind: "currency" } & Pick<CurrencyItem, "name" | "icon" | "description" | "directions" | "essence" | "socket">)
+  | { kind: "term"; name: string; text: string };
 
 /** Crafting consumable of the currency wiki (scripts/currency-data.mjs). */
 export interface CurrencyItem {
