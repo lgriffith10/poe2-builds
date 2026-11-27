@@ -8,6 +8,7 @@ import { stepFr } from "@/lib/step-labels";
 import type { StatPriorityStage } from "@/lib/stat-priority";
 import type { PassiveStep, PlannerState, TreeVariant } from "@/lib/types";
 import { BuildTreeViewer } from "./build-tree-viewer";
+import { CampaignTimer } from "./campaign-timer";
 import { supportKey } from "@/lib/gem-checklist";
 import { CAMPAIGN_REWARDS, CAMPAIGN_REWARDS_SOURCE, stepParts, type CampaignPart, type RewardKind } from "@/lib/campaign-rewards";
 import { Check, useObtained, type TimelineGem, type TimelinePath } from "./leveling-timeline";
@@ -309,6 +310,7 @@ function Panel({
             ))}
           </select>
         )}
+        <CampaignTimer key={pathIndex} storageKey={`${slug}:${pathIndex}`} at={at} labels={stops.map((s) => s.label)} />
         <button
           type="button"
           onClick={() => close()}
